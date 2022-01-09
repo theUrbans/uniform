@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-center {
+  justify-content: center;
+}
+
+.vertical-start {
+  justify-content: flex-start;
+}
+
+.vertical-end {
+  justify-content: flex-end;
+}

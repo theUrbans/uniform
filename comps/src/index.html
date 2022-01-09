@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/comps.esm.js"></script>
+    <script nomodule src="/build/comps.js"></script>
+  </head>
+  <body>
+    <button onclick="openModal()">test</button>
+    <w-modal name="test">
+      <span slot="header">Hallo</span>
+      <div slot="body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam, odit consequuntur qui reprehenderit at! Neque, eum, sapiente beatae nihil pariatur illo maxime
+        provident assumenda nesciunt voluptates dignissimos temporibus aliquid ab quae! Laborum, quo! Facere nam, assumenda non tempora suscipit nesciunt quam numquam eum nulla
+        minus consequatur iure cumque facilis eveniet modi, doloribus omnis sit eos nostrum velit eius similique magnam soluta? Natus beatae dolorum, dicta amet consequuntur,
+        laudantium corporis, quia aliquid obcaecati doloribus corrupti consequatur repellendus maiores nihil magni nam! Fuga odio nulla aspernatur? Delectus, enim hic eum deserunt
+        veniam commodi iure incidunt aliquam sapiente, aliquid quibusdam, voluptates dolores?
+      </div>
+    </w-modal>
+  </body>
+  <script>
+    const openModal = () => {
+      const body = document.querySelector('body');
+      body.dispatchEvent(new CustomEvent('show-modal', { detail: { name: 'test', params: { test: '12' } } }));
+    };
+  </script>
+</html>
