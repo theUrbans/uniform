@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'Col',
-  styleUrl: 'w-col.css',
+  tag: 'w-row',
+  styleUrl: 'w-row.css',
   shadow: true,
 })
-export class WCol {
+export class WRow {
 
   render() {
     return (

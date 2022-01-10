@@ -1,7 +1,7 @@
 {
-  "name": "comps",
+  "name": "uniform",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "UNIFORM component library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -9,10 +9,10 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/comps/comps.esm.js",
+  "unpkg": "dist/uniform/uniform.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/dieUrbans/uniform.git"
   },
   "files": [
     "dist/",

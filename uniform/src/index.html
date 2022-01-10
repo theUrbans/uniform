@@ -4,12 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
+    <link rel="stylesheet" href="/build/comps.css" />
     <script type="module" src="/build/comps.esm.js"></script>
     <script nomodule src="/build/comps.js"></script>
   </head>
   <body>
-    <button onclick="openModal()">test</button>
+    <button onclick="openModal()">open modal</button>
+    <button onclick="focusInput()">focus input</button>
+    <button onclick="blurInput()">blur input</button>
     <w-modal name="test">
       <span slot="header">Hallo</span>
       <div slot="body">
@@ -20,11 +22,21 @@
         veniam commodi iure incidunt aliquam sapiente, aliquid quibusdam, voluptates dolores?
       </div>
     </w-modal>
+    <w-input label="Test" />
   </body>
   <script>
     const openModal = () => {
       const body = document.querySelector('body');
       body.dispatchEvent(new CustomEvent('show-modal', { detail: { name: 'test', params: { test: '12' } } }));
+    };
+    const focusInput = () => {
+      const input = document.querySelector('w-input');
+      input.setAttribute('set-focus', true);
+      // console.log(input);
+    };
+    const blurInput = () => {
+      const input = document.querySelector('w-input');
+      input.setAttribute('set-focus', false);
     };
   </script>
 </html>

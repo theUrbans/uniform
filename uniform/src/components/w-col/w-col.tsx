@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'w-input',
-  styleUrl: 'w-input.css',
+  tag: 'w-col',
+  styleUrl: 'w-col.css',
   shadow: true,
 })
-export class WInput {
+export class WCol {
 
   render() {
     return (
