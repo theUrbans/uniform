@@ -1,6 +1,6 @@
 {
-  "name": "uniform",
-  "version": "0.0.1",
+  "name": "@dieurbans/uniform",
+  "version": "0.0.3",
   "description": "UNIFORM component library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -13,6 +13,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/dieUrbans/uniform.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "files": [
     "dist/",
