@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  width: 100%;
+}
+.wrapper {
+  @apply relative flex flex-col border-radius h-auto p-0;
+}
+.head {
+  @apply p-2 bg-gray-100 flex flex-row gap-2 justify-around items-center rounded-t-xl;
+}
+.step {
+  @apply flex flex-row gap-1 relative justify-center;
+}
+.no {
+  @apply text-gray-200 bg-gray-600 rounded-full text-center align-middle leading-8 h-8 w-8;
+}
+.label {
+  @apply text-gray-600 py-1;
+}
+.row {
+  @apply flex flex-row;
+}
+.footer {
+  @apply flex flex-row justify-between p-2 bg-gray-100 rounded-b-xl;
+}
+.content {
+  @apply bg-transparent border-2 border-gray-100 border-solid;
+}
+.activeStep > .no {
+  @apply bg-blue-300 text-white font-semibold  hover:bg-blue-50 hover:text-blue-600 hover:shadow-blue-100;
+}
+.activeStep > .label {
+  @apply text-blue-600 font-semibold;
+}
+.visible {
+  @apply visible;
+}
+.hidden {
+  @apply hidden;
+}
+.line {
+  @apply flex-grow h-0.5 w-full bg-gray-400;
+}
+.doneLine {
+  @apply !bg-blue-500;
+}

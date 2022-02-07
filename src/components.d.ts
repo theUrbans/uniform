@@ -5,50 +5,372 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ChipDesign } from "./components/w-chip/w-chip";
+import { NotficationOption, NotificationType } from "./components/w-notification/w-notification";
+import { Option } from "./components/w-radiogroup/w-radiogroup";
+import { Option as Option1 } from "./components/w-select/w-select";
 export namespace Components {
+    interface WAlert {
+    }
     interface WButton {
+        "design"?: 'secondary' | 'error' | 'success' | 'warning' | 'primary';
+        "disabled"?: boolean;
+        "flat"?: boolean;
+        "outline"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
+        "type"?: 'button' | 'submit' | 'reset';
+    }
+    interface WCardselect {
+    }
+    interface WCheckbox {
+        "checked": boolean;
+        "disabled": boolean;
+        "label": string;
+        "set": (checked: boolean) => Promise<void>;
+        "size": 'small' | 'medium' | 'large';
+    }
+    interface WChip {
+        "bold": boolean;
+        "clickable": boolean;
+        "design": ChipDesign;
+        "label"?: string;
+        "size": 'small' | 'medium' | 'large';
     }
     interface WCol {
     }
+    interface WDialog {
+        "name": string;
+    }
+    interface WDropdown {
+    }
+    interface WFilepicker {
+    }
+    interface WForm {
+    }
+    interface WGroup {
+    }
+    interface WIcon {
+    }
     interface WInput {
-        "border": string;
-        "disabled": boolean;
-        "errorMsg": string;
+        /**
+          * decide if autocapitalize should be enabled
+         */
+        "autoCapitalize"?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+        /**
+          * possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+         */
+        "autoComplete"?: string;
+        /**
+          * decide if autocorect should be enabled
+         */
+        "autoCorrect"?: 'off' | 'on';
+        /**
+          * decide if input should have border radius
+         */
+        "borderStyle"?: 'none' | 'small' | 'large' | 'round';
+        /**
+          * select design possible values: - 'default', 'error', 'success', 'warning'
+         */
+        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'secondary';
+        /**
+          * decide if the input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * change this prop to true to focus the input
+         */
+        "doFocus"?: boolean;
+        /**
+          * show error message below the input
+         */
+        "errorMsg"?: string;
+        /**
+          * type of the input
+         */
+        "inputType"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+        /**
+          * text of label The label replace the placeholder
+         */
         "label": string;
-        "max": number;
-        "min": number;
-        "readonly": boolean;
-        "required": boolean;
-        "setFocus": boolean;
-        "success": boolean;
-        "type": string;
-        "validate": Function;
-        "value": string;
-        "warning": boolean;
+        /**
+          * if input type == numeric -> max value
+         */
+        "max"?: string;
+        /**
+          * if input type == numeric -> min value
+         */
+        "min"?: string;
+        /**
+          * set the pattern for the input
+         */
+        "pattern"?: string;
+        /**
+          * decide if the input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * decide if input is required (for forms)
+         */
+        "required"?: boolean;
+        /**
+          * set blur on native input
+         */
+        "setBlur": () => Promise<void>;
+        /**
+          * set focus on native input
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * size of the input
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * decide if spellcheck should be enabled
+         */
+        "spellCheck"?: boolean;
+        /**
+          * if input type == numeric -> step value
+         */
+        "step"?: string;
+        /**
+          * use function returning a boolean to validate the input -> if false, it displays error-msg
+         */
+        "validate": boolean;
+        /**
+          * the value of the input
+         */
+        "value": string | number | null;
     }
     interface WModal {
         "closeModal": (name: string) => Promise<void>;
         "closeOnClick": boolean;
+        "maxHeight": string;
+        "maxWidth": string;
+        "minHeight": string;
+        "minWidth": string;
+        "mode": 'desktop' | 'mobile';
+        "moveable": boolean;
         "name": string;
+        "resetPosition": boolean;
+        "resizeable": boolean;
         "showModal": (name: string) => Promise<void>;
+        "topRightClose": boolean;
+    }
+    interface WNotification {
+        "error": (title: string, message?: string, delay?: number) => Promise<void>;
+        "position": 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
+        "show": (type: NotificationType, options: NotficationOption) => Promise<void>;
+        "success": (title: string, message?: string, delay?: number) => Promise<void>;
+        "warning": (title: string, message?: string, delay?: number) => Promise<void>;
+    }
+    interface WObserver {
+    }
+    interface WRadiogroup {
+        "alignment": 'vertical' | 'horizontal';
+        "label": string;
+        "options": Array<Option>;
+        "value": any;
     }
     interface WRow {
     }
+    interface WSelect {
+        /**
+          * decide if autocapitalize should be enabled
+         */
+        "autoCapitalize"?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+        /**
+          * possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+         */
+        "autoComplete"?: string;
+        /**
+          * decide if autocorect should be enabled
+         */
+        "autoCorrect"?: 'off' | 'on';
+        /**
+          * decide if input should have border radius
+         */
+        "borderStyle"?: 'none' | 'small' | 'large' | 'round';
+        /**
+          * select design possible values: - 'default', 'error', 'success', 'warning'
+         */
+        "design"?: 'outline' | 'primary' | 'error' | 'success' | 'warning' | 'default';
+        /**
+          * decide if the input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * change this prop to true to focus the input
+         */
+        "doFocus"?: boolean;
+        /**
+          * show error message below the input
+         */
+        "errorMsg"?: string;
+        /**
+          * type of the input
+         */
+        "inputType"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+        /**
+          * text of label The label replace the placeholder
+         */
+        "label": string;
+        /**
+          * if input type == numeric -> max value
+         */
+        "max"?: string;
+        /**
+          * if input type == numeric -> min value
+         */
+        "min"?: string;
+        "multiple": boolean;
+        "options": Option[];
+        /**
+          * set the pattern for the input
+         */
+        "pattern"?: string;
+        /**
+          * decide if the input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * decide if input is required (for forms)
+         */
+        "required"?: boolean;
+        "searchable": boolean;
+        /**
+          * set blur on native input
+         */
+        "setBlur": () => Promise<void>;
+        /**
+          * set focus on native input
+         */
+        "setFocus": () => Promise<void>;
+        /**
+          * size of the input
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * decide if spellcheck should be enabled
+         */
+        "spellCheck"?: boolean;
+        /**
+          * if input type == numeric -> step value
+         */
+        "step"?: string;
+        /**
+          * use function returning a boolean to validate the input -> if false, it displays error-msg
+         */
+        "validate": boolean;
+        /**
+          * the value of the input
+         */
+        "value": string | number | null;
+    }
+    interface WSlider {
+    }
+    interface WSpoiler {
+    }
+    interface WStepper {
+        "allData": boolean;
+        "nextStepAvailable": boolean;
+        /**
+          * define steps without label -> input number of steps with label -> input label of each step as array
+         */
+        "steps": number | any[];
+    }
+    interface WTabs {
+    }
     interface WTextarea {
+        "cols": number;
+        "design": 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'default';
+        "disabled": boolean;
+        "label"?: string;
+        "readonly": boolean;
+        "required": boolean;
+        "resize": 'none' | 'both' | 'horizontal' | 'vertical';
+        "rows": number;
+        "size": 'small' | 'medium' | 'large';
+        "value": string | null;
+    }
+    interface WToggle {
+    }
+    interface WTooltip {
+        "axis": 'x' | 'y';
+        "text": string;
     }
 }
 declare global {
+    interface HTMLWAlertElement extends Components.WAlert, HTMLStencilElement {
+    }
+    var HTMLWAlertElement: {
+        prototype: HTMLWAlertElement;
+        new (): HTMLWAlertElement;
+    };
     interface HTMLWButtonElement extends Components.WButton, HTMLStencilElement {
     }
     var HTMLWButtonElement: {
         prototype: HTMLWButtonElement;
         new (): HTMLWButtonElement;
     };
+    interface HTMLWCardselectElement extends Components.WCardselect, HTMLStencilElement {
+    }
+    var HTMLWCardselectElement: {
+        prototype: HTMLWCardselectElement;
+        new (): HTMLWCardselectElement;
+    };
+    interface HTMLWCheckboxElement extends Components.WCheckbox, HTMLStencilElement {
+    }
+    var HTMLWCheckboxElement: {
+        prototype: HTMLWCheckboxElement;
+        new (): HTMLWCheckboxElement;
+    };
+    interface HTMLWChipElement extends Components.WChip, HTMLStencilElement {
+    }
+    var HTMLWChipElement: {
+        prototype: HTMLWChipElement;
+        new (): HTMLWChipElement;
+    };
     interface HTMLWColElement extends Components.WCol, HTMLStencilElement {
     }
     var HTMLWColElement: {
         prototype: HTMLWColElement;
         new (): HTMLWColElement;
+    };
+    interface HTMLWDialogElement extends Components.WDialog, HTMLStencilElement {
+    }
+    var HTMLWDialogElement: {
+        prototype: HTMLWDialogElement;
+        new (): HTMLWDialogElement;
+    };
+    interface HTMLWDropdownElement extends Components.WDropdown, HTMLStencilElement {
+    }
+    var HTMLWDropdownElement: {
+        prototype: HTMLWDropdownElement;
+        new (): HTMLWDropdownElement;
+    };
+    interface HTMLWFilepickerElement extends Components.WFilepicker, HTMLStencilElement {
+    }
+    var HTMLWFilepickerElement: {
+        prototype: HTMLWFilepickerElement;
+        new (): HTMLWFilepickerElement;
+    };
+    interface HTMLWFormElement extends Components.WForm, HTMLStencilElement {
+    }
+    var HTMLWFormElement: {
+        prototype: HTMLWFormElement;
+        new (): HTMLWFormElement;
+    };
+    interface HTMLWGroupElement extends Components.WGroup, HTMLStencilElement {
+    }
+    var HTMLWGroupElement: {
+        prototype: HTMLWGroupElement;
+        new (): HTMLWGroupElement;
+    };
+    interface HTMLWIconElement extends Components.WIcon, HTMLStencilElement {
+    }
+    var HTMLWIconElement: {
+        prototype: HTMLWIconElement;
+        new (): HTMLWIconElement;
     };
     interface HTMLWInputElement extends Components.WInput, HTMLStencilElement {
     }
@@ -62,11 +384,59 @@ declare global {
         prototype: HTMLWModalElement;
         new (): HTMLWModalElement;
     };
+    interface HTMLWNotificationElement extends Components.WNotification, HTMLStencilElement {
+    }
+    var HTMLWNotificationElement: {
+        prototype: HTMLWNotificationElement;
+        new (): HTMLWNotificationElement;
+    };
+    interface HTMLWObserverElement extends Components.WObserver, HTMLStencilElement {
+    }
+    var HTMLWObserverElement: {
+        prototype: HTMLWObserverElement;
+        new (): HTMLWObserverElement;
+    };
+    interface HTMLWRadiogroupElement extends Components.WRadiogroup, HTMLStencilElement {
+    }
+    var HTMLWRadiogroupElement: {
+        prototype: HTMLWRadiogroupElement;
+        new (): HTMLWRadiogroupElement;
+    };
     interface HTMLWRowElement extends Components.WRow, HTMLStencilElement {
     }
     var HTMLWRowElement: {
         prototype: HTMLWRowElement;
         new (): HTMLWRowElement;
+    };
+    interface HTMLWSelectElement extends Components.WSelect, HTMLStencilElement {
+    }
+    var HTMLWSelectElement: {
+        prototype: HTMLWSelectElement;
+        new (): HTMLWSelectElement;
+    };
+    interface HTMLWSliderElement extends Components.WSlider, HTMLStencilElement {
+    }
+    var HTMLWSliderElement: {
+        prototype: HTMLWSliderElement;
+        new (): HTMLWSliderElement;
+    };
+    interface HTMLWSpoilerElement extends Components.WSpoiler, HTMLStencilElement {
+    }
+    var HTMLWSpoilerElement: {
+        prototype: HTMLWSpoilerElement;
+        new (): HTMLWSpoilerElement;
+    };
+    interface HTMLWStepperElement extends Components.WStepper, HTMLStencilElement {
+    }
+    var HTMLWStepperElement: {
+        prototype: HTMLWStepperElement;
+        new (): HTMLWStepperElement;
+    };
+    interface HTMLWTabsElement extends Components.WTabs, HTMLStencilElement {
+    }
+    var HTMLWTabsElement: {
+        prototype: HTMLWTabsElement;
+        new (): HTMLWTabsElement;
     };
     interface HTMLWTextareaElement extends Components.WTextarea, HTMLStencilElement {
     }
@@ -74,65 +444,414 @@ declare global {
         prototype: HTMLWTextareaElement;
         new (): HTMLWTextareaElement;
     };
+    interface HTMLWToggleElement extends Components.WToggle, HTMLStencilElement {
+    }
+    var HTMLWToggleElement: {
+        prototype: HTMLWToggleElement;
+        new (): HTMLWToggleElement;
+    };
+    interface HTMLWTooltipElement extends Components.WTooltip, HTMLStencilElement {
+    }
+    var HTMLWTooltipElement: {
+        prototype: HTMLWTooltipElement;
+        new (): HTMLWTooltipElement;
+    };
     interface HTMLElementTagNameMap {
+        "w-alert": HTMLWAlertElement;
         "w-button": HTMLWButtonElement;
+        "w-cardselect": HTMLWCardselectElement;
+        "w-checkbox": HTMLWCheckboxElement;
+        "w-chip": HTMLWChipElement;
         "w-col": HTMLWColElement;
+        "w-dialog": HTMLWDialogElement;
+        "w-dropdown": HTMLWDropdownElement;
+        "w-filepicker": HTMLWFilepickerElement;
+        "w-form": HTMLWFormElement;
+        "w-group": HTMLWGroupElement;
+        "w-icon": HTMLWIconElement;
         "w-input": HTMLWInputElement;
         "w-modal": HTMLWModalElement;
+        "w-notification": HTMLWNotificationElement;
+        "w-observer": HTMLWObserverElement;
+        "w-radiogroup": HTMLWRadiogroupElement;
         "w-row": HTMLWRowElement;
+        "w-select": HTMLWSelectElement;
+        "w-slider": HTMLWSliderElement;
+        "w-spoiler": HTMLWSpoilerElement;
+        "w-stepper": HTMLWStepperElement;
+        "w-tabs": HTMLWTabsElement;
         "w-textarea": HTMLWTextareaElement;
+        "w-toggle": HTMLWToggleElement;
+        "w-tooltip": HTMLWTooltipElement;
     }
 }
 declare namespace LocalJSX {
+    interface WAlert {
+    }
     interface WButton {
+        "design"?: 'secondary' | 'error' | 'success' | 'warning' | 'primary';
+        "disabled"?: boolean;
+        "flat"?: boolean;
+        "onWClick"?: (event: CustomEvent<any>) => void;
+        "outline"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
+        "type"?: 'button' | 'submit' | 'reset';
+    }
+    interface WCardselect {
+    }
+    interface WCheckbox {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "label"?: string;
+        "onWChange"?: (event: CustomEvent<any>) => void;
+        "size"?: 'small' | 'medium' | 'large';
+    }
+    interface WChip {
+        "bold"?: boolean;
+        "clickable"?: boolean;
+        "design"?: ChipDesign;
+        "label"?: string;
+        "onWClick"?: (event: CustomEvent<any>) => void;
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface WCol {
     }
+    interface WDialog {
+        "name"?: string;
+    }
+    interface WDropdown {
+    }
+    interface WFilepicker {
+    }
+    interface WForm {
+    }
+    interface WGroup {
+    }
+    interface WIcon {
+    }
     interface WInput {
-        "border"?: string;
+        /**
+          * decide if autocapitalize should be enabled
+         */
+        "autoCapitalize"?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+        /**
+          * possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+         */
+        "autoComplete"?: string;
+        /**
+          * decide if autocorect should be enabled
+         */
+        "autoCorrect"?: 'off' | 'on';
+        /**
+          * decide if input should have border radius
+         */
+        "borderStyle"?: 'none' | 'small' | 'large' | 'round';
+        /**
+          * select design possible values: - 'default', 'error', 'success', 'warning'
+         */
+        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'secondary';
+        /**
+          * decide if the input is disabled
+         */
         "disabled"?: boolean;
+        /**
+          * change this prop to true to focus the input
+         */
+        "doFocus"?: boolean;
+        /**
+          * show error message below the input
+         */
         "errorMsg"?: string;
+        /**
+          * type of the input
+         */
+        "inputType"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+        /**
+          * text of label The label replace the placeholder
+         */
         "label"?: string;
-        "max"?: number;
-        "min"?: number;
-        "onChanged"?: (event: CustomEvent<any>) => void;
+        /**
+          * if input type == numeric -> max value
+         */
+        "max"?: string;
+        /**
+          * if input type == numeric -> min value
+         */
+        "min"?: string;
+        /**
+          * emitted on blur
+         */
+        "onWBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * emitted on change
+         */
+        "onWChange"?: (event: CustomEvent<any>) => void;
+        /**
+          * emitted on focus
+         */
+        "onWFocus"?: (event: CustomEvent<any>) => void;
+        /**
+          * emitted on input
+         */
+        "onWInput"?: (event: CustomEvent<any>) => void;
+        /**
+          * set the pattern for the input
+         */
+        "pattern"?: string;
+        /**
+          * decide if the input is readonly
+         */
         "readonly"?: boolean;
+        /**
+          * decide if input is required (for forms)
+         */
         "required"?: boolean;
-        "setFocus"?: boolean;
-        "success"?: boolean;
-        "type"?: string;
-        "validate"?: Function;
-        "value"?: string;
-        "warning"?: boolean;
+        /**
+          * size of the input
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * decide if spellcheck should be enabled
+         */
+        "spellCheck"?: boolean;
+        /**
+          * if input type == numeric -> step value
+         */
+        "step"?: string;
+        /**
+          * use function returning a boolean to validate the input -> if false, it displays error-msg
+         */
+        "validate"?: boolean;
+        /**
+          * the value of the input
+         */
+        "value"?: string | number | null;
     }
     interface WModal {
         "closeOnClick"?: boolean;
+        "maxHeight"?: string;
+        "maxWidth"?: string;
+        "minHeight"?: string;
+        "minWidth"?: string;
+        "mode"?: 'desktop' | 'mobile';
+        "moveable"?: boolean;
         "name"?: string;
         "onBeforeOpen"?: (event: CustomEvent<any>) => void;
+        "resetPosition"?: boolean;
+        "resizeable"?: boolean;
+        "topRightClose"?: boolean;
+    }
+    interface WNotification {
+        "position"?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
+    }
+    interface WObserver {
+        "onUnvisible"?: (event: CustomEvent<any>) => void;
+        "onVisible"?: (event: CustomEvent<any>) => void;
+    }
+    interface WRadiogroup {
+        "alignment"?: 'vertical' | 'horizontal';
+        "label"?: string;
+        "onWInput"?: (event: CustomEvent<any>) => void;
+        "options"?: Array<Option>;
+        "value"?: any;
     }
     interface WRow {
     }
+    interface WSelect {
+        /**
+          * decide if autocapitalize should be enabled
+         */
+        "autoCapitalize"?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+        /**
+          * possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+         */
+        "autoComplete"?: string;
+        /**
+          * decide if autocorect should be enabled
+         */
+        "autoCorrect"?: 'off' | 'on';
+        /**
+          * decide if input should have border radius
+         */
+        "borderStyle"?: 'none' | 'small' | 'large' | 'round';
+        /**
+          * select design possible values: - 'default', 'error', 'success', 'warning'
+         */
+        "design"?: 'outline' | 'primary' | 'error' | 'success' | 'warning' | 'default';
+        /**
+          * decide if the input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * change this prop to true to focus the input
+         */
+        "doFocus"?: boolean;
+        /**
+          * show error message below the input
+         */
+        "errorMsg"?: string;
+        /**
+          * type of the input
+         */
+        "inputType"?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search';
+        /**
+          * text of label The label replace the placeholder
+         */
+        "label"?: string;
+        /**
+          * if input type == numeric -> max value
+         */
+        "max"?: string;
+        /**
+          * if input type == numeric -> min value
+         */
+        "min"?: string;
+        "multiple"?: boolean;
+        /**
+          * emitted on blur
+         */
+        "onWBlur"?: (event: CustomEvent<any>) => void;
+        /**
+          * emitted on change
+         */
+        "onWChange"?: (event: CustomEvent<any>) => void;
+        /**
+          * emitted on focus
+         */
+        "onWFocus"?: (event: CustomEvent<any>) => void;
+        /**
+          * emitted on input
+         */
+        "onWInput"?: (event: CustomEvent<any>) => void;
+        "options"?: Option[];
+        /**
+          * set the pattern for the input
+         */
+        "pattern"?: string;
+        /**
+          * decide if the input is readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * decide if input is required (for forms)
+         */
+        "required"?: boolean;
+        "searchable"?: boolean;
+        /**
+          * size of the input
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * decide if spellcheck should be enabled
+         */
+        "spellCheck"?: boolean;
+        /**
+          * if input type == numeric -> step value
+         */
+        "step"?: string;
+        /**
+          * use function returning a boolean to validate the input -> if false, it displays error-msg
+         */
+        "validate"?: boolean;
+        /**
+          * the value of the input
+         */
+        "value"?: string | number | null;
+    }
+    interface WSlider {
+    }
+    interface WSpoiler {
+    }
+    interface WStepper {
+        "allData"?: boolean;
+        "nextStepAvailable"?: boolean;
+        "onWStep"?: (event: CustomEvent<any>) => void;
+        "onWSubmit"?: (event: CustomEvent<any>) => void;
+        /**
+          * define steps without label -> input number of steps with label -> input label of each step as array
+         */
+        "steps"?: number | any[];
+    }
+    interface WTabs {
+    }
     interface WTextarea {
+        "cols"?: number;
+        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'default';
+        "disabled"?: boolean;
+        "label"?: string;
+        "onWInput"?: (event: CustomEvent<any>) => void;
+        "readonly"?: boolean;
+        "required"?: boolean;
+        "resize"?: 'none' | 'both' | 'horizontal' | 'vertical';
+        "rows"?: number;
+        "size"?: 'small' | 'medium' | 'large';
+        "value"?: string | null;
+    }
+    interface WToggle {
+    }
+    interface WTooltip {
+        "axis"?: 'x' | 'y';
+        "text"?: string;
     }
     interface IntrinsicElements {
+        "w-alert": WAlert;
         "w-button": WButton;
+        "w-cardselect": WCardselect;
+        "w-checkbox": WCheckbox;
+        "w-chip": WChip;
         "w-col": WCol;
+        "w-dialog": WDialog;
+        "w-dropdown": WDropdown;
+        "w-filepicker": WFilepicker;
+        "w-form": WForm;
+        "w-group": WGroup;
+        "w-icon": WIcon;
         "w-input": WInput;
         "w-modal": WModal;
+        "w-notification": WNotification;
+        "w-observer": WObserver;
+        "w-radiogroup": WRadiogroup;
         "w-row": WRow;
+        "w-select": WSelect;
+        "w-slider": WSlider;
+        "w-spoiler": WSpoiler;
+        "w-stepper": WStepper;
+        "w-tabs": WTabs;
         "w-textarea": WTextarea;
+        "w-toggle": WToggle;
+        "w-tooltip": WTooltip;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "w-alert": LocalJSX.WAlert & JSXBase.HTMLAttributes<HTMLWAlertElement>;
             "w-button": LocalJSX.WButton & JSXBase.HTMLAttributes<HTMLWButtonElement>;
+            "w-cardselect": LocalJSX.WCardselect & JSXBase.HTMLAttributes<HTMLWCardselectElement>;
+            "w-checkbox": LocalJSX.WCheckbox & JSXBase.HTMLAttributes<HTMLWCheckboxElement>;
+            "w-chip": LocalJSX.WChip & JSXBase.HTMLAttributes<HTMLWChipElement>;
             "w-col": LocalJSX.WCol & JSXBase.HTMLAttributes<HTMLWColElement>;
+            "w-dialog": LocalJSX.WDialog & JSXBase.HTMLAttributes<HTMLWDialogElement>;
+            "w-dropdown": LocalJSX.WDropdown & JSXBase.HTMLAttributes<HTMLWDropdownElement>;
+            "w-filepicker": LocalJSX.WFilepicker & JSXBase.HTMLAttributes<HTMLWFilepickerElement>;
+            "w-form": LocalJSX.WForm & JSXBase.HTMLAttributes<HTMLWFormElement>;
+            "w-group": LocalJSX.WGroup & JSXBase.HTMLAttributes<HTMLWGroupElement>;
+            "w-icon": LocalJSX.WIcon & JSXBase.HTMLAttributes<HTMLWIconElement>;
             "w-input": LocalJSX.WInput & JSXBase.HTMLAttributes<HTMLWInputElement>;
             "w-modal": LocalJSX.WModal & JSXBase.HTMLAttributes<HTMLWModalElement>;
+            "w-notification": LocalJSX.WNotification & JSXBase.HTMLAttributes<HTMLWNotificationElement>;
+            "w-observer": LocalJSX.WObserver & JSXBase.HTMLAttributes<HTMLWObserverElement>;
+            "w-radiogroup": LocalJSX.WRadiogroup & JSXBase.HTMLAttributes<HTMLWRadiogroupElement>;
             "w-row": LocalJSX.WRow & JSXBase.HTMLAttributes<HTMLWRowElement>;
+            "w-select": LocalJSX.WSelect & JSXBase.HTMLAttributes<HTMLWSelectElement>;
+            "w-slider": LocalJSX.WSlider & JSXBase.HTMLAttributes<HTMLWSliderElement>;
+            "w-spoiler": LocalJSX.WSpoiler & JSXBase.HTMLAttributes<HTMLWSpoilerElement>;
+            "w-stepper": LocalJSX.WStepper & JSXBase.HTMLAttributes<HTMLWStepperElement>;
+            "w-tabs": LocalJSX.WTabs & JSXBase.HTMLAttributes<HTMLWTabsElement>;
             "w-textarea": LocalJSX.WTextarea & JSXBase.HTMLAttributes<HTMLWTextareaElement>;
+            "w-toggle": LocalJSX.WToggle & JSXBase.HTMLAttributes<HTMLWToggleElement>;
+            "w-tooltip": LocalJSX.WTooltip & JSXBase.HTMLAttributes<HTMLWTooltipElement>;
         }
     }
 }

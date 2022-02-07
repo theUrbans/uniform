@@ -4,15 +4,91 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-    <link rel="stylesheet" href="/build/comps.css" />
-    <script type="module" src="/build/comps.esm.js"></script>
-    <script nomodule src="/build/comps.js"></script>
+    <!-- <link rel="stylesheet" href="/build/uniform.css" /> -->
+    <link href="/build/windi.css" rel="stylesheet" />
+    <script type="module" src="/build/uniform.esm.js"></script>
+    <script nomodule src="/build/uniform.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .col {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 10px;
+      }
+      .space {
+        height: 1500px;
+      }
+    </style>
   </head>
   <body>
+    <w-notification id="noti"></w-notification>
     <button onclick="openModal()">open modal</button>
+    <button onclick="openDialog()">open dialog</button>
     <button onclick="focusInput()">focus input</button>
     <button onclick="blurInput()">blur input</button>
-    <w-modal name="test">
+    <button onclick="sendNoti()">send noti</button>
+    <div class="col">
+      <div class="row">
+        <w-chip design="slate" label="slate">consectetur adipisicing.</w-chip>
+        <w-chip design="stone" label="stone">consectetur adipisicing.</w-chip>
+        <w-chip design="red" label="red">consectetur adipisicing.</w-chip>
+        <w-chip design="amber" label="amber">consectetur adipisicing.</w-chip>
+      </div>
+      <div class="row">
+        <w-chip design="lime" label="lime">consectetur adipisicing.</w-chip>
+        <w-chip design="emerald" label="emerald">consectetur adipisicing.</w-chip>
+        <w-chip design="teal" label="teal">consectetur adipisicing.</w-chip>
+        <w-chip design="cyan" label="cyan">consectetur adipisicing.</w-chip>
+      </div>
+      <div class="row">
+        <w-chip design="indigo" label="indigo">consectetur adipisicing.</w-chip>
+        <w-chip design="fuchsia" label="fuchsia">consectetur adipisicing.</w-chip>
+        <w-chip design="pink" label="pink">consectetur adipisicing.</w-chip>
+        <w-chip design="success" label="success">consectetur adipisicing.</w-chip>
+      </div>
+      <div class="row">
+        <w-chip design="error" label="error">consectetur adipisicing.</w-chip>
+        <w-chip design="warning" label="warning">consectetur adipisicing.</w-chip>
+        <w-chip design="primary" label="primary">consectetur adipisicing.</w-chip>
+        <w-chip design="secondary" label="secondary">consectetur adipisicing.</w-chip>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <w-chip design="slate" bold>consectetur adipisicing.</w-chip>
+        <w-chip design="stone">consectetur adipisicing.</w-chip>
+        <w-chip design="red">consectetur adipisicing.</w-chip>
+        <w-chip design="amber">consectetur adipisicing.</w-chip>
+      </div>
+      <div class="row">
+        <w-chip design="lime">consectetur adipisicing.</w-chip>
+        <w-chip design="emerald">consectetur adipisicing.</w-chip>
+        <w-chip design="teal">consectetur adipisicing.</w-chip>
+        <w-chip design="cyan">consectetur adipisicing.</w-chip>
+      </div>
+      <div class="row">
+        <w-chip design="indigo">consectetur adipisicing.</w-chip>
+        <w-chip design="fuchsia">consectetur adipisicing.</w-chip>
+        <w-chip design="pink">consectetur adipisicing.</w-chip>
+        <w-chip design="success">consectetur adipisicing.</w-chip>
+      </div>
+      <div class="row">
+        <w-chip design="error">consectetur adipisicing.</w-chip>
+        <w-chip design="warning">consectetur adipisicing.</w-chip>
+        <w-chip design="primary">consectetur adipisicing.</w-chip>
+        <w-chip design="secondary">consectetur adipisicing.</w-chip>
+      </div>
+    </div>
+    <w-modal name="tesst">
       <span slot="header">Hallo</span>
       <div slot="body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur veniam, odit consequuntur qui reprehenderit at! Neque, eum, sapiente beatae nihil pariatur illo maxime
@@ -22,21 +98,199 @@
         veniam commodi iure incidunt aliquam sapiente, aliquid quibusdam, voluptates dolores?
       </div>
     </w-modal>
-    <w-input label="Test" />
+    <w-dialog></w-dialog>
+    <div style="resize: both; border: 2px solid black; overflow: auto">
+      <p>testestsetse t</p>
+    </div>
+    <div class="col">
+      <div class="row">
+        <w-stepper>
+          <div slot="step-1">
+            <form action="" class="col">
+              <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
+              <div class="row">
+                <w-textarea label="Situation beschreiben" resize="both" design="outline" required></w-textarea>
+                <w-select label="Select" searchable multiple design="outline"></w-select>
+              </div>
+              <div class="row">
+                <w-button text="abbrechen" id="test" design="error" outline></w-button>
+                <w-button text="weiter" type="submit" id="test" design="success" outline></w-button>
+              </div>
+              <div class="row">
+                <w-radiogroup></w-radiogroup>
+              </div>
+            </form>
+          </div>
+          <div slot="step-2">
+            <w-button text="success" id="test" size="large" design="success"></w-button>
+            <w-button text="success" id="test" size="medium" design="success"></w-button>
+            <w-button text="success" id="test" size="small" design="success"></w-button>
+          </div>
+        </w-stepper>
+      </div>
+      <div class="row">
+        <w-input label="numeric" do-focus="false" required="true" errorMsg="Fehler alaram" size="small" input-type="numeric"></w-input>
+        <w-input label="decimal" do-focus="false" required="true" errorMsg="Fehler alaram" size="medium" input-type="decimal"></w-input>
+        <w-input label="Label 132" do-focus="false" required="true" errorMsg="Fehler alaram" size="large"></w-input>
+      </div>
+      <div class="row">
+        <w-input id="input" label="Label 132" do-focus="false" required="true" design="warning" errorMsg="Fehler alaram" size="medium" disabled></w-input>
+        <w-input id="input" label="Label 132" do-focus="false" required="true" design="error" errorMsg="Fehler alaram" size="medium"></w-input>
+        <w-input id="input" label="Label 132" do-focus="false" required="true" design="success" errorMsg="Fehler alaram" size="medium"></w-input>
+        <w-input id="input" label="Label 132" do-focus="false" required="true" design="primary" errorMsg="Fehler alaram" size="medium"></w-input>
+      </div>
+      <div class="row">
+        <w-button text="success" id="test" size="large" design="success"></w-button>
+        <w-button text="success" id="test" size="medium" design="success"></w-button>
+        <w-button text="success" id="test" size="small" design="success"></w-button>
+      </div>
+      <div class="row">
+        <w-button text="error" id="tes2t" size="large" design="error"></w-button>
+        <w-button text="error" id="t3est" size="medium" design="error"></w-button>
+        <w-button text="error" id="t3est" size="small" design="error"></w-button>
+      </div>
+      <div class="row">
+        <w-button text="warning" id="t3est" size="large" design="warning"></w-button>
+        <w-button text="warning" id="t3est" size="medium" disabled design="warning"></w-button>
+        <w-button text="warning" id="t3est" size="small" design="warning"></w-button>
+      </div>
+      <div class="row">
+        <w-button text="default" id="t3est" size="large" design="secondary"></w-button>
+        <w-button text="default" id="t3est" size="medium" design="secondary"></w-button>
+        <w-button text="default" id="t3est" size="small" design="secondary"></w-button>
+      </div>
+      <div class="row">
+        <w-button text="primary" id="t3est" size="large" design="primary"></w-button>
+        <w-button text="primary" id="t3est" size="medium" design="primary"></w-button>
+        <w-button text="primary" id="t3est" size="small" design="primary"></w-button>
+      </div>
+      <div class="row">
+        <w-button text="success outline" id="test" size="large" design="success" outline></w-button>
+        <w-button text="success outline" id="test" size="medium" design="success" outline></w-button>
+        <w-button text="success outline" id="test" size="small" design="success" outline></w-button>
+      </div>
+      <div class="row">
+        <w-button text="error outline" id="tes2t" size="large" design="error" outline></w-button>
+        <w-button text="error outline" id="t3est" size="medium" design="error" outline></w-button>
+        <w-button text="error outline" id="t3est" size="small" design="error" outline></w-button>
+      </div>
+      <div class="row">
+        <w-button text="warning outline" id="t3est" size="large" design="warning" outline></w-button>
+        <w-button text="warning outline" id="t3est" size="medium" design="warning" outline></w-button>
+        <w-button text="warning outline" id="t3est" size="small" design="warning" outline></w-button>
+      </div>
+      <div class="row">
+        <w-button text="default outline" id="t3est" size="large" design="secondary" outline></w-button>
+        <w-button text="default outline" id="t3est" size="medium" design="secondary" outline></w-button>
+        <w-button text="default outline" id="t3est" size="small" design="secondary" outline></w-button>
+      </div>
+      <div class="row">
+        <w-button text="primary outline" id="t3est" size="large" design="primary" outline></w-button>
+        <w-button text="primary outline" id="t3est" size="medium" design="primary" disabled outline></w-button>
+        <w-button text="primary outline" id="t3est" size="small" design="primary" outline></w-button>
+      </div>
+      <div class="row">
+        <w-tooltip text="Tooltip" axis="x" design="primary">
+          <w-button text="primary flat" id="t3est" size="large" design="primary" outline></w-button>
+        </w-tooltip>
+        <w-tooltip text="TooltipTooltip Tooltip Tooltip Tooltip Tooltip Tooltip Tooltip Tooltip Tooltip" axis="y" design="primary">
+          <w-button text="primary flat" id="t3est" size="large" design="primary" flat></w-button>
+        </w-tooltip>
+        <w-button text="primary flat" id="t3est" size="medium" design="primary" flat></w-button>
+        <w-tooltip text="Tooltip" axis="y" design="primary">
+          <w-button text="primary flat" id="t3est" size="small" design="primary" flat></w-button>
+        </w-tooltip>
+      </div>
+      <div class="row">
+        <w-select label="Select" design="success" size="small"></w-select>
+        <w-select label="Select" searchable design="outline" size="medium"></w-select>
+        <w-select label="Select" multiple design="outline" size="large"></w-select>
+        <w-select label="Select" searchable multiple design="outline"></w-select>
+      </div>
+      <div class="row">
+        <w-select label="Select" searchable multiple design="outline"></w-select>
+        <w-input id="input" label="Label 132" do-focus="false" required="true" errorMsg="Fehler alaram" size="medium"></w-input>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="row">
+      <w-checkbox id="test" label="Checkbox" design="primary" size="small"></w-checkbox>
+      <w-checkbox id="test" design="primary" size="medium"></w-checkbox>
+      <w-checkbox id="test" label="Checkbox" design="primary" size="large"></w-checkbox>
+    </div>
+    <w-select label="Select" multiple searchable size="large" design="outline"></w-select>
+    <w-observer id="xxa">test</w-observer>
+    <div class="space"></div>
   </body>
   <script>
     const openModal = () => {
       const body = document.querySelector('body');
-      body.dispatchEvent(new CustomEvent('show-modal', { detail: { name: 'test', params: { test: '12' } } }));
+      body.dispatchEvent(new CustomEvent('show-modal', { detail: { name: 'tesst', params: { test: '12' } } }));
+    };
+    const openDialog = () => {
+      const body = document.querySelector('body');
+      body.dispatchEvent(
+        new CustomEvent('open-dialog', {
+          detail: {
+            params: {
+              title: 'das ist ein test',
+              content: 'viel test text viel test text viel test \n text viel test text viel test text viel test text',
+              buttons: [
+                {
+                  title: 'Nein',
+                  design: 'error',
+                },
+                {
+                  title: 'Ja',
+                  design: 'success',
+                  handler: () => {
+                    console.log('ja');
+                    body.dispatchEvent(
+                      new CustomEvent('show-modal', {
+                        detail: { name: 'tesst' },
+                      }),
+                    );
+                  },
+                },
+              ],
+            },
+          },
+        }),
+      );
     };
     const focusInput = () => {
       const input = document.querySelector('w-input');
-      input.setAttribute('set-focus', true);
-      // console.log(input);
+      // input.setAttribute('do-focus', true);
+      input.setFocus();
+      console.log(input);
     };
     const blurInput = () => {
       const input = document.querySelector('w-input');
-      input.setAttribute('set-focus', false);
+      console.log(input);
+      input.setAttribute('do-focus', false);
     };
+    const button = document.getElementById('test');
+    button.addEventListener('click', () => {
+      console.log('click');
+    });
+    const input = document.getElementById('input');
+    input.addEventListener('input', e => {
+      console.log(e.target.value);
+    });
+    let x = 0;
+    const sendNoti = () => {
+      const noti = document.querySelector('w-notification');
+      console.log(noti);
+      // noti.warning('Fehler ' + x, 'FehlerFehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler FehlerFehler', 5000);
+      noti.show('success', { title: 'Fehler ' + x, message: 'FehlerFehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler FehlerFehler', delay: 5000 });
+      x += 1;
+    };
+    const observer = document.getElementById('xxa');
+    observer.addEventListener('visible', e => {
+      console.log(e);
+    });
+    observer.addEventListener('unvisible', e => {
+      console.log(e);
+    });
   </script>
 </html>

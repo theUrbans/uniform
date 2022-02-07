@@ -1,0 +1,81 @@
+.wrapper {
+  @apply relative inline-block;
+}
+.tooltip {
+  @apply invisible absolute z-10 p-3 text-center text-sm font-medium text-white bg-gray-900 border-radius shadow-sm opacity-0 transition-opacity duration-300 dark:bg-gray-700;
+}
+.visible {
+  @apply visible opacity-100 transition-opacity duration-300;
+}
+.top {
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.top:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid black;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom {
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid black;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.left {
+  top: 50%;
+  right: 105%;
+  transform: translateY(-50%);
+}
+.left:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid black;
+  right: -6px;
+  bottom: 50%;
+  transform: translateY(50%);
+}
+.right {
+  top: 50%;
+  left: 105%;
+  transform: translateY(-50%);
+}
+.right:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid black;
+  left: -6px;
+  bottom: 50%;
+  transform: translateY(50%);
+}

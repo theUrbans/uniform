@@ -1,3 +1,3 @@
-export function format(first: string, middle: string, last: string): string {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
+export const inputEvent = new Event('input');
+export const changeEvent = new Event('change');
+export const clickEvent = new Event('click');

@@ -1,3 +1,55 @@
 :host {
   display: block;
 }
+
+.button {
+  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md flex flex-row gap-2;
+}
+.sm {
+  @apply py-1 px-4 font-normal border-radius text-sm border;
+}
+.md {
+  @apply py-1 px-8 font-normal tracking-wide border-radius text-base border-2;
+}
+.lg {
+  @apply py-1.5 px-12 font-semibold tracking-wide border-radius text-lg border-3;
+}
+.primary {
+  @apply primary;
+}
+.fill-primary {
+  @apply primary-fill;
+}
+.error {
+  @apply error;
+}
+.fill-error {
+  @apply error-fill;
+}
+.success {
+  @apply success;
+}
+.fill-success {
+  @apply success-fill;
+}
+.warning {
+  @apply warning;
+}
+.fill-warning {
+  @apply warning-fill;
+}
+.secondary {
+  @apply secondary;
+}
+.fill-secondary {
+  @apply secondary-fill;
+}
+.outline {
+  @apply bg-transparent;
+}
+.flat {
+  @apply bg-transparent border-transparent hover:border-transparent;
+}
+.disabled {
+  @apply cursor-not-allowed opacity-50;
+}

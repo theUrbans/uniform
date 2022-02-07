@@ -1,6 +1,6 @@
 {
   "name": "@dieurbans/uniform",
-  "version": "0.0.3",
+  "version": "0.0.3-2",
   "description": "UNIFORM component library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -12,10 +12,11 @@
   "unpkg": "dist/uniform/uniform.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dieUrbans/uniform.git"
+    "url": "https://github.com/dieUrbans/uniform.git",
+    "directory": "@dieurbans/uniform"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/dieUrbans"
   },
   "files": [
     "dist/",
@@ -33,9 +34,16 @@
     "@stencil/sass": "^1.5.2"
   },
   "devDependencies": {
+    "@codeperate/stencil-windicss": "^2.1.2",
+    "@stencil/postcss": "^2.1.0",
+    "@stencil/store": "^1.5.0",
+    "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^26.0.24",
+    "@windicss/plugin-icons": "^1.0.2",
+    "autoprefixer": "^10.4.2",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
+    "postcss-windicss": "^1.0.0",
     "puppeteer": "^10.0.0"
   },
   "license": "MIT"

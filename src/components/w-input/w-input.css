@@ -1,3 +1,91 @@
 :host {
-  display: block;
+  @apply block w-full;
+}
+* {
+  outline: none;
+}
+.wrapper {
+  @apply relative px-2 rounded-xl mt-2 hover:shadow-md border-gray-300 flex;
+}
+.errorText {
+  @apply mb-4;
+}
+.input {
+  @apply block px-2 py-2 border-0 focus:outline-none bg-transparent flex-grow w-full placeholder-transparent;
+}
+
+.small {
+  @apply py-0 font-normal text-sm border border-solid;
+}
+.small input:focus-within ~ label,
+.small input:not(:placeholder-shown) ~ label {
+  @apply transform scale-80 -translate-y-4.5 z-0 ml-0.5 px-1 py-0;
+}
+.padding-small {
+  @apply pr-4;
+}
+.medium {
+  @apply font-semibold py-0 text-base border-2 border-solid;
+}
+.medium input:focus-within ~ label,
+.medium input:not(:placeholder-shown) ~ label {
+  @apply transform scale-80 -translate-y-5.5 z-0 ml-0.5 px-1 py-0;
+}
+.padding-medium {
+  @apply pr-5;
+}
+.large {
+  @apply font-semibold py-0 text-lg border-3 border-solid;
+}
+.large input:focus-within ~ label,
+.large input:not(:placeholder-shown) ~ label {
+  @apply transform scale-80 -translate-y-6.5 z-0 ml-1 px-1 py-0;
+}
+.padding-large {
+  @apply pr-6;
+}
+.text-small {
+  @apply text-sm;
+}
+.text-medium {
+  @apply text-base;
+}
+.text-large {
+  @apply text-lg;
+}
+.help-text {
+  @apply absolute top-11 left-2 font-semibold;
+}
+.label {
+  @apply absolute top-1/5 tracking-wide z-10 duration-300 pointer-events-none select-none rounded-t-lg;
+}
+.label-small {
+  @apply font-normal text-sm;
+}
+.label-medium {
+  @apply font-semibold text-base;
+}
+.label-large {
+  @apply font-semibold text-lg;
+}
+.reset {
+  @apply absolute right-1 bottom-3/7 transform translate-y-1/2 cursor-pointer;
+}
+.error {
+  @apply error;
+}
+.success {
+  @apply success;
+}
+.warning {
+  @apply warning;
+}
+.secondary {
+  @apply secondary;
+}
+.primary {
+  @apply primary;
+}
+.disabled {
+  @apply cursor-not-allowed opacity-50;
 }

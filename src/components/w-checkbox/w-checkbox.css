@@ -1,0 +1,59 @@
+.container {
+  @apply select-none relative cursor-pointer flex justify-start items-center;
+}
+.size-small {
+  @apply text-sm pl-5 h-4;
+}
+.size-medium {
+  @apply text-base pl-8 h-7;
+}
+.size-large {
+  @apply text-lg pl-10 h-9;
+}
+.container input {
+  @apply absolute opacity-0 w-0 h-0;
+}
+.label {
+  @apply;
+}
+.checkmark {
+  @apply bg-gray-200 border-solid border-transparent hover:bg-gray-300 absolute left-0 top-0;
+}
+.container:hover input ~ .checkmark {
+  @apply border-gray-600;
+}
+
+input:checked ~ .checkmark {
+  @apply bg-blue-500;
+}
+
+.checkmark:after {
+  content: "";
+  @apply absolute hidden;
+}
+
+input:checked ~ .checkmark:after {
+  @apply block;
+}
+
+.checkmark:after {
+  @apply transform text-light-200 rotate-45 left-1/2 -translate-x-1/2 border-solid;
+}
+.smCheck {
+  @apply w-4 h-4 border rounded-md after:top-1/10 after:border-t-0 after:border-r-2 after:border-b-2 after:border-l-0 after:w-1 after:h-2;
+}
+.mdCheck {
+  @apply w-6 h-6 border-[1.5px] rounded-lg after:top-1/10 after:border-t-0 after:border-r-4 after:border-b-4 after:border-l-0 after:w-1.5 after:h-3;
+}
+.lgCheck {
+  @apply w-8 h-8 border-2 rounded-xl after:top-1/10 after:border-t-0 after:border-r-5 after:border-b-5 after:border-l-0 after:w-2 after:h-4;
+}
+.visible {
+  @apply visible;
+}
+.hidden {
+  @apply invisible;
+}
+.disabled {
+  @apply opacity-50 !cursor-not-allowed;
+}

@@ -1,9 +1,11 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import { windicssStencil } from '@codeperate/stencil-windicss';
 
 export const config: Config = {
   namespace: 'uniform',
-  globalStyle: 'src/assets/global.css',
+  globalStyle: 'src/global/uniform.css',
+  globalScript: 'src/global/global.ts',
   outputTargets: [
     {
       type: 'dist',
@@ -21,6 +23,9 @@ export const config: Config = {
     },
   ],
   plugins: [
-    sass()
+    sass(),
+    ...windicssStencil({
+      preflight: true,
+    }),
   ]
 };
