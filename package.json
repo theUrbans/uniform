@@ -11,8 +11,13 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/uniform/uniform.esm.js",
-  "repository": "dieurbans/uniform",
-  "bugs": "https://github.com/dieurbans/uniform/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dieurbans/uniform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dieurbans/uniform/issues"
+  },
   "files": [
     "dist/",
     "loader/"
@@ -40,5 +45,7 @@
     "postcss-windicss": "^1.0.0",
     "puppeteer": "^10.0.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/dieurbans/uniform#readme",
+  "author": "Wesley Urban"
 }
