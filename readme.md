@@ -10,7 +10,6 @@ UI Library for [Hoer GmbH](https://hoer-electronic.de/en/). Primarly used with V
 For usage with frameworks please refer to official [StencilJS Documentation](https://stenciljs.com/docs/overview).
 
 - [Components](#components)
-  - [Description](#description)
 
 # Components
 
@@ -21,257 +20,31 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 - 🔴 not ready (unstyled / no functions)
 - 🔵 planned (created, but empty files)
 
-| Name                  | Component      | State |
-| --------------------- | -------------- | ----- |
-| [Alert](#alert)       | w-alert        | 🔵    |
-| [Button](#button)     | w-button       | 🟢    |
-| [Card Select](#cs)    | w-cardselect   | 🔵    |
-| [Checkbox](#cb)       | w-checkbox     | 🟡    |
-| [Chip](#chip)         | w-chip         | 🟢    |
-| [Column](#col)        | w-col          | 🔵    |
-| [Dialog](#dialog)     | w-dialog       | 🟡    |
-| [Dropdown](#dd)       | w-dropdown     | 🔵    |
-| [Filepicker](#fp)     | w-filepicker   | 🔵    |
-| [Form](#form)         | w-form         | 🔵    |
-| [Group](#grp)         | w-group        | 🔵    |
-| [Icon](#i)            | w-icon         | 🔵    |
-| [Input](#input)       | w-input        | 🟡    |
-| [Modal](#modal)       | w-modal        | 🟡    |
-| [Notification](#noti) | w-notification | 🟡    |
-| [Observer](#obs)      | w-observer     | 🟢    |
-| [Radio Group](#rg)    | w-radiogroup   | 🟡    |
-| [Row](#row)           | w-row          | 🔵    |
-| [Select](#select)     | w-select       | 🟡    |
-| [Slider](#slider)     | w-slider       | 🔵    |
-| [Spoiler](#spoiler)   | w-spoiler      | 🔵    |
-| [Stepper](#stepper)   | w-stepper      | 🟡    |
-| [Tabs](#tabs)         | w-tabs         | 🔵    |
-| [Textarea](#ta)       | w-textarea     | 🟡    |
-| [Toggle](#toggle)     | w-toggle       | 🔵    |
-| [Tooltip](#tt)        | w-tooltip      | 🟡    |
-
-# Description
-
-<a name="description"></a>
-
-## Alert
-
-<a name="alert"></a>
-Similiar to the Dialog, but simplified. Just shows error text.
-
-### Usage
-
-> TODO
-
-## Button
-
-<a name="alert"></a>
-Simple Button component. Prestyled and easy to use.
-
-### Usage
-
-> TODO
-
-## Card Select
-
-<a name="cs"></a>
-Select between cards.
-
-### Usage
-
-> TODO
-
-## Checkbox
-
-<a name="cb"></a>
-Toggle a box, returning `true` or `false`
-
-### Usage
-
-> TODO
-
-## Chip
-
-<a name="chip"></a>
-a little box acting as standalone label
-
-### Usage
-
-> TODO
-
-## Column
-
-<a name="col"></a>
-Display Column
-
-### Usage
-
-> TODO
-
-## Dialog
-
-<a name="dialog"></a>
-
-### Usage
-
-> TODO
-
-## Dropdown
-
-<a name="dd"></a>
-
-### Usage
-
-> TODO
-
-## Filepicker
-
-<a name="fp"></a>
-
-### Usage
-
-> TODO
-
-## Form
-
-<a name="form"></a>
-
-### Usage
-
-> TODO
-
-## Group
-
-<a name="grp"></a>
-
-### Usage
-
-> TODO
-
-## Icon
-
-<a name="i"></a>
-
-### Usage
-
-> TODO
-
-## Input
-
-<a name="input"></a>
-
-### Usage
-
-> TODO
-
-## Modal
-
-<a name="modal"></a>
-
-### Usage
-
-> TODO
-
-## Notification
-
-<a name="noti"></a>
-
-### Usage
-
-> TODO
-
-## Observer
-
-<a name="obs"></a>
-
-### Usage
-
-> TODO
-
-## Radio Group
-
-<a name="rg"></a>
-
-### Usage
-
-> TODO
-
-## Row
-
-<a name="row"></a>
-
-### Usage
-
-> TODO
-
-## Select
-
-<a name="select"></a>
-
-### Usage
-
-> TODO
-
-## Slider
-
-<a name="slider"></a>
-
-### Usage
-
-> TODO
-
-## Spoiler
-
-<a name="spoiler"></a>
-
-### Usage
-
-> TODO
-
-## Stepper
-
-<a name="stepper"></a>
-
-### Usage
-
-> TODO
-
-##
-
-<a name=""></a>
-
-### Usage
-
-> TODO
-
-## Tabs
-
-<a name="tabs"></a>
-
-### Usage
-
-> TODO
-
-## Textarea
-
-<a name="ta"></a>
-
-### Usage
-
-> TODO
-
-## Toggle
-
-<a name="toggle"></a>
-
-### Usage
-
-> TODO
-
-## Tooltip
-
-<a name="tt"></a>
-
-### Usage
-
-> TODO
+| Name                                                     | Component      | State |
+| -------------------------------------------------------- | -------------- | ----- |
+| [Alert](\src\components\w-alert\readme.md)               | w-alert        | 🔵    |
+| [Button](\src\components\w-button\readme.md)             | w-button       | 🟢    |
+| [Card Select](\src\components\w-cardselect\readme.md)    | w-cardselect   | 🔵    |
+| [Checkbox](\src\components\w-checkbox\readme.md)         | w-checkbox     | 🟡    |
+| [Chip](\src\components\w-chip\readme.md)                 | w-chip         | 🟢    |
+| [Column](\src\components\w-col\readme.md)                | w-col          | 🔵    |
+| [Dialog](\src\components\w-dialog\readme.md)             | w-dialog       | 🟡    |
+| [Dropdown](\src\components\w-dropdown\readme.md)         | w-dropdown     | 🔵    |
+| [Filepicker](\src\components\w-filepicker\readme.md)     | w-filepicker   | 🔵    |
+| [Form](\src\components\w-form\readme.md)                 | w-form         | 🔵    |
+| [Group](\src\components\w-group\readme.md)               | w-group        | 🔵    |
+| [Icon](\src\components\w-icon\readme.md)                 | w-icon         | 🔵    |
+| [Input](\src\components\w-input\readme.md)               | w-input        | 🟡    |
+| [Modal](\src\components\w-modal\readme.md)               | w-modal        | 🟡    |
+| [Notification](\src\components\w-notification\readme.md) | w-notification | 🟡    |
+| [Observer](\src\components\w-observer\readme.md)         | w-observer     | 🟢    |
+| [Radio Group](\src\components\w-radiogroup\readme.md)    | w-radiogroup   | 🟡    |
+| [Row](\src\components\w-row\readme.md)                   | w-row          | 🔵    |
+| [Select](\src\components\w-select\readme.md)             | w-select       | 🟡    |
+| [Slider](\src\components\w-slider\readme.md)             | w-slider       | 🔵    |
+| [Spoiler](\src\components\w-spoiler\readme.md)           | w-spoiler      | 🔵    |
+| [Stepper](\src\components\w-stepper\readme.md)           | w-stepper      | 🟡    |
+| [Tabs](\src\components\w-tabs\readme.md)                 | w-tabs         | 🔵    |
+| [Textarea](\src\components\w-textarea\readme.md)         | w-textarea     | 🟡    |
+| [Toggle](\src\components\w-toggle\readme.md)             | w-toggle       | 🔵    |
+| [Tooltip](\src\components\w-tooltip\readme.md)           | w-tooltip      | 🟡    |

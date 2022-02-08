@@ -7,10 +7,19 @@
 
 ## Properties
 
-| Property       | Attribute        | Description | Type      | Default     |
-| -------------- | ---------------- | ----------- | --------- | ----------- |
-| `closeOnClick` | `close-on-click` |             | `boolean` | `true`      |
-| `name`         | `name`           |             | `string`  | `undefined` |
+| Property        | Attribute         | Description | Type                    | Default     |
+| --------------- | ----------------- | ----------- | ----------------------- | ----------- |
+| `closeOnClick`  | `close-on-click`  |             | `boolean`               | `true`      |
+| `maxHeight`     | `max-height`      |             | `string`                | `'auto'`    |
+| `maxWidth`      | `max-width`       |             | `string`                | `'auto'`    |
+| `minHeight`     | `min-height`      |             | `string`                | `'auto'`    |
+| `minWidth`      | `min-width`       |             | `string`                | `'auto'`    |
+| `mode`          | `mode`            |             | `"desktop" \| "mobile"` | `'desktop'` |
+| `moveable`      | `moveable`        |             | `boolean`               | `true`      |
+| `name`          | `name`            |             | `string`                | `undefined` |
+| `resetPosition` | `reset-position`  |             | `boolean`               | `true`      |
+| `resizeable`    | `resizeable`      |             | `boolean`               | `true`      |
+| `topRightClose` | `top-right-close` |             | `boolean`               | `false`     |
 
 
 ## Events
@@ -42,6 +51,19 @@ Type: `Promise<void>`
 
 
 
+
+## Dependencies
+
+### Used by
+
+ - [w-dialog](../w-dialog)
+
+### Graph
+```mermaid
+graph TD;
+  w-dialog --> w-modal
+  style w-modal fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
