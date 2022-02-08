@@ -1,4 +1,5 @@
 [![Publish Uniform](https://github.com/dieUrbans/uniform/actions/workflows/npm-publish.yml/badge.svg?branch=master)](https://github.com/dieUrbans/uniform/actions/workflows/npm-publish.yml)
+
 # [WIP] Uniform Component Library
 
 > DO NOT USE, API WILL CHANGE
@@ -21,31 +22,31 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 - 🔴 not ready (unstyled / no functions)
 - 🔵 planned (created, but empty files)
 
-| Name                                                     | Component      | State |
-| -------------------------------------------------------- | -------------- | ----- |
-| [Alert](\src\components\w-alert\readme.md)               | w-alert        | 🔵    |
-| [Button](\src\components\w-button\readme.md)             | w-button       | 🟢    |
-| [Card Select](\src\components\w-cardselect\readme.md)    | w-cardselect   | 🔵    |
-| [Checkbox](\src\components\w-checkbox\readme.md)         | w-checkbox     | 🟡    |
-| [Chip](\src\components\w-chip\readme.md)                 | w-chip         | 🟢    |
-| [Column](\src\components\w-col\readme.md)                | w-col          | 🔵    |
-| [Dialog](\src\components\w-dialog\readme.md)             | w-dialog       | 🟡    |
-| [Dropdown](\src\components\w-dropdown\readme.md)         | w-dropdown     | 🔵    |
-| [Filepicker](\src\components\w-filepicker\readme.md)     | w-filepicker   | 🔵    |
-| [Form](\src\components\w-form\readme.md)                 | w-form         | 🔵    |
-| [Group](\src\components\w-group\readme.md)               | w-group        | 🔵    |
-| [Icon](\src\components\w-icon\readme.md)                 | w-icon         | 🔵    |
-| [Input](\src\components\w-input\readme.md)               | w-input        | 🟡    |
-| [Modal](\src\components\w-modal\readme.md)               | w-modal        | 🟡    |
-| [Notification](\src\components\w-notification\readme.md) | w-notification | 🟡    |
-| [Observer](\src\components\w-observer\readme.md)         | w-observer     | 🟢    |
-| [Radio Group](\src\components\w-radiogroup\readme.md)    | w-radiogroup   | 🟡    |
-| [Row](\src\components\w-row\readme.md)                   | w-row          | 🔵    |
-| [Select](\src\components\w-select\readme.md)             | w-select       | 🟡    |
-| [Slider](\src\components\w-slider\readme.md)             | w-slider       | 🔵    |
-| [Spoiler](\src\components\w-spoiler\readme.md)           | w-spoiler      | 🔵    |
-| [Stepper](\src\components\w-stepper\readme.md)           | w-stepper      | 🟡    |
-| [Tabs](\src\components\w-tabs\readme.md)                 | w-tabs         | 🔵    |
-| [Textarea](\src\components\w-textarea\readme.md)         | w-textarea     | 🟡    |
-| [Toggle](\src\components\w-toggle\readme.md)             | w-toggle       | 🔵    |
-| [Tooltip](\src\components\w-tooltip\readme.md)           | w-tooltip      | 🟡    |
+| Name                                                                 | Component      | State |
+| -------------------------------------------------------------------- | -------------- | ----- |
+| [Alert](/tree/master/src/components/w-alert/readme.md)               | w-alert        | 🔵    |
+| [Button](/tree/master/src/components/w-button/readme.md)             | w-button       | 🟢    |
+| [Card Select](/tree/master/src/components/w-cardselect/readme.md)    | w-cardselect   | 🔵    |
+| [Checkbox](/tree/master/src/components/w-checkbox/readme.md)         | w-checkbox     | 🟡    |
+| [Chip](/tree/master/src/components/w-chip/readme.md)                 | w-chip         | 🟢    |
+| [Column](/tree/master/src/components/w-col/readme.md)                | w-col          | 🔵    |
+| [Dialog](/tree/master/src/components/w-dialog/readme.md)             | w-dialog       | 🟡    |
+| [Dropdown](/tree/master/src/components/w-dropdown/readme.md)         | w-dropdown     | 🔵    |
+| [Filepicker](/tree/master/src/components/w-filepicker/readme.md)     | w-filepicker   | 🔵    |
+| [Form](/tree/master/src/components/w-form/readme.md)                 | w-form         | 🔵    |
+| [Group](/tree/master/src/components/w-group/readme.md)               | w-group        | 🔵    |
+| [Icon](/tree/master/src/components/w-icon/readme.md)                 | w-icon         | 🔵    |
+| [Input](/tree/master/src/components/w-input/readme.md)               | w-input        | 🟡    |
+| [Modal](/tree/master/src/components/w-modal/readme.md)               | w-modal        | 🟡    |
+| [Notification](/tree/master/src/components/w-notification/readme.md) | w-notification | 🟡    |
+| [Observer](/tree/master/src/components/w-observer/readme.md)         | w-observer     | 🟢    |
+| [Radio Group](/tree/master/src/components/w-radiogroup/readme.md)    | w-radiogroup   | 🟡    |
+| [Row](/tree/master/src/components/w-row/readme.md)                   | w-row          | 🔵    |
+| [Select](/tree/master/src/components/w-select/readme.md)             | w-select       | 🟡    |
+| [Slider](/tree/master/src/components/w-slider/readme.md)             | w-slider       | 🔵    |
+| [Spoiler](/tree/master/src/components/w-spoiler/readme.md)           | w-spoiler      | 🔵    |
+| [Stepper](/tree/master/src/components/w-stepper/readme.md)           | w-stepper      | 🟡    |
+| [Tabs](/tree/master/src/components/w-tabs/readme.md)                 | w-tabs         | 🔵    |
+| [Textarea](/tree/master/src/components/w-textarea/readme.md)         | w-textarea     | 🟡    |
+| [Toggle](/tree/master/src/components/w-toggle/readme.md)             | w-toggle       | 🔵    |
+| [Tooltip](/tree/master/src/components/w-tooltip/readme.md)           | w-tooltip      | 🟡    |
