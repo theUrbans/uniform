@@ -22,31 +22,31 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 - 🔴 not ready (unstyled / no functions)
 - 🔵 planned (created, but empty files)
 
-| Name                                                                 | Component      | State |
-| -------------------------------------------------------------------- | -------------- | ----- |
-| [Alert](/tree/master/src/components/w-alert/readme.md)               | w-alert        | 🔵    |
-| [Button](/tree/master/src/components/w-button/readme.md)             | w-button       | 🟢    |
-| [Card Select](/tree/master/src/components/w-cardselect/readme.md)    | w-cardselect   | 🔵    |
-| [Checkbox](/tree/master/src/components/w-checkbox/readme.md)         | w-checkbox     | 🟡    |
-| [Chip](/tree/master/src/components/w-chip/readme.md)                 | w-chip         | 🟢    |
-| [Column](/tree/master/src/components/w-col/readme.md)                | w-col          | 🔵    |
-| [Dialog](/tree/master/src/components/w-dialog/readme.md)             | w-dialog       | 🟡    |
-| [Dropdown](/tree/master/src/components/w-dropdown/readme.md)         | w-dropdown     | 🔵    |
-| [Filepicker](/tree/master/src/components/w-filepicker/readme.md)     | w-filepicker   | 🔵    |
-| [Form](/tree/master/src/components/w-form/readme.md)                 | w-form         | 🔵    |
-| [Group](/tree/master/src/components/w-group/readme.md)               | w-group        | 🔵    |
-| [Icon](/tree/master/src/components/w-icon/readme.md)                 | w-icon         | 🔵    |
-| [Input](/tree/master/src/components/w-input/readme.md)               | w-input        | 🟡    |
-| [Modal](/tree/master/src/components/w-modal/readme.md)               | w-modal        | 🟡    |
-| [Notification](/tree/master/src/components/w-notification/readme.md) | w-notification | 🟡    |
-| [Observer](/tree/master/src/components/w-observer/readme.md)         | w-observer     | 🟢    |
-| [Radio Group](/tree/master/src/components/w-radiogroup/readme.md)    | w-radiogroup   | 🟡    |
-| [Row](/tree/master/src/components/w-row/readme.md)                   | w-row          | 🔵    |
-| [Select](/tree/master/src/components/w-select/readme.md)             | w-select       | 🟡    |
-| [Slider](/tree/master/src/components/w-slider/readme.md)             | w-slider       | 🔵    |
-| [Spoiler](/tree/master/src/components/w-spoiler/readme.md)           | w-spoiler      | 🔵    |
-| [Stepper](/tree/master/src/components/w-stepper/readme.md)           | w-stepper      | 🟡    |
-| [Tabs](/tree/master/src/components/w-tabs/readme.md)                 | w-tabs         | 🔵    |
-| [Textarea](/tree/master/src/components/w-textarea/readme.md)         | w-textarea     | 🟡    |
-| [Toggle](/tree/master/src/components/w-toggle/readme.md)             | w-toggle       | 🔵    |
-| [Tooltip](/tree/master/src/components/w-tooltip/readme.md)           | w-tooltip      | 🟡    |
+| Name                                                                                           | Component      | State |
+| ---------------------------------------------------------------------------------------------- | -------------- | ----- |
+| [Alert](https://github.com/dieUrbans/uniform/tree/master/src/components/w-alert)               | w-alert        | 🔵    |
+| [Button](https://github.com/dieUrbans/uniform/tree/master/src/components/w-button)             | w-button       | 🟢    |
+| [Card Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-cardselect)    | w-cardselect   | 🔵    |
+| [Checkbox](https://github.com/dieUrbans/uniform/tree/master/src/components/w-checkbox)         | w-checkbox     | 🟡    |
+| [Chip](https://github.com/dieUrbans/uniform/tree/master/src/components/w-chip)                 | w-chip         | 🟢    |
+| [Column](https://github.com/dieUrbans/uniform/tree/master/src/components/w-col)                | w-col          | 🔵    |
+| [Dialog](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dialog)             | w-dialog       | 🟡    |
+| [Dropdown](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dropdown)         | w-dropdown     | 🔵    |
+| [Filepicker](https://github.com/dieUrbans/uniform/tree/master/src/components/w-filepicker)     | w-filepicker   | 🔵    |
+| [Form](https://github.com/dieUrbans/uniform/tree/master/src/components/w-form)                 | w-form         | 🔵    |
+| [Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-group)               | w-group        | 🔵    |
+| [Icon](https://github.com/dieUrbans/uniform/tree/master/src/components/w-icon)                 | w-icon         | 🔵    |
+| [Input](https://github.com/dieUrbans/uniform/tree/master/src/components/w-input)               | w-input        | 🟡    |
+| [Modal](https://github.com/dieUrbans/uniform/tree/master/src/components/w-modal)               | w-modal        | 🟡    |
+| [Notification](https://github.com/dieUrbans/uniform/tree/master/src/components/w-notification) | w-notification | 🟡    |
+| [Observer](https://github.com/dieUrbans/uniform/tree/master/src/components/w-observer)         | w-observer     | 🟢    |
+| [Radio Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-radiogroup)    | w-radiogroup   | 🟡    |
+| [Row](https://github.com/dieUrbans/uniform/tree/master/src/components/w-row)                   | w-row          | 🔵    |
+| [Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-select)             | w-select       | 🟡    |
+| [Slider](https://github.com/dieUrbans/uniform/tree/master/src/components/w-slider)             | w-slider       | 🔵    |
+| [Spoiler](https://github.com/dieUrbans/uniform/tree/master/src/components/w-spoiler)           | w-spoiler      | 🔵    |
+| [Stepper](https://github.com/dieUrbans/uniform/tree/master/src/components/w-stepper)           | w-stepper      | 🟡    |
+| [Tabs](https://github.com/dieUrbans/uniform/tree/master/src/components/w-tabs)                 | w-tabs         | 🔵    |
+| [Textarea](https://github.com/dieUrbans/uniform/tree/master/src/components/w-textarea)         | w-textarea     | 🟡    |
+| [Toggle](https://github.com/dieUrbans/uniform/tree/master/src/components/w-toggle)             | w-toggle       | 🔵    |
+| [Tooltip](https://github.com/dieUrbans/uniform/tree/master/src/components/w-tooltip)           | w-tooltip      | 🟡    |
