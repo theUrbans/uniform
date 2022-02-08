@@ -1,6 +1,7 @@
 {
   "name": "@dieurbans/uniform",
   "version": "0.1.0",
+  "private": false,
   "description": "UNIFORM component library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -10,10 +11,8 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/uniform/uniform.esm.js",
-  "repository": "git://github.com/dieurbans/uniform.git",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
+  "repository": "dieurbans/uniform",
+  "bugs": "https://github.com/dieurbans/uniform/issues",
   "files": [
     "dist/",
     "loader/"
