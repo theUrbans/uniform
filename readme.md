@@ -1,3 +1,4 @@
+[![Publish Uniform](https://github.com/dieUrbans/uniform/actions/workflows/npm-publish.yml/badge.svg?branch=master)](https://github.com/dieUrbans/uniform/actions/workflows/npm-publish.yml)
 # [WIP] Uniform Component Library
 
 > DO NOT USE, API WILL CHANGE
