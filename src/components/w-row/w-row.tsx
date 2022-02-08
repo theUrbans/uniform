@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'w-row',
@@ -6,13 +6,17 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class WRow {
-
+  @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'stretch';
+  @Prop() justify: 'start' | 'center' | 'end' | 'space-around' | 'space-between' = 'start';
   render() {
     return (
-      <Host>
+      <Host
+        class={{
+          row: true,
+        }}
+      >
         <slot></slot>
       </Host>
     );
   }
-
 }
