@@ -10,7 +10,7 @@
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/uniform/uniform.esm.js",
-  "repository": "git://github.com/dieUrbans/uniform.git",
+  "repository": "git://github.com/dieurbans/uniform.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@codeperate/stencil-windicss": "^2.1.2",
-    "@stencil/postcss": "^2.1.0",
     "@stencil/store": "^1.5.0",
     "@types/autoprefixer": "^10.2.0",
     "@types/jest": "^26.0.24",
