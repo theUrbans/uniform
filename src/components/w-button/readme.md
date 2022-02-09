@@ -7,21 +7,22 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type                                                            | Default     |
-| ---------- | ---------- | ----------- | --------------------------------------------------------------- | ----------- |
-| `design`   | `design`   |             | `"error" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
-| `disabled` | `disabled` |             | `boolean`                                                       | `false`     |
-| `flat`     | `flat`     |             | `boolean`                                                       | `false`     |
-| `outline`  | `outline`  |             | `boolean`                                                       | `false`     |
-| `size`     | `size`     |             | `"large" \| "medium" \| "small"`                                | `'medium'`  |
-| `type`     | `type`     |             | `"button" \| "reset" \| "submit"`                               | `'button'`  |
+| Property   | Attribute  | Description                       | Type                                                            | Default     |
+| ---------- | ---------- | --------------------------------- | --------------------------------------------------------------- | ----------- |
+| `design`   | `design`   | color design                      | `"error" \| "primary" \| "secondary" \| "success" \| "warning"` | `'primary'` |
+| `disabled` | `disabled` | show disabled state               | `boolean`                                                       | `false`     |
+| `flat`     | `flat`     | show only text                    | `boolean`                                                       | `false`     |
+| `outline`  | `outline`  | change design, only show outlines | `boolean`                                                       | `false`     |
+| `rounded`  | `rounded`  | enable border radius              | `"all" \| "bottom" \| "left" \| "none" \| "right" \| "top"`     | `'all'`     |
+| `size`     | `size`     | button size                       | `"large" \| "medium" \| "small"`                                | `'medium'`  |
+| `type`     | `type`     | set button type                   | `"button" \| "reset" \| "submit"`                               | `'button'`  |
 
 
 ## Events
 
-| Event    | Description | Type               |
-| -------- | ----------- | ------------------ |
-| `wClick` |             | `CustomEvent<any>` |
+| Event    | Description                 | Type                |
+| -------- | --------------------------- | ------------------- |
+| `wClick` | emit wClick on button click | `CustomEvent<void>` |
 
 
 ## Dependencies

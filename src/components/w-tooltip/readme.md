@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type         | Default     |
-| -------- | --------- | ----------- | ------------ | ----------- |
-| `axis`   | `axis`    |             | `"x" \| "y"` | `'y'`       |
-| `text`   | `text`    |             | `string`     | `undefined` |
+| Property | Attribute | Description             | Type         | Default     |
+| -------- | --------- | ----------------------- | ------------ | ----------- |
+| `axis`   | `axis`    | position of the tooltip | `"x" \| "y"` | `'y'`       |
+| `text`   | `text`    | text of the tooltip     | `string`     | `undefined` |
 
 
 ----------------------------------------------

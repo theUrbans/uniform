@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                               | Type                                                                                  | Default       |
@@ -27,14 +28,16 @@
 | `validate`       | `validate`        | use function returning a boolean to validate the input -> if false, it displays error-msg | `boolean`                                                                             | `true`        |
 | `value`          | `value`           | the value of the input                                                                    | `number \| string`                                                                    | `''`          |
 
+
 ## Events
 
-| Event     | Description       | Type               |
-| --------- | ----------------- | ------------------ |
-| `wBlur`   | emitted on blur   | `CustomEvent<any>` |
-| `wChange` | emitted on change | `CustomEvent<any>` |
-| `wFocus`  | emitted on focus  | `CustomEvent<any>` |
-| `wInput`  | emitted on input  | `CustomEvent<any>` |
+| Event     | Description       | Type                            |
+| --------- | ----------------- | ------------------------------- |
+| `wBlur`   | emitted on blur   | `CustomEvent<void>`             |
+| `wChange` | emitted on change | `CustomEvent<number \| string>` |
+| `wFocus`  | emitted on focus  | `CustomEvent<void>`             |
+| `wInput`  | emitted on input  | `CustomEvent<number \| string>` |
+
 
 ## Methods
 
@@ -46,6 +49,8 @@ set blur on native input
 
 Type: `Promise<void>`
 
+
+
 ### `setFocus() => Promise<void>`
 
 set focus on native input
@@ -54,6 +59,9 @@ set focus on native input
 
 Type: `Promise<void>`
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

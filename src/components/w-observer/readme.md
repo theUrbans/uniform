@@ -7,10 +7,10 @@
 
 ## Events
 
-| Event       | Description | Type               |
-| ----------- | ----------- | ------------------ |
-| `unvisible` |             | `CustomEvent<any>` |
-| `visible`   |             | `CustomEvent<any>` |
+| Event       | Description                                                        | Type                |
+| ----------- | ------------------------------------------------------------------ | ------------------- |
+| `invisible` | emit `invisible` event, when element looses visibility in viewport | `CustomEvent<void>` |
+| `visible`   | emit `visible` event, when element get visible in viewport         | `CustomEvent<void>` |
 
 
 ----------------------------------------------
