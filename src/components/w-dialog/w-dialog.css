@@ -7,6 +7,3 @@
 .actions {
   @apply flex flex-row justify-between p-2;
 }
-.hr {
-  @apply h-0.5 bg-gray-400 w-full;
-}

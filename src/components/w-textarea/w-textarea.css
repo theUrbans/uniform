@@ -1,5 +1,5 @@
 :host {
-  display: block;
+  @apply w-full;
 }
 .resize-horizontal {
   resize: horizontal;
@@ -17,7 +17,7 @@
   @apply relative py-2 border-radius mt-2 hover:shadow-lg border-gray-300 flex;
 }
 .textarea {
-  @apply block pb-3 pt-5 px-2 border-0 focus:outline-none bg-transparent flex-grow w-full max-w-screen font-sans;
+  @apply inline-block pb-3 pt-5 px-2 border-0 focus:outline-none bg-transparent flex-grow w-full max-w-screen font-sans;
 }
 .textarea-small {
   @apply py-0 font-normal text-sm border border-solid;
@@ -50,40 +50,34 @@
   @apply font-semibold text-lg;
 }
 .label-success {
-  @apply bg-green-100 dark:bg-dark-50 text-green-500 dark:text-green-200;
+  @apply success;
 }
 .label-error {
-  @apply bg-red-100 dark:bg-dark-50 text-red-500 dark:text-red-200;
+  @apply error;
 }
 .label-warning {
-  @apply bg-yellow-100 dark:bg-dark-50 text-yellow-500 dark:text-yellow-200;
+  @apply warning;
 }
-.label-default {
-  @apply bg-gray-100 dark:bg-dark-50 text-gray-500 dark:text-gray-200;
+.label-secondary {
+  @apply secondary;
 }
 .label-primary {
-  @apply bg-blue-100 dark:bg-dark-50 text-blue-500 dark:text-blue-200;
-}
-.label-outline {
-  @apply bg-white text-gray-500 dark:bg-dark-50;
+  @apply primary;
 }
 .design-success {
-  @apply bg-green-100 hover:border-green-600 focus-within:border-green-800 hover:shadow-green-100;
+  @apply success;
 }
 .design-error {
-  @apply bg-red-100 hover:border-red-600 focus-within:border-red-800 hover:shadow-red-100;
+  @apply error;
 }
 .design-warning {
-  @apply bg-yellow-100 hover:border-yellow-600 focus-within:border-yellow-800 hover:shadow-yellow-100;
+  @apply warning;
 }
-.design-default {
-  @apply bg-gray-100 hover:border-gray-600 focus-within:border-gray-800 hover:shadow-gray-100;
+.design-secondary {
+  @apply secondary;
 }
 .design-primary {
-  @apply bg-blue-100 hover:border-blue-600 focus-within:border-blue-800 hover:shadow-blue-100;
-}
-.design-outline {
-  @apply hover:border-gray-400 focus-within:border-gray-500 hover:shadow-gray-100;
+  @apply primary;
 }
 .disabled {
   @apply cursor-not-allowed opacity-50;

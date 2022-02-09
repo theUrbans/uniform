@@ -1,5 +1,4 @@
-import { Component, h, Prop, Element, Event, EventEmitter } from '@stencil/core';
-// import { clickEvent } from '../../utils/utils';
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'w-button',
@@ -7,25 +6,53 @@ import { Component, h, Prop, Element, Event, EventEmitter } from '@stencil/core'
   shadow: true,
 })
 export class WButton {
-  // private button?: HTMLButtonElement;
-  @Element() el: HTMLElement;
+  /**
+   * color design
+   */
   @Prop() design?: 'secondary' | 'error' | 'success' | 'warning' | 'primary' = 'primary';
-  @Prop() size?: 'small' | 'medium' | 'large' = 'medium';
-  @Prop() disabled?: boolean = false;
+
+  /**
+   * change design, only show outlines
+   */
   @Prop() outline?: boolean = false;
+
+  /**
+   * button size
+   */
+  @Prop() size?: 'small' | 'medium' | 'large' = 'medium';
+
+  /**
+   * show disabled state
+   */
+  @Prop() disabled?: boolean = false;
+
+  /**
+   * show only text
+   */
   @Prop() flat?: boolean = false;
+
+  /**
+   * set button type
+   */
   @Prop() type?: 'button' | 'submit' | 'reset' = 'button';
-  @Event() wClick: EventEmitter;
-  private handleOnClick() {
-    // this.wClick.emit('test');
-    // console.log(this.button);
-  }
+
+  /**
+   * enable border radius
+   */
+  @Prop() rounded?: 'left' | 'right' | 'top' | 'bottom' | 'none' | 'all' = 'all';
+
+  /**
+   * emit wClick on button click
+   */
+  @Event() wClick: EventEmitter<void>;
+  private handleOnClick = () => {
+    this.wClick.emit();
+  };
 
   render() {
     return (
       <button
         onClick={this.handleOnClick}
-        // ref={button => (this.button = button)}
         disabled={this.disabled}
         type={this.type}
         class={{
@@ -38,6 +65,7 @@ export class WButton {
           outline: this.outline,
           flat: this.flat,
           disabled: this.disabled,
+          [`rounded-${this.rounded}`]: true,
         }}
       >
         <slot name="prefix"></slot>

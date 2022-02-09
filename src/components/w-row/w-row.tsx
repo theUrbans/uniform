@@ -6,13 +6,41 @@ import { Component, Host, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class WRow {
-  @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'stretch';
-  @Prop() justify: 'start' | 'center' | 'end' | 'space-around' | 'space-between' = 'start';
+  /**
+   * flex justify-content
+   */
+  @Prop() justify: 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly' = 'start';
+
+  /**
+   * flex align-items
+   */
+  @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'center';
+
+  /**
+   * flex wrap
+   */
+  @Prop() wrap: 'nowrap' | 'wrap' | 'wrap-reverse' = 'wrap';
+
+  /**
+   * flex gap: string, e.g. '1rem', '1px'
+   */
+  @Prop() gap: string = '1rem';
+
+  /**
+   * padding left and right: string, e.g. '1rem', '1px'
+   */
+  @Prop() padding: string = '1em';
+
   render() {
     return (
       <Host
-        class={{
-          row: true,
+        class="row"
+        style={{
+          alignItems: this.align,
+          justifyContent: this.justify,
+          flexWrap: this.wrap,
+          gap: this.gap,
+          padding: `0 ${this.padding}`,
         }}
       >
         <slot></slot>

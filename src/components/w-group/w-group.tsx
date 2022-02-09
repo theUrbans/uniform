@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'w-group',
@@ -6,13 +6,20 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class WGroup {
+  /**
+   * direction of the group
+   */
+  @Prop() direction: 'row' | 'column' = 'row';
 
   render() {
     return (
-      <Host>
+      <div
+        class={{
+          [this.direction]: true,
+        }}
+      >
         <slot></slot>
-      </Host>
+      </div>
     );
   }
-
 }

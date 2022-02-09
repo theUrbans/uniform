@@ -13,7 +13,7 @@ export class WTextarea {
   @Prop() label?: string;
   @Prop() required: boolean = false;
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
-  @Prop() design: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'default' = 'default';
+  @Prop() design: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary' = 'secondary';
   @Prop() resize: 'none' | 'both' | 'horizontal' | 'vertical' = 'vertical';
   @Prop({ mutable: true }) value: string | null = '';
   @Prop() cols: number = 50;

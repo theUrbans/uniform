@@ -31,63 +31,67 @@
   </head>
   <body>
     <w-notification id="noti"></w-notification>
-    <button onclick="openModal()">open modal</button>
-    <button onclick="openDialog()">open dialog</button>
-    <button onclick="focusInput()">focus input</button>
-    <button onclick="blurInput()">blur input</button>
-    <button onclick="sendNoti()">send noti</button>
-    <div class="col">
-      <div class="row">
-        <w-chip design="slate" label="slate">consectetur adipisicing.</w-chip>
-        <w-chip design="stone" label="stone">consectetur adipisicing.</w-chip>
-        <w-chip design="red" label="red">consectetur adipisicing.</w-chip>
-        <w-chip design="amber" label="amber">consectetur adipisicing.</w-chip>
-      </div>
-      <div class="row">
-        <w-chip design="lime" label="lime">consectetur adipisicing.</w-chip>
-        <w-chip design="emerald" label="emerald">consectetur adipisicing.</w-chip>
-        <w-chip design="teal" label="teal">consectetur adipisicing.</w-chip>
-        <w-chip design="cyan" label="cyan">consectetur adipisicing.</w-chip>
-      </div>
-      <div class="row">
-        <w-chip design="indigo" label="indigo">consectetur adipisicing.</w-chip>
-        <w-chip design="fuchsia" label="fuchsia">consectetur adipisicing.</w-chip>
-        <w-chip design="pink" label="pink">consectetur adipisicing.</w-chip>
-        <w-chip design="success" label="success">consectetur adipisicing.</w-chip>
-      </div>
-      <div class="row">
-        <w-chip design="error" label="error">consectetur adipisicing.</w-chip>
-        <w-chip design="warning" label="warning">consectetur adipisicing.</w-chip>
-        <w-chip design="primary" label="primary">consectetur adipisicing.</w-chip>
-        <w-chip design="secondary" label="secondary">consectetur adipisicing.</w-chip>
-      </div>
-    </div>
-    <div class="col">
-      <div class="row">
-        <w-chip design="slate" bold>consectetur adipisicing.</w-chip>
-        <w-chip design="stone">consectetur adipisicing.</w-chip>
-        <w-chip design="red">consectetur adipisicing.</w-chip>
-        <w-chip design="amber">consectetur adipisicing.</w-chip>
-      </div>
-      <div class="row">
-        <w-chip design="lime">consectetur adipisicing.</w-chip>
-        <w-chip design="emerald">consectetur adipisicing.</w-chip>
-        <w-chip design="teal">consectetur adipisicing.</w-chip>
-        <w-chip design="cyan">consectetur adipisicing.</w-chip>
-      </div>
-      <div class="row">
-        <w-chip design="indigo">consectetur adipisicing.</w-chip>
-        <w-chip design="fuchsia">consectetur adipisicing.</w-chip>
-        <w-chip design="pink">consectetur adipisicing.</w-chip>
-        <w-chip design="success">consectetur adipisicing.</w-chip>
-      </div>
-      <div class="row">
-        <w-chip design="error">consectetur adipisicing.</w-chip>
-        <w-chip design="warning">consectetur adipisicing.</w-chip>
-        <w-chip design="primary">consectetur adipisicing.</w-chip>
-        <w-chip design="secondary">consectetur adipisicing.</w-chip>
-      </div>
-    </div>
+    <w-col>
+      <w-group>
+        <w-button outline design="secondary" rounded="left" onclick="openModal()">open modal</w-button>
+        <w-button outline design="secondary" rounded="none" onclick="openDialog()">open dialog</w-button>
+        <w-button outline design="secondary" rounded="none" onclick="focusInput()">focus input</w-button>
+        <w-button outline design="secondary" rounded="none" onclick="blurInput()">blur input</w-button>
+        <w-button outline design="secondary" rounded="right" onclick="sendNoti()">send noti</w-button>
+      </w-group>
+      <w-spoiler label="show all colored chips">
+        <w-col>
+          <w-row justify="center">
+            <w-chip design="slate" label="slate">consectetur adipisicing.</w-chip>
+            <w-chip design="stone" label="stone">consectetur adipisicing.</w-chip>
+            <w-chip design="red" label="red">consectetur adipisicing.</w-chip>
+            <w-chip design="amber" label="amber" style="flex: 0 1 auto">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="lime" label="lime">consectetur adipisicing.</w-chip>
+            <w-chip design="emerald" label="emerald">consectetur adipisicing.</w-chip>
+            <w-chip design="teal" label="teal">consectetur adipisicing.</w-chip>
+            <w-chip design="cyan" label="cyan">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="indigo" label="indigo">consectetur adipisicing.</w-chip>
+            <w-chip design="fuchsia" label="fuchsia">consectetur adipisicing.</w-chip>
+            <w-chip design="pink" label="pink">consectetur adipisicing.</w-chip>
+            <w-chip design="success" label="success">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="error" label="error">consectetur adipisicing.</w-chip>
+            <w-chip design="warning" label="warning">consectetur adipisicing.</w-chip>
+            <w-chip design="primary" label="primary">consectetur adipisicing.</w-chip>
+            <w-chip design="secondary" label="secondary">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="slate" bold>consectetur adipisicing.</w-chip>
+            <w-chip design="stone">consectetur adipisicing.</w-chip>
+            <w-chip design="red">consectetur adipisicing.</w-chip>
+            <w-chip design="amber">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="lime">consectetur adipisicing.</w-chip>
+            <w-chip design="emerald">consectetur adipisicing.</w-chip>
+            <w-chip design="teal">consectetur adipisicing.</w-chip>
+            <w-chip design="cyan">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="indigo">consectetur adipisicing.</w-chip>
+            <w-chip design="fuchsia">consectetur adipisicing.</w-chip>
+            <w-chip design="pink">consectetur adipisicing.</w-chip>
+            <w-chip design="success">consectetur adipisicing.</w-chip>
+          </w-row>
+          <w-row justify="center">
+            <w-chip design="error">consectetur adipisicing.</w-chip>
+            <w-chip design="warning">consectetur adipisicing.</w-chip>
+            <w-chip design="primary">consectetur adipisicing.</w-chip>
+            <w-chip design="secondary">consectetur adipisicing.</w-chip>
+          </w-row>
+        </w-col>
+      </w-spoiler>
+    </w-col>
     <w-modal name="tesst">
       <span slot="header">Hallo</span>
       <div slot="body">
@@ -99,35 +103,34 @@
       </div>
     </w-modal>
     <w-dialog></w-dialog>
-    <div style="resize: both; border: 2px solid black; overflow: auto">
-      <p>testestsetse t</p>
-    </div>
     <div class="col">
-      <div class="row">
-        <w-stepper>
-          <div slot="step-1">
-            <form action="" class="col">
-              <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
-              <div class="row">
-                <w-textarea label="Situation beschreiben" resize="both" design="outline" required></w-textarea>
-                <w-select label="Select" searchable multiple design="outline"></w-select>
-              </div>
-              <div class="row">
-                <w-button text="abbrechen" id="test" design="error" outline></w-button>
-                <w-button text="weiter" type="submit" id="test" design="success" outline></w-button>
-              </div>
-              <div class="row">
-                <w-radiogroup></w-radiogroup>
-              </div>
-            </form>
-          </div>
-          <div slot="step-2">
+      <w-stepper>
+        <w-col slot="step-1">
+          <w-row wrap="nowrap">
+            <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
+            <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
+          </w-row>
+          <w-row>
+            <w-select label="Select" searchable multiple design="outline"></w-select>
+            <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
+            <w-textarea label="Situation beschreiben" resize="both" required></w-textarea>
+          </w-row>
+          <w-row>
+            <w-button text="abbrechen" id="test" design="error" outline></w-button>
+            <w-button text="weiter" type="submit" id="test" design="success" outline></w-button>
+          </w-row>
+          <w-row>
+            <w-radiogroup></w-radiogroup>
+          </w-row>
+        </w-col>
+        <w-col slot="step-2">
+          <w-row>
             <w-button text="success" id="test" size="large" design="success"></w-button>
             <w-button text="success" id="test" size="medium" design="success"></w-button>
             <w-button text="success" id="test" size="small" design="success"></w-button>
-          </div>
-        </w-stepper>
-      </div>
+          </w-row>
+        </w-col>
+      </w-stepper>
       <div class="row">
         <w-input label="numeric" do-focus="false" required="true" errorMsg="Fehler alaram" size="small" input-type="numeric"></w-input>
         <w-input label="decimal" do-focus="false" required="true" errorMsg="Fehler alaram" size="medium" input-type="decimal"></w-input>

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/core';
 
 @Component({
   tag: 'w-stepper',
@@ -8,16 +8,48 @@ import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 export class WStepper {
   /**
    * define steps
-   * without label -> input number of steps
-   * with label -> input label of each step as array
+   * without label -> steps: 3
+   * with label -> steps: [1,'2',3]
+   * both do the same, but with array you can define the label
    */
-  @Prop() steps: number | any[] = ['Name', 'Daten', 'Bestätigen'];
-  @Prop() allData: boolean = false;
-  @Prop() nextStepAvailable: boolean = false;
-  @Event() wSubmit: EventEmitter;
-  @Event() wStep: EventEmitter;
+  @Prop() steps: number | Array<number | string> = ['Step1', 'Step2', 'Step3'];
 
-  private currentStep: number = 0;
+  /**
+   * disabled state of the submit button
+   */
+  @Prop() allData: boolean = true;
+
+  /**
+   * disabled state of the next step button
+   */
+  @Prop() nextStepAvailable: boolean = true;
+
+  /**
+   * label of the previous step button
+   */
+  @Prop() prevLabel?: string = 'previous';
+
+  /**
+   * label of the next step button
+   */
+  @Prop() nextLabel?: string = 'next';
+
+  /**
+   * label of the next step button
+   */
+  @Prop() submitLabel?: string = 'submit';
+
+  /**
+   * emit wSubmit event on submit button click
+   */
+  @Event() wSubmit: EventEmitter<void>;
+
+  /**
+   * emit wNextStep event on next/previous button click
+   */
+  @Event() wStep: EventEmitter<number>;
+
+  @State() currentStep: number = 0;
   private formatSteps() {
     if (typeof this.steps == 'number') {
       this.steps = [...Array(this.steps).keys()];
@@ -25,19 +57,19 @@ export class WStepper {
     return this.steps;
   }
 
-  private handleSubmit() {
+  private handleSubmit = () => {
     this.wSubmit.emit();
-  }
+  };
 
-  private handleNextStep() {
+  private handleNextStep = () => {
     this.currentStep += 1;
     this.wStep.emit(this.currentStep);
-  }
+  };
 
-  private handlePreviousStep() {
+  private handlePreviousStep = () => {
     this.currentStep -= 1;
     this.wStep.emit(this.currentStep);
-  }
+  };
 
   render() {
     const steps = this.formatSteps();
@@ -76,18 +108,18 @@ export class WStepper {
             })}
           </div>
           <div class="footer">
-            <w-button design="error" flat disabled={this.currentStep == 0} onClick={this.handlePreviousStep}>
-              zurück
+            <w-button design="error" flat disabled={this.currentStep == 0} onWClick={this.handlePreviousStep}>
+              {this.prevLabel}
               <span slot="prefix">&#171;</span>
             </w-button>
             {this.currentStep < steps.length - 1 ? (
               <w-button design="success" flat disabled={this.currentStep == steps.length - 1 || !this.nextStepAvailable} onClick={this.handleNextStep}>
-                weiter
+                {this.nextLabel}
                 <span slot="suffix">&#187;</span>
               </w-button>
             ) : (
-              <w-button design="success" flat disabled={!this.allData} onClick={this.handleSubmit}>
-                abschließen
+              <w-button design="success" flat disabled={!this.allData} onWClick={this.handleSubmit}>
+                {this.submitLabel}
                 <span slot="suffix">&#187;</span>
               </w-button>
             )}

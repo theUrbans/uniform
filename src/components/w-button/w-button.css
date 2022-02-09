@@ -1,18 +1,32 @@
-:host {
-  display: block;
-}
-
 .button {
-  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md flex flex-row gap-2;
+  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md flex flex-row justify-center gap-2 w-full;
+}
+.rounded-all {
+  @apply border-radius;
+}
+.rounded-left {
+  @apply rounded-l-xl;
+}
+.rounded-right {
+  @apply rounded-r-xl;
+}
+.rounded-bottom {
+  @apply rounded-b-xl;
+}
+.rounded-top {
+  @apply rounded-t-xl;
+}
+.rounded-none {
+  @apply rounded-none;
 }
 .sm {
-  @apply py-1 px-4 font-normal border-radius text-sm border;
+  @apply py-1 px-4 font-normal text-sm border;
 }
 .md {
-  @apply py-1 px-8 font-normal tracking-wide border-radius text-base border-2;
+  @apply py-1 px-8 font-normal tracking-wide text-base border-2;
 }
 .lg {
-  @apply py-1.5 px-12 font-semibold tracking-wide border-radius text-lg border-3;
+  @apply py-1.5 px-12 font-semibold tracking-wide text-lg border-3;
 }
 .primary {
   @apply primary;

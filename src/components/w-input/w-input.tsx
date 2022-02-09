@@ -18,7 +18,7 @@ export class WInput implements ComponentInterface {
   @Prop({ mutable: true, reflect: true }) value: string | number | null = '';
   @Watch('value')
   protected valueChanged() {
-    this.wChange.emit({ value: this.value === null ? this.value : this.value.toString() });
+    this.wChange.emit(this.value);
   }
 
   /**
@@ -135,22 +135,22 @@ export class WInput implements ComponentInterface {
   /**
    * emitted on input
    */
-  @Event() wInput: EventEmitter;
+  @Event() wInput: EventEmitter<number | string>;
 
   /**
    * emitted on change
    */
-  @Event() wChange: EventEmitter;
+  @Event() wChange: EventEmitter<number | string>;
 
   /**
    * emitted on focus
    */
-  @Event() wFocus: EventEmitter;
+  @Event() wFocus: EventEmitter<void>;
 
   /**
    * emitted on blur
    **/
-  @Event() wBlur: EventEmitter;
+  @Event() wBlur: EventEmitter<void>;
 
   /**
    * set focus on native input
@@ -182,11 +182,11 @@ export class WInput implements ComponentInterface {
       if (this.inputType === 'numeric') {
         // allow only numbers
         input.value = input.value.replace(/[^0-9]/g, '');
-        this.value = input.value || 0;
+        this.value = input.value || '';
       } else if (this.inputType === 'decimal') {
         // allow only numbers with comma and dot
         input.value = input.value.replace(/[^0-9.,]/g, '');
-        this.value = input.value || 0;
+        this.value = input.value || '';
       } else if (this.inputType === 'email') {
         // email pattern
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

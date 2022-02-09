@@ -25,7 +25,6 @@ export class WDialog {
     this.title = params.title || '';
     this.content = params.content || '';
     this.buttons = params.buttons || [{ title: 'OK' }];
-    console.log(this.modal, params, this.title);
     this.modal.showModal(this.name);
   }
 
@@ -40,7 +39,6 @@ export class WDialog {
           <span slot="header">{this.title}</span>
           <div slot="body" class="body">
             <p>{this.content}</p>
-            <div class="hr"></div>
             <div class="actions">
               {this.buttons.map((action: Action) => {
                 return (

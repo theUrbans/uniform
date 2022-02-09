@@ -6,7 +6,7 @@
   @apply relative flex flex-col border-radius h-auto p-0;
 }
 .head {
-  @apply p-2 bg-gray-100 flex flex-row gap-2 justify-around items-center rounded-t-xl;
+  @apply p-2 bg-gray-200 flex flex-row gap-2 justify-around items-center rounded-t-xl;
 }
 .step {
   @apply flex flex-row gap-1 relative justify-center;
@@ -21,10 +21,10 @@
   @apply flex flex-row;
 }
 .footer {
-  @apply flex flex-row justify-between p-2 bg-gray-100 rounded-b-xl;
+  @apply flex flex-row justify-between p-2 bg-gray-200 rounded-b-xl;
 }
 .content {
-  @apply bg-transparent border-2 border-gray-100 border-solid;
+  @apply bg-transparent border-2 border-gray-200 border-solid;
 }
 .activeStep > .no {
   @apply bg-blue-300 text-white font-semibold  hover:bg-blue-50 hover:text-blue-600 hover:shadow-blue-100;

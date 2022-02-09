@@ -7,8 +7,17 @@ import { Component, h, Event, EventEmitter, Element, State } from '@stencil/core
 })
 export class WObserver {
   @Element() el: HTMLElement;
-  @Event({ bubbles: false }) visible: EventEmitter;
-  @Event({ bubbles: false }) unvisible: EventEmitter;
+
+  /**
+   * emit `visible` event, when element get visible in viewport
+   */
+  @Event({ bubbles: false }) visible: EventEmitter<void>;
+
+  /**
+   * emit `invisible` event, when element looses visibility in viewport
+   */
+  @Event({ bubbles: false }) invisible: EventEmitter<void>;
+
   @State() isVisible: boolean = false;
   private observer: IntersectionObserver;
   private onIntersection = entries => {
@@ -19,7 +28,7 @@ export class WObserver {
         return;
       }
       if (this.isVisible) {
-        this.unvisible.emit();
+        this.invisible.emit();
         this.isVisible = false;
       }
     }

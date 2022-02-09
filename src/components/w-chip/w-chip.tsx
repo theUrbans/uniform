@@ -24,13 +24,37 @@ export type ChipDesign =
   shadow: true,
 })
 export class WChip {
+  /**
+   * color of the chip
+   */
   @Prop() design: ChipDesign = 'stone';
+
+  /**
+   * size of the chip
+   */
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
+
+  /**
+   * (optional) label of the chip
+   */
   @Prop() label?: string;
+
+  /**
+   * set chip text bold
+   */
   @Prop() bold: boolean = false;
+
+  /**
+   * enable wClick event on chip
+   */
   @Prop() clickable: boolean = false;
-  @Event() wClick: EventEmitter;
+
+  /**
+   * emit wClick event on chip click
+   */
+  @Event() wClick: EventEmitter<void>;
   private handleClick = () => {
+    if (!this.clickable) return;
     this.wClick.emit();
   };
   render() {

@@ -1,3 +1,36 @@
 :host {
-  display: block;
+  @apply w-full;
+}
+.spoiler {
+  @apply flex flex-row gap-4 items-center border-solid cursor-pointer border-gray-200 box-border bg-gray-200 text-gray-600 font-semibold tracking-wide p-2;
+}
+.closed {
+  @apply rounded-xl;
+}
+.opened {
+  @apply rounded-t-xl;
+}
+.visible {
+  @apply block duration-300 min-h-max;
+}
+.hidden {
+  @apply hidden duration-300 min-h-none;
+}
+.chevron {
+  @apply duration-300;
+}
+.turn180 {
+  @apply transform -rotate-180 duration-300;
+}
+.small {
+  @apply text-sm;
+}
+.medium {
+  @apply text-base;
+}
+.large {
+  @apply text-lg;
+}
+.content {
+  @apply border-2 rounded-b-xl border-solid border-gray-200;
 }

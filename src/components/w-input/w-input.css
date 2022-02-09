@@ -1,5 +1,5 @@
 :host {
-  @apply block w-full;
+  @apply w-full;
 }
 * {
   outline: none;
@@ -11,7 +11,7 @@
   @apply mb-4;
 }
 .input {
-  @apply block px-2 py-2 border-0 focus:outline-none bg-transparent flex-grow w-full placeholder-transparent;
+  @apply inline-block px-2 py-2 border-0 focus:outline-none bg-transparent flex-grow w-full placeholder-transparent;
 }
 
 .small {

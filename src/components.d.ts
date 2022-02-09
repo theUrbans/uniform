@@ -13,11 +13,33 @@ export namespace Components {
     interface WAlert {
     }
     interface WButton {
+        /**
+          * color design
+         */
         "design"?: 'secondary' | 'error' | 'success' | 'warning' | 'primary';
+        /**
+          * show disabled state
+         */
         "disabled"?: boolean;
+        /**
+          * show only text
+         */
         "flat"?: boolean;
+        /**
+          * change design, only show outlines
+         */
         "outline"?: boolean;
+        /**
+          * enable border radius
+         */
+        "rounded"?: 'left' | 'right' | 'top' | 'bottom' | 'none' | 'all';
+        /**
+          * button size
+         */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * set button type
+         */
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface WCardselect {
@@ -30,13 +52,52 @@ export namespace Components {
         "size": 'small' | 'medium' | 'large';
     }
     interface WChip {
+        /**
+          * set chip text bold
+         */
         "bold": boolean;
+        /**
+          * enable wClick event on chip
+         */
         "clickable": boolean;
+        /**
+          * color of the chip
+         */
         "design": ChipDesign;
+        /**
+          * (optional) label of the chip
+         */
         "label"?: string;
+        /**
+          * size of the chip
+         */
         "size": 'small' | 'medium' | 'large';
     }
     interface WCol {
+        /**
+          * flex align-items: start | center | end | space-between | space-around | space-evenly
+         */
+        "align": 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly';
+        /**
+          * flex gap: string, e.g. '1rem', '1px'
+         */
+        "gap": string;
+        /**
+          * flex justify-content: flex-start | flex-end | center | baseline | stretch
+         */
+        "justify": 'start' | 'center' | 'end' | 'stretch';
+        /**
+          * padding bottom and top: string, e.g. '1rem', '1px'
+         */
+        "padding": string;
+        /**
+          * used with w-grid, set size based on number of columns on w-grid (default is 12)
+         */
+        "size": number;
+        /**
+          * flex wrap: nowrap | wrap | wrap-reverse
+         */
+        "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface WDialog {
         "name": string;
@@ -47,7 +108,15 @@ export namespace Components {
     }
     interface WForm {
     }
+    interface WGrid {
+        "columns": number | Array<number>;
+        "rows": number | Array<number>;
+    }
     interface WGroup {
+        /**
+          * direction of the group
+         */
+        "direction": 'row' | 'column';
     }
     interface WIcon {
     }
@@ -141,6 +210,10 @@ export namespace Components {
          */
         "value": string | number | null;
     }
+    interface WMenu {
+        "minimizeable": boolean;
+        "position": 'left' | 'right' | 'top' | 'bottom';
+    }
     interface WModal {
         "closeModal": (name: string) => Promise<void>;
         "closeOnClick": boolean;
@@ -172,6 +245,26 @@ export namespace Components {
         "value": any;
     }
     interface WRow {
+        /**
+          * flex align-items
+         */
+        "align": 'start' | 'center' | 'end' | 'stretch';
+        /**
+          * flex gap: string, e.g. '1rem', '1px'
+         */
+        "gap": string;
+        /**
+          * flex justify-content
+         */
+        "justify": 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly';
+        /**
+          * padding left and right: string, e.g. '1rem', '1px'
+         */
+        "padding": string;
+        /**
+          * flex wrap
+         */
+        "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface WSelect {
         /**
@@ -269,20 +362,46 @@ export namespace Components {
     interface WSlider {
     }
     interface WSpoiler {
+        /**
+          * label of the spoiler
+         */
+        "label": string;
+        /**
+          * set the size of the spoiler
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface WStepper {
+        /**
+          * disabled state of the submit button
+         */
         "allData": boolean;
+        /**
+          * label of the next step button
+         */
+        "nextLabel"?: string;
+        /**
+          * disabled state of the next step button
+         */
         "nextStepAvailable": boolean;
         /**
-          * define steps without label -> input number of steps with label -> input label of each step as array
+          * label of the previous step button
          */
-        "steps": number | any[];
+        "prevLabel"?: string;
+        /**
+          * define steps without label -> steps: 3 with label -> steps: [1,'2',3] both do the same, but with array you can define the label
+         */
+        "steps": number | Array<number | string>;
+        /**
+          * label of the next step button
+         */
+        "submitLabel"?: string;
     }
     interface WTabs {
     }
     interface WTextarea {
         "cols": number;
-        "design": 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'default';
+        "design": 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
         "disabled": boolean;
         "label"?: string;
         "readonly": boolean;
@@ -295,7 +414,13 @@ export namespace Components {
     interface WToggle {
     }
     interface WTooltip {
+        /**
+          * position of the tooltip
+         */
         "axis": 'x' | 'y';
+        /**
+          * text of the tooltip
+         */
         "text": string;
     }
 }
@@ -360,6 +485,12 @@ declare global {
         prototype: HTMLWFormElement;
         new (): HTMLWFormElement;
     };
+    interface HTMLWGridElement extends Components.WGrid, HTMLStencilElement {
+    }
+    var HTMLWGridElement: {
+        prototype: HTMLWGridElement;
+        new (): HTMLWGridElement;
+    };
     interface HTMLWGroupElement extends Components.WGroup, HTMLStencilElement {
     }
     var HTMLWGroupElement: {
@@ -377,6 +508,12 @@ declare global {
     var HTMLWInputElement: {
         prototype: HTMLWInputElement;
         new (): HTMLWInputElement;
+    };
+    interface HTMLWMenuElement extends Components.WMenu, HTMLStencilElement {
+    }
+    var HTMLWMenuElement: {
+        prototype: HTMLWMenuElement;
+        new (): HTMLWMenuElement;
     };
     interface HTMLWModalElement extends Components.WModal, HTMLStencilElement {
     }
@@ -467,9 +604,11 @@ declare global {
         "w-dropdown": HTMLWDropdownElement;
         "w-filepicker": HTMLWFilepickerElement;
         "w-form": HTMLWFormElement;
+        "w-grid": HTMLWGridElement;
         "w-group": HTMLWGroupElement;
         "w-icon": HTMLWIconElement;
         "w-input": HTMLWInputElement;
+        "w-menu": HTMLWMenuElement;
         "w-modal": HTMLWModalElement;
         "w-notification": HTMLWNotificationElement;
         "w-observer": HTMLWObserverElement;
@@ -489,12 +628,37 @@ declare namespace LocalJSX {
     interface WAlert {
     }
     interface WButton {
+        /**
+          * color design
+         */
         "design"?: 'secondary' | 'error' | 'success' | 'warning' | 'primary';
+        /**
+          * show disabled state
+         */
         "disabled"?: boolean;
+        /**
+          * show only text
+         */
         "flat"?: boolean;
-        "onWClick"?: (event: CustomEvent<any>) => void;
+        /**
+          * emit wClick on button click
+         */
+        "onWClick"?: (event: CustomEvent<void>) => void;
+        /**
+          * change design, only show outlines
+         */
         "outline"?: boolean;
+        /**
+          * enable border radius
+         */
+        "rounded"?: 'left' | 'right' | 'top' | 'bottom' | 'none' | 'all';
+        /**
+          * button size
+         */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * set button type
+         */
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface WCardselect {
@@ -507,14 +671,56 @@ declare namespace LocalJSX {
         "size"?: 'small' | 'medium' | 'large';
     }
     interface WChip {
+        /**
+          * set chip text bold
+         */
         "bold"?: boolean;
+        /**
+          * enable wClick event on chip
+         */
         "clickable"?: boolean;
+        /**
+          * color of the chip
+         */
         "design"?: ChipDesign;
+        /**
+          * (optional) label of the chip
+         */
         "label"?: string;
-        "onWClick"?: (event: CustomEvent<any>) => void;
+        /**
+          * emit wClick event on chip click
+         */
+        "onWClick"?: (event: CustomEvent<void>) => void;
+        /**
+          * size of the chip
+         */
         "size"?: 'small' | 'medium' | 'large';
     }
     interface WCol {
+        /**
+          * flex align-items: start | center | end | space-between | space-around | space-evenly
+         */
+        "align"?: 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly';
+        /**
+          * flex gap: string, e.g. '1rem', '1px'
+         */
+        "gap"?: string;
+        /**
+          * flex justify-content: flex-start | flex-end | center | baseline | stretch
+         */
+        "justify"?: 'start' | 'center' | 'end' | 'stretch';
+        /**
+          * padding bottom and top: string, e.g. '1rem', '1px'
+         */
+        "padding"?: string;
+        /**
+          * used with w-grid, set size based on number of columns on w-grid (default is 12)
+         */
+        "size"?: number;
+        /**
+          * flex wrap: nowrap | wrap | wrap-reverse
+         */
+        "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface WDialog {
         "name"?: string;
@@ -525,7 +731,15 @@ declare namespace LocalJSX {
     }
     interface WForm {
     }
+    interface WGrid {
+        "columns"?: number | Array<number>;
+        "rows"?: number | Array<number>;
+    }
     interface WGroup {
+        /**
+          * direction of the group
+         */
+        "direction"?: 'row' | 'column';
     }
     interface WIcon {
     }
@@ -581,19 +795,19 @@ declare namespace LocalJSX {
         /**
           * emitted on blur
          */
-        "onWBlur"?: (event: CustomEvent<any>) => void;
+        "onWBlur"?: (event: CustomEvent<void>) => void;
         /**
           * emitted on change
          */
-        "onWChange"?: (event: CustomEvent<any>) => void;
+        "onWChange"?: (event: CustomEvent<number | string>) => void;
         /**
           * emitted on focus
          */
-        "onWFocus"?: (event: CustomEvent<any>) => void;
+        "onWFocus"?: (event: CustomEvent<void>) => void;
         /**
           * emitted on input
          */
-        "onWInput"?: (event: CustomEvent<any>) => void;
+        "onWInput"?: (event: CustomEvent<number | string>) => void;
         /**
           * set the pattern for the input
          */
@@ -627,6 +841,10 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
+    interface WMenu {
+        "minimizeable"?: boolean;
+        "position"?: 'left' | 'right' | 'top' | 'bottom';
+    }
     interface WModal {
         "closeOnClick"?: boolean;
         "maxHeight"?: string;
@@ -645,8 +863,14 @@ declare namespace LocalJSX {
         "position"?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
     }
     interface WObserver {
-        "onUnvisible"?: (event: CustomEvent<any>) => void;
-        "onVisible"?: (event: CustomEvent<any>) => void;
+        /**
+          * emit `invisible` event, when element looses visibility in viewport
+         */
+        "onInvisible"?: (event: CustomEvent<void>) => void;
+        /**
+          * emit `visible` event, when element get visible in viewport
+         */
+        "onVisible"?: (event: CustomEvent<void>) => void;
     }
     interface WRadiogroup {
         "alignment"?: 'vertical' | 'horizontal';
@@ -656,6 +880,26 @@ declare namespace LocalJSX {
         "value"?: any;
     }
     interface WRow {
+        /**
+          * flex align-items
+         */
+        "align"?: 'start' | 'center' | 'end' | 'stretch';
+        /**
+          * flex gap: string, e.g. '1rem', '1px'
+         */
+        "gap"?: string;
+        /**
+          * flex justify-content
+         */
+        "justify"?: 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly';
+        /**
+          * padding left and right: string, e.g. '1rem', '1px'
+         */
+        "padding"?: string;
+        /**
+          * flex wrap
+         */
+        "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface WSelect {
         /**
@@ -761,22 +1005,62 @@ declare namespace LocalJSX {
     interface WSlider {
     }
     interface WSpoiler {
+        /**
+          * label of the spoiler
+         */
+        "label"?: string;
+        /**
+          * emit when the spoiler is closed
+         */
+        "onWClose"?: (event: CustomEvent<void>) => void;
+        /**
+          * emit when the spoiler is opened
+         */
+        "onWOpen"?: (event: CustomEvent<void>) => void;
+        /**
+          * set the size of the spoiler
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface WStepper {
-        "allData"?: boolean;
-        "nextStepAvailable"?: boolean;
-        "onWStep"?: (event: CustomEvent<any>) => void;
-        "onWSubmit"?: (event: CustomEvent<any>) => void;
         /**
-          * define steps without label -> input number of steps with label -> input label of each step as array
+          * disabled state of the submit button
          */
-        "steps"?: number | any[];
+        "allData"?: boolean;
+        /**
+          * label of the next step button
+         */
+        "nextLabel"?: string;
+        /**
+          * disabled state of the next step button
+         */
+        "nextStepAvailable"?: boolean;
+        /**
+          * emit wNextStep event on next/previous button click
+         */
+        "onWStep"?: (event: CustomEvent<number>) => void;
+        /**
+          * emit wSubmit event on submit button click
+         */
+        "onWSubmit"?: (event: CustomEvent<void>) => void;
+        /**
+          * label of the previous step button
+         */
+        "prevLabel"?: string;
+        /**
+          * define steps without label -> steps: 3 with label -> steps: [1,'2',3] both do the same, but with array you can define the label
+         */
+        "steps"?: number | Array<number | string>;
+        /**
+          * label of the next step button
+         */
+        "submitLabel"?: string;
     }
     interface WTabs {
     }
     interface WTextarea {
         "cols"?: number;
-        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'default';
+        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
         "disabled"?: boolean;
         "label"?: string;
         "onWInput"?: (event: CustomEvent<any>) => void;
@@ -790,7 +1074,13 @@ declare namespace LocalJSX {
     interface WToggle {
     }
     interface WTooltip {
+        /**
+          * position of the tooltip
+         */
         "axis"?: 'x' | 'y';
+        /**
+          * text of the tooltip
+         */
         "text"?: string;
     }
     interface IntrinsicElements {
@@ -804,9 +1094,11 @@ declare namespace LocalJSX {
         "w-dropdown": WDropdown;
         "w-filepicker": WFilepicker;
         "w-form": WForm;
+        "w-grid": WGrid;
         "w-group": WGroup;
         "w-icon": WIcon;
         "w-input": WInput;
+        "w-menu": WMenu;
         "w-modal": WModal;
         "w-notification": WNotification;
         "w-observer": WObserver;
@@ -836,9 +1128,11 @@ declare module "@stencil/core" {
             "w-dropdown": LocalJSX.WDropdown & JSXBase.HTMLAttributes<HTMLWDropdownElement>;
             "w-filepicker": LocalJSX.WFilepicker & JSXBase.HTMLAttributes<HTMLWFilepickerElement>;
             "w-form": LocalJSX.WForm & JSXBase.HTMLAttributes<HTMLWFormElement>;
+            "w-grid": LocalJSX.WGrid & JSXBase.HTMLAttributes<HTMLWGridElement>;
             "w-group": LocalJSX.WGroup & JSXBase.HTMLAttributes<HTMLWGroupElement>;
             "w-icon": LocalJSX.WIcon & JSXBase.HTMLAttributes<HTMLWIconElement>;
             "w-input": LocalJSX.WInput & JSXBase.HTMLAttributes<HTMLWInputElement>;
+            "w-menu": LocalJSX.WMenu & JSXBase.HTMLAttributes<HTMLWMenuElement>;
             "w-modal": LocalJSX.WModal & JSXBase.HTMLAttributes<HTMLWModalElement>;
             "w-notification": LocalJSX.WNotification & JSXBase.HTMLAttributes<HTMLWNotificationElement>;
             "w-observer": LocalJSX.WObserver & JSXBase.HTMLAttributes<HTMLWObserverElement>;
