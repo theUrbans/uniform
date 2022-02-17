@@ -57,9 +57,7 @@ export class WButton {
         type={this.type}
         class={{
           button: true,
-          sm: this.size === 'small',
-          md: this.size === 'medium',
-          lg: this.size === 'large',
+          [this.size]: true,
           [this.design]: true,
           [`fill-${this.design}`]: !this.outline && !this.flat,
           outline: this.outline,
