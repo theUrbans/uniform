@@ -1,9 +1,10 @@
-import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, Event, EventEmitter, Listen, Host } from '@stencil/core';
+import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, Event, EventEmitter, Host } from '@stencil/core';
 
 export interface Option {
   value: any;
   label: string;
   disabled?: boolean;
+  selected?: boolean;
 }
 
 @Component({
@@ -16,14 +17,6 @@ export class WSelect implements ComponentInterface {
   @State() hovered: boolean = false;
   @State() focus: boolean = false;
   @Element() el: HTMLElement;
-
-  @Listen('click', { target: 'window' })
-  checkForClickOutside(ev) {
-    if (this.el.contains(ev.target)) {
-      return;
-    }
-    this.focus = false;
-  }
 
   @Prop() options: Option[] = [
     { value: '1', label: 'One', disabled: true },
@@ -44,10 +37,10 @@ export class WSelect implements ComponentInterface {
   /**
    * the value of the input
    */
-  @Prop({ mutable: true }) value: string | number | null = '';
+  @State() value: string | number | null = '';
   @Watch('value')
-  protected valueChanged() {
-    this.wChange.emit({ value: this.value === null ? this.value : this.value.toString() });
+  valueChanged() {
+    this.wChange.emit(this.value);
   }
 
   /**
@@ -89,9 +82,9 @@ export class WSelect implements ComponentInterface {
   /**
    * select design
    * possible values:
-   * - 'default', 'error', 'success', 'warning'
+   * - 'secondary', 'primary', 'error', 'success', 'warning'
    */
-  @Prop() design?: 'outline' | 'primary' | 'error' | 'success' | 'warning' | 'default' = 'default';
+  @Prop() design?: 'primary' | 'error' | 'success' | 'warning' | 'secondary' = 'secondary';
 
   /**
    * show error message below the input
@@ -169,7 +162,7 @@ export class WSelect implements ComponentInterface {
   /**
    * emitted on change
    */
-  @Event() wChange: EventEmitter;
+  @Event({ bubbles: false }) wChange: EventEmitter;
 
   /**
    * emitted on focus
@@ -229,11 +222,15 @@ export class WSelect implements ComponentInterface {
   @State() position: 'top' | 'bottom' = 'bottom';
   private onClick = () => {
     this.focus = true;
-    const { y, height } = this.el.getBoundingClientRect();
-    const optionHeight = this.el.shadowRoot.querySelector('#options').getBoundingClientRect().height;
-    const windowHeight = window.innerHeight;
-    if (windowHeight - y < optionHeight + height + 20) this.position = 'top';
-    else if (windowHeight - y >= optionHeight + height) this.position = 'bottom';
+    this.position = 'bottom';
+    // const el = this.el.shadowRoot.querySelector('#options') as HTMLElement;
+    // console.log(el);
+    // if (!el) return;
+    // const { y, height } = this.el.getBoundingClientRect();
+    // const optionHeight = el.getBoundingClientRect().height;
+    // const windowHeight = window.innerHeight;
+    // if (windowHeight - y < optionHeight + height + 20) this.position = 'top';
+    // else if (windowHeight - y >= optionHeight + height) this.position = 'bottom';
   };
 
   private onFocus = () => {
@@ -276,7 +273,7 @@ export class WSelect implements ComponentInterface {
     }
   };
 
-  @State() selected: string[] = [];
+  @State() selected: string[] = this.options.filter(option => option.selected).map(option => option.label);
   private selectOption = (value: any, label: string) => {
     if (this.multiple) {
       if (!this.selected.includes(label)) {
@@ -286,6 +283,9 @@ export class WSelect implements ComponentInterface {
       }
       this.getInputWidth();
       this.wChange.emit(this.options.filter(option => this.selected.includes(option.label)));
+      if (this.options.find(o => o.label === label).selected) {
+        this.options.find(o => o.label === label).selected = false;
+      }
     } else {
       this.selected = [label];
       this.focus = false;
@@ -294,6 +294,7 @@ export class WSelect implements ComponentInterface {
     this.inputElement.focus();
   };
 
+  // calculate the the count of options to show before breakdown and more are shown with eg '2+'
   @State() shortenSelected: boolean = false;
   @State() shortenBreakpoint: number = 0;
   private oldSelectedLength: number = 0;
@@ -324,25 +325,16 @@ export class WSelect implements ComponentInterface {
   render() {
     const value = this.getValue();
     return (
-      <Host>
+      <Host tabindex="0" onBlur={() => (this.focus = false)}>
         <div
           onMouseEnter={() => (this.hovered = true)}
           onMouseLeave={() => (this.hovered = false)}
           class={{
             wrapper: true,
-            smLabeltop: (!!this.searchValue || this.selected.length > 0 || this.focus) && this.size == 'small',
-            mdLabeltop: (!!this.searchValue || this.selected.length > 0 || this.focus) && this.size == 'medium',
-            lgLabeltop: (!!this.searchValue || this.selected.length > 0 || this.focus) && this.size == 'large',
             disabled: this.disabled,
-            sm: this.size == 'small',
-            md: this.size == 'medium',
-            lg: this.size == 'large',
-            error: this.design == 'error',
-            success: this.design == 'success',
-            warning: this.design == 'warning',
-            default: this.design == 'default',
-            primary: this.design == 'primary',
-            outline: this.design == 'outline',
+            [this.design]: true,
+            [this.size]: true,
+            [`top-${this.size}`]: this.focus || this.selected.length > 0,
           }}
         >
           {this.shortenSelected
@@ -371,9 +363,6 @@ export class WSelect implements ComponentInterface {
           <input
             class={{
               input: true,
-              smPaddingRight: this.size == 'small' && (this.hovered || this.focus || !!this.value),
-              mdPaddingRight: this.size == 'medium' && (this.hovered || this.focus || !!this.value),
-              lgPaddingRight: this.size == 'large' && (this.hovered || this.focus || !!this.value),
               [`text-${this.size}`]: true,
             }}
             ref={input => (this.inputElement = input)}
@@ -401,15 +390,8 @@ export class WSelect implements ComponentInterface {
             <label
               class={{
                 label: true,
-                smLabel: this.size == 'small',
-                mdLabel: this.size == 'medium',
-                lgLabel: this.size == 'large',
-                labelWarning: this.design == 'warning',
-                labelError: this.design == 'error',
-                labelSuccess: this.design == 'success',
-                labelDefault: this.design == 'default',
-                labelPrimary: this.design == 'primary',
-                labelOutline: this.design == 'outline',
+                [this.design]: true,
+                [`label-${this.size}`]: true,
               }}
             >
               {this.required ? this.label + ' *' : this.label}
@@ -459,25 +441,20 @@ export class WSelect implements ComponentInterface {
               }}
               id="options"
             >
-              {this.filteredOptions.map(({ value, label, disabled }) => {
+              {this.filteredOptions.map(({ value, label, disabled, selected }) => {
                 return (
                   <span
                     class={{
                       option: true,
-                      optionError: this.design == 'error',
-                      optionSuccess: this.design == 'success',
-                      optionWarning: this.design == 'warning',
-                      optionDefault: this.design == 'default',
-                      optionPrimary: this.design == 'primary',
-                      optionOutline: this.design == 'outline',
+                      [`option-${this.design}`]: true,
                       selected: this.value.toString().includes(label),
                       hovered: this.filteredOptions[this.index].label == label,
                       disabled,
                     }}
                     role="option"
-                    onClick={() => {
-                      if (!disabled && !this.multiple) this.selectOption(value, label);
-                    }}
+                    // onClick={() => {
+                    //   if (!disabled && !this.multiple) this.selectOption(value, label);
+                    // }}
                     onMouseEnter={() => (this.index = this.filteredOptions.findIndex(option => option.label == label))}
                   >
                     {this.multiple ? (
@@ -487,7 +464,7 @@ export class WSelect implements ComponentInterface {
                         }}
                         label={label}
                         size={this.size}
-                        checked={this.selected.includes(label)}
+                        checked={this.selected.includes(label) || selected}
                         disabled={disabled}
                       ></w-checkbox>
                     ) : (
