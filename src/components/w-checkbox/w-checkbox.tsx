@@ -10,7 +10,7 @@ export class WCheckbox {
   @Prop({ mutable: true }) checked: boolean = false;
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
   @Prop() disabled: boolean = false;
-  @Event() wChange: EventEmitter;
+  @Event({ bubbles: false, composed: false }) wChange: EventEmitter;
   @Method() async set(checked: boolean) {
     this.checked = checked;
   }
