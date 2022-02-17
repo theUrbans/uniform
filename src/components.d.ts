@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ChipDesign } from "./components/w-chip/w-chip";
+import { FormButton, FormField } from "./components/w-form/w-form";
 import { NotficationOption, NotificationType } from "./components/w-notification/w-notification";
 import { Option } from "./components/w-radiogroup/w-radiogroup";
 import { Option as Option1 } from "./components/w-select/w-select";
@@ -79,6 +80,10 @@ export namespace Components {
          */
         "align": 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly';
         /**
+          * use with w-grid to set area
+         */
+        "area"?: string;
+        /**
           * flex gap: string, e.g. '1rem', '1px'
          */
         "gap": string;
@@ -105,12 +110,43 @@ export namespace Components {
     interface WDropdown {
     }
     interface WFilepicker {
+        "fileEnding": string;
+        "filePlural": string;
+        "label": string;
+        "multiple": boolean;
+        "noFile": string;
+        "size": 'small' | 'large';
     }
     interface WForm {
+        "buttons": Array<FormButton>;
+        "fields": Array<FormField>;
+        "layout": string;
     }
     interface WGrid {
-        "columns": number | Array<number>;
-        "rows": number | Array<number>;
+        /**
+          * optional naming of grid areas
+         */
+        "area": Array<string[]>;
+        /**
+          * number of columns or array of column widths
+         */
+        "columns": number | Array<string>;
+        /**
+          * width, height of grid
+         */
+        "gap": string;
+        /**
+          * height of grid
+         */
+        "height": string;
+        /**
+          * number of rows or array of row heights
+         */
+        "rows": number | Array<string>;
+        /**
+          * width of grid
+         */
+        "width": string;
     }
     interface WGroup {
         /**
@@ -190,6 +226,10 @@ export namespace Components {
          */
         "setFocus": () => Promise<void>;
         /**
+          * decide if (and which site) a slot should be rendered
+         */
+        "showSlot"?: 'left' | 'right' | 'both';
+        /**
           * size of the input
          */
         "size": 'small' | 'medium' | 'large';
@@ -211,8 +251,9 @@ export namespace Components {
         "value": string | number | null;
     }
     interface WMenu {
+        "area"?: string;
+        "direction": 'horizontal' | 'vertical';
         "minimizeable": boolean;
-        "position": 'left' | 'right' | 'top' | 'bottom';
     }
     interface WModal {
         "closeModal": (name: string) => Promise<void>;
@@ -284,9 +325,9 @@ export namespace Components {
          */
         "borderStyle"?: 'none' | 'small' | 'large' | 'round';
         /**
-          * select design possible values: - 'default', 'error', 'success', 'warning'
+          * select design possible values: - 'secondary', 'primary', 'error', 'success', 'warning'
          */
-        "design"?: 'outline' | 'primary' | 'error' | 'success' | 'warning' | 'default';
+        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'secondary';
         /**
           * decide if the input is disabled
          */
@@ -354,10 +395,6 @@ export namespace Components {
           * use function returning a boolean to validate the input -> if false, it displays error-msg
          */
         "validate": boolean;
-        /**
-          * the value of the input
-         */
-        "value": string | number | null;
     }
     interface WSlider {
     }
@@ -702,6 +739,10 @@ declare namespace LocalJSX {
          */
         "align"?: 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly';
         /**
+          * use with w-grid to set area
+         */
+        "area"?: string;
+        /**
           * flex gap: string, e.g. '1rem', '1px'
          */
         "gap"?: string;
@@ -728,12 +769,45 @@ declare namespace LocalJSX {
     interface WDropdown {
     }
     interface WFilepicker {
+        "fileEnding"?: string;
+        "filePlural"?: string;
+        "label"?: string;
+        "multiple"?: boolean;
+        "noFile"?: string;
+        "onWSelect"?: (event: CustomEvent<FileList>) => void;
+        "size"?: 'small' | 'large';
     }
     interface WForm {
+        "buttons"?: Array<FormButton>;
+        "fields"?: Array<FormField>;
+        "layout"?: string;
+        "onWSubmit"?: (event: CustomEvent<any>) => void;
     }
     interface WGrid {
-        "columns"?: number | Array<number>;
-        "rows"?: number | Array<number>;
+        /**
+          * optional naming of grid areas
+         */
+        "area"?: Array<string[]>;
+        /**
+          * number of columns or array of column widths
+         */
+        "columns"?: number | Array<string>;
+        /**
+          * width, height of grid
+         */
+        "gap"?: string;
+        /**
+          * height of grid
+         */
+        "height"?: string;
+        /**
+          * number of rows or array of row heights
+         */
+        "rows"?: number | Array<string>;
+        /**
+          * width of grid
+         */
+        "width"?: string;
     }
     interface WGroup {
         /**
@@ -821,6 +895,10 @@ declare namespace LocalJSX {
          */
         "required"?: boolean;
         /**
+          * decide if (and which site) a slot should be rendered
+         */
+        "showSlot"?: 'left' | 'right' | 'both';
+        /**
           * size of the input
          */
         "size"?: 'small' | 'medium' | 'large';
@@ -842,8 +920,9 @@ declare namespace LocalJSX {
         "value"?: string | number | null;
     }
     interface WMenu {
+        "area"?: string;
+        "direction"?: 'horizontal' | 'vertical';
         "minimizeable"?: boolean;
-        "position"?: 'left' | 'right' | 'top' | 'bottom';
     }
     interface WModal {
         "closeOnClick"?: boolean;
@@ -919,9 +998,9 @@ declare namespace LocalJSX {
          */
         "borderStyle"?: 'none' | 'small' | 'large' | 'round';
         /**
-          * select design possible values: - 'default', 'error', 'success', 'warning'
+          * select design possible values: - 'secondary', 'primary', 'error', 'success', 'warning'
          */
-        "design"?: 'outline' | 'primary' | 'error' | 'success' | 'warning' | 'default';
+        "design"?: 'primary' | 'error' | 'success' | 'warning' | 'secondary';
         /**
           * decide if the input is disabled
          */
@@ -997,10 +1076,6 @@ declare namespace LocalJSX {
           * use function returning a boolean to validate the input -> if false, it displays error-msg
          */
         "validate"?: boolean;
-        /**
-          * the value of the input
-         */
-        "value"?: string | number | null;
     }
     interface WSlider {
     }

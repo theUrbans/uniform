@@ -1,5 +1,5 @@
 .button {
-  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md flex flex-row justify-center gap-2 w-full;
+  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md inline-flex flex-row justify-center items-center gap-2 w-full h-full;
 }
 .rounded-all {
   @apply border-radius;
@@ -19,13 +19,13 @@
 .rounded-none {
   @apply rounded-none;
 }
-.sm {
+.small {
   @apply py-1 px-4 font-normal text-sm border;
 }
-.md {
+.medium {
   @apply py-1 px-8 font-normal tracking-wide text-base border-2;
 }
-.lg {
+.large {
   @apply py-1.5 px-12 font-semibold tracking-wide text-lg border-3;
 }
 .primary {

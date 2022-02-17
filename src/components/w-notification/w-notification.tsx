@@ -1,4 +1,4 @@
-import { Component, Host, h, Method, State, Prop, Watch } from '@stencil/core';
+import { Component, Host, h, Method, State, Prop, Watch, Listen } from '@stencil/core';
 export interface NotficationOption {
   title: string;
   message?: string;
@@ -51,6 +51,15 @@ export class WNotification {
     }
     console.log(this.intervalls);
   }
+  @Listen('show-toast', { target: 'body' })
+  showToast(event: CustomEvent) {
+    this.show(event.detail.type, { ...event.detail });
+  }
+  @Listen('clear-toast', { target: 'body' })
+  clearToast() {
+    this.notifications = [];
+  }
+
   @Method()
   async show(type: NotificationType = 'default', options: NotficationOption) {
     this.type = type;

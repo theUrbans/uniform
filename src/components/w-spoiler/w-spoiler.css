@@ -1,5 +1,5 @@
 :host {
-  @apply w-full;
+  @apply w-max;
 }
 .spoiler {
   @apply flex flex-row gap-4 items-center border-solid cursor-pointer border-gray-200 box-border bg-gray-200 text-gray-600 font-semibold tracking-wide p-2;
@@ -11,16 +11,16 @@
   @apply rounded-t-xl;
 }
 .visible {
-  @apply block duration-300 min-h-max;
+  @apply block duration-300 h-max;
 }
 .hidden {
-  @apply hidden duration-300 min-h-none;
+  @apply hidden duration-300 h-0;
 }
 .chevron {
-  @apply duration-300;
+  @apply duration-300 transform -rotate-90;
 }
 .turn180 {
-  @apply transform -rotate-180 duration-300;
+  @apply transform  duration-300;
 }
 .small {
   @apply text-sm;

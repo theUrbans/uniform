@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'w-col',
@@ -36,9 +36,14 @@ export class WCol {
    */
   @Prop() size: number = 12;
 
+  /**
+   * use with w-grid to set area
+   */
+  @Prop() area?: string = '';
+
   render() {
     return (
-      <Host
+      <div
         class="col"
         style={{
           alignItems: this.align,
@@ -46,10 +51,11 @@ export class WCol {
           flexWrap: this.wrap,
           gap: this.gap,
           padding: `${this.padding} 0`,
+          gridArea: this.area,
         }}
       >
         <slot></slot>
-      </Host>
+      </div>
     );
   }
 }

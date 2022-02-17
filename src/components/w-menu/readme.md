@@ -7,26 +7,12 @@
 
 ## Properties
 
-| Property       | Attribute      | Description | Type                                     | Default  |
-| -------------- | -------------- | ----------- | ---------------------------------------- | -------- |
-| `minimizeable` | `minimizeable` |             | `boolean`                                | `false`  |
-| `position`     | `position`     |             | `"bottom" \| "left" \| "right" \| "top"` | `'left'` |
+| Property       | Attribute      | Description | Type                         | Default        |
+| -------------- | -------------- | ----------- | ---------------------------- | -------------- |
+| `area`         | `area`         |             | `string`                     | `undefined`    |
+| `direction`    | `direction`    |             | `"horizontal" \| "vertical"` | `'horizontal'` |
+| `minimizeable` | `minimizeable` |             | `boolean`                    | `false`        |
 
-
-## Dependencies
-
-### Depends on
-
-- [w-row](../w-row)
-- [w-col](../w-col)
-
-### Graph
-```mermaid
-graph TD;
-  w-menu --> w-row
-  w-menu --> w-col
-  style w-menu fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

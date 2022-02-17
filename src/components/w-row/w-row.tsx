@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'w-row',
@@ -29,11 +29,11 @@ export class WRow {
   /**
    * padding left and right: string, e.g. '1rem', '1px'
    */
-  @Prop() padding: string = '1em';
+  @Prop() padding: string = '1rem';
 
   render() {
     return (
-      <Host
+      <div
         class="row"
         style={{
           alignItems: this.align,
@@ -44,7 +44,7 @@ export class WRow {
         }}
       >
         <slot></slot>
-      </Host>
+      </div>
     );
   }
 }

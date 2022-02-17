@@ -30,12 +30,16 @@
 ### Used by
 
  - [w-dialog](../w-dialog)
+ - [w-filepicker](../w-filepicker)
+ - [w-form](../w-form)
  - [w-stepper](../w-stepper)
 
 ### Graph
 ```mermaid
 graph TD;
   w-dialog --> w-button
+  w-filepicker --> w-button
+  w-form --> w-button
   w-stepper --> w-button
   style w-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

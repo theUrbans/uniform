@@ -32,12 +32,29 @@
   <body>
     <w-notification id="noti"></w-notification>
     <w-col>
+      <w-button design="success">
+        <span slot="suffix">&times;</span>
+        testse</w-button
+      >
+      <w-filepicker file-plural="Datein" no-file="keine Datei ausgewählt" label="Datei auswählen"></w-filepicker>
+      <w-filepicker file-plural="Datein" no-file="keine Datei ausgewählt" label="Datei auswählen" multiple></w-filepicker>
+      <w-filepicker file-plural="Datein" no-file="keine Datei ausgewählt" label="Datei auswählen" size="large" multiple file-ending=".csv"></w-filepicker>
+      <w-input show-slot="right" label="slot">
+        <w-button rounded="right" design="secondary" size="small" outline>rechts</w-button>
+      </w-input>
+      <w-input show-slot="left" label="slot">
+        <w-button rounded="left" design="secondary">links</w-button>
+      </w-input>
+      <w-input show-slot="both" label="slot">
+        <w-button slot="left" rounded="left">beide</w-button>
+        <w-button slot="right" rounded="right">beide</w-button>
+      </w-input>
       <w-group>
-        <w-button outline design="secondary" rounded="left" onclick="openModal()">open modal</w-button>
-        <w-button outline design="secondary" rounded="none" onclick="openDialog()">open dialog</w-button>
-        <w-button outline design="secondary" rounded="none" onclick="focusInput()">focus input</w-button>
-        <w-button outline design="secondary" rounded="none" onclick="blurInput()">blur input</w-button>
-        <w-button outline design="secondary" rounded="right" onclick="sendNoti()">send noti</w-button>
+        <w-button design="success" outline rounded="left" onclick="openModal()">open modal</w-button>
+        <w-button design="secondary" rounded="none" onclick="openDialog()">open dialog</w-button>
+        <w-button design="secondary" rounded="none" onclick="focusInput()">focus input</w-button>
+        <w-button design="secondary" rounded="none" onclick="blurInput()">blur input</w-button>
+        <w-button design="secondary" rounded="right" onclick="sendNoti()">send noti</w-button>
       </w-group>
       <w-spoiler label="show all colored chips">
         <w-col>
@@ -91,6 +108,16 @@
           </w-row>
         </w-col>
       </w-spoiler>
+      <w-spoiler label="Grid Test">
+        <w-grid columns="4" rows="1" area="[['test', 'test', 'test1', 'test1']]">
+          <w-col area="test1">
+            <w-chip design="error">consectetur adipisicing.</w-chip>
+            <w-chip design="warning">consectetur adipisicing.</w-chip>
+            <w-chip design="primary">consectetur adipisicing.</w-chip>
+            <w-chip design="secondary">consectetur adipisicing.</w-chip>
+          </w-col>
+        </w-grid>
+      </w-spoiler>
     </w-col>
     <w-modal name="tesst">
       <span slot="header">Hallo</span>
@@ -111,7 +138,7 @@
             <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
           </w-row>
           <w-row>
-            <w-select label="Select" searchable multiple design="outline"></w-select>
+            <w-select label="Select" searchable multiple design="secondary"></w-select>
             <w-input id="input" label="Label 132" required do-focus="false" errorMsg="Fehler alaram" size="medium"></w-input>
             <w-textarea label="Situation beschreiben" resize="both" required></w-textarea>
           </w-row>
@@ -144,52 +171,45 @@
       </div>
       <div class="row">
         <w-button text="success" id="test" size="large" design="success"></w-button>
-        <w-button text="success" id="test" size="medium" design="success"></w-button>
-        <w-button text="success" id="test" size="small" design="success"></w-button>
-      </div>
-      <div class="row">
         <w-button text="error" id="tes2t" size="large" design="error"></w-button>
-        <w-button text="error" id="t3est" size="medium" design="error"></w-button>
-        <w-button text="error" id="t3est" size="small" design="error"></w-button>
-      </div>
-      <div class="row">
         <w-button text="warning" id="t3est" size="large" design="warning"></w-button>
-        <w-button text="warning" id="t3est" size="medium" disabled design="warning"></w-button>
-        <w-button text="warning" id="t3est" size="small" design="warning"></w-button>
+        <w-button text="default" id="t3est" size="large" design="secondary"></w-button>
       </div>
       <div class="row">
-        <w-button text="default" id="t3est" size="large" design="secondary"></w-button>
+        <w-button text="success" id="test" size="medium" design="success"></w-button>
+        <w-button text="error" id="t3est" size="medium" design="error"></w-button>
+        <w-button text="warning" id="t3est" size="medium" disabled design="warning"></w-button>
         <w-button text="default" id="t3est" size="medium" design="secondary"></w-button>
+      </div>
+      <div class="row"></div>
+      <div class="row">
+        <w-button text="success" id="test" size="small" design="success"></w-button>
+        <w-button text="error" id="t3est" size="small" design="error"></w-button>
+        <w-button text="warning" id="t3est" size="small" design="warning"></w-button>
         <w-button text="default" id="t3est" size="small" design="secondary"></w-button>
       </div>
       <div class="row">
         <w-button text="primary" id="t3est" size="large" design="primary"></w-button>
-        <w-button text="primary" id="t3est" size="medium" design="primary"></w-button>
-        <w-button text="primary" id="t3est" size="small" design="primary"></w-button>
-      </div>
-      <div class="row">
         <w-button text="success outline" id="test" size="large" design="success" outline></w-button>
-        <w-button text="success outline" id="test" size="medium" design="success" outline></w-button>
-        <w-button text="success outline" id="test" size="small" design="success" outline></w-button>
-      </div>
-      <div class="row">
         <w-button text="error outline" id="tes2t" size="large" design="error" outline></w-button>
-        <w-button text="error outline" id="t3est" size="medium" design="error" outline></w-button>
-        <w-button text="error outline" id="t3est" size="small" design="error" outline></w-button>
-      </div>
-      <div class="row">
         <w-button text="warning outline" id="t3est" size="large" design="warning" outline></w-button>
-        <w-button text="warning outline" id="t3est" size="medium" design="warning" outline></w-button>
-        <w-button text="warning outline" id="t3est" size="small" design="warning" outline></w-button>
-      </div>
-      <div class="row">
         <w-button text="default outline" id="t3est" size="large" design="secondary" outline></w-button>
-        <w-button text="default outline" id="t3est" size="medium" design="secondary" outline></w-button>
-        <w-button text="default outline" id="t3est" size="small" design="secondary" outline></w-button>
+        <w-button text="primary outline" id="t3est" size="large" design="primary" outline></w-button>
       </div>
       <div class="row">
-        <w-button text="primary outline" id="t3est" size="large" design="primary" outline></w-button>
+        <w-button text="primary" id="t3est" size="medium" design="primary"></w-button>
+        <w-button text="success outline" id="test" size="medium" design="success" outline></w-button>
+        <w-button text="error outline" id="t3est" size="medium" design="error" outline></w-button>
+        <w-button text="warning outline" id="t3est" size="medium" design="warning" outline></w-button>
+        <w-button text="default outline" id="t3est" size="medium" design="secondary" outline></w-button>
         <w-button text="primary outline" id="t3est" size="medium" design="primary" disabled outline></w-button>
+      </div>
+      <div class="row">
+        <w-button text="primary" id="t3est" size="small" design="primary"></w-button>
+        <w-button text="success outline" id="test" size="small" design="success" outline></w-button>
+        <w-button text="error outline" id="t3est" size="small" design="error" outline></w-button>
+        <w-button text="warning outline" id="t3est" size="small" design="warning" outline></w-button>
+        <w-button text="default outline" id="t3est" size="small" design="secondary" outline></w-button>
         <w-button text="primary outline" id="t3est" size="small" design="primary" outline></w-button>
       </div>
       <div class="row">
