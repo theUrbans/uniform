@@ -27,6 +27,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [w-form](../w-form)
+
 ### Depends on
 
 - [w-button](../w-button)
@@ -35,6 +39,7 @@
 ```mermaid
 graph TD;
   w-stepper --> w-button
+  w-form --> w-stepper
   style w-stepper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

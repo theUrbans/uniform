@@ -33,7 +33,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Column](https://github.com/dieUrbans/uniform/tree/master/src/components/w-col)                | w-col          | 🔴    |
 | [Dialog](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dialog)             | w-dialog       | 🟡    |
 | [Dropdown](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dropdown)         | w-dropdown     | 🔵    |
-| [Filepicker](https://github.com/dieUrbans/uniform/tree/master/src/components/w-filepicker)     | w-filepicker   | 🔵    |
+| [Filepicker](https://github.com/dieUrbans/uniform/tree/master/src/components/w-filepicker)     | w-filepicker   | 🔴    |
 | [Form](https://github.com/dieUrbans/uniform/tree/master/src/components/w-form)                 | w-form         | 🔵    |
 | [Grid](https://github.com/dieUrbans/uniform/tree/master/src/components/w-grid)                 | w-grid         | 🔴    |
 | [Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-group)               | w-group        | 🟢    |

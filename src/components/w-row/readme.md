@@ -12,7 +12,7 @@
 | `align`   | `align`   | flex align-items                                   | `"center" \| "end" \| "start" \| "stretch"`                                           | `'center'` |
 | `gap`     | `gap`     | flex gap: string, e.g. '1rem', '1px'               | `string`                                                                              | `'1rem'`   |
 | `justify` | `justify` | flex justify-content                               | `"center" \| "end" \| "space-around" \| "space-between" \| "space-evenly" \| "start"` | `'start'`  |
-| `padding` | `padding` | padding left and right: string, e.g. '1rem', '1px' | `string`                                                                              | `'1em'`    |
+| `padding` | `padding` | padding left and right: string, e.g. '1rem', '1px' | `string`                                                                              | `'1rem'`   |
 | `wrap`    | `wrap`    | flex wrap                                          | `"nowrap" \| "wrap" \| "wrap-reverse"`                                                | `'wrap'`   |
 
 
@@ -20,12 +20,12 @@
 
 ### Used by
 
- - [w-menu](../w-menu)
+ - [w-form](../w-form)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-menu --> w-row
+  w-form --> w-row
   style w-row fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
