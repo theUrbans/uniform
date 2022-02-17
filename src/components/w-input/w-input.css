@@ -1,11 +1,20 @@
 :host {
-  @apply w-full;
+  @apply cursor-text w-full max-w-full flex;
 }
 * {
   outline: none;
 }
 .wrapper {
-  @apply relative px-2 rounded-xl mt-2 hover:shadow-md border-gray-300 flex;
+  @apply relative px-2 rounded-xl hover:shadow-md border-gray-300 flex flex-grow;
+}
+.slot-left {
+  @apply !rounded-l-none;
+}
+.slot-right {
+  @apply !rounded-r-none;
+}
+.slot-both {
+  @apply !rounded-x-none;
 }
 .errorText {
   @apply mb-4;
@@ -15,34 +24,25 @@
 }
 
 .small {
-  @apply py-0 font-normal text-sm border border-solid;
+  @apply py-0 font-normal text-sm border border-solid pr-4;
 }
 .small input:focus-within ~ label,
 .small input:not(:placeholder-shown) ~ label {
   @apply transform scale-80 -translate-y-4.5 z-0 ml-0.5 px-1 py-0;
 }
-.padding-small {
-  @apply pr-4;
-}
 .medium {
-  @apply font-semibold py-0 text-base border-2 border-solid;
+  @apply font-semibold py-0 text-base border-2 border-solid pr-5;
 }
 .medium input:focus-within ~ label,
 .medium input:not(:placeholder-shown) ~ label {
   @apply transform scale-80 -translate-y-5.5 z-0 ml-0.5 px-1 py-0;
 }
-.padding-medium {
-  @apply pr-5;
-}
 .large {
-  @apply font-semibold py-0 text-lg border-3 border-solid;
+  @apply font-semibold py-0 text-lg border-3 border-solid pr-6;
 }
 .large input:focus-within ~ label,
 .large input:not(:placeholder-shown) ~ label {
   @apply transform scale-80 -translate-y-6.5 z-0 ml-1 px-1 py-0;
-}
-.padding-large {
-  @apply pr-6;
 }
 .text-small {
   @apply text-sm;
@@ -69,7 +69,7 @@
   @apply font-semibold text-lg;
 }
 .reset {
-  @apply absolute right-1 bottom-3/7 transform translate-y-1/2 cursor-pointer;
+  @apply absolute right-1 transform top-2/4 -translate-y-1/2 cursor-pointer flex flex-row;
 }
 .error {
   @apply error;
