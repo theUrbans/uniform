@@ -1,3 +1,14 @@
-:host {
-  display: block;
+.card {
+  @apply border-solid border border-grey-500 border-radius w-96 overflow-hidden;
+}
+
+.header {
+  @apply   w-full box-border rounded-t-xl font-semibold;
+}
+
+.content {
+  @apply p-2 bg-red-500;
+}
+
+img {
 }
