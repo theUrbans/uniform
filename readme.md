@@ -26,16 +26,16 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | ---------------------------------------------------------------------------------------------- | -------------- | ----- |
 | [Alert](https://github.com/dieUrbans/uniform/tree/master/src/components/w-alert)               | w-alert        | 🔵    |
 | [Button](https://github.com/dieUrbans/uniform/tree/master/src/components/w-button)             | w-button       | 🟢    |
-| [Card Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-cardselect)    | w-cardselect   | 🔵    |
 | [Card](https://github.com/dieUrbans/uniform/tree/master/src/components/w-card)                 | w-card         | 🔴    |
+| [Card Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-cardselect)    | w-cardselect   | 🔵    |
 | [Checkbox](https://github.com/dieUrbans/uniform/tree/master/src/components/w-checkbox)         | w-checkbox     | 🟡    |
 | [Chip](https://github.com/dieUrbans/uniform/tree/master/src/components/w-chip)                 | w-chip         | 🟢    |
-| [Column](https://github.com/dieUrbans/uniform/tree/master/src/components/w-col)                | w-col          | 🔴    |
+| [Column](https://github.com/dieUrbans/uniform/tree/master/src/components/w-col)                | w-col          | 🟡    |
 | [Dialog](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dialog)             | w-dialog       | 🟡    |
 | [Dropdown](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dropdown)         | w-dropdown     | 🔵    |
-| [Filepicker](https://github.com/dieUrbans/uniform/tree/master/src/components/w-filepicker)     | w-filepicker   | 🔴    |
-| [Form](https://github.com/dieUrbans/uniform/tree/master/src/components/w-form)                 | w-form         | 🔵    |
-| [Grid](https://github.com/dieUrbans/uniform/tree/master/src/components/w-grid)                 | w-grid         | 🔴    |
+| [Filepicker](https://github.com/dieUrbans/uniform/tree/master/src/components/w-filepicker)     | w-filepicker   | 🟡    |
+| [Form](https://github.com/dieUrbans/uniform/tree/master/src/components/w-form)                 | w-form         | 🟡    |
+| [Grid](https://github.com/dieUrbans/uniform/tree/master/src/components/w-grid)                 | w-grid         | 🟡    |
 | [Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-group)               | w-group        | 🟢    |
 | [Icon](https://github.com/dieUrbans/uniform/tree/master/src/components/w-icon)                 | w-icon         | 🔵    |
 | [Input](https://github.com/dieUrbans/uniform/tree/master/src/components/w-input)               | w-input        | 🟡    |
@@ -44,7 +44,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Notification](https://github.com/dieUrbans/uniform/tree/master/src/components/w-notification) | w-notification | 🟡    |
 | [Observer](https://github.com/dieUrbans/uniform/tree/master/src/components/w-observer)         | w-observer     | 🟢    |
 | [Radio Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-radiogroup)    | w-radiogroup   | 🟡    |
-| [Row](https://github.com/dieUrbans/uniform/tree/master/src/components/w-row)                   | w-row          | 🔴    |
+| [Row](https://github.com/dieUrbans/uniform/tree/master/src/components/w-row)                   | w-row          | 🟡    |
 | [Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-select)             | w-select       | 🟡    |
 | [Slider](https://github.com/dieUrbans/uniform/tree/master/src/components/w-slider)             | w-slider       | 🔵    |
 | [Spoiler](https://github.com/dieUrbans/uniform/tree/master/src/components/w-spoiler)           | w-spoiler      | 🟡    |

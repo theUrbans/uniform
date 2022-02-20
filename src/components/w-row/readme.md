@@ -20,12 +20,16 @@
 
 ### Used by
 
+ - [w-filepicker](../w-filepicker)
  - [w-form](../w-form)
+ - [w-stepper](../w-stepper)
 
 ### Graph
 ```mermaid
 graph TD;
+  w-filepicker --> w-row
   w-form --> w-row
+  w-stepper --> w-row
   style w-row fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

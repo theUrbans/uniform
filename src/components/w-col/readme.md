@@ -18,6 +18,19 @@
 | `wrap`    | `wrap`    | flex wrap: nowrap \| wrap \| wrap-reverse                                                 | `"nowrap" \| "wrap" \| "wrap-reverse"`                                                | `'wrap'`   |
 
 
+## Dependencies
+
+### Used by
+
+ - [w-filepicker](../w-filepicker)
+
+### Graph
+```mermaid
+graph TD;
+  w-filepicker --> w-col
+  style w-col fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

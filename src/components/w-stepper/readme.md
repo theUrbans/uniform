@@ -33,11 +33,13 @@
 
 ### Depends on
 
+- [w-row](../w-row)
 - [w-button](../w-button)
 
 ### Graph
 ```mermaid
 graph TD;
+  w-stepper --> w-row
   w-stepper --> w-button
   w-form --> w-stepper
   style w-stepper fill:#f9f,stroke:#333,stroke-width:4px

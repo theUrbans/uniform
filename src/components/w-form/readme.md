@@ -16,9 +16,10 @@
 
 ## Events
 
-| Event     | Description | Type               |
-| --------- | ----------- | ------------------ |
-| `wSubmit` |             | `CustomEvent<any>` |
+| Event       | Description | Type               |
+| ----------- | ----------- | ------------------ |
+| `wNextStep` |             | `CustomEvent<any>` |
+| `wSubmit`   |             | `CustomEvent<any>` |
 
 
 ## Dependencies
@@ -37,6 +38,7 @@ graph TD;
   w-form --> w-grid
   w-form --> w-row
   w-form --> w-button
+  w-stepper --> w-row
   w-stepper --> w-button
   style w-form fill:#f9f,stroke:#333,stroke-width:4px
 ```
