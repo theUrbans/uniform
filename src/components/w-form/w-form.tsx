@@ -8,7 +8,7 @@ export interface FormButton {
 }
 
 export interface FormField {
-  type: 'input' | 'select' | 'textarea' | 'checkbox' | 'radio';
+  type: 'input' | 'select' | 'textarea' | 'checkbox' | 'radio' | 'filepicker';
   step?: number | string;
   subType?: string; // eg 'email' for input ...
   data?: any; // data for select or radio
@@ -33,10 +33,11 @@ export class WForm {
   @Prop() fields: Array<FormField> = [];
   @Prop() buttons: Array<FormButton> = [];
   @Event() wSubmit: EventEmitter;
-  private submitForm() {
+  @Event() wNextStep: EventEmitter;
+  private submitForm = () => {
     console.log('submitForm', this.returnValue);
     this.wSubmit.emit(this.returnValue);
-  }
+  };
 
   @State() returnValue: { [key: string]: any };
   @State() steps: Array<number | string> = [];
@@ -66,6 +67,16 @@ export class WForm {
         ...field.options,
       };
 
+    if (field.type === 'filepicker') {
+      return {
+        onWSelect: (event: any) => {
+          this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
+        },
+        label: field.label,
+        required: field.required,
+        ...field.options,
+      };
+    }
     if (field.type === 'checkbox') return {};
     if (field.type === 'radio') return {};
   }
@@ -116,11 +127,15 @@ export class WForm {
     this.el.dispatchEvent(new CustomEvent(button.eventName));
   }
 
+  private sendStep = (e: CustomEvent) => {
+    this.wNextStep.emit({ step: e.detail, value: this.returnValue });
+  };
+
   render() {
     return (
       <Host>
         {this.stepper ? (
-          <w-stepper onWSubmit={this.submitForm} steps={this.steps}>
+          <w-stepper onWSubmit={this.submitForm} onWStep={this.sendStep} steps={this.steps}>
             {this.steps.map((step, index: number) => {
               return (
                 <w-grid
