@@ -781,6 +781,7 @@ declare namespace LocalJSX {
         "buttons"?: Array<FormButton>;
         "fields"?: Array<FormField>;
         "layout"?: string;
+        "onWNextStep"?: (event: CustomEvent<any>) => void;
         "onWSubmit"?: (event: CustomEvent<any>) => void;
     }
     interface WGrid {
