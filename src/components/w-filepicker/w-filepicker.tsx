@@ -19,7 +19,6 @@ export class WFilepicker {
     const file = event.target['files'];
     this.file = file;
     this.getFileText();
-    console.log(file);
     this.wSelect.emit(this.file);
   };
 
@@ -28,7 +27,6 @@ export class WFilepicker {
     const files = e.dataTransfer.files;
     this.file = files;
     this.getFileText();
-    console.log(files);
     this.wSelect.emit(this.file);
   }
 
@@ -64,10 +62,10 @@ export class WFilepicker {
             <w-button rounded="right" design="primary" outline>
               {this.fileText}
             </w-button>
-            <input type="file" accept={this.fileEnding} multiple={this.multiple} onChange={this.handleFileInput} />
+            <input class="input" type="file" accept={this.fileEnding} multiple={this.multiple} onChange={this.handleFileInput} />
           </w-group>
         ) : (
-          <div onDrop={this.dropHandler}>
+          <div onDrop={this.dropHandler} class="dropzone">
             <w-col align="center">
               <w-row>
                 <span>
@@ -80,7 +78,7 @@ export class WFilepicker {
               </w-row>
               {this.fileText}
             </w-col>
-            <input type="file" accept={this.fileEnding} multiple={this.multiple} onChange={this.handleFileInput} />
+            <input class="input" type="file" accept={this.fileEnding} multiple={this.multiple} onChange={this.handleFileInput} />
           </div>
         )}
       </Host>
