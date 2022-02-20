@@ -302,10 +302,12 @@
     });
     let x = 0;
     const sendNoti = () => {
-      const noti = document.querySelector('w-notification');
-      console.log(noti);
-      // noti.warning('Fehler ' + x, 'FehlerFehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler FehlerFehler', 5000);
-      noti.show('success', { title: 'Fehler ' + x, message: 'FehlerFehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler FehlerFehler', delay: 5000 });
+      const body = document.querySelector('body');
+      body.dispatchEvent(new CustomEvent('show-toast', { detail: { title: 'test', message: 'asdasd asda sdas das das d', type: 'success' } }));
+      // const noti = document.querySelector('w-notification');
+      // console.log(noti);
+      // // noti.warning('Fehler ' + x, 'FehlerFehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler FehlerFehler', 5000);
+      // noti.show('success', { title: 'Fehler ' + x, message: 'FehlerFehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler Fehler FehlerFehler', delay: 5000 });
       x += 1;
     };
     const observer = document.getElementById('xxa');
