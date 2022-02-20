@@ -1,8 +1,8 @@
 :host {
   @apply relative;
 }
-input {
-  @apply cursor-pointer absolute top-0 left-0 block opacity-0 w-full h-full;
+.input {
+  @apply cursor-pointer block absolute left-0 top-0 opacity-0 w-full h-full;
 }
 .label {
   @apply rounded-r-xl border-gray-300 border-solid;
@@ -11,6 +11,6 @@ input {
 }
 .large {
 }
-div {
-  @apply p-6 m-0 border-radius border-dotted border-2 bg-gray-100 border-gray-400 h-12 max-w-max flex flex-row items-center text-gray-600;
+.dropzone {
+  @apply relative p-6 m-0 border-radius border-dotted border-2 bg-gray-100 border-gray-400 h-12 max-w-max flex flex-row items-center text-gray-600;
 }
