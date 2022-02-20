@@ -21,7 +21,7 @@
   @apply flex flex-row;
 }
 .footer {
-  @apply flex flex-row justify-between p-2 bg-gray-200 rounded-b-xl;
+  @apply flex flex-row justify-between px-2 py-1 bg-gray-200 rounded-b-xl;
 }
 .content {
   @apply bg-transparent border-2 border-gray-200 border-solid;

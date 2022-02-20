@@ -63,7 +63,7 @@ export class WStepper {
 
   private handleNextStep = () => {
     this.currentStep += 1;
-    this.wStep.emit(this.currentStep);
+    this.wStep.emit(this.currentStep + 1);
   };
 
   private handlePreviousStep = () => {
@@ -79,15 +79,17 @@ export class WStepper {
           <div class="head">
             {steps.map((step, index) => {
               return [
-                <div
-                  class={{
-                    step: true,
-                    activeStep: index === this.currentStep,
-                  }}
-                >
-                  <span class={{ no: true, activeStep: index === this.currentStep }}>{index + 1}</span>
-                  {typeof step == 'string' ? <span class="label">{step}</span> : null}
-                </div>,
+                <w-row wrap="wrap">
+                  <div
+                    class={{
+                      step: true,
+                      activeStep: index === this.currentStep,
+                    }}
+                  >
+                    <span class={{ no: true, activeStep: index === this.currentStep }}>{index + 1}</span>
+                    {typeof step == 'string' ? <span class="label">{step}</span> : null}
+                  </div>
+                </w-row>,
                 index < steps.length - 1 ? <div class={{ line: true, doneLine: index < this.currentStep }} /> : null,
               ];
             })}
@@ -120,7 +122,6 @@ export class WStepper {
             ) : (
               <w-button design="success" flat disabled={!this.allData} onWClick={this.handleSubmit}>
                 {this.submitLabel}
-                <span slot="suffix">&#187;</span>
               </w-button>
             )}
           </div>
