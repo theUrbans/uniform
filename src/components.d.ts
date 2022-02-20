@@ -43,6 +43,13 @@ export namespace Components {
          */
         "type"?: 'button' | 'submit' | 'reset';
     }
+    interface WCard {
+        "img"?: string;
+        /**
+          * padding left and right: string, e.g. '1rem', '1px'
+         */
+        "slotCount"?: number;
+    }
     interface WCardselect {
     }
     interface WCheckbox {
@@ -251,9 +258,8 @@ export namespace Components {
         "value": string | number | null;
     }
     interface WMenu {
-        "area"?: string;
-        "direction": 'horizontal' | 'vertical';
         "minimizeable": boolean;
+        "position": 'left' | 'right' | 'top' | 'bottom';
     }
     interface WModal {
         "closeModal": (name: string) => Promise<void>;
@@ -474,6 +480,12 @@ declare global {
         prototype: HTMLWButtonElement;
         new (): HTMLWButtonElement;
     };
+    interface HTMLWCardElement extends Components.WCard, HTMLStencilElement {
+    }
+    var HTMLWCardElement: {
+        prototype: HTMLWCardElement;
+        new (): HTMLWCardElement;
+    };
     interface HTMLWCardselectElement extends Components.WCardselect, HTMLStencilElement {
     }
     var HTMLWCardselectElement: {
@@ -633,6 +645,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "w-alert": HTMLWAlertElement;
         "w-button": HTMLWButtonElement;
+        "w-card": HTMLWCardElement;
         "w-cardselect": HTMLWCardselectElement;
         "w-checkbox": HTMLWCheckboxElement;
         "w-chip": HTMLWChipElement;
@@ -697,6 +710,13 @@ declare namespace LocalJSX {
           * set button type
          */
         "type"?: 'button' | 'submit' | 'reset';
+    }
+    interface WCard {
+        "img"?: string;
+        /**
+          * padding left and right: string, e.g. '1rem', '1px'
+         */
+        "slotCount"?: number;
     }
     interface WCardselect {
     }
@@ -921,9 +941,8 @@ declare namespace LocalJSX {
         "value"?: string | number | null;
     }
     interface WMenu {
-        "area"?: string;
-        "direction"?: 'horizontal' | 'vertical';
         "minimizeable"?: boolean;
+        "position"?: 'left' | 'right' | 'top' | 'bottom';
     }
     interface WModal {
         "closeOnClick"?: boolean;
@@ -1162,6 +1181,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "w-alert": WAlert;
         "w-button": WButton;
+        "w-card": WCard;
         "w-cardselect": WCardselect;
         "w-checkbox": WCheckbox;
         "w-chip": WChip;
@@ -1196,6 +1216,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "w-alert": LocalJSX.WAlert & JSXBase.HTMLAttributes<HTMLWAlertElement>;
             "w-button": LocalJSX.WButton & JSXBase.HTMLAttributes<HTMLWButtonElement>;
+            "w-card": LocalJSX.WCard & JSXBase.HTMLAttributes<HTMLWCardElement>;
             "w-cardselect": LocalJSX.WCardselect & JSXBase.HTMLAttributes<HTMLWCardselectElement>;
             "w-checkbox": LocalJSX.WCheckbox & JSXBase.HTMLAttributes<HTMLWCheckboxElement>;
             "w-chip": LocalJSX.WChip & JSXBase.HTMLAttributes<HTMLWChipElement>;
