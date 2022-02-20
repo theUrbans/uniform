@@ -9,8 +9,8 @@ module.exports = {
         'warning-fill': 'bg-yellow-400 text-dark-200 hover:bg-yellow-500',
         'primary': 'bg-white border-blue-500 text-blue-500 hover:shadow-blue-300 hover:border-blue-600 transition-all duration-200',
         'primary-fill': 'bg-blue-500 text-light-200 hover:bg-blue-600',
-        'secondary': 'bg-white border-gray-200 text-gray-500 hover:shadow-gray-200 hover:border-gray-300 transition-all duration-200',
-        'secondary-fill': 'bg-gray-200 text-dark-200 hover:bg-gray-300',
+        'secondary': 'bg-white border-blue-gray-200 text-blue-gray-500 hover:shadow-blue-gray-200 hover:border-blue-gray-300 transition-all duration-200',
+        'secondary-fill': 'bg-blue-gray-200 text-dark-200 hover:bg-blue-gray-300',
     },
     plugins: [
         require('@windicss/plugin-icons'),
