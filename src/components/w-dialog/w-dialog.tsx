@@ -8,7 +8,10 @@ export interface Action {
 
 @Component({
   tag: 'w-dialog',
-  styleUrl: 'w-dialog.css',
+  styleUrls: {
+    desktop: 'w-dialog.desktop.css',
+    mobile: 'w-dialog.mobile.css',
+  },
   shadow: true,
 })
 export class WDialog {
