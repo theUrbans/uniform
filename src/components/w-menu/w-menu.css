@@ -1,3 +1,6 @@
-:host {
-  display: block;
+.vertical {
+  @apply flex flex-row h-full items-center;
+}
+.horizontal {
+  @apply flex flex-col w-full justify-center;
 }
