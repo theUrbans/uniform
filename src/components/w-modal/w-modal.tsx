@@ -4,7 +4,7 @@ import { Component, h, Prop, Method, Listen, State, Event, EventEmitter, Element
   tag: 'w-modal',
   styleUrls: {
     desktop: 'w-modal.desktop.css',
-    mobile: 'w-modal.mobile.css',
+    mobile: 'w-modal.mobile.scss',
   },
   shadow: true,
 })
