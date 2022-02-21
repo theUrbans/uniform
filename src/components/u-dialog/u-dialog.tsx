@@ -15,7 +15,7 @@ export interface Action {
   shadow: true,
 })
 export class WDialog {
-  private modal: HTMLWModalElement;
+  private modal: HTMLUModalElement;
   @Prop() name: string = 'w-dialog-default';
   @State() open: boolean = false;
   @State() title: string = 'w-dialog title';
