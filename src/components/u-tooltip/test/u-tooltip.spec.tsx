@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WTooltip } from '../w-tooltip';
+import { WTooltip } from '../u-tooltip';
 
 describe('w-tooltip', () => {
   it('renders', async () => {

@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WIcon } from '../w-icon';
+import { WIcon } from '../u-icon';
 
 describe('w-icon', () => {
   it('renders', async () => {

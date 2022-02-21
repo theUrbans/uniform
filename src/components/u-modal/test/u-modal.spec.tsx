@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WModal } from '../w-modal';
+import { WModal } from '../u-modal';
 
 describe('w-modal', () => {
   it('renders', async () => {

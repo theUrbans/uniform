@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WTextarea } from '../w-textarea';
+import { WTextarea } from '../u-textarea';
 
 describe('w-textarea', () => {
   it('renders', async () => {

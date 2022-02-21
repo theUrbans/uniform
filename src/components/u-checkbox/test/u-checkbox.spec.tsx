@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WCheckbox } from '../w-checkbox';
+import { WCheckbox } from '../u-checkbox';
 
 describe('w-checkbox', () => {
   it('renders', async () => {

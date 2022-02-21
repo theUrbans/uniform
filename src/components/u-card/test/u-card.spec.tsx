@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WCard } from '../w-card';
+import { WCard } from '../u-card';
 
 describe('w-card', () => {
   it('renders', async () => {

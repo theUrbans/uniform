@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WGrid } from '../w-grid';
+import { WGrid } from '../u-grid';
 
 describe('w-grid', () => {
   it('renders', async () => {

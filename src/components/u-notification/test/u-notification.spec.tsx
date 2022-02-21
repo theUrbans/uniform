@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WNotification } from '../w-notification';
+import { WNotification } from '../u-notification';
 
 describe('w-notification', () => {
   it('renders', async () => {

@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WDialog } from '../w-dialog';
+import { WDialog } from '../u-dialog';
 
 describe('w-dialog', () => {
   it('renders', async () => {

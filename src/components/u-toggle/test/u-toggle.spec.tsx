@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WToggle } from '../w-toggle';
+import { WToggle } from '../u-toggle';
 
 describe('w-toggle', () => {
   it('renders', async () => {

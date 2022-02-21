@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WSelect } from '../w-select';
+import { WSelect } from '../u-select';
 
 describe('w-select', () => {
   it('renders', async () => {

@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WInput } from '../w-input';
+import { WInput } from '../u-input';
 
 describe('w-input', () => {
   it('renders', async () => {

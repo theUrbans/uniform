@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WRadiogroup } from '../w-radiogroup';
+import { WRadiogroup } from '../u-radiogroup';
 
 describe('w-radiogroup', () => {
   it('renders', async () => {

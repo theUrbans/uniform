@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WSpoiler } from '../w-spoiler';
+import { WSpoiler } from '../u-spoiler';
 
 describe('w-spoiler', () => {
   it('renders', async () => {

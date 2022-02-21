@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WCol } from '../w-col';
+import { WCol } from '../u-col';
 
 describe('w-col', () => {
   it('renders', async () => {

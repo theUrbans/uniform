@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WAlert } from '../w-alert';
+import { WAlert } from '../u-alert';
 
 describe('w-alert', () => {
   it('renders', async () => {

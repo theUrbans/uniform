@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WObserver } from '../w-observer';
+import { WObserver } from '../u-observer';
 
 describe('w-observer', () => {
   it('renders', async () => {

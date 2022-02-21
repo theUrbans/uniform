@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WRow } from '../w-row';
+import { WRow } from '../u-row';
 
 describe('w-row', () => {
   it('renders', async () => {

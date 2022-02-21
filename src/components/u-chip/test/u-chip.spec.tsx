@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WChip } from '../w-chip';
+import { WChip } from '../u-chip';
 
 describe('w-chip', () => {
   it('renders', async () => {
