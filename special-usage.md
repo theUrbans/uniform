@@ -38,7 +38,7 @@ body.dispatchEvent(new CustomEvent('open-dialog', {
 );
 ```
 
-> - open dialog (fill blueprint, <w-dialog /> must be in current page)
+> - open dialog (fill blueprint, <u-dialog /> must be in current page)
 > - reusable, no need for multiple elements on page
 
 ```JS

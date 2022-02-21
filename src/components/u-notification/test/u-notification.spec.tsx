@@ -1,0 +1,18 @@
+import { newSpecPage } from '@stencil/core/testing';
+import { WNotification } from '../w-notification';
+
+describe('w-notification', () => {
+  it('renders', async () => {
+    const page = await newSpecPage({
+      components: [WNotification],
+      html: `<u-notification></u-notification>`,
+    });
+    expect(page.root).toEqualHtml(`
+      <u-notification>
+        <mock:shadow-root>
+          <slot></slot>
+        </mock:shadow-root>
+      </u-notification>
+    `);
+  });
+});

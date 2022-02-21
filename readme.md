@@ -43,6 +43,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Menu](https://github.com/dieUrbans/uniform/tree/master/src/components/w-menu)                 | w-menu         | 🟡    |
 | [Notification](https://github.com/dieUrbans/uniform/tree/master/src/components/w-notification) | w-notification | 🟡    |
 | [Observer](https://github.com/dieUrbans/uniform/tree/master/src/components/w-observer)         | w-observer     | 🟢    |
+| [Pagination](https://github.com/dieUrbans/uniform/tree/master/src/components/w-pagination)     | w-pagination   | 🔴    |
 | [Radio Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-radiogroup)    | w-radiogroup   | 🟡    |
 | [Row](https://github.com/dieUrbans/uniform/tree/master/src/components/w-row)                   | w-row          | 🟡    |
 | [Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-select)             | w-select       | 🟡    |

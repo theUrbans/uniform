@@ -258,8 +258,9 @@ export namespace Components {
         "value": string | number | null;
     }
     interface WMenu {
+        "area"?: string;
+        "direction": 'horizontal' | 'vertical';
         "minimizeable": boolean;
-        "position": 'left' | 'right' | 'top' | 'bottom';
     }
     interface WModal {
         "closeModal": (name: string) => Promise<void>;
@@ -284,6 +285,13 @@ export namespace Components {
         "warning": (title: string, message?: string, delay?: number) => Promise<void>;
     }
     interface WObserver {
+    }
+    interface WPagination {
+        "goToPage": (page: number) => Promise<void>;
+        "pages": number;
+        "showButtons": boolean;
+        "showLastAndFirstPage": boolean;
+        "showPages": number;
     }
     interface WRadiogroup {
         "alignment": 'vertical' | 'horizontal';
@@ -582,6 +590,12 @@ declare global {
         prototype: HTMLWObserverElement;
         new (): HTMLWObserverElement;
     };
+    interface HTMLWPaginationElement extends Components.WPagination, HTMLStencilElement {
+    }
+    var HTMLWPaginationElement: {
+        prototype: HTMLWPaginationElement;
+        new (): HTMLWPaginationElement;
+    };
     interface HTMLWRadiogroupElement extends Components.WRadiogroup, HTMLStencilElement {
     }
     var HTMLWRadiogroupElement: {
@@ -662,6 +676,7 @@ declare global {
         "w-modal": HTMLWModalElement;
         "w-notification": HTMLWNotificationElement;
         "w-observer": HTMLWObserverElement;
+        "w-pagination": HTMLWPaginationElement;
         "w-radiogroup": HTMLWRadiogroupElement;
         "w-row": HTMLWRowElement;
         "w-select": HTMLWSelectElement;
@@ -941,8 +956,9 @@ declare namespace LocalJSX {
         "value"?: string | number | null;
     }
     interface WMenu {
+        "area"?: string;
+        "direction"?: 'horizontal' | 'vertical';
         "minimizeable"?: boolean;
-        "position"?: 'left' | 'right' | 'top' | 'bottom';
     }
     interface WModal {
         "closeOnClick"?: boolean;
@@ -970,6 +986,13 @@ declare namespace LocalJSX {
           * emit `visible` event, when element get visible in viewport
          */
         "onVisible"?: (event: CustomEvent<void>) => void;
+    }
+    interface WPagination {
+        "onPageChange"?: (event: CustomEvent<number>) => void;
+        "pages"?: number;
+        "showButtons"?: boolean;
+        "showLastAndFirstPage"?: boolean;
+        "showPages"?: number;
     }
     interface WRadiogroup {
         "alignment"?: 'vertical' | 'horizontal';
@@ -1198,6 +1221,7 @@ declare namespace LocalJSX {
         "w-modal": WModal;
         "w-notification": WNotification;
         "w-observer": WObserver;
+        "w-pagination": WPagination;
         "w-radiogroup": WRadiogroup;
         "w-row": WRow;
         "w-select": WSelect;
@@ -1233,6 +1257,7 @@ declare module "@stencil/core" {
             "w-modal": LocalJSX.WModal & JSXBase.HTMLAttributes<HTMLWModalElement>;
             "w-notification": LocalJSX.WNotification & JSXBase.HTMLAttributes<HTMLWNotificationElement>;
             "w-observer": LocalJSX.WObserver & JSXBase.HTMLAttributes<HTMLWObserverElement>;
+            "w-pagination": LocalJSX.WPagination & JSXBase.HTMLAttributes<HTMLWPaginationElement>;
             "w-radiogroup": LocalJSX.WRadiogroup & JSXBase.HTMLAttributes<HTMLWRadiogroupElement>;
             "w-row": LocalJSX.WRow & JSXBase.HTMLAttributes<HTMLWRowElement>;
             "w-select": LocalJSX.WSelect & JSXBase.HTMLAttributes<HTMLWSelectElement>;
