@@ -70,13 +70,13 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [w-checkbox](../w-checkbox)
+- [u-checkbox](../u-checkbox)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-select --> w-checkbox
-  style w-select fill:#f9f,stroke:#333,stroke-width:4px
+  u-select --> u-checkbox
+  style u-select fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

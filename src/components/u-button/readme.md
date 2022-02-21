@@ -29,19 +29,21 @@
 
 ### Used by
 
- - [w-dialog](../w-dialog)
- - [w-filepicker](../w-filepicker)
- - [w-form](../w-form)
- - [w-stepper](../w-stepper)
+ - [u-dialog](../u-dialog)
+ - [u-filepicker](../u-filepicker)
+ - [u-form](../u-form)
+ - [u-pagination](../u-pagination)
+ - [u-stepper](../u-stepper)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-dialog --> w-button
-  w-filepicker --> w-button
-  w-form --> w-button
-  w-stepper --> w-button
-  style w-button fill:#f9f,stroke:#333,stroke-width:4px
+  u-dialog --> u-button
+  u-filepicker --> u-button
+  u-form --> u-button
+  u-pagination --> u-button
+  u-stepper --> u-button
+  style u-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

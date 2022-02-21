@@ -16,15 +16,15 @@
 
 ### Depends on
 
-- [w-modal](../w-modal)
-- [w-button](../w-button)
+- [u-modal](../u-modal)
+- [u-button](../u-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-dialog --> w-modal
-  w-dialog --> w-button
-  style w-dialog fill:#f9f,stroke:#333,stroke-width:4px
+  u-dialog --> u-modal
+  u-dialog --> u-button
+  style u-dialog fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

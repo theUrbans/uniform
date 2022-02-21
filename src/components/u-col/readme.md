@@ -22,13 +22,13 @@
 
 ### Used by
 
- - [w-filepicker](../w-filepicker)
+ - [u-filepicker](../u-filepicker)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-filepicker --> w-col
-  style w-col fill:#f9f,stroke:#333,stroke-width:4px
+  u-filepicker --> u-col
+  style u-col fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

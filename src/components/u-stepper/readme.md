@@ -29,20 +29,20 @@
 
 ### Used by
 
- - [w-form](../w-form)
+ - [u-form](../u-form)
 
 ### Depends on
 
-- [w-row](../w-row)
-- [w-button](../w-button)
+- [u-row](../u-row)
+- [u-button](../u-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-stepper --> w-row
-  w-stepper --> w-button
-  w-form --> w-stepper
-  style w-stepper fill:#f9f,stroke:#333,stroke-width:4px
+  u-stepper --> u-row
+  u-stepper --> u-button
+  u-form --> u-stepper
+  style u-stepper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

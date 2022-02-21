@@ -56,13 +56,13 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [w-dialog](../w-dialog)
+ - [u-dialog](../u-dialog)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-dialog --> w-modal
-  style w-modal fill:#f9f,stroke:#333,stroke-width:4px
+  u-dialog --> u-modal
+  style u-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

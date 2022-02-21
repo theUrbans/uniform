@@ -26,21 +26,21 @@
 
 ### Depends on
 
-- [w-stepper](../w-stepper)
-- [w-grid](../w-grid)
-- [w-row](../w-row)
-- [w-button](../w-button)
+- [u-stepper](../u-stepper)
+- [u-grid](../u-grid)
+- [u-row](../u-row)
+- [u-button](../u-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-form --> w-stepper
-  w-form --> w-grid
-  w-form --> w-row
-  w-form --> w-button
-  w-stepper --> w-row
-  w-stepper --> w-button
-  style w-form fill:#f9f,stroke:#333,stroke-width:4px
+  u-form --> u-stepper
+  u-form --> u-grid
+  u-form --> u-row
+  u-form --> u-button
+  u-stepper --> u-row
+  u-stepper --> u-button
+  style u-form fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

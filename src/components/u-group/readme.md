@@ -16,13 +16,15 @@
 
 ### Used by
 
- - [w-filepicker](../w-filepicker)
+ - [u-filepicker](../u-filepicker)
+ - [u-pagination](../u-pagination)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-filepicker --> w-group
-  style w-group fill:#f9f,stroke:#333,stroke-width:4px
+  u-filepicker --> u-group
+  u-pagination --> u-group
+  style u-group fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

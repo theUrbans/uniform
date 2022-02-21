@@ -28,19 +28,19 @@
 
 ### Depends on
 
-- [w-group](../w-group)
-- [w-button](../w-button)
-- [w-col](../w-col)
-- [w-row](../w-row)
+- [u-group](../u-group)
+- [u-button](../u-button)
+- [u-col](../u-col)
+- [u-row](../u-row)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-filepicker --> w-group
-  w-filepicker --> w-button
-  w-filepicker --> w-col
-  w-filepicker --> w-row
-  style w-filepicker fill:#f9f,stroke:#333,stroke-width:4px
+  u-filepicker --> u-group
+  u-filepicker --> u-button
+  u-filepicker --> u-col
+  u-filepicker --> u-row
+  style u-filepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

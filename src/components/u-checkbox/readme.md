@@ -39,13 +39,13 @@ Type: `Promise<void>`
 
 ### Used by
 
- - [w-select](../w-select)
+ - [u-select](../u-select)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-select --> w-checkbox
-  style w-checkbox fill:#f9f,stroke:#333,stroke-width:4px
+  u-select --> u-checkbox
+  style u-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------

@@ -21,13 +21,13 @@
 
 ### Used by
 
- - [w-form](../w-form)
+ - [u-form](../u-form)
 
 ### Graph
 ```mermaid
 graph TD;
-  w-form --> w-grid
-  style w-grid fill:#f9f,stroke:#333,stroke-width:4px
+  u-form --> u-grid
+  style u-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
