@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WDropdown } from '../u-dropdown';
+import { UDropdown } from '../u-dropdown';
 
 describe('w-dropdown', () => {
   it('renders', async () => {

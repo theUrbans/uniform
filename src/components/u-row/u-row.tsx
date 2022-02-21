@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'u-row.css',
   shadow: true,
 })
-export class WRow {
+export class URow {
   /**
    * flex justify-content
    */

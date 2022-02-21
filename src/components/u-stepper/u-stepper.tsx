@@ -5,7 +5,7 @@ import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/c
   styleUrl: 'u-stepper.css',
   shadow: true,
 })
-export class WStepper {
+export class UStepper {
   /**
    * define steps
    * without label -> steps: 3

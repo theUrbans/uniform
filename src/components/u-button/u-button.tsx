@@ -5,7 +5,7 @@ import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
   styleUrl: 'u-button.css',
   shadow: true,
 })
-export class WButton {
+export class UButton {
   /**
    * color design
    */

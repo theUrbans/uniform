@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'u-group.css',
   shadow: true,
 })
-export class WGroup {
+export class UGroup {
   /**
    * direction of the group
    */

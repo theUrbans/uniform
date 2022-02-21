@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'u-menu.css',
   shadow: true,
 })
-export class WMenu {
+export class UMenu {
   private nav: HTMLElement;
   @Prop() direction: 'horizontal' | 'vertical' = 'horizontal';
   @Prop() area?: string;

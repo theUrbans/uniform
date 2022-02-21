@@ -5,7 +5,7 @@ import { Component, h, Prop, State, Element } from '@stencil/core';
   styleUrl: 'u-tooltip.css',
   shadow: true,
 })
-export class WTooltip {
+export class UTooltip {
   @Element() el: HTMLElement;
 
   /**

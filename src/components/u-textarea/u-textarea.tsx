@@ -5,7 +5,7 @@ import { Component, Host, Element, h, Prop, Watch, Event, EventEmitter, State } 
   styleUrl: 'u-textarea.css',
   shadow: true,
 })
-export class WTextarea {
+export class UTextarea {
   private textarea: HTMLTextAreaElement;
   @Element() el: HTMLElement;
   @Prop() disabled: boolean = false;

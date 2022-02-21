@@ -27,7 +27,7 @@ export type Field = string;
   styleUrl: 'u-form.css',
   shadow: true,
 })
-export class WForm {
+export class UForm {
   @Element() el: HTMLElement;
   @Prop() layout: string = ''; // create layout with descriptive text, eg: stepper, 2 cols, 3 rows
   @Prop() fields: Array<FormField> = [];

@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'u-card.css',
   shadow: true,
 })
-export class WCard {
+export class UCard {
   /**
    * padding left and right: string, e.g. '1rem', '1px'
    */

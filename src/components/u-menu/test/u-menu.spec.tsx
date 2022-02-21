@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WMenu } from '../u-menu';
+import { UMenu } from '../u-menu';
 
 describe('w-menu', () => {
   it('renders', async () => {

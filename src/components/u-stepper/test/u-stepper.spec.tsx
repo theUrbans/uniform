@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WStepper } from '../u-stepper';
+import { UStepper } from '../u-stepper';
 
 describe('w-stepper', () => {
   it('renders', async () => {

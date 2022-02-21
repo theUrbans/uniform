@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WTabs } from '../u-tabs';
+import { UTabs } from '../u-tabs';
 
 describe('w-tabs', () => {
   it('renders', async () => {

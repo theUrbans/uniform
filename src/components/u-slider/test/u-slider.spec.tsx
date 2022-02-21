@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WSlider } from '../u-slider';
+import { USlider } from '../u-slider';
 
 describe('w-slider', () => {
   it('renders', async () => {

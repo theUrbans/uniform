@@ -5,11 +5,11 @@ import { Component, Host, h, Prop, State, Event, EventEmitter, Method } from '@s
   styleUrl: 'u-pagination.css',
   shadow: true,
 })
-export class WPagination {
+export class UPagination {
   @Prop() pages: number;
-  @Prop() showPages: number = 2;
-  @Prop() showButtons: boolean = false;
-  @Prop() showLastAndFirstPage: boolean = false;
+  @Prop() showPages: number = 1;
+  @Prop() showButtons: boolean = true;
+  @Prop() showLastAndFirstPage: boolean = true;
   @State() currentPage: number = 1;
   @Event() pageChange: EventEmitter<number>;
   @Method('goToPage') async goToPage(page: number) {
@@ -45,25 +45,35 @@ export class WPagination {
                   >
                     {page}
                   </u-button>,
-                  this.currentPage !== 1 && <span>...</span>,
+                  this.currentPage !== 1 && <span> &bull;</span>,
                 ];
-              if (page > this.currentPage - this.showPages && page < this.currentPage + this.showPages)
+              if (page >= this.currentPage - this.showPages && page <= this.currentPage + this.showPages)
                 return (
                   <u-button
                     outline
                     // outline={this.currentPage === page}
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                     onClick={() => this.changePage(page)}
-                    rounded={this.showButtons ? 'none' : page + 1 === this.currentPage - this.showPages ? 'left' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
+                    rounded={
+                      this.showButtons
+                        ? 'none'
+                        : this.currentPage - this.showPages - page === 0
+                        ? 'left'
+                        : page === 1
+                        ? 'left'
+                        : this.currentPage - this.showPages - page === -2 * this.showPages
+                        ? 'right'
+                        : page === this.pages
+                        ? 'right'
+                        : 'none'
+                    }
                   >
-                    {this.currentPage - this.showPages + ' - '}
-                    {this.currentPage + ' - '}
                     {page}
                   </u-button>
                 );
               if (this.showLastAndFirstPage && page === this.pages)
                 return [
-                  this.currentPage !== this.pages && <span>...</span>,
+                  this.currentPage !== this.pages && <span> &bull;</span>,
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}

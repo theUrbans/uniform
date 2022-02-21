@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WPagination } from '../u-pagination';
+import { UPagination } from '../u-pagination';
 
 describe('w-pagination', () => {
   it('renders', async () => {

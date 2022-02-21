@@ -23,7 +23,7 @@ export type ChipDesign =
   styleUrl: 'u-chip.css',
   shadow: true,
 })
-export class WChip {
+export class UChip {
   /**
    * color of the chip
    */

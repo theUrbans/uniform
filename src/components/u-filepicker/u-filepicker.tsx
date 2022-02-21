@@ -5,7 +5,7 @@ import { Component, Event, EventEmitter, h, Host, Prop, State } from '@stencil/c
   styleUrl: 'u-filepicker.css',
   shadow: true,
 })
-export class WFilepicker {
+export class UFilepicker {
   @Prop() size: 'small' | 'large' = 'small';
   @Prop() label: string = 'Choose file';
   @Prop() fileEnding: string = '*';

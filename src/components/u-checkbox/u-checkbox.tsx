@@ -5,7 +5,7 @@ import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
   styleUrl: 'u-checkbox.css',
   shadow: true,
 })
-export class WCheckbox {
+export class UCheckbox {
   @Prop() label: string = '';
   @Prop({ mutable: true }) checked: boolean = false;
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';

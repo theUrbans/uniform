@@ -9,7 +9,7 @@ export interface Option {
   styleUrl: 'u-radiogroup.css',
   shadow: true,
 })
-export class WRadiogroup {
+export class URadiogroup {
   @Prop() options: Array<Option> = [
     { value: 1, label: 'Option 1' },
     { value: 2, label: 'Option 2' },

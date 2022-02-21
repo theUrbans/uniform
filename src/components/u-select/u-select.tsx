@@ -12,7 +12,7 @@ export interface Option {
   styleUrl: 'u-select.css',
   shadow: true,
 })
-export class WSelect implements ComponentInterface {
+export class USelect implements ComponentInterface {
   private inputElement?: HTMLInputElement;
   @State() hovered: boolean = false;
   @State() focus: boolean = false;

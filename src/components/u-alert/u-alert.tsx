@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-alert.css',
   shadow: true,
 })
-export class WAlert {
+export class UAlert {
   render() {
     return (
       <Host>

@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WGroup } from '../u-group';
+import { UGroup } from '../u-group';
 
 describe('w-group', () => {
   it('renders', async () => {

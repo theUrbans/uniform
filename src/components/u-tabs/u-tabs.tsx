@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-tabs.css',
   shadow: true,
 })
-export class WTabs {
+export class UTabs {
   render() {
     return (
       <Host>

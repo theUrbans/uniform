@@ -19,7 +19,7 @@ export type NotificationType = 'error' | 'success' | 'warning' | 'default';
   styleUrl: 'u-notification.css',
   shadow: true,
 })
-export class WNotification {
+export class UNotification {
   @Prop() position: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center' = 'top-right';
   @State() type: NotificationType = 'default';
   @State() notifications: Array<Notification> = [];

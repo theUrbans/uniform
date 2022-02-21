@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WFilepicker } from '../u-filepicker';
+import { UFilepicker } from '../u-filepicker';
 
 describe('w-filepicker', () => {
   it('renders', async () => {

@@ -5,7 +5,7 @@ import { Component, Host, h, State, Prop, Event, EventEmitter } from '@stencil/c
   styleUrl: 'u-spoiler.css',
   shadow: true,
 })
-export class WSpoiler {
+export class USpoiler {
   /**
    * label of the spoiler
    */

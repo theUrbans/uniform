@@ -6,7 +6,7 @@ import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, 
   styleUrl: 'u-input.css',
   shadow: true,
 })
-export class WInput implements ComponentInterface {
+export class UInput implements ComponentInterface {
   private inputElement?: HTMLInputElement;
   @State() hovered: boolean = false;
   @State() focus: boolean = false;

@@ -1,5 +1,5 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WForm } from '../u-form';
+import { UForm } from '../u-form';
 
 describe('w-form', () => {
   it('renders', async () => {
