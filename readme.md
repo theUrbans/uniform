@@ -1,4 +1,4 @@
-[![Publish Uniform](https://github.com/dieUrbans/uniform/actions/workflows/npm-publish.yml/badge.svg?branch=master)](https://github.com/dieUrbans/uniform/actions/workflows/npm-publish.yml)
+[![Publish Uniform](https://github.com/theUrbans/uniform/actions/workflows/npm-publish.yml/badge.svg?branch=master)](https://github.com/theUrbans/uniform/actions/workflows/npm-publish.yml)
 
 # [WIP] Uniform Component Library
 
@@ -24,33 +24,33 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 
 | Name                                                                                           | Component      | State |
 | ---------------------------------------------------------------------------------------------- | -------------- | ----- |
-| [Alert](https://github.com/dieUrbans/uniform/tree/master/src/components/w-alert)               | w-alert        | 🔵    |
-| [Button](https://github.com/dieUrbans/uniform/tree/master/src/components/w-button)             | w-button       | 🟢    |
-| [Card](https://github.com/dieUrbans/uniform/tree/master/src/components/w-card)                 | w-card         | 🔴    |
-| [Card Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-cardselect)    | w-cardselect   | 🔵    |
-| [Checkbox](https://github.com/dieUrbans/uniform/tree/master/src/components/w-checkbox)         | w-checkbox     | 🟡    |
-| [Chip](https://github.com/dieUrbans/uniform/tree/master/src/components/w-chip)                 | w-chip         | 🟢    |
-| [Column](https://github.com/dieUrbans/uniform/tree/master/src/components/w-col)                | w-col          | 🟡    |
-| [Dialog](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dialog)             | w-dialog       | 🟡    |
-| [Dropdown](https://github.com/dieUrbans/uniform/tree/master/src/components/w-dropdown)         | w-dropdown     | 🔵    |
-| [Filepicker](https://github.com/dieUrbans/uniform/tree/master/src/components/w-filepicker)     | w-filepicker   | 🟡    |
-| [Form](https://github.com/dieUrbans/uniform/tree/master/src/components/w-form)                 | w-form         | 🟡    |
-| [Grid](https://github.com/dieUrbans/uniform/tree/master/src/components/w-grid)                 | w-grid         | 🟡    |
-| [Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-group)               | w-group        | 🟢    |
-| [Icon](https://github.com/dieUrbans/uniform/tree/master/src/components/w-icon)                 | w-icon         | 🔵    |
-| [Input](https://github.com/dieUrbans/uniform/tree/master/src/components/w-input)               | w-input        | 🟡    |
-| [Modal](https://github.com/dieUrbans/uniform/tree/master/src/components/w-modal)               | w-modal        | 🟡    |
-| [Menu](https://github.com/dieUrbans/uniform/tree/master/src/components/w-menu)                 | w-menu         | 🟡    |
-| [Notification](https://github.com/dieUrbans/uniform/tree/master/src/components/w-notification) | w-notification | 🟡    |
-| [Observer](https://github.com/dieUrbans/uniform/tree/master/src/components/w-observer)         | w-observer     | 🟢    |
-| [Pagination](https://github.com/dieUrbans/uniform/tree/master/src/components/w-pagination)     | w-pagination   | 🔴    |
-| [Radio Group](https://github.com/dieUrbans/uniform/tree/master/src/components/w-radiogroup)    | w-radiogroup   | 🟡    |
-| [Row](https://github.com/dieUrbans/uniform/tree/master/src/components/w-row)                   | w-row          | 🟡    |
-| [Select](https://github.com/dieUrbans/uniform/tree/master/src/components/w-select)             | w-select       | 🟡    |
-| [Slider](https://github.com/dieUrbans/uniform/tree/master/src/components/w-slider)             | w-slider       | 🔵    |
-| [Spoiler](https://github.com/dieUrbans/uniform/tree/master/src/components/w-spoiler)           | w-spoiler      | 🟡    |
-| [Stepper](https://github.com/dieUrbans/uniform/tree/master/src/components/w-stepper)           | w-stepper      | 🟢    |
-| [Tabs](https://github.com/dieUrbans/uniform/tree/master/src/components/w-tabs)                 | w-tabs         | 🔵    |
-| [Textarea](https://github.com/dieUrbans/uniform/tree/master/src/components/w-textarea)         | w-textarea     | 🟡    |
-| [Toggle](https://github.com/dieUrbans/uniform/tree/master/src/components/w-toggle)             | w-toggle       | 🔵    |
-| [Tooltip](https://github.com/dieUrbans/uniform/tree/master/src/components/w-tooltip)           | w-tooltip      | 🟢    |
+| [Alert](https://github.com/theUrbans/uniform/tree/master/src/components/u-alert)               | u-alert        | 🔵    |
+| [Button](https://github.com/theUrbans/uniform/tree/master/src/components/u-button)             | u-button       | 🟢    |
+| [Card](https://github.com/theUrbans/uniform/tree/master/src/components/u-card)                 | u-card         | 🔴    |
+| [Card Select](https://github.com/theUrbans/uniform/tree/master/src/components/u-cardselect)    | u-cardselect   | 🔵    |
+| [Checkbox](https://github.com/theUrbans/uniform/tree/master/src/components/u-checkbox)         | u-checkbox     | 🟡    |
+| [Chip](https://github.com/theUrbans/uniform/tree/master/src/components/u-chip)                 | u-chip         | 🟢    |
+| [Column](https://github.com/theUrbans/uniform/tree/master/src/components/u-col)                | u-col          | 🟡    |
+| [Dialog](https://github.com/theUrbans/uniform/tree/master/src/components/u-dialog)             | u-dialog       | 🟡    |
+| [Dropdown](https://github.com/theUrbans/uniform/tree/master/src/components/u-dropdown)         | u-dropdown     | 🔵    |
+| [Filepicker](https://github.com/theUrbans/uniform/tree/master/src/components/u-filepicker)     | u-filepicker   | 🟡    |
+| [Form](https://github.com/theUrbans/uniform/tree/master/src/components/u-form)                 | u-form         | 🟡    |
+| [Grid](https://github.com/theUrbans/uniform/tree/master/src/components/u-grid)                 | u-grid         | 🟡    |
+| [Group](https://github.com/theUrbans/uniform/tree/master/src/components/u-group)               | u-group        | 🟢    |
+| [Icon](https://github.com/theUrbans/uniform/tree/master/src/components/u-icon)                 | u-icon         | 🔵    |
+| [Input](https://github.com/theUrbans/uniform/tree/master/src/components/u-input)               | u-input        | 🟡    |
+| [Modal](https://github.com/theUrbans/uniform/tree/master/src/components/u-modal)               | u-modal        | 🟡    |
+| [Menu](https://github.com/theUrbans/uniform/tree/master/src/components/u-menu)                 | u-menu         | 🟡    |
+| [Notification](https://github.com/theUrbans/uniform/tree/master/src/components/u-notification) | u-notification | 🟡    |
+| [Observer](https://github.com/theUrbans/uniform/tree/master/src/components/u-observer)         | u-observer     | 🟢    |
+| [Pagination](https://github.com/theUrbans/uniform/tree/master/src/components/u-pagination)     | u-pagination   | 🔴    |
+| [Radio Group](https://github.com/theUrbans/uniform/tree/master/src/components/u-radiogroup)    | u-radiogroup   | 🟡    |
+| [Row](https://github.com/theUrbans/uniform/tree/master/src/components/u-row)                   | u-row          | 🟡    |
+| [Select](https://github.com/theUrbans/uniform/tree/master/src/components/u-select)             | u-select       | 🟡    |
+| [Slider](https://github.com/theUrbans/uniform/tree/master/src/components/u-slider)             | u-slider       | 🔵    |
+| [Spoiler](https://github.com/theUrbans/uniform/tree/master/src/components/u-spoiler)           | u-spoiler      | 🟡    |
+| [Stepper](https://github.com/theUrbans/uniform/tree/master/src/components/u-stepper)           | u-stepper      | 🟢    |
+| [Tabs](https://github.com/theUrbans/uniform/tree/master/src/components/u-tabs)                 | u-tabs         | 🔵    |
+| [Textarea](https://github.com/theUrbans/uniform/tree/master/src/components/u-textarea)         | u-textarea     | 🟡    |
+| [Toggle](https://github.com/theUrbans/uniform/tree/master/src/components/u-toggle)             | u-toggle       | 🔵    |
+| [Tooltip](https://github.com/theUrbans/uniform/tree/master/src/components/u-tooltip)           | u-tooltip      | 🟢    |
