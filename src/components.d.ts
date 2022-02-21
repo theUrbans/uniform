@@ -5,15 +5,15 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { ChipDesign } from "./components/w-chip/w-chip";
-import { FormButton, FormField } from "./components/w-form/w-form";
-import { NotficationOption, NotificationType } from "./components/w-notification/w-notification";
-import { Option } from "./components/w-radiogroup/w-radiogroup";
-import { Option as Option1 } from "./components/w-select/w-select";
+import { ChipDesign } from "./components/u-chip/u-chip";
+import { FormButton, FormField } from "./components/u-form/u-form";
+import { NotficationOption, NotificationType } from "./components/u-notification/u-notification";
+import { Option } from "./components/u-radiogroup/u-radiogroup";
+import { Option as Option1 } from "./components/u-select/u-select";
 export namespace Components {
-    interface WAlert {
+    interface UAlert {
     }
-    interface WButton {
+    interface UButton {
         /**
           * color design
          */
@@ -43,23 +43,23 @@ export namespace Components {
          */
         "type"?: 'button' | 'submit' | 'reset';
     }
-    interface WCard {
+    interface UCard {
         "img"?: string;
         /**
           * padding left and right: string, e.g. '1rem', '1px'
          */
         "slotCount"?: number;
     }
-    interface WCardselect {
+    interface UCardselect {
     }
-    interface WCheckbox {
+    interface UCheckbox {
         "checked": boolean;
         "disabled": boolean;
         "label": string;
         "set": (checked: boolean) => Promise<void>;
         "size": 'small' | 'medium' | 'large';
     }
-    interface WChip {
+    interface UChip {
         /**
           * set chip text bold
          */
@@ -81,7 +81,7 @@ export namespace Components {
          */
         "size": 'small' | 'medium' | 'large';
     }
-    interface WCol {
+    interface UCol {
         /**
           * flex align-items: start | center | end | space-between | space-around | space-evenly
          */
@@ -111,12 +111,12 @@ export namespace Components {
          */
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
-    interface WDialog {
+    interface UDialog {
         "name": string;
     }
-    interface WDropdown {
+    interface UDropdown {
     }
-    interface WFilepicker {
+    interface UFilepicker {
         "fileEnding": string;
         "filePlural": string;
         "label": string;
@@ -124,12 +124,12 @@ export namespace Components {
         "noFile": string;
         "size": 'small' | 'large';
     }
-    interface WForm {
+    interface UForm {
         "buttons": Array<FormButton>;
         "fields": Array<FormField>;
         "layout": string;
     }
-    interface WGrid {
+    interface UGrid {
         /**
           * optional naming of grid areas
          */
@@ -155,15 +155,15 @@ export namespace Components {
          */
         "width": string;
     }
-    interface WGroup {
+    interface UGroup {
         /**
           * direction of the group
          */
         "direction": 'row' | 'column';
     }
-    interface WIcon {
+    interface UIcon {
     }
-    interface WInput {
+    interface UInput {
         /**
           * decide if autocapitalize should be enabled
          */
@@ -257,12 +257,12 @@ export namespace Components {
          */
         "value": string | number | null;
     }
-    interface WMenu {
+    interface UMenu {
         "area"?: string;
         "direction": 'horizontal' | 'vertical';
         "minimizeable": boolean;
     }
-    interface WModal {
+    interface UModal {
         "closeModal": (name: string) => Promise<void>;
         "closeOnClick": boolean;
         "maxHeight": string;
@@ -277,29 +277,29 @@ export namespace Components {
         "showModal": (name: string) => Promise<void>;
         "topRightClose": boolean;
     }
-    interface WNotification {
+    interface UNotification {
         "error": (title: string, message?: string, delay?: number) => Promise<void>;
         "position": 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
         "show": (type: NotificationType, options: NotficationOption) => Promise<void>;
         "success": (title: string, message?: string, delay?: number) => Promise<void>;
         "warning": (title: string, message?: string, delay?: number) => Promise<void>;
     }
-    interface WObserver {
+    interface UObserver {
     }
-    interface WPagination {
+    interface UPagination {
         "goToPage": (page: number) => Promise<void>;
         "pages": number;
         "showButtons": boolean;
         "showLastAndFirstPage": boolean;
         "showPages": number;
     }
-    interface WRadiogroup {
+    interface URadiogroup {
         "alignment": 'vertical' | 'horizontal';
         "label": string;
         "options": Array<Option>;
         "value": any;
     }
-    interface WRow {
+    interface URow {
         /**
           * flex align-items
          */
@@ -321,7 +321,7 @@ export namespace Components {
          */
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
-    interface WSelect {
+    interface USelect {
         /**
           * decide if autocapitalize should be enabled
          */
@@ -410,9 +410,9 @@ export namespace Components {
          */
         "validate": boolean;
     }
-    interface WSlider {
+    interface USlider {
     }
-    interface WSpoiler {
+    interface USpoiler {
         /**
           * label of the spoiler
          */
@@ -422,7 +422,7 @@ export namespace Components {
          */
         "size"?: 'small' | 'medium' | 'large';
     }
-    interface WStepper {
+    interface UStepper {
         /**
           * disabled state of the submit button
          */
@@ -448,9 +448,9 @@ export namespace Components {
          */
         "submitLabel"?: string;
     }
-    interface WTabs {
+    interface UTabs {
     }
-    interface WTextarea {
+    interface UTextarea {
         "cols": number;
         "design": 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
         "disabled": boolean;
@@ -462,9 +462,9 @@ export namespace Components {
         "size": 'small' | 'medium' | 'large';
         "value": string | null;
     }
-    interface WToggle {
+    interface UToggle {
     }
-    interface WTooltip {
+    interface UTooltip {
         /**
           * position of the tooltip
          */
@@ -476,223 +476,223 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLWAlertElement extends Components.WAlert, HTMLStencilElement {
+    interface HTMLUAlertElement extends Components.UAlert, HTMLStencilElement {
     }
-    var HTMLWAlertElement: {
-        prototype: HTMLWAlertElement;
-        new (): HTMLWAlertElement;
+    var HTMLUAlertElement: {
+        prototype: HTMLUAlertElement;
+        new (): HTMLUAlertElement;
     };
-    interface HTMLWButtonElement extends Components.WButton, HTMLStencilElement {
+    interface HTMLUButtonElement extends Components.UButton, HTMLStencilElement {
     }
-    var HTMLWButtonElement: {
-        prototype: HTMLWButtonElement;
-        new (): HTMLWButtonElement;
+    var HTMLUButtonElement: {
+        prototype: HTMLUButtonElement;
+        new (): HTMLUButtonElement;
     };
-    interface HTMLWCardElement extends Components.WCard, HTMLStencilElement {
+    interface HTMLUCardElement extends Components.UCard, HTMLStencilElement {
     }
-    var HTMLWCardElement: {
-        prototype: HTMLWCardElement;
-        new (): HTMLWCardElement;
+    var HTMLUCardElement: {
+        prototype: HTMLUCardElement;
+        new (): HTMLUCardElement;
     };
-    interface HTMLWCardselectElement extends Components.WCardselect, HTMLStencilElement {
+    interface HTMLUCardselectElement extends Components.UCardselect, HTMLStencilElement {
     }
-    var HTMLWCardselectElement: {
-        prototype: HTMLWCardselectElement;
-        new (): HTMLWCardselectElement;
+    var HTMLUCardselectElement: {
+        prototype: HTMLUCardselectElement;
+        new (): HTMLUCardselectElement;
     };
-    interface HTMLWCheckboxElement extends Components.WCheckbox, HTMLStencilElement {
+    interface HTMLUCheckboxElement extends Components.UCheckbox, HTMLStencilElement {
     }
-    var HTMLWCheckboxElement: {
-        prototype: HTMLWCheckboxElement;
-        new (): HTMLWCheckboxElement;
+    var HTMLUCheckboxElement: {
+        prototype: HTMLUCheckboxElement;
+        new (): HTMLUCheckboxElement;
     };
-    interface HTMLWChipElement extends Components.WChip, HTMLStencilElement {
+    interface HTMLUChipElement extends Components.UChip, HTMLStencilElement {
     }
-    var HTMLWChipElement: {
-        prototype: HTMLWChipElement;
-        new (): HTMLWChipElement;
+    var HTMLUChipElement: {
+        prototype: HTMLUChipElement;
+        new (): HTMLUChipElement;
     };
-    interface HTMLWColElement extends Components.WCol, HTMLStencilElement {
+    interface HTMLUColElement extends Components.UCol, HTMLStencilElement {
     }
-    var HTMLWColElement: {
-        prototype: HTMLWColElement;
-        new (): HTMLWColElement;
+    var HTMLUColElement: {
+        prototype: HTMLUColElement;
+        new (): HTMLUColElement;
     };
-    interface HTMLWDialogElement extends Components.WDialog, HTMLStencilElement {
+    interface HTMLUDialogElement extends Components.UDialog, HTMLStencilElement {
     }
-    var HTMLWDialogElement: {
-        prototype: HTMLWDialogElement;
-        new (): HTMLWDialogElement;
+    var HTMLUDialogElement: {
+        prototype: HTMLUDialogElement;
+        new (): HTMLUDialogElement;
     };
-    interface HTMLWDropdownElement extends Components.WDropdown, HTMLStencilElement {
+    interface HTMLUDropdownElement extends Components.UDropdown, HTMLStencilElement {
     }
-    var HTMLWDropdownElement: {
-        prototype: HTMLWDropdownElement;
-        new (): HTMLWDropdownElement;
+    var HTMLUDropdownElement: {
+        prototype: HTMLUDropdownElement;
+        new (): HTMLUDropdownElement;
     };
-    interface HTMLWFilepickerElement extends Components.WFilepicker, HTMLStencilElement {
+    interface HTMLUFilepickerElement extends Components.UFilepicker, HTMLStencilElement {
     }
-    var HTMLWFilepickerElement: {
-        prototype: HTMLWFilepickerElement;
-        new (): HTMLWFilepickerElement;
+    var HTMLUFilepickerElement: {
+        prototype: HTMLUFilepickerElement;
+        new (): HTMLUFilepickerElement;
     };
-    interface HTMLWFormElement extends Components.WForm, HTMLStencilElement {
+    interface HTMLUFormElement extends Components.UForm, HTMLStencilElement {
     }
-    var HTMLWFormElement: {
-        prototype: HTMLWFormElement;
-        new (): HTMLWFormElement;
+    var HTMLUFormElement: {
+        prototype: HTMLUFormElement;
+        new (): HTMLUFormElement;
     };
-    interface HTMLWGridElement extends Components.WGrid, HTMLStencilElement {
+    interface HTMLUGridElement extends Components.UGrid, HTMLStencilElement {
     }
-    var HTMLWGridElement: {
-        prototype: HTMLWGridElement;
-        new (): HTMLWGridElement;
+    var HTMLUGridElement: {
+        prototype: HTMLUGridElement;
+        new (): HTMLUGridElement;
     };
-    interface HTMLWGroupElement extends Components.WGroup, HTMLStencilElement {
+    interface HTMLUGroupElement extends Components.UGroup, HTMLStencilElement {
     }
-    var HTMLWGroupElement: {
-        prototype: HTMLWGroupElement;
-        new (): HTMLWGroupElement;
+    var HTMLUGroupElement: {
+        prototype: HTMLUGroupElement;
+        new (): HTMLUGroupElement;
     };
-    interface HTMLWIconElement extends Components.WIcon, HTMLStencilElement {
+    interface HTMLUIconElement extends Components.UIcon, HTMLStencilElement {
     }
-    var HTMLWIconElement: {
-        prototype: HTMLWIconElement;
-        new (): HTMLWIconElement;
+    var HTMLUIconElement: {
+        prototype: HTMLUIconElement;
+        new (): HTMLUIconElement;
     };
-    interface HTMLWInputElement extends Components.WInput, HTMLStencilElement {
+    interface HTMLUInputElement extends Components.UInput, HTMLStencilElement {
     }
-    var HTMLWInputElement: {
-        prototype: HTMLWInputElement;
-        new (): HTMLWInputElement;
+    var HTMLUInputElement: {
+        prototype: HTMLUInputElement;
+        new (): HTMLUInputElement;
     };
-    interface HTMLWMenuElement extends Components.WMenu, HTMLStencilElement {
+    interface HTMLUMenuElement extends Components.UMenu, HTMLStencilElement {
     }
-    var HTMLWMenuElement: {
-        prototype: HTMLWMenuElement;
-        new (): HTMLWMenuElement;
+    var HTMLUMenuElement: {
+        prototype: HTMLUMenuElement;
+        new (): HTMLUMenuElement;
     };
-    interface HTMLWModalElement extends Components.WModal, HTMLStencilElement {
+    interface HTMLUModalElement extends Components.UModal, HTMLStencilElement {
     }
-    var HTMLWModalElement: {
-        prototype: HTMLWModalElement;
-        new (): HTMLWModalElement;
+    var HTMLUModalElement: {
+        prototype: HTMLUModalElement;
+        new (): HTMLUModalElement;
     };
-    interface HTMLWNotificationElement extends Components.WNotification, HTMLStencilElement {
+    interface HTMLUNotificationElement extends Components.UNotification, HTMLStencilElement {
     }
-    var HTMLWNotificationElement: {
-        prototype: HTMLWNotificationElement;
-        new (): HTMLWNotificationElement;
+    var HTMLUNotificationElement: {
+        prototype: HTMLUNotificationElement;
+        new (): HTMLUNotificationElement;
     };
-    interface HTMLWObserverElement extends Components.WObserver, HTMLStencilElement {
+    interface HTMLUObserverElement extends Components.UObserver, HTMLStencilElement {
     }
-    var HTMLWObserverElement: {
-        prototype: HTMLWObserverElement;
-        new (): HTMLWObserverElement;
+    var HTMLUObserverElement: {
+        prototype: HTMLUObserverElement;
+        new (): HTMLUObserverElement;
     };
-    interface HTMLWPaginationElement extends Components.WPagination, HTMLStencilElement {
+    interface HTMLUPaginationElement extends Components.UPagination, HTMLStencilElement {
     }
-    var HTMLWPaginationElement: {
-        prototype: HTMLWPaginationElement;
-        new (): HTMLWPaginationElement;
+    var HTMLUPaginationElement: {
+        prototype: HTMLUPaginationElement;
+        new (): HTMLUPaginationElement;
     };
-    interface HTMLWRadiogroupElement extends Components.WRadiogroup, HTMLStencilElement {
+    interface HTMLURadiogroupElement extends Components.URadiogroup, HTMLStencilElement {
     }
-    var HTMLWRadiogroupElement: {
-        prototype: HTMLWRadiogroupElement;
-        new (): HTMLWRadiogroupElement;
+    var HTMLURadiogroupElement: {
+        prototype: HTMLURadiogroupElement;
+        new (): HTMLURadiogroupElement;
     };
-    interface HTMLWRowElement extends Components.WRow, HTMLStencilElement {
+    interface HTMLURowElement extends Components.URow, HTMLStencilElement {
     }
-    var HTMLWRowElement: {
-        prototype: HTMLWRowElement;
-        new (): HTMLWRowElement;
+    var HTMLURowElement: {
+        prototype: HTMLURowElement;
+        new (): HTMLURowElement;
     };
-    interface HTMLWSelectElement extends Components.WSelect, HTMLStencilElement {
+    interface HTMLUSelectElement extends Components.USelect, HTMLStencilElement {
     }
-    var HTMLWSelectElement: {
-        prototype: HTMLWSelectElement;
-        new (): HTMLWSelectElement;
+    var HTMLUSelectElement: {
+        prototype: HTMLUSelectElement;
+        new (): HTMLUSelectElement;
     };
-    interface HTMLWSliderElement extends Components.WSlider, HTMLStencilElement {
+    interface HTMLUSliderElement extends Components.USlider, HTMLStencilElement {
     }
-    var HTMLWSliderElement: {
-        prototype: HTMLWSliderElement;
-        new (): HTMLWSliderElement;
+    var HTMLUSliderElement: {
+        prototype: HTMLUSliderElement;
+        new (): HTMLUSliderElement;
     };
-    interface HTMLWSpoilerElement extends Components.WSpoiler, HTMLStencilElement {
+    interface HTMLUSpoilerElement extends Components.USpoiler, HTMLStencilElement {
     }
-    var HTMLWSpoilerElement: {
-        prototype: HTMLWSpoilerElement;
-        new (): HTMLWSpoilerElement;
+    var HTMLUSpoilerElement: {
+        prototype: HTMLUSpoilerElement;
+        new (): HTMLUSpoilerElement;
     };
-    interface HTMLWStepperElement extends Components.WStepper, HTMLStencilElement {
+    interface HTMLUStepperElement extends Components.UStepper, HTMLStencilElement {
     }
-    var HTMLWStepperElement: {
-        prototype: HTMLWStepperElement;
-        new (): HTMLWStepperElement;
+    var HTMLUStepperElement: {
+        prototype: HTMLUStepperElement;
+        new (): HTMLUStepperElement;
     };
-    interface HTMLWTabsElement extends Components.WTabs, HTMLStencilElement {
+    interface HTMLUTabsElement extends Components.UTabs, HTMLStencilElement {
     }
-    var HTMLWTabsElement: {
-        prototype: HTMLWTabsElement;
-        new (): HTMLWTabsElement;
+    var HTMLUTabsElement: {
+        prototype: HTMLUTabsElement;
+        new (): HTMLUTabsElement;
     };
-    interface HTMLWTextareaElement extends Components.WTextarea, HTMLStencilElement {
+    interface HTMLUTextareaElement extends Components.UTextarea, HTMLStencilElement {
     }
-    var HTMLWTextareaElement: {
-        prototype: HTMLWTextareaElement;
-        new (): HTMLWTextareaElement;
+    var HTMLUTextareaElement: {
+        prototype: HTMLUTextareaElement;
+        new (): HTMLUTextareaElement;
     };
-    interface HTMLWToggleElement extends Components.WToggle, HTMLStencilElement {
+    interface HTMLUToggleElement extends Components.UToggle, HTMLStencilElement {
     }
-    var HTMLWToggleElement: {
-        prototype: HTMLWToggleElement;
-        new (): HTMLWToggleElement;
+    var HTMLUToggleElement: {
+        prototype: HTMLUToggleElement;
+        new (): HTMLUToggleElement;
     };
-    interface HTMLWTooltipElement extends Components.WTooltip, HTMLStencilElement {
+    interface HTMLUTooltipElement extends Components.UTooltip, HTMLStencilElement {
     }
-    var HTMLWTooltipElement: {
-        prototype: HTMLWTooltipElement;
-        new (): HTMLWTooltipElement;
+    var HTMLUTooltipElement: {
+        prototype: HTMLUTooltipElement;
+        new (): HTMLUTooltipElement;
     };
     interface HTMLElementTagNameMap {
-        "w-alert": HTMLWAlertElement;
-        "w-button": HTMLWButtonElement;
-        "w-card": HTMLWCardElement;
-        "w-cardselect": HTMLWCardselectElement;
-        "w-checkbox": HTMLWCheckboxElement;
-        "w-chip": HTMLWChipElement;
-        "w-col": HTMLWColElement;
-        "w-dialog": HTMLWDialogElement;
-        "w-dropdown": HTMLWDropdownElement;
-        "w-filepicker": HTMLWFilepickerElement;
-        "w-form": HTMLWFormElement;
-        "w-grid": HTMLWGridElement;
-        "w-group": HTMLWGroupElement;
-        "w-icon": HTMLWIconElement;
-        "w-input": HTMLWInputElement;
-        "w-menu": HTMLWMenuElement;
-        "w-modal": HTMLWModalElement;
-        "w-notification": HTMLWNotificationElement;
-        "w-observer": HTMLWObserverElement;
-        "w-pagination": HTMLWPaginationElement;
-        "w-radiogroup": HTMLWRadiogroupElement;
-        "w-row": HTMLWRowElement;
-        "w-select": HTMLWSelectElement;
-        "w-slider": HTMLWSliderElement;
-        "w-spoiler": HTMLWSpoilerElement;
-        "w-stepper": HTMLWStepperElement;
-        "w-tabs": HTMLWTabsElement;
-        "w-textarea": HTMLWTextareaElement;
-        "w-toggle": HTMLWToggleElement;
-        "w-tooltip": HTMLWTooltipElement;
+        "u-alert": HTMLUAlertElement;
+        "u-button": HTMLUButtonElement;
+        "u-card": HTMLUCardElement;
+        "u-cardselect": HTMLUCardselectElement;
+        "u-checkbox": HTMLUCheckboxElement;
+        "u-chip": HTMLUChipElement;
+        "u-col": HTMLUColElement;
+        "u-dialog": HTMLUDialogElement;
+        "u-dropdown": HTMLUDropdownElement;
+        "u-filepicker": HTMLUFilepickerElement;
+        "u-form": HTMLUFormElement;
+        "u-grid": HTMLUGridElement;
+        "u-group": HTMLUGroupElement;
+        "u-icon": HTMLUIconElement;
+        "u-input": HTMLUInputElement;
+        "u-menu": HTMLUMenuElement;
+        "u-modal": HTMLUModalElement;
+        "u-notification": HTMLUNotificationElement;
+        "u-observer": HTMLUObserverElement;
+        "u-pagination": HTMLUPaginationElement;
+        "u-radiogroup": HTMLURadiogroupElement;
+        "u-row": HTMLURowElement;
+        "u-select": HTMLUSelectElement;
+        "u-slider": HTMLUSliderElement;
+        "u-spoiler": HTMLUSpoilerElement;
+        "u-stepper": HTMLUStepperElement;
+        "u-tabs": HTMLUTabsElement;
+        "u-textarea": HTMLUTextareaElement;
+        "u-toggle": HTMLUToggleElement;
+        "u-tooltip": HTMLUTooltipElement;
     }
 }
 declare namespace LocalJSX {
-    interface WAlert {
+    interface UAlert {
     }
-    interface WButton {
+    interface UButton {
         /**
           * color design
          */
@@ -726,23 +726,23 @@ declare namespace LocalJSX {
          */
         "type"?: 'button' | 'submit' | 'reset';
     }
-    interface WCard {
+    interface UCard {
         "img"?: string;
         /**
           * padding left and right: string, e.g. '1rem', '1px'
          */
         "slotCount"?: number;
     }
-    interface WCardselect {
+    interface UCardselect {
     }
-    interface WCheckbox {
+    interface UCheckbox {
         "checked"?: boolean;
         "disabled"?: boolean;
         "label"?: string;
         "onWChange"?: (event: CustomEvent<any>) => void;
         "size"?: 'small' | 'medium' | 'large';
     }
-    interface WChip {
+    interface UChip {
         /**
           * set chip text bold
          */
@@ -768,7 +768,7 @@ declare namespace LocalJSX {
          */
         "size"?: 'small' | 'medium' | 'large';
     }
-    interface WCol {
+    interface UCol {
         /**
           * flex align-items: start | center | end | space-between | space-around | space-evenly
          */
@@ -798,12 +798,12 @@ declare namespace LocalJSX {
          */
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
-    interface WDialog {
+    interface UDialog {
         "name"?: string;
     }
-    interface WDropdown {
+    interface UDropdown {
     }
-    interface WFilepicker {
+    interface UFilepicker {
         "fileEnding"?: string;
         "filePlural"?: string;
         "label"?: string;
@@ -812,14 +812,14 @@ declare namespace LocalJSX {
         "onWSelect"?: (event: CustomEvent<FileList>) => void;
         "size"?: 'small' | 'large';
     }
-    interface WForm {
+    interface UForm {
         "buttons"?: Array<FormButton>;
         "fields"?: Array<FormField>;
         "layout"?: string;
         "onWNextStep"?: (event: CustomEvent<any>) => void;
         "onWSubmit"?: (event: CustomEvent<any>) => void;
     }
-    interface WGrid {
+    interface UGrid {
         /**
           * optional naming of grid areas
          */
@@ -845,15 +845,15 @@ declare namespace LocalJSX {
          */
         "width"?: string;
     }
-    interface WGroup {
+    interface UGroup {
         /**
           * direction of the group
          */
         "direction"?: 'row' | 'column';
     }
-    interface WIcon {
+    interface UIcon {
     }
-    interface WInput {
+    interface UInput {
         /**
           * decide if autocapitalize should be enabled
          */
@@ -955,12 +955,12 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
-    interface WMenu {
+    interface UMenu {
         "area"?: string;
         "direction"?: 'horizontal' | 'vertical';
         "minimizeable"?: boolean;
     }
-    interface WModal {
+    interface UModal {
         "closeOnClick"?: boolean;
         "maxHeight"?: string;
         "maxWidth"?: string;
@@ -974,10 +974,10 @@ declare namespace LocalJSX {
         "resizeable"?: boolean;
         "topRightClose"?: boolean;
     }
-    interface WNotification {
+    interface UNotification {
         "position"?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
     }
-    interface WObserver {
+    interface UObserver {
         /**
           * emit `invisible` event, when element looses visibility in viewport
          */
@@ -987,21 +987,21 @@ declare namespace LocalJSX {
          */
         "onVisible"?: (event: CustomEvent<void>) => void;
     }
-    interface WPagination {
+    interface UPagination {
         "onPageChange"?: (event: CustomEvent<number>) => void;
         "pages"?: number;
         "showButtons"?: boolean;
         "showLastAndFirstPage"?: boolean;
         "showPages"?: number;
     }
-    interface WRadiogroup {
+    interface URadiogroup {
         "alignment"?: 'vertical' | 'horizontal';
         "label"?: string;
         "onWInput"?: (event: CustomEvent<any>) => void;
         "options"?: Array<Option>;
         "value"?: any;
     }
-    interface WRow {
+    interface URow {
         /**
           * flex align-items
          */
@@ -1023,7 +1023,7 @@ declare namespace LocalJSX {
          */
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
-    interface WSelect {
+    interface USelect {
         /**
           * decide if autocapitalize should be enabled
          */
@@ -1120,9 +1120,9 @@ declare namespace LocalJSX {
          */
         "validate"?: boolean;
     }
-    interface WSlider {
+    interface USlider {
     }
-    interface WSpoiler {
+    interface USpoiler {
         /**
           * label of the spoiler
          */
@@ -1140,7 +1140,7 @@ declare namespace LocalJSX {
          */
         "size"?: 'small' | 'medium' | 'large';
     }
-    interface WStepper {
+    interface UStepper {
         /**
           * disabled state of the submit button
          */
@@ -1174,9 +1174,9 @@ declare namespace LocalJSX {
          */
         "submitLabel"?: string;
     }
-    interface WTabs {
+    interface UTabs {
     }
-    interface WTextarea {
+    interface UTextarea {
         "cols"?: number;
         "design"?: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
         "disabled"?: boolean;
@@ -1189,9 +1189,9 @@ declare namespace LocalJSX {
         "size"?: 'small' | 'medium' | 'large';
         "value"?: string | null;
     }
-    interface WToggle {
+    interface UToggle {
     }
-    interface WTooltip {
+    interface UTooltip {
         /**
           * position of the tooltip
          */
@@ -1202,72 +1202,72 @@ declare namespace LocalJSX {
         "text"?: string;
     }
     interface IntrinsicElements {
-        "w-alert": WAlert;
-        "w-button": WButton;
-        "w-card": WCard;
-        "w-cardselect": WCardselect;
-        "w-checkbox": WCheckbox;
-        "w-chip": WChip;
-        "w-col": WCol;
-        "w-dialog": WDialog;
-        "w-dropdown": WDropdown;
-        "w-filepicker": WFilepicker;
-        "w-form": WForm;
-        "w-grid": WGrid;
-        "w-group": WGroup;
-        "w-icon": WIcon;
-        "w-input": WInput;
-        "w-menu": WMenu;
-        "w-modal": WModal;
-        "w-notification": WNotification;
-        "w-observer": WObserver;
-        "w-pagination": WPagination;
-        "w-radiogroup": WRadiogroup;
-        "w-row": WRow;
-        "w-select": WSelect;
-        "w-slider": WSlider;
-        "w-spoiler": WSpoiler;
-        "w-stepper": WStepper;
-        "w-tabs": WTabs;
-        "w-textarea": WTextarea;
-        "w-toggle": WToggle;
-        "w-tooltip": WTooltip;
+        "u-alert": UAlert;
+        "u-button": UButton;
+        "u-card": UCard;
+        "u-cardselect": UCardselect;
+        "u-checkbox": UCheckbox;
+        "u-chip": UChip;
+        "u-col": UCol;
+        "u-dialog": UDialog;
+        "u-dropdown": UDropdown;
+        "u-filepicker": UFilepicker;
+        "u-form": UForm;
+        "u-grid": UGrid;
+        "u-group": UGroup;
+        "u-icon": UIcon;
+        "u-input": UInput;
+        "u-menu": UMenu;
+        "u-modal": UModal;
+        "u-notification": UNotification;
+        "u-observer": UObserver;
+        "u-pagination": UPagination;
+        "u-radiogroup": URadiogroup;
+        "u-row": URow;
+        "u-select": USelect;
+        "u-slider": USlider;
+        "u-spoiler": USpoiler;
+        "u-stepper": UStepper;
+        "u-tabs": UTabs;
+        "u-textarea": UTextarea;
+        "u-toggle": UToggle;
+        "u-tooltip": UTooltip;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "w-alert": LocalJSX.WAlert & JSXBase.HTMLAttributes<HTMLWAlertElement>;
-            "w-button": LocalJSX.WButton & JSXBase.HTMLAttributes<HTMLWButtonElement>;
-            "w-card": LocalJSX.WCard & JSXBase.HTMLAttributes<HTMLWCardElement>;
-            "w-cardselect": LocalJSX.WCardselect & JSXBase.HTMLAttributes<HTMLWCardselectElement>;
-            "w-checkbox": LocalJSX.WCheckbox & JSXBase.HTMLAttributes<HTMLWCheckboxElement>;
-            "w-chip": LocalJSX.WChip & JSXBase.HTMLAttributes<HTMLWChipElement>;
-            "w-col": LocalJSX.WCol & JSXBase.HTMLAttributes<HTMLWColElement>;
-            "w-dialog": LocalJSX.WDialog & JSXBase.HTMLAttributes<HTMLWDialogElement>;
-            "w-dropdown": LocalJSX.WDropdown & JSXBase.HTMLAttributes<HTMLWDropdownElement>;
-            "w-filepicker": LocalJSX.WFilepicker & JSXBase.HTMLAttributes<HTMLWFilepickerElement>;
-            "w-form": LocalJSX.WForm & JSXBase.HTMLAttributes<HTMLWFormElement>;
-            "w-grid": LocalJSX.WGrid & JSXBase.HTMLAttributes<HTMLWGridElement>;
-            "w-group": LocalJSX.WGroup & JSXBase.HTMLAttributes<HTMLWGroupElement>;
-            "w-icon": LocalJSX.WIcon & JSXBase.HTMLAttributes<HTMLWIconElement>;
-            "w-input": LocalJSX.WInput & JSXBase.HTMLAttributes<HTMLWInputElement>;
-            "w-menu": LocalJSX.WMenu & JSXBase.HTMLAttributes<HTMLWMenuElement>;
-            "w-modal": LocalJSX.WModal & JSXBase.HTMLAttributes<HTMLWModalElement>;
-            "w-notification": LocalJSX.WNotification & JSXBase.HTMLAttributes<HTMLWNotificationElement>;
-            "w-observer": LocalJSX.WObserver & JSXBase.HTMLAttributes<HTMLWObserverElement>;
-            "w-pagination": LocalJSX.WPagination & JSXBase.HTMLAttributes<HTMLWPaginationElement>;
-            "w-radiogroup": LocalJSX.WRadiogroup & JSXBase.HTMLAttributes<HTMLWRadiogroupElement>;
-            "w-row": LocalJSX.WRow & JSXBase.HTMLAttributes<HTMLWRowElement>;
-            "w-select": LocalJSX.WSelect & JSXBase.HTMLAttributes<HTMLWSelectElement>;
-            "w-slider": LocalJSX.WSlider & JSXBase.HTMLAttributes<HTMLWSliderElement>;
-            "w-spoiler": LocalJSX.WSpoiler & JSXBase.HTMLAttributes<HTMLWSpoilerElement>;
-            "w-stepper": LocalJSX.WStepper & JSXBase.HTMLAttributes<HTMLWStepperElement>;
-            "w-tabs": LocalJSX.WTabs & JSXBase.HTMLAttributes<HTMLWTabsElement>;
-            "w-textarea": LocalJSX.WTextarea & JSXBase.HTMLAttributes<HTMLWTextareaElement>;
-            "w-toggle": LocalJSX.WToggle & JSXBase.HTMLAttributes<HTMLWToggleElement>;
-            "w-tooltip": LocalJSX.WTooltip & JSXBase.HTMLAttributes<HTMLWTooltipElement>;
+            "u-alert": LocalJSX.UAlert & JSXBase.HTMLAttributes<HTMLUAlertElement>;
+            "u-button": LocalJSX.UButton & JSXBase.HTMLAttributes<HTMLUButtonElement>;
+            "u-card": LocalJSX.UCard & JSXBase.HTMLAttributes<HTMLUCardElement>;
+            "u-cardselect": LocalJSX.UCardselect & JSXBase.HTMLAttributes<HTMLUCardselectElement>;
+            "u-checkbox": LocalJSX.UCheckbox & JSXBase.HTMLAttributes<HTMLUCheckboxElement>;
+            "u-chip": LocalJSX.UChip & JSXBase.HTMLAttributes<HTMLUChipElement>;
+            "u-col": LocalJSX.UCol & JSXBase.HTMLAttributes<HTMLUColElement>;
+            "u-dialog": LocalJSX.UDialog & JSXBase.HTMLAttributes<HTMLUDialogElement>;
+            "u-dropdown": LocalJSX.UDropdown & JSXBase.HTMLAttributes<HTMLUDropdownElement>;
+            "u-filepicker": LocalJSX.UFilepicker & JSXBase.HTMLAttributes<HTMLUFilepickerElement>;
+            "u-form": LocalJSX.UForm & JSXBase.HTMLAttributes<HTMLUFormElement>;
+            "u-grid": LocalJSX.UGrid & JSXBase.HTMLAttributes<HTMLUGridElement>;
+            "u-group": LocalJSX.UGroup & JSXBase.HTMLAttributes<HTMLUGroupElement>;
+            "u-icon": LocalJSX.UIcon & JSXBase.HTMLAttributes<HTMLUIconElement>;
+            "u-input": LocalJSX.UInput & JSXBase.HTMLAttributes<HTMLUInputElement>;
+            "u-menu": LocalJSX.UMenu & JSXBase.HTMLAttributes<HTMLUMenuElement>;
+            "u-modal": LocalJSX.UModal & JSXBase.HTMLAttributes<HTMLUModalElement>;
+            "u-notification": LocalJSX.UNotification & JSXBase.HTMLAttributes<HTMLUNotificationElement>;
+            "u-observer": LocalJSX.UObserver & JSXBase.HTMLAttributes<HTMLUObserverElement>;
+            "u-pagination": LocalJSX.UPagination & JSXBase.HTMLAttributes<HTMLUPaginationElement>;
+            "u-radiogroup": LocalJSX.URadiogroup & JSXBase.HTMLAttributes<HTMLURadiogroupElement>;
+            "u-row": LocalJSX.URow & JSXBase.HTMLAttributes<HTMLURowElement>;
+            "u-select": LocalJSX.USelect & JSXBase.HTMLAttributes<HTMLUSelectElement>;
+            "u-slider": LocalJSX.USlider & JSXBase.HTMLAttributes<HTMLUSliderElement>;
+            "u-spoiler": LocalJSX.USpoiler & JSXBase.HTMLAttributes<HTMLUSpoilerElement>;
+            "u-stepper": LocalJSX.UStepper & JSXBase.HTMLAttributes<HTMLUStepperElement>;
+            "u-tabs": LocalJSX.UTabs & JSXBase.HTMLAttributes<HTMLUTabsElement>;
+            "u-textarea": LocalJSX.UTextarea & JSXBase.HTMLAttributes<HTMLUTextareaElement>;
+            "u-toggle": LocalJSX.UToggle & JSXBase.HTMLAttributes<HTMLUToggleElement>;
+            "u-tooltip": LocalJSX.UTooltip & JSXBase.HTMLAttributes<HTMLUTooltipElement>;
         }
     }
 }
