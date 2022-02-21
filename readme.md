@@ -54,6 +54,9 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Slider](https://github.com/theUrbans/uniform/tree/master/src/components/u-slider)                   | u-slider         | 🔵    |
 | [Spoiler](https://github.com/theUrbans/uniform/tree/master/src/components/u-spoiler)                 | u-spoiler        | 🟡    |
 | [Stepper](https://github.com/theUrbans/uniform/tree/master/src/components/u-stepper)                 | u-stepper        | 🟢    |
+| [Table](https://github.com/theUrbans/uniform/tree/master/src/components/u-table)                     | u-table          | 🔵    |
+| [Table head](https://github.com/theUrbans/uniform/tree/master/src/components/u-tablehead)            | u-tablehead      | 🔵    |
+| [Table row](https://github.com/theUrbans/uniform/tree/master/src/components/u-tablerow)              | u-tablerow       | 🔵    |
 | [Tabs](https://github.com/theUrbans/uniform/tree/master/src/components/u-tabs)                       | u-tabs           | 🔵    |
 | [Textarea](https://github.com/theUrbans/uniform/tree/master/src/components/u-textarea)               | u-textarea       | 🟡    |
 | [Time picker](https://github.com/theUrbans/uniform/tree/master/src/components/u-timepicker)          | u-timepicker     | 🔵    |
