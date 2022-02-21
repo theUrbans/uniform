@@ -16,9 +16,9 @@ export interface Action {
 })
 export class WDialog {
   private modal: HTMLUModalElement;
-  @Prop() name: string = 'w-dialog-default';
+  @Prop() name: string = 'u-dialog-default';
   @State() open: boolean = false;
-  @State() title: string = 'w-dialog title';
+  @State() title: string = 'u-dialog title';
   @State() content: string = '';
   @State() buttons: Array<Action> = [{ title: 'OK' }];
   @Listen('open-dialog', { target: 'body' })
