@@ -3,8 +3,8 @@ import { Component, h, Prop, Method, Listen, State, Event, EventEmitter, Element
 @Component({
   tag: 'u-modal',
   styleUrls: {
-    desktop: 'w-modal.desktop.css',
-    mobile: 'w-modal.mobile.scss',
+    desktop: 'u-modal.desktop.css',
+    mobile: 'u-modal.mobile.scss',
   },
   shadow: true,
 })

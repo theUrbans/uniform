@@ -9,8 +9,8 @@ export interface Action {
 @Component({
   tag: 'u-dialog',
   styleUrls: {
-    desktop: 'w-dialog.desktop.css',
-    mobile: 'w-dialog.mobile.css',
+    desktop: 'u-dialog.desktop.css',
+    mobile: 'u-dialog.mobile.css',
   },
   shadow: true,
 })
