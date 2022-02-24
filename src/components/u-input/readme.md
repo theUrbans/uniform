@@ -63,6 +63,19 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Used by
+
+ - [u-table](../u-table)
+
+### Graph
+```mermaid
+graph TD;
+  u-table --> u-input
+  style u-input fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

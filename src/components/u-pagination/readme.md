@@ -10,9 +10,9 @@
 | Property               | Attribute                  | Description | Type      | Default     |
 | ---------------------- | -------------------------- | ----------- | --------- | ----------- |
 | `pages`                | `pages`                    |             | `number`  | `undefined` |
-| `showButtons`          | `show-buttons`             |             | `boolean` | `false`     |
-| `showLastAndFirstPage` | `show-last-and-first-page` |             | `boolean` | `false`     |
-| `showPages`            | `show-pages`               |             | `number`  | `2`         |
+| `showButtons`          | `show-buttons`             |             | `boolean` | `true`      |
+| `showLastAndFirstPage` | `show-last-and-first-page` |             | `boolean` | `true`      |
+| `showPages`            | `show-pages`               |             | `number`  | `1`         |
 
 
 ## Events
@@ -37,6 +37,10 @@ Type: `Promise<void>`
 
 ## Dependencies
 
+### Used by
+
+ - [u-table](../u-table)
+
 ### Depends on
 
 - [u-group](../u-group)
@@ -47,6 +51,7 @@ Type: `Promise<void>`
 graph TD;
   u-pagination --> u-group
   u-pagination --> u-button
+  u-table --> u-pagination
   style u-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -23,6 +23,7 @@
  - [u-filepicker](../u-filepicker)
  - [u-form](../u-form)
  - [u-stepper](../u-stepper)
+ - [u-table](../u-table)
 
 ### Graph
 ```mermaid
@@ -30,6 +31,7 @@ graph TD;
   u-filepicker --> u-row
   u-form --> u-row
   u-stepper --> u-row
+  u-table --> u-row
   style u-row fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
