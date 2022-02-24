@@ -4,7 +4,7 @@ import { UForm } from '../u-form';
 describe('w-form', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WForm],
+      components: [UForm],
       html: `<u-form></u-form>`,
     });
     expect(page.root).toEqualHtml(`

@@ -4,7 +4,7 @@ import { UChip } from '../u-chip';
 describe('w-chip', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WChip],
+      components: [UChip],
       html: `<u-chip></u-chip>`,
     });
     expect(page.root).toEqualHtml(`

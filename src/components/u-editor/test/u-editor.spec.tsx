@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { UAlert } from '../u-alert';
+import { UEditor } from '../u-editor';
 
-describe('w-alert', () => {
+describe('u-editor', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [UAlert],
-      html: `<u-alert></u-alert>`,
+      components: [UEditor],
+      html: `<u-editor></u-editor>`,
     });
     expect(page.root).toEqualHtml(`
-      <u-alert>
+      <u-editor>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </u-alert>
+      </u-editor>
     `);
   });
 });

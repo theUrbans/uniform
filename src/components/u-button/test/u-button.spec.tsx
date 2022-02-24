@@ -4,7 +4,7 @@ import { UButton } from '../u-button';
 describe('w-button', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WButton],
+      components: [UButton],
       html: `<u-button></u-button>`,
     });
     expect(page.root).toEqualHtml(`

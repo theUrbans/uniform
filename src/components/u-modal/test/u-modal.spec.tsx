@@ -4,7 +4,7 @@ import { UModal } from '../u-modal';
 describe('w-modal', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WModal],
+      components: [UModal],
       html: `<u-modal></u-modal>`,
     });
     expect(page.root).toEqualHtml(`

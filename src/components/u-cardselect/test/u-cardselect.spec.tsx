@@ -4,7 +4,7 @@ import { UCardselect } from '../u-cardselect';
 describe('w-cardselect', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WCardselect],
+      components: [UCardselect],
       html: `<u-cardselect></u-cardselect>`,
     });
     expect(page.root).toEqualHtml(`

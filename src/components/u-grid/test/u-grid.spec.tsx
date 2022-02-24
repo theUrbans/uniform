@@ -4,7 +4,7 @@ import { UGrid } from '../u-grid';
 describe('w-grid', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WGrid],
+      components: [UGrid],
       html: `<u-grid></u-grid>`,
     });
     expect(page.root).toEqualHtml(`

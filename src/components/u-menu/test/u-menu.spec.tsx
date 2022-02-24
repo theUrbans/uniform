@@ -4,7 +4,7 @@ import { UMenu } from '../u-menu';
 describe('w-menu', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WMenu],
+      components: [UMenu],
       html: `<u-menu></u-menu>`,
     });
     expect(page.root).toEqualHtml(`

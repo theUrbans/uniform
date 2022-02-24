@@ -4,7 +4,7 @@ import { UTextarea } from '../u-textarea';
 describe('w-textarea', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WTextarea],
+      components: [UTextarea],
       html: `<u-textarea></u-textarea>`,
     });
     expect(page.root).toEqualHtml(`

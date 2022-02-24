@@ -4,7 +4,7 @@ import { UTooltip } from '../u-tooltip';
 describe('w-tooltip', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WTooltip],
+      components: [UTooltip],
       html: `<u-tooltip></u-tooltip>`,
     });
     expect(page.root).toEqualHtml(`

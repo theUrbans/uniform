@@ -4,7 +4,7 @@ import { UToggle } from '../u-toggle';
 describe('w-toggle', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WToggle],
+      components: [UToggle],
       html: `<u-toggle></u-toggle>`,
     });
     expect(page.root).toEqualHtml(`

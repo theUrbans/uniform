@@ -4,7 +4,7 @@ import { UDropdown } from '../u-dropdown';
 describe('w-dropdown', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WDropdown],
+      components: [UDropdown],
       html: `<u-dropdown></u-dropdown>`,
     });
     expect(page.root).toEqualHtml(`

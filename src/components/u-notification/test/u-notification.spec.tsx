@@ -4,7 +4,7 @@ import { UNotification } from '../u-notification';
 describe('w-notification', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WNotification],
+      components: [UNotification],
       html: `<u-notification></u-notification>`,
     });
     expect(page.root).toEqualHtml(`
