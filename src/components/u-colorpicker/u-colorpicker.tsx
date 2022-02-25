@@ -6,13 +6,11 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class UColorpicker {
-
   render() {
     return (
       <Host>
-        <slot></slot>
+        <input type="color" />
       </Host>
     );
   }
-
 }
