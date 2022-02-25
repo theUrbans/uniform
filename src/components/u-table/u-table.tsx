@@ -14,7 +14,7 @@ export interface HeadOptions {
 })
 export class UTable {
   @Prop() resizeable: boolean = false;
-  @Prop() selectable: boolean = true;
+  @Prop() selectable: boolean = false;
   @Prop() fixedHeader: boolean = false;
   @Prop() heading: Array<HeadOptions> = [
     { field: 'id', label: 'ID', align: 'center', sortable: true, width: '10%' },
@@ -231,15 +231,22 @@ export class UTable {
                   );
                 }
                 if (index > -1 && key !== 'select') {
+                  let w = '100%';
+                  let a = 'left';
+                  if (this.heading.length) {
+                    const { width, align } = this.heading.find(h => h.field === key);
+                    a = align;
+                    w = width;
+                  }
                   rowData[index] = (
                     <td
                       class={{
                         tablecell: true,
-                        [this.heading.find(h => h.field === key).align ?? 'left']: true,
+                        [a ?? 'left']: true,
                         selected: row['select'] === true,
                       }}
                       style={{
-                        width: this.heading.find(h => h.field === key).width ?? '100%',
+                        width: w ?? '100%',
                       }}
                     >
                       {this.format(value.toString())}
