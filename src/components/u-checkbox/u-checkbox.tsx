@@ -12,7 +12,7 @@ export class UCheckbox {
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
   @Prop() disabled: boolean = false;
   @Prop() tristate: boolean = false;
-  @Event({ bubbles: false, composed: false }) wChange: EventEmitter<boolean>; // inter indicates indeterminate state
+  @Event({ bubbles: false, composed: false }) uChange: EventEmitter<boolean>; // inter indicates indeterminate state
   @Method() async set(checked: boolean) {
     this.checked = checked;
   }

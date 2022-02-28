@@ -162,7 +162,7 @@ export class USelect implements ComponentInterface {
   /**
    * emitted on change
    */
-  @Event({ bubbles: false }) wChange: EventEmitter;
+  @Event({ bubbles: false }) uChange: EventEmitter;
 
   /**
    * emitted on focus
