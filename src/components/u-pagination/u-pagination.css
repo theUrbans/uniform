@@ -1,5 +1,8 @@
+:host {
+  @apply h-full bg-green-100;
+}
 .page {
-  @apply h-full p-1;
+  @apply p-1;
 }
 .selected {
   @apply bg-gray-200 text-blue-400;

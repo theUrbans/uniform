@@ -39,19 +39,24 @@ export class UPagination {
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}
-                    // outline={this.currentPage === page}
                     outline
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
                   </u-button>,
-                  this.currentPage !== 1 && <span> &bull;</span>,
+                  this.currentPage > 3 && <span> &bull;</span>,
                 ];
-              if (page >= this.currentPage - this.showPages && page <= this.currentPage + this.showPages)
+              const showPage = () => {
+                console.log(this.pages - this.showPages * 2);
+                if (page >= this.currentPage - this.showPages && page <= this.currentPage + this.showPages) return true;
+                if (this.currentPage === 1 && this.showPages * 2 + 1 >= page) return true;
+                if (this.currentPage === this.pages && this.pages - this.showPages * 2 <= page) return true;
+                return false;
+              };
+              if (showPage())
                 return (
                   <u-button
                     outline
-                    // outline={this.currentPage === page}
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                     onClick={() => this.changePage(page)}
                     rounded={
@@ -73,7 +78,7 @@ export class UPagination {
                 );
               if (this.showLastAndFirstPage && page === this.pages)
                 return [
-                  this.currentPage !== this.pages && <span> &bull;</span>,
+                  this.currentPage < this.pages - 2 && <span> &bull;</span>,
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}
