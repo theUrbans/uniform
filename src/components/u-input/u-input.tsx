@@ -18,7 +18,7 @@ export class UInput implements ComponentInterface {
   @Prop({ mutable: true }) value: string | number | null = '';
   @Watch('value')
   protected valueChanged() {
-    this.wChange.emit(this.value);
+    this.uChange.emit(this.value);
   }
 
   /**
@@ -140,7 +140,7 @@ export class UInput implements ComponentInterface {
   /**
    * emitted on input
    */
-  @Event() wInput: EventEmitter<number | string>;
+  @Event() uInput: EventEmitter<number | string>;
 
   /**
    * emitted on change
@@ -150,12 +150,12 @@ export class UInput implements ComponentInterface {
   /**
    * emitted on focus
    */
-  @Event() wFocus: EventEmitter<void>;
+  @Event() uFocus: EventEmitter<void>;
 
   /**
    * emitted on blur
    **/
-  @Event() wBlur: EventEmitter<void>;
+  @Event() uBlur: EventEmitter<void>;
 
   /**
    * set focus on native input
@@ -199,14 +199,14 @@ export class UInput implements ComponentInterface {
       } else {
         this.value = input.value;
       }
-      this.wInput.emit(this.value);
+      this.uInput.emit(this.value);
     }
   };
 
   private onBlur = () => {
     this.focus = false;
     this.doFocus = false;
-    this.wBlur.emit();
+    this.uBlur.emit();
   };
 
   private onClick = () => {
@@ -215,7 +215,7 @@ export class UInput implements ComponentInterface {
 
   private onFocus = () => {
     this.focus = true;
-    this.wFocus.emit();
+    this.uFocus.emit();
   };
 
   private onKeyDown = e => {

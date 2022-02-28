@@ -32,11 +32,11 @@ export class UForm {
   @Prop() layout: string = ''; // create layout with descriptive text, eg: stepper, 2 cols, 3 rows
   @Prop() fields: Array<FormField> = [];
   @Prop() buttons: Array<FormButton> = [];
-  @Event() wSubmit: EventEmitter;
-  @Event() wNextStep: EventEmitter;
+  @Event() uSubmit: EventEmitter;
+  @Event() uNextStep: EventEmitter;
   private submitForm = () => {
     console.log('submitForm', this.returnValue);
-    this.wSubmit.emit(this.returnValue);
+    this.uSubmit.emit(this.returnValue);
   };
 
   @State() returnValue: { [key: string]: any };
@@ -128,7 +128,7 @@ export class UForm {
   }
 
   private sendStep = (e: CustomEvent) => {
-    this.wNextStep.emit({ step: e.detail, value: this.returnValue });
+    this.uNextStep.emit({ step: e.detail, value: this.returnValue });
   };
 
   render() {

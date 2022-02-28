@@ -23,7 +23,7 @@ export class UCheckbox {
       this.checkbox.indeterminate = true;
     }
     this.checked = input.checked;
-    this.wChange.emit(input.checked);
+    this.uChange.emit(input.checked);
   };
 
   render() {

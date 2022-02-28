@@ -42,12 +42,12 @@ export class UStepper {
   /**
    * emit wSubmit event on submit button click
    */
-  @Event() wSubmit: EventEmitter<void>;
+  @Event() uSubmit: EventEmitter<void>;
 
   /**
    * emit wNextStep event on next/previous button click
    */
-  @Event() wStep: EventEmitter<number>;
+  @Event() uStep: EventEmitter<number>;
 
   @State() currentStep: number = 0;
   private formatSteps() {
@@ -58,17 +58,17 @@ export class UStepper {
   }
 
   private handleSubmit = () => {
-    this.wSubmit.emit();
+    this.uSubmit.emit();
   };
 
   private handleNextStep = () => {
     this.currentStep += 1;
-    this.wStep.emit(this.currentStep + 1);
+    this.uStep.emit(this.currentStep + 1);
   };
 
   private handlePreviousStep = () => {
     this.currentStep -= 1;
-    this.wStep.emit(this.currentStep);
+    this.uStep.emit(this.currentStep);
   };
 
   render() {

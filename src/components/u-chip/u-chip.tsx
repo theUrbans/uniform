@@ -52,10 +52,10 @@ export class UChip {
   /**
    * emit wClick event on chip click
    */
-  @Event() wClick: EventEmitter<void>;
+  @Event() uClick: EventEmitter<void>;
   private handleClick = () => {
     if (!this.clickable) return;
-    this.wClick.emit();
+    this.uClick.emit();
   };
   render() {
     return (

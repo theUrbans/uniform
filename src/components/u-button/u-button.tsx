@@ -44,9 +44,9 @@ export class UButton {
   /**
    * emit wClick on button click
    */
-  @Event() wClick: EventEmitter<void>;
+  @Event() uClick: EventEmitter<void>;
   private handleOnClick = () => {
-    this.wClick.emit();
+    this.uClick.emit();
   };
 
   render() {

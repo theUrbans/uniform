@@ -12,14 +12,14 @@ export class UFilepicker {
   @Prop() multiple: boolean = false;
   @Prop() noFile: string = 'No file selected';
   @Prop() filePlural: string = 'files';
-  @Event() wSelect: EventEmitter<FileList>;
+  @Event() uSelect: EventEmitter<FileList>;
   @State() file: FileList;
 
   private handleFileInput = (event: Event) => {
     const file = event.target['files'];
     this.file = file;
     this.getFileText();
-    this.wSelect.emit(this.file);
+    this.uSelect.emit(this.file);
   };
 
   private dropHandler(e: DragEvent) {
@@ -27,7 +27,7 @@ export class UFilepicker {
     const files = e.dataTransfer.files;
     this.file = files;
     this.getFileText();
-    this.wSelect.emit(this.file);
+    this.uSelect.emit(this.file);
   }
 
   @State() fileText: string = this.noFile;

@@ -18,14 +18,14 @@ export class URadiogroup {
   @Prop({ mutable: true }) value: any;
   @Prop() alignment: 'vertical' | 'horizontal' = 'vertical';
   @Prop() label: string = 'Test';
-  @Event() wInput: EventEmitter;
+  @Event() uInput: EventEmitter;
   @State() hovered: string;
 
   private handleInput = (e: Event, option: Option) => {
     const input = e.target as HTMLInputElement;
     if (input) {
       this.value = input.value;
-      this.wInput.emit(option);
+      this.uInput.emit(option);
     }
   };
 

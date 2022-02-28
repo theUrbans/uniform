@@ -20,9 +20,9 @@ export class UTextarea {
   @Prop() rows: number = 6;
   @Watch('value') valueChanged() {
     this.textarea.value = this.value;
-    this.wInput.emit(this.value);
+    this.uInput.emit(this.value);
   }
-  @Event() wInput: EventEmitter;
+  @Event() uInput: EventEmitter;
   @State() focused: boolean = false;
 
   private resetValue = e => {
