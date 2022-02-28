@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Event, EventEmitter, Method } from '@stencil/core';
+import { Component, Host, h, Prop, State, Event, EventEmitter, Method, Element, Watch } from '@stencil/core';
 
 export interface HeadOptions {
   field: string;
@@ -6,6 +6,8 @@ export interface HeadOptions {
   width?: string;
   align?: 'left' | 'center' | 'right';
   sortable?: boolean;
+  bgcolor?: (row: any) => string;
+  fontcolor?: (row: any) => string;
 }
 @Component({
   tag: 'u-table',
@@ -13,20 +15,41 @@ export interface HeadOptions {
   shadow: true,
 })
 export class UTable {
+  @Element() el: HTMLElement;
   @Prop() resizeable: boolean = false;
   @Prop() selectable: boolean = false;
-  @Prop() fixedHeader: boolean = false;
+  @Prop() fixedHeader: boolean = true;
+  @Prop() observe: boolean = false;
   @Prop() heading: Array<HeadOptions> = [
     { field: 'id', label: 'ID', align: 'center', sortable: true, width: '10%' },
-    { field: 'name', label: 'Name', width: '80%' },
-    { field: 'age', label: 'Age', align: 'right', sortable: true, width: '10%' },
+    {
+      field: 'name',
+      label: 'Name',
+      width: '80%',
+      bgcolor: row => {
+        return row.name.includes('xd') ? 'cyan' : '';
+      },
+    },
+    {
+      field: 'age',
+      label: 'Age',
+      align: 'right',
+      sortable: true,
+      width: '10%',
+      bgcolor: row => {
+        return row.age >= 0 ? '#ffff00' : 'red';
+      },
+      fontcolor: () => {
+        return 'black';
+      },
+    },
   ];
-  @Prop() data: Array<any> = [
+  @Prop({ mutable: true }) data: Array<any> = [
     { id: 1, name: 'test', age: '20' },
-    { id: 2, age: 20, name: '*test2*\n\t_test_\n*xd*' },
+    { id: 2, age: 20, name: '*test2*\n_test_\n*xd*' },
     { id: 3, name: 'test3', age: '40' },
     { id: 4, name: 'test4', age: '50' },
-    { id: 5, name: 'test5', age: '60' },
+    { id: 5, name: 'test5', age: '-60' },
     { id: 6, name: 'test6', age: '70' },
     { id: 7, name: 'test2', age: '30' },
     { id: 8, name: '.test3.', age: '40' },
@@ -34,12 +57,13 @@ export class UTable {
     { id: 10, name: 'test5', age: '60' },
     { id: 11, name: 'test6', age: '70' },
     { id: 12, name: 'test2', age: '30' },
-    { id: 13, name: 'test3', age: '40' },
-    { id: 14, name: 'test4', age: '50' },
-    { id: 15, name: '*-test-*', age: '60' },
-    { id: 16, name: 'test6', age: '70' },
-    { id: 17, name: 'test2', age: '30' },
+    { id: 6, name: 'test6', age: '70' },
+    { id: 7, name: 'test2', age: '-30' },
+    { id: 8, name: '.test3.', age: '40' },
   ];
+  @Watch('data') watchData(newValue: any) {
+    this.displayedData = JSON.parse(JSON.stringify(newValue));
+  }
   @State() sort: { dir: 'asc' | 'desc' | 'none'; prop: string } = { dir: 'none', prop: '' };
   private format(value: string): Array<string> {
     let formattedValue: Array<string> = [];
@@ -148,6 +172,17 @@ export class UTable {
   @Method() async unselect(index: number) {
     this.selectRow(this.displayedData[index], index);
   }
+  @State() hasHeaderSlot: boolean = false;
+  @State() hasFooterSlot: boolean = false;
+  componentWillLoad() {
+    this.hasHeaderSlot = !!this.el.shadowRoot.querySelector('[slot="header"]');
+    this.hasFooterSlot = !!this.el.shadowRoot.querySelector('slot[name="footer"]');
+    console.log(this.hasHeaderSlot, this.hasFooterSlot);
+    console.log(this.el.shadowRoot.querySelector('[slot="header"]') as HTMLSlotElement);
+    console.log(this.el.shadowRoot);
+  }
+  @Event() uLastElement: EventEmitter<void>;
+
   render() {
     let order = this.heading.map(h => {
       return h.field;
@@ -156,54 +191,68 @@ export class UTable {
 
     return (
       <Host>
-        <slot name="header">
-          <u-row wrap="nowrap" padding="0">
-            <u-pagination pages={10}></u-pagination>
-            <u-input label="Suche"></u-input>
-          </u-row>
-        </slot>
         <table>
-          <thead>
-            <tr class="heading">
-              {this.heading.map((item, index) => [
-                this.selectable && index === 0 && (
-                  <th class="center">
-                    <u-checkbox
-                      checked={this.selected.length > 0}
-                      tristate={this.selected.length > 0 && this.selected.length !== this.displayedData.length}
-                      onWChange={() => this.selectAll()}
-                    ></u-checkbox>
-                  </th>
-                ),
-                <th
-                  class={{
-                    [item.align ?? 'left']: true,
-                  }}
-                >
-                  <span class="label">
-                    {item.label}
-                    {item.sortable && (
-                      <div class="sort">
-                        {(this.sort.prop !== item.field || this.sort.dir === 'none') && [
-                          <span onClick={() => this.handleSort(item.field, 'asc')}>&#9651;</span>,
-                          <span onClick={() => this.handleSort(item.field, 'desc')}>&#9661;</span>,
-                        ]}
-                        {this.sort.dir === 'asc' &&
-                          this.sort.prop === item.field && [
-                            <span onClick={() => this.handleSort(item.field, 'none')}>&#9650;</span>,
+          <thead
+            class={{
+              sticky: this.fixedHeader,
+              top: true,
+            }}
+          >
+            <div class="head">
+              {/* {this.hasHeaderSlot && ( */}
+              <tr class="heading">
+                <slot name="header">
+                  {/* <u-row wrap="nowrap" padding="0">
+                    <u-pagination pages={10}></u-pagination>
+                    <u-input label="Suche"></u-input>
+                  </u-row> */}
+                </slot>
+              </tr>
+              {/* )} */}
+              <tr class="heading">
+                {this.heading.map((item, index) => [
+                  this.selectable && index === 0 && (
+                    <th class="center">
+                      <u-checkbox
+                        checked={this.selected.length > 0}
+                        tristate={this.selected.length > 0 && this.selected.length !== this.displayedData.length}
+                        onWChange={() => this.selectAll()}
+                      ></u-checkbox>
+                    </th>
+                  ),
+                  <th
+                    class={{
+                      [item.align ?? 'left']: true,
+                    }}
+                    style={{
+                      width: item.width ?? '100%',
+                    }}
+                  >
+                    <span class="label">
+                      {item.label}
+                      {item.sortable && (
+                        <div class="sort">
+                          {(this.sort.prop !== item.field || this.sort.dir === 'none') && [
+                            <span onClick={() => this.handleSort(item.field, 'asc')}>&#9651;</span>,
                             <span onClick={() => this.handleSort(item.field, 'desc')}>&#9661;</span>,
                           ]}
-                        {this.sort.dir === 'desc' &&
-                          this.sort.prop === item.field && [
-                            <span onClick={() => this.handleSort(item.field, 'asc')}>&#9651;</span>,
-                            <span onClick={() => this.handleSort(item.field, 'none')}>&#9660;</span>,
-                          ]}
-                      </div>
-                    )}
-                  </span>
-                </th>,
-              ])}
-            </tr>
+                          {this.sort.dir === 'asc' &&
+                            this.sort.prop === item.field && [
+                              <span onClick={() => this.handleSort(item.field, 'none')}>&#9650;</span>,
+                              <span onClick={() => this.handleSort(item.field, 'desc')}>&#9661;</span>,
+                            ]}
+                          {this.sort.dir === 'desc' &&
+                            this.sort.prop === item.field && [
+                              <span onClick={() => this.handleSort(item.field, 'asc')}>&#9651;</span>,
+                              <span onClick={() => this.handleSort(item.field, 'none')}>&#9660;</span>,
+                            ]}
+                        </div>
+                      )}
+                    </span>
+                  </th>,
+                ])}
+              </tr>
+            </div>
           </thead>
           <tbody>
             {this.displayedData.map((row, rowIndex) => {
@@ -233,10 +282,16 @@ export class UTable {
                 if (index > -1 && key !== 'select') {
                   let w = '100%';
                   let a = 'left';
+                  let bg = '';
+                  let ft = '';
                   if (this.heading.length) {
                     const { width, align } = this.heading.find(h => h.field === key);
                     a = align;
                     w = width;
+                    const { bgcolor, fontcolor } = this.heading.find(h => h.field === key);
+                    // const fontcolor = this.heading.find(h => h.field === key);
+                    if (bgcolor) bg = bgcolor(row);
+                    if (fontcolor) ft = fontcolor(row);
                   }
                   rowData[index] = (
                     <td
@@ -247,6 +302,8 @@ export class UTable {
                       }}
                       style={{
                         width: w ?? '100%',
+                        backgroundColor: bg,
+                        color: ft,
                       }}
                     >
                       {this.format(value.toString())}
@@ -254,7 +311,21 @@ export class UTable {
                   );
                 }
               });
-              return (
+              return this.observe && this.displayedData.length === rowIndex ? (
+                <u-observe onUVisble={() => this.uLastElement.emit()}>
+                  <tr
+                    class="tablerow"
+                    onClick={() => {
+                      row.select = !row.select;
+                      this.selectRow(row, rowIndex);
+                    }}
+                    onMouseEnter={() => this.uStartHover.emit(row)}
+                    onMouseLeave={() => this.uStopHover.emit(row)}
+                  >
+                    {rowData}
+                  </tr>
+                </u-observe>
+              ) : (
                 <tr
                   class="tablerow"
                   onClick={() => {
