@@ -48,6 +48,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Notification](https://github.com/theUrbans/uniform/tree/master/src/components/u-notification)       | u-notification   | 🟡    |
 | [Observer](https://github.com/theUrbans/uniform/tree/master/src/components/u-observer)               | u-observer       | 🟢    |
 | [Pagination](https://github.com/theUrbans/uniform/tree/master/src/components/u-pagination)           | u-pagination     | 🔴    |
+| [Progress](https://github.com/theUrbans/uniform/tree/master/src/components/u-progress)               | u-progress       | 🔵    |
 | [Radio Group](https://github.com/theUrbans/uniform/tree/master/src/components/u-radiogroup)          | u-radiogroup     | 🟡    |
 | [Row](https://github.com/theUrbans/uniform/tree/master/src/components/u-row)                         | u-row            | 🟡    |
 | [Select](https://github.com/theUrbans/uniform/tree/master/src/components/u-select)                   | u-select         | 🟡    |
@@ -58,6 +59,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Tabs](https://github.com/theUrbans/uniform/tree/master/src/components/u-tabs)                       | u-tabs           | 🔵    |
 | [Textarea](https://github.com/theUrbans/uniform/tree/master/src/components/u-textarea)               | u-textarea       | 🟡    |
 | [Time picker](https://github.com/theUrbans/uniform/tree/master/src/components/u-timepicker)          | u-timepicker     | 🔵    |
+| [Touch](https://github.com/theUrbans/uniform/tree/master/src/components/u-touch)                     | u-touch          | 🔵    |
 | [Toggle](https://github.com/theUrbans/uniform/tree/master/src/components/u-toggle)                   | u-toggle         | 🔵    |
 | [Tooltip](https://github.com/theUrbans/uniform/tree/master/src/components/u-tooltip)                 | u-tooltip        | 🟢    |
 | [Week picker](https://github.com/theUrbans/uniform/tree/master/src/components/u-weekpicker)          | u-weekpicker     | 🔵    |

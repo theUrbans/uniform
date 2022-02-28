@@ -145,7 +145,7 @@ export class UInput implements ComponentInterface {
   /**
    * emitted on change
    */
-  @Event({ bubbles: false }) wChange: EventEmitter<number | string>;
+  @Event({ bubbles: false }) uChange: EventEmitter<number | string>;
 
   /**
    * emitted on focus
@@ -199,6 +199,7 @@ export class UInput implements ComponentInterface {
       } else {
         this.value = input.value;
       }
+      this.uInput.emit(this.value);
       this.uInput.emit(this.value);
     }
   };
