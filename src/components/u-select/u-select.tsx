@@ -459,7 +459,7 @@ export class USelect implements ComponentInterface {
                   >
                     {this.multiple ? (
                       <u-checkbox
-                        onWChange={() => {
+                        onUChange={() => {
                           if (!disabled) this.selectOption(value, label);
                         }}
                         label={label}

@@ -47,7 +47,6 @@ export class UPagination {
                   this.currentPage > 3 && <span> &bull;</span>,
                 ];
               const showPage = () => {
-                console.log(this.pages - this.showPages * 2);
                 if (page >= this.currentPage - this.showPages && page <= this.currentPage + this.showPages) return true;
                 if (this.currentPage === 1 && this.showPages * 2 + 1 >= page) return true;
                 if (this.currentPage === this.pages && this.pages - this.showPages * 2 <= page) return true;
@@ -56,7 +55,6 @@ export class UPagination {
               if (showPage())
                 return (
                   <u-button
-                    outline
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                     onClick={() => this.changePage(page)}
                     rounded={
@@ -72,6 +70,7 @@ export class UPagination {
                         ? 'right'
                         : 'none'
                     }
+                    outline
                   >
                     {page}
                   </u-button>

@@ -110,7 +110,7 @@ export class UStepper {
             })}
           </div>
           <div class="footer">
-            <u-button design="error" flat disabled={this.currentStep == 0} onWClick={this.handlePreviousStep}>
+            <u-button design="error" flat disabled={this.currentStep == 0} onUClick={this.handlePreviousStep}>
               {this.prevLabel}
               <span slot="prefix">&#171;</span>
             </u-button>
@@ -120,7 +120,7 @@ export class UStepper {
                 <span slot="suffix">&#187;</span>
               </u-button>
             ) : (
-              <u-button design="success" flat disabled={!this.allData} onWClick={this.handleSubmit}>
+              <u-button design="success" flat disabled={!this.allData} onUClick={this.handleSubmit}>
                 {this.submitLabel}
               </u-button>
             )}
