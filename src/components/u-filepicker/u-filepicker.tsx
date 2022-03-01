@@ -5,21 +5,21 @@ import { Component, Event, EventEmitter, h, Host, Prop, State } from '@stencil/c
   styleUrl: 'u-filepicker.css',
   shadow: true,
 })
-export class WFilepicker {
+export class UFilepicker {
   @Prop() size: 'small' | 'large' = 'small';
   @Prop() label: string = 'Choose file';
   @Prop() fileEnding: string = '*';
   @Prop() multiple: boolean = false;
   @Prop() noFile: string = 'No file selected';
   @Prop() filePlural: string = 'files';
-  @Event() wSelect: EventEmitter<FileList>;
+  @Event() uSelect: EventEmitter<FileList>;
   @State() file: FileList;
 
   private handleFileInput = (event: Event) => {
     const file = event.target['files'];
     this.file = file;
     this.getFileText();
-    this.wSelect.emit(this.file);
+    this.uSelect.emit(this.file);
   };
 
   private dropHandler(e: DragEvent) {
@@ -27,7 +27,7 @@ export class WFilepicker {
     const files = e.dataTransfer.files;
     this.file = files;
     this.getFileText();
-    this.wSelect.emit(this.file);
+    this.uSelect.emit(this.file);
   }
 
   @State() fileText: string = this.noFile;

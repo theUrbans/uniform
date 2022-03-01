@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WInput } from '../w-input';
+import { UInput } from '../u-input';
 
 describe('w-input', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WInput],
+      components: [UInput],
       html: `<u-input></u-input>`,
     });
     expect(page.root).toEqualHtml(`

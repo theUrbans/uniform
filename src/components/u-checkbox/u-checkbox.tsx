@@ -5,20 +5,25 @@ import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
   styleUrl: 'u-checkbox.css',
   shadow: true,
 })
-export class WCheckbox {
+export class UCheckbox {
+  private checkbox: HTMLInputElement;
   @Prop() label: string = '';
   @Prop({ mutable: true }) checked: boolean = false;
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
   @Prop() disabled: boolean = false;
-  @Event({ bubbles: false, composed: false }) wChange: EventEmitter;
+  @Prop() tristate: boolean = false;
+  @Event({ bubbles: false, composed: false }) uChange: EventEmitter<boolean>; // inter indicates indeterminate state
   @Method() async set(checked: boolean) {
     this.checked = checked;
   }
   private handleInput = (event: UIEvent) => {
     if (this.disabled) return;
     const input: HTMLInputElement = event.target as HTMLInputElement;
+    if (this.tristate) {
+      this.checkbox.indeterminate = true;
+    }
     this.checked = input.checked;
-    this.wChange.emit();
+    this.uChange.emit(input.checked);
   };
 
   render() {
@@ -39,13 +44,13 @@ export class WCheckbox {
         >
           {this.label}
         </span>
-        <input type="checkbox" checked={this.checked} onInput={this.handleInput} disabled={this.disabled} />
+        <input type="checkbox" ref={cb => (this.checkbox = cb)} checked={this.checked} onInput={this.handleInput} disabled={this.disabled} />
         <span
           class={{
-            checkmark: true,
-            smCheck: this.size == 'small',
-            mdCheck: this.size == 'medium',
-            lgCheck: this.size == 'large',
+            checkmark: !this.tristate,
+            [`check-${this.size}`]: !this.tristate,
+            indeterminate: this.tristate,
+            [`indeterminate-${this.size}`]: this.tristate,
           }}
         ></span>
       </label>

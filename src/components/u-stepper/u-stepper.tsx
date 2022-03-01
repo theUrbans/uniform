@@ -5,7 +5,7 @@ import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/c
   styleUrl: 'u-stepper.css',
   shadow: true,
 })
-export class WStepper {
+export class UStepper {
   /**
    * define steps
    * without label -> steps: 3
@@ -42,12 +42,12 @@ export class WStepper {
   /**
    * emit wSubmit event on submit button click
    */
-  @Event() wSubmit: EventEmitter<void>;
+  @Event() uSubmit: EventEmitter<void>;
 
   /**
    * emit wNextStep event on next/previous button click
    */
-  @Event() wStep: EventEmitter<number>;
+  @Event() uStep: EventEmitter<number>;
 
   @State() currentStep: number = 0;
   private formatSteps() {
@@ -58,17 +58,17 @@ export class WStepper {
   }
 
   private handleSubmit = () => {
-    this.wSubmit.emit();
+    this.uSubmit.emit();
   };
 
   private handleNextStep = () => {
     this.currentStep += 1;
-    this.wStep.emit(this.currentStep + 1);
+    this.uStep.emit(this.currentStep + 1);
   };
 
   private handlePreviousStep = () => {
     this.currentStep -= 1;
-    this.wStep.emit(this.currentStep);
+    this.uStep.emit(this.currentStep);
   };
 
   render() {

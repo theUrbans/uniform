@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-dropdown.css',
   shadow: true,
 })
-export class WDropdown {
+export class UDropdown {
   render() {
     return (
       <Host>

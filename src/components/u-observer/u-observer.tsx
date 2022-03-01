@@ -5,7 +5,7 @@ import { Component, h, Event, EventEmitter, Element, State } from '@stencil/core
   styleUrl: 'u-observer.css',
   shadow: true,
 })
-export class WObserver {
+export class UObserver {
   @Element() el: HTMLElement;
 
   /**

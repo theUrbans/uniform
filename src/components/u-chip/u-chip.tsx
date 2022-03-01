@@ -23,7 +23,7 @@ export type ChipDesign =
   styleUrl: 'u-chip.css',
   shadow: true,
 })
-export class WChip {
+export class UChip {
   /**
    * color of the chip
    */
@@ -52,10 +52,10 @@ export class WChip {
   /**
    * emit wClick event on chip click
    */
-  @Event() wClick: EventEmitter<void>;
+  @Event() uClick: EventEmitter<void>;
   private handleClick = () => {
     if (!this.clickable) return;
-    this.wClick.emit();
+    this.uClick.emit();
   };
   render() {
     return (

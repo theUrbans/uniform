@@ -14,7 +14,7 @@ export interface Action {
   },
   shadow: true,
 })
-export class WDialog {
+export class UDialog {
   private modal: HTMLUModalElement;
   @Prop() name: string = 'u-dialog-default';
   @State() open: boolean = false;

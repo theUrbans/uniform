@@ -5,7 +5,7 @@ import { Component, h, Prop } from '@stencil/core';
   styleUrl: 'u-col.css',
   shadow: true,
 })
-export class WCol {
+export class UCol {
   /**
    * flex align-items: start | center | end | space-between | space-around | space-evenly
    */

@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { UTablerow } from '../u-tablerow';
+import { UProgress } from '../u-progress';
 
-describe('u-tablerow', () => {
+describe('u-progress', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [UTablerow],
-      html: `<u-tablerow></u-tablerow>`,
+      components: [UProgress],
+      html: `<u-progress></u-progress>`,
     });
     expect(page.root).toEqualHtml(`
-      <u-tablerow>
+      <u-progress>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </u-tablerow>
+      </u-progress>
     `);
   });
 });

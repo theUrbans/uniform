@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WGroup } from '../w-group';
+import { UGroup } from '../u-group';
 
 describe('w-group', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WGroup],
+      components: [UGroup],
       html: `<u-group></u-group>`,
     });
     expect(page.root).toEqualHtml(`

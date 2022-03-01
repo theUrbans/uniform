@@ -1,6 +1,6 @@
 {
   "name": "@theurbans/uniform",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "private": false,
   "description": "UNIFORM component library",
   "main": "dist/index.cjs.js",
@@ -30,7 +30,7 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "^2.13.0",
+    "@stencil/core": "^2.14.0",
     "@stencil/sass": "^1.5.2"
   },
   "devDependencies": {

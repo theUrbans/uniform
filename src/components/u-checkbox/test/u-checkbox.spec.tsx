@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WCheckbox } from '../w-checkbox';
+import { UCheckbox } from '../u-checkbox';
 
 describe('w-checkbox', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WCheckbox],
+      components: [UCheckbox],
       html: `<u-checkbox></u-checkbox>`,
     });
     expect(page.root).toEqualHtml(`

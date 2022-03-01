@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-cardselect.css',
   shadow: true,
 })
-export class WCardselect {
+export class UCardselect {
   render() {
     return (
       <Host>

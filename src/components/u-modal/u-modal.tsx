@@ -8,7 +8,7 @@ import { Component, h, Prop, Method, Listen, State, Event, EventEmitter, Element
   },
   shadow: true,
 })
-export class WModal {
+export class UModal {
   @Element() el: HTMLElement;
   @Prop() name: string;
   @Prop() closeOnClick: boolean = true;

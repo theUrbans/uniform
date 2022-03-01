@@ -6,7 +6,7 @@ import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, 
   styleUrl: 'u-input.css',
   shadow: true,
 })
-export class WInput implements ComponentInterface {
+export class UInput implements ComponentInterface {
   private inputElement?: HTMLInputElement;
   @State() hovered: boolean = false;
   @State() focus: boolean = false;
@@ -18,7 +18,7 @@ export class WInput implements ComponentInterface {
   @Prop({ mutable: true }) value: string | number | null = '';
   @Watch('value')
   protected valueChanged() {
-    this.wChange.emit(this.value);
+    this.uChange.emit(this.value);
   }
 
   /**
@@ -140,22 +140,22 @@ export class WInput implements ComponentInterface {
   /**
    * emitted on input
    */
-  @Event() wInput: EventEmitter<number | string>;
+  @Event() uInput: EventEmitter<number | string>;
 
   /**
    * emitted on change
    */
-  @Event({ bubbles: false }) wChange: EventEmitter<number | string>;
+  @Event({ bubbles: false }) uChange: EventEmitter<number | string>;
 
   /**
    * emitted on focus
    */
-  @Event() wFocus: EventEmitter<void>;
+  @Event() uFocus: EventEmitter<void>;
 
   /**
    * emitted on blur
    **/
-  @Event() wBlur: EventEmitter<void>;
+  @Event() uBlur: EventEmitter<void>;
 
   /**
    * set focus on native input
@@ -199,14 +199,15 @@ export class WInput implements ComponentInterface {
       } else {
         this.value = input.value;
       }
-      this.wInput.emit(this.value);
+      this.uInput.emit(this.value);
+      this.uInput.emit(this.value);
     }
   };
 
   private onBlur = () => {
     this.focus = false;
     this.doFocus = false;
-    this.wBlur.emit();
+    this.uBlur.emit();
   };
 
   private onClick = () => {
@@ -215,7 +216,7 @@ export class WInput implements ComponentInterface {
 
   private onFocus = () => {
     this.focus = true;
-    this.wFocus.emit();
+    this.uFocus.emit();
   };
 
   private onKeyDown = e => {

@@ -14,7 +14,7 @@
   resize: none;
 }
 .wrapper {
-  @apply relative py-2 border-radius mt-2 hover:shadow-lg border-gray-300 flex;
+  @apply relative py-2 border-radius hover:shadow-lg border-gray-300 flex;
 }
 .textarea {
   @apply inline-block pb-3 pt-5 px-2 border-0 focus:outline-none bg-transparent flex-grow w-full max-w-screen font-sans;

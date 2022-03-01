@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WPagination } from '../w-pagination';
+import { UPagination } from '../u-pagination';
 
 describe('w-pagination', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WPagination],
+      components: [UPagination],
       html: `<u-pagination></u-pagination>`,
     });
     expect(page.root).toEqualHtml(`

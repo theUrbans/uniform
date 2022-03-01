@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WObserver } from '../w-observer';
+import { UObserver } from '../u-observer';
 
 describe('w-observer', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WObserver],
+      components: [UObserver],
       html: `<u-observer></u-observer>`,
     });
     expect(page.root).toEqualHtml(`

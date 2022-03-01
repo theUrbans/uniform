@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-icon.css',
   shadow: true,
 })
-export class WIcon {
+export class UIcon {
   render() {
     return (
       <Host>

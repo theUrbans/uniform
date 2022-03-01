@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-toggle.css',
   shadow: true,
 })
-export class WToggle {
+export class UToggle {
   render() {
     return (
       <Host>

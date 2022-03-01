@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { UTablehead } from '../u-tablehead';
+import { UTouch } from '../u-touch';
 
-describe('u-tablehead', () => {
+describe('u-touch', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [UTablehead],
-      html: `<u-tablehead></u-tablehead>`,
+      components: [UTouch],
+      html: `<u-touch></u-touch>`,
     });
     expect(page.root).toEqualHtml(`
-      <u-tablehead>
+      <u-touch>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </u-tablehead>
+      </u-touch>
     `);
   });
 });

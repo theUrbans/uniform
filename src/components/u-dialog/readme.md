@@ -9,7 +9,7 @@
 
 | Property | Attribute | Description | Type     | Default              |
 | -------- | --------- | ----------- | -------- | -------------------- |
-| `name`   | `name`    |             | `string` | `'w-dialog-default'` |
+| `name`   | `name`    |             | `string` | `'u-dialog-default'` |
 
 
 ## Dependencies

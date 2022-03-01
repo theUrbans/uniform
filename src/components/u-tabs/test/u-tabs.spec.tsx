@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WTabs } from '../w-tabs';
+import { UTabs } from '../u-tabs';
 
 describe('w-tabs', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WTabs],
+      components: [UTabs],
       html: `<u-tabs></u-tabs>`,
     });
     expect(page.root).toEqualHtml(`

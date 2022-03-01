@@ -13,13 +13,14 @@
 | `disabled` | `disabled` |             | `boolean`                        | `false`    |
 | `label`    | `label`    |             | `string`                         | `''`       |
 | `size`     | `size`     |             | `"large" \| "medium" \| "small"` | `'medium'` |
+| `tristate` | `tristate` |             | `boolean`                        | `false`    |
 
 
 ## Events
 
-| Event     | Description | Type               |
-| --------- | ----------- | ------------------ |
-| `wChange` |             | `CustomEvent<any>` |
+| Event     | Description | Type                   |
+| --------- | ----------- | ---------------------- |
+| `wChange` |             | `CustomEvent<boolean>` |
 
 
 ## Methods
@@ -40,11 +41,13 @@ Type: `Promise<void>`
 ### Used by
 
  - [u-select](../u-select)
+ - [u-table](../u-table)
 
 ### Graph
 ```mermaid
 graph TD;
   u-select --> u-checkbox
+  u-table --> u-checkbox
   style u-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

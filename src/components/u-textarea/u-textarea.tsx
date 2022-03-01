@@ -5,7 +5,7 @@ import { Component, Host, Element, h, Prop, Watch, Event, EventEmitter, State } 
   styleUrl: 'u-textarea.css',
   shadow: true,
 })
-export class WTextarea {
+export class UTextarea {
   private textarea: HTMLTextAreaElement;
   @Element() el: HTMLElement;
   @Prop() disabled: boolean = false;
@@ -20,9 +20,9 @@ export class WTextarea {
   @Prop() rows: number = 6;
   @Watch('value') valueChanged() {
     this.textarea.value = this.value;
-    this.wInput.emit(this.value);
+    this.uInput.emit(this.value);
   }
-  @Event() wInput: EventEmitter;
+  @Event() uInput: EventEmitter;
   @State() focused: boolean = false;
 
   private resetValue = e => {

@@ -5,7 +5,7 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-slider.css',
   shadow: true,
 })
-export class WSlider {
+export class USlider {
   render() {
     return (
       <Host>

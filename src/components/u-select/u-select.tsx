@@ -12,7 +12,7 @@ export interface Option {
   styleUrl: 'u-select.css',
   shadow: true,
 })
-export class WSelect implements ComponentInterface {
+export class USelect implements ComponentInterface {
   private inputElement?: HTMLInputElement;
   @State() hovered: boolean = false;
   @State() focus: boolean = false;
@@ -40,7 +40,7 @@ export class WSelect implements ComponentInterface {
   @State() value: string | number | null = '';
   @Watch('value')
   valueChanged() {
-    this.wChange.emit(this.value);
+    this.uChange.emit(this.value);
   }
 
   /**
@@ -157,22 +157,22 @@ export class WSelect implements ComponentInterface {
   /**
    * emitted on input
    */
-  @Event() wInput: EventEmitter;
+  @Event() uInput: EventEmitter;
 
   /**
    * emitted on change
    */
-  @Event({ bubbles: false }) wChange: EventEmitter;
+  @Event({ bubbles: false }) uChange: EventEmitter;
 
   /**
    * emitted on focus
    */
-  @Event() wFocus: EventEmitter;
+  @Event() uFocus: EventEmitter;
 
   /**
    * emitted on blur
    **/
-  @Event() wBlur: EventEmitter;
+  @Event() uBlur: EventEmitter;
 
   /**
    * set focus on native input
@@ -211,12 +211,12 @@ export class WSelect implements ComponentInterface {
       this.filteredOptions = this.options;
     }
     // if (input) this.value = input.value || '';
-    // this.wInput.emit(e as InputEvent);
+    // this.uInput.emit(e as InputEvent);
   };
 
   private onBlur = () => {
     this.doFocus = false;
-    this.wBlur.emit();
+    this.uBlur.emit();
   };
 
   @State() position: 'top' | 'bottom' = 'bottom';
@@ -235,7 +235,7 @@ export class WSelect implements ComponentInterface {
 
   private onFocus = () => {
     this.focus = true;
-    this.wFocus.emit();
+    this.uFocus.emit();
   };
 
   private onKeyDown = e => {
@@ -282,14 +282,14 @@ export class WSelect implements ComponentInterface {
         this.selected = this.selected.filter(option => option !== label);
       }
       this.getInputWidth();
-      this.wChange.emit(this.options.filter(option => this.selected.includes(option.label)));
+      this.uChange.emit(this.options.filter(option => this.selected.includes(option.label)));
       if (this.options.find(o => o.label === label).selected) {
         this.options.find(o => o.label === label).selected = false;
       }
     } else {
       this.selected = [label];
       this.focus = false;
-      this.wChange.emit(value);
+      this.uChange.emit(value);
     }
     this.inputElement.focus();
   };

@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WCard } from '../w-card';
+import { UCard } from '../u-card';
 
 describe('w-card', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WCard],
+      components: [UCard],
       html: `<u-card></u-card>`,
     });
     expect(page.root).toEqualHtml(`

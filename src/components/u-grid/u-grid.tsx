@@ -5,7 +5,7 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
   styleUrl: 'u-grid.css',
   shadow: true,
 })
-export class WGrid {
+export class UGrid {
   @Element() el: HTMLElement;
   /**
    * number of columns or array of column widths

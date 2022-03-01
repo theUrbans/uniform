@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WDialog } from '../w-dialog';
+import { UDialog } from '../u-dialog';
 
 describe('w-dialog', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WDialog],
+      components: [UDialog],
       html: `<u-dialog></u-dialog>`,
     });
     expect(page.root).toEqualHtml(`

@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WCol } from '../w-col';
+import { UCol } from '../u-col';
 
 describe('w-col', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WCol],
+      components: [UCol],
       html: `<u-col></u-col>`,
     });
     expect(page.root).toEqualHtml(`

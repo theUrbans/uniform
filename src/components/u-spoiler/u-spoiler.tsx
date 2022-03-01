@@ -5,7 +5,7 @@ import { Component, Host, h, State, Prop, Event, EventEmitter } from '@stencil/c
   styleUrl: 'u-spoiler.css',
   shadow: true,
 })
-export class WSpoiler {
+export class USpoiler {
   /**
    * label of the spoiler
    */
@@ -19,18 +19,18 @@ export class WSpoiler {
   /**
    * emit when the spoiler is opened
    */
-  @Event() wOpen: EventEmitter<void>;
+  @Event() uOpen: EventEmitter<void>;
 
   /**
    * emit when the spoiler is closed
    */
-  @Event() wClose: EventEmitter<void>;
+  @Event() uClose: EventEmitter<void>;
 
   @State() isOpen: boolean = false;
 
   private handleOnClick = () => {
     this.isOpen = !this.isOpen;
-    this.isOpen ? this.wOpen.emit() : this.wClose.emit();
+    this.isOpen ? this.uOpen.emit() : this.uClose.emit();
   };
 
   render() {

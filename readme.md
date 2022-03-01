@@ -48,18 +48,18 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 | [Notification](https://github.com/theUrbans/uniform/tree/master/src/components/u-notification)       | u-notification   | 🟡    |
 | [Observer](https://github.com/theUrbans/uniform/tree/master/src/components/u-observer)               | u-observer       | 🟢    |
 | [Pagination](https://github.com/theUrbans/uniform/tree/master/src/components/u-pagination)           | u-pagination     | 🔴    |
+| [Progress](https://github.com/theUrbans/uniform/tree/master/src/components/u-progress)               | u-progress       | 🔵    |
 | [Radio Group](https://github.com/theUrbans/uniform/tree/master/src/components/u-radiogroup)          | u-radiogroup     | 🟡    |
 | [Row](https://github.com/theUrbans/uniform/tree/master/src/components/u-row)                         | u-row            | 🟡    |
 | [Select](https://github.com/theUrbans/uniform/tree/master/src/components/u-select)                   | u-select         | 🟡    |
 | [Slider](https://github.com/theUrbans/uniform/tree/master/src/components/u-slider)                   | u-slider         | 🔵    |
 | [Spoiler](https://github.com/theUrbans/uniform/tree/master/src/components/u-spoiler)                 | u-spoiler        | 🟡    |
 | [Stepper](https://github.com/theUrbans/uniform/tree/master/src/components/u-stepper)                 | u-stepper        | 🟢    |
-| [Table](https://github.com/theUrbans/uniform/tree/master/src/components/u-table)                     | u-table          | 🔵    |
-| [Table head](https://github.com/theUrbans/uniform/tree/master/src/components/u-tablehead)            | u-tablehead      | 🔵    |
-| [Table row](https://github.com/theUrbans/uniform/tree/master/src/components/u-tablerow)              | u-tablerow       | 🔵    |
+| [Table](https://github.com/theUrbans/uniform/tree/master/src/components/u-table)                     | u-table          | 🟡    |
 | [Tabs](https://github.com/theUrbans/uniform/tree/master/src/components/u-tabs)                       | u-tabs           | 🔵    |
 | [Textarea](https://github.com/theUrbans/uniform/tree/master/src/components/u-textarea)               | u-textarea       | 🟡    |
 | [Time picker](https://github.com/theUrbans/uniform/tree/master/src/components/u-timepicker)          | u-timepicker     | 🔵    |
+| [Touch](https://github.com/theUrbans/uniform/tree/master/src/components/u-touch)                     | u-touch          | 🔵    |
 | [Toggle](https://github.com/theUrbans/uniform/tree/master/src/components/u-toggle)                   | u-toggle         | 🔵    |
 | [Tooltip](https://github.com/theUrbans/uniform/tree/master/src/components/u-tooltip)                 | u-tooltip        | 🟢    |
 | [Week picker](https://github.com/theUrbans/uniform/tree/master/src/components/u-weekpicker)          | u-weekpicker     | 🔵    |

@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WSpoiler } from '../w-spoiler';
+import { USpoiler } from '../u-spoiler';
 
 describe('w-spoiler', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WSpoiler],
+      components: [USpoiler],
       html: `<u-spoiler></u-spoiler>`,
     });
     expect(page.root).toEqualHtml(`

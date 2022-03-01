@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WTextarea } from '../w-textarea';
+import { UTextarea } from '../u-textarea';
 
 describe('w-textarea', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WTextarea],
+      components: [UTextarea],
       html: `<u-textarea></u-textarea>`,
     });
     expect(page.root).toEqualHtml(`

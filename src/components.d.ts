@@ -6,10 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ChipDesign } from "./components/u-chip/u-chip";
+import { EditorTools } from "./components/u-editor/u-editor";
 import { FormButton, FormField } from "./components/u-form/u-form";
 import { NotficationOption, NotificationType } from "./components/u-notification/u-notification";
 import { Option } from "./components/u-radiogroup/u-radiogroup";
 import { Option as Option1 } from "./components/u-select/u-select";
+import { HeadOptions } from "./components/u-table/u-table";
 export namespace Components {
     interface UAlert {
     }
@@ -58,6 +60,7 @@ export namespace Components {
         "label": string;
         "set": (checked: boolean) => Promise<void>;
         "size": 'small' | 'medium' | 'large';
+        "tristate": boolean;
     }
     interface UChip {
         /**
@@ -121,6 +124,9 @@ export namespace Components {
         "name": string;
     }
     interface UDropdown {
+    }
+    interface UEditor {
+        "tools": EditorTools;
     }
     interface UFilepicker {
         "fileEnding": string;
@@ -457,10 +463,13 @@ export namespace Components {
         "submitLabel"?: string;
     }
     interface UTable {
-    }
-    interface UTablehead {
-    }
-    interface UTablerow {
+        "data": Array<any>;
+        "fixedHeader": boolean;
+        "heading": Array<HeadOptions>;
+        "resizeable": boolean;
+        "select": (index: number) => Promise<void>;
+        "selectable": boolean;
+        "unselect": (index: number) => Promise<void>;
     }
     interface UTabs {
     }
@@ -565,6 +574,12 @@ declare global {
     var HTMLUDropdownElement: {
         prototype: HTMLUDropdownElement;
         new (): HTMLUDropdownElement;
+    };
+    interface HTMLUEditorElement extends Components.UEditor, HTMLStencilElement {
+    }
+    var HTMLUEditorElement: {
+        prototype: HTMLUEditorElement;
+        new (): HTMLUEditorElement;
     };
     interface HTMLUFilepickerElement extends Components.UFilepicker, HTMLStencilElement {
     }
@@ -680,18 +695,6 @@ declare global {
         prototype: HTMLUTableElement;
         new (): HTMLUTableElement;
     };
-    interface HTMLUTableheadElement extends Components.UTablehead, HTMLStencilElement {
-    }
-    var HTMLUTableheadElement: {
-        prototype: HTMLUTableheadElement;
-        new (): HTMLUTableheadElement;
-    };
-    interface HTMLUTablerowElement extends Components.UTablerow, HTMLStencilElement {
-    }
-    var HTMLUTablerowElement: {
-        prototype: HTMLUTablerowElement;
-        new (): HTMLUTablerowElement;
-    };
     interface HTMLUTabsElement extends Components.UTabs, HTMLStencilElement {
     }
     var HTMLUTabsElement: {
@@ -741,6 +744,7 @@ declare global {
         "u-datetimepicker": HTMLUDatetimepickerElement;
         "u-dialog": HTMLUDialogElement;
         "u-dropdown": HTMLUDropdownElement;
+        "u-editor": HTMLUEditorElement;
         "u-filepicker": HTMLUFilepickerElement;
         "u-form": HTMLUFormElement;
         "u-grid": HTMLUGridElement;
@@ -760,8 +764,6 @@ declare global {
         "u-spoiler": HTMLUSpoilerElement;
         "u-stepper": HTMLUStepperElement;
         "u-table": HTMLUTableElement;
-        "u-tablehead": HTMLUTableheadElement;
-        "u-tablerow": HTMLUTablerowElement;
         "u-tabs": HTMLUTabsElement;
         "u-textarea": HTMLUTextareaElement;
         "u-timepicker": HTMLUTimepickerElement;
@@ -820,8 +822,9 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "disabled"?: boolean;
         "label"?: string;
-        "onWChange"?: (event: CustomEvent<any>) => void;
+        "onWChange"?: (event: CustomEvent<boolean>) => void;
         "size"?: 'small' | 'medium' | 'large';
+        "tristate"?: boolean;
     }
     interface UChip {
         /**
@@ -889,6 +892,9 @@ declare namespace LocalJSX {
         "name"?: string;
     }
     interface UDropdown {
+    }
+    interface UEditor {
+        "tools"?: EditorTools;
     }
     interface UFilepicker {
         "fileEnding"?: string;
@@ -1264,10 +1270,15 @@ declare namespace LocalJSX {
         "submitLabel"?: string;
     }
     interface UTable {
-    }
-    interface UTablehead {
-    }
-    interface UTablerow {
+        "data"?: Array<any>;
+        "fixedHeader"?: boolean;
+        "heading"?: Array<HeadOptions>;
+        "onUSelect"?: (event: CustomEvent<Array<any> | object>) => void;
+        "onUStartHover"?: (event: CustomEvent<any>) => void;
+        "onUStopHover"?: (event: CustomEvent<any>) => void;
+        "onUUnselect"?: (event: CustomEvent<void>) => void;
+        "resizeable"?: boolean;
+        "selectable"?: boolean;
     }
     interface UTabs {
     }
@@ -1313,6 +1324,7 @@ declare namespace LocalJSX {
         "u-datetimepicker": UDatetimepicker;
         "u-dialog": UDialog;
         "u-dropdown": UDropdown;
+        "u-editor": UEditor;
         "u-filepicker": UFilepicker;
         "u-form": UForm;
         "u-grid": UGrid;
@@ -1332,8 +1344,6 @@ declare namespace LocalJSX {
         "u-spoiler": USpoiler;
         "u-stepper": UStepper;
         "u-table": UTable;
-        "u-tablehead": UTablehead;
-        "u-tablerow": UTablerow;
         "u-tabs": UTabs;
         "u-textarea": UTextarea;
         "u-timepicker": UTimepicker;
@@ -1358,6 +1368,7 @@ declare module "@stencil/core" {
             "u-datetimepicker": LocalJSX.UDatetimepicker & JSXBase.HTMLAttributes<HTMLUDatetimepickerElement>;
             "u-dialog": LocalJSX.UDialog & JSXBase.HTMLAttributes<HTMLUDialogElement>;
             "u-dropdown": LocalJSX.UDropdown & JSXBase.HTMLAttributes<HTMLUDropdownElement>;
+            "u-editor": LocalJSX.UEditor & JSXBase.HTMLAttributes<HTMLUEditorElement>;
             "u-filepicker": LocalJSX.UFilepicker & JSXBase.HTMLAttributes<HTMLUFilepickerElement>;
             "u-form": LocalJSX.UForm & JSXBase.HTMLAttributes<HTMLUFormElement>;
             "u-grid": LocalJSX.UGrid & JSXBase.HTMLAttributes<HTMLUGridElement>;
@@ -1377,8 +1388,6 @@ declare module "@stencil/core" {
             "u-spoiler": LocalJSX.USpoiler & JSXBase.HTMLAttributes<HTMLUSpoilerElement>;
             "u-stepper": LocalJSX.UStepper & JSXBase.HTMLAttributes<HTMLUStepperElement>;
             "u-table": LocalJSX.UTable & JSXBase.HTMLAttributes<HTMLUTableElement>;
-            "u-tablehead": LocalJSX.UTablehead & JSXBase.HTMLAttributes<HTMLUTableheadElement>;
-            "u-tablerow": LocalJSX.UTablerow & JSXBase.HTMLAttributes<HTMLUTablerowElement>;
             "u-tabs": LocalJSX.UTabs & JSXBase.HTMLAttributes<HTMLUTabsElement>;
             "u-textarea": LocalJSX.UTextarea & JSXBase.HTMLAttributes<HTMLUTextareaElement>;
             "u-timepicker": LocalJSX.UTimepicker & JSXBase.HTMLAttributes<HTMLUTimepickerElement>;

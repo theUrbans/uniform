@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'u-tablehead',
-  styleUrl: 'u-tablehead.css',
+  tag: 'u-touch',
+  styleUrl: 'u-touch.css',
   shadow: true,
 })
-export class UTablehead {
+export class UTouch {
 
   render() {
     return (

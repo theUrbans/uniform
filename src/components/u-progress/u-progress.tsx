@@ -1,11 +1,11 @@
 import { Component, Host, h } from '@stencil/core';
 
 @Component({
-  tag: 'u-tablerow',
-  styleUrl: 'u-tablerow.css',
+  tag: 'u-progress',
+  styleUrl: 'u-progress.css',
   shadow: true,
 })
-export class UTablerow {
+export class UProgress {
 
   render() {
     return (

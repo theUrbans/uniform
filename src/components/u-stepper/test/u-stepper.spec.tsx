@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { WStepper } from '../w-stepper';
+import { UStepper } from '../u-stepper';
 
 describe('w-stepper', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [WStepper],
+      components: [UStepper],
       html: `<u-stepper></u-stepper>`,
     });
     expect(page.root).toEqualHtml(`

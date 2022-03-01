@@ -28,6 +28,19 @@
 | `wInput` |             | `CustomEvent<any>` |
 
 
+## Dependencies
+
+### Used by
+
+ - [u-editor](../u-editor)
+
+### Graph
+```mermaid
+graph TD;
+  u-editor --> u-textarea
+  style u-textarea fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
