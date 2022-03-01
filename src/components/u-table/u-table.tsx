@@ -27,7 +27,7 @@ export class UTable {
       label: 'Name',
       width: '80%',
       bgcolor: row => {
-        return row.name.includes('xd') ? 'cyan' : '';
+        return row.name.includes('2') ? '#e7c2ff' : '';
       },
     },
     {
@@ -36,12 +36,12 @@ export class UTable {
       align: 'right',
       sortable: true,
       width: '10%',
-      bgcolor: row => {
-        return row.age >= 0 ? '#ffff00' : 'red';
-      },
-      fontcolor: () => {
-        return 'black';
-      },
+      // bgcolor: row => {
+      //   return row.age >= 0 ? '#afe6a8' : '#ffc382';
+      // },
+      // fontcolor: () => {
+      //   return 'black';
+      // },
     },
   ];
   @Prop({ mutable: true }) data: Array<any> = [
@@ -156,7 +156,6 @@ export class UTable {
     const start = this.lastIndex > index ? index : this.lastIndex;
     const end = this.lastIndex > index ? this.lastIndex : index;
     const setVal = this.displayedData[this.lastIndex]['select'];
-    console.log(start, end, setVal);
     this.displayedData = this.displayedData.map((item, i) => {
       if (i > start && i < end) {
         item['select'] = setVal;
@@ -171,15 +170,6 @@ export class UTable {
   }
   @Method() async unselect(index: number) {
     this.selectRow(this.displayedData[index], index);
-  }
-  @State() hasHeaderSlot: boolean = false;
-  @State() hasFooterSlot: boolean = false;
-  componentWillLoad() {
-    this.hasHeaderSlot = !!this.el.shadowRoot.querySelector('[slot="header"]');
-    this.hasFooterSlot = !!this.el.shadowRoot.querySelector('slot[name="footer"]');
-    console.log(this.hasHeaderSlot, this.hasFooterSlot);
-    console.log(this.el.shadowRoot.querySelector('[slot="header"]') as HTMLSlotElement);
-    console.log(this.el.shadowRoot);
   }
   @Event() uLastElement: EventEmitter<void>;
 
@@ -216,7 +206,7 @@ export class UTable {
                       <u-checkbox
                         checked={this.selected.length > 0}
                         tristate={this.selected.length > 0 && this.selected.length !== this.displayedData.length}
-                        onWChange={() => this.selectAll()}
+                        onUChange={() => this.selectAll()}
                       ></u-checkbox>
                     </th>
                   ),
@@ -271,7 +261,7 @@ export class UTable {
                     >
                       <u-checkbox
                         checked={row['select'] === true}
-                        onWChange={() => {
+                        onUChange={() => {
                           this.selectRow(row, rowIndex);
                         }}
                         onClick={e => this.handleShiftClick(rowIndex, e)}
