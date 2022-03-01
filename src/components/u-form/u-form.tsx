@@ -45,7 +45,7 @@ export class UForm {
     this.returnValue = { ...this.returnValue, [field.prop]: field.value || '' };
     if (field.type === 'input' || field.type === 'textarea') {
       return {
-        onWInput: (event: any) => {
+        onUInput: (event: any) => {
           this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
         },
         label: field.label,
@@ -57,7 +57,7 @@ export class UForm {
     }
     if (field.type === 'select')
       return {
-        onWChange: (event: any) => {
+        onUChange: (event: any) => {
           this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
         },
         label: field.label,
@@ -69,7 +69,7 @@ export class UForm {
 
     if (field.type === 'filepicker') {
       return {
-        onWSelect: (event: any) => {
+        onUSelect: (event: any) => {
           this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
         },
         label: field.label,
@@ -135,7 +135,7 @@ export class UForm {
     return (
       <Host>
         {this.stepper ? (
-          <u-stepper onWSubmit={this.submitForm} onWStep={this.sendStep} steps={this.steps}>
+          <u-stepper onUSubmit={this.submitForm} onUStep={this.sendStep} steps={this.steps}>
             {this.steps.map((step, index: number) => {
               return (
                 <u-grid
@@ -182,7 +182,7 @@ export class UForm {
             <slot />
             <u-row justify="space-between" padding="0">
               {this.buttons.map((button: FormButton) => (
-                <u-button onWClick={() => this.handleButtonClick(button)} type={button.event ? 'button' : 'submit'} design={button.design || 'secondary'}>
+                <u-button onUClick={() => this.handleButtonClick(button)} type={button.event ? 'button' : 'submit'} design={button.design || 'secondary'}>
                   {button.text || 'Submit'}
                 </u-button>
               ))}
