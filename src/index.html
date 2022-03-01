@@ -33,14 +33,19 @@
     <u-notification id="noti"></u-notification>
     <u-pagination pages="20"> </u-pagination>
     <u-card>
-      <span slot="header">Test</span>
+      <span slot="header">
+        <p>Test</p>
+      </span>
       <span slot="content"
         >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio libero necessitatibus alias, sint laudantium itaque blanditiis, veritatis corporis consectetur
         reiciendis dolore error ipsam pariatur aliquid quam dolorem suscipit, unde ea.</span
       >
     </u-card>
-    <u-card img="https://api.lorem.space/image/album?w=400&h=400">
-      <span slot="content"> </span>
+    <u-card>
+      <div slot="header">
+        <img src="https://api.lorem.space/image" alt="" />
+      </div>
+      <span slot="content">test </span>
     </u-card>
     <u-col>
       <u-button design="success">

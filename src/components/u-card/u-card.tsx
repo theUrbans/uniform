@@ -20,14 +20,11 @@ export class WCard {
         }}
       >
         <div class="header">
-          <img src={this.img} />
           <slot name="header"></slot>
         </div>
         <div class="content">
           <slot name="content"></slot>
-          {/* {Array[this.slotCount].map(slotNumber => (
-            <slot name={slotNumber} />
-          ))} */}
+       
         </div>
       </div>
     );

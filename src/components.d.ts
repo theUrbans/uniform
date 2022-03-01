@@ -111,6 +111,12 @@ export namespace Components {
          */
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
+    interface UColorpicker {
+    }
+    interface UDatepicker {
+    }
+    interface UDatetimepicker {
+    }
     interface UDialog {
         "name": string;
     }
@@ -276,6 +282,8 @@ export namespace Components {
         "resizeable": boolean;
         "showModal": (name: string) => Promise<void>;
         "topRightClose": boolean;
+    }
+    interface UMonthpicker {
     }
     interface UNotification {
         "error": (title: string, message?: string, delay?: number) => Promise<void>;
@@ -448,6 +456,12 @@ export namespace Components {
          */
         "submitLabel"?: string;
     }
+    interface UTable {
+    }
+    interface UTablehead {
+    }
+    interface UTablerow {
+    }
     interface UTabs {
     }
     interface UTextarea {
@@ -462,6 +476,8 @@ export namespace Components {
         "size": 'small' | 'medium' | 'large';
         "value": string | null;
     }
+    interface UTimepicker {
+    }
     interface UToggle {
     }
     interface UTooltip {
@@ -473,6 +489,8 @@ export namespace Components {
           * text of the tooltip
          */
         "text": string;
+    }
+    interface UWeekpicker {
     }
 }
 declare global {
@@ -517,6 +535,24 @@ declare global {
     var HTMLUColElement: {
         prototype: HTMLUColElement;
         new (): HTMLUColElement;
+    };
+    interface HTMLUColorpickerElement extends Components.UColorpicker, HTMLStencilElement {
+    }
+    var HTMLUColorpickerElement: {
+        prototype: HTMLUColorpickerElement;
+        new (): HTMLUColorpickerElement;
+    };
+    interface HTMLUDatepickerElement extends Components.UDatepicker, HTMLStencilElement {
+    }
+    var HTMLUDatepickerElement: {
+        prototype: HTMLUDatepickerElement;
+        new (): HTMLUDatepickerElement;
+    };
+    interface HTMLUDatetimepickerElement extends Components.UDatetimepicker, HTMLStencilElement {
+    }
+    var HTMLUDatetimepickerElement: {
+        prototype: HTMLUDatetimepickerElement;
+        new (): HTMLUDatetimepickerElement;
     };
     interface HTMLUDialogElement extends Components.UDialog, HTMLStencilElement {
     }
@@ -578,6 +614,12 @@ declare global {
         prototype: HTMLUModalElement;
         new (): HTMLUModalElement;
     };
+    interface HTMLUMonthpickerElement extends Components.UMonthpicker, HTMLStencilElement {
+    }
+    var HTMLUMonthpickerElement: {
+        prototype: HTMLUMonthpickerElement;
+        new (): HTMLUMonthpickerElement;
+    };
     interface HTMLUNotificationElement extends Components.UNotification, HTMLStencilElement {
     }
     var HTMLUNotificationElement: {
@@ -632,6 +674,24 @@ declare global {
         prototype: HTMLUStepperElement;
         new (): HTMLUStepperElement;
     };
+    interface HTMLUTableElement extends Components.UTable, HTMLStencilElement {
+    }
+    var HTMLUTableElement: {
+        prototype: HTMLUTableElement;
+        new (): HTMLUTableElement;
+    };
+    interface HTMLUTableheadElement extends Components.UTablehead, HTMLStencilElement {
+    }
+    var HTMLUTableheadElement: {
+        prototype: HTMLUTableheadElement;
+        new (): HTMLUTableheadElement;
+    };
+    interface HTMLUTablerowElement extends Components.UTablerow, HTMLStencilElement {
+    }
+    var HTMLUTablerowElement: {
+        prototype: HTMLUTablerowElement;
+        new (): HTMLUTablerowElement;
+    };
     interface HTMLUTabsElement extends Components.UTabs, HTMLStencilElement {
     }
     var HTMLUTabsElement: {
@@ -643,6 +703,12 @@ declare global {
     var HTMLUTextareaElement: {
         prototype: HTMLUTextareaElement;
         new (): HTMLUTextareaElement;
+    };
+    interface HTMLUTimepickerElement extends Components.UTimepicker, HTMLStencilElement {
+    }
+    var HTMLUTimepickerElement: {
+        prototype: HTMLUTimepickerElement;
+        new (): HTMLUTimepickerElement;
     };
     interface HTMLUToggleElement extends Components.UToggle, HTMLStencilElement {
     }
@@ -656,6 +722,12 @@ declare global {
         prototype: HTMLUTooltipElement;
         new (): HTMLUTooltipElement;
     };
+    interface HTMLUWeekpickerElement extends Components.UWeekpicker, HTMLStencilElement {
+    }
+    var HTMLUWeekpickerElement: {
+        prototype: HTMLUWeekpickerElement;
+        new (): HTMLUWeekpickerElement;
+    };
     interface HTMLElementTagNameMap {
         "u-alert": HTMLUAlertElement;
         "u-button": HTMLUButtonElement;
@@ -664,6 +736,9 @@ declare global {
         "u-checkbox": HTMLUCheckboxElement;
         "u-chip": HTMLUChipElement;
         "u-col": HTMLUColElement;
+        "u-colorpicker": HTMLUColorpickerElement;
+        "u-datepicker": HTMLUDatepickerElement;
+        "u-datetimepicker": HTMLUDatetimepickerElement;
         "u-dialog": HTMLUDialogElement;
         "u-dropdown": HTMLUDropdownElement;
         "u-filepicker": HTMLUFilepickerElement;
@@ -674,6 +749,7 @@ declare global {
         "u-input": HTMLUInputElement;
         "u-menu": HTMLUMenuElement;
         "u-modal": HTMLUModalElement;
+        "u-monthpicker": HTMLUMonthpickerElement;
         "u-notification": HTMLUNotificationElement;
         "u-observer": HTMLUObserverElement;
         "u-pagination": HTMLUPaginationElement;
@@ -683,10 +759,15 @@ declare global {
         "u-slider": HTMLUSliderElement;
         "u-spoiler": HTMLUSpoilerElement;
         "u-stepper": HTMLUStepperElement;
+        "u-table": HTMLUTableElement;
+        "u-tablehead": HTMLUTableheadElement;
+        "u-tablerow": HTMLUTablerowElement;
         "u-tabs": HTMLUTabsElement;
         "u-textarea": HTMLUTextareaElement;
+        "u-timepicker": HTMLUTimepickerElement;
         "u-toggle": HTMLUToggleElement;
         "u-tooltip": HTMLUTooltipElement;
+        "u-weekpicker": HTMLUWeekpickerElement;
     }
 }
 declare namespace LocalJSX {
@@ -797,6 +878,12 @@ declare namespace LocalJSX {
           * flex wrap: nowrap | wrap | wrap-reverse
          */
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
+    }
+    interface UColorpicker {
+    }
+    interface UDatepicker {
+    }
+    interface UDatetimepicker {
     }
     interface UDialog {
         "name"?: string;
@@ -973,6 +1060,8 @@ declare namespace LocalJSX {
         "resetPosition"?: boolean;
         "resizeable"?: boolean;
         "topRightClose"?: boolean;
+    }
+    interface UMonthpicker {
     }
     interface UNotification {
         "position"?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
@@ -1174,6 +1263,12 @@ declare namespace LocalJSX {
          */
         "submitLabel"?: string;
     }
+    interface UTable {
+    }
+    interface UTablehead {
+    }
+    interface UTablerow {
+    }
     interface UTabs {
     }
     interface UTextarea {
@@ -1189,6 +1284,8 @@ declare namespace LocalJSX {
         "size"?: 'small' | 'medium' | 'large';
         "value"?: string | null;
     }
+    interface UTimepicker {
+    }
     interface UToggle {
     }
     interface UTooltip {
@@ -1201,6 +1298,8 @@ declare namespace LocalJSX {
          */
         "text"?: string;
     }
+    interface UWeekpicker {
+    }
     interface IntrinsicElements {
         "u-alert": UAlert;
         "u-button": UButton;
@@ -1209,6 +1308,9 @@ declare namespace LocalJSX {
         "u-checkbox": UCheckbox;
         "u-chip": UChip;
         "u-col": UCol;
+        "u-colorpicker": UColorpicker;
+        "u-datepicker": UDatepicker;
+        "u-datetimepicker": UDatetimepicker;
         "u-dialog": UDialog;
         "u-dropdown": UDropdown;
         "u-filepicker": UFilepicker;
@@ -1219,6 +1321,7 @@ declare namespace LocalJSX {
         "u-input": UInput;
         "u-menu": UMenu;
         "u-modal": UModal;
+        "u-monthpicker": UMonthpicker;
         "u-notification": UNotification;
         "u-observer": UObserver;
         "u-pagination": UPagination;
@@ -1228,10 +1331,15 @@ declare namespace LocalJSX {
         "u-slider": USlider;
         "u-spoiler": USpoiler;
         "u-stepper": UStepper;
+        "u-table": UTable;
+        "u-tablehead": UTablehead;
+        "u-tablerow": UTablerow;
         "u-tabs": UTabs;
         "u-textarea": UTextarea;
+        "u-timepicker": UTimepicker;
         "u-toggle": UToggle;
         "u-tooltip": UTooltip;
+        "u-weekpicker": UWeekpicker;
     }
 }
 export { LocalJSX as JSX };
@@ -1245,6 +1353,9 @@ declare module "@stencil/core" {
             "u-checkbox": LocalJSX.UCheckbox & JSXBase.HTMLAttributes<HTMLUCheckboxElement>;
             "u-chip": LocalJSX.UChip & JSXBase.HTMLAttributes<HTMLUChipElement>;
             "u-col": LocalJSX.UCol & JSXBase.HTMLAttributes<HTMLUColElement>;
+            "u-colorpicker": LocalJSX.UColorpicker & JSXBase.HTMLAttributes<HTMLUColorpickerElement>;
+            "u-datepicker": LocalJSX.UDatepicker & JSXBase.HTMLAttributes<HTMLUDatepickerElement>;
+            "u-datetimepicker": LocalJSX.UDatetimepicker & JSXBase.HTMLAttributes<HTMLUDatetimepickerElement>;
             "u-dialog": LocalJSX.UDialog & JSXBase.HTMLAttributes<HTMLUDialogElement>;
             "u-dropdown": LocalJSX.UDropdown & JSXBase.HTMLAttributes<HTMLUDropdownElement>;
             "u-filepicker": LocalJSX.UFilepicker & JSXBase.HTMLAttributes<HTMLUFilepickerElement>;
@@ -1255,6 +1366,7 @@ declare module "@stencil/core" {
             "u-input": LocalJSX.UInput & JSXBase.HTMLAttributes<HTMLUInputElement>;
             "u-menu": LocalJSX.UMenu & JSXBase.HTMLAttributes<HTMLUMenuElement>;
             "u-modal": LocalJSX.UModal & JSXBase.HTMLAttributes<HTMLUModalElement>;
+            "u-monthpicker": LocalJSX.UMonthpicker & JSXBase.HTMLAttributes<HTMLUMonthpickerElement>;
             "u-notification": LocalJSX.UNotification & JSXBase.HTMLAttributes<HTMLUNotificationElement>;
             "u-observer": LocalJSX.UObserver & JSXBase.HTMLAttributes<HTMLUObserverElement>;
             "u-pagination": LocalJSX.UPagination & JSXBase.HTMLAttributes<HTMLUPaginationElement>;
@@ -1264,10 +1376,15 @@ declare module "@stencil/core" {
             "u-slider": LocalJSX.USlider & JSXBase.HTMLAttributes<HTMLUSliderElement>;
             "u-spoiler": LocalJSX.USpoiler & JSXBase.HTMLAttributes<HTMLUSpoilerElement>;
             "u-stepper": LocalJSX.UStepper & JSXBase.HTMLAttributes<HTMLUStepperElement>;
+            "u-table": LocalJSX.UTable & JSXBase.HTMLAttributes<HTMLUTableElement>;
+            "u-tablehead": LocalJSX.UTablehead & JSXBase.HTMLAttributes<HTMLUTableheadElement>;
+            "u-tablerow": LocalJSX.UTablerow & JSXBase.HTMLAttributes<HTMLUTablerowElement>;
             "u-tabs": LocalJSX.UTabs & JSXBase.HTMLAttributes<HTMLUTabsElement>;
             "u-textarea": LocalJSX.UTextarea & JSXBase.HTMLAttributes<HTMLUTextareaElement>;
+            "u-timepicker": LocalJSX.UTimepicker & JSXBase.HTMLAttributes<HTMLUTimepickerElement>;
             "u-toggle": LocalJSX.UToggle & JSXBase.HTMLAttributes<HTMLUToggleElement>;
             "u-tooltip": LocalJSX.UTooltip & JSXBase.HTMLAttributes<HTMLUTooltipElement>;
+            "u-weekpicker": LocalJSX.UWeekpicker & JSXBase.HTMLAttributes<HTMLUWeekpickerElement>;
         }
     }
 }
