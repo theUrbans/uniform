@@ -307,6 +307,8 @@ export namespace Components {
         "showLastAndFirstPage": boolean;
         "showPages": number;
     }
+    interface UProgress {
+    }
     interface URadiogroup {
         "alignment": 'vertical' | 'horizontal';
         "label": string;
@@ -466,6 +468,7 @@ export namespace Components {
         "data": Array<any>;
         "fixedHeader": boolean;
         "heading": Array<HeadOptions>;
+        "observe": boolean;
         "resizeable": boolean;
         "select": (index: number) => Promise<void>;
         "selectable": boolean;
@@ -498,6 +501,8 @@ export namespace Components {
           * text of the tooltip
          */
         "text": string;
+    }
+    interface UTouch {
     }
     interface UWeekpicker {
     }
@@ -653,6 +658,12 @@ declare global {
         prototype: HTMLUPaginationElement;
         new (): HTMLUPaginationElement;
     };
+    interface HTMLUProgressElement extends Components.UProgress, HTMLStencilElement {
+    }
+    var HTMLUProgressElement: {
+        prototype: HTMLUProgressElement;
+        new (): HTMLUProgressElement;
+    };
     interface HTMLURadiogroupElement extends Components.URadiogroup, HTMLStencilElement {
     }
     var HTMLURadiogroupElement: {
@@ -725,6 +736,12 @@ declare global {
         prototype: HTMLUTooltipElement;
         new (): HTMLUTooltipElement;
     };
+    interface HTMLUTouchElement extends Components.UTouch, HTMLStencilElement {
+    }
+    var HTMLUTouchElement: {
+        prototype: HTMLUTouchElement;
+        new (): HTMLUTouchElement;
+    };
     interface HTMLUWeekpickerElement extends Components.UWeekpicker, HTMLStencilElement {
     }
     var HTMLUWeekpickerElement: {
@@ -757,6 +774,7 @@ declare global {
         "u-notification": HTMLUNotificationElement;
         "u-observer": HTMLUObserverElement;
         "u-pagination": HTMLUPaginationElement;
+        "u-progress": HTMLUProgressElement;
         "u-radiogroup": HTMLURadiogroupElement;
         "u-row": HTMLURowElement;
         "u-select": HTMLUSelectElement;
@@ -769,6 +787,7 @@ declare global {
         "u-timepicker": HTMLUTimepickerElement;
         "u-toggle": HTMLUToggleElement;
         "u-tooltip": HTMLUTooltipElement;
+        "u-touch": HTMLUTouchElement;
         "u-weekpicker": HTMLUWeekpickerElement;
     }
 }
@@ -791,7 +810,7 @@ declare namespace LocalJSX {
         /**
           * emit wClick on button click
          */
-        "onWClick"?: (event: CustomEvent<void>) => void;
+        "onUClick"?: (event: CustomEvent<void>) => void;
         /**
           * change design, only show outlines
          */
@@ -822,7 +841,7 @@ declare namespace LocalJSX {
         "checked"?: boolean;
         "disabled"?: boolean;
         "label"?: string;
-        "onWChange"?: (event: CustomEvent<boolean>) => void;
+        "onUChange"?: (event: CustomEvent<boolean>) => void;
         "size"?: 'small' | 'medium' | 'large';
         "tristate"?: boolean;
     }
@@ -846,7 +865,7 @@ declare namespace LocalJSX {
         /**
           * emit wClick event on chip click
          */
-        "onWClick"?: (event: CustomEvent<void>) => void;
+        "onUClick"?: (event: CustomEvent<void>) => void;
         /**
           * size of the chip
          */
@@ -902,15 +921,15 @@ declare namespace LocalJSX {
         "label"?: string;
         "multiple"?: boolean;
         "noFile"?: string;
-        "onWSelect"?: (event: CustomEvent<FileList>) => void;
+        "onUSelect"?: (event: CustomEvent<FileList>) => void;
         "size"?: 'small' | 'large';
     }
     interface UForm {
         "buttons"?: Array<FormButton>;
         "fields"?: Array<FormField>;
         "layout"?: string;
-        "onWNextStep"?: (event: CustomEvent<any>) => void;
-        "onWSubmit"?: (event: CustomEvent<any>) => void;
+        "onUNextStep"?: (event: CustomEvent<any>) => void;
+        "onUSubmit"?: (event: CustomEvent<any>) => void;
     }
     interface UGrid {
         /**
@@ -998,19 +1017,19 @@ declare namespace LocalJSX {
         /**
           * emitted on blur
          */
-        "onWBlur"?: (event: CustomEvent<void>) => void;
+        "onUBlur"?: (event: CustomEvent<void>) => void;
         /**
           * emitted on change
          */
-        "onWChange"?: (event: CustomEvent<number | string>) => void;
+        "onUChange"?: (event: CustomEvent<number | string>) => void;
         /**
           * emitted on focus
          */
-        "onWFocus"?: (event: CustomEvent<void>) => void;
+        "onUFocus"?: (event: CustomEvent<void>) => void;
         /**
           * emitted on input
          */
-        "onWInput"?: (event: CustomEvent<number | string>) => void;
+        "onUInput"?: (event: CustomEvent<number | string>) => void;
         /**
           * set the pattern for the input
          */
@@ -1089,10 +1108,12 @@ declare namespace LocalJSX {
         "showLastAndFirstPage"?: boolean;
         "showPages"?: number;
     }
+    interface UProgress {
+    }
     interface URadiogroup {
         "alignment"?: 'vertical' | 'horizontal';
         "label"?: string;
-        "onWInput"?: (event: CustomEvent<any>) => void;
+        "onUInput"?: (event: CustomEvent<any>) => void;
         "options"?: Array<Option>;
         "value"?: any;
     }
@@ -1171,19 +1192,19 @@ declare namespace LocalJSX {
         /**
           * emitted on blur
          */
-        "onWBlur"?: (event: CustomEvent<any>) => void;
+        "onUBlur"?: (event: CustomEvent<any>) => void;
         /**
           * emitted on change
          */
-        "onWChange"?: (event: CustomEvent<any>) => void;
+        "onUChange"?: (event: CustomEvent<any>) => void;
         /**
           * emitted on focus
          */
-        "onWFocus"?: (event: CustomEvent<any>) => void;
+        "onUFocus"?: (event: CustomEvent<any>) => void;
         /**
           * emitted on input
          */
-        "onWInput"?: (event: CustomEvent<any>) => void;
+        "onUInput"?: (event: CustomEvent<any>) => void;
         "options"?: Option[];
         /**
           * set the pattern for the input
@@ -1225,11 +1246,11 @@ declare namespace LocalJSX {
         /**
           * emit when the spoiler is closed
          */
-        "onWClose"?: (event: CustomEvent<void>) => void;
+        "onUClose"?: (event: CustomEvent<void>) => void;
         /**
           * emit when the spoiler is opened
          */
-        "onWOpen"?: (event: CustomEvent<void>) => void;
+        "onUOpen"?: (event: CustomEvent<void>) => void;
         /**
           * set the size of the spoiler
          */
@@ -1251,11 +1272,11 @@ declare namespace LocalJSX {
         /**
           * emit wNextStep event on next/previous button click
          */
-        "onWStep"?: (event: CustomEvent<number>) => void;
+        "onUStep"?: (event: CustomEvent<number>) => void;
         /**
           * emit wSubmit event on submit button click
          */
-        "onWSubmit"?: (event: CustomEvent<void>) => void;
+        "onUSubmit"?: (event: CustomEvent<void>) => void;
         /**
           * label of the previous step button
          */
@@ -1273,6 +1294,8 @@ declare namespace LocalJSX {
         "data"?: Array<any>;
         "fixedHeader"?: boolean;
         "heading"?: Array<HeadOptions>;
+        "observe"?: boolean;
+        "onULastElement"?: (event: CustomEvent<void>) => void;
         "onUSelect"?: (event: CustomEvent<Array<any> | object>) => void;
         "onUStartHover"?: (event: CustomEvent<any>) => void;
         "onUStopHover"?: (event: CustomEvent<any>) => void;
@@ -1287,7 +1310,7 @@ declare namespace LocalJSX {
         "design"?: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
         "disabled"?: boolean;
         "label"?: string;
-        "onWInput"?: (event: CustomEvent<any>) => void;
+        "onUInput"?: (event: CustomEvent<any>) => void;
         "readonly"?: boolean;
         "required"?: boolean;
         "resize"?: 'none' | 'both' | 'horizontal' | 'vertical';
@@ -1308,6 +1331,8 @@ declare namespace LocalJSX {
           * text of the tooltip
          */
         "text"?: string;
+    }
+    interface UTouch {
     }
     interface UWeekpicker {
     }
@@ -1337,6 +1362,7 @@ declare namespace LocalJSX {
         "u-notification": UNotification;
         "u-observer": UObserver;
         "u-pagination": UPagination;
+        "u-progress": UProgress;
         "u-radiogroup": URadiogroup;
         "u-row": URow;
         "u-select": USelect;
@@ -1349,6 +1375,7 @@ declare namespace LocalJSX {
         "u-timepicker": UTimepicker;
         "u-toggle": UToggle;
         "u-tooltip": UTooltip;
+        "u-touch": UTouch;
         "u-weekpicker": UWeekpicker;
     }
 }
@@ -1381,6 +1408,7 @@ declare module "@stencil/core" {
             "u-notification": LocalJSX.UNotification & JSXBase.HTMLAttributes<HTMLUNotificationElement>;
             "u-observer": LocalJSX.UObserver & JSXBase.HTMLAttributes<HTMLUObserverElement>;
             "u-pagination": LocalJSX.UPagination & JSXBase.HTMLAttributes<HTMLUPaginationElement>;
+            "u-progress": LocalJSX.UProgress & JSXBase.HTMLAttributes<HTMLUProgressElement>;
             "u-radiogroup": LocalJSX.URadiogroup & JSXBase.HTMLAttributes<HTMLURadiogroupElement>;
             "u-row": LocalJSX.URow & JSXBase.HTMLAttributes<HTMLURowElement>;
             "u-select": LocalJSX.USelect & JSXBase.HTMLAttributes<HTMLUSelectElement>;
@@ -1393,6 +1421,7 @@ declare module "@stencil/core" {
             "u-timepicker": LocalJSX.UTimepicker & JSXBase.HTMLAttributes<HTMLUTimepickerElement>;
             "u-toggle": LocalJSX.UToggle & JSXBase.HTMLAttributes<HTMLUToggleElement>;
             "u-tooltip": LocalJSX.UTooltip & JSXBase.HTMLAttributes<HTMLUTooltipElement>;
+            "u-touch": LocalJSX.UTouch & JSXBase.HTMLAttributes<HTMLUTouchElement>;
             "u-weekpicker": LocalJSX.UWeekpicker & JSXBase.HTMLAttributes<HTMLUWeekpickerElement>;
         }
     }
