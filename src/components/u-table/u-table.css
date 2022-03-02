@@ -2,7 +2,7 @@
   @apply w-full overflow-y-scroll;
 }
 table {
-  @apply w-full border-separate h-full;
+  @apply w-full border-separate h-full relative;
   border-spacing: 0 0.4rem;
 }
 .heading {
@@ -20,6 +20,10 @@ tbody {
 thead {
   @apply w-full bg-white dark:bg-black;
 }
+tfoot {
+  @apply w-full sticky bottom-0 dark:bg-black;
+  inset-block-end: 0;
+}
 .tablerow {
   @apply cursor-pointer whitespace-pre-wrap w-full;
 }
@@ -34,6 +38,7 @@ thead {
 }
 .sticky {
   @apply sticky;
+  inset-block-start: 0;
 }
 .top {
   @apply top-0;
