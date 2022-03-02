@@ -153,6 +153,7 @@ export class UModal {
                 'min-height': this.minHeight,
                 'max-width': this.maxWidth,
                 'max-height': this.maxHeight,
+                'visibility': this.isOpen ? 'visible' : 'hidden',
               }}
             >
               <slot name="body"></slot>
