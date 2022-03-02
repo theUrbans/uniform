@@ -23,7 +23,7 @@ export class UGrid {
   @Prop() area: Array<string[]> = [];
 
   /**
-   * width, height of grid
+   * gap size
    */
   @Prop() gap: string = '0';
 
