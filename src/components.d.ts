@@ -269,6 +269,8 @@ export namespace Components {
          */
         "value": string | number | null;
     }
+    interface ULink {
+    }
     interface UMenu {
         "area"?: string;
         "direction": 'horizontal' | 'vertical';
@@ -308,6 +310,11 @@ export namespace Components {
         "showPages": number;
     }
     interface UProgress {
+        "borderless": boolean;
+        "height": string;
+        "max": number;
+        "showPercentage": boolean;
+        "value": number;
     }
     interface URadiogroup {
         "alignment": 'vertical' | 'horizontal';
@@ -622,6 +629,12 @@ declare global {
         prototype: HTMLUInputElement;
         new (): HTMLUInputElement;
     };
+    interface HTMLULinkElement extends Components.ULink, HTMLStencilElement {
+    }
+    var HTMLULinkElement: {
+        prototype: HTMLULinkElement;
+        new (): HTMLULinkElement;
+    };
     interface HTMLUMenuElement extends Components.UMenu, HTMLStencilElement {
     }
     var HTMLUMenuElement: {
@@ -768,6 +781,7 @@ declare global {
         "u-group": HTMLUGroupElement;
         "u-icon": HTMLUIconElement;
         "u-input": HTMLUInputElement;
+        "u-link": HTMLULinkElement;
         "u-menu": HTMLUMenuElement;
         "u-modal": HTMLUModalElement;
         "u-monthpicker": HTMLUMonthpickerElement;
@@ -1067,6 +1081,8 @@ declare namespace LocalJSX {
          */
         "value"?: string | number | null;
     }
+    interface ULink {
+    }
     interface UMenu {
         "area"?: string;
         "direction"?: 'horizontal' | 'vertical';
@@ -1109,6 +1125,11 @@ declare namespace LocalJSX {
         "showPages"?: number;
     }
     interface UProgress {
+        "borderless"?: boolean;
+        "height"?: string;
+        "max"?: number;
+        "showPercentage"?: boolean;
+        "value"?: number;
     }
     interface URadiogroup {
         "alignment"?: 'vertical' | 'horizontal';
@@ -1356,6 +1377,7 @@ declare namespace LocalJSX {
         "u-group": UGroup;
         "u-icon": UIcon;
         "u-input": UInput;
+        "u-link": ULink;
         "u-menu": UMenu;
         "u-modal": UModal;
         "u-monthpicker": UMonthpicker;
@@ -1402,6 +1424,7 @@ declare module "@stencil/core" {
             "u-group": LocalJSX.UGroup & JSXBase.HTMLAttributes<HTMLUGroupElement>;
             "u-icon": LocalJSX.UIcon & JSXBase.HTMLAttributes<HTMLUIconElement>;
             "u-input": LocalJSX.UInput & JSXBase.HTMLAttributes<HTMLUInputElement>;
+            "u-link": LocalJSX.ULink & JSXBase.HTMLAttributes<HTMLULinkElement>;
             "u-menu": LocalJSX.UMenu & JSXBase.HTMLAttributes<HTMLUMenuElement>;
             "u-modal": LocalJSX.UModal & JSXBase.HTMLAttributes<HTMLUModalElement>;
             "u-monthpicker": LocalJSX.UMonthpicker & JSXBase.HTMLAttributes<HTMLUMonthpickerElement>;

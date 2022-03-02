@@ -32,6 +32,10 @@
   <body>
     <u-notification id="noti"></u-notification>
     <u-pagination pages="20"> </u-pagination>
+    <u-progress height="30px" max="1000" value="50" id="timerProgressBar"></u-progress>
+    <u-progress height="0.5rem" borderless="true" timer="true" show-percentage="false"></u-progress>
+    <u-button id="test"></u-button>
+    <u-button id="test1"></u-button>
     <u-card>
       <span slot="header">
         <p>Test</p>
@@ -308,15 +312,42 @@
       console.log(input);
       input.setAttribute('do-focus', false);
     };
+    let x = 10;
     const button = document.getElementById('test');
     button.addEventListener('click', () => {
-      console.log('click');
+      // console.log('click');
+      document.querySelector('u-progress').setAttribute('value', x++);
+    });
+
+    let x1 = 100;
+    let i = 20;
+
+    const button1 = document.getElementById('test1');
+    button1.addEventListener('click', async () => {
+      setInterval(() => {
+        if (i <= 1000) {
+          console.log(i);
+          document.getElementById('timerProgressBar').setAttribute('value', i);
+          i++;
+        }
+      }, 10);
+      // for (var i = 100; i > 0; i--) {
+      //   (function () {
+      //     setTimeout(
+      //       j => {
+      //         console.log('click ' + i);
+      //         document.getElementById('timerProgressBar').setAttribute('value', j);
+      //       },
+      //       1000,
+      //       i,
+      //     );
+      //   })();
+      // }
     });
     const input = document.getElementById('input');
     input.addEventListener('input', e => {
       console.log(e.target.value);
     });
-    let x = 0;
     const sendNoti = () => {
       const body = document.querySelector('body');
       body.dispatchEvent(new CustomEvent('show-toast', { detail: { title: 'test', message: 'asdasd asda sdas das das d', type: 'success' } }));
