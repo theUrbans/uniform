@@ -31,7 +31,8 @@
   },
   "dependencies": {
     "@stencil/core": "^2.14.0",
-    "@stencil/sass": "^1.5.2"
+    "@stencil/sass": "^1.5.2",
+    "@theurbans/uniform": "^0.1.9"
   },
   "devDependencies": {
     "@codeperate/stencil-windicss": "^2.1.2",
