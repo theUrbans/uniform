@@ -20,7 +20,7 @@
 
 | Event    | Description                     | Type                |
 | -------- | ------------------------------- | ------------------- |
-| `wClick` | emit wClick event on chip click | `CustomEvent<void>` |
+| `uClick` | emit wClick event on chip click | `CustomEvent<void>` |
 
 
 ----------------------------------------------

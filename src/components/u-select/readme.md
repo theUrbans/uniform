@@ -37,10 +37,10 @@
 
 | Event     | Description       | Type               |
 | --------- | ----------------- | ------------------ |
-| `wBlur`   | emitted on blur   | `CustomEvent<any>` |
-| `wChange` | emitted on change | `CustomEvent<any>` |
-| `wFocus`  | emitted on focus  | `CustomEvent<any>` |
-| `wInput`  | emitted on input  | `CustomEvent<any>` |
+| `uBlur`   | emitted on blur   | `CustomEvent<any>` |
+| `uChange` | emitted on change | `CustomEvent<any>` |
+| `uFocus`  | emitted on focus  | `CustomEvent<any>` |
+| `uInput`  | emitted on input  | `CustomEvent<any>` |
 
 
 ## Methods

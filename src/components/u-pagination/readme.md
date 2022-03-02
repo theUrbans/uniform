@@ -37,10 +37,6 @@ Type: `Promise<void>`
 
 ## Dependencies
 
-### Used by
-
- - [u-table](../u-table)
-
 ### Depends on
 
 - [u-group](../u-group)
@@ -51,7 +47,6 @@ Type: `Promise<void>`
 graph TD;
   u-pagination --> u-group
   u-pagination --> u-button
-  u-table --> u-pagination
   style u-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

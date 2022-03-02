@@ -34,10 +34,10 @@
 
 | Event     | Description       | Type                            |
 | --------- | ----------------- | ------------------------------- |
-| `wBlur`   | emitted on blur   | `CustomEvent<void>`             |
-| `wChange` | emitted on change | `CustomEvent<number \| string>` |
-| `wFocus`  | emitted on focus  | `CustomEvent<void>`             |
-| `wInput`  | emitted on input  | `CustomEvent<number \| string>` |
+| `uBlur`   | emitted on blur   | `CustomEvent<void>`             |
+| `uChange` | emitted on change | `CustomEvent<number \| string>` |
+| `uFocus`  | emitted on focus  | `CustomEvent<void>`             |
+| `uInput`  | emitted on input  | `CustomEvent<number \| string>` |
 
 
 ## Methods
@@ -62,19 +62,6 @@ Type: `Promise<void>`
 
 
 
-
-## Dependencies
-
-### Used by
-
- - [u-table](../u-table)
-
-### Graph
-```mermaid
-graph TD;
-  u-table --> u-input
-  style u-input fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 

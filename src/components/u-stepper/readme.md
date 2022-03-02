@@ -21,8 +21,8 @@
 
 | Event     | Description                                        | Type                  |
 | --------- | -------------------------------------------------- | --------------------- |
-| `wStep`   | emit wNextStep event on next/previous button click | `CustomEvent<number>` |
-| `wSubmit` | emit wSubmit event on submit button click          | `CustomEvent<void>`   |
+| `uStep`   | emit wNextStep event on next/previous button click | `CustomEvent<number>` |
+| `uSubmit` | emit wSubmit event on submit button click          | `CustomEvent<void>`   |
 
 
 ## Dependencies

@@ -22,7 +22,7 @@
 
 | Event    | Description                 | Type                |
 | -------- | --------------------------- | ------------------- |
-| `wClick` | emit wClick on button click | `CustomEvent<void>` |
+| `uClick` | emit wClick on button click | `CustomEvent<void>` |
 
 
 ## Dependencies

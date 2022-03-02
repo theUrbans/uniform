@@ -17,8 +17,8 @@
 
 | Event    | Description                     | Type                |
 | -------- | ------------------------------- | ------------------- |
-| `wClose` | emit when the spoiler is closed | `CustomEvent<void>` |
-| `wOpen`  | emit when the spoiler is opened | `CustomEvent<void>` |
+| `uClose` | emit when the spoiler is closed | `CustomEvent<void>` |
+| `uOpen`  | emit when the spoiler is opened | `CustomEvent<void>` |
 
 
 ----------------------------------------------

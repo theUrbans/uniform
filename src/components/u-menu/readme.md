@@ -7,11 +7,10 @@
 
 ## Properties
 
-| Property       | Attribute      | Description | Type                         | Default        |
-| -------------- | -------------- | ----------- | ---------------------------- | -------------- |
-| `area`         | `area`         |             | `string`                     | `undefined`    |
-| `direction`    | `direction`    |             | `"horizontal" \| "vertical"` | `'horizontal'` |
-| `minimizeable` | `minimizeable` |             | `boolean`                    | `false`        |
+| Property    | Attribute   | Description | Type                         | Default        |
+| ----------- | ----------- | ----------- | ---------------------------- | -------------- |
+| `alignment` | `alignment` |             | `"horizontal" \| "vertical"` | `'horizontal'` |
+| `area`      | `area`      |             | `string`                     | `undefined`    |
 
 
 ----------------------------------------------

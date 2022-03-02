@@ -21,7 +21,7 @@
 
 | Event     | Description | Type                    |
 | --------- | ----------- | ----------------------- |
-| `wSelect` |             | `CustomEvent<FileList>` |
+| `uSelect` |             | `CustomEvent<FileList>` |
 
 
 ## Dependencies

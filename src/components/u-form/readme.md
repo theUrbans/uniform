@@ -18,8 +18,8 @@
 
 | Event       | Description | Type               |
 | ----------- | ----------- | ------------------ |
-| `wNextStep` |             | `CustomEvent<any>` |
-| `wSubmit`   |             | `CustomEvent<any>` |
+| `uNextStep` |             | `CustomEvent<any>` |
+| `uSubmit`   |             | `CustomEvent<any>` |
 
 
 ## Dependencies

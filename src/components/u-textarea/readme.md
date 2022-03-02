@@ -25,7 +25,7 @@
 
 | Event    | Description | Type               |
 | -------- | ----------- | ------------------ |
-| `wInput` |             | `CustomEvent<any>` |
+| `uInput` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

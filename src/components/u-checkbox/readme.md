@@ -20,7 +20,7 @@
 
 | Event     | Description | Type                   |
 | --------- | ----------- | ---------------------- |
-| `wChange` |             | `CustomEvent<boolean>` |
+| `uChange` |             | `CustomEvent<boolean>` |
 
 
 ## Methods
