@@ -12,14 +12,14 @@ export class UPagination {
   @Prop() showLastAndFirstPage: boolean = true;
   @State() currentPage: number = 1;
   @Event() pageChange: EventEmitter<number>;
-  @Method('goToPage') async goToPage(page: number) {
-    this.changePage(page);
+  @Method('goToPage') async goToPage(page: number, eventless: boolean = false) {
+    this.changePage(page, eventless);
   }
-  private changePage(page: number) {
+  private changePage(page: number, eventless: boolean = false) {
     if (page > this.pages) this.currentPage = this.pages;
     else if (page < 1) this.currentPage = 1;
     else this.currentPage = page;
-    this.pageChange.emit(this.currentPage);
+    if (!eventless) this.pageChange.emit(this.currentPage);
   }
   render() {
     return (
