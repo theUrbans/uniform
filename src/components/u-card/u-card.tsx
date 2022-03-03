@@ -6,11 +6,9 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class UCard {
-  /**
-   * padding left and right: string, e.g. '1rem', '1px'
-   */
-  @Prop() slotCount?: number;
-  @Prop() img?: string;
+  @Prop() width: string = '24rem';
+  @Prop() img: boolean = false;
+  @Prop() color: string = '#9EBADE';
 
   render() {
     return (
@@ -18,13 +16,18 @@ export class UCard {
         class={{
           card: true,
         }}
+        style={{ 'background-color': this.color, 'width': this.width }}
       >
-        <div class="header">
+        <div
+          class={{
+            header: true,
+            noImage: !this.img,
+          }}
+        >
           <slot name="header"></slot>
         </div>
         <div class="content">
           <slot name="content"></slot>
-       
         </div>
       </div>
     );

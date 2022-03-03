@@ -46,11 +46,9 @@ export namespace Components {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface UCard {
-        "img"?: string;
-        /**
-          * padding left and right: string, e.g. '1rem', '1px'
-         */
-        "slotCount"?: number;
+        "color": string;
+        "img": boolean;
+        "width": string;
     }
     interface UCardselect {
     }
@@ -898,11 +896,9 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface UCard {
-        "img"?: string;
-        /**
-          * padding left and right: string, e.g. '1rem', '1px'
-         */
-        "slotCount"?: number;
+        "color"?: string;
+        "img"?: boolean;
+        "width"?: string;
     }
     interface UCardselect {
     }
