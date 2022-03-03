@@ -46,11 +46,9 @@ export namespace Components {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface UCard {
-        "img"?: string;
-        /**
-          * padding left and right: string, e.g. '1rem', '1px'
-         */
-        "slotCount"?: number;
+        "color": string;
+        "img": boolean;
+        "width": string;
     }
     interface UCardselect {
     }
@@ -151,7 +149,7 @@ export namespace Components {
          */
         "columns": number | Array<string>;
         /**
-          * width, height of grid
+          * gap size
          */
         "gap": string;
         /**
@@ -310,10 +308,25 @@ export namespace Components {
         "showPages": number;
     }
     interface UProgress {
+        /**
+          * Remove border.
+         */
         "borderless": boolean;
+        /**
+          * Size of height of the bar, standard set to 1.25rem. Possible to use any unit.
+         */
         "height": string;
+        /**
+          * Maximum of values
+         */
         "max": number;
+        /**
+          * Enables text, which shows the percentage.
+         */
         "showPercentage": boolean;
+        /**
+          * Value used to calculate progress
+         */
         "value": number;
     }
     interface URadiogroup {
@@ -843,11 +856,9 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface UCard {
-        "img"?: string;
-        /**
-          * padding left and right: string, e.g. '1rem', '1px'
-         */
-        "slotCount"?: number;
+        "color"?: string;
+        "img"?: boolean;
+        "width"?: string;
     }
     interface UCardselect {
     }
@@ -955,7 +966,7 @@ declare namespace LocalJSX {
          */
         "columns"?: number | Array<string>;
         /**
-          * width, height of grid
+          * gap size
          */
         "gap"?: string;
         /**
@@ -1125,10 +1136,25 @@ declare namespace LocalJSX {
         "showPages"?: number;
     }
     interface UProgress {
+        /**
+          * Remove border.
+         */
         "borderless"?: boolean;
+        /**
+          * Size of height of the bar, standard set to 1.25rem. Possible to use any unit.
+         */
         "height"?: string;
+        /**
+          * Maximum of values
+         */
         "max"?: number;
+        /**
+          * Enables text, which shows the percentage.
+         */
         "showPercentage"?: boolean;
+        /**
+          * Value used to calculate progress
+         */
         "value"?: number;
     }
     interface URadiogroup {

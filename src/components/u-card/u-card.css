@@ -1,19 +1,19 @@
 .card {
-  @apply border-solid border border-gray-500 border-radius w-96 overflow-hidden;
-}
-
-img {
-  @apply m-0 p-0;
+  @apply border-solid border border-gray-500 border-radius overflow-hidden;
 }
 
 .header {
-  @apply w-full box-border text-xl rounded-t-xl font-bold m-0;
+  @apply w-full box-border text-xl rounded-t-xl font-bold;
 }
 
 .header > p {
-  @apply p-4 m-4;
+  @apply p-2 m-2;
 }
 
 .content {
-  @apply p-4 bg-red-500;
+  @apply p-2;
+}
+
+.noImage {
+  @apply p-2 m-0;
 }
