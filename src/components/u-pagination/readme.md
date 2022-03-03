@@ -24,7 +24,7 @@
 
 ## Methods
 
-### `goToPage(page: number) => Promise<void>`
+### `goToPage(page: number, eventless?: boolean) => Promise<void>`
 
 
 
