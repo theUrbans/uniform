@@ -4,7 +4,7 @@ export interface HeadOptions {
   field: string;
   label: string;
   width?: string;
-  align?: 'left' | 'center' | 'right';
+  align?: 'left' | 'center' | 'right' | string;
   sortable?: boolean;
   bgcolor?: (row: any) => string;
   fontcolor?: (row: any) => string;
