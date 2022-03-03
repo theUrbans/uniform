@@ -26,7 +26,7 @@ export class UPagination {
       <Host>
         <u-group>
           {this.showButtons && (
-            <u-button rounded="left" onClick={() => this.changePage(this.currentPage - 1)} disabled={this.currentPage <= 1} outline>
+            <u-button rounded="left" onClick={() => this.changePage(this.currentPage - 1)} disabled={this.currentPage <= 1}>
               &lt;
             </u-button>
           )}
@@ -39,7 +39,6 @@ export class UPagination {
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}
-                    outline
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
@@ -70,7 +69,6 @@ export class UPagination {
                         ? 'right'
                         : 'none'
                     }
-                    outline
                   >
                     {page}
                   </u-button>
@@ -81,8 +79,6 @@ export class UPagination {
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}
-                    outline
-                    // outline={this.currentPage === page}
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
@@ -90,7 +86,7 @@ export class UPagination {
                 ];
             })}
           {this.showButtons && (
-            <u-button rounded="right" onClick={() => this.changePage(this.currentPage + 1)} disabled={this.currentPage >= this.pages} outline>
+            <u-button rounded="right" onClick={() => this.changePage(this.currentPage + 1)} disabled={this.currentPage >= this.pages}>
               &gt;
             </u-button>
           )}
