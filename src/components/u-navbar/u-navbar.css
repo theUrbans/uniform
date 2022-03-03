@@ -1,0 +1,12 @@
+:host {
+  @apply w-full bg-gray-600;
+}
+.top {
+  @apply absolute top-0 w-full p-4;
+}
+.bottom {
+  @apply absolute bottom-0 w-full p-4;
+}
+.fixed {
+  @apply fixed;
+}
