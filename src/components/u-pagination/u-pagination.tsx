@@ -12,21 +12,21 @@ export class UPagination {
   @Prop() showLastAndFirstPage: boolean = true;
   @State() currentPage: number = 1;
   @Event() pageChange: EventEmitter<number>;
-  @Method('goToPage') async goToPage(page: number) {
-    this.changePage(page);
+  @Method('goToPage') async goToPage(page: number, eventless: boolean = false) {
+    this.changePage(page, eventless);
   }
-  private changePage(page: number) {
+  private changePage(page: number, eventless: boolean = false) {
     if (page > this.pages) this.currentPage = this.pages;
     else if (page < 1) this.currentPage = 1;
     else this.currentPage = page;
-    this.pageChange.emit(this.currentPage);
+    if (!eventless) this.pageChange.emit(this.currentPage);
   }
   render() {
     return (
       <Host>
         <u-group>
           {this.showButtons && (
-            <u-button rounded="left" onClick={() => this.changePage(this.currentPage - 1)} disabled={this.currentPage <= 1} outline>
+            <u-button rounded="left" onClick={() => this.changePage(this.currentPage - 1)} disabled={this.currentPage <= 1}>
               &lt;
             </u-button>
           )}
@@ -39,7 +39,6 @@ export class UPagination {
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}
-                    outline
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
@@ -70,7 +69,6 @@ export class UPagination {
                         ? 'right'
                         : 'none'
                     }
-                    outline
                   >
                     {page}
                   </u-button>
@@ -81,8 +79,6 @@ export class UPagination {
                   <u-button
                     rounded={this.showButtons ? 'none' : page === 1 ? 'left' : page === this.pages ? 'right' : 'none'}
                     onClick={() => this.changePage(page)}
-                    outline
-                    // outline={this.currentPage === page}
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
@@ -90,7 +86,7 @@ export class UPagination {
                 ];
             })}
           {this.showButtons && (
-            <u-button rounded="right" onClick={() => this.changePage(this.currentPage + 1)} disabled={this.currentPage >= this.pages} outline>
+            <u-button rounded="right" onClick={() => this.changePage(this.currentPage + 1)} disabled={this.currentPage >= this.pages}>
               &gt;
             </u-button>
           )}

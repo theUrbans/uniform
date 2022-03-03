@@ -118,6 +118,8 @@ export namespace Components {
     }
     interface UDatetimepicker {
     }
+    interface UDesktoplayout {
+    }
     interface UDialog {
         "name": string;
     }
@@ -270,9 +272,16 @@ export namespace Components {
     interface ULink {
     }
     interface UMenu {
+        "alignment": 'horizontal' | 'vertical';
         "area"?: string;
-        "direction": 'horizontal' | 'vertical';
-        "minimizeable": boolean;
+    }
+    interface UMobilelayout {
+        "activateOption": () => Promise<void>;
+        "disableOption": () => Promise<void>;
+        "showMain": () => Promise<void>;
+        "showMenu": () => Promise<void>;
+        "showOption": () => Promise<void>;
+        "showOptions": boolean;
     }
     interface UModal {
         "closeModal": (name: string) => Promise<void>;
@@ -291,6 +300,16 @@ export namespace Components {
     }
     interface UMonthpicker {
     }
+    interface UNavbar {
+        /**
+          * should the navbar be fixed to the top or bottom of the screen - layout should be position relative
+         */
+        "fixed": boolean;
+        /**
+          * position of the navbar
+         */
+        "position": 'top' | 'bottom';
+    }
     interface UNotification {
         "error": (title: string, message?: string, delay?: number) => Promise<void>;
         "position": 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
@@ -301,7 +320,7 @@ export namespace Components {
     interface UObserver {
     }
     interface UPagination {
-        "goToPage": (page: number) => Promise<void>;
+        "goToPage": (page: number, eventless?: boolean) => Promise<void>;
         "pages": number;
         "showButtons": boolean;
         "showLastAndFirstPage": boolean;
@@ -588,6 +607,12 @@ declare global {
         prototype: HTMLUDatetimepickerElement;
         new (): HTMLUDatetimepickerElement;
     };
+    interface HTMLUDesktoplayoutElement extends Components.UDesktoplayout, HTMLStencilElement {
+    }
+    var HTMLUDesktoplayoutElement: {
+        prototype: HTMLUDesktoplayoutElement;
+        new (): HTMLUDesktoplayoutElement;
+    };
     interface HTMLUDialogElement extends Components.UDialog, HTMLStencilElement {
     }
     var HTMLUDialogElement: {
@@ -654,6 +679,12 @@ declare global {
         prototype: HTMLUMenuElement;
         new (): HTMLUMenuElement;
     };
+    interface HTMLUMobilelayoutElement extends Components.UMobilelayout, HTMLStencilElement {
+    }
+    var HTMLUMobilelayoutElement: {
+        prototype: HTMLUMobilelayoutElement;
+        new (): HTMLUMobilelayoutElement;
+    };
     interface HTMLUModalElement extends Components.UModal, HTMLStencilElement {
     }
     var HTMLUModalElement: {
@@ -665,6 +696,12 @@ declare global {
     var HTMLUMonthpickerElement: {
         prototype: HTMLUMonthpickerElement;
         new (): HTMLUMonthpickerElement;
+    };
+    interface HTMLUNavbarElement extends Components.UNavbar, HTMLStencilElement {
+    }
+    var HTMLUNavbarElement: {
+        prototype: HTMLUNavbarElement;
+        new (): HTMLUNavbarElement;
     };
     interface HTMLUNotificationElement extends Components.UNotification, HTMLStencilElement {
     }
@@ -785,6 +822,7 @@ declare global {
         "u-colorpicker": HTMLUColorpickerElement;
         "u-datepicker": HTMLUDatepickerElement;
         "u-datetimepicker": HTMLUDatetimepickerElement;
+        "u-desktoplayout": HTMLUDesktoplayoutElement;
         "u-dialog": HTMLUDialogElement;
         "u-dropdown": HTMLUDropdownElement;
         "u-editor": HTMLUEditorElement;
@@ -796,8 +834,10 @@ declare global {
         "u-input": HTMLUInputElement;
         "u-link": HTMLULinkElement;
         "u-menu": HTMLUMenuElement;
+        "u-mobilelayout": HTMLUMobilelayoutElement;
         "u-modal": HTMLUModalElement;
         "u-monthpicker": HTMLUMonthpickerElement;
+        "u-navbar": HTMLUNavbarElement;
         "u-notification": HTMLUNotificationElement;
         "u-observer": HTMLUObserverElement;
         "u-pagination": HTMLUPaginationElement;
@@ -931,6 +971,8 @@ declare namespace LocalJSX {
     interface UDatepicker {
     }
     interface UDatetimepicker {
+    }
+    interface UDesktoplayout {
     }
     interface UDialog {
         "name"?: string;
@@ -1095,9 +1137,11 @@ declare namespace LocalJSX {
     interface ULink {
     }
     interface UMenu {
+        "alignment"?: 'horizontal' | 'vertical';
         "area"?: string;
-        "direction"?: 'horizontal' | 'vertical';
-        "minimizeable"?: boolean;
+    }
+    interface UMobilelayout {
+        "showOptions"?: boolean;
     }
     interface UModal {
         "closeOnClick"?: boolean;
@@ -1114,6 +1158,16 @@ declare namespace LocalJSX {
         "topRightClose"?: boolean;
     }
     interface UMonthpicker {
+    }
+    interface UNavbar {
+        /**
+          * should the navbar be fixed to the top or bottom of the screen - layout should be position relative
+         */
+        "fixed"?: boolean;
+        /**
+          * position of the navbar
+         */
+        "position"?: 'top' | 'bottom';
     }
     interface UNotification {
         "position"?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center';
@@ -1394,6 +1448,7 @@ declare namespace LocalJSX {
         "u-colorpicker": UColorpicker;
         "u-datepicker": UDatepicker;
         "u-datetimepicker": UDatetimepicker;
+        "u-desktoplayout": UDesktoplayout;
         "u-dialog": UDialog;
         "u-dropdown": UDropdown;
         "u-editor": UEditor;
@@ -1405,8 +1460,10 @@ declare namespace LocalJSX {
         "u-input": UInput;
         "u-link": ULink;
         "u-menu": UMenu;
+        "u-mobilelayout": UMobilelayout;
         "u-modal": UModal;
         "u-monthpicker": UMonthpicker;
+        "u-navbar": UNavbar;
         "u-notification": UNotification;
         "u-observer": UObserver;
         "u-pagination": UPagination;
@@ -1441,6 +1498,7 @@ declare module "@stencil/core" {
             "u-colorpicker": LocalJSX.UColorpicker & JSXBase.HTMLAttributes<HTMLUColorpickerElement>;
             "u-datepicker": LocalJSX.UDatepicker & JSXBase.HTMLAttributes<HTMLUDatepickerElement>;
             "u-datetimepicker": LocalJSX.UDatetimepicker & JSXBase.HTMLAttributes<HTMLUDatetimepickerElement>;
+            "u-desktoplayout": LocalJSX.UDesktoplayout & JSXBase.HTMLAttributes<HTMLUDesktoplayoutElement>;
             "u-dialog": LocalJSX.UDialog & JSXBase.HTMLAttributes<HTMLUDialogElement>;
             "u-dropdown": LocalJSX.UDropdown & JSXBase.HTMLAttributes<HTMLUDropdownElement>;
             "u-editor": LocalJSX.UEditor & JSXBase.HTMLAttributes<HTMLUEditorElement>;
@@ -1452,8 +1510,10 @@ declare module "@stencil/core" {
             "u-input": LocalJSX.UInput & JSXBase.HTMLAttributes<HTMLUInputElement>;
             "u-link": LocalJSX.ULink & JSXBase.HTMLAttributes<HTMLULinkElement>;
             "u-menu": LocalJSX.UMenu & JSXBase.HTMLAttributes<HTMLUMenuElement>;
+            "u-mobilelayout": LocalJSX.UMobilelayout & JSXBase.HTMLAttributes<HTMLUMobilelayoutElement>;
             "u-modal": LocalJSX.UModal & JSXBase.HTMLAttributes<HTMLUModalElement>;
             "u-monthpicker": LocalJSX.UMonthpicker & JSXBase.HTMLAttributes<HTMLUMonthpickerElement>;
+            "u-navbar": LocalJSX.UNavbar & JSXBase.HTMLAttributes<HTMLUNavbarElement>;
             "u-notification": LocalJSX.UNotification & JSXBase.HTMLAttributes<HTMLUNotificationElement>;
             "u-observer": LocalJSX.UObserver & JSXBase.HTMLAttributes<HTMLUObserverElement>;
             "u-pagination": LocalJSX.UPagination & JSXBase.HTMLAttributes<HTMLUPaginationElement>;

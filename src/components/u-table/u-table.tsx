@@ -4,7 +4,7 @@ export interface HeadOptions {
   field: string;
   label: string;
   width?: string;
-  align?: 'left' | 'center' | 'right';
+  align?: 'left' | 'center' | 'right' | string;
   sortable?: boolean;
   bgcolor?: (row: any) => string;
   fontcolor?: (row: any) => string;
@@ -49,6 +49,14 @@ export class UTable {
     { id: 2, age: 20, name: '*test2*\n_test_\n*xd*' },
     { id: 3, name: 'test3', age: '40' },
     { id: 4, name: 'test4', age: '50' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
+    { id: 5, name: 'test5', age: '-60' },
     { id: 5, name: 'test5', age: '-60' },
     { id: 6, name: 'test6', age: '70' },
     { id: 7, name: 'test2', age: '30' },
@@ -189,16 +197,9 @@ export class UTable {
             }}
           >
             <div class="head">
-              {/* {this.hasHeaderSlot && ( */}
-              <tr class="heading">
-                <slot name="header">
-                  {/* <u-row wrap="nowrap" padding="0">
-                    <u-pagination pages={10}></u-pagination>
-                    <u-input label="Suche"></u-input>
-                  </u-row> */}
-                </slot>
+              <tr class="headingslot">
+                <slot name="header" />
               </tr>
-              {/* )} */}
               <tr class="heading">
                 {this.heading.map((item, index) => [
                   this.selectable && index === 0 && (

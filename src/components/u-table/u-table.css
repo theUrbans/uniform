@@ -6,10 +6,13 @@ table {
   border-spacing: 0 0.4rem;
 }
 .heading {
-  @apply w-full table bg-blue-gray-600 text-light-600;
+  @apply w-full table rounded-lg bg-blue-gray-600 text-light-600;
+}
+.headingslot {
+  @apply w-full block;
 }
 .head {
-  @apply w-full border-radius overflow-hidden;
+  @apply w-full overflow-hidden bg-transparent;
 }
 th {
   @apply h-full px-1 py-2 bg-blue-gray-600 text-light-600;
