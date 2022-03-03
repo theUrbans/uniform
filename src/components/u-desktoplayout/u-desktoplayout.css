@@ -1,0 +1,10 @@
+.menu {
+  height: 100%;
+  background-color: rgb(232, 244, 255);
+}
+.main {
+  height: 100%;
+  background-color: rgb(255, 232, 232);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
