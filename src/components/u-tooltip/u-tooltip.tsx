@@ -50,10 +50,7 @@ export class UTooltip {
           class={{
             tooltip: true,
             visible: this.hover,
-            top: this.position === 'top' && this.axis === 'y',
-            bottom: this.position === 'bottom' && this.axis === 'y',
-            left: this.position === 'left' && this.axis === 'x',
-            right: this.position === 'right' && this.axis === 'x',
+            [this.position]: true,
           }}
         >
           {this.text}
