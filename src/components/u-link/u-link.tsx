@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'u-link',
@@ -6,13 +6,14 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class ULink {
-
+  @Prop() link: string;
+  @Prop() target: string = 'self';
+  @Prop() secondary: boolean = false;
   render() {
     return (
-      <Host>
+      <a href={this.link} target={'_' + this.target} class={{ primary: !this.secondary, secondary: this.secondary }}>
         <slot></slot>
-      </Host>
+      </a>
     );
   }
-
 }
