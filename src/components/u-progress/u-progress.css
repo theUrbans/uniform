@@ -11,5 +11,5 @@
 }
 
 .border {
-  @apply border border-gray-400 border-solid;
+  @apply border border-gray-400 border-solid bg-white;
 }

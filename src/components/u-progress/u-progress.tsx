@@ -33,7 +33,7 @@ export class UProgress {
   @Prop() showPercentage: boolean = true;
 
   private calcProgress(): void {
-    this.setProgress(String((this.value * 100) / this.max));
+    this.setProgress(String(((this.value * 100) / this.max).toFixed(2)));
   }
 
   private setProgress(value): void {
