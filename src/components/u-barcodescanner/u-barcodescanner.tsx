@@ -37,7 +37,7 @@ export class UBarcodescanner {
     return (
       <Host
         style={{
-          display: this.scannerActive ? 'none' : 'block',
+          display: this.scannerActive ? 'block' : 'none',
         }}
       >
         <u-button design="error" outline class="cancel">
