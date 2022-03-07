@@ -1,0 +1,9 @@
+ul {
+  @apply list-none flex items-center gap-2 m-0 p-0 max-w-max;
+}
+.last {
+  @apply text-xl;
+}
+.separator {
+  @apply text-gray-400 text-xl font-extrabold align-middle;
+}
