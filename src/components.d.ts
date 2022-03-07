@@ -8,12 +8,24 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { ChipDesign } from "./components/u-chip/u-chip";
 import { EditorTools } from "./components/u-editor/u-editor";
 import { FormButton, FormField } from "./components/u-form/u-form";
+import { MenuItems } from "./components/u-menu/u-menu";
 import { NotficationOption, NotificationType } from "./components/u-notification/u-notification";
 import { Option } from "./components/u-radiogroup/u-radiogroup";
 import { Option as Option1 } from "./components/u-select/u-select";
 import { HeadOptions } from "./components/u-table/u-table";
 export namespace Components {
     interface UAlert {
+    }
+    interface UBarcodescanner {
+        "getPermission": () => Promise<void>;
+        "library": any;
+        "prepareCamera": () => Promise<void>;
+        "startScanner": () => Promise<void>;
+        "stopScanner": () => Promise<void>;
+    }
+    interface UBreadcrumb {
+        "items": Array<string>;
+        "seperator"?: string;
     }
     interface UButton {
         /**
@@ -135,6 +147,11 @@ export namespace Components {
         "multiple": boolean;
         "noFile": string;
         "size": 'small' | 'large';
+    }
+    interface UFloatingbutton {
+        "color": string;
+        "menu": boolean;
+        "position": 'bottom-left' | 'bottom-right' | 'bottom-center';
     }
     interface UForm {
         "buttons": Array<FormButton>;
@@ -270,10 +287,15 @@ export namespace Components {
         "value": string | number | null;
     }
     interface ULink {
+        "link": string;
+        "secondary": boolean;
+        "target": string;
     }
     interface UMenu {
-        "alignment": 'horizontal' | 'vertical';
-        "area"?: string;
+        "axis": 'x' | 'y';
+        "items": Array<MenuItems>;
+        "padding": boolean;
+        "width": 'fullwidth' | 'contentwidth';
     }
     interface UMobilelayout {
         "activateOption": () => Promise<void>;
@@ -282,6 +304,7 @@ export namespace Components {
         "showMenu": () => Promise<void>;
         "showOption": () => Promise<void>;
         "showOptions": boolean;
+        "sideWidth": string;
     }
     interface UModal {
         "closeModal": (name: string) => Promise<void>;
@@ -325,6 +348,10 @@ export namespace Components {
         "showButtons": boolean;
         "showLastAndFirstPage": boolean;
         "showPages": number;
+    }
+    interface UPopup {
+        "axis": 'x-start' | 'x-end' | 'x-center' | 'y-start' | 'y-end' | 'y-center';
+        "visible": boolean;
     }
     interface UProgress {
         /**
@@ -553,6 +580,18 @@ declare global {
         prototype: HTMLUAlertElement;
         new (): HTMLUAlertElement;
     };
+    interface HTMLUBarcodescannerElement extends Components.UBarcodescanner, HTMLStencilElement {
+    }
+    var HTMLUBarcodescannerElement: {
+        prototype: HTMLUBarcodescannerElement;
+        new (): HTMLUBarcodescannerElement;
+    };
+    interface HTMLUBreadcrumbElement extends Components.UBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLUBreadcrumbElement: {
+        prototype: HTMLUBreadcrumbElement;
+        new (): HTMLUBreadcrumbElement;
+    };
     interface HTMLUButtonElement extends Components.UButton, HTMLStencilElement {
     }
     var HTMLUButtonElement: {
@@ -637,6 +676,12 @@ declare global {
         prototype: HTMLUFilepickerElement;
         new (): HTMLUFilepickerElement;
     };
+    interface HTMLUFloatingbuttonElement extends Components.UFloatingbutton, HTMLStencilElement {
+    }
+    var HTMLUFloatingbuttonElement: {
+        prototype: HTMLUFloatingbuttonElement;
+        new (): HTMLUFloatingbuttonElement;
+    };
     interface HTMLUFormElement extends Components.UForm, HTMLStencilElement {
     }
     var HTMLUFormElement: {
@@ -720,6 +765,12 @@ declare global {
     var HTMLUPaginationElement: {
         prototype: HTMLUPaginationElement;
         new (): HTMLUPaginationElement;
+    };
+    interface HTMLUPopupElement extends Components.UPopup, HTMLStencilElement {
+    }
+    var HTMLUPopupElement: {
+        prototype: HTMLUPopupElement;
+        new (): HTMLUPopupElement;
     };
     interface HTMLUProgressElement extends Components.UProgress, HTMLStencilElement {
     }
@@ -813,6 +864,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "u-alert": HTMLUAlertElement;
+        "u-barcodescanner": HTMLUBarcodescannerElement;
+        "u-breadcrumb": HTMLUBreadcrumbElement;
         "u-button": HTMLUButtonElement;
         "u-card": HTMLUCardElement;
         "u-cardselect": HTMLUCardselectElement;
@@ -827,6 +880,7 @@ declare global {
         "u-dropdown": HTMLUDropdownElement;
         "u-editor": HTMLUEditorElement;
         "u-filepicker": HTMLUFilepickerElement;
+        "u-floatingbutton": HTMLUFloatingbuttonElement;
         "u-form": HTMLUFormElement;
         "u-grid": HTMLUGridElement;
         "u-group": HTMLUGroupElement;
@@ -841,6 +895,7 @@ declare global {
         "u-notification": HTMLUNotificationElement;
         "u-observer": HTMLUObserverElement;
         "u-pagination": HTMLUPaginationElement;
+        "u-popup": HTMLUPopupElement;
         "u-progress": HTMLUProgressElement;
         "u-radiogroup": HTMLURadiogroupElement;
         "u-row": HTMLURowElement;
@@ -860,6 +915,17 @@ declare global {
 }
 declare namespace LocalJSX {
     interface UAlert {
+    }
+    interface UBarcodescanner {
+        "library"?: any;
+        "onUScan"?: (event: CustomEvent<any>) => void;
+        "onUStartScan"?: (event: CustomEvent<any>) => void;
+        "onUStopScan"?: (event: CustomEvent<any>) => void;
+    }
+    interface UBreadcrumb {
+        "items"?: Array<string>;
+        "onUBreadcrumbClick"?: (event: CustomEvent<string>) => void;
+        "seperator"?: string;
     }
     interface UButton {
         /**
@@ -990,6 +1056,11 @@ declare namespace LocalJSX {
         "noFile"?: string;
         "onUSelect"?: (event: CustomEvent<FileList>) => void;
         "size"?: 'small' | 'large';
+    }
+    interface UFloatingbutton {
+        "color"?: string;
+        "menu"?: boolean;
+        "position"?: 'bottom-left' | 'bottom-right' | 'bottom-center';
     }
     interface UForm {
         "buttons"?: Array<FormButton>;
@@ -1135,13 +1206,19 @@ declare namespace LocalJSX {
         "value"?: string | number | null;
     }
     interface ULink {
+        "link"?: string;
+        "secondary"?: boolean;
+        "target"?: string;
     }
     interface UMenu {
-        "alignment"?: 'horizontal' | 'vertical';
-        "area"?: string;
+        "axis"?: 'x' | 'y';
+        "items"?: Array<MenuItems>;
+        "padding"?: boolean;
+        "width"?: 'fullwidth' | 'contentwidth';
     }
     interface UMobilelayout {
         "showOptions"?: boolean;
+        "sideWidth"?: string;
     }
     interface UModal {
         "closeOnClick"?: boolean;
@@ -1188,6 +1265,10 @@ declare namespace LocalJSX {
         "showButtons"?: boolean;
         "showLastAndFirstPage"?: boolean;
         "showPages"?: number;
+    }
+    interface UPopup {
+        "axis"?: 'x-start' | 'x-end' | 'x-center' | 'y-start' | 'y-end' | 'y-center';
+        "visible"?: boolean;
     }
     interface UProgress {
         /**
@@ -1439,6 +1520,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "u-alert": UAlert;
+        "u-barcodescanner": UBarcodescanner;
+        "u-breadcrumb": UBreadcrumb;
         "u-button": UButton;
         "u-card": UCard;
         "u-cardselect": UCardselect;
@@ -1453,6 +1536,7 @@ declare namespace LocalJSX {
         "u-dropdown": UDropdown;
         "u-editor": UEditor;
         "u-filepicker": UFilepicker;
+        "u-floatingbutton": UFloatingbutton;
         "u-form": UForm;
         "u-grid": UGrid;
         "u-group": UGroup;
@@ -1467,6 +1551,7 @@ declare namespace LocalJSX {
         "u-notification": UNotification;
         "u-observer": UObserver;
         "u-pagination": UPagination;
+        "u-popup": UPopup;
         "u-progress": UProgress;
         "u-radiogroup": URadiogroup;
         "u-row": URow;
@@ -1489,6 +1574,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "u-alert": LocalJSX.UAlert & JSXBase.HTMLAttributes<HTMLUAlertElement>;
+            "u-barcodescanner": LocalJSX.UBarcodescanner & JSXBase.HTMLAttributes<HTMLUBarcodescannerElement>;
+            "u-breadcrumb": LocalJSX.UBreadcrumb & JSXBase.HTMLAttributes<HTMLUBreadcrumbElement>;
             "u-button": LocalJSX.UButton & JSXBase.HTMLAttributes<HTMLUButtonElement>;
             "u-card": LocalJSX.UCard & JSXBase.HTMLAttributes<HTMLUCardElement>;
             "u-cardselect": LocalJSX.UCardselect & JSXBase.HTMLAttributes<HTMLUCardselectElement>;
@@ -1503,6 +1590,7 @@ declare module "@stencil/core" {
             "u-dropdown": LocalJSX.UDropdown & JSXBase.HTMLAttributes<HTMLUDropdownElement>;
             "u-editor": LocalJSX.UEditor & JSXBase.HTMLAttributes<HTMLUEditorElement>;
             "u-filepicker": LocalJSX.UFilepicker & JSXBase.HTMLAttributes<HTMLUFilepickerElement>;
+            "u-floatingbutton": LocalJSX.UFloatingbutton & JSXBase.HTMLAttributes<HTMLUFloatingbuttonElement>;
             "u-form": LocalJSX.UForm & JSXBase.HTMLAttributes<HTMLUFormElement>;
             "u-grid": LocalJSX.UGrid & JSXBase.HTMLAttributes<HTMLUGridElement>;
             "u-group": LocalJSX.UGroup & JSXBase.HTMLAttributes<HTMLUGroupElement>;
@@ -1517,6 +1605,7 @@ declare module "@stencil/core" {
             "u-notification": LocalJSX.UNotification & JSXBase.HTMLAttributes<HTMLUNotificationElement>;
             "u-observer": LocalJSX.UObserver & JSXBase.HTMLAttributes<HTMLUObserverElement>;
             "u-pagination": LocalJSX.UPagination & JSXBase.HTMLAttributes<HTMLUPaginationElement>;
+            "u-popup": LocalJSX.UPopup & JSXBase.HTMLAttributes<HTMLUPopupElement>;
             "u-progress": LocalJSX.UProgress & JSXBase.HTMLAttributes<HTMLUProgressElement>;
             "u-radiogroup": LocalJSX.URadiogroup & JSXBase.HTMLAttributes<HTMLURadiogroupElement>;
             "u-row": LocalJSX.URow & JSXBase.HTMLAttributes<HTMLURowElement>;
