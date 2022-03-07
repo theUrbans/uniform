@@ -272,8 +272,9 @@ export namespace Components {
     interface ULink {
     }
     interface UMenu {
-        "alignment": 'horizontal' | 'vertical';
         "area"?: string;
+        "direction": 'horizontal' | 'vertical';
+        "minimizeable": boolean;
     }
     interface UMobilelayout {
         "activateOption": () => Promise<void>;
@@ -1137,8 +1138,9 @@ declare namespace LocalJSX {
     interface ULink {
     }
     interface UMenu {
-        "alignment"?: 'horizontal' | 'vertical';
         "area"?: string;
+        "direction"?: 'horizontal' | 'vertical';
+        "minimizeable"?: boolean;
     }
     interface UMobilelayout {
         "showOptions"?: boolean;
