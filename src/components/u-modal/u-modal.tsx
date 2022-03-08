@@ -79,7 +79,7 @@ export class UModal {
     this.drag = true;
     this.dragoffset = { x: e.pageX - this.node.offsetLeft, y: e.pageY - this.node.offsetTop };
   };
-  private mouseUp = _e => {
+  private mouseUp = () => {
     this.drag = false;
   };
   private handleMove = (e: MouseEvent) => {
@@ -99,10 +99,6 @@ export class UModal {
     this.node.style.top = newtop;
   };
 
-  @State() isResizing: boolean = false;
-  @State() startSize: { x: number; y: number };
-  @State() startMouse: { x: number; y: number };
-
   render() {
     return (
       <div
@@ -110,9 +106,9 @@ export class UModal {
           wrapper: true,
           visible: this.isOpen,
         }}
-        onMouseDown={e => this.handleBlur(e)}
-        onMouseMove={e => this.handleMove(e)}
-        onMouseUp={e => this.mouseUp(e)}
+        onPointerDown={e => this.handleBlur(e)}
+        onPointerMove={e => this.handleMove(e)}
+        onPointerUp={() => this.mouseUp()}
         onClick={e => e.preventDefault()}
       >
         {this.topRightClose ? (
@@ -134,7 +130,7 @@ export class UModal {
             'max-height': this.maxHeight,
           }}
         >
-          <div class="header" onMouseDown={e => this.handleStartDrag(e)}>
+          <div class="header" onPointerDown={e => this.handleStartDrag(e)}>
             <span class="header__title">
               <slot name="header" />
             </span>
