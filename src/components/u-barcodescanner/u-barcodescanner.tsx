@@ -18,6 +18,7 @@ export class UBarcodescanner {
     this.library.prepare();
   }
   @Method() async startScanner() {
+    document.querySelector('html').hidden = true;
     this.uStartScan.emit();
     this.scannerActive = true;
     this.library.hideBackground();
@@ -28,6 +29,7 @@ export class UBarcodescanner {
     }
   }
   @Method() async stopScanner() {
+    document.querySelector('html').hidden = false;
     this.uStopScan.emit();
     this.scannerActive = false;
     this.library.showBackground();
