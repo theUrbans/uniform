@@ -447,21 +447,23 @@ export class USelect implements ComponentInterface {
                     class={{
                       option: true,
                       [`option-${this.design}`]: true,
-                      selected: this.value.toString().includes(label),
+                      selected: this.selected.includes(label),
                       hovered: this.filteredOptions[this.index].label == label,
                       disabled,
                     }}
                     role="option"
-                    // onClick={() => {
-                    //   if (!disabled && !this.multiple) this.selectOption(value, label);
-                    // }}
+                    onClick={() => {
+                      if (!disabled) {
+                        this.selectOption(value, label);
+                      }
+                    }}
                     onMouseEnter={() => (this.index = this.filteredOptions.findIndex(option => option.label == label))}
                   >
                     {this.multiple ? (
                       <u-checkbox
-                        onUChange={() => {
-                          if (!disabled) this.selectOption(value, label);
-                        }}
+                        // onUChange={() => {
+                        //   if (!disabled) this.selectOption(value, label);
+                        // }}
                         label={label}
                         size={this.size}
                         checked={this.selected.includes(label) || selected}
