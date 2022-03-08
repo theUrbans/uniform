@@ -10,7 +10,6 @@ export class UBreadcrumb {
   @Prop() seperator?: string;
   @Event() uBreadcrumbClick: EventEmitter<string>;
   render() {
-    const defaultSeparator = <i>&#8250;</i>;
     return (
       <ul>
         {this.items.map((item, index) => {
@@ -31,7 +30,7 @@ export class UBreadcrumb {
                 display: !lastElement ? 'inline-block' : 'none',
               }}
             >
-              {!!this.seperator ? this.seperator : defaultSeparator}
+              {!!this.seperator ? this.seperator : <i>&#8250;</i>}
             </span>,
           ];
         })}
