@@ -1,8 +1,8 @@
 .layout {
   display: flex;
   scroll-snap-type: x mandatory;
-  scroll-snap-stop: normal;
-  overflow-x: scroll;
+  scroll-snap-stop: always;
+  overflow-x: auto;
   scroll-behavior: smooth;
   height: 100vh;
   width: 100vw;
@@ -18,7 +18,6 @@
   flex-shrink: 0;
 }
 .menu {
-  width: 90%;
   scroll-snap-align: start;
   box-shadow: inset 2px 0px 12px 2px rgba(0, 0, 0, 0.75);
 }
@@ -26,11 +25,9 @@
   width: 100%;
   height: 100%;
   scroll-snap-align: center;
-  scroll-snap-stop: always;
   overflow-y: scroll;
 }
 .option {
-  width: 90%;
   scroll-snap-align: end;
   box-shadow: inset 2px 0px 12px -2px rgba(0, 0, 0, 0.75);
 }

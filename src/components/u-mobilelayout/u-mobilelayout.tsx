@@ -8,6 +8,7 @@ import { Component, Element, h, Method, Prop } from '@stencil/core';
 export class UMobilelayout {
   @Element() el: HTMLElement;
   @Prop({ mutable: true }) showOptions: boolean = false;
+  @Prop() sideWidth: string = '94%';
   @Method() async showMenu() {
     const menu = this.el.shadowRoot.querySelector('.menu') as HTMLElement;
     if (!menu) return;
@@ -42,7 +43,12 @@ export class UMobilelayout {
           <slot name="main"></slot>
         </section>
         {this.showOptions && (
-          <section class="section option">
+          <section
+            class="section option"
+            style={{
+              width: this.sideWidth,
+            }}
+          >
             <slot name="option"></slot>
           </section>
         )}
