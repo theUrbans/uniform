@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Host, Prop, State } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'u-filepicker',
@@ -45,7 +45,7 @@ export class UFilepicker {
 
   render() {
     return (
-      <Host
+      <div
         class={{
           [this.size]: true,
         }}
@@ -67,21 +67,19 @@ export class UFilepicker {
         ) : (
           <div onDrop={this.dropHandler} class="dropzone">
             <u-col align="center">
-              <u-row>
-                <span>
-                  <svg slot="prefix" fill="currentColor" height="18" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
-                  </svg>
-                  <span>{this.label}</span>
-                </span>
-              </u-row>
+              <u-button outline>
+                <svg slot="prefix" fill="currentColor" height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                </svg>
+                {this.label}
+              </u-button>
               {this.fileText}
             </u-col>
             <input class="input" type="file" accept={this.fileEnding} multiple={this.multiple} onChange={this.handleFileInput} />
           </div>
         )}
-      </Host>
+      </div>
     );
   }
 }
