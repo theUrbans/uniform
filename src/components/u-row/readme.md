@@ -20,14 +20,12 @@
 
 ### Used by
 
- - [u-filepicker](../u-filepicker)
  - [u-form](../u-form)
  - [u-stepper](../u-stepper)
 
 ### Graph
 ```mermaid
 graph TD;
-  u-filepicker --> u-row
   u-form --> u-row
   u-stepper --> u-row
   style u-row fill:#f9f,stroke:#333,stroke-width:4px

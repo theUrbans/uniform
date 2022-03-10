@@ -29,6 +29,7 @@
 
 ### Used by
 
+ - [u-barcodescanner](../u-barcodescanner)
  - [u-dialog](../u-dialog)
  - [u-filepicker](../u-filepicker)
  - [u-form](../u-form)
@@ -38,6 +39,7 @@
 ### Graph
 ```mermaid
 graph TD;
+  u-barcodescanner --> u-button
   u-dialog --> u-button
   u-filepicker --> u-button
   u-form --> u-button

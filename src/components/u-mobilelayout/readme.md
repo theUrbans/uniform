@@ -10,6 +10,7 @@
 | Property      | Attribute      | Description | Type      | Default |
 | ------------- | -------------- | ----------- | --------- | ------- |
 | `showOptions` | `show-options` |             | `boolean` | `false` |
+| `sideWidth`   | `side-width`   |             | `string`  | `'94%'` |
 
 
 ## Methods

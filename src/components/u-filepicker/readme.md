@@ -31,7 +31,6 @@
 - [u-group](../u-group)
 - [u-button](../u-button)
 - [u-col](../u-col)
-- [u-row](../u-row)
 
 ### Graph
 ```mermaid
@@ -39,7 +38,6 @@ graph TD;
   u-filepicker --> u-group
   u-filepicker --> u-button
   u-filepicker --> u-col
-  u-filepicker --> u-row
   style u-filepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
