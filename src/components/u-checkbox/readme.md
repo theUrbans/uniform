@@ -42,12 +42,14 @@ Type: `Promise<void>`
 
  - [u-select](../u-select)
  - [u-table](../u-table)
+ - [u-tablecell](../u-tablecell)
 
 ### Graph
 ```mermaid
 graph TD;
   u-select --> u-checkbox
   u-table --> u-checkbox
+  u-tablecell --> u-checkbox
   style u-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
