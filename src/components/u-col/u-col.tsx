@@ -1,5 +1,10 @@
 import { Component, h, Prop } from '@stencil/core';
 
+/**
+ * @name Column
+ * @state 🟢
+ * @description Flexbox column
+ */
 @Component({
   tag: 'u-col',
   styleUrl: 'u-col.css',

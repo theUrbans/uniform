@@ -1,5 +1,8 @@
 import { Component, h, Prop } from '@stencil/core';
-
+/**
+ * @name Card
+ * @state 🟡
+ */
 @Component({
   tag: 'u-card',
   styleUrl: 'u-card.css',

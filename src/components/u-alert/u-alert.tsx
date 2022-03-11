@@ -1,5 +1,9 @@
 import { Component, Host, h } from '@stencil/core';
 
+/**
+ * @name Alert
+ * @state 🔵
+ */
 @Component({
   tag: 'u-alert',
   styleUrl: 'u-alert.css',

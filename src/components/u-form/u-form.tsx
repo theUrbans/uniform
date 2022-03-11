@@ -22,6 +22,11 @@ export interface FormField {
 
 export type Field = string;
 
+/**
+ * @name Form Generator
+ * @state 🟡
+ * @description Generate a form with fields and buttons
+ */
 @Component({
   tag: 'u-form',
   styleUrl: 'u-form.css',

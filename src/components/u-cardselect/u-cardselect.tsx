@@ -1,4 +1,7 @@
 import { Component, Host, h } from '@stencil/core';
+/**
+ * @name Card Select
+ */
 
 @Component({
   tag: 'u-cardselect',

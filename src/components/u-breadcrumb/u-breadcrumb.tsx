@@ -4,6 +4,12 @@ export interface BreadCrumbItem {
   name: string;
   link?: string;
 }
+
+/**
+ * @name Breadcrumb
+ * @state 🟡
+ * @description Breadcrumb navigation component
+ */
 @Component({
   tag: 'u-breadcrumb',
   styleUrl: 'u-breadcrumb.css',

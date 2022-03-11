@@ -15,6 +15,10 @@ export interface EditorTools {
   link?: boolean;
   // image?: boolean;
 }
+
+/**
+ * @name Editor
+ */
 @Component({
   tag: 'u-editor',
   styleUrl: 'u-editor.css',

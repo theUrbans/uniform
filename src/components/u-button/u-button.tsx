@@ -1,5 +1,9 @@
 import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
+/**
+ * @name Button
+ * @state 🟢
+ */
 @Component({
   tag: 'u-button',
   styleUrl: 'u-button.css',

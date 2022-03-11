@@ -1,4 +1,7 @@
 import { Component, Host, h } from '@stencil/core';
+/**
+ * @name Date Time Picker
+ */
 
 @Component({
   tag: 'u-datetimepicker',
@@ -6,7 +9,6 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class UDatetimepicker {
-
   render() {
     return (
       <Host>
@@ -14,5 +16,4 @@ export class UDatetimepicker {
       </Host>
     );
   }
-
 }

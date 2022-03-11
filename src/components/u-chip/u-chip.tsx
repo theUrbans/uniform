@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
-
 export type ChipDesign =
   | 'slate'
   | 'stone'
@@ -18,6 +17,11 @@ export type ChipDesign =
   | 'primary'
   | 'secondary';
 
+/**
+ * @name Chip
+ * @state 🟢
+ * @description show status of something
+ */
 @Component({
   tag: 'u-chip',
   styleUrl: 'u-chip.css',

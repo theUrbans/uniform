@@ -1,5 +1,8 @@
 import { Component, h } from '@stencil/core';
-
+/**
+ * @name Table Row
+ * @state 🔴
+ */
 @Component({
   tag: 'u-tablerow',
   styleUrl: 'u-tablerow.css',

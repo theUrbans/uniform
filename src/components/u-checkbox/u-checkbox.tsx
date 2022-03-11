@@ -1,5 +1,8 @@
 import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
-
+/**
+ * @name Checkbox
+ * @state 🟡
+ */
 @Component({
   tag: 'u-checkbox',
   styleUrl: 'u-checkbox.css',

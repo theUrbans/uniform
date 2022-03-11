@@ -1,5 +1,10 @@
 import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 
+/**
+ * @name File Picker
+ * @state 🟡
+ * @description pick single or multiple files
+ */
 @Component({
   tag: 'u-filepicker',
   styleUrl: 'u-filepicker.css',
