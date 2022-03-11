@@ -1,12 +1,14 @@
 import { Component, Host, h } from '@stencil/core';
 
+/**
+ * @name Paragraph
+ */
 @Component({
   tag: 'u-paragraph',
   styleUrl: 'u-paragraph.css',
   shadow: true,
 })
 export class UParagraph {
-
   render() {
     return (
       <Host>
@@ -14,5 +16,4 @@ export class UParagraph {
       </Host>
     );
   }
-
 }

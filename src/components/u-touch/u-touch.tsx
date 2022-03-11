@@ -1,5 +1,9 @@
 import { Component, Host, h, Listen, State } from '@stencil/core';
 
+/**
+ * @name Touch gesture
+ * @description This component allows you to detect gestures
+ */
 @Component({
   tag: 'u-touch',
   styleUrl: 'u-touch.css',

@@ -1,5 +1,10 @@
 import { Component, Element, h, Method, Prop } from '@stencil/core';
 
+/**
+ * @name Mobile Layout
+ * @state 🟡
+ * @description Discord-App like layout with 3 swipeable columns
+ */
 @Component({
   tag: 'u-mobilelayout',
   styleUrl: 'u-mobilelayout.css',

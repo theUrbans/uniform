@@ -1,5 +1,10 @@
 import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/core';
 
+/**
+ * @name Stepper
+ * @state 🟡
+ * @description formular with multiple steps
+ */
 @Component({
   tag: 'u-stepper',
   styleUrl: 'u-stepper.css',

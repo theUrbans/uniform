@@ -1,5 +1,10 @@
 import { Component, h, Event, EventEmitter, Element, State } from '@stencil/core';
 
+/**
+ * @name Observer
+ * @state 🟢
+ * @description emits events when slot becomes visible
+ */
 @Component({
   tag: 'u-observer',
   styleUrl: 'u-observer.css',

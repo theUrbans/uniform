@@ -1,5 +1,8 @@
 import { Component, Host, h } from '@stencil/core';
 
+/**
+ * @name Toggle
+ */
 @Component({
   tag: 'u-toggle',
   styleUrl: 'u-toggle.css',

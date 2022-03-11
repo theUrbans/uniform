@@ -7,6 +7,10 @@ export interface Option {
   selected?: boolean;
 }
 
+/**
+ * @name Select
+ * @state 🟡
+ */
 @Component({
   tag: 'u-select',
   styleUrl: 'u-select.css',

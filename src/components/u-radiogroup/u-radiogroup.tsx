@@ -4,6 +4,10 @@ export interface Option {
   label: string;
 }
 
+/**
+ * @name Radio Group
+ * @state 🟡
+ */
 @Component({
   tag: 'u-radiogroup',
   styleUrl: 'u-radiogroup.css',

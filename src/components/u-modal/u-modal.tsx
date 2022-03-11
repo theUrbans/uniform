@@ -1,5 +1,9 @@
 import { Component, h, Prop, Method, Listen, State, Event, EventEmitter, Element } from '@stencil/core';
 
+/**
+ * @name Modal
+ * @state 🟡
+ */
 @Component({
   tag: 'u-modal',
   styleUrls: {

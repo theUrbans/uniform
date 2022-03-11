@@ -1,5 +1,9 @@
 import { Component, Host, h, Prop, State, Event, EventEmitter, Method } from '@stencil/core';
 
+/**
+ * @name Pagination
+ * @state 🟡
+ */
 @Component({
   tag: 'u-pagination',
   styleUrl: 'u-pagination.css',

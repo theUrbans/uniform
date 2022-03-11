@@ -1,5 +1,10 @@
 import { Component, Host, h, State, Prop, Event, EventEmitter } from '@stencil/core';
 
+/**
+ * @name Spoiler
+ * @state 🟡
+ * @description accordion like component
+ */
 @Component({
   tag: 'u-spoiler',
   styleUrl: 'u-spoiler.css',

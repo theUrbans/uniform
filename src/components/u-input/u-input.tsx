@@ -1,6 +1,11 @@
 import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, Event, EventEmitter, Host } from '@stencil/core';
 // import close from '../../assets/close.svg';
 // import { inputEvent } from '../../utils/utils';
+
+/**
+ * @name Input
+ * @state 🟡
+ */
 @Component({
   tag: 'u-input',
   styleUrl: 'u-input.css',

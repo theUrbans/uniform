@@ -1,5 +1,10 @@
 import { Component, h, Prop, State, Element } from '@stencil/core';
 
+/**
+ * @name Tooltip
+ * @state 🟡
+ * @description This component allows you to display a tooltip.
+ */
 @Component({
   tag: 'u-tooltip',
   styleUrl: 'u-tooltip.css',

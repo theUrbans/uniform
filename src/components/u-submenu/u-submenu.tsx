@@ -3,6 +3,10 @@ import { MenuItem } from '../u-menuitem/u-menuitem';
 export interface SubMenu {
   items: Array<MenuItem>;
 }
+/**
+ * @name Sub-Menu
+ * @state 🟡
+ */
 @Component({
   tag: 'u-submenu',
   styleUrl: 'u-submenu.css',

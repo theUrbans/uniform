@@ -1,5 +1,9 @@
 import { Component, h, Prop } from '@stencil/core';
 
+/**
+ * @name Link
+ * @state 🟢
+ */
 @Component({
   tag: 'u-link',
   styleUrl: 'u-link.css',

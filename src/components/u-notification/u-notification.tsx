@@ -1,4 +1,5 @@
 import { Component, Host, h, Method, State, Prop, Watch, Listen } from '@stencil/core';
+
 export interface NotficationOption {
   title: string;
   message?: string;
@@ -14,6 +15,12 @@ interface Notification {
 }
 
 export type NotificationType = 'error' | 'success' | 'warning' | 'default';
+
+/**
+ * @name Notification
+ * @state 🟡
+ * @description Toast like notifications
+ */
 @Component({
   tag: 'u-notification',
   styleUrl: 'u-notification.css',

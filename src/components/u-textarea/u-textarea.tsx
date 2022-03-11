@@ -1,5 +1,9 @@
 import { Component, Host, Element, h, Prop, Watch, Event, EventEmitter, State } from '@stencil/core';
 
+/**
+ * @name Textarea
+ * @state 🟡
+ */
 @Component({
   tag: 'u-textarea',
   styleUrl: 'u-textarea.css',

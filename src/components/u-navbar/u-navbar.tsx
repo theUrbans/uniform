@@ -1,5 +1,10 @@
 import { Component, Host, h, Prop } from '@stencil/core';
 
+/**
+ * @name Navigation Bar
+ * @state 🟡
+ * @description top or bottom navigation bar
+ */
 @Component({
   tag: 'u-navbar',
   styleUrl: 'u-navbar.css',

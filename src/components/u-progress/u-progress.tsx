@@ -1,5 +1,9 @@
 import { Component, h, Prop, State, Watch } from '@stencil/core';
 
+/**
+ * @name Progress
+ * @state 🟡
+ */
 @Component({
   tag: 'u-progress',
   styleUrl: 'u-progress.css',
