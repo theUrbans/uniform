@@ -1,0 +1,18 @@
+:host {
+  @apply absolute top-32 left-32;
+}
+.button {
+  @apply relative rounded-full bg-pink-300 w-12 h-12 z-300 grid place-content-center;
+}
+nav {
+  @apply absolute bg-gray-400 p-2 rounded-xl z-300 top-1/1;
+}
+ul {
+  @apply list-none m-0 p-0;
+}
+hr {
+  @apply m-0;
+}
+li {
+  @apply block whitespace-nowrap cursor-pointer p-1 rounded hover:bg-gray-200 hover:text-gray-800;
+}

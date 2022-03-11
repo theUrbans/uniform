@@ -1,0 +1,12 @@
+button {
+  @apply rounded-full w-12 h-12 leading-none absolute z-100 border-0 grid place-content-center cursor-pointer;
+}
+.bottom-left {
+  @apply bottom-4 left-4;
+}
+.bottom-right {
+  @apply bottom-4 right-4;
+}
+.bottom-center {
+  @apply bottom-4 right-1/2 transform translate-x-1/2;
+}
