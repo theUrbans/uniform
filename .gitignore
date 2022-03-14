@@ -25,3 +25,7 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 .npmrc
+/public
+*.stories.tsx
+/src/stories
+/packages
