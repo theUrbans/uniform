@@ -4,6 +4,10 @@ import { windicssStencil } from '@codeperate/stencil-windicss';
 import { JsonDocs, JsonDocsComponent, JsonDocsTag } from '@stencil/core/internal';
 import { writeFile, appendFile } from 'fs/promises'
 import { stat } from 'fs';
+import storyTemplate from './storyTemplate';
+import { reactOutputTarget } from '@stencil/react-output-target';
+import { vueOutputTarget } from '@stencil/vue-output-target';
+// import { svelteOutputTarget } from '@stencil/svelte-output-target';
 
 const getDocTags = (entry: JsonDocsComponent, name: string, defaultValue: any): string => {
   const path = entry.docsTags.find((d: JsonDocsTag) => d.name === name);
@@ -13,7 +17,7 @@ const getDocTags = (entry: JsonDocsComponent, name: string, defaultValue: any): 
 export const config: Config = {
   autoprefixCss: true,
   namespace: 'Uniform',
-  globalStyle: 'src/global/uniform.css',
+  globalStyle: 'src/global/uniform.scss',
   globalScript: 'src/global/global.ts',
   bundles: [
     { components: ['u-table', 'u-tablehead', 'u-tablefoot', 'u-tablerow', 'u-tablecell'] }
@@ -41,18 +45,50 @@ export const config: Config = {
           const name = getDocTags(c, 'name', c.tag)
           const desc = getDocTags(c, 'description', '*no description provided*')
           const state = getDocTags(c, 'state', '🔵')
-
           const storyPath = c.filePath.split('/').slice(0, -1).join('/');
-          let storyExists = false;
-          stat(`${storyPath}/${c.tag}.stories.tsx`, (error, file) => storyExists = error ? false : file.isFile())
-          if (!storyExists) writeFile(`${storyPath}/${c.tag}.stories.tsx`, `import readme from './readme.md';\nexport default {\ntitle: '${name}',\nnotes: readme,\n};`);
+          stat(`${storyPath}/${c.tag}.stories.tsx`, (_error, file) => {
+            if (file.isFile()) return
+            writeFile(`${storyPath}/${c.tag}.stories.tsx`, storyTemplate(name, c.tag, c.props));
+          })
           const path = './src/components/' + c.tag
           return `|[${name}](${path})|${c.tag}|${desc}|${state}|`
         })
           .join('\n')
         )
       }
-    }
+    },
+    reactOutputTarget({
+      componentCorePackage: '@theurbans/uniform',
+      proxiesFile: './packages/react/src/proxies.ts',
+      includeImportCustomElements: true,
+      includePolyfills: false,
+      includeDefineCustomElements: false,
+    }),
+    vueOutputTarget({
+      componentCorePackage: '@theurbans/uniform',
+      includeImportCustomElements: true,
+      includePolyfills: false,
+      includeDefineCustomElements: false,
+      proxiesFile: './packages/vue/src/proxies.ts',
+      componentModels: [
+        {
+          elements: ['u-checkbox', 'u-toggle'],
+          targetAttr: 'checked',
+          event: 'v-u-change',
+          externalEvent: 'uChange'
+        },
+        {
+          elements: ['u-input', 'u-select'],
+          targetAttr: 'value',
+          event: 'v-u-change',
+          externalEvent: 'uChange'
+        }
+      ],
+    }),
+    // svelteOutputTarget({
+    //   componentCorePackage: '@theurbans/uniform',
+    //   proxiesFile: './packages/svelte/src/proxies.ts',
+    // }),
   ],
   plugins: [
     sass(),
