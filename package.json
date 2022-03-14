@@ -23,25 +23,44 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "dev": "run-p dev:stencil storybook",
+    "dev:stencil": "stencil build --watch",
+    "build": "stencil build",
+    "build:docs": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "test:watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "storybook": "start-storybook -p 6006 -s dist --no-manager-cache",
+    "storybook:run": "start-storybook -p 6006 -s dist",
+    "storybook:build": "build-storybook -c ./.storybook -o ./public"
   },
   "dependencies": {
     "@stencil/core": "^2.14.0",
-    "@stencil/sass": "^1.5.2",
-    "@theurbans/uniform": "^0.1.9"
+    "@stencil/sass": "^1.5.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
     "@codeperate/stencil-windicss": "^2.1.2",
+    "@stencil/react-output-target": "^0.3.1",
     "@stencil/store": "^1.5.0",
+    "@stencil/svelte-output-target": "0.0.3",
+    "@stencil/vue-output-target": "^0.6.0",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/addon-notes": "^5.3.21",
+    "@storybook/addon-storysource": "^6.4.19",
+    "@storybook/addon-viewport": "^6.4.19",
+    "@storybook/html": "^6.4.19",
     "@types/jest": "^26.0.24",
     "@windicss/plugin-icons": "^1.0.2",
+    "babel-loader": "^8.2.3",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
-    "puppeteer": "^10.0.0"
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^10.0.0",
+    "storybook-addon-custom-event-broadcaster": "^1.0.2"
   },
   "license": "MIT",
   "homepage": "https://github.com/theUrbans/uniform#readme",
