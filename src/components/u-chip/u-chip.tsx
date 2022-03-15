@@ -21,6 +21,7 @@ export type ChipDesign =
  * @name Chip
  * @state 🟢
  * @description show status of something
+ * @slot default - text content
  */
 @Component({
   tag: 'u-chip',
@@ -79,7 +80,7 @@ export class UChip {
             bold: this.bold,
           }}
         >
-          <slot></slot>
+          <slot>Chip</slot>
         </span>
       </div>
     );
