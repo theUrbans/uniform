@@ -1,7 +1,8 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 /**
  * @name Headline
+ * @state 🟡
  */
 @Component({
   tag: 'u-headline',
@@ -9,11 +10,12 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class UHeadline {
+  @Prop() level: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
   render() {
     return (
-      <Host>
-        <slot></slot>
-      </Host>
+      <this.level>
+        <slot>Headline</slot>
+      </this.level>
     );
   }
 }
