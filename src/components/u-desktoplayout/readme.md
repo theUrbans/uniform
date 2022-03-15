@@ -7,6 +7,10 @@
 
 ## Dependencies
 
+### Used by
+
+ - [u-layout](../u-layout)
+
 ### Depends on
 
 - [u-grid](../u-grid)
@@ -15,6 +19,7 @@
 ```mermaid
 graph TD;
   u-desktoplayout --> u-grid
+  u-layout --> u-desktoplayout
   style u-desktoplayout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

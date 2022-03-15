@@ -66,6 +66,19 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Used by
+
+ - [u-layout](../u-layout)
+
+### Graph
+```mermaid
+graph TD;
+  u-layout --> u-mobilelayout
+  style u-mobilelayout fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

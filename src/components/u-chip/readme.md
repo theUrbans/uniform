@@ -23,6 +23,13 @@
 | `uClick` | emit wClick event on chip click | `CustomEvent<void>` |
 
 
+## Slots
+
+| Slot        | Description  |
+| ----------- | ------------ |
+| `"default"` | text content |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

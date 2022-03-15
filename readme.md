@@ -10,7 +10,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 
 |Name|Component|Description|State|
 |---|---|---|---|
-|[Alert](./src/components/u-alert)|u-alert|*no description provided*|🔵|
+|[Alert](./src/components/u-alert)|u-alert|*no description provided*|🟡|
 |[Barcode Scanner](./src/components/u-barcodescanner)|u-barcodescanner|This component allows you to scan barcodes and QR codes. It is based on the [Capicitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin.|🟡|
 |[Breadcrumb](./src/components/u-breadcrumb)|u-breadcrumb|Breadcrumb navigation component|🟡|
 |[Button](./src/components/u-button)|u-button|*no description provided*|🟢|
@@ -24,25 +24,24 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 |[Date Time Picker](./src/components/u-datetimepicker)|u-datetimepicker|*no description provided*|🔵|
 |[Desktop Layout](./src/components/u-desktoplayout)|u-desktoplayout|default Desktop Layout - with a sidebar and a main content area|🟡|
 |[Dialog](./src/components/u-dialog)|u-dialog|pre configured Modal|🟡|
-|[Dropdown](./src/components/u-dropdown)|u-dropdown|*no description provided*|🔵|
 |[Editor](./src/components/u-editor)|u-editor|*no description provided*|🔵|
 |[File Picker](./src/components/u-filepicker)|u-filepicker|pick single or multiple files|🟡|
 |[Floating Button](./src/components/u-floatingbutton)|u-floatingbutton|Button floating at the bottom of the screen|🟡|
 |[Floating Menu](./src/components/u-floatingmenu)|u-floatingmenu|Menu floating at initial position|🟡|
 |[Form Generator](./src/components/u-form)|u-form|Generate a form with fields and buttons|🟡|
-|[u-grid](./src/components/u-grid)|u-grid|*no description provided*|🔵|
+|[Grid](./src/components/u-grid)|u-grid|*no description provided*|🟡|
 |[Group](./src/components/u-group)|u-group|This component allows you to display a group of elements.|🟡|
-|[Headline](./src/components/u-headline)|u-headline|*no description provided*|🔵|
+|[Headline](./src/components/u-headline)|u-headline|*no description provided*|🟡|
 |[Icon Wrapper](./src/components/u-icon)|u-icon|Wrapper for icons|🔵|
 |[Input](./src/components/u-input)|u-input|*no description provided*|🟡|
 |[Item](./src/components/u-item)|u-item|*no description provided*|🔵|
 |[Label](./src/components/u-label)|u-label|*no description provided*|🔵|
-|[Layout](./src/components/u-layout)|u-layout|layout which decide if mobile or desktop layout should be used|🔵|
+|[Layout](./src/components/u-layout)|u-layout|layout which decides whether to use mobile or desktop layout|🟡|
 |[Link](./src/components/u-link)|u-link|*no description provided*|🟢|
 |[List](./src/components/u-list)|u-list|*no description provided*|🔵|
 |[Loader](./src/components/u-loader)|u-loader|*no description provided*|🔵|
 |[Menu](./src/components/u-menu)|u-menu|*no description provided*|🟡|
-|[u-menuitem](./src/components/u-menuitem)|u-menuitem|*no description provided*|🔵|
+|[Menu Item](./src/components/u-menuitem)|u-menuitem|*no description provided*|🔵|
 |[Mobile Layout](./src/components/u-mobilelayout)|u-mobilelayout|Discord-App like layout with 3 swipeable columns|🟡|
 |[Modal](./src/components/u-modal)|u-modal|*no description provided*|🟡|
 |[Month Picker](./src/components/u-monthpicker)|u-monthpicker|*no description provided*|🔵|
@@ -50,7 +49,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 |[Notification](./src/components/u-notification)|u-notification|Toast like notifications|🟡|
 |[Observer](./src/components/u-observer)|u-observer|emits events when slot becomes visible|🟢|
 |[Pagination](./src/components/u-pagination)|u-pagination|*no description provided*|🟡|
-|[Paragraph](./src/components/u-paragraph)|u-paragraph|*no description provided*|🔵|
+|[Paragraph](./src/components/u-paragraph)|u-paragraph|*no description provided*|🟡|
 |[Popup](./src/components/u-popup)|u-popup|*no description provided*|🔵|
 |[Progress](./src/components/u-progress)|u-progress|*no description provided*|🟡|
 |[Radio Group](./src/components/u-radiogroup)|u-radiogroup|*no description provided*|🟡|

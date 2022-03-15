@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                 | Type       | Default     |
-| ---------- | ---------- | --------------------------- | ---------- | ----------- |
-| `checkbox` | `checkbox` | should checkbox be rendered | `boolean`  | `false`     |
-| `data`     | --         |                             | `CellData` | `undefined` |
+| Property   | Attribute  | Description                 | Type      | Default     |
+| ---------- | ---------- | --------------------------- | --------- | ----------- |
+| `checkbox` | `checkbox` | should checkbox be rendered | `boolean` | `false`     |
+| `data`     | `data`     |                             | `string`  | `undefined` |
 
 
 ## Dependencies

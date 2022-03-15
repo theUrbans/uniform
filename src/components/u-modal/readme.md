@@ -56,12 +56,16 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [u-alert](../u-alert)
  - [u-dialog](../u-dialog)
+ - [u-layout](../u-layout)
 
 ### Graph
 ```mermaid
 graph TD;
+  u-alert --> u-modal
   u-dialog --> u-modal
+  u-layout --> u-modal
   style u-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
