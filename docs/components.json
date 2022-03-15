@@ -6365,10 +6365,44 @@
         {
           "name": "description",
           "text": "This component allows you to display a tooltip."
+        },
+        {
+          "name": "slot",
+          "text": "default - element which receives the tooltip"
+        },
+        {
+          "name": "slot",
+          "text": "content - (optional) content of the tooltip -> alternative to text, content prop must be used"
         }
       ],
       "usage": {},
       "props": [
+        {
+          "name": "alignment",
+          "type": "\"center\" | \"end\" | \"start\"",
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "arrow alignment",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "axis",
           "type": "\"x\" | \"y\"",
@@ -6392,6 +6426,22 @@
           "required": false
         },
         {
+          "name": "content",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "content",
+          "reflectToAttr": false,
+          "docs": "render custom content instead of text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "text",
           "type": "string",
           "mutable": false,
@@ -6406,13 +6456,44 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "trigger",
+          "type": "\"click\" | \"hover\"",
+          "mutable": false,
+          "attr": "trigger",
+          "reflectToAttr": false,
+          "docs": "choose trigger event",
+          "docsTags": [],
+          "default": "'hover'",
+          "values": [
+            {
+              "value": "click",
+              "type": "string"
+            },
+            {
+              "value": "hover",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
         }
       ],
       "methods": [],
       "events": [],
       "listeners": [],
       "styles": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "content",
+          "docs": "(optional) content of the tooltip -> alternative to text, content prop must be used"
+        },
+        {
+          "name": "default",
+          "docs": "element which receives the tooltip"
+        }
+      ],
       "parts": [],
       "dependents": [],
       "dependencies": [],
