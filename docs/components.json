@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-15T10:22:45",
+  "timestamp": "2022-03-15T14:36:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -3344,9 +3344,23 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "A modal window that can be used to display information to the user."
+        },
+        {
+          "name": "slot",
+          "text": "header - The header of the modal"
+        },
+        {
+          "name": "slot",
+          "text": "body - The body of the modal"
         }
       ],
-      "usage": {},
+      "usage": {
+        "events": "\r\n- open modal\r\n\r\n```JS\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('show-modal', {\r\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\r\n    })\r\n);\r\n```\r\n\r\n- close modal\r\n\r\n```JS\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('close-modal', {\r\n    detail: { name: 'MODAL_NAME' }\r\n    })\r\n);\r\n```\r\n"
+      },
       "props": [
         {
           "name": "closeOnClick",
@@ -3354,7 +3368,7 @@
           "mutable": false,
           "attr": "close-on-click",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "should the modal be closed on backdrop click",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -3371,7 +3385,7 @@
           "mutable": false,
           "attr": "max-height",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) resizable max width",
           "docsTags": [],
           "default": "'auto'",
           "values": [
@@ -3388,7 +3402,7 @@
           "mutable": false,
           "attr": "max-width",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) resizable max height",
           "docsTags": [],
           "default": "'auto'",
           "values": [
@@ -3405,7 +3419,7 @@
           "mutable": false,
           "attr": "min-height",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) resizable min height",
           "docsTags": [],
           "default": "'auto'",
           "values": [
@@ -3422,7 +3436,7 @@
           "mutable": false,
           "attr": "min-width",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) resizable min width",
           "docsTags": [],
           "default": "'auto'",
           "values": [
@@ -3439,7 +3453,7 @@
           "mutable": false,
           "attr": "mode",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "autoset mode for mobile or desktop",
           "docsTags": [],
           "default": "'desktop'",
           "values": [
@@ -3461,7 +3475,7 @@
           "mutable": false,
           "attr": "moveable",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) should the modal be moveable by dragging the header",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -3478,7 +3492,7 @@
           "mutable": false,
           "attr": "name",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "name of the modal - needed to call methods",
           "docsTags": [],
           "values": [
             {
@@ -3494,7 +3508,7 @@
           "mutable": false,
           "attr": "reset-position",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) reset the modal position to the center of the screen",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -3511,7 +3525,7 @@
           "mutable": false,
           "attr": "resizeable",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "(DESKTOP only) should the modal be resizable",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -3528,7 +3542,7 @@
           "mutable": false,
           "attr": "top-right-close",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "display a close button in the top right corner",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -3549,7 +3563,7 @@
           },
           "signature": "closeModal(name: string) => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "method to close the modal",
           "docsTags": []
         },
         {
@@ -3560,7 +3574,7 @@
           },
           "signature": "showModal(name: string) => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "method to open the modal",
           "docsTags": []
         }
       ],
@@ -3571,7 +3585,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "event with given params",
           "docsTags": []
         }
       ],
@@ -3595,7 +3609,16 @@
         }
       ],
       "styles": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "body",
+          "docs": "The body of the modal"
+        },
+        {
+          "name": "header",
+          "docs": "The header of the modal"
+        }
+      ],
       "parts": [],
       "dependents": [
         "u-alert",
@@ -6328,7 +6351,7 @@
       "filePath": "./src/components/u-tooltip/u-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "u-tooltip",
-      "readme": "# w-tooltip\n\n\n",
+      "readme": "# w-tooltip\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [
         {

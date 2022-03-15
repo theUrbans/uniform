@@ -8,7 +8,6 @@
 
 .visible {
   display: grid;
-  // display: block;
   place-items: center;
   max-height: 100vh;
 }
@@ -16,10 +15,10 @@
 .modal {
   @apply absolute w-full max-h-max bottom-0;
   z-index: 9998;
-
   transition-property: all;
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  animation: 0.5s fadeIn;
 }
 
 .close {
@@ -76,4 +75,15 @@
 .resizeable {
   resize: both;
   overflow: hidden;
+}
+
+@keyframes fadeIn {
+  0% {
+    // opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    // opacity: 1;
+    max-height: 100vh;
+  }
 }

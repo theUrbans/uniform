@@ -43,7 +43,7 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 |[Menu](./src/components/u-menu)|u-menu|*no description provided*|🟡|
 |[Menu Item](./src/components/u-menuitem)|u-menuitem|*no description provided*|🔵|
 |[Mobile Layout](./src/components/u-mobilelayout)|u-mobilelayout|Discord-App like layout with 3 swipeable columns|🟡|
-|[Modal](./src/components/u-modal)|u-modal|*no description provided*|🟡|
+|[Modal](./src/components/u-modal)|u-modal|A modal window that can be used to display information to the user.|🟡|
 |[Month Picker](./src/components/u-monthpicker)|u-monthpicker|*no description provided*|🔵|
 |[Navigation Bar](./src/components/u-navbar)|u-navbar|top or bottom navigation bar|🟡|
 |[Notification](./src/components/u-notification)|u-notification|Toast like notifications|🟡|
