@@ -1,5 +1,9 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core';
 
+/**
+ * @name Grid
+ * @state 🟡
+ */
 @Component({
   tag: 'u-grid',
   styleUrl: 'u-grid.css',
