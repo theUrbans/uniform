@@ -632,13 +632,25 @@ export namespace Components {
     }
     interface UTooltip {
         /**
+          * arrow alignment
+         */
+        "alignment": 'start' | 'center' | 'end';
+        /**
           * position of the tooltip
          */
         "axis": 'x' | 'y';
         /**
+          * render custom content instead of text
+         */
+        "content"?: boolean;
+        /**
           * text of the tooltip
          */
         "text": string;
+        /**
+          * choose trigger event
+         */
+        "trigger": 'click' | 'hover';
     }
     interface UTouch {
     }
@@ -1742,13 +1754,25 @@ declare namespace LocalJSX {
     }
     interface UTooltip {
         /**
+          * arrow alignment
+         */
+        "alignment"?: 'start' | 'center' | 'end';
+        /**
           * position of the tooltip
          */
         "axis"?: 'x' | 'y';
         /**
+          * render custom content instead of text
+         */
+        "content"?: boolean;
+        /**
           * text of the tooltip
          */
         "text"?: string;
+        /**
+          * choose trigger event
+         */
+        "trigger"?: 'click' | 'hover';
     }
     interface UTouch {
     }
