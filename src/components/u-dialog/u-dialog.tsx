@@ -35,10 +35,6 @@ export class UDialog {
     this.modal.showModal(this.name);
   }
 
-  // componentWillLoad() {
-  //   if (this.name == 'w-dialog-default') {
-  //   }
-  // }
   render() {
     return (
       <Host>
