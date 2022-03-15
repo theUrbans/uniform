@@ -3,31 +3,81 @@ import { Component, h, Prop, Method, Listen, State, Event, EventEmitter, Element
 /**
  * @name Modal
  * @state 🟡
+ * @description A modal window that can be used to display information to the user.
+ * @slot header - The header of the modal
+ * @slot body - The body of the modal
  */
 @Component({
   tag: 'u-modal',
   styleUrls: {
-    desktop: 'u-modal.desktop.css',
+    desktop: 'u-modal.desktop.scss',
     mobile: 'u-modal.mobile.scss',
   },
   shadow: true,
 })
 export class UModal {
   @Element() el: HTMLElement;
+
+  /**
+   * name of the modal - needed to call methods
+   */
   @Prop() name: string;
+
+  /**
+   * should the modal be closed on backdrop click
+   */
   @Prop() closeOnClick: boolean = true;
+
+  /**
+   * display a close button in the top right corner
+   */
   @Prop() topRightClose: boolean = false;
+
+  /**
+   * (DESKTOP only) should the modal be moveable by dragging the header
+   */
   @Prop() moveable: boolean = true;
+
+  /**
+   * (DESKTOP only) reset the modal position to the center of the screen
+   */
   @Prop() resetPosition: boolean = true;
+
+  /**
+   * (DESKTOP only) should the modal be resizable
+   */
   @Prop() resizeable: boolean = true;
+
+  /**
+   * autoset mode for mobile or desktop
+   */
   @Prop({ reflect: true }) mode: 'desktop' | 'mobile' = 'desktop';
+
+  /**
+   * (DESKTOP only) resizable min width
+   */
   @Prop() minWidth: string = 'auto';
+
+  /**
+   * (DESKTOP only) resizable min height
+   */
   @Prop() minHeight: string = 'auto';
+
+  /**
+   * (DESKTOP only) resizable max width
+   */
   @Prop() maxHeight: string = 'auto';
+
+  /**
+   * (DESKTOP only) resizable max height
+   */
   @Prop() maxWidth: string = 'auto';
-  @State() isOpen: boolean = false;
-  @State() params: any;
-  @Event() beforeOpen: EventEmitter;
+
+  /**
+   * event with given params
+   */
+  @Event() beforeOpen: EventEmitter<any>;
+
   @Listen('show-modal', { target: 'body' }) showModalHandler(e: any) {
     const { name, params } = e.detail;
     this.beforeOpen.emit(params);
@@ -40,6 +90,10 @@ export class UModal {
   @Listen('beforeOpen') setParams(params: any) {
     this.params = params.detail;
   }
+
+  /**
+   * method to open the modal
+   */
   @Method()
   async showModal(name: string): Promise<void> {
     if (name === this.name) {
@@ -47,6 +101,10 @@ export class UModal {
       document.body.style.overflow = 'hidden';
     }
   }
+
+  /**
+   * method to close the modal
+   */
   @Method()
   async closeModal(name: string): Promise<void> {
     if (name === this.name) {
@@ -55,6 +113,9 @@ export class UModal {
     }
     if (this.resetPosition) this.initPosition();
   }
+
+  @State() isOpen: boolean = false;
+  @State() params: any;
 
   private async initPosition() {
     const modal = this.node;
@@ -115,11 +176,11 @@ export class UModal {
         onPointerUp={() => this.mouseUp()}
         onClick={e => e.preventDefault()}
       >
-        {this.topRightClose ? (
+        {this.topRightClose && (
           <button class="close backdrop__close" onClick={this.handleCloseClick}>
             &times;
           </button>
-        ) : null}
+        )}
         <div
           class={{
             modal: true,
