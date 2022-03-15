@@ -51,7 +51,7 @@ export const config: Config = {
           const state = getDocTags(c, 'state', '🔵')
           const storyPath = c.filePath.split('/').slice(0, -1).join('/');
           stat(`${storyPath}/${c.tag}.stories.tsx`, (_error, file) => {
-            if (file.isFile()) return
+            if (!file) return
             writeFile(`${storyPath}/${c.tag}.stories.tsx`, storyTemplate(name, c.tag, c.props));
           })
           const path = './src/components/' + c.tag
