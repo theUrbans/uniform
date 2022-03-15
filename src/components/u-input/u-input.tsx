@@ -30,7 +30,7 @@ export class UInput implements ComponentInterface {
    * text of label
    * The label replace the placeholder
    */
-  @Prop() label: string;
+  @Prop() label: string = 'Label';
 
   /**
    * size of the input
