@@ -2,7 +2,7 @@ import { Component, h, Prop, State, Element } from '@stencil/core';
 
 /**
  * @name Tooltip
- * @state 🟡
+ * @state 🟢
  * @description This component allows you to display a tooltip.
  * @slot default - element which receives the tooltip
  * @slot content - (optional) content of the tooltip -> alternative to text, content prop must be used
