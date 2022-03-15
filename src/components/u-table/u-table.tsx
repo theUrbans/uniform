@@ -1,5 +1,4 @@
 import { Component, Host, h, Prop, State, Event, EventEmitter, Method, Element, Watch } from '@stencil/core';
-
 export interface HeadOptions {
   field: string;
   label: string;
@@ -9,6 +8,11 @@ export interface HeadOptions {
   bgcolor?: (row: any) => string;
   fontcolor?: (row: any) => string;
 }
+
+/**
+ * @name Table
+ * @state 🟡
+ */
 @Component({
   tag: 'u-table',
   styleUrl: 'u-table.css',
@@ -17,7 +21,7 @@ export interface HeadOptions {
 export class UTable {
   @Element() el: HTMLElement;
   @Prop() resizeable: boolean = false;
-  @Prop() selectable: boolean = false;
+  @Prop() selectable: boolean = true;
   @Prop() fixedHeader: boolean = true;
   @Prop() observe: boolean = false;
   @Prop() heading: Array<HeadOptions> = [
