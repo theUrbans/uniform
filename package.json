@@ -24,7 +24,7 @@
   ],
   "scripts": {
     "dev": "run-p dev:stencil storybook",
-    "dev:stencil": "stencil build --watch",
+    "dev:stencil": "stencil build --dev --watch --serve",
     "build": "stencil build",
     "build:docs": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
