@@ -1,10 +1,10 @@
 import { Component, h } from '@stencil/core';
+
 /**
  * @name Desktop Layout
  * @state 🟡
  * @description default Desktop Layout - with a sidebar and a main content area
  */
-
 @Component({
   tag: 'u-desktoplayout',
   styleUrl: 'u-desktoplayout.css',
