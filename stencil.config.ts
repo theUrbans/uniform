@@ -38,6 +38,10 @@ export const config: Config = {
       file: './docs/components.json'
     },
     {
+      type: 'www',
+      serviceWorker: null, // disable service workers
+    },
+    {
       type: 'docs-custom',
       generator: (docs: JsonDocs) => {
         writeFile('./readme.md', `# UI Library for [Hoer GmbH](https://hoer-electronic.de/en/)\n\nFor usage with frameworks please refer to official [StencilJS Documentation](https://stenciljs.com/docs/overview).\n- 🟢 ready (feature complete for now)\n- 🟡 beta (changes possible, not feature complete)\n- 🔴 not ready (unstyled / no functions)\n- 🔵 planned (created, but default files)\n\n## Component overview\n\n|Name|Component|Description|State|\n|---|---|---|---|\n`);
