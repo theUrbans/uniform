@@ -13,9 +13,6 @@
 .container input {
   @apply absolute opacity-0 w-0 h-0;
 }
-/* .label {
-  @apply;
-} */
 .checkmark {
   @apply bg-gray-200 border-solid border-blue-gray-400 hover:bg-gray-300 absolute left-0 top-0;
 }
