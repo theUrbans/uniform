@@ -41,7 +41,7 @@ export class USelect implements ComponentInterface {
   /**
    * the value of the input
    */
-  @State() value: string | number | null = '';
+  @Prop({ mutable: true }) value: string | number | null = '';
   @Watch('value')
   valueChanged() {
     this.uChange.emit(this.value);
