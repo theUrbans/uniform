@@ -348,18 +348,57 @@ export namespace Components {
         "sideWidth": string;
     }
     interface UModal {
+        /**
+          * method to close the modal
+         */
         "closeModal": (name: string) => Promise<void>;
+        /**
+          * should the modal be closed on backdrop click
+         */
         "closeOnClick": boolean;
+        /**
+          * (DESKTOP only) resizable max width
+         */
         "maxHeight": string;
+        /**
+          * (DESKTOP only) resizable max height
+         */
         "maxWidth": string;
+        /**
+          * (DESKTOP only) resizable min height
+         */
         "minHeight": string;
+        /**
+          * (DESKTOP only) resizable min width
+         */
         "minWidth": string;
+        /**
+          * autoset mode for mobile or desktop
+         */
         "mode": 'desktop' | 'mobile';
+        /**
+          * (DESKTOP only) should the modal be moveable by dragging the header
+         */
         "moveable": boolean;
+        /**
+          * name of the modal - needed to call methods
+         */
         "name": string;
+        /**
+          * (DESKTOP only) reset the modal position to the center of the screen
+         */
         "resetPosition": boolean;
+        /**
+          * (DESKTOP only) should the modal be resizable
+         */
         "resizeable": boolean;
+        /**
+          * method to open the modal
+         */
         "showModal": (name: string) => Promise<void>;
+        /**
+          * display a close button in the top right corner
+         */
         "topRightClose": boolean;
     }
     interface UMonthpicker {
@@ -1425,17 +1464,53 @@ declare namespace LocalJSX {
         "sideWidth"?: string;
     }
     interface UModal {
+        /**
+          * should the modal be closed on backdrop click
+         */
         "closeOnClick"?: boolean;
+        /**
+          * (DESKTOP only) resizable max width
+         */
         "maxHeight"?: string;
+        /**
+          * (DESKTOP only) resizable max height
+         */
         "maxWidth"?: string;
+        /**
+          * (DESKTOP only) resizable min height
+         */
         "minHeight"?: string;
+        /**
+          * (DESKTOP only) resizable min width
+         */
         "minWidth"?: string;
+        /**
+          * autoset mode for mobile or desktop
+         */
         "mode"?: 'desktop' | 'mobile';
+        /**
+          * (DESKTOP only) should the modal be moveable by dragging the header
+         */
         "moveable"?: boolean;
+        /**
+          * name of the modal - needed to call methods
+         */
         "name"?: string;
+        /**
+          * event with given params
+         */
         "onBeforeOpen"?: (event: CustomEvent<any>) => void;
+        /**
+          * (DESKTOP only) reset the modal position to the center of the screen
+         */
         "resetPosition"?: boolean;
+        /**
+          * (DESKTOP only) should the modal be resizable
+         */
         "resizeable"?: boolean;
+        /**
+          * display a close button in the top right corner
+         */
         "topRightClose"?: boolean;
     }
     interface UMonthpicker {
