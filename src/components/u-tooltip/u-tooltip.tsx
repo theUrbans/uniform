@@ -64,7 +64,7 @@ export class UTooltip {
     if (this.trigger === 'click') return;
     this.visible = false;
   };
-  private handleClick = (e: MouseEvent) => {
+  private handleClick = () => {
     if (this.trigger === 'hover') return;
     this.calcPos();
     this.visible = !this.visible;
