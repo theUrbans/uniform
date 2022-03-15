@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Method, Event, EventEmitter, State } from '@stencil/core';
+
 /**
  * @name Barcode Scanner
  * @state 🟡
@@ -10,17 +11,45 @@ import { Component, Host, h, Prop, Method, Event, EventEmitter, State } from '@s
   shadow: true,
 })
 export class UBarcodescanner {
-  @Prop() library: any;
   @State() scannerActive: boolean = false;
-  @Event() uScan: EventEmitter;
-  @Event() uStartScan: EventEmitter;
-  @Event() uStopScan: EventEmitter;
+
+  /**
+   * [used library](https://github.com/capacitor-community/barcode-scanner)
+   */
+  @Prop() library: any;
+
+  /**
+   * return scanned element
+   */
+  @Event() uScan: EventEmitter<string>;
+
+  /**
+   * event when scan is started
+   */
+  @Event() uStartScan: EventEmitter<void>;
+
+  /**
+   * event when scan is stopped
+   */
+  @Event() uStopScan: EventEmitter<void>;
+
+  /**
+   * force get camera permission
+   */
   @Method() async getPermission() {
     await this.library.checkPermission({ force: true });
   }
+
+  /**
+   * prepare camera for faster startup
+   */
   @Method() async prepareCamera() {
     this.library.prepare();
   }
+
+  /**
+   * begin scanning
+   */
   @Method() async startScanner() {
     document.querySelector('body').style.visibility = 'hidden';
     document.getElementById('cancelscan').style.visibility = 'visible';
@@ -33,6 +62,10 @@ export class UBarcodescanner {
       this.uScan.emit(result.content);
     }
   }
+
+  /**
+   * cancel scanning
+   */
   @Method() async stopScanner() {
     document.querySelector('body').style.visibility = 'visible';
     this.uStopScan.emit();
