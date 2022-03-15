@@ -8,6 +8,9 @@ export interface MenuItem {
   disabled?: boolean;
 }
 
+/**
+ * @name Menu Item
+ */
 @Component({
   tag: 'u-menuitem',
   styleUrl: 'u-menuitem.css',
