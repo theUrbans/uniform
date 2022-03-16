@@ -15,6 +15,8 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 |[Breadcrumb](./src/components/u-breadcrumb)|u-breadcrumb|Breadcrumb navigation component|🟡|
 |[Button](./src/components/u-button)|u-button|*no description provided*|🟢|
 |[Card](./src/components/u-card)|u-card|*no description provided*|🟡|
+|[u-cardbody](./src/components/u-cardbody)|u-cardbody|*no description provided*|🔵|
+|[u-cardheader](./src/components/u-cardheader)|u-cardheader|*no description provided*|🔵|
 |[Card Select](./src/components/u-cardselect)|u-cardselect|*no description provided*|🔵|
 |[Checkbox](./src/components/u-checkbox)|u-checkbox|*no description provided*|🟡|
 |[Chip](./src/components/u-chip)|u-chip|show status of something|🟢|
@@ -69,6 +71,6 @@ For usage with frameworks please refer to official [StencilJS Documentation](htt
 |[Textarea](./src/components/u-textarea)|u-textarea|*no description provided*|🟡|
 |[Time picker](./src/components/u-timepicker)|u-timepicker|*no description provided*|🔵|
 |[Toggle](./src/components/u-toggle)|u-toggle|*no description provided*|🔵|
-|[Tooltip](./src/components/u-tooltip)|u-tooltip|This component allows you to display a tooltip.|🟡|
+|[Tooltip](./src/components/u-tooltip)|u-tooltip|This component allows you to display a tooltip.|🟢|
 |[Touch gesture](./src/components/u-touch)|u-touch|This component allows you to detect gestures|🔵|
 |[Week Picker](./src/components/u-weekpicker)|u-weekpicker|*no description provided*|🔵|

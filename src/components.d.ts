@@ -78,8 +78,41 @@ export namespace Components {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface UCard {
+        /**
+          * color of card: string, e.g. '#000', 'black'. Default: '#9EBADE' (lightblue)
+         */
         "color": string;
-        "img": boolean;
+        /**
+          * width of card: string, e.g. '12px', '20rem'. Default: '24rem'
+         */
+        "width": string;
+    }
+    interface UCardbody {
+    }
+    interface UCardfooter {
+        /**
+          * footer overlaps the cardbody and will have see through background box
+         */
+        "overlap": boolean;
+    }
+    interface UCardheader {
+        /**
+          * header overlaps the cardbody and will have see through background box
+         */
+        "overlap": boolean;
+    }
+    interface UCardimage {
+        /**
+          * height of picture: string, e.g. '400px'
+         */
+        "height": string;
+        /**
+          * src: path of image source
+         */
+        "src": string;
+        /**
+          * width of picture: string, e.g. '400px'
+         */
         "width": string;
     }
     interface UCardselect {
@@ -653,6 +686,24 @@ export namespace Components {
     }
     interface UTerms {
     }
+    interface UText {
+        /**
+          * font color: string, e.g. '#e1e1e1', 'lightblue'. Default is '#fff' (white).
+         */
+        "color": string;
+        /**
+          * font size: string, e.g. '12px', '1rem'. Default is '1rem'.
+         */
+        "size": string;
+        /**
+          * text-transfrom: string, e.g. 'uppercase', 'lowercase'.
+         */
+        "transform": string;
+        /**
+          * font weight: string, e.g. 'bold'. Default is 'normal'.
+         */
+        "weight": string;
+    }
     interface UTextarea {
         "cols": number;
         "design": 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
@@ -726,6 +777,30 @@ declare global {
     var HTMLUCardElement: {
         prototype: HTMLUCardElement;
         new (): HTMLUCardElement;
+    };
+    interface HTMLUCardbodyElement extends Components.UCardbody, HTMLStencilElement {
+    }
+    var HTMLUCardbodyElement: {
+        prototype: HTMLUCardbodyElement;
+        new (): HTMLUCardbodyElement;
+    };
+    interface HTMLUCardfooterElement extends Components.UCardfooter, HTMLStencilElement {
+    }
+    var HTMLUCardfooterElement: {
+        prototype: HTMLUCardfooterElement;
+        new (): HTMLUCardfooterElement;
+    };
+    interface HTMLUCardheaderElement extends Components.UCardheader, HTMLStencilElement {
+    }
+    var HTMLUCardheaderElement: {
+        prototype: HTMLUCardheaderElement;
+        new (): HTMLUCardheaderElement;
+    };
+    interface HTMLUCardimageElement extends Components.UCardimage, HTMLStencilElement {
+    }
+    var HTMLUCardimageElement: {
+        prototype: HTMLUCardimageElement;
+        new (): HTMLUCardimageElement;
     };
     interface HTMLUCardselectElement extends Components.UCardselect, HTMLStencilElement {
     }
@@ -1033,6 +1108,12 @@ declare global {
         prototype: HTMLUTermsElement;
         new (): HTMLUTermsElement;
     };
+    interface HTMLUTextElement extends Components.UText, HTMLStencilElement {
+    }
+    var HTMLUTextElement: {
+        prototype: HTMLUTextElement;
+        new (): HTMLUTextElement;
+    };
     interface HTMLUTextareaElement extends Components.UTextarea, HTMLStencilElement {
     }
     var HTMLUTextareaElement: {
@@ -1075,6 +1156,10 @@ declare global {
         "u-breadcrumb": HTMLUBreadcrumbElement;
         "u-button": HTMLUButtonElement;
         "u-card": HTMLUCardElement;
+        "u-cardbody": HTMLUCardbodyElement;
+        "u-cardfooter": HTMLUCardfooterElement;
+        "u-cardheader": HTMLUCardheaderElement;
+        "u-cardimage": HTMLUCardimageElement;
         "u-cardselect": HTMLUCardselectElement;
         "u-checkbox": HTMLUCheckboxElement;
         "u-chip": HTMLUChipElement;
@@ -1126,6 +1211,7 @@ declare global {
         "u-tablerow": HTMLUTablerowElement;
         "u-tabs": HTMLUTabsElement;
         "u-terms": HTMLUTermsElement;
+        "u-text": HTMLUTextElement;
         "u-textarea": HTMLUTextareaElement;
         "u-timepicker": HTMLUTimepickerElement;
         "u-toggle": HTMLUToggleElement;
@@ -1197,8 +1283,41 @@ declare namespace LocalJSX {
         "type"?: 'button' | 'submit' | 'reset';
     }
     interface UCard {
+        /**
+          * color of card: string, e.g. '#000', 'black'. Default: '#9EBADE' (lightblue)
+         */
         "color"?: string;
-        "img"?: boolean;
+        /**
+          * width of card: string, e.g. '12px', '20rem'. Default: '24rem'
+         */
+        "width"?: string;
+    }
+    interface UCardbody {
+    }
+    interface UCardfooter {
+        /**
+          * footer overlaps the cardbody and will have see through background box
+         */
+        "overlap"?: boolean;
+    }
+    interface UCardheader {
+        /**
+          * header overlaps the cardbody and will have see through background box
+         */
+        "overlap"?: boolean;
+    }
+    interface UCardimage {
+        /**
+          * height of picture: string, e.g. '400px'
+         */
+        "height"?: string;
+        /**
+          * src: path of image source
+         */
+        "src"?: string;
+        /**
+          * width of picture: string, e.g. '400px'
+         */
         "width"?: string;
     }
     interface UCardselect {
@@ -1810,6 +1929,24 @@ declare namespace LocalJSX {
     }
     interface UTerms {
     }
+    interface UText {
+        /**
+          * font color: string, e.g. '#e1e1e1', 'lightblue'. Default is '#fff' (white).
+         */
+        "color"?: string;
+        /**
+          * font size: string, e.g. '12px', '1rem'. Default is '1rem'.
+         */
+        "size"?: string;
+        /**
+          * text-transfrom: string, e.g. 'uppercase', 'lowercase'.
+         */
+        "transform"?: string;
+        /**
+          * font weight: string, e.g. 'bold'. Default is 'normal'.
+         */
+        "weight"?: string;
+    }
     interface UTextarea {
         "cols"?: number;
         "design"?: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary';
@@ -1859,6 +1996,10 @@ declare namespace LocalJSX {
         "u-breadcrumb": UBreadcrumb;
         "u-button": UButton;
         "u-card": UCard;
+        "u-cardbody": UCardbody;
+        "u-cardfooter": UCardfooter;
+        "u-cardheader": UCardheader;
+        "u-cardimage": UCardimage;
         "u-cardselect": UCardselect;
         "u-checkbox": UCheckbox;
         "u-chip": UChip;
@@ -1910,6 +2051,7 @@ declare namespace LocalJSX {
         "u-tablerow": UTablerow;
         "u-tabs": UTabs;
         "u-terms": UTerms;
+        "u-text": UText;
         "u-textarea": UTextarea;
         "u-timepicker": UTimepicker;
         "u-toggle": UToggle;
@@ -1927,6 +2069,10 @@ declare module "@stencil/core" {
             "u-breadcrumb": LocalJSX.UBreadcrumb & JSXBase.HTMLAttributes<HTMLUBreadcrumbElement>;
             "u-button": LocalJSX.UButton & JSXBase.HTMLAttributes<HTMLUButtonElement>;
             "u-card": LocalJSX.UCard & JSXBase.HTMLAttributes<HTMLUCardElement>;
+            "u-cardbody": LocalJSX.UCardbody & JSXBase.HTMLAttributes<HTMLUCardbodyElement>;
+            "u-cardfooter": LocalJSX.UCardfooter & JSXBase.HTMLAttributes<HTMLUCardfooterElement>;
+            "u-cardheader": LocalJSX.UCardheader & JSXBase.HTMLAttributes<HTMLUCardheaderElement>;
+            "u-cardimage": LocalJSX.UCardimage & JSXBase.HTMLAttributes<HTMLUCardimageElement>;
             "u-cardselect": LocalJSX.UCardselect & JSXBase.HTMLAttributes<HTMLUCardselectElement>;
             "u-checkbox": LocalJSX.UCheckbox & JSXBase.HTMLAttributes<HTMLUCheckboxElement>;
             "u-chip": LocalJSX.UChip & JSXBase.HTMLAttributes<HTMLUChipElement>;
@@ -1978,6 +2124,7 @@ declare module "@stencil/core" {
             "u-tablerow": LocalJSX.UTablerow & JSXBase.HTMLAttributes<HTMLUTablerowElement>;
             "u-tabs": LocalJSX.UTabs & JSXBase.HTMLAttributes<HTMLUTabsElement>;
             "u-terms": LocalJSX.UTerms & JSXBase.HTMLAttributes<HTMLUTermsElement>;
+            "u-text": LocalJSX.UText & JSXBase.HTMLAttributes<HTMLUTextElement>;
             "u-textarea": LocalJSX.UTextarea & JSXBase.HTMLAttributes<HTMLUTextareaElement>;
             "u-timepicker": LocalJSX.UTimepicker & JSXBase.HTMLAttributes<HTMLUTimepickerElement>;
             "u-toggle": LocalJSX.UToggle & JSXBase.HTMLAttributes<HTMLUToggleElement>;

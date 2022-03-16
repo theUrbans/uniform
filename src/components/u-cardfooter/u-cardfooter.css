@@ -1,0 +1,8 @@
+div.overlap {
+  @apply absolute z-1 bottom-0 h-auto w-100 bg-black opacity-50 border-t block;
+  border-top: solid black 1px;
+}
+
+div {
+  @apply px-2;
+}
