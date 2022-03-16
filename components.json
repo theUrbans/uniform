@@ -1,0 +1,6582 @@
+{
+  "timestamp": "2022-03-16T12:18:34",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.14.0",
+    "typescriptVersion": "4.5.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/u-alert/u-alert.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-alert",
+      "readme": "# w-alert\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Alert"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "closeText",
+          "type": "string",
+          "mutable": false,
+          "attr": "close-text",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'close'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'u-alert-default'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "show-alert",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-modal",
+        "u-paragraph",
+        "u-button"
+      ],
+      "dependencyGraph": {
+        "u-alert": [
+          "u-modal",
+          "u-paragraph",
+          "u-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-barcodescanner/u-barcodescanner.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-barcodescanner",
+      "readme": "# u-barcodescanner\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Barcode Scanner"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "This component allows you to scan barcodes and QR codes. It is based on the [Capicitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "library",
+          "type": "any",
+          "mutable": false,
+          "attr": "library",
+          "reflectToAttr": false,
+          "docs": "[used library](https://github.com/capacitor-community/barcode-scanner)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "getPermission",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "getPermission() => Promise<void>",
+          "parameters": [],
+          "docs": "force get camera permission",
+          "docsTags": []
+        },
+        {
+          "name": "prepareCamera",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "prepareCamera() => Promise<void>",
+          "parameters": [],
+          "docs": "prepare camera for faster startup",
+          "docsTags": []
+        },
+        {
+          "name": "startScanner",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "startScanner() => Promise<void>",
+          "parameters": [],
+          "docs": "begin scanning",
+          "docsTags": []
+        },
+        {
+          "name": "stopScanner",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "stopScanner() => Promise<void>",
+          "parameters": [],
+          "docs": "cancel scanning",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uScan",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "return scanned element",
+          "docsTags": []
+        },
+        {
+          "event": "uStartScan",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "event when scan is started",
+          "docsTags": []
+        },
+        {
+          "event": "uStopScan",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "event when scan is stopped",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-button"
+      ],
+      "dependencyGraph": {
+        "u-barcodescanner": [
+          "u-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-breadcrumb/u-breadcrumb.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-breadcrumb",
+      "readme": "# u-breadcrumb\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Breadcrumb"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "Breadcrumb navigation component"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "items",
+          "type": "BreadCrumbItem[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[{ name: 'test1', link: '/test' }, { name: 'test2' }, { name: 'test3' }]",
+          "values": [
+            {
+              "type": "BreadCrumbItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "seperator",
+          "type": "string",
+          "mutable": false,
+          "attr": "seperator",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uBreadcrumbClick",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-link"
+      ],
+      "dependencyGraph": {
+        "u-breadcrumb": [
+          "u-link"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-button/u-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-button",
+      "readme": "# w-button\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Button"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "design",
+          "type": "\"error\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "color design",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "show disabled state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "flat",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "flat",
+          "reflectToAttr": false,
+          "docs": "show only text",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "outline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outline",
+          "reflectToAttr": false,
+          "docs": "change design, only show outlines",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "rounded",
+          "type": "\"all\" | \"bottom\" | \"left\" | \"none\" | \"right\" | \"top\"",
+          "mutable": false,
+          "attr": "rounded",
+          "reflectToAttr": false,
+          "docs": "enable border radius",
+          "docsTags": [],
+          "default": "'all'",
+          "values": [
+            {
+              "value": "all",
+              "type": "string"
+            },
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "button size",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "set button type",
+          "docsTags": [],
+          "default": "'button'",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit wClick on button click",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-alert",
+        "u-barcodescanner",
+        "u-dialog",
+        "u-filepicker",
+        "u-form",
+        "u-pagination",
+        "u-stepper"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-alert": [
+          "u-button"
+        ],
+        "u-barcodescanner": [
+          "u-button"
+        ],
+        "u-dialog": [
+          "u-button"
+        ],
+        "u-filepicker": [
+          "u-button"
+        ],
+        "u-form": [
+          "u-button"
+        ],
+        "u-pagination": [
+          "u-button"
+        ],
+        "u-stepper": [
+          "u-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-card/u-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-card",
+      "readme": "# u-card\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Card"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'#9EBADE'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "img",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "img",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'24rem'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-cardselect/u-cardselect.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-cardselect",
+      "readme": "# w-cardselect\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Card Select"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-checkbox/u-checkbox.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-checkbox",
+      "readme": "# w-checkbox\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Checkbox"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "tristate",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "tristate",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "set",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "set(checked: boolean) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uChange",
+          "detail": "boolean",
+          "bubbles": false,
+          "cancelable": true,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-select",
+        "u-table",
+        "u-tablecell"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-select": [
+          "u-checkbox"
+        ],
+        "u-table": [
+          "u-checkbox"
+        ],
+        "u-tablecell": [
+          "u-checkbox"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-chip/u-chip.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-chip",
+      "readme": "# w-chip\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Chip"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        },
+        {
+          "name": "description",
+          "text": "show status of something"
+        },
+        {
+          "name": "slot",
+          "text": "default - text content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "bold",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "bold",
+          "reflectToAttr": false,
+          "docs": "set chip text bold",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "clickable",
+          "reflectToAttr": false,
+          "docs": "enable wClick event on chip",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "design",
+          "type": "\"amber\" | \"cyan\" | \"emerald\" | \"error\" | \"fuchsia\" | \"indigo\" | \"lime\" | \"pink\" | \"primary\" | \"red\" | \"secondary\" | \"slate\" | \"stone\" | \"success\" | \"teal\" | \"warning\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "color of the chip",
+          "docsTags": [],
+          "default": "'stone'",
+          "values": [
+            {
+              "value": "amber",
+              "type": "string"
+            },
+            {
+              "value": "cyan",
+              "type": "string"
+            },
+            {
+              "value": "emerald",
+              "type": "string"
+            },
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "fuchsia",
+              "type": "string"
+            },
+            {
+              "value": "indigo",
+              "type": "string"
+            },
+            {
+              "value": "lime",
+              "type": "string"
+            },
+            {
+              "value": "pink",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "red",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "slate",
+              "type": "string"
+            },
+            {
+              "value": "stone",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "teal",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "(optional) label of the chip",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "size of the chip",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit wClick event on chip click",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "text content"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-col/u-col.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-col",
+      "readme": "# w-col\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Column"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        },
+        {
+          "name": "description",
+          "text": "Flexbox column"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "align",
+          "type": "\"center\" | \"end\" | \"space-around\" | \"space-between\" | \"space-evenly\" | \"start\"",
+          "mutable": false,
+          "attr": "align",
+          "reflectToAttr": false,
+          "docs": "flex align-items: start | center | end | space-between | space-around | space-evenly",
+          "docsTags": [],
+          "default": "'start'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "space-around",
+              "type": "string"
+            },
+            {
+              "value": "space-between",
+              "type": "string"
+            },
+            {
+              "value": "space-evenly",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "area",
+          "type": "string",
+          "mutable": false,
+          "attr": "area",
+          "reflectToAttr": false,
+          "docs": "use with w-grid to set area",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "gap",
+          "type": "string",
+          "mutable": false,
+          "attr": "gap",
+          "reflectToAttr": false,
+          "docs": "flex gap: string, e.g. '1rem', '1px'",
+          "docsTags": [],
+          "default": "'1em'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "justify",
+          "type": "\"center\" | \"end\" | \"start\" | \"stretch\"",
+          "mutable": false,
+          "attr": "justify",
+          "reflectToAttr": false,
+          "docs": "flex justify-content: flex-start | flex-end | center | baseline | stretch",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "value": "stretch",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "padding",
+          "type": "string",
+          "mutable": false,
+          "attr": "padding",
+          "reflectToAttr": false,
+          "docs": "padding bottom and top: string, e.g. '1rem', '1px'",
+          "docsTags": [],
+          "default": "'1em'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "used with w-grid, set size based on number of columns on w-grid (default is 12)",
+          "docsTags": [],
+          "default": "12",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "wrap",
+          "type": "\"nowrap\" | \"wrap\" | \"wrap-reverse\"",
+          "mutable": false,
+          "attr": "wrap",
+          "reflectToAttr": false,
+          "docs": "flex wrap: nowrap | wrap | wrap-reverse",
+          "docsTags": [],
+          "default": "'wrap'",
+          "values": [
+            {
+              "value": "nowrap",
+              "type": "string"
+            },
+            {
+              "value": "wrap",
+              "type": "string"
+            },
+            {
+              "value": "wrap-reverse",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-filepicker"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-filepicker": [
+          "u-col"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-colorpicker/u-colorpicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-colorpicker",
+      "readme": "# u-colorpicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Color Picker"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-datepicker/u-datepicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-datepicker",
+      "readme": "# u-datepicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Date Picker"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-datetimepicker/u-datetimepicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-datetimepicker",
+      "readme": "# u-datetimepicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Date Time Picker"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-desktoplayout/u-desktoplayout.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-desktoplayout",
+      "readme": "# u-desktoplayout\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Desktop Layout"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "default Desktop Layout - with a sidebar and a main content area"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-layout"
+      ],
+      "dependencies": [
+        "u-grid"
+      ],
+      "dependencyGraph": {
+        "u-desktoplayout": [
+          "u-grid"
+        ],
+        "u-layout": [
+          "u-desktoplayout"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-dialog/u-dialog.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-dialog",
+      "readme": "# w-dialog\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Dialog"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "pre configured Modal"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'u-dialog-default'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "open-dialog",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-modal",
+        "u-button"
+      ],
+      "dependencyGraph": {
+        "u-dialog": [
+          "u-modal",
+          "u-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-editor/u-editor.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-editor",
+      "readme": "# u-editor\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Editor"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "tools",
+          "type": "EditorTools",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "EditorTools"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-textarea"
+      ],
+      "dependencyGraph": {
+        "u-editor": [
+          "u-textarea"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-filepicker/u-filepicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-filepicker",
+      "readme": "# w-filepicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "File Picker"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "pick single or multiple files"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "fileEnding",
+          "type": "string",
+          "mutable": false,
+          "attr": "file-ending",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'*'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "filePlural",
+          "type": "string",
+          "mutable": false,
+          "attr": "file-plural",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'files'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Choose file'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "noFile",
+          "type": "string",
+          "mutable": false,
+          "attr": "no-file",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'No file selected'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'small'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uSelect",
+          "detail": "FileList",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-group",
+        "u-button",
+        "u-col"
+      ],
+      "dependencyGraph": {
+        "u-filepicker": [
+          "u-group",
+          "u-button",
+          "u-col"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-floatingbutton/u-floatingbutton.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-floatingbutton",
+      "readme": "# u-floatingbutton\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Floating Button"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "Button floating at the bottom of the screen"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'lightpink'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "position",
+          "type": "\"bottom-center\" | \"bottom-left\" | \"bottom-right\"",
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'bottom-right'",
+          "values": [
+            {
+              "value": "bottom-center",
+              "type": "string"
+            },
+            {
+              "value": "bottom-left",
+              "type": "string"
+            },
+            {
+              "value": "bottom-right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-floatingmenu/u-floatingmenu.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-floatingmenu",
+      "readme": "# u-floatingmenu\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Floating Menu"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "Menu floating at initial position"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "fixed",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "fixed",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "menu",
+          "type": "MenuItem[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\n    { name: '+ New' },\n    { divider: true },\n    { name: 'Edit', subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] } },\n    { name: 'Copy' },\n    { divider: true },\n    {\n      name: 'Open Recent',\n      subMenu: {\n        items: [{ name: 'HTML', subMenu: { items: [{ name: 'index.html' }, { name: 'about.html' }, { name: 'impressum.html' }] } }, { name: 'Item 2' }],\n      },\n    },\n  ]",
+          "values": [
+            {
+              "type": "MenuItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-menuitem"
+      ],
+      "dependencyGraph": {
+        "u-floatingmenu": [
+          "u-menuitem"
+        ],
+        "u-menuitem": [
+          "u-submenu"
+        ],
+        "u-submenu": [
+          "u-menuitem"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-form/u-form.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-form",
+      "readme": "# w-form\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Form Generator"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "Generate a form with fields and buttons"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "buttons",
+          "type": "FormButton[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "FormButton[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fields",
+          "type": "FormField[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "FormField[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "string",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uNextStep",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "uSubmit",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-stepper",
+        "u-grid",
+        "u-row",
+        "u-button"
+      ],
+      "dependencyGraph": {
+        "u-form": [
+          "u-stepper",
+          "u-grid",
+          "u-row",
+          "u-button"
+        ],
+        "u-stepper": [
+          "u-row",
+          "u-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-grid/u-grid.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-grid",
+      "readme": "# w-grid\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Grid"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "area",
+          "type": "string[][]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "optional naming of grid areas",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[][]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "columns",
+          "type": "number | string[]",
+          "mutable": false,
+          "attr": "columns",
+          "reflectToAttr": false,
+          "docs": "number of columns or array of column widths",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "gap",
+          "type": "string",
+          "mutable": false,
+          "attr": "gap",
+          "reflectToAttr": false,
+          "docs": "gap size",
+          "docsTags": [],
+          "default": "'0'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "height of grid",
+          "docsTags": [],
+          "default": "'max-content'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "rows",
+          "type": "number | string[]",
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "number of rows or array of row heights",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "width of grid",
+          "docsTags": [],
+          "default": "'max-content'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-desktoplayout",
+        "u-form"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-desktoplayout": [
+          "u-grid"
+        ],
+        "u-form": [
+          "u-grid"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-group/u-group.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-group",
+      "readme": "# w-group\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Group"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "This component allows you to display a group of elements."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "direction",
+          "type": "\"column\" | \"row\"",
+          "mutable": false,
+          "attr": "direction",
+          "reflectToAttr": false,
+          "docs": "direction of the group",
+          "docsTags": [],
+          "default": "'row'",
+          "values": [
+            {
+              "value": "column",
+              "type": "string"
+            },
+            {
+              "value": "row",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-filepicker",
+        "u-pagination"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-filepicker": [
+          "u-group"
+        ],
+        "u-pagination": [
+          "u-group"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-headline/u-headline.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-headline",
+      "readme": "# u-headline\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Headline"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "level",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\"",
+          "mutable": false,
+          "attr": "level",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'h1'",
+          "values": [
+            {
+              "value": "h1",
+              "type": "string"
+            },
+            {
+              "value": "h2",
+              "type": "string"
+            },
+            {
+              "value": "h3",
+              "type": "string"
+            },
+            {
+              "value": "h4",
+              "type": "string"
+            },
+            {
+              "value": "h5",
+              "type": "string"
+            },
+            {
+              "value": "h6",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-icon/u-icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-icon",
+      "readme": "# w-icon\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Icon Wrapper"
+        },
+        {
+          "name": "description",
+          "text": "Wrapper for icons"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-input/u-input.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-input",
+      "readme": "# w-input\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Input"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "autoCapitalize",
+          "type": "\"characters\" | \"none\" | \"off\" | \"on\" | \"sentences\" | \"words\"",
+          "mutable": false,
+          "attr": "auto-capitalize",
+          "reflectToAttr": false,
+          "docs": "decide if autocapitalize should be enabled",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "characters",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            },
+            {
+              "value": "sentences",
+              "type": "string"
+            },
+            {
+              "value": "words",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autoComplete",
+          "type": "string",
+          "mutable": false,
+          "attr": "auto-complete",
+          "reflectToAttr": false,
+          "docs": "possible types:\r\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autoCorrect",
+          "type": "\"off\" | \"on\"",
+          "mutable": false,
+          "attr": "auto-correct",
+          "reflectToAttr": false,
+          "docs": "decide if autocorect should be enabled",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "borderStyle",
+          "type": "\"large\" | \"none\" | \"round\" | \"small\"",
+          "mutable": false,
+          "attr": "border-style",
+          "reflectToAttr": false,
+          "docs": "decide if input should have border radius",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "round",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "design",
+          "type": "\"error\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "select design\r\npossible values:\r\n- 'default', 'error', 'success', 'warning'",
+          "docsTags": [],
+          "default": "'secondary'",
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "decide if the input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "doFocus",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "do-focus",
+          "reflectToAttr": false,
+          "docs": "change this prop to true to focus the input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "errorMsg",
+          "type": "string",
+          "mutable": false,
+          "attr": "error-msg",
+          "reflectToAttr": false,
+          "docs": "show error message below the input",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inputType",
+          "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+          "mutable": false,
+          "attr": "input-type",
+          "reflectToAttr": false,
+          "docs": "type of the input",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "decimal",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "numeric",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "text of label\r\nThe label replace the placeholder",
+          "docsTags": [],
+          "default": "'Label'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "if input type == numeric -> max value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "if input type == numeric -> min value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "mutable": false,
+          "attr": "pattern",
+          "reflectToAttr": false,
+          "docs": "set the pattern for the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "decide if the input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "decide if input is required (for forms)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "showSlot",
+          "type": "\"both\" | \"left\" | \"right\"",
+          "mutable": false,
+          "attr": "show-slot",
+          "reflectToAttr": false,
+          "docs": "decide if (and which site) a slot should be rendered",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "size of the input",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "spellCheck",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "spell-check",
+          "reflectToAttr": false,
+          "docs": "decide if spellcheck should be enabled",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "string",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "if input type == numeric -> step value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "validate",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "validate",
+          "reflectToAttr": false,
+          "docs": "use function returning a boolean to validate the input -> if false, it displays error-msg",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "the value of the input",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setBlur",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setBlur() => Promise<void>",
+          "parameters": [],
+          "docs": "set blur on native input",
+          "docsTags": []
+        },
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "set focus on native input",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uBlur",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on blur",
+          "docsTags": []
+        },
+        {
+          "event": "uChange",
+          "detail": "number | string",
+          "bubbles": false,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on change",
+          "docsTags": []
+        },
+        {
+          "event": "uFocus",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on focus",
+          "docsTags": []
+        },
+        {
+          "event": "uInput",
+          "detail": "number | string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on input",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-item/u-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-item",
+      "readme": "# u-item\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Item"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-label/u-label.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-label",
+      "readme": "# u-label\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Label"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-layout/u-layout.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-layout",
+      "readme": "# u-layout\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Layout"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "layout which decides whether to use mobile or desktop layout"
+        },
+        {
+          "name": "slot",
+          "text": "menu - menu view"
+        },
+        {
+          "name": "slot",
+          "text": "main - main view"
+        },
+        {
+          "name": "slot",
+          "text": "option - option view"
+        }
+      ],
+      "usage": {
+        "nuxt": "```vue\r\n<template>\r\n  <u-layout>\r\n    <u-menu slot=\"menu\" />\r\n    <nuxt slot=\"main\" />\r\n  </u-layout>\r\n</template>\r\n```\r\n"
+      },
+      "props": [],
+      "methods": [
+        {
+          "name": "closeOption",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "closeOption() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "showOption",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "showOption() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "main",
+          "docs": "main view"
+        },
+        {
+          "name": "menu",
+          "docs": "menu view"
+        },
+        {
+          "name": "option",
+          "docs": "option view"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-mobilelayout",
+        "u-desktoplayout",
+        "u-modal"
+      ],
+      "dependencyGraph": {
+        "u-layout": [
+          "u-mobilelayout",
+          "u-desktoplayout",
+          "u-modal"
+        ],
+        "u-desktoplayout": [
+          "u-grid"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-link/u-link.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-link",
+      "readme": "# u-link\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Link"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "link",
+          "type": "string",
+          "mutable": false,
+          "attr": "link",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "secondary",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "secondary",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'self'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-breadcrumb"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-breadcrumb": [
+          "u-link"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-list/u-list.tsx",
+      "encapsulation": "none",
+      "tag": "u-list",
+      "readme": "# u-list\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "List"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-loader/u-loader.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-loader",
+      "readme": "# u-loader\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Loader"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-menu/u-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-menu",
+      "readme": "# w-menu\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Menu"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "axis",
+          "type": "\"x\" | \"y\"",
+          "mutable": false,
+          "attr": "axis",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'y'",
+          "values": [
+            {
+              "value": "x",
+              "type": "string"
+            },
+            {
+              "value": "y",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "items",
+          "type": "MenuItems[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\r\n    {\r\n      label: 'test1',\r\n      icon: (\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n    {\r\n      label: 'test2',\r\n      icon: (\r\n        <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\r\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\" />\r\n        </svg>\r\n      ),\r\n    },\r\n  ]",
+          "values": [
+            {
+              "type": "MenuItems[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "padding",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "padding",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"contentwidth\" | \"fullwidth\"",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'fullwidth'",
+          "values": [
+            {
+              "value": "contentwidth",
+              "type": "string"
+            },
+            {
+              "value": "fullwidth",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-menuitem/u-menuitem.tsx",
+      "encapsulation": "scoped",
+      "tag": "u-menuitem",
+      "readme": "# u-menuitem\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Menu Item"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "depthLevel",
+          "type": "number",
+          "mutable": false,
+          "attr": "depth-level",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "item",
+          "type": "MenuItem",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "MenuItem"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uItemSelect",
+          "detail": "MenuItem",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-floatingmenu",
+        "u-submenu"
+      ],
+      "dependencies": [
+        "u-submenu"
+      ],
+      "dependencyGraph": {
+        "u-menuitem": [
+          "u-submenu"
+        ],
+        "u-submenu": [
+          "u-menuitem"
+        ],
+        "u-floatingmenu": [
+          "u-menuitem"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-mobilelayout/u-mobilelayout.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-mobilelayout",
+      "readme": "# u-mobilelayout\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Mobile Layout"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "Discord-App like layout with 3 swipeable columns"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "showOptions",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "show-options",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "sideWidth",
+          "type": "string",
+          "mutable": false,
+          "attr": "side-width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'94%'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "activateOption",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "activateOption() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "disableOption",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "disableOption() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "showMain",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "showMain() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "showMenu",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "showMenu() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "showOption",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "showOption() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-layout"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-layout": [
+          "u-mobilelayout"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-modal/u-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-modal",
+      "readme": "# w-modal\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Modal"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "A modal window that can be used to display information to the user."
+        },
+        {
+          "name": "slot",
+          "text": "header - The header of the modal"
+        },
+        {
+          "name": "slot",
+          "text": "body - The body of the modal"
+        }
+      ],
+      "usage": {
+        "events": "\r\n- open modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('show-modal', {\r\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\r\n    })\r\n);\r\n```\r\n\r\n- close modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('close-modal', {\r\n    detail: { name: 'MODAL_NAME' }\r\n    })\r\n);\r\n```\r\n"
+      },
+      "props": [
+        {
+          "name": "closeOnClick",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "close-on-click",
+          "reflectToAttr": false,
+          "docs": "should the modal be closed on backdrop click",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxHeight",
+          "type": "string",
+          "mutable": false,
+          "attr": "max-height",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) resizable max width",
+          "docsTags": [],
+          "default": "'auto'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "maxWidth",
+          "type": "string",
+          "mutable": false,
+          "attr": "max-width",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) resizable max height",
+          "docsTags": [],
+          "default": "'auto'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minHeight",
+          "type": "string",
+          "mutable": false,
+          "attr": "min-height",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) resizable min height",
+          "docsTags": [],
+          "default": "'auto'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "minWidth",
+          "type": "string",
+          "mutable": false,
+          "attr": "min-width",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) resizable min width",
+          "docsTags": [],
+          "default": "'auto'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"desktop\" | \"mobile\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": true,
+          "docs": "autoset mode for mobile or desktop",
+          "docsTags": [],
+          "default": "'desktop'",
+          "values": [
+            {
+              "value": "desktop",
+              "type": "string"
+            },
+            {
+              "value": "mobile",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "moveable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "moveable",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) should the modal be moveable by dragging the header",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "name of the modal - needed to call methods",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resetPosition",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "reset-position",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) reset the modal position to the center of the screen",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resizeable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "resizeable",
+          "reflectToAttr": false,
+          "docs": "(DESKTOP only) should the modal be resizable",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "topRightClose",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "top-right-close",
+          "reflectToAttr": false,
+          "docs": "display a close button in the top right corner",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "closeModal",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "closeModal(name: string) => Promise<void>",
+          "parameters": [],
+          "docs": "method to close the modal",
+          "docsTags": []
+        },
+        {
+          "name": "showModal",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "showModal(name: string) => Promise<void>",
+          "parameters": [],
+          "docs": "method to open the modal",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "beforeOpen",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "event with given params",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "show-modal",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "close-modal",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "beforeOpen",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "body",
+          "docs": "The body of the modal"
+        },
+        {
+          "name": "header",
+          "docs": "The header of the modal"
+        }
+      ],
+      "parts": [],
+      "dependents": [
+        "u-alert",
+        "u-dialog",
+        "u-layout"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-alert": [
+          "u-modal"
+        ],
+        "u-dialog": [
+          "u-modal"
+        ],
+        "u-layout": [
+          "u-modal"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-monthpicker/u-monthpicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-monthpicker",
+      "readme": "# u-monthpicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Month Picker"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-navbar/u-navbar.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-navbar",
+      "readme": "# u-navbar\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Navigation Bar"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "top or bottom navigation bar"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "fixed",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "fixed",
+          "reflectToAttr": false,
+          "docs": "should the navbar be fixed to the top or bottom of the screen -\r\nlayout should be position relative",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "position",
+          "type": "\"bottom\" | \"top\"",
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "position of the navbar",
+          "docsTags": [],
+          "default": "'top'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-notification/u-notification.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-notification",
+      "readme": "# w-notification\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Notification"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "Toast like notifications"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "position",
+          "type": "\"bottom-center\" | \"bottom-left\" | \"bottom-right\" | \"top-center\" | \"top-left\" | \"top-right\"",
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'top-right'",
+          "values": [
+            {
+              "value": "bottom-center",
+              "type": "string"
+            },
+            {
+              "value": "bottom-left",
+              "type": "string"
+            },
+            {
+              "value": "bottom-right",
+              "type": "string"
+            },
+            {
+              "value": "top-center",
+              "type": "string"
+            },
+            {
+              "value": "top-left",
+              "type": "string"
+            },
+            {
+              "value": "top-right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "error",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "error(title: string, message?: string, delay?: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "show",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "show(type: NotificationType, options: NotficationOption) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "success",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "success(title: string, message?: string, delay?: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "warning",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "warning(title: string, message?: string, delay?: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [
+        {
+          "event": "show-toast",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "clear-toast",
+          "target": "body",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-observer/u-observer.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-observer",
+      "readme": "# w-observer\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Observer"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        },
+        {
+          "name": "description",
+          "text": "emits events when slot becomes visible"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [
+        {
+          "event": "invisible",
+          "detail": "void",
+          "bubbles": false,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit `invisible` event, when element looses visibility in viewport",
+          "docsTags": []
+        },
+        {
+          "event": "visible",
+          "detail": "void",
+          "bubbles": false,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit `visible` event, when element get visible in viewport",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-pagination/u-pagination.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-pagination",
+      "readme": "# u-pagination\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Pagination"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "pages",
+          "type": "number",
+          "mutable": false,
+          "attr": "pages",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showButtons",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-buttons",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showLastAndFirstPage",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-last-and-first-page",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showPages",
+          "type": "number",
+          "mutable": false,
+          "attr": "show-pages",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "goToPage",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "goToPage(page: number, eventless?: boolean) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "pageChange",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-group",
+        "u-button"
+      ],
+      "dependencyGraph": {
+        "u-pagination": [
+          "u-group",
+          "u-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-paragraph/u-paragraph.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-paragraph",
+      "readme": "# u-paragraph\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Paragraph"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "backgroundColor",
+          "type": "string",
+          "mutable": false,
+          "attr": "background-color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "hyphens",
+          "type": "string",
+          "mutable": false,
+          "attr": "hyphens",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textAlign",
+          "type": "\"center\" | \"jusitfy\" | \"left\" | \"right\"",
+          "mutable": false,
+          "attr": "text-align",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "jusitfy",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "textAlignLast",
+          "type": "\"center\" | \"jusitfy\" | \"left\" | \"none\" | \"right\"",
+          "mutable": false,
+          "attr": "text-align-last",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "jusitfy",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-alert"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-alert": [
+          "u-paragraph"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-popup/u-popup.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-popup",
+      "readme": "# u-popup\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Popup"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "axis",
+          "type": "\"x-center\" | \"x-end\" | \"x-start\" | \"y-center\" | \"y-end\" | \"y-start\"",
+          "mutable": false,
+          "attr": "axis",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'y-center'",
+          "values": [
+            {
+              "value": "x-center",
+              "type": "string"
+            },
+            {
+              "value": "x-end",
+              "type": "string"
+            },
+            {
+              "value": "x-start",
+              "type": "string"
+            },
+            {
+              "value": "y-center",
+              "type": "string"
+            },
+            {
+              "value": "y-end",
+              "type": "string"
+            },
+            {
+              "value": "y-start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "visible",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "visible",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-progress/u-progress.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-progress",
+      "readme": "# u-progress\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Progress"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "borderless",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "borderless",
+          "reflectToAttr": false,
+          "docs": "Remove border.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "Size of height of the bar, standard set to 1.25rem. Possible to use any unit.",
+          "docsTags": [],
+          "default": "'1.25rem'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Maximum of values",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showPercentage",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-percentage",
+          "reflectToAttr": false,
+          "docs": "Enables text, which shows the percentage.",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Value used to calculate progress",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-radiogroup/u-radiogroup.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-radiogroup",
+      "readme": "# w-radiogroup\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Radio Group"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "alignment",
+          "type": "\"horizontal\" | \"vertical\"",
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'vertical'",
+          "values": [
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'Test'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "Option[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\n    { value: 1, label: 'Option 1' },\n    { value: 2, label: 'Option 2' },\n    { value: 3, label: 'Option 3' },\n  ]",
+          "values": [
+            {
+              "type": "Option[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-row/u-row.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-row",
+      "readme": "# w-row\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Row"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        },
+        {
+          "name": "description",
+          "text": "flexbox row"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "align",
+          "type": "\"center\" | \"end\" | \"start\" | \"stretch\"",
+          "mutable": false,
+          "attr": "align",
+          "reflectToAttr": false,
+          "docs": "flex align-items",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            },
+            {
+              "value": "stretch",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "gap",
+          "type": "string",
+          "mutable": false,
+          "attr": "gap",
+          "reflectToAttr": false,
+          "docs": "flex gap: string, e.g. '1rem', '1px'",
+          "docsTags": [],
+          "default": "'1rem'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "justify",
+          "type": "\"center\" | \"end\" | \"space-around\" | \"space-between\" | \"space-evenly\" | \"start\"",
+          "mutable": false,
+          "attr": "justify",
+          "reflectToAttr": false,
+          "docs": "flex justify-content",
+          "docsTags": [],
+          "default": "'start'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "space-around",
+              "type": "string"
+            },
+            {
+              "value": "space-between",
+              "type": "string"
+            },
+            {
+              "value": "space-evenly",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "padding",
+          "type": "string",
+          "mutable": false,
+          "attr": "padding",
+          "reflectToAttr": false,
+          "docs": "padding left and right: string, e.g. '1rem', '1px'",
+          "docsTags": [],
+          "default": "'1rem'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "wrap",
+          "type": "\"nowrap\" | \"wrap\" | \"wrap-reverse\"",
+          "mutable": false,
+          "attr": "wrap",
+          "reflectToAttr": false,
+          "docs": "flex wrap",
+          "docsTags": [],
+          "default": "'wrap'",
+          "values": [
+            {
+              "value": "nowrap",
+              "type": "string"
+            },
+            {
+              "value": "wrap",
+              "type": "string"
+            },
+            {
+              "value": "wrap-reverse",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-form",
+        "u-stepper"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-form": [
+          "u-row"
+        ],
+        "u-stepper": [
+          "u-row"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-select/u-select.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-select",
+      "readme": "# w-select\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Select"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "autoCapitalize",
+          "type": "\"characters\" | \"none\" | \"off\" | \"on\" | \"sentences\" | \"words\"",
+          "mutable": false,
+          "attr": "auto-capitalize",
+          "reflectToAttr": false,
+          "docs": "decide if autocapitalize should be enabled",
+          "docsTags": [],
+          "default": "'off'",
+          "values": [
+            {
+              "value": "characters",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            },
+            {
+              "value": "sentences",
+              "type": "string"
+            },
+            {
+              "value": "words",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autoComplete",
+          "type": "string",
+          "mutable": false,
+          "attr": "auto-complete",
+          "reflectToAttr": false,
+          "docs": "possible types:\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete",
+          "docsTags": [],
+          "default": "'off'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autoCorrect",
+          "type": "\"off\" | \"on\"",
+          "mutable": false,
+          "attr": "auto-correct",
+          "reflectToAttr": false,
+          "docs": "decide if autocorect should be enabled",
+          "docsTags": [],
+          "default": "'off'",
+          "values": [
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "borderStyle",
+          "type": "\"large\" | \"none\" | \"round\" | \"small\"",
+          "mutable": false,
+          "attr": "border-style",
+          "reflectToAttr": false,
+          "docs": "decide if input should have border radius",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "round",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "design",
+          "type": "\"error\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "select design\npossible values:\n- 'secondary', 'primary', 'error', 'success', 'warning'",
+          "docsTags": [],
+          "default": "'secondary'",
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "decide if the input is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "doFocus",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "do-focus",
+          "reflectToAttr": false,
+          "docs": "change this prop to true to focus the input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "errorMsg",
+          "type": "string",
+          "mutable": false,
+          "attr": "error-msg",
+          "reflectToAttr": false,
+          "docs": "show error message below the input",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inputType",
+          "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+          "mutable": false,
+          "attr": "input-type",
+          "reflectToAttr": false,
+          "docs": "type of the input",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "value": "decimal",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "numeric",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "text of label\nThe label replace the placeholder",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "if input type == numeric -> max value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "if input type == numeric -> min value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "options",
+          "type": "Option[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\n    { value: '1', label: 'One', disabled: true },\n    { value: '2', label: 'Two' },\n    { value: '3', label: 'Three', disabled: true },\n    { value: '4', label: 'Four' },\n    { value: '5', label: 'Five' },\n    { value: '6', label: 'Six' },\n    { value: '7', label: 'Seven' },\n  ]",
+          "values": [
+            {
+              "type": "Option[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "mutable": false,
+          "attr": "pattern",
+          "reflectToAttr": false,
+          "docs": "set the pattern for the input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "decide if the input is readonly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "decide if input is required (for forms)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "searchable",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "size of the input",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "spellCheck",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "spell-check",
+          "reflectToAttr": false,
+          "docs": "decide if spellcheck should be enabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "string",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "if input type == numeric -> step value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "validate",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "validate",
+          "reflectToAttr": false,
+          "docs": "use function returning a boolean to validate the input -> if false, it displays error-msg",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "the value of the input",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setBlur",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setBlur() => Promise<void>",
+          "parameters": [],
+          "docs": "set blur on native input",
+          "docsTags": []
+        },
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "set focus on native input",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uBlur",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on blur",
+          "docsTags": []
+        },
+        {
+          "event": "uChange",
+          "detail": "any",
+          "bubbles": false,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on change",
+          "docsTags": []
+        },
+        {
+          "event": "uFocus",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on focus",
+          "docsTags": []
+        },
+        {
+          "event": "uInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emitted on input",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-checkbox"
+      ],
+      "dependencyGraph": {
+        "u-select": [
+          "u-checkbox"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-slider/u-slider.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-slider",
+      "readme": "# w-slider\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Slider"
+        },
+        {
+          "name": "description",
+          "text": "input slider"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-spoiler/u-spoiler.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-spoiler",
+      "readme": "# w-spoiler\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Spoiler"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "accordion like component"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "label of the spoiler",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "set the size of the spoiler",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uClose",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit when the spoiler is closed",
+          "docsTags": []
+        },
+        {
+          "event": "uOpen",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit when the spoiler is opened",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-stepper/u-stepper.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-stepper",
+      "readme": "# w-stepper\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Stepper"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "formular with multiple steps"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "allData",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "all-data",
+          "reflectToAttr": false,
+          "docs": "disabled state of the submit button",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "nextLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "next-label",
+          "reflectToAttr": false,
+          "docs": "label of the next step button",
+          "docsTags": [],
+          "default": "'next'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "nextStepAvailable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "next-step-available",
+          "reflectToAttr": false,
+          "docs": "disabled state of the next step button",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "prevLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "prev-label",
+          "reflectToAttr": false,
+          "docs": "label of the previous step button",
+          "docsTags": [],
+          "default": "'previous'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "steps",
+          "type": "(string | number)[] | number",
+          "mutable": false,
+          "attr": "steps",
+          "reflectToAttr": false,
+          "docs": "define steps\nwithout label -> steps: 3\nwith label -> steps: [1,'2',3]\nboth do the same, but with array you can define the label",
+          "docsTags": [],
+          "default": "['Step1', 'Step2', 'Step3']",
+          "values": [
+            {
+              "type": "(string"
+            },
+            {
+              "type": "number)[]"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "submitLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "submit-label",
+          "reflectToAttr": false,
+          "docs": "label of the next step button",
+          "docsTags": [],
+          "default": "'submit'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uStep",
+          "detail": "number",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit wNextStep event on next/previous button click",
+          "docsTags": []
+        },
+        {
+          "event": "uSubmit",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit wSubmit event on submit button click",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-form"
+      ],
+      "dependencies": [
+        "u-row",
+        "u-button"
+      ],
+      "dependencyGraph": {
+        "u-stepper": [
+          "u-row",
+          "u-button"
+        ],
+        "u-form": [
+          "u-stepper"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-submenu/u-submenu.tsx",
+      "encapsulation": "scoped",
+      "tag": "u-submenu",
+      "readme": "# u-submenu\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Sub-Menu"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "depthLevel",
+          "type": "number",
+          "mutable": false,
+          "attr": "depth-level",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "subMenu",
+          "type": "MenuItem[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "MenuItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uOpenSubMenu",
+          "detail": "{ menu: MenuItem[]; open: boolean; }",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-menuitem"
+      ],
+      "dependencies": [
+        "u-menuitem"
+      ],
+      "dependencyGraph": {
+        "u-submenu": [
+          "u-menuitem"
+        ],
+        "u-menuitem": [
+          "u-submenu"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-table/u-table.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-table",
+      "readme": "# u-table\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Table"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "data",
+          "type": "any[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\r\n    { id: 1, name: 'test', age: '20' },\r\n    { id: 2, age: 20, name: '*test2*\\n_test_\\n*xd*' },\r\n    { id: 3, name: 'test3', age: '40' },\r\n    { id: 4, name: 'test4', age: '50' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 5, name: 'test5', age: '-60' },\r\n    { id: 6, name: 'test6', age: '70' },\r\n    { id: 7, name: 'test2', age: '30' },\r\n    { id: 8, name: '.test3.', age: '40' },\r\n    { id: 9, name: 'test4', age: '50' },\r\n    { id: 10, name: 'test5', age: '60' },\r\n    { id: 11, name: 'test6', age: '70' },\r\n    { id: 12, name: 'test2', age: '30' },\r\n    { id: 6, name: 'test6', age: '70' },\r\n    { id: 7, name: 'test2', age: '-30' },\r\n    { id: 8, name: '.test3.', age: '40' },\r\n  ]",
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fixedHeader",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "fixed-header",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "HeadOptions[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "[\r\n    { field: 'id', label: 'ID', align: 'center', sortable: true, width: '10%' },\r\n    {\r\n      field: 'name',\r\n      label: 'Name',\r\n      width: '80%',\r\n      bgcolor: row => {\r\n        return row.name.includes('2') ? '#e7c2ff' : '';\r\n      },\r\n    },\r\n    {\r\n      field: 'age',\r\n      label: 'Age',\r\n      align: 'right',\r\n      sortable: true,\r\n      width: '10%',\r\n      // bgcolor: row => {\r\n      //   return row.age >= 0 ? '#afe6a8' : '#ffc382';\r\n      // },\r\n      // fontcolor: () => {\r\n      //   return 'black';\r\n      // },\r\n    },\r\n  ]",
+          "values": [
+            {
+              "type": "HeadOptions[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "observe",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "observe",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resizeable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "resizeable",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "selectable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "selectable",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "select",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "select(index: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "unselect",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "unselect(index: number) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uLastElement",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "uSelect",
+          "detail": "any[] | object",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "uStartHover",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "uStopHover",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "uUnselect",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-checkbox"
+      ],
+      "dependencyGraph": {
+        "u-table": [
+          "u-checkbox"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-tablecell/u-tablecell.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tablecell",
+      "readme": "# u-tablecell\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Table Cell"
+        },
+        {
+          "name": "state",
+          "text": "🔴"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "checkbox",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "checkbox",
+          "reflectToAttr": false,
+          "docs": "should checkbox be rendered",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "data",
+          "type": "string",
+          "mutable": false,
+          "attr": "data",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-tablerow"
+      ],
+      "dependencies": [
+        "u-checkbox"
+      ],
+      "dependencyGraph": {
+        "u-tablecell": [
+          "u-checkbox"
+        ],
+        "u-tablerow": [
+          "u-tablecell"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-tablefoot/u-tablefoot.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tablefoot",
+      "readme": "# u-tablefoot\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Table Foot"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-tablehead/u-tablehead.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tablehead",
+      "readme": "# u-tablehead\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Table Head"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-tablerow/u-tablerow.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tablerow",
+      "readme": "# u-tablerow\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Table Row"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "u-tablecell"
+      ],
+      "dependencyGraph": {
+        "u-tablerow": [
+          "u-tablecell"
+        ],
+        "u-tablecell": [
+          "u-checkbox"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-tabs/u-tabs.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tabs",
+      "readme": "# w-tabs\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Tabs"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-terms/u-terms.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-terms",
+      "readme": "# u-terms\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Terms"
+        },
+        {
+          "name": "description",
+          "text": "term popup"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-textarea/u-textarea.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-textarea",
+      "readme": "# w-textarea\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Textarea"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "cols",
+          "type": "number",
+          "mutable": false,
+          "attr": "cols",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "50",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "design",
+          "type": "\"error\" | \"outline\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'secondary'",
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resize",
+          "type": "\"both\" | \"horizontal\" | \"none\" | \"vertical\"",
+          "mutable": false,
+          "attr": "resize",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'vertical'",
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "6",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "u-editor"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "u-editor": [
+          "u-textarea"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/u-timepicker/u-timepicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-timepicker",
+      "readme": "# u-timepicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Time picker"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-toggle/u-toggle.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-toggle",
+      "readme": "# w-toggle\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Toggle"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-tooltip/u-tooltip.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tooltip",
+      "readme": "# w-tooltip\r\n\r\n\r\n\r",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Tooltip"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        },
+        {
+          "name": "description",
+          "text": "This component allows you to display a tooltip."
+        },
+        {
+          "name": "slot",
+          "text": "default - element which receives the tooltip"
+        },
+        {
+          "name": "slot",
+          "text": "content - (optional) content of the tooltip -> alternative to text, content prop must be used"
+        }
+      ],
+      "usage": {
+        "default": "```html\r\n<u-tooltip text=\"i am a button with an tooltip\">\r\n    <u-button></u-button>\r\n</u-tooltip>\r\n```\r\n\r\n```html\r\n<u-tooltip content>\r\n    <div slot=\"content\">\r\n        <u-headline>Button with Custom Tooltip</u-headline>\r\n        <u-paragraph>Custom components in tootltip</u-paragraph>\r\n    </div>\r\n    <u-button></u-button>\r\n</u-tooltip>\r\n```"
+      },
+      "props": [
+        {
+          "name": "alignment",
+          "type": "\"center\" | \"end\" | \"start\"",
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "arrow alignment",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "axis",
+          "type": "\"x\" | \"y\"",
+          "mutable": false,
+          "attr": "axis",
+          "reflectToAttr": false,
+          "docs": "position of the tooltip",
+          "docsTags": [],
+          "default": "'y'",
+          "values": [
+            {
+              "value": "x",
+              "type": "string"
+            },
+            {
+              "value": "y",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "content",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "content",
+          "reflectToAttr": false,
+          "docs": "render custom content instead of text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "mutable": false,
+          "attr": "text",
+          "reflectToAttr": false,
+          "docs": "text of the tooltip",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "trigger",
+          "type": "\"click\" | \"hover\"",
+          "mutable": false,
+          "attr": "trigger",
+          "reflectToAttr": false,
+          "docs": "choose trigger event",
+          "docsTags": [],
+          "default": "'hover'",
+          "values": [
+            {
+              "value": "click",
+              "type": "string"
+            },
+            {
+              "value": "hover",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "content",
+          "docs": "(optional) content of the tooltip -> alternative to text, content prop must be used"
+        },
+        {
+          "name": "default",
+          "docs": "element which receives the tooltip"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-touch/u-touch.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-touch",
+      "readme": "# u-touch\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Touch gesture"
+        },
+        {
+          "name": "description",
+          "text": "This component allows you to detect gestures"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "touchstart",
+          "target": "body",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "mousedown",
+          "target": "body",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "touchend",
+          "target": "body",
+          "capture": false,
+          "passive": true
+        },
+        {
+          "event": "mouseup",
+          "target": "body",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-weekpicker/u-weekpicker.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-weekpicker",
+      "readme": "# u-weekpicker\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Week Picker"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}
