@@ -16,7 +16,7 @@ jobs:
           node-version: 16
           
       - name: Install
-      - run: npm install
+        run: npm install
       
       - name: Generate Docs
         run: npm run build:docs
