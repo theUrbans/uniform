@@ -14,8 +14,12 @@ jobs:
         uses: actions/setup-node@v2.1.2
         with:
           node-version: 16
+          
+      - name: Install
       - run: npm install
-      - run: npm run build:docs
+      
+      - name: Generate Docs
+        run: npm run build:docs
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
