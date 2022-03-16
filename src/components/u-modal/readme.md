@@ -11,7 +11,7 @@
 
 - open modal
 
-```JS
+```js
 const body = document.querySelector('body');
 body.dispatchEvent(new CustomEvent('show-modal', {
     detail: { name: 'MODAL_NAME', params: { customParam: '42' } }
@@ -21,7 +21,7 @@ body.dispatchEvent(new CustomEvent('show-modal', {
 
 - close modal
 
-```JS
+```js
 const body = document.querySelector('body');
 body.dispatchEvent(new CustomEvent('close-modal', {
     detail: { name: 'MODAL_NAME' }

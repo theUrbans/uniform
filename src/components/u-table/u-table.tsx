@@ -5,8 +5,8 @@ export interface HeadOptions {
   width?: string;
   align?: 'left' | 'center' | 'right' | string;
   sortable?: boolean;
-  bgcolor?: (row: any) => string;
-  fontcolor?: (row: any) => string;
+  bgcolor?(row: any): string;
+  fontcolor?(row: any): string;
 }
 
 /**
