@@ -10,7 +10,9 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class UCard {
   @Prop() width: string = '24rem';
+
   @Prop() img: boolean = false;
+
   @Prop() color: string = '#9EBADE';
 
   render() {
@@ -19,7 +21,7 @@ export class UCard {
         class={{
           card: true,
         }}
-        style={{ 'background-color': this.color, 'width': this.width }}
+        style={{ 'background-color': this.color, width: this.width }}
       >
         <div
           class={{

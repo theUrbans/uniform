@@ -1,9 +1,6 @@
 # w-form
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,14 +10,12 @@
 | `fields`  | --        |             | `FormField[]`  | `[]`    |
 | `layout`  | `layout`  |             | `string`       | `''`    |
 
-
 ## Events
 
 | Event       | Description | Type               |
 | ----------- | ----------- | ------------------ |
 | `uNextStep` |             | `CustomEvent<any>` |
 | `uSubmit`   |             | `CustomEvent<any>` |
-
 
 ## Dependencies
 
@@ -32,6 +27,7 @@
 - [u-button](../u-button)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-form --> u-stepper
@@ -43,6 +39,6 @@ graph TD;
   style u-form fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

@@ -1,4 +1,6 @@
-import { Component, Element, h, Method, Prop } from '@stencil/core';
+import {
+  Component, Element, h, Method, Prop,
+} from '@stencil/core';
 
 /**
  * @name Mobile Layout
@@ -12,32 +14,41 @@ import { Component, Element, h, Method, Prop } from '@stencil/core';
 })
 export class UMobilelayout {
   @Element() el: HTMLElement;
+
   @Prop({ mutable: true }) showOptions: boolean = false;
+
   @Prop() sideWidth: string = '94%';
+
   @Method() async showMenu() {
     const menu = this.el.shadowRoot.querySelector('.menu') as HTMLElement;
     if (!menu) return;
     menu.scrollIntoView();
   }
+
   @Method() async showMain() {
     const main = this.el.shadowRoot.querySelector('.main') as HTMLElement;
     if (!main) return;
     main.scrollIntoView();
   }
+
   @Method() async showOption() {
     const option = this.el.shadowRoot.querySelector('.option') as HTMLElement;
     if (!option) return;
     option.scrollIntoView();
   }
+
   @Method() async activateOption() {
     this.showOptions = true;
   }
+
   @Method() async disableOption() {
     this.showOptions = false;
   }
+
   componentDidLoad() {
     this.showMain();
   }
+
   render() {
     return (
       <div class="layout">

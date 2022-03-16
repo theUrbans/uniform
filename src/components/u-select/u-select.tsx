@@ -1,4 +1,16 @@
-import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, Event, EventEmitter, Host } from '@stencil/core';
+import {
+  Component,
+  ComponentInterface,
+  h,
+  Prop,
+  Method,
+  Element,
+  Watch,
+  State,
+  Event,
+  EventEmitter,
+  Host,
+} from '@stencil/core';
 
 export interface Option {
   value: any;
@@ -18,8 +30,11 @@ export interface Option {
 })
 export class USelect implements ComponentInterface {
   private inputElement?: HTMLInputElement;
+
   @State() hovered: boolean = false;
+
   @State() focus: boolean = false;
+
   @Element() el: HTMLElement;
 
   @Prop() options: Option[] = [
@@ -42,6 +57,7 @@ export class USelect implements ComponentInterface {
    * the value of the input
    */
   @Prop({ mutable: true }) value: string | number | null = '';
+
   @Watch('value')
   valueChanged() {
     this.uChange.emit(this.value);
@@ -61,20 +77,28 @@ export class USelect implements ComponentInterface {
   /**
    * type of the input
    */
-  @Prop() inputType?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search' = 'text';
+  @Prop() inputType?:
+    | 'none'
+    | 'text'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
+    | 'search' = 'text';
 
   /**
-   * if input type == numeric -> min value
+   * if input type === numeric -> min value
    */
   @Prop() min?: string;
 
   /**
-   * if input type == numeric -> max value
+   * if input type === numeric -> max value
    */
   @Prop() max?: string;
 
   /**
-   * if input type == numeric -> step value
+   * if input type === numeric -> step value
    */
   @Prop() step?: string;
 
@@ -99,6 +123,7 @@ export class USelect implements ComponentInterface {
    * change this prop to true to focus the input
    */
   @Prop({ mutable: true }) doFocus?: boolean = false;
+
   @Watch('doFocus') doFocusChanged() {
     if (this.doFocus) {
       this.inputElement.focus();
@@ -119,6 +144,7 @@ export class USelect implements ComponentInterface {
    * decide if the input is disabled
    */
   @Prop() disabled?: boolean = false;
+
   @Watch('disabled') disabledChanged() {
     if (this.disabled) {
       this.inputElement.setAttribute('disabled', 'true');
@@ -146,7 +172,13 @@ export class USelect implements ComponentInterface {
   /**
    * decide if autocapitalize should be enabled
    */
-  @Prop() autoCapitalize?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters' = 'off';
+  @Prop() autoCapitalize?:
+    | 'off'
+    | 'none'
+    | 'on'
+    | 'sentences'
+    | 'words'
+    | 'characters' = 'off';
 
   /**
    * decide if spellcheck should be enabled
@@ -175,7 +207,7 @@ export class USelect implements ComponentInterface {
 
   /**
    * emitted on blur
-   **/
+   * */
   @Event() uBlur: EventEmitter;
 
   /**
@@ -203,14 +235,16 @@ export class USelect implements ComponentInterface {
   }
 
   @State() filteredOptions: Option[] = this.options;
+
   @State() searchValue: string = '';
+
   private onInput = (e: Event) => {
     const input = e.target as HTMLInputElement | null;
     if (!input) return;
     this.index = 0;
     this.searchValue = input.value;
-    if (!!this.searchValue) {
-      this.filteredOptions = this.options.filter(option => option.label.toLowerCase().includes(this.searchValue.toLowerCase()));
+    if (this.searchValue) {
+      this.filteredOptions = this.options.filter((option) => option.label.toLowerCase().includes(this.searchValue.toLowerCase()));
     } else {
       this.filteredOptions = this.options;
     }
@@ -224,6 +258,7 @@ export class USelect implements ComponentInterface {
   };
 
   @State() position: 'top' | 'bottom' = 'bottom';
+
   private onClick = () => {
     this.focus = true;
     this.position = 'bottom';
@@ -242,7 +277,7 @@ export class USelect implements ComponentInterface {
     this.uFocus.emit();
   };
 
-  private onKeyDown = e => {
+  private onKeyDown = (e) => {
     // on 'esc' press blur
     if (e.keyCode === 27) {
       this.inputElement.blur();
@@ -251,21 +286,30 @@ export class USelect implements ComponentInterface {
     // on arrow down
     if (e.keyCode === 40) {
       e.preventDefault();
-      this.index < this.filteredOptions.length - 1 ? (this.index += 1) : (this.index = 0);
+      this.index < this.filteredOptions.length - 1
+        ? (this.index += 1)
+        : (this.index = 0);
     }
     // on arrow up
     if (e.keyCode === 38) {
       e.preventDefault();
-      this.index > 0 ? (this.index -= 1) : (this.index = this.filteredOptions.length - 1);
+      this.index > 0
+        ? (this.index -= 1)
+        : (this.index = this.filteredOptions.length - 1);
     }
     // on enter
     if (e.keyCode === 13) {
       e.preventDefault();
-      if (!this.filteredOptions[this.index].disabled) this.selectOption(this.filteredOptions[this.index].value, this.filteredOptions[this.index].label);
+      if (!this.filteredOptions[this.index].disabled) {
+        this.selectOption(
+          this.filteredOptions[this.index].value,
+          this.filteredOptions[this.index].label,
+        );
+      }
     }
   };
 
-  private resetValue = e => {
+  private resetValue = (e) => {
     if (e && !this.disabled && !this.readonly) {
       e.stopPropagation();
       e.preventDefault();
@@ -277,18 +321,23 @@ export class USelect implements ComponentInterface {
     }
   };
 
-  @State() selected: string[] = this.options.filter(option => option.selected).map(option => option.label);
+  @State() selected: string[] = this.options
+    .filter((option) => option.selected)
+    .map((option) => option.label);
+
   private selectOption = (value: any, label: string) => {
     if (this.multiple) {
       if (!this.selected.includes(label)) {
         this.selected = [...this.selected, label];
       } else {
-        this.selected = this.selected.filter(option => option !== label);
+        this.selected = this.selected.filter((option) => option !== label);
       }
       this.getInputWidth();
-      this.uChange.emit(this.options.filter(option => this.selected.includes(option.label)));
-      if (this.options.find(o => o.label === label).selected) {
-        this.options.find(o => o.label === label).selected = false;
+      this.uChange.emit(
+        this.options.filter((option) => this.selected.includes(option.label)),
+      );
+      if (this.options.find((o) => o.label === label).selected) {
+        this.options.find((o) => o.label === label).selected = false;
       }
     } else {
       this.selected = [label];
@@ -300,8 +349,11 @@ export class USelect implements ComponentInterface {
 
   // calculate the the count of options to show before breakdown and more are shown with eg '2+'
   @State() shortenSelected: boolean = false;
+
   @State() shortenBreakpoint: number = 0;
+
   private oldSelectedLength: number = 0;
+
   private getInputWidth() {
     const inputWidth = this.inputElement.getBoundingClientRect().width;
     const elementCount = this.selected.length;
@@ -311,7 +363,10 @@ export class USelect implements ComponentInterface {
         this.oldSelectedLength = elementCount;
         this.shortenBreakpoint = 0;
         this.shortenSelected = false;
-      } else if (elementCount > this.oldSelectedLength && this.shortenBreakpoint == 0) {
+      } else if (
+        elementCount > this.oldSelectedLength
+        && this.shortenBreakpoint === 0
+      ) {
         this.shortenBreakpoint = elementCount - 1;
         this.oldSelectedLength = elementCount;
       }
@@ -321,7 +376,7 @@ export class USelect implements ComponentInterface {
   }
 
   private removeOption = (label: string) => {
-    this.selected = this.selected.filter(option => option !== label);
+    this.selected = this.selected.filter((option) => option !== label);
     this.inputElement.focus();
     this.getInputWidth();
   };
@@ -343,33 +398,47 @@ export class USelect implements ComponentInterface {
         >
           {this.shortenSelected
             ? this.selected.map((option, index) => {
-                if (index < this.shortenBreakpoint)
-                  return (
+              if (index < this.shortenBreakpoint) {
+                return (
                     <span class="selected-option">
                       {option}
-                      <span class="selected-rm" onClick={() => this.removeOption(option)}>
+                      <span
+                        class="selected-rm"
+                        onClick={() => this.removeOption(option)}
+                      >
                         &times;
                       </span>
                     </span>
-                  );
-                if (index == this.selected.length - 1) return <span class="selected-option">+{this.selected.slice(this.shortenBreakpoint, -1).length + 1}</span>;
-              })
-            : this.selected.map(option => {
-                return (
-                  <span class="selected-option">
-                    {option}
-                    <span class="selected-rm" onClick={() => this.removeOption(option)}>
-                      &times;
-                    </span>
-                  </span>
                 );
-              })}
+              }
+              if (index === this.selected.length - 1) {
+                return (
+                    <span class="selected-option">
+                      +
+                      {this.selected.slice(this.shortenBreakpoint, -1).length
+                        + 1}
+                    </span>
+                );
+              }
+              return null;
+            })
+            : this.selected.map((option) => (
+                <span class="selected-option">
+                  {option}
+                  <span
+                    class="selected-rm"
+                    onClick={() => this.removeOption(option)}
+                  >
+                    &times;
+                  </span>
+                </span>
+            ))}
           <input
             class={{
               input: true,
               [`text-${this.size}`]: true,
             }}
-            ref={input => (this.inputElement = input)}
+            ref={(input) => (this.inputElement = input)}
             min={this.min}
             max={this.max}
             type={this.inputType}
@@ -398,7 +467,7 @@ export class USelect implements ComponentInterface {
                 [`label-${this.size}`]: true,
               }}
             >
-              {this.required ? this.label + ' *' : this.label}
+              {this.required ? `${this.label} *` : this.label}
             </label>
           ) : null}
           <div
@@ -411,17 +480,39 @@ export class USelect implements ComponentInterface {
             {this.value || this.searchValue ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
-                height={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
+                width={
+                  this.size === 'small' ? 16 : this.size === 'medium' ? 20 : 24
+                }
+                height={
+                  this.size === 'small' ? 16 : this.size === 'medium' ? 20 : 24
+                }
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width={this.size == 'small' ? 1 : this.size == 'medium' ? 1.5 : 2}
+                stroke-width={
+                  this.size === 'small' ? 1 : this.size === 'medium' ? 1.5 : 2
+                }
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <path d="M15 15L9 9m6 0l-6 6" class={this.focus || this.hovered ? 'text-red-500' : 'text-gray-500'} />
-                <circle cx="12" cy="12" r="10" class={this.focus || this.hovered ? 'text-red-500' : 'text-gray-500'} />
+                <path
+                  d="M15 15L9 9m6 0l-6 6"
+                  class={
+                    this.focus || this.hovered
+                      ? 'text-red-500'
+                      : 'text-gray-500'
+                  }
+                />
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  class={
+                    this.focus || this.hovered
+                      ? 'text-red-500'
+                      : 'text-gray-500'
+                  }
+                />
               </svg>
             ) : null}
             <svg
@@ -429,30 +520,43 @@ export class USelect implements ComponentInterface {
               class={{ chevron: true, turn180: this.focus }}
               fill="none"
               viewBox="0 0 24 24"
-              width={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
-              height={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
+              width={
+                this.size === 'small' ? 16 : this.size === 'medium' ? 20 : 24
+              }
+              height={
+                this.size === 'small' ? 16 : this.size === 'medium' ? 20 : 24
+              }
               stroke="currentColor"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width={this.size == 'small' ? 1 : this.size == 'medium' ? 1.5 : 2} d="M19 9l-7 7-7-7" />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width={
+                  this.size === 'small' ? 1 : this.size === 'medium' ? 1.5 : 2
+                }
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </div>
           {this.focus ? (
             <div
               class={{
                 options: true,
-                optionsTop: this.position == 'top',
-                optionsBottom: this.position == 'bottom',
+                optionsTop: this.position === 'top',
+                optionsBottom: this.position === 'bottom',
               }}
               id="options"
             >
-              {this.filteredOptions.map(({ value, label, disabled, selected }) => {
-                return (
+              {this.filteredOptions.map(
+                ({
+                  value, label, disabled, selected,
+                }) => (
                   <span
                     class={{
                       option: true,
                       [`option-${this.design}`]: true,
                       selected: this.selected.includes(label),
-                      hovered: this.filteredOptions[this.index].label == label,
+                      hovered: this.filteredOptions[this.index].label === label,
                       disabled,
                     }}
                     role="option"
@@ -461,7 +565,10 @@ export class USelect implements ComponentInterface {
                         this.selectOption(value, label);
                       }
                     }}
-                    onMouseEnter={() => (this.index = this.filteredOptions.findIndex(option => option.label == label))}
+                    onMouseEnter={() => (this.index = this.filteredOptions.findIndex(
+                      (option) => option.label === label,
+                    ))
+                    }
                   >
                     {this.multiple ? (
                       <u-checkbox
@@ -477,8 +584,8 @@ export class USelect implements ComponentInterface {
                       label
                     )}
                   </span>
-                );
-              })}
+                ),
+              )}
             </div>
           ) : null}
           {/* {!this.validate ? <span class={{ 'help-text': true }}>{this.errorMsg}</span> : null} */}

@@ -1,4 +1,6 @@
-import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
+import {
+  Component, h, Prop, Event, EventEmitter,
+} from '@stencil/core';
 
 export interface BreadCrumbItem {
   name: string;
@@ -16,9 +18,16 @@ export interface BreadCrumbItem {
   shadow: true,
 })
 export class UBreadcrumb {
-  @Prop() items: Array<BreadCrumbItem> = [{ name: 'test1', link: '/test' }, { name: 'test2' }, { name: 'test3' }];
+  @Prop() items: Array<BreadCrumbItem> = [
+    { name: 'test1', link: '/test' },
+    { name: 'test2' },
+    { name: 'test3' },
+  ];
+
   @Prop() seperator?: string;
+
   @Event() uBreadcrumbClick: EventEmitter<string>;
+
   render() {
     return (
       <ul>
@@ -27,7 +36,11 @@ export class UBreadcrumb {
           return [
             <li>
               {!lastElement ? (
-                <u-link secondary={true} onClick={() => this.uBreadcrumbClick.emit(item.name)} {...(item.link ? { link: item.link } : null)}>
+                <u-link
+                  secondary={true}
+                  onClick={() => this.uBreadcrumbClick.emit(item.name)}
+                  {...(item.link ? { link: item.link } : null)}
+                >
                   {item.name}
                 </u-link>
               ) : (
@@ -40,7 +53,7 @@ export class UBreadcrumb {
                 display: !lastElement ? 'inline-block' : 'none',
               }}
             >
-              {!!this.seperator ? this.seperator : <i>&#8250;</i>}
+              {this.seperator ? this.seperator : <i>&#8250;</i>}
             </span>,
           ];
         })}

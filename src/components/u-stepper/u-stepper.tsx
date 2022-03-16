@@ -1,4 +1,12 @@
-import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  Event,
+  EventEmitter,
+  State,
+} from '@stencil/core';
 
 /**
  * @name Stepper
@@ -55,8 +63,9 @@ export class UStepper {
   @Event() uStep: EventEmitter<number>;
 
   @State() currentStep: number = 0;
+
   private formatSteps() {
-    if (typeof this.steps == 'number') {
+    if (typeof this.steps === 'number') {
       this.steps = [...Array(this.steps).keys()];
     }
     return this.steps;
@@ -82,50 +91,77 @@ export class UStepper {
       <Host>
         <div class="wrapper">
           <div class="head">
-            {steps.map((step, index) => {
-              return [
-                <u-row wrap="wrap">
-                  <div
+            {steps.map((step, index) => [
+              <u-row wrap="wrap">
+                <div
+                  class={{
+                    step: true,
+                    activeStep: index === this.currentStep,
+                  }}
+                >
+                  <span
                     class={{
-                      step: true,
+                      no: true,
                       activeStep: index === this.currentStep,
                     }}
                   >
-                    <span class={{ no: true, activeStep: index === this.currentStep }}>{index + 1}</span>
-                    {typeof step == 'string' ? <span class="label">{step}</span> : null}
-                  </div>
-                </u-row>,
-                index < steps.length - 1 ? <div class={{ line: true, doneLine: index < this.currentStep }} /> : null,
-              ];
-            })}
+                    {index + 1}
+                  </span>
+                  {typeof step === 'string' ? (
+                    <span class="label">{step}</span>
+                  ) : null}
+                </div>
+              </u-row>,
+              index < steps.length - 1 ? (
+                <div
+                  class={{ line: true, doneLine: index < this.currentStep }}
+                />
+              ) : null,
+            ])}
           </div>
 
           <div class="content">
-            {steps.map((_, index) => {
-              return (
-                <div
-                  class={{
-                    visible: index === this.currentStep,
-                    hidden: index !== this.currentStep,
-                  }}
-                >
-                  <slot name={`step-${index + 1}`}>keine Daten in dem Slot</slot>
-                </div>
-              );
-            })}
+            {steps.map((_, index) => (
+              <div
+                class={{
+                  visible: index === this.currentStep,
+                  hidden: index !== this.currentStep,
+                }}
+              >
+                <slot name={`step-${index + 1}`}>keine Daten in dem Slot</slot>
+              </div>
+            ))}
           </div>
           <div class="footer">
-            <u-button design="error" flat disabled={this.currentStep == 0} onUClick={this.handlePreviousStep}>
+            <u-button
+              design="error"
+              flat
+              disabled={this.currentStep === 0}
+              onUClick={this.handlePreviousStep}
+            >
               {this.prevLabel}
               <span slot="prefix">&#171;</span>
             </u-button>
             {this.currentStep < steps.length - 1 ? (
-              <u-button design="success" flat disabled={this.currentStep == steps.length - 1 || !this.nextStepAvailable} onClick={this.handleNextStep}>
+              <u-button
+                design="success"
+                flat
+                disabled={
+                  this.currentStep === steps.length - 1
+                  || !this.nextStepAvailable
+                }
+                onClick={this.handleNextStep}
+              >
                 {this.nextLabel}
                 <span slot="suffix">&#187;</span>
               </u-button>
             ) : (
-              <u-button design="success" flat disabled={!this.allData} onUClick={this.handleSubmit}>
+              <u-button
+                design="success"
+                flat
+                disabled={!this.allData}
+                onUClick={this.handleSubmit}
+              >
                 {this.submitLabel}
               </u-button>
             )}

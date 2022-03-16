@@ -5,7 +5,7 @@ describe('u-layout', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ULayout],
-      html: `<u-layout></u-layout>`,
+      html: '<u-layout></u-layout>',
     });
     expect(page.root).toEqualHtml(`
       <u-layout>

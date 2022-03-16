@@ -5,7 +5,7 @@ describe('w-dialog', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UDialog],
-      html: `<u-dialog></u-dialog>`,
+      html: '<u-dialog></u-dialog>',
     });
     expect(page.root).toEqualHtml(`
       <u-dialog>

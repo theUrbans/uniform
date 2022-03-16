@@ -31,7 +31,7 @@ input:checked ~ .checkmark {
 }
 .checkmark:after {
   @apply absolute hidden;
-  content: "";
+  content: '';
 }
 input:checked ~ .checkmark {
   @apply after:block;

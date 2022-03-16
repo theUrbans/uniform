@@ -1,9 +1,6 @@
 # w-modal
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Usage
 
@@ -13,9 +10,10 @@
 
 ```js
 const body = document.querySelector('body');
-body.dispatchEvent(new CustomEvent('show-modal', {
-    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }
-    })
+body.dispatchEvent(
+  new CustomEvent('show-modal', {
+    detail: { name: 'MODAL_NAME', params: { customParam: '42' } },
+  }),
 );
 ```
 
@@ -23,13 +21,12 @@ body.dispatchEvent(new CustomEvent('show-modal', {
 
 ```js
 const body = document.querySelector('body');
-body.dispatchEvent(new CustomEvent('close-modal', {
-    detail: { name: 'MODAL_NAME' }
-    })
+body.dispatchEvent(
+  new CustomEvent('close-modal', {
+    detail: { name: 'MODAL_NAME' },
+  }),
 );
 ```
-
-
 
 ## Properties
 
@@ -47,13 +44,11 @@ body.dispatchEvent(new CustomEvent('close-modal', {
 | `resizeable`    | `resizeable`      | (DESKTOP only) should the modal be resizable                        | `boolean`               | `true`      |
 | `topRightClose` | `top-right-close` | display a close button in the top right corner                      | `boolean`               | `false`     |
 
-
 ## Events
 
 | Event        | Description             | Type               |
 | ------------ | ----------------------- | ------------------ |
 | `beforeOpen` | event with given params | `CustomEvent<any>` |
-
 
 ## Methods
 
@@ -65,8 +60,6 @@ method to close the modal
 
 Type: `Promise<void>`
 
-
-
 ### `showModal(name: string) => Promise<void>`
 
 method to open the modal
@@ -75,9 +68,6 @@ method to open the modal
 
 Type: `Promise<void>`
 
-
-
-
 ## Slots
 
 | Slot       | Description             |
@@ -85,16 +75,16 @@ Type: `Promise<void>`
 | `"body"`   | The body of the modal   |
 | `"header"` | The header of the modal |
 
-
 ## Dependencies
 
 ### Used by
 
- - [u-alert](../u-alert)
- - [u-dialog](../u-dialog)
- - [u-layout](../u-layout)
+- [u-alert](../u-alert)
+- [u-dialog](../u-dialog)
+- [u-layout](../u-layout)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-alert --> u-modal
@@ -103,6 +93,6 @@ graph TD;
   style u-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

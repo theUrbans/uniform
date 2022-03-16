@@ -5,7 +5,7 @@ describe('u-weekpicker', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UWeekpicker],
-      html: `<u-weekpicker></u-weekpicker>`,
+      html: '<u-weekpicker></u-weekpicker>',
     });
     expect(page.root).toEqualHtml(`
       <u-weekpicker>

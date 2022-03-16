@@ -5,7 +5,7 @@ describe('u-progress', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UProgress],
-      html: `<u-progress></u-progress>`,
+      html: '<u-progress></u-progress>',
     });
     expect(page.root).toEqualHtml(`
       <u-progress>

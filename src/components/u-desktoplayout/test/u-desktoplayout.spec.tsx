@@ -5,7 +5,7 @@ describe('u-desktoplayout', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UDesktoplayout],
-      html: `<u-desktoplayout></u-desktoplayout>`,
+      html: '<u-desktoplayout></u-desktoplayout>',
     });
     expect(page.root).toEqualHtml(`
       <u-desktoplayout>

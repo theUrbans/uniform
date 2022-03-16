@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+
 export interface MenuItems {
   label?: string;
   icon?: HTMLElement | SVGElement;
@@ -16,13 +17,22 @@ export interface MenuItems {
 })
 export class UMenu {
   @Prop() axis: 'x' | 'y' = 'y';
+
   @Prop() width: 'fullwidth' | 'contentwidth' = 'fullwidth';
+
   @Prop() padding: boolean = true;
+
   @Prop() items: Array<MenuItems> = [
     {
       label: 'test1',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -35,12 +45,24 @@ export class UMenu {
     {
       label: 'test2',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
+          />
         </svg>
       ),
     },
   ];
+
   render() {
     return (
       <ul
@@ -61,7 +83,8 @@ export class UMenu {
               class={{
                 item: true,
                 start: !this.padding && index === 0,
-                middle: !this.padding && index > 0 && index < this.items.length - 1,
+                middle:
+                  !this.padding && index > 0 && index < this.items.length - 1,
                 end: !this.padding && index === this.items.length - 1,
                 rounded: this.padding,
               }}

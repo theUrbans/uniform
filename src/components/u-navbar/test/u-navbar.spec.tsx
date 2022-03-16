@@ -5,7 +5,7 @@ describe('u-navbar', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UNavbar],
-      html: `<u-navbar></u-navbar>`,
+      html: '<u-navbar></u-navbar>',
     });
     expect(page.root).toEqualHtml(`
       <u-navbar>

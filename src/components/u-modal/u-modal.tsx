@@ -1,4 +1,14 @@
-import { Component, h, Prop, Method, Listen, State, Event, EventEmitter, Element } from '@stencil/core';
+import {
+  Component,
+  h,
+  Prop,
+  Method,
+  Listen,
+  State,
+  Event,
+  EventEmitter,
+  Element,
+} from '@stencil/core';
 
 /**
  * @name Modal
@@ -83,10 +93,12 @@ export class UModal {
     this.beforeOpen.emit(params);
     this.showModal(name);
   }
+
   @Listen('close-modal', { target: 'body' }) closeModalHandler(e: any) {
     const { name } = e.detail;
     this.closeModal(name);
   }
+
   @Listen('beforeOpen') setParams(params: any) {
     this.params = params.detail;
   }
@@ -115,6 +127,7 @@ export class UModal {
   }
 
   @State() isOpen: boolean = false;
+
   @State() params: any;
 
   private async initPosition() {
@@ -130,34 +143,48 @@ export class UModal {
     this.closeModal(this.name);
   };
 
-  private handleBlur = e => {
+  private handleBlur = (e) => {
     if (!e.target.className.includes('wrapper') || !this.closeOnClick) return;
     this.closeModal(this.name);
   };
 
   @State() drag: boolean = false;
+
   @State() dragoffset: { x: number; y: number };
+
   private node: HTMLElement;
+
   private handleStartDrag = (e: MouseEvent) => {
     if (!this.moveable) return;
     e.preventDefault();
     this.drag = true;
-    this.dragoffset = { x: e.pageX - this.node.offsetLeft, y: e.pageY - this.node.offsetTop };
+    this.dragoffset = {
+      x: e.pageX - this.node.offsetLeft,
+      y: e.pageY - this.node.offsetTop,
+    };
   };
+
   private mouseUp = () => {
     this.drag = false;
   };
+
   private handleMove = (e: MouseEvent) => {
     if (!this.drag || !this.node || !this.moveable) return;
     let newtop: string = '0px';
     let newleft: string = '0px';
 
     if (e.pageX - this.dragoffset.x < 0) newleft = '0px';
-    else if (e.pageX - this.dragoffset.x + this.node.clientWidth > window.innerWidth) newleft = `${window.innerWidth - this.node.clientWidth}px`;
+    else if (
+      e.pageX - this.dragoffset.x + this.node.clientWidth
+      > window.innerWidth
+    ) newleft = `${window.innerWidth - this.node.clientWidth}px`;
     else newleft = `${e.pageX - this.dragoffset.x}px`;
 
     if (e.pageY - this.dragoffset.y < 0) newtop = '0px';
-    else if (e.pageY - this.dragoffset.y + this.node.clientHeight > window.innerHeight) newtop = `${window.innerHeight - this.node.clientHeight}px`;
+    else if (
+      e.pageY - this.dragoffset.y + this.node.clientHeight
+      > window.innerHeight
+    ) newtop = `${window.innerHeight - this.node.clientHeight}px`;
     else newtop = `${e.pageY - this.dragoffset.y}px`;
 
     this.node.style.left = newleft;
@@ -171,10 +198,10 @@ export class UModal {
           wrapper: true,
           visible: this.isOpen,
         }}
-        onPointerDown={e => this.handleBlur(e)}
-        onPointerMove={e => this.handleMove(e)}
+        onPointerDown={(e) => this.handleBlur(e)}
+        onPointerMove={(e) => this.handleMove(e)}
         onPointerUp={() => this.mouseUp()}
-        onClick={e => e.preventDefault()}
+        onClick={(e) => e.preventDefault()}
       >
         {this.topRightClose && (
           <button class="close backdrop__close" onClick={this.handleCloseClick}>
@@ -187,7 +214,7 @@ export class UModal {
             resizeable: this.resizeable,
           }}
           id="modal"
-          ref={node => (this.node = node)}
+          ref={(node) => (this.node = node)}
           style={{
             'min-width': this.minWidth,
             'min-height': this.minHeight,
@@ -195,7 +222,7 @@ export class UModal {
             'max-height': this.maxHeight,
           }}
         >
-          <div class="header" onPointerDown={e => this.handleStartDrag(e)}>
+          <div class="header" onPointerDown={(e) => this.handleStartDrag(e)}>
             <span class="header__title">
               <slot name="header" />
             </span>
@@ -214,7 +241,7 @@ export class UModal {
                 'min-height': this.minHeight,
                 'max-width': this.maxWidth,
                 'max-height': this.maxHeight,
-                'visibility': this.isOpen ? 'visible' : 'hidden',
+                visibility: this.isOpen ? 'visible' : 'hidden',
               }}
             >
               <slot name="body"></slot>

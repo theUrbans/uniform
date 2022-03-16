@@ -1,4 +1,13 @@
-import { Component, Element, Event, EventEmitter, h, Host, Prop, State } from '@stencil/core';
+import {
+  Component,
+  Element,
+  Event,
+  EventEmitter,
+  h,
+  Host,
+  Prop,
+  State,
+} from '@stencil/core';
 
 export interface FormButton {
   text: string;
@@ -34,24 +43,35 @@ export type Field = string;
 })
 export class UForm {
   @Element() el: HTMLElement;
+
   @Prop() layout: string = ''; // create layout with descriptive text, eg: stepper, 2 cols, 3 rows
+
   @Prop() fields: Array<FormField> = [];
+
   @Prop() buttons: Array<FormButton> = [];
+
   @Event() uSubmit: EventEmitter;
+
   @Event() uNextStep: EventEmitter;
+
   private submitForm = () => {
     console.log('submitForm', this.returnValue);
     this.uSubmit.emit(this.returnValue);
   };
 
   @State() returnValue: { [key: string]: any };
+
   @State() steps: Array<number | string> = [];
+
   private setAttr(field: FormField): any {
     this.returnValue = { ...this.returnValue, [field.prop]: field.value || '' };
     if (field.type === 'input' || field.type === 'textarea') {
       return {
         onUInput: (event: any) => {
-          this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
+          this.returnValue = {
+            ...this.returnValue,
+            [field.prop]: event.detail,
+          };
         },
         label: field.label,
         value: field.value,
@@ -60,10 +80,13 @@ export class UForm {
         ...field.options,
       };
     }
-    if (field.type === 'select')
+    if (field.type === 'select') {
       return {
         onUChange: (event: any) => {
-          this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
+          this.returnValue = {
+            ...this.returnValue,
+            [field.prop]: event.detail,
+          };
         },
         label: field.label,
         value: field.value,
@@ -71,11 +94,15 @@ export class UForm {
         required: field.required,
         ...field.options,
       };
+    }
 
     if (field.type === 'filepicker') {
       return {
         onUSelect: (event: any) => {
-          this.returnValue = { ...this.returnValue, [field.prop]: event.detail };
+          this.returnValue = {
+            ...this.returnValue,
+            [field.prop]: event.detail,
+          };
         },
         label: field.label,
         required: field.required,
@@ -87,15 +114,24 @@ export class UForm {
   }
 
   @State() stepper: boolean = false;
+
   @State() rows: number;
+
   @State() cols: number;
+
   @State() gap: string;
+
   private getLayout() {
     const layout = this.layout.split(',');
     layout.forEach((row: string) => {
       row = row.trim();
       if (row === 'stepper') this.stepper = true;
-      if (row.includes('col') || row.includes('cols') || row.includes('column') || row.includes('columns')) {
+      if (
+        row.includes('col')
+        || row.includes('cols')
+        || row.includes('column')
+        || row.includes('columns')
+      ) {
         const cols = row.split(' ');
         this.cols = Number(cols[0]);
         // if (cols.length > 2) return this.steps = [...this.steps, cols[0]];
@@ -106,8 +142,8 @@ export class UForm {
         this.rows = Number(rows[0]);
       }
       if (row.includes('gap')) {
-        const gap = row.split(' ');
-        this.gap = gap[0];
+        const [gap] = row.split(' ');
+        this.gap = gap;
       }
     });
   }
@@ -115,9 +151,7 @@ export class UForm {
   componentWillLoad() {
     this.getLayout();
     this.fields.forEach((field: FormField) => {
-      if (field.step) {
-        !this.steps.includes(field.step) ? (this.steps = [...this.steps, field.step]) : null;
-      }
+      if (field.step) if (!this.steps.includes(field.step)) this.steps = [...this.steps, field.step];
     });
   }
 
@@ -140,40 +174,42 @@ export class UForm {
     return (
       <Host>
         {this.stepper ? (
-          <u-stepper onUSubmit={this.submitForm} onUStep={this.sendStep} steps={this.steps}>
-            {this.steps.map((step, index: number) => {
-              return (
-                <u-grid
-                  rows={this.rows}
-                  columns={this.cols}
-                  gap={this.gap}
-                  slot={`step-${index + 1}`}
-                  width="calc(100% - 2rem)"
-                  style={{
-                    padding: '1rem',
-                  }}
-                >
-                  {this.fields.map((Field: FormField) => {
-                    if (Field.step !== step) return;
-                    const Tag = 'w-' + Field.type;
-                    return (
-                      <Tag
-                        {...this.setAttr(Field)}
-                        style={{
-                          'grid-area': Field.place,
-                        }}
-                      ></Tag>
-                    );
-                  })}
-                </u-grid>
-              );
-            })}
+          <u-stepper
+            onUSubmit={this.submitForm}
+            onUStep={this.sendStep}
+            steps={this.steps}
+          >
+            {this.steps.map((step, index: number) => (
+              <u-grid
+                rows={this.rows}
+                columns={this.cols}
+                gap={this.gap}
+                slot={`step-${index + 1}`}
+                width="calc(100% - 2rem)"
+                style={{
+                  padding: '1rem',
+                }}
+              >
+                {this.fields.map((Field: FormField): HTMLElement => {
+                  if (Field.step !== step) return;
+                  const Tag = `u-${Field.type}`;
+                  return (
+                    <Tag
+                      {...this.setAttr(Field)}
+                      style={{
+                        'grid-area': Field.place,
+                      }}
+                    ></Tag>
+                  );
+                })}
+              </u-grid>
+            ))}
           </u-stepper>
         ) : (
           <form onSubmit={this.submitForm}>
             <u-grid rows={this.rows} columns={this.cols} gap={this.gap}>
               {this.fields.map((Field: FormField) => {
-                const Tag = 'w-' + Field.type;
+                const Tag = `w-${Field.type}`;
                 return (
                   <Tag
                     {...this.setAttr(Field)}
@@ -187,7 +223,11 @@ export class UForm {
             <slot />
             <u-row justify="space-between" padding="0">
               {this.buttons.map((button: FormButton) => (
-                <u-button onUClick={() => this.handleButtonClick(button)} type={button.event ? 'button' : 'submit'} design={button.design || 'secondary'}>
+                <u-button
+                  onUClick={() => this.handleButtonClick(button)}
+                  type={button.event ? 'button' : 'submit'}
+                  design={button.design || 'secondary'}
+                >
                   {button.text || 'Submit'}
                 </u-button>
               ))}

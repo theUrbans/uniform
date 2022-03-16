@@ -5,7 +5,7 @@ describe('u-monthpicker', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UMonthpicker],
-      html: `<u-monthpicker></u-monthpicker>`,
+      html: '<u-monthpicker></u-monthpicker>',
     });
     expect(page.root).toEqualHtml(`
       <u-monthpicker>

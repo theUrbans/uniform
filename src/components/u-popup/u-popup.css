@@ -1,5 +1,5 @@
 .wrapper::before {
-  content: "";
+  content: '';
   @apply relative z-10;
   height: 200px;
   width: 200px;

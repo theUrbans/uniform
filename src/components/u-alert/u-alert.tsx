@@ -1,4 +1,6 @@
-import { Component, Host, h, State, Prop, Listen } from '@stencil/core';
+import {
+  Component, Host, h, State, Prop, Listen,
+} from '@stencil/core';
 
 /**
  * @name Alert
@@ -11,11 +13,17 @@ import { Component, Host, h, State, Prop, Listen } from '@stencil/core';
 })
 export class UAlert {
   private modal: HTMLUModalElement;
+
   @Prop() name: string = 'u-alert-default';
+
   @Prop() closeText: string = 'close';
+
   @State() open: boolean = false;
+
   @State() title: string = 'Alert';
+
   @State() content: string = '';
+
   @Listen('show-alert', { target: 'body' })
   openDialog(e: any) {
     const { params } = e.detail;
@@ -27,7 +35,13 @@ export class UAlert {
   render() {
     return (
       <Host>
-        <u-modal name={this.name} ref={modal => (this.modal = modal)} resizeable={false} moveable={false} closeOnClick={false}>
+        <u-modal
+          name={this.name}
+          ref={(modal) => (this.modal = modal)}
+          resizeable={false}
+          moveable={false}
+          closeOnClick={false}
+        >
           <span slot="header">{this.title}</span>
           <div slot="body" class="body">
             <u-paragraph>{this.content}</u-paragraph>

@@ -25,7 +25,7 @@ input:checked ~ .checkmark {
 }
 
 .checkmark:after {
-  content: "";
+  content: '';
   @apply absolute hidden;
 }
 input:checked ~ .checkmark:after {
@@ -56,7 +56,7 @@ input:checked ~ .indeterminate {
 }
 
 .indeterminate:after {
-  content: "";
+  content: '';
   @apply absolute hidden;
 }
 input:checked ~ .indeterminate:after {

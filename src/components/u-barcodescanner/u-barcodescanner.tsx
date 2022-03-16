@@ -1,4 +1,13 @@
-import { Component, Host, h, Prop, Method, Event, EventEmitter, State } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  Method,
+  Event,
+  EventEmitter,
+  State,
+} from '@stencil/core';
 
 /**
  * @name Barcode Scanner
@@ -73,6 +82,7 @@ export class UBarcodescanner {
     this.library.showBackground();
     this.library.stopScan();
   }
+
   render() {
     return (
       <Host

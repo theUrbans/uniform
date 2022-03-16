@@ -11,10 +11,15 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class UParagraph {
   @Prop() color: string;
+
   @Prop() backgroundColor: string;
+
   @Prop() hyphens: string;
+
   @Prop() textAlign: 'jusitfy' | 'center' | 'left' | 'right';
+
   @Prop() textAlignLast: 'jusitfy' | 'center' | 'left' | 'right' | 'none' = 'none';
+
   render() {
     return (
       <p
@@ -27,8 +32,10 @@ export class UParagraph {
         }}
       >
         <slot>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas harum animi amet quas perspiciatis? Dolores, tempore necessitatibus impedit deleniti laudantium facere
-          facilis, sint quo, minus velit sit quibusdam hic. Rem?
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
+          harum animi amet quas perspiciatis? Dolores, tempore necessitatibus
+          impedit deleniti laudantium facere facilis, sint quo, minus velit sit
+          quibusdam hic. Rem?
         </slot>
       </p>
     );

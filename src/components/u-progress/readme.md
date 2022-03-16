@@ -1,9 +1,6 @@
 # u-progress
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -15,7 +12,6 @@
 | `showPercentage` | `show-percentage` | Enables text, which shows the percentage.                                     | `boolean` | `true`      |
 | `value`          | `value`           | Value used to calculate progress                                              | `number`  | `100`       |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

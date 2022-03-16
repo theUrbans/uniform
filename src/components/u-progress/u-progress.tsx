@@ -1,4 +1,6 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core';
+import {
+  Component, h, Prop, State, Watch,
+} from '@stencil/core';
 
 /**
  * @name Progress
@@ -14,18 +16,22 @@ export class UProgress {
    * Maximum of values
    */
   @Prop() max: number = 100;
+
   /**
    * Value used to calculate progress
    */
   @Prop() value: number = 100;
+
   /**
    * Size of height of the bar, standard set to 1.25rem. Possible to use any unit.
    */
   @Prop() height: string = '1.25rem';
+
   /**
    * Remove border.
    */
   @Prop() borderless: boolean = false;
+
   @Watch('value') valueChange() {
     // this.value = newValue;
     this.calcProgress();
@@ -51,7 +57,10 @@ export class UProgress {
     return (
       <div>
         <div class={{ frame: true, border: !this.borderless }}>
-          <div class="progress" style={{ width: this.progressResult + '%', height: this.height }}>
+          <div
+            class="progress"
+            style={{ width: `${this.progressResult}%`, height: this.height }}
+          >
             {this.showPercentage ? (
               <div> {this.progressResult} %</div>
             ) : (

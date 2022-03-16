@@ -14,7 +14,13 @@ export class UCol {
   /**
    * flex align-items: start | center | end | space-between | space-around | space-evenly
    */
-  @Prop() align: 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly' = 'start';
+  @Prop() align:
+    | 'start'
+    | 'center'
+    | 'end'
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly' = 'start';
 
   /**
    * flex justify-content: flex-start | flex-end | center | baseline | stretch

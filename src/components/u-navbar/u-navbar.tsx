@@ -1,4 +1,6 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import {
+  Component, Host, h, Prop,
+} from '@stencil/core';
 
 /**
  * @name Navigation Bar
@@ -21,6 +23,7 @@ export class UNavbar {
    * layout should be position relative
    */
   @Prop() fixed: boolean = true;
+
   render() {
     return (
       <Host

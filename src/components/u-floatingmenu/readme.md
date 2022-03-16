@@ -1,17 +1,13 @@
 # u-floatingmenu
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
-| Property | Attribute | Description | Type         | Default                                                                                                                                                                                                                                                                                                                                                                                                       |
-| -------- | --------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `fixed`  | `fixed`   |             | `boolean`    | `false`                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `menu`   | --        |             | `MenuItem[]` | `[     { name: '+ New' },     { divider: true },     { name: 'Edit', subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] } },     { name: 'Copy' },     { divider: true },     {       name: 'Open Recent',       subMenu: {         items: [{ name: 'HTML', subMenu: { items: [{ name: 'index.html' }, { name: 'about.html' }, { name: 'impressum.html' }] } }, { name: 'Item 2' }],       },     },   ]` |
-
+| Property | Attribute | Description | Type         | Default                                                                                                                                                                                                                                                                                                                                               |
+| -------- | --------- | ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `fixed`  | `fixed`   |             | `boolean`    | `false`                                                                                                                                                                                                                                                                                                                                               |
+| `menu`   | --        |             | `MenuItem[]` | `[ { name: '+ New' }, { divider: true }, { name: 'Edit', subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] } }, { name: 'Copy' }, { divider: true }, { name: 'Open Recent', subMenu: { items: [{ name: 'HTML', subMenu: { items: [{ name: 'index.html' }, { name: 'about.html' }, { name: 'impressum.html' }] } }, { name: 'Item 2' }], }, }, ]` |
 
 ## Dependencies
 
@@ -20,6 +16,7 @@
 - [u-menuitem](../u-menuitem)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-floatingmenu --> u-menuitem
@@ -28,6 +25,6 @@ graph TD;
   style u-floatingmenu fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

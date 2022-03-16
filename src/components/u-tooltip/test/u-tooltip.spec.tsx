@@ -5,7 +5,7 @@ describe('w-tooltip', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UTooltip],
-      html: `<u-tooltip></u-tooltip>`,
+      html: '<u-tooltip></u-tooltip>',
     });
     expect(page.root).toEqualHtml(`
       <u-tooltip>

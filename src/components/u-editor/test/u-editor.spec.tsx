@@ -5,7 +5,7 @@ describe('u-editor', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UEditor],
-      html: `<u-editor></u-editor>`,
+      html: '<u-editor></u-editor>',
     });
     expect(page.root).toEqualHtml(`
       <u-editor>

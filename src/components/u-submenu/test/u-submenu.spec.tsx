@@ -5,7 +5,7 @@ describe('u-submenu', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [USubmenu],
-      html: `<u-submenu></u-submenu>`,
+      html: '<u-submenu></u-submenu>',
     });
     expect(page.root).toEqualHtml(`
       <u-submenu>

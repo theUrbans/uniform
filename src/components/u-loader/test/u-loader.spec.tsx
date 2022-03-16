@@ -5,7 +5,7 @@ describe('u-loader', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ULoader],
-      html: `<u-loader></u-loader>`,
+      html: '<u-loader></u-loader>',
     });
     expect(page.root).toEqualHtml(`
       <u-loader>

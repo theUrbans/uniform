@@ -17,7 +17,7 @@
   transform: translateY(-50%);
 }
 .right.start:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -29,7 +29,7 @@
   top: 20px;
 }
 .right.end:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -41,7 +41,7 @@
   bottom: 20px;
 }
 .right.center:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -60,7 +60,7 @@
   transform: translateY(-50%);
 }
 .left.start:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -72,7 +72,7 @@
   bottom: 20px;
 }
 .left.end:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -84,7 +84,7 @@
   top: 20px;
 }
 .left.center:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -102,7 +102,7 @@
   left: 0;
 }
 .bottom.start:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -118,7 +118,7 @@
   right: 0;
 }
 .bottom.end:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -135,7 +135,7 @@
   transform: translateX(50%);
 }
 .bottom.center:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -153,7 +153,7 @@
   left: 0;
 }
 .top.start:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -169,7 +169,7 @@
   right: 0;
 }
 .top.end:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;
@@ -186,7 +186,7 @@
   transform: translate(50%);
 }
 .top.center:before {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   height: 0;

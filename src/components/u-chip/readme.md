@@ -1,9 +1,6 @@
 # w-chip
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -15,13 +12,11 @@
 | `label`     | `label`     | (optional) label of the chip | `string`                                                                                                                                                                                | `undefined` |
 | `size`      | `size`      | size of the chip             | `"large" \| "medium" \| "small"`                                                                                                                                                        | `'medium'`  |
 
-
 ## Events
 
 | Event    | Description                     | Type                |
 | -------- | ------------------------------- | ------------------- |
 | `uClick` | emit wClick event on chip click | `CustomEvent<void>` |
-
 
 ## Slots
 
@@ -29,7 +24,6 @@
 | ----------- | ------------ |
 | `"default"` | text content |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

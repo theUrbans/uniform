@@ -1,9 +1,6 @@
 # w-tooltip
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Usage
 
@@ -11,21 +8,19 @@
 
 ```html
 <u-tooltip text="i am a button with an tooltip">
-    <u-button></u-button>
+  <u-button></u-button>
 </u-tooltip>
 ```
 
 ```html
 <u-tooltip content>
-    <div slot="content">
-        <u-headline>Button with Custom Tooltip</u-headline>
-        <u-paragraph>Custom components in tootltip</u-paragraph>
-    </div>
-    <u-button></u-button>
+  <div slot="content">
+    <u-headline>Button with Custom Tooltip</u-headline>
+    <u-paragraph>Custom components in tootltip</u-paragraph>
+  </div>
+  <u-button></u-button>
 </u-tooltip>
 ```
-
-
 
 ## Properties
 
@@ -37,7 +32,6 @@
 | `text`      | `text`      | text of the tooltip                   | `string`                       | `undefined` |
 | `trigger`   | `trigger`   | choose trigger event                  | `"click" \| "hover"`           | `'hover'`   |
 
-
 ## Slots
 
 | Slot        | Description                                                                         |
@@ -45,7 +39,6 @@
 | `"content"` | (optional) content of the tooltip -> alternative to text, content prop must be used |
 | `"default"` | element which receives the tooltip                                                  |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

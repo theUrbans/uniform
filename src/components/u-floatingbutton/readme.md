@@ -1,9 +1,6 @@
 # u-floatingbutton
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -12,7 +9,6 @@
 | `color`    | `color`    |             | `string`                                             | `'lightpink'`    |
 | `position` | `position` |             | `"bottom-center" \| "bottom-left" \| "bottom-right"` | `'bottom-right'` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

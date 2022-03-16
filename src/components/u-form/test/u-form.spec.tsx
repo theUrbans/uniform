@@ -5,7 +5,7 @@ describe('w-form', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UForm],
-      html: `<u-form></u-form>`,
+      html: '<u-form></u-form>',
     });
     expect(page.root).toEqualHtml(`
       <u-form>

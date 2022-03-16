@@ -13,7 +13,13 @@ import { Component, h } from '@stencil/core';
 export class UDesktoplayout {
   render() {
     return (
-      <u-grid columns={['6rem', '1fr']} rows={1} area={[['menu', 'main']]} width="100%" height="100vh">
+      <u-grid
+        columns={['6rem', '1fr']}
+        rows={1}
+        area={[['menu', 'main']]}
+        width="100%"
+        height="100vh"
+      >
         <section
           class="menu"
           style={{

@@ -1,4 +1,12 @@
-import { Component, Host, h, State, Prop, Event, EventEmitter } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  State,
+  Prop,
+  Event,
+  EventEmitter,
+} from '@stencil/core';
 
 /**
  * @name Spoiler
@@ -55,11 +63,22 @@ export class USpoiler {
             class={{ chevron: true, turn180: this.isOpen }}
             fill="none"
             viewBox="0 0 24 24"
-            width={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
-            height={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
+            width={
+              this.size === 'small' ? 16 : this.size === 'medium' ? 20 : 24
+            }
+            height={
+              this.size === 'small' ? 16 : this.size === 'medium' ? 20 : 24
+            }
             stroke="currentColor"
           >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width={this.size == 'small' ? 1 : this.size == 'medium' ? 1.5 : 2} d="M19 9l-7 7-7-7" />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width={
+                this.size === 'small' ? 1 : this.size === 'medium' ? 1.5 : 2
+              }
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
           <span>{this.label}</span>
         </div>

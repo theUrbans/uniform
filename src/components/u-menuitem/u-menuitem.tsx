@@ -1,4 +1,6 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import {
+  Component, Event, EventEmitter, h, Prop,
+} from '@stencil/core';
 import { SubMenu } from '../u-submenu/u-submenu';
 
 export interface MenuItem {
@@ -18,13 +20,16 @@ export interface MenuItem {
 })
 export class UMenuitem {
   @Prop() item: MenuItem;
+
   @Prop({ mutable: true }) active: boolean = false;
+
   @Prop() depthLevel: number = 0;
+
   @Event() uItemSelect: EventEmitter<MenuItem>;
+
   render() {
     if (this.item.divider) return <hr />;
-    else
-      return (
+    return (
         <li>
           {this.item.subMenu ? (
             [
@@ -56,6 +61,6 @@ export class UMenuitem {
             <span>{this.item.name}</span>
           )}
         </li>
-      );
+    );
   }
 }

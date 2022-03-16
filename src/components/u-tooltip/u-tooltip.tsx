@@ -1,4 +1,6 @@
-import { Component, h, Prop, State, Element } from '@stencil/core';
+import {
+  Component, h, Prop, State, Element,
+} from '@stencil/core';
 
 /**
  * @name Tooltip
@@ -41,7 +43,9 @@ export class UTooltip {
   @Prop() content?: boolean;
 
   @State() visible: boolean = false;
+
   @State() position: 'top' | 'bottom' | 'left' | 'right' = 'top';
+
   private calcPos() {
     const { x, y } = this.el.getBoundingClientRect();
     if (y > 200 && this.axis === 'y') this.position = 'top';
@@ -60,21 +64,29 @@ export class UTooltip {
     console.log('test');
     this.visible = true;
   };
+
   private handleMouseLeave = () => {
     if (this.trigger === 'click') return;
     this.visible = false;
   };
+
   private handleClick = () => {
     if (this.trigger === 'hover') return;
     this.calcPos();
     this.visible = !this.visible;
   };
+
   render() {
     return (
-      <div class="wrapper" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave} onMouseDown={this.handleClick}>
+      <div
+        class="wrapper"
+        onMouseEnter={this.handleMouseEnter}
+        onMouseLeave={this.handleMouseLeave}
+        onMouseDown={this.handleClick}
+      >
         <div
           role="tooltip"
-          onMouseDown={e => e.stopPropagation()}
+          onMouseDown={(e) => e.stopPropagation()}
           class={{
             tooltip: true,
             visible: this.visible,

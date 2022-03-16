@@ -1,4 +1,16 @@
-import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, Event, EventEmitter, Host } from '@stencil/core';
+import {
+  Component,
+  ComponentInterface,
+  h,
+  Prop,
+  Method,
+  Element,
+  Watch,
+  State,
+  Event,
+  EventEmitter,
+  Host,
+} from '@stencil/core';
 // import close from '../../assets/close.svg';
 // import { inputEvent } from '../../utils/utils';
 
@@ -13,14 +25,18 @@ import { Component, ComponentInterface, h, Prop, Method, Element, Watch, State, 
 })
 export class UInput implements ComponentInterface {
   private inputElement?: HTMLInputElement;
+
   @State() hovered: boolean = false;
+
   @State() focus: boolean = false;
+
   @Element() el: HTMLElement;
 
   /**
    * the value of the input
    */
   @Prop({ mutable: true }) value: string | number | null = '';
+
   @Watch('value')
   protected valueChanged() {
     this.uChange.emit(this.value);
@@ -40,20 +56,28 @@ export class UInput implements ComponentInterface {
   /**
    * type of the input
    */
-  @Prop() inputType?: 'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search' = 'text';
+  @Prop() inputType?:
+    | 'none'
+    | 'text'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
+    | 'search' = 'text';
 
   /**
-   * if input type == numeric -> min value
+   * if input type === numeric -> min value
    */
   @Prop() min?: string;
 
   /**
-   * if input type == numeric -> max value
+   * if input type === numeric -> max value
    */
   @Prop() max?: string;
 
   /**
-   * if input type == numeric -> step value
+   * if input type === numeric -> step value
    */
   @Prop() step?: string;
 
@@ -83,6 +107,7 @@ export class UInput implements ComponentInterface {
    * change this prop to true to focus the input
    */
   @Prop({ mutable: true }) doFocus?: boolean = false;
+
   @Watch('doFocus') doFocusChanged() {
     if (this.doFocus) {
       this.inputElement.focus();
@@ -103,6 +128,7 @@ export class UInput implements ComponentInterface {
    * decide if the input is disabled
    */
   @Prop() disabled?: boolean = false;
+
   @Watch('disabled') disabledChanged() {
     if (this.disabled) {
       this.inputElement.setAttribute('disabled', 'true');
@@ -130,7 +156,13 @@ export class UInput implements ComponentInterface {
   /**
    * decide if autocapitalize should be enabled
    */
-  @Prop() autoCapitalize?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+  @Prop() autoCapitalize?:
+    | 'off'
+    | 'none'
+    | 'on'
+    | 'sentences'
+    | 'words'
+    | 'characters';
 
   /**
    * decide if spellcheck should be enabled
@@ -159,7 +191,7 @@ export class UInput implements ComponentInterface {
 
   /**
    * emitted on blur
-   **/
+   * */
   @Event() uBlur: EventEmitter<void>;
 
   /**
@@ -224,14 +256,14 @@ export class UInput implements ComponentInterface {
     this.uFocus.emit();
   };
 
-  private onKeyDown = e => {
+  private onKeyDown = (e) => {
     // on 'esc' press blur
     if (e.keyCode === 27) {
       this.inputElement.blur();
     }
   };
 
-  private resetValue = e => {
+  private resetValue = (e) => {
     if (e && !this.disabled && !this.readonly) {
       e.stopPropagation();
       e.preventDefault();
@@ -240,15 +272,16 @@ export class UInput implements ComponentInterface {
       this.inputElement.value = '';
     }
   };
+
   private setAttr(): void {
     if (!this.inputElement) return;
-    if (!!this.min) this.inputElement.setAttribute('min', this.min);
-    if (!!this.max) this.inputElement.setAttribute('max', this.max);
-    if (!!this.step) this.inputElement.setAttribute('step', this.step);
-    if (!!this.autoComplete) this.inputElement.setAttribute('autocomplete', this.autoComplete);
-    if (!!this.autoCorrect) this.inputElement.setAttribute('autocorrect', this.autoCorrect);
-    if (!!this.autoCapitalize) this.inputElement.setAttribute('autocapitalize', this.autoCapitalize);
-    if (!!this.pattern) this.inputElement.setAttribute('pattern', this.pattern);
+    if (this.min) this.inputElement.setAttribute('min', this.min);
+    if (this.max) this.inputElement.setAttribute('max', this.max);
+    if (this.step) this.inputElement.setAttribute('step', this.step);
+    if (this.autoComplete) this.inputElement.setAttribute('autocomplete', this.autoComplete);
+    if (this.autoCorrect) this.inputElement.setAttribute('autocorrect', this.autoCorrect);
+    if (this.autoCapitalize) this.inputElement.setAttribute('autocapitalize', this.autoCapitalize);
+    if (this.pattern) this.inputElement.setAttribute('pattern', this.pattern);
     if (this.spellCheck) this.inputElement.setAttribute('spellcheck', this.spellCheck.toString());
     if (this.required) this.inputElement.setAttribute('required', this.required.toString());
     if (this.disabled) this.inputElement.setAttribute('disabled', this.disabled.toString());
@@ -275,7 +308,7 @@ export class UInput implements ComponentInterface {
             disabled: this.disabled,
             [this.design]: true,
             [this.size]: true,
-            errorText: !this.validate && !!!this.errorMsg,
+            errorText: !this.validate && !this.errorMsg,
             [`slot-${this.showSlot}`]: !!this.showSlot,
           }}
         >
@@ -285,7 +318,7 @@ export class UInput implements ComponentInterface {
               [`text-${this.size}`]: true,
               // [`padding-${this.size}`]: this.hovered || this.focus || !!this.value,
             }}
-            ref={input => (this.inputElement = input)}
+            ref={(input) => (this.inputElement = input)}
             type={this.inputType}
             value={value}
             onInput={this.onInput}
@@ -295,7 +328,7 @@ export class UInput implements ComponentInterface {
             onKeyDown={this.onKeyDown}
             placeholder={this.label}
           />
-          {!!this.label ? (
+          {this.label ? (
             <label
               class={{
                 label: true,
@@ -303,7 +336,7 @@ export class UInput implements ComponentInterface {
                 [`label-${this.size}`]: true,
               }}
             >
-              {this.required ? this.label + ' *' : this.label}
+              {this.required ? `${this.label} *` : this.label}
             </label>
           ) : null}
           {!this.readonly && !this.disabled && this.value && (
@@ -317,22 +350,54 @@ export class UInput implements ComponentInterface {
               {(this.focus || this.hovered || this.value) && (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
-                  height={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
+                  width={
+                    this.size === 'small'
+                      ? 16
+                      : this.size === 'medium'
+                        ? 20
+                        : 24
+                  }
+                  height={
+                    this.size === 'small'
+                      ? 16
+                      : this.size === 'medium'
+                        ? 20
+                        : 24
+                  }
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width={this.size == 'small' ? 1 : this.size == 'medium' ? 1.5 : 2}
+                  stroke-width={
+                    this.size === 'small' ? 1 : this.size === 'medium' ? 1.5 : 2
+                  }
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="M15 15L9 9m6 0l-6 6" class={this.focus || this.hovered ? 'text-red-500' : 'text-gray-500'} />
-                  <circle cx="12" cy="12" r="10" class={this.focus || this.hovered ? 'text-red-500' : 'text-gray-500'} />
+                  <path
+                    d="M15 15L9 9m6 0l-6 6"
+                    class={
+                      this.focus || this.hovered
+                        ? 'text-red-500'
+                        : 'text-gray-500'
+                    }
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    class={
+                      this.focus || this.hovered
+                        ? 'text-red-500'
+                        : 'text-gray-500'
+                    }
+                  />
                 </svg>
               )}
             </div>
           )}
-          {!this.validate ? <span class={{ 'help-text': true }}>{this.errorMsg}</span> : null}
+          {!this.validate ? (
+            <span class={{ 'help-text': true }}>{this.errorMsg}</span>
+          ) : null}
         </div>
         {this.showSlot === 'right' && <slot></slot>}
         {this.showSlot === 'both' && <slot name="right"></slot>}

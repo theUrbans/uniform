@@ -5,7 +5,7 @@ describe('u-popup', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UPopup],
-      html: `<u-popup></u-popup>`,
+      html: '<u-popup></u-popup>',
     });
     expect(page.root).toEqualHtml(`
       <u-popup>

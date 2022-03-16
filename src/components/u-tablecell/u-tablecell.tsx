@@ -1,4 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
+
 export type ComponentName = 'Table Cell';
 /**
  * @name Table Cell
@@ -14,7 +15,9 @@ export class UTablecell {
    * should checkbox be rendered
    */
   @Prop() checkbox: boolean = false;
+
   @Prop() data: string;
+
   render() {
     return (
       <td>

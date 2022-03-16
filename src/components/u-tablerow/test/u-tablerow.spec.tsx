@@ -5,7 +5,7 @@ describe('u-tablerow', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UTablerow],
-      html: `<u-tablerow></u-tablerow>`,
+      html: '<u-tablerow></u-tablerow>',
     });
     expect(page.root).toEqualHtml(`
       <u-tablerow>

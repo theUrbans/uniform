@@ -1,9 +1,6 @@
 # u-card
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,7 +10,6 @@
 | `img`    | `img`     |             | `boolean` | `false`     |
 | `width`  | `width`   |             | `string`  | `'24rem'`   |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

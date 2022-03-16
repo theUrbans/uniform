@@ -14,7 +14,13 @@ export class URow {
   /**
    * flex justify-content
    */
-  @Prop() justify: 'start' | 'center' | 'end' | 'space-around' | 'space-between' | 'space-evenly' = 'start';
+  @Prop() justify:
+    | 'start'
+    | 'center'
+    | 'end'
+    | 'space-around'
+    | 'space-between'
+    | 'space-evenly' = 'start';
 
   /**
    * flex align-items

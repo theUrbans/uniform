@@ -5,7 +5,7 @@ describe('w-slider', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [USlider],
-      html: `<u-slider></u-slider>`,
+      html: '<u-slider></u-slider>',
     });
     expect(page.root).toEqualHtml(`
       <u-slider>

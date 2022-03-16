@@ -1,4 +1,6 @@
-import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
+import {
+  Component, Event, EventEmitter, h, Method, Prop,
+} from '@stencil/core';
 /**
  * @name Checkbox
  * @state 🟡
@@ -10,15 +12,23 @@ import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 })
 export class UCheckbox {
   private checkbox: HTMLInputElement;
+
   @Prop() label: string = '';
+
   @Prop({ mutable: true }) checked: boolean = false;
+
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
+
   @Prop() disabled: boolean = false;
+
   @Prop() tristate: boolean = false;
+
   @Event({ bubbles: false, composed: false }) uChange: EventEmitter<boolean>; // inter indicates indeterminate state
+
   @Method() async set(checked: boolean) {
     this.checked = checked;
   }
+
   private handleInput = (event: UIEvent) => {
     if (this.disabled) return;
     const input: HTMLInputElement = event.target as HTMLInputElement;
@@ -47,7 +57,13 @@ export class UCheckbox {
         >
           {this.label}
         </span>
-        <input type="checkbox" ref={cb => (this.checkbox = cb)} checked={this.checked} onInput={this.handleInput} disabled={this.disabled} />
+        <input
+          type="checkbox"
+          ref={(cb) => (this.checkbox = cb)}
+          checked={this.checked}
+          onInput={this.handleInput}
+          disabled={this.disabled}
+        />
         <span
           class={{
             checkmark: !this.tristate,

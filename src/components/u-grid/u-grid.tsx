@@ -1,4 +1,6 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core';
+import {
+  Component, Host, h, Prop, Element,
+} from '@stencil/core';
 
 /**
  * @name Grid
@@ -11,6 +13,7 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
 })
 export class UGrid {
   @Element() el: HTMLElement;
+
   /**
    * number of columns or array of column widths
    */
@@ -50,6 +53,7 @@ export class UGrid {
     }
     return 'repeat(12, 1fr)';
   }
+
   private formatRows(): string {
     if (typeof this.rows === 'number') {
       return `repeat(${this.rows}, 1fr)`;
@@ -59,6 +63,7 @@ export class UGrid {
     }
     return 'repeat(2, 1fr)';
   }
+
   private setAttributes(): void {
     if (!this.el) return;
     this.el.style.setProperty('display', 'grid');
@@ -68,13 +73,17 @@ export class UGrid {
     this.el.style.setProperty('grid-template-columns', this.formatColumns());
     this.el.style.setProperty('grid-template-rows', this.formatRows());
     if (this.area.length === 0) return;
-    const area = this.area.map(row => `${row.join(' ')}`);
-    this.el.style.setProperty('grid-template-areas', '"' + area.join('" "') + '"');
+    const area = this.area.map((row) => `${row.join(' ')}`);
+    this.el.style.setProperty(
+      'grid-template-areas',
+      `"${area.join('" "')}"`,
+    );
   }
 
   componentDidLoad() {
     this.setAttributes();
   }
+
   render() {
     return (
       <Host>

@@ -1,4 +1,13 @@
-import { Component, Host, h, Prop, Event, EventEmitter, State } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  Event,
+  EventEmitter,
+  State,
+} from '@stencil/core';
+
 export interface Option {
   value: any;
   label: string;
@@ -19,10 +28,15 @@ export class URadiogroup {
     { value: 2, label: 'Option 2' },
     { value: 3, label: 'Option 3' },
   ];
+
   @Prop({ mutable: true }) value: any;
+
   @Prop() alignment: 'vertical' | 'horizontal' = 'vertical';
+
   @Prop() label: string = 'Test';
+
   @Event() uInput: EventEmitter;
+
   @State() hovered: string;
 
   private handleInput = (e: Event, option: Option) => {
@@ -42,30 +56,35 @@ export class URadiogroup {
             [this.alignment]: true,
           }}
         >
-          {this.label ? <span class={{ label: true }}>{this.label}</span> : null}
-          {this.options.map(option => {
-            return (
-              <label htmlFor={option.label} class="container" onMouseEnter={() => (this.hovered = option.label)} onMouseLeave={() => (this.hovered = '')}>
-                {option.label}
-                <input
-                  type="radio"
-                  id={option.label}
-                  value={option.value}
-                  checked={this.value == option.value}
-                  onInput={(e: Event) => this.handleInput(e, option)}
-                  class={{
-                    checkbox: true,
-                  }}
-                />
-                <span
-                  class={{
-                    checkmark: true,
-                    hovered: this.hovered == option.label,
-                  }}
-                ></span>
-              </label>
-            );
-          })}
+          {this.label ? (
+            <span class={{ label: true }}>{this.label}</span>
+          ) : null}
+          {this.options.map((option) => (
+            <label
+              htmlFor={option.label}
+              class="container"
+              onMouseEnter={() => (this.hovered = option.label)}
+              onMouseLeave={() => (this.hovered = '')}
+            >
+              {option.label}
+              <input
+                type="radio"
+                id={option.label}
+                value={option.value}
+                checked={this.value === option.value}
+                onInput={(e: Event) => this.handleInput(e, option)}
+                class={{
+                  checkbox: true,
+                }}
+              />
+              <span
+                class={{
+                  checkmark: true,
+                  hovered: this.hovered === option.label,
+                }}
+              ></span>
+            </label>
+          ))}
         </div>
       </Host>
     );

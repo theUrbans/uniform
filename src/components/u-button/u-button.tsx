@@ -1,4 +1,6 @@
-import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
+import {
+  Component, h, Prop, Event, EventEmitter,
+} from '@stencil/core';
 
 /**
  * @name Button
@@ -49,6 +51,7 @@ export class UButton {
    * emit wClick on button click
    */
   @Event() uClick: EventEmitter<void>;
+
   private handleOnClick = () => {
     this.uClick.emit();
   };

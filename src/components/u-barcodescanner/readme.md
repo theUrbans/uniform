@@ -1,16 +1,12 @@
 # u-barcodescanner
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
 | Property  | Attribute | Description                                                            | Type  | Default     |
 | --------- | --------- | ---------------------------------------------------------------------- | ----- | ----------- |
 | `library` | `library` | [used library](https://github.com/capacitor-community/barcode-scanner) | `any` | `undefined` |
-
 
 ## Events
 
@@ -19,7 +15,6 @@
 | `uScan`      | return scanned element     | `CustomEvent<string>` |
 | `uStartScan` | event when scan is started | `CustomEvent<void>`   |
 | `uStopScan`  | event when scan is stopped | `CustomEvent<void>`   |
-
 
 ## Methods
 
@@ -31,8 +26,6 @@ force get camera permission
 
 Type: `Promise<void>`
 
-
-
 ### `prepareCamera() => Promise<void>`
 
 prepare camera for faster startup
@@ -40,8 +33,6 @@ prepare camera for faster startup
 #### Returns
 
 Type: `Promise<void>`
-
-
 
 ### `startScanner() => Promise<void>`
 
@@ -51,8 +42,6 @@ begin scanning
 
 Type: `Promise<void>`
 
-
-
 ### `stopScanner() => Promise<void>`
 
 cancel scanning
@@ -61,9 +50,6 @@ cancel scanning
 
 Type: `Promise<void>`
 
-
-
-
 ## Dependencies
 
 ### Depends on
@@ -71,12 +57,13 @@ Type: `Promise<void>`
 - [u-button](../u-button)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-barcodescanner --> u-button
   style u-barcodescanner fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

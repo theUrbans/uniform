@@ -5,7 +5,7 @@ describe('w-modal', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UModal],
-      html: `<u-modal></u-modal>`,
+      html: '<u-modal></u-modal>',
     });
     expect(page.root).toEqualHtml(`
       <u-modal>

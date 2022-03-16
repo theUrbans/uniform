@@ -1,4 +1,11 @@
-import { Component, h, Event, EventEmitter, Element, State } from '@stencil/core';
+import {
+  Component,
+  h,
+  Event,
+  EventEmitter,
+  Element,
+  State,
+} from '@stencil/core';
 
 /**
  * @name Observer
@@ -24,8 +31,10 @@ export class UObserver {
   @Event({ bubbles: false }) invisible: EventEmitter<void>;
 
   @State() isVisible: boolean = false;
+
   private observer: IntersectionObserver;
-  private onIntersection = entries => {
+
+  private onIntersection = (entries) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
         this.visible.emit();
@@ -38,6 +47,7 @@ export class UObserver {
       }
     }
   };
+
   componentDidLoad() {
     const div: HTMLDivElement = this.el.shadowRoot.querySelector('div');
     if (div) {
@@ -47,11 +57,13 @@ export class UObserver {
       this.observer.observe(div);
     }
   }
+
   disconnectedCallback() {
     if (this.observer) {
       this.observer.disconnect();
     }
   }
+
   render() {
     return (
       <div>

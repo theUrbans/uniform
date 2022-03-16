@@ -1,4 +1,13 @@
-import { Component, Host, h, Method, State, Prop, Watch, Listen } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Method,
+  State,
+  Prop,
+  Watch,
+  Listen,
+} from '@stencil/core';
 
 export interface NotficationOption {
   title: string;
@@ -27,11 +36,22 @@ export type NotificationType = 'error' | 'success' | 'warning' | 'default';
   shadow: true,
 })
 export class UNotification {
-  @Prop() position: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center' = 'top-right';
+  @Prop() position:
+    | 'top-right'
+    | 'top-left'
+    | 'bottom-right'
+    | 'bottom-left'
+    | 'top-center'
+    | 'bottom-center' = 'top-right';
+
   @State() type: NotificationType = 'default';
+
   @State() notifications: Array<Notification> = [];
+
   @State() intervalls: Array<any> = [];
+
   @State() newNotification: Notification | null = null;
+
   @Watch('newNotification') notificationsChanged(notification: Notification) {
     // notification.progress = 100;
     // this.intervalls.push(
@@ -43,7 +63,10 @@ export class UNotification {
     if (this.position.includes('top')) {
       this.notifications = [...this.notifications, notification];
       setTimeout(() => {
-        this.notifications = this.notifications.slice(1, this.notifications.length);
+        this.notifications = this.notifications.slice(
+          1,
+          this.notifications.length,
+        );
         clearInterval(this.intervalls[0]);
         this.intervalls = this.intervalls.slice(1, this.intervalls.length);
         console.log(this.intervalls);
@@ -52,24 +75,29 @@ export class UNotification {
     if (this.position.includes('bottom')) {
       this.notifications = [notification, ...this.notifications];
       setTimeout(() => {
-        this.notifications = this.notifications.slice(0, this.notifications.length - 1);
+        this.notifications = this.notifications.slice(
+          0,
+          this.notifications.length - 1,
+        );
         clearInterval(this.intervalls[0]);
       }, notification.delay);
     }
     console.log(this.intervalls);
   }
+
   @Listen('show-toast', { target: 'body' })
   showToast(event: CustomEvent) {
     this.show(event.detail.type, { ...event.detail });
   }
+
   @Listen('clear-toast', { target: 'body' })
   clearToast() {
     this.notifications = [];
   }
 
   @Method()
-  async show(type: NotificationType = 'default', options: NotficationOption) {
-    this.type = type;
+  async show(type: NotificationType, options: NotficationOption) {
+    this.type = type || 'default';
     this.newNotification = {
       title: options.title,
       message: options.message,
@@ -77,21 +105,24 @@ export class UNotification {
       action: options.buttons || [],
     };
   }
+
   @Method()
   async success(title: string, message?: string, delay?: number) {
     await this.show('success', { title, message, delay });
   }
+
   @Method()
   async error(title: string, message?: string, delay?: number) {
     await this.show('error', { title, message, delay });
   }
+
   @Method()
   async warning(title: string, message?: string, delay?: number) {
     await this.show('warning', { title, message, delay });
   }
 
   private handleClose(notification: Notification) {
-    this.notifications = this.notifications.filter(n => n !== notification);
+    this.notifications = this.notifications.filter((n) => n !== notification);
   }
 
   render() {
@@ -103,20 +134,19 @@ export class UNotification {
             list: true,
           }}
         >
-          {this.notifications.map(notification => {
-            return (
-              <div
-                class={{
-                  notification: true,
-                  [this.type]: true,
-                }}
-              >
-                <div class="close" onClick={() => this.handleClose(notification)}>
-                  &times;
-                </div>
-                <h1>{notification.title}</h1>
-                {notification.message && <p>{notification.message}</p>}
-                {/* <div
+          {this.notifications.map((notification) => (
+            <div
+              class={{
+                notification: true,
+                [this.type]: true,
+              }}
+            >
+              <div class="close" onClick={() => this.handleClose(notification)}>
+                &times;
+              </div>
+              <h1>{notification.title}</h1>
+              {notification.message && <p>{notification.message}</p>}
+              {/* <div
                   class="duration"
                   style={
                     {
@@ -133,9 +163,8 @@ export class UNotification {
                   aria-valuemin="0"
                   aria-valuemax="100"
                 ></div> */}
-              </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </Host>
     );

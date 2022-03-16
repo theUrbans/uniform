@@ -1,5 +1,8 @@
-import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
+import {
+  Component, Event, EventEmitter, h, Prop, Watch,
+} from '@stencil/core';
 import { MenuItem } from '../u-menuitem/u-menuitem';
+
 export interface SubMenu {
   items: Array<MenuItem>;
 }
@@ -14,12 +17,17 @@ export interface SubMenu {
 })
 export class USubmenu {
   @Prop() subMenu: Array<MenuItem>;
+
   @Prop({ mutable: true }) active: boolean = false;
+
   @Watch('active') onActiveChange() {
     this.uOpenSubMenu.emit({ menu: this.subMenu, open: this.active });
   }
+
   @Event() uOpenSubMenu: EventEmitter<{ menu: Array<MenuItem>; open: boolean }>;
+
   @Prop() depthLevel: number = 0;
+
   render() {
     return (
       <ul
@@ -29,8 +37,12 @@ export class USubmenu {
           show: this.active,
         }}
       >
-        {this.subMenu.map(item => (
-          <u-menuitem item={item} active={false} depthLevel={this.depthLevel + 1}></u-menuitem>
+        {this.subMenu.map((item) => (
+          <u-menuitem
+            item={item}
+            active={false}
+            depthLevel={this.depthLevel + 1}
+          ></u-menuitem>
         ))}
       </ul>
     );

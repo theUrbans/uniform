@@ -1,4 +1,6 @@
-import { Component, Host, h, Listen, State, Method } from '@stencil/core';
+import {
+  Component, Host, h, Listen, State, Method,
+} from '@stencil/core';
 
 /**
  * @name Layout
@@ -15,37 +17,51 @@ import { Component, Host, h, Listen, State, Method } from '@stencil/core';
 })
 export class ULayout {
   private mobilelayout: HTMLUMobilelayoutElement;
+
   @State() mode: 'mobile' | 'desktop';
+
   @Listen('resize', { target: 'window' }) onWindowResize() {
     if (window.innerWidth <= 768) this.mode = 'mobile';
     else this.mode = 'desktop';
   }
+
   componentWillLoad() {
     this.onWindowResize();
   }
+
   @Method() async showOption() {
     if (this.mode === 'mobile') {
       this.mobilelayout.activateOption();
       this.mobilelayout.showOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('show-modal', { detail: { name: 'uniform-layout-option' } }));
+      document.dispatchEvent(
+        new CustomEvent('show-modal', {
+          detail: { name: 'uniform-layout-option' },
+        }),
+      );
     }
   }
+
   @Method() async closeOption() {
     if (this.mode === 'mobile') {
       this.mobilelayout.showMain();
       this.mobilelayout.disableOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('close-modal', { detail: { name: 'uniform-layout-option' } }));
+      document.dispatchEvent(
+        new CustomEvent('close-modal', {
+          detail: { name: 'uniform-layout-option' },
+        }),
+      );
     }
   }
+
   render() {
     return (
       <Host>
         {this.mode === 'mobile' ? (
-          <u-mobilelayout ref={mobile => (this.mobilelayout = mobile)}>
+          <u-mobilelayout ref={(mobile) => (this.mobilelayout = mobile)}>
             <div slot="menu">
               <slot name="menu" />
             </div>

@@ -1,4 +1,14 @@
-import { Component, Host, Element, h, Prop, Watch, Event, EventEmitter, State } from '@stencil/core';
+import {
+  Component,
+  Host,
+  Element,
+  h,
+  Prop,
+  Watch,
+  Event,
+  EventEmitter,
+  State,
+} from '@stencil/core';
 
 /**
  * @name Textarea
@@ -11,25 +21,45 @@ import { Component, Host, Element, h, Prop, Watch, Event, EventEmitter, State } 
 })
 export class UTextarea {
   private textarea: HTMLTextAreaElement;
+
   @Element() el: HTMLElement;
+
   @Prop() disabled: boolean = false;
+
   @Prop() readonly: boolean = false;
+
   @Prop() label?: string;
+
   @Prop() required: boolean = false;
+
   @Prop() size: 'small' | 'medium' | 'large' = 'medium';
-  @Prop() design: 'primary' | 'error' | 'success' | 'warning' | 'outline' | 'secondary' = 'secondary';
+
+  @Prop() design:
+    | 'primary'
+    | 'error'
+    | 'success'
+    | 'warning'
+    | 'outline'
+    | 'secondary' = 'secondary';
+
   @Prop() resize: 'none' | 'both' | 'horizontal' | 'vertical' = 'vertical';
+
   @Prop({ mutable: true }) value: string | null = '';
+
   @Prop() cols: number = 50;
+
   @Prop() rows: number = 6;
+
   @Watch('value') valueChanged() {
     this.textarea.value = this.value;
     this.uInput.emit(this.value);
   }
+
   @Event() uInput: EventEmitter;
+
   @State() focused: boolean = false;
 
-  private resetValue = e => {
+  private resetValue = (e) => {
     if (e && !this.disabled && !this.readonly) {
       e.stopPropagation();
       e.preventDefault();
@@ -40,7 +70,7 @@ export class UTextarea {
     }
   };
 
-  private handleInput = e => {
+  private handleInput = (e) => {
     const input = e.target as HTMLInputElement;
     if (input) {
       this.value = input.value;
@@ -50,6 +80,7 @@ export class UTextarea {
   private handleFocus = () => {
     this.focused = true;
   };
+
   private handleBlur = () => {
     this.focused = false;
   };
@@ -66,7 +97,7 @@ export class UTextarea {
           }}
         >
           <textarea
-            ref={ta => (this.textarea = ta)}
+            ref={(ta) => (this.textarea = ta)}
             required={this.required}
             readonly={this.readonly}
             disabled={this.disabled}
@@ -81,7 +112,7 @@ export class UTextarea {
             rows={this.rows}
             cols={this.cols}
           ></textarea>
-          {!!this.label ? (
+          {this.label ? (
             <label
               class={{
                 label: true,
@@ -90,7 +121,7 @@ export class UTextarea {
                 labeltop: !!this.value || this.focused,
               }}
             >
-              {this.required ? this.label + ' *' : this.label}
+              {this.required ? `${this.label} *` : this.label}
             </label>
           ) : null}
           {!this.readonly && !this.disabled && this.value ? (
@@ -104,17 +135,39 @@ export class UTextarea {
               {this.focused || this.value ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
-                  height={this.size == 'small' ? 16 : this.size == 'medium' ? 20 : 24}
+                  width={
+                    this.size === 'small'
+                      ? 16
+                      : this.size === 'medium'
+                        ? 20
+                        : 24
+                  }
+                  height={
+                    this.size === 'small'
+                      ? 16
+                      : this.size === 'medium'
+                        ? 20
+                        : 24
+                  }
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width={this.size == 'small' ? 1 : this.size == 'medium' ? 1.5 : 2}
+                  stroke-width={
+                    this.size === 'small' ? 1 : this.size === 'medium' ? 1.5 : 2
+                  }
                   stroke-linecap="round"
                   stroke-linejoin="round"
                 >
-                  <path d="M15 15L9 9m6 0l-6 6" class={this.focused ? 'text-red-500' : 'text-gray-500'} />
-                  <circle cx="12" cy="12" r="10" class={this.focused ? 'text-red-500' : 'text-gray-500'} />
+                  <path
+                    d="M15 15L9 9m6 0l-6 6"
+                    class={this.focused ? 'text-red-500' : 'text-gray-500'}
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    class={this.focused ? 'text-red-500' : 'text-gray-500'}
+                  />
                 </svg>
               ) : null}
             </div>

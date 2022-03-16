@@ -5,7 +5,7 @@ describe('u-breadcrumb', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UBreadcrumb],
-      html: `<u-breadcrumb></u-breadcrumb>`,
+      html: '<u-breadcrumb></u-breadcrumb>',
     });
     expect(page.root).toEqualHtml(`
       <u-breadcrumb>

@@ -5,7 +5,7 @@ describe('w-icon', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UIcon],
-      html: `<u-icon></u-icon>`,
+      html: '<u-icon></u-icon>',
     });
     expect(page.root).toEqualHtml(`
       <u-icon>

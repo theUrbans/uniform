@@ -1,9 +1,6 @@
 # w-col
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -17,20 +14,20 @@
 | `size`    | `size`    | used with w-grid, set size based on number of columns on w-grid (default is 12)           | `number`                                                                              | `12`       |
 | `wrap`    | `wrap`    | flex wrap: nowrap \| wrap \| wrap-reverse                                                 | `"nowrap" \| "wrap" \| "wrap-reverse"`                                                | `'wrap'`   |
 
-
 ## Dependencies
 
 ### Used by
 
- - [u-filepicker](../u-filepicker)
+- [u-filepicker](../u-filepicker)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-filepicker --> u-col
   style u-col fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

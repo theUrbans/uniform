@@ -5,7 +5,7 @@ describe('w-notification', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UNotification],
-      html: `<u-notification></u-notification>`,
+      html: '<u-notification></u-notification>',
     });
     expect(page.root).toEqualHtml(`
       <u-notification>

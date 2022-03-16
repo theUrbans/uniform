@@ -1,4 +1,7 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import {
+  Component, Event, EventEmitter, h, Prop,
+} from '@stencil/core';
+
 export type ChipDesign =
   | 'slate'
   | 'stone'
@@ -58,10 +61,12 @@ export class UChip {
    * emit wClick event on chip click
    */
   @Event() uClick: EventEmitter<void>;
+
   private handleClick = () => {
     if (!this.clickable) return;
     this.uClick.emit();
   };
+
   render() {
     return (
       <div
@@ -69,7 +74,7 @@ export class UChip {
           chip: true,
           [this.size]: true,
           [this.design]: true,
-          left: !!!this.label,
+          left: !this.label,
           click: this.clickable,
         }}
         onClick={this.handleClick}

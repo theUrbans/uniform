@@ -5,7 +5,7 @@ describe('w-cardselect', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UCardselect],
-      html: `<u-cardselect></u-cardselect>`,
+      html: '<u-cardselect></u-cardselect>',
     });
     expect(page.root).toEqualHtml(`
       <u-cardselect>

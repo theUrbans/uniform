@@ -5,7 +5,7 @@ describe('u-floatingbutton', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UFloatingbutton],
-      html: `<u-floatingbutton></u-floatingbutton>`,
+      html: '<u-floatingbutton></u-floatingbutton>',
     });
     expect(page.root).toEqualHtml(`
       <u-floatingbutton>

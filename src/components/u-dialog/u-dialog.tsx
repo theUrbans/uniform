@@ -1,4 +1,7 @@
-import { Component, Host, h, Prop, Listen, State } from '@stencil/core';
+import {
+  Component, Host, h, Prop, Listen, State,
+} from '@stencil/core';
+
 export interface DialogAction {
   title: string;
   design?: 'secondary' | 'error' | 'success' | 'warning' | 'primary';
@@ -20,15 +23,21 @@ export interface DialogAction {
 })
 export class UDialog {
   private modal: HTMLUModalElement;
+
   @Prop() name: string = 'u-dialog-default';
+
   @State() open: boolean = false;
+
   @State() title: string = 'u-dialog title';
+
   @State() content: string = '';
+
   @State() buttons: Array<DialogAction> = [{ title: 'OK' }];
+
   @Listen('open-dialog', { target: 'body' })
   openDialog(e: any) {
     const { params } = e.detail;
-    // if (name == this.name) this.open = true;
+    // if (name === this.name) this.open = true;
     this.title = params.title || '';
     this.content = params.content || '';
     this.buttons = params.buttons || [{ title: 'OK' }];
@@ -38,18 +47,30 @@ export class UDialog {
   render() {
     return (
       <Host>
-        <u-modal name={this.name} ref={modal => (this.modal = modal)} resizeable={false} moveable={false} closeOnClick={false}>
+        <u-modal
+          name={this.name}
+          ref={(modal) => (this.modal = modal)}
+          resizeable={false}
+          moveable={false}
+          closeOnClick={false}
+        >
           <span slot="header">{this.title}</span>
           <div slot="body" class="body">
             <p>{this.content}</p>
             <div class="actions">
-              {this.buttons.map((action: DialogAction) => {
-                return (
-                  <u-button design={action.design || 'secondary'} outline onClick={!!action.handler ? action.handler : () => this.modal.closeModal(this.name)}>
-                    {action.title}
-                  </u-button>
-                );
-              })}
+              {this.buttons.map((action: DialogAction) => (
+                <u-button
+                  design={action.design || 'secondary'}
+                  outline
+                  onClick={
+                    action.handler
+                      ? action.handler
+                      : () => this.modal.closeModal(this.name)
+                  }
+                >
+                  {action.title}
+                </u-button>
+              ))}
             </div>
           </div>
         </u-modal>
