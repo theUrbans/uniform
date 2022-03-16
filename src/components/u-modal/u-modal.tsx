@@ -7,13 +7,14 @@ import {
   State,
   Event,
   EventEmitter,
-  Element,
+  Element
 } from '@stencil/core';
 
 /**
  * @name Modal
  * @state 🟡
  * @description A modal window that can be used to display information to the user.
+ * @categorie Modal
  * @slot header - The header of the modal
  * @slot body - The body of the modal
  */
@@ -21,9 +22,9 @@ import {
   tag: 'u-modal',
   styleUrls: {
     desktop: 'u-modal.desktop.scss',
-    mobile: 'u-modal.mobile.scss',
+    mobile: 'u-modal.mobile.scss'
   },
-  shadow: true,
+  shadow: true
 })
 export class UModal {
   @Element() el: HTMLElement;
@@ -160,7 +161,7 @@ export class UModal {
     this.drag = true;
     this.dragoffset = {
       x: e.pageX - this.node.offsetLeft,
-      y: e.pageY - this.node.offsetTop,
+      y: e.pageY - this.node.offsetTop
     };
   };
 
@@ -175,16 +176,18 @@ export class UModal {
 
     if (e.pageX - this.dragoffset.x < 0) newleft = '0px';
     else if (
-      e.pageX - this.dragoffset.x + this.node.clientWidth
-      > window.innerWidth
-    ) newleft = `${window.innerWidth - this.node.clientWidth}px`;
+      e.pageX - this.dragoffset.x + this.node.clientWidth >
+      window.innerWidth
+    )
+      newleft = `${window.innerWidth - this.node.clientWidth}px`;
     else newleft = `${e.pageX - this.dragoffset.x}px`;
 
     if (e.pageY - this.dragoffset.y < 0) newtop = '0px';
     else if (
-      e.pageY - this.dragoffset.y + this.node.clientHeight
-      > window.innerHeight
-    ) newtop = `${window.innerHeight - this.node.clientHeight}px`;
+      e.pageY - this.dragoffset.y + this.node.clientHeight >
+      window.innerHeight
+    )
+      newtop = `${window.innerHeight - this.node.clientHeight}px`;
     else newtop = `${e.pageY - this.dragoffset.y}px`;
 
     this.node.style.left = newleft;
@@ -196,7 +199,7 @@ export class UModal {
       <div
         class={{
           wrapper: true,
-          visible: this.isOpen,
+          visible: this.isOpen
         }}
         onPointerDown={(e) => this.handleBlur(e)}
         onPointerMove={(e) => this.handleMove(e)}
@@ -211,7 +214,7 @@ export class UModal {
         <div
           class={{
             modal: true,
-            resizeable: this.resizeable,
+            resizeable: this.resizeable
           }}
           id="modal"
           ref={(node) => (this.node = node)}
@@ -219,7 +222,7 @@ export class UModal {
             'min-width': this.minWidth,
             'min-height': this.minHeight,
             'max-width': this.maxWidth,
-            'max-height': this.maxHeight,
+            'max-height': this.maxHeight
           }}
         >
           <div class="header" onPointerDown={(e) => this.handleStartDrag(e)}>
@@ -232,7 +235,7 @@ export class UModal {
           </div>
           <div
             class={{
-              content: true,
+              content: true
             }}
           >
             <div
@@ -241,7 +244,7 @@ export class UModal {
                 'min-height': this.minHeight,
                 'max-width': this.maxWidth,
                 'max-height': this.maxHeight,
-                visibility: this.isOpen ? 'visible' : 'hidden',
+                visibility: this.isOpen ? 'visible' : 'hidden'
               }}
             >
               <slot name="body"></slot>

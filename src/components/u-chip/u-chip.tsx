@@ -1,6 +1,4 @@
-import {
-  Component, Event, EventEmitter, h, Prop,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 export type ChipDesign =
   | 'slate'
@@ -29,7 +27,7 @@ export type ChipDesign =
 @Component({
   tag: 'u-chip',
   styleUrl: 'u-chip.css',
-  shadow: true,
+  shadow: true
 })
 export class UChip {
   /**
@@ -53,12 +51,12 @@ export class UChip {
   @Prop() bold: boolean = false;
 
   /**
-   * enable wClick event on chip
+   * enable uClick event on chip
    */
   @Prop() clickable: boolean = false;
 
   /**
-   * emit wClick event on chip click
+   * emit uClick event on chip click
    */
   @Event() uClick: EventEmitter<void>;
 
@@ -75,14 +73,14 @@ export class UChip {
           [this.size]: true,
           [this.design]: true,
           left: !this.label,
-          click: this.clickable,
+          click: this.clickable
         }}
         onClick={this.handleClick}
       >
         {this.label && <div class="label">{this.label}</div>}
         <span
           class={{
-            bold: this.bold,
+            bold: this.bold
           }}
         >
           <slot>Chip</slot>

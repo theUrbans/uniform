@@ -35,6 +35,7 @@ export type Field = string;
  * @name Form Generator
  * @state 🟡
  * @description Generate a form with fields and buttons
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-form',

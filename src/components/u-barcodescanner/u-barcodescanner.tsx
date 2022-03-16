@@ -6,18 +6,19 @@ import {
   Method,
   Event,
   EventEmitter,
-  State,
+  State
 } from '@stencil/core';
 
 /**
  * @name Barcode Scanner
  * @state 🟡
  * @description This component allows you to scan barcodes and QR codes. It is based on the [Capicitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin.
+ * @categorie Capacitor Specific
  */
 @Component({
   tag: 'u-barcodescanner',
   styleUrl: 'u-barcodescanner.css',
-  shadow: true,
+  shadow: true
 })
 export class UBarcodescanner {
   @State() scannerActive: boolean = false;
@@ -87,7 +88,7 @@ export class UBarcodescanner {
     return (
       <Host
         style={{
-          display: this.scannerActive ? 'block' : 'none',
+          display: this.scannerActive ? 'block' : 'none'
         }}
       >
         <u-button id="cancelscan" design="error" outline class="cancel">

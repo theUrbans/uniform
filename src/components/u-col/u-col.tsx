@@ -4,11 +4,12 @@ import { Component, h, Prop } from '@stencil/core';
  * @name Column
  * @state 🟢
  * @description Flexbox column
+ * @categorie Layout
  */
 @Component({
   tag: 'u-col',
   styleUrl: 'u-col.css',
-  shadow: true,
+  shadow: true
 })
 export class UCol {
   /**
@@ -62,7 +63,7 @@ export class UCol {
           flexWrap: this.wrap,
           gap: this.gap,
           padding: `${this.padding} 0`,
-          gridArea: this.area,
+          gridArea: this.area
         }}
       >
         <slot></slot>

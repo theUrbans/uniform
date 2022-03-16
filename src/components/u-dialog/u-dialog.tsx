@@ -1,6 +1,4 @@
-import {
-  Component, Host, h, Prop, Listen, State,
-} from '@stencil/core';
+import { Component, Host, h, Prop, Listen, State } from '@stencil/core';
 
 export interface DialogAction {
   title: string;
@@ -12,14 +10,15 @@ export interface DialogAction {
  * @name Dialog
  * @state 🟡
  * @description pre configured Modal
+ * @categorie Modal
  */
 @Component({
   tag: 'u-dialog',
   styleUrls: {
     desktop: 'u-dialog.desktop.css',
-    mobile: 'u-dialog.mobile.css',
+    mobile: 'u-dialog.mobile.css'
   },
-  shadow: true,
+  shadow: true
 })
 export class UDialog {
   private modal: HTMLUModalElement;

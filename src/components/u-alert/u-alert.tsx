@@ -1,15 +1,14 @@
-import {
-  Component, Host, h, State, Prop, Listen,
-} from '@stencil/core';
+import { Component, Host, h, State, Prop, Listen } from '@stencil/core';
 
 /**
  * @name Alert
  * @state 🟡
+ * @categorie Modal
  */
 @Component({
   tag: 'u-alert',
   styleUrl: 'u-alert.css',
-  shadow: true,
+  shadow: true
 })
 export class UAlert {
   private modal: HTMLUModalElement;

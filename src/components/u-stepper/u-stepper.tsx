@@ -12,6 +12,7 @@ import {
  * @name Stepper
  * @state 🟡
  * @description formular with multiple steps
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-stepper',

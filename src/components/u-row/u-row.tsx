@@ -4,11 +4,12 @@ import { Component, h, Prop } from '@stencil/core';
  * @name Row
  * @state 🟢
  * @description flexbox row
+ * @categorie Layout
  */
 @Component({
   tag: 'u-row',
   styleUrl: 'u-row.css',
-  shadow: true,
+  shadow: true
 })
 export class URow {
   /**
@@ -51,7 +52,7 @@ export class URow {
           justifyContent: this.justify,
           flexWrap: this.wrap,
           gap: this.gap,
-          padding: `0 ${this.padding}`,
+          padding: `0 ${this.padding}`
         }}
       >
         <slot></slot>

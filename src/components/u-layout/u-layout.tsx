@@ -1,11 +1,10 @@
-import {
-  Component, Host, h, Listen, State, Method,
-} from '@stencil/core';
+import { Component, Host, h, Listen, State, Method } from '@stencil/core';
 
 /**
  * @name Layout
  * @state 🟡
  * @description layout which decides whether to use mobile or desktop layout
+ * @categorie Layout
  * @slot menu - menu view
  * @slot main - main view
  * @slot option - option view
@@ -13,7 +12,7 @@ import {
 @Component({
   tag: 'u-layout',
   styleUrl: 'u-layout.css',
-  shadow: true,
+  shadow: true
 })
 export class ULayout {
   private mobilelayout: HTMLUMobilelayoutElement;
@@ -37,8 +36,8 @@ export class ULayout {
     if (this.mode === 'desktop') {
       document.dispatchEvent(
         new CustomEvent('show-modal', {
-          detail: { name: 'uniform-layout-option' },
-        }),
+          detail: { name: 'uniform-layout-option' }
+        })
       );
     }
   }
@@ -51,8 +50,8 @@ export class ULayout {
     if (this.mode === 'desktop') {
       document.dispatchEvent(
         new CustomEvent('close-modal', {
-          detail: { name: 'uniform-layout-option' },
-        }),
+          detail: { name: 'uniform-layout-option' }
+        })
       );
     }
   }

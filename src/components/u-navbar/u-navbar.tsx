@@ -1,16 +1,15 @@
-import {
-  Component, Host, h, Prop,
-} from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 /**
  * @name Navigation Bar
  * @state 🟡
  * @description top or bottom navigation bar
+ * @categorie Layout
  */
 @Component({
   tag: 'u-navbar',
   styleUrl: 'u-navbar.css',
-  shadow: true,
+  shadow: true
 })
 export class UNavbar {
   /**
@@ -30,7 +29,7 @@ export class UNavbar {
         role="navigation"
         class={{
           [this.position]: true,
-          fixed: this.fixed,
+          fixed: this.fixed
         }}
       >
         <slot></slot>

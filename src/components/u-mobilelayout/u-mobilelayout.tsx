@@ -1,16 +1,15 @@
-import {
-  Component, Element, h, Method, Prop,
-} from '@stencil/core';
+import { Component, Element, h, Method, Prop } from '@stencil/core';
 
 /**
  * @name Mobile Layout
  * @state 🟡
  * @description Discord-App like layout with 3 swipeable columns
+ * @categorie Layout
  */
 @Component({
   tag: 'u-mobilelayout',
   styleUrl: 'u-mobilelayout.css',
-  shadow: true,
+  shadow: true
 })
 export class UMobilelayout {
   @Element() el: HTMLElement;
@@ -62,7 +61,7 @@ export class UMobilelayout {
           <section
             class="section option"
             style={{
-              width: this.sideWidth,
+              width: this.sideWidth
             }}
           >
             <slot name="option"></slot>

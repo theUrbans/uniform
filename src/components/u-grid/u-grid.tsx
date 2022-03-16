@@ -3,6 +3,7 @@ import { Component, Host, h, Prop, Element } from '@stencil/core';
 /**
  * @name Grid
  * @state 🟡
+ * @categorie Layout
  */
 @Component({
   tag: 'u-grid',

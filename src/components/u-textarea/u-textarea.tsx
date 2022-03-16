@@ -7,17 +7,18 @@ import {
   Watch,
   Event,
   EventEmitter,
-  State,
+  State
 } from '@stencil/core';
 
 /**
  * @name Textarea
  * @state 🟡
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-textarea',
   styleUrl: 'u-textarea.css',
-  shadow: true,
+  shadow: true
 })
 export class UTextarea {
   private textarea: HTMLTextAreaElement;
@@ -93,7 +94,7 @@ export class UTextarea {
             wrapper: true,
             disabled: this.disabled,
             [`design-${this.design}`]: true,
-            [`textarea-${this.size}`]: true,
+            [`textarea-${this.size}`]: true
           }}
         >
           <textarea
@@ -104,7 +105,7 @@ export class UTextarea {
             value={this.value}
             class={{
               textarea: true,
-              [`resize-${this.resize}`]: true,
+              [`resize-${this.resize}`]: true
             }}
             onInput={this.handleInput}
             onFocus={this.handleFocus}
@@ -118,7 +119,7 @@ export class UTextarea {
                 label: true,
                 [`label-${this.size}`]: true,
                 [`label-${this.design}`]: true,
-                labeltop: !!this.value || this.focused,
+                labeltop: !!this.value || this.focused
               }}
             >
               {this.required ? `${this.label} *` : this.label}
@@ -129,7 +130,7 @@ export class UTextarea {
               onClick={this.resetValue}
               onTouchStart={this.resetValue}
               class={{
-                reset: true,
+                reset: true
               }}
             >
               {this.focused || this.value ? (
@@ -139,15 +140,15 @@ export class UTextarea {
                     this.size === 'small'
                       ? 16
                       : this.size === 'medium'
-                        ? 20
-                        : 24
+                      ? 20
+                      : 24
                   }
                   height={
                     this.size === 'small'
                       ? 16
                       : this.size === 'medium'
-                        ? 20
-                        : 24
+                      ? 20
+                      : 24
                   }
                   viewBox="0 0 24 24"
                   fill="none"

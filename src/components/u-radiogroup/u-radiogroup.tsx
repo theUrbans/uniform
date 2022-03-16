@@ -5,7 +5,7 @@ import {
   Prop,
   Event,
   EventEmitter,
-  State,
+  State
 } from '@stencil/core';
 
 export interface Option {
@@ -16,17 +16,18 @@ export interface Option {
 /**
  * @name Radio Group
  * @state 🟡
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-radiogroup',
   styleUrl: 'u-radiogroup.css',
-  shadow: true,
+  shadow: true
 })
 export class URadiogroup {
   @Prop() options: Array<Option> = [
     { value: 1, label: 'Option 1' },
     { value: 2, label: 'Option 2' },
-    { value: 3, label: 'Option 3' },
+    { value: 3, label: 'Option 3' }
   ];
 
   @Prop({ mutable: true }) value: any;
@@ -53,7 +54,7 @@ export class URadiogroup {
         <div
           class={{
             wrapper: true,
-            [this.alignment]: true,
+            [this.alignment]: true
           }}
         >
           {this.label ? (
@@ -74,13 +75,13 @@ export class URadiogroup {
                 checked={this.value === option.value}
                 onInput={(e: Event) => this.handleInput(e, option)}
                 class={{
-                  checkbox: true,
+                  checkbox: true
                 }}
               />
               <span
                 class={{
                   checkmark: true,
-                  hovered: this.hovered === option.label,
+                  hovered: this.hovered === option.label
                 }}
               ></span>
             </label>
