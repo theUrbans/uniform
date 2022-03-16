@@ -22,6 +22,8 @@ export interface Option {
 /**
  * @name Select
  * @state 🟡
+ * @description handle single or multiple option input
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-select',
@@ -112,7 +114,8 @@ export class USelect implements ComponentInterface {
    * possible values:
    * - 'secondary', 'primary', 'error', 'success', 'warning'
    */
-  @Prop() design?: 'primary' | 'error' | 'success' | 'warning' | 'secondary' = 'secondary';
+  @Prop() design?: 'primary' | 'error' | 'success' | 'warning' | 'secondary' =
+    'secondary';
 
   /**
    * show error message below the input
@@ -244,7 +247,9 @@ export class USelect implements ComponentInterface {
     this.index = 0;
     this.searchValue = input.value;
     if (this.searchValue) {
-      this.filteredOptions = this.options.filter((option) => option.label.toLowerCase().includes(this.searchValue.toLowerCase()));
+      this.filteredOptions = this.options.filter((option) =>
+        option.label.toLowerCase().includes(this.searchValue.toLowerCase()),
+      );
     } else {
       this.filteredOptions = this.options;
     }
@@ -364,8 +369,8 @@ export class USelect implements ComponentInterface {
         this.shortenBreakpoint = 0;
         this.shortenSelected = false;
       } else if (
-        elementCount > this.oldSelectedLength
-        && this.shortenBreakpoint === 0
+        elementCount > this.oldSelectedLength &&
+        this.shortenBreakpoint === 0
       ) {
         this.shortenBreakpoint = elementCount - 1;
         this.oldSelectedLength = elementCount;
@@ -398,8 +403,8 @@ export class USelect implements ComponentInterface {
         >
           {this.shortenSelected
             ? this.selected.map((option, index) => {
-              if (index < this.shortenBreakpoint) {
-                return (
+                if (index < this.shortenBreakpoint) {
+                  return (
                     <span class="selected-option">
                       {option}
                       <span
@@ -409,19 +414,19 @@ export class USelect implements ComponentInterface {
                         &times;
                       </span>
                     </span>
-                );
-              }
-              if (index === this.selected.length - 1) {
-                return (
+                  );
+                }
+                if (index === this.selected.length - 1) {
+                  return (
                     <span class="selected-option">
                       +
-                      {this.selected.slice(this.shortenBreakpoint, -1).length
-                        + 1}
+                      {this.selected.slice(this.shortenBreakpoint, -1).length +
+                        1}
                     </span>
-                );
-              }
-              return null;
-            })
+                  );
+                }
+                return null;
+              })
             : this.selected.map((option) => (
                 <span class="selected-option">
                   {option}
@@ -432,7 +437,7 @@ export class USelect implements ComponentInterface {
                     &times;
                   </span>
                 </span>
-            ))}
+              ))}
           <input
             class={{
               input: true,
@@ -548,9 +553,7 @@ export class USelect implements ComponentInterface {
               id="options"
             >
               {this.filteredOptions.map(
-                ({
-                  value, label, disabled, selected,
-                }) => (
+                ({ value, label, disabled, selected }) => (
                   <span
                     class={{
                       option: true,
@@ -565,9 +568,10 @@ export class USelect implements ComponentInterface {
                         this.selectOption(value, label);
                       }
                     }}
-                    onMouseEnter={() => (this.index = this.filteredOptions.findIndex(
-                      (option) => option.label === label,
-                    ))
+                    onMouseEnter={() =>
+                      (this.index = this.filteredOptions.findIndex(
+                        (option) => option.label === label,
+                      ))
                     }
                   >
                     {this.multiple ? (

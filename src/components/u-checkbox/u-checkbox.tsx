@@ -1,9 +1,9 @@
-import {
-  Component, Event, EventEmitter, h, Method, Prop,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 /**
  * @name Checkbox
  * @state 🟡
+ * @description handle bool user input
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-checkbox',

@@ -17,6 +17,8 @@ import {
 /**
  * @name Input
  * @state 🟡
+ * @description handle user text input
+ * @categorie Input Control
  */
 @Component({
   tag: 'u-input',
@@ -91,7 +93,8 @@ export class UInput implements ComponentInterface {
    * possible values:
    * - 'default', 'error', 'success', 'warning'
    */
-  @Prop() design?: 'primary' | 'error' | 'success' | 'warning' | 'secondary' = 'secondary';
+  @Prop() design?: 'primary' | 'error' | 'success' | 'warning' | 'secondary' =
+    'secondary';
 
   /**
    * decide if (and which site) a slot should be rendered
@@ -231,8 +234,10 @@ export class UInput implements ComponentInterface {
         this.value = input.value || '';
       } else if (this.inputType === 'email') {
         // email pattern
-        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (re.test(String(input.value).toLowerCase())) this.value = input.value;
+        const re =
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(String(input.value).toLowerCase()))
+          this.value = input.value;
       } else {
         this.value = input.value;
       }
@@ -278,14 +283,21 @@ export class UInput implements ComponentInterface {
     if (this.min) this.inputElement.setAttribute('min', this.min);
     if (this.max) this.inputElement.setAttribute('max', this.max);
     if (this.step) this.inputElement.setAttribute('step', this.step);
-    if (this.autoComplete) this.inputElement.setAttribute('autocomplete', this.autoComplete);
-    if (this.autoCorrect) this.inputElement.setAttribute('autocorrect', this.autoCorrect);
-    if (this.autoCapitalize) this.inputElement.setAttribute('autocapitalize', this.autoCapitalize);
+    if (this.autoComplete)
+      this.inputElement.setAttribute('autocomplete', this.autoComplete);
+    if (this.autoCorrect)
+      this.inputElement.setAttribute('autocorrect', this.autoCorrect);
+    if (this.autoCapitalize)
+      this.inputElement.setAttribute('autocapitalize', this.autoCapitalize);
     if (this.pattern) this.inputElement.setAttribute('pattern', this.pattern);
-    if (this.spellCheck) this.inputElement.setAttribute('spellcheck', this.spellCheck.toString());
-    if (this.required) this.inputElement.setAttribute('required', this.required.toString());
-    if (this.disabled) this.inputElement.setAttribute('disabled', this.disabled.toString());
-    if (this.readonly) this.inputElement.setAttribute('readonly', this.readonly.toString());
+    if (this.spellCheck)
+      this.inputElement.setAttribute('spellcheck', this.spellCheck.toString());
+    if (this.required)
+      this.inputElement.setAttribute('required', this.required.toString());
+    if (this.disabled)
+      this.inputElement.setAttribute('disabled', this.disabled.toString());
+    if (this.readonly)
+      this.inputElement.setAttribute('readonly', this.readonly.toString());
     // autoFocus={false}
   }
 
@@ -354,15 +366,15 @@ export class UInput implements ComponentInterface {
                     this.size === 'small'
                       ? 16
                       : this.size === 'medium'
-                        ? 20
-                        : 24
+                      ? 20
+                      : 24
                   }
                   height={
                     this.size === 'small'
                       ? 16
                       : this.size === 'medium'
-                        ? 20
-                        : 24
+                      ? 20
+                      : 24
                   }
                   viewBox="0 0 24 24"
                   fill="none"
