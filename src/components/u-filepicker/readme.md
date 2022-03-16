@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute     | Description | Type                 | Default              |
@@ -13,11 +14,13 @@
 | `noFile`     | `no-file`     |             | `string`             | `'No file selected'` |
 | `size`       | `size`        |             | `"large" \| "small"` | `'small'`            |
 
+
 ## Events
 
 | Event     | Description | Type                    |
 | --------- | ----------- | ----------------------- |
 | `uSelect` |             | `CustomEvent<FileList>` |
+
 
 ## Dependencies
 
@@ -28,7 +31,6 @@
 - [u-col](../u-col)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-filepicker --> u-group
@@ -37,6 +39,6 @@ graph TD;
   style u-filepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

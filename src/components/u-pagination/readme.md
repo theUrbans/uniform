@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property               | Attribute                  | Description | Type      | Default     |
@@ -11,19 +12,26 @@
 | `showLastAndFirstPage` | `show-last-and-first-page` |             | `boolean` | `true`      |
 | `showPages`            | `show-pages`               |             | `number`  | `1`         |
 
+
 ## Events
 
 | Event        | Description | Type                  |
 | ------------ | ----------- | --------------------- |
 | `pageChange` |             | `CustomEvent<number>` |
 
+
 ## Methods
 
 ### `goToPage(page: number, eventless?: boolean) => Promise<void>`
 
+
+
 #### Returns
 
 Type: `Promise<void>`
+
+
+
 
 ## Dependencies
 
@@ -33,7 +41,6 @@ Type: `Promise<void>`
 - [u-button](../u-button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-pagination --> u-group
@@ -41,6 +48,6 @@ graph TD;
   style u-pagination fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

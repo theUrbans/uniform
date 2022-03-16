@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Usage
 
 ### Default
@@ -22,6 +23,8 @@
 </u-tooltip>
 ```
 
+
+
 ## Properties
 
 | Property    | Attribute   | Description                           | Type                           | Default     |
@@ -32,6 +35,7 @@
 | `text`      | `text`      | text of the tooltip                   | `string`                       | `undefined` |
 | `trigger`   | `trigger`   | choose trigger event                  | `"click" \| "hover"`           | `'hover'`   |
 
+
 ## Slots
 
 | Slot        | Description                                                                         |
@@ -39,6 +43,7 @@
 | `"content"` | (optional) content of the tooltip -> alternative to text, content prop must be used |
 | `"default"` | element which receives the tooltip                                                  |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

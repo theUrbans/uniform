@@ -2,18 +2,18 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Dependencies
 
 ### Used by
 
-- [u-layout](../u-layout)
+ - [u-layout](../u-layout)
 
 ### Depends on
 
 - [u-grid](../u-grid)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-desktoplayout --> u-grid
@@ -21,6 +21,6 @@ graph TD;
   style u-desktoplayout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

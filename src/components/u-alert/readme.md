@@ -2,12 +2,14 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description | Type     | Default             |
 | ----------- | ------------ | ----------- | -------- | ------------------- |
 | `closeText` | `close-text` |             | `string` | `'close'`           |
 | `name`      | `name`       |             | `string` | `'u-alert-default'` |
+
 
 ## Dependencies
 
@@ -18,7 +20,6 @@
 - [u-button](../u-button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-alert --> u-modal
@@ -27,6 +28,6 @@ graph TD;
   style u-alert fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

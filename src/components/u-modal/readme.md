@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Usage
 
 ### Events
@@ -28,6 +29,8 @@ body.dispatchEvent(
 );
 ```
 
+
+
 ## Properties
 
 | Property        | Attribute         | Description                                                         | Type                    | Default     |
@@ -44,11 +47,13 @@ body.dispatchEvent(
 | `resizeable`    | `resizeable`      | (DESKTOP only) should the modal be resizable                        | `boolean`               | `true`      |
 | `topRightClose` | `top-right-close` | display a close button in the top right corner                      | `boolean`               | `false`     |
 
+
 ## Events
 
 | Event        | Description             | Type               |
 | ------------ | ----------------------- | ------------------ |
 | `beforeOpen` | event with given params | `CustomEvent<any>` |
+
 
 ## Methods
 
@@ -60,6 +65,8 @@ method to close the modal
 
 Type: `Promise<void>`
 
+
+
 ### `showModal(name: string) => Promise<void>`
 
 method to open the modal
@@ -68,6 +75,9 @@ method to open the modal
 
 Type: `Promise<void>`
 
+
+
+
 ## Slots
 
 | Slot       | Description             |
@@ -75,16 +85,16 @@ Type: `Promise<void>`
 | `"body"`   | The body of the modal   |
 | `"header"` | The header of the modal |
 
+
 ## Dependencies
 
 ### Used by
 
-- [u-alert](../u-alert)
-- [u-dialog](../u-dialog)
-- [u-layout](../u-layout)
+ - [u-alert](../u-alert)
+ - [u-dialog](../u-dialog)
+ - [u-layout](../u-layout)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-alert --> u-modal
@@ -93,6 +103,6 @@ graph TD;
   style u-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

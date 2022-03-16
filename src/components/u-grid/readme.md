@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property  | Attribute | Description                                 | Type                 | Default         |
@@ -13,15 +14,15 @@
 | `rows`    | `rows`    | number of rows or array of row heights      | `number \| string[]` | `undefined`     |
 | `width`   | `width`   | width of grid                               | `string`             | `'max-content'` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [u-desktoplayout](../u-desktoplayout)
-- [u-form](../u-form)
+ - [u-desktoplayout](../u-desktoplayout)
+ - [u-form](../u-form)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-desktoplayout --> u-grid
@@ -29,6 +30,6 @@ graph TD;
   style u-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

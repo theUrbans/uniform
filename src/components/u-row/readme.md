@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property  | Attribute | Description                                        | Type                                                                                  | Default    |
@@ -12,15 +13,15 @@
 | `padding` | `padding` | padding left and right: string, e.g. '1rem', '1px' | `string`                                                                              | `'1rem'`   |
 | `wrap`    | `wrap`    | flex wrap                                          | `"nowrap" \| "wrap" \| "wrap-reverse"`                                                | `'wrap'`   |
 
+
 ## Dependencies
 
 ### Used by
 
-- [u-form](../u-form)
-- [u-stepper](../u-stepper)
+ - [u-form](../u-form)
+ - [u-stepper](../u-stepper)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-form --> u-row
@@ -28,6 +29,6 @@ graph TD;
   style u-row fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

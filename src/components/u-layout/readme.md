@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Usage
 
 ### Nuxt
@@ -15,19 +16,30 @@
 </template>
 ```
 
+
+
 ## Methods
 
 ### `closeOption() => Promise<void>`
 
+
+
 #### Returns
 
 Type: `Promise<void>`
+
+
 
 ### `showOption() => Promise<void>`
 
+
+
 #### Returns
 
 Type: `Promise<void>`
+
+
+
 
 ## Slots
 
@@ -36,6 +48,7 @@ Type: `Promise<void>`
 | `"main"`   | main view   |
 | `"menu"`   | menu view   |
 | `"option"` | option view |
+
 
 ## Dependencies
 
@@ -46,7 +59,6 @@ Type: `Promise<void>`
 - [u-modal](../u-modal)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-layout --> u-mobilelayout
@@ -56,6 +68,6 @@ graph TD;
   style u-layout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

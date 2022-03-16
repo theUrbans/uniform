@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                               | Type                                                                                  | Default       |
@@ -16,17 +17,18 @@
 | `errorMsg`       | `error-msg`       | show error message below the input                                                        | `string`                                                                              | `''`          |
 | `inputType`      | `input-type`      | type of the input                                                                         | `"decimal" \| "email" \| "none" \| "numeric" \| "search" \| "tel" \| "text" \| "url"` | `'text'`      |
 | `label`          | `label`           | text of label The label replace the placeholder                                           | `string`                                                                              | `'Label'`     |
-| `max`            | `max`             | if input type == numeric -> max value                                                     | `string`                                                                              | `undefined`   |
-| `min`            | `min`             | if input type == numeric -> min value                                                     | `string`                                                                              | `undefined`   |
+| `max`            | `max`             | if input type === numeric -> max value                                                    | `string`                                                                              | `undefined`   |
+| `min`            | `min`             | if input type === numeric -> min value                                                    | `string`                                                                              | `undefined`   |
 | `pattern`        | `pattern`         | set the pattern for the input                                                             | `string`                                                                              | `undefined`   |
 | `readonly`       | `readonly`        | decide if the input is readonly                                                           | `boolean`                                                                             | `false`       |
 | `required`       | `required`        | decide if input is required (for forms)                                                   | `boolean`                                                                             | `false`       |
 | `showSlot`       | `show-slot`       | decide if (and which site) a slot should be rendered                                      | `"both" \| "left" \| "right"`                                                         | `undefined`   |
 | `size`           | `size`            | size of the input                                                                         | `"large" \| "medium" \| "small"`                                                      | `'medium'`    |
 | `spellCheck`     | `spell-check`     | decide if spellcheck should be enabled                                                    | `boolean`                                                                             | `undefined`   |
-| `step`           | `step`            | if input type == numeric -> step value                                                    | `string`                                                                              | `undefined`   |
+| `step`           | `step`            | if input type === numeric -> step value                                                   | `string`                                                                              | `undefined`   |
 | `validate`       | `validate`        | use function returning a boolean to validate the input -> if false, it displays error-msg | `boolean`                                                                             | `true`        |
 | `value`          | `value`           | the value of the input                                                                    | `number \| string`                                                                    | `''`          |
+
 
 ## Events
 
@@ -36,6 +38,7 @@
 | `uChange` | emitted on change | `CustomEvent<number \| string>` |
 | `uFocus`  | emitted on focus  | `CustomEvent<void>`             |
 | `uInput`  | emitted on input  | `CustomEvent<number \| string>` |
+
 
 ## Methods
 
@@ -47,6 +50,8 @@ set blur on native input
 
 Type: `Promise<void>`
 
+
+
 ### `setFocus() => Promise<void>`
 
 set focus on native input
@@ -55,6 +60,9 @@ set focus on native input
 
 Type: `Promise<void>`
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

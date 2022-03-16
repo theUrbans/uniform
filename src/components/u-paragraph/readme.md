@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property          | Attribute          | Description | Type                                                   | Default     |
@@ -12,20 +13,20 @@
 | `textAlign`       | `text-align`       |             | `"center" \| "jusitfy" \| "left" \| "right"`           | `undefined` |
 | `textAlignLast`   | `text-align-last`  |             | `"center" \| "jusitfy" \| "left" \| "none" \| "right"` | `'none'`    |
 
+
 ## Dependencies
 
 ### Used by
 
-- [u-alert](../u-alert)
+ - [u-alert](../u-alert)
 
 ### Graph
-
 ```mermaid
 graph TD;
   u-alert --> u-paragraph
   style u-paragraph fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
