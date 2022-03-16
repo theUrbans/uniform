@@ -36,7 +36,6 @@
     "test": "stencil test --spec --e2e",
     "test:watch": "stencil test --spec --e2e --watchAll",
     "prettier": "prettier --write src",
-    "pretty-quick": "pretty-quick",
     "lint": "eslint --ext .tsx --ext .ts src/ --fix",
     "lint:git": "lint-staged && pretty-quick --staged",
     "generate": "stencil generate",
