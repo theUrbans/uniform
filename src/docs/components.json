@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-16T15:57:49",
+  "timestamp": "2022-03-16T16:41:24",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -73,17 +73,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-modal",
-        "u-paragraph",
-        "u-button"
-      ],
+      "dependencies": ["u-modal", "u-paragraph", "u-button"],
       "dependencyGraph": {
-        "u-alert": [
-          "u-modal",
-          "u-paragraph",
-          "u-button"
-        ]
+        "u-alert": ["u-modal", "u-paragraph", "u-button"]
       }
     },
     {
@@ -205,13 +197,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-button"
-      ],
+      "dependencies": ["u-button"],
       "dependencyGraph": {
-        "u-barcodescanner": [
-          "u-button"
-        ]
+        "u-barcodescanner": ["u-button"]
       }
     },
     {
@@ -286,13 +274,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-link"
-      ],
+      "dependencies": ["u-link"],
       "dependencyGraph": {
-        "u-breadcrumb": [
-          "u-link"
-        ]
+        "u-breadcrumb": ["u-link"]
       }
     },
     {
@@ -516,27 +500,13 @@
       ],
       "dependencies": [],
       "dependencyGraph": {
-        "u-alert": [
-          "u-button"
-        ],
-        "u-barcodescanner": [
-          "u-button"
-        ],
-        "u-dialog": [
-          "u-button"
-        ],
-        "u-filepicker": [
-          "u-button"
-        ],
-        "u-form": [
-          "u-button"
-        ],
-        "u-pagination": [
-          "u-button"
-        ],
-        "u-stepper": [
-          "u-button"
-        ]
+        "u-alert": ["u-button"],
+        "u-barcodescanner": ["u-button"],
+        "u-dialog": ["u-button"],
+        "u-filepicker": ["u-button"],
+        "u-form": ["u-button"],
+        "u-pagination": ["u-button"],
+        "u-stepper": ["u-button"]
       }
     },
     {
@@ -784,22 +754,12 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-select",
-        "u-table",
-        "u-tablecell"
-      ],
+      "dependents": ["u-select", "u-table", "u-tablecell"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-select": [
-          "u-checkbox"
-        ],
-        "u-table": [
-          "u-checkbox"
-        ],
-        "u-tablecell": [
-          "u-checkbox"
-        ]
+        "u-select": ["u-checkbox"],
+        "u-table": ["u-checkbox"],
+        "u-tablecell": ["u-checkbox"]
       }
     },
     {
@@ -1199,14 +1159,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-filepicker"
-      ],
+      "dependents": ["u-filepicker"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-filepicker": [
-          "u-col"
-        ]
+        "u-filepicker": ["u-col"]
       }
     },
     {
@@ -1309,19 +1265,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-layout"
-      ],
-      "dependencies": [
-        "u-grid"
-      ],
+      "dependents": ["u-layout"],
+      "dependencies": ["u-grid"],
       "dependencyGraph": {
-        "u-desktoplayout": [
-          "u-grid"
-        ],
-        "u-layout": [
-          "u-desktoplayout"
-        ]
+        "u-desktoplayout": ["u-grid"],
+        "u-layout": ["u-desktoplayout"]
       }
     },
     {
@@ -1378,15 +1326,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-modal",
-        "u-button"
-      ],
+      "dependencies": ["u-modal", "u-button"],
       "dependencyGraph": {
-        "u-dialog": [
-          "u-modal",
-          "u-button"
-        ]
+        "u-dialog": ["u-modal", "u-button"]
       }
     },
     {
@@ -1426,13 +1368,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-textarea"
-      ],
+      "dependencies": ["u-textarea"],
       "dependencyGraph": {
-        "u-editor": [
-          "u-textarea"
-        ]
+        "u-editor": ["u-textarea"]
       }
     },
     {
@@ -1453,6 +1391,9 @@
         {
           "name": "description",
           "text": "pick single or multiple files"
+        },
+        {
+          "name": "categorie"
         }
       ],
       "usage": {},
@@ -1582,17 +1523,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-group",
-        "u-button",
-        "u-col"
-      ],
+      "dependencies": ["u-group", "u-button", "u-col"],
       "dependencyGraph": {
-        "u-filepicker": [
-          "u-group",
-          "u-button",
-          "u-col"
-        ]
+        "u-filepicker": ["u-group", "u-button", "u-col"]
       }
     },
     {
@@ -1734,19 +1667,11 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-menuitem"
-      ],
+      "dependencies": ["u-menuitem"],
       "dependencyGraph": {
-        "u-floatingmenu": [
-          "u-menuitem"
-        ],
-        "u-menuitem": [
-          "u-submenu"
-        ],
-        "u-submenu": [
-          "u-menuitem"
-        ]
+        "u-floatingmenu": ["u-menuitem"],
+        "u-menuitem": ["u-submenu"],
+        "u-submenu": ["u-menuitem"]
       }
     },
     {
@@ -1847,23 +1772,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-stepper",
-        "u-grid",
-        "u-row",
-        "u-button"
-      ],
+      "dependencies": ["u-stepper", "u-grid", "u-row", "u-button"],
       "dependencyGraph": {
-        "u-form": [
-          "u-stepper",
-          "u-grid",
-          "u-row",
-          "u-button"
-        ],
-        "u-stepper": [
-          "u-row",
-          "u-button"
-        ]
+        "u-form": ["u-stepper", "u-grid", "u-row", "u-button"],
+        "u-stepper": ["u-row", "u-button"]
       }
     },
     {
@@ -1996,18 +1908,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-desktoplayout",
-        "u-form"
-      ],
+      "dependents": ["u-desktoplayout", "u-form"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-desktoplayout": [
-          "u-grid"
-        ],
-        "u-form": [
-          "u-grid"
-        ]
+        "u-desktoplayout": ["u-grid"],
+        "u-form": ["u-grid"]
       }
     },
     {
@@ -2061,18 +1966,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-filepicker",
-        "u-pagination"
-      ],
+      "dependents": ["u-filepicker", "u-pagination"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-filepicker": [
-          "u-group"
-        ],
-        "u-pagination": [
-          "u-group"
-        ]
+        "u-filepicker": ["u-group"],
+        "u-pagination": ["u-group"]
       }
     },
     {
@@ -2847,20 +2745,10 @@
       ],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-mobilelayout",
-        "u-desktoplayout",
-        "u-modal"
-      ],
+      "dependencies": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
       "dependencyGraph": {
-        "u-layout": [
-          "u-mobilelayout",
-          "u-desktoplayout",
-          "u-modal"
-        ],
-        "u-desktoplayout": [
-          "u-grid"
-        ]
+        "u-layout": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
+        "u-desktoplayout": ["u-grid"]
       }
     },
     {
@@ -2938,14 +2826,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-breadcrumb"
-      ],
+      "dependents": ["u-breadcrumb"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-breadcrumb": [
-          "u-link"
-        ]
+        "u-breadcrumb": ["u-link"]
       }
     },
     {
@@ -3182,23 +3066,12 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-floatingmenu",
-        "u-submenu"
-      ],
-      "dependencies": [
-        "u-submenu"
-      ],
+      "dependents": ["u-floatingmenu", "u-submenu"],
+      "dependencies": ["u-submenu"],
       "dependencyGraph": {
-        "u-menuitem": [
-          "u-submenu"
-        ],
-        "u-submenu": [
-          "u-menuitem"
-        ],
-        "u-floatingmenu": [
-          "u-menuitem"
-        ]
+        "u-menuitem": ["u-submenu"],
+        "u-submenu": ["u-menuitem"],
+        "u-floatingmenu": ["u-menuitem"]
       }
     },
     {
@@ -3320,14 +3193,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-layout"
-      ],
+      "dependents": ["u-layout"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-layout": [
-          "u-mobilelayout"
-        ]
+        "u-layout": ["u-mobilelayout"]
       }
     },
     {
@@ -3620,22 +3489,12 @@
         }
       ],
       "parts": [],
-      "dependents": [
-        "u-alert",
-        "u-dialog",
-        "u-layout"
-      ],
+      "dependents": ["u-alert", "u-dialog", "u-layout"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-alert": [
-          "u-modal"
-        ],
-        "u-dialog": [
-          "u-modal"
-        ],
-        "u-layout": [
-          "u-modal"
-        ]
+        "u-alert": ["u-modal"],
+        "u-dialog": ["u-modal"],
+        "u-layout": ["u-modal"]
       }
     },
     {
@@ -4029,15 +3888,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-group",
-        "u-button"
-      ],
+      "dependencies": ["u-group", "u-button"],
       "dependencyGraph": {
-        "u-pagination": [
-          "u-group",
-          "u-button"
-        ]
+        "u-pagination": ["u-group", "u-button"]
       }
     },
     {
@@ -4176,14 +4029,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-alert"
-      ],
+      "dependents": ["u-alert"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-alert": [
-          "u-paragraph"
-        ]
+        "u-alert": ["u-paragraph"]
       }
     },
     {
@@ -4647,18 +4496,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-form",
-        "u-stepper"
-      ],
+      "dependents": ["u-form", "u-stepper"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-form": [
-          "u-row"
-        ],
-        "u-stepper": [
-          "u-row"
-        ]
+        "u-form": ["u-row"],
+        "u-stepper": ["u-row"]
       }
     },
     {
@@ -5229,13 +5071,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-checkbox"
-      ],
+      "dependencies": ["u-checkbox"],
       "dependencyGraph": {
-        "u-select": [
-          "u-checkbox"
-        ]
+        "u-select": ["u-checkbox"]
       }
     },
     {
@@ -5516,21 +5354,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-form"
-      ],
-      "dependencies": [
-        "u-row",
-        "u-button"
-      ],
+      "dependents": ["u-form"],
+      "dependencies": ["u-row", "u-button"],
       "dependencyGraph": {
-        "u-stepper": [
-          "u-row",
-          "u-button"
-        ],
-        "u-form": [
-          "u-stepper"
-        ]
+        "u-stepper": ["u-row", "u-button"],
+        "u-form": ["u-stepper"]
       }
     },
     {
@@ -5617,19 +5445,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-menuitem"
-      ],
-      "dependencies": [
-        "u-menuitem"
-      ],
+      "dependents": ["u-menuitem"],
+      "dependencies": ["u-menuitem"],
       "dependencyGraph": {
-        "u-submenu": [
-          "u-menuitem"
-        ],
-        "u-menuitem": [
-          "u-submenu"
-        ]
+        "u-submenu": ["u-menuitem"],
+        "u-menuitem": ["u-submenu"]
       }
     },
     {
@@ -5827,13 +5647,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-checkbox"
-      ],
+      "dependencies": ["u-checkbox"],
       "dependencyGraph": {
-        "u-table": [
-          "u-checkbox"
-        ]
+        "u-table": ["u-checkbox"]
       }
     },
     {
@@ -5894,19 +5710,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-tablerow"
-      ],
-      "dependencies": [
-        "u-checkbox"
-      ],
+      "dependents": ["u-tablerow"],
+      "dependencies": ["u-checkbox"],
       "dependencyGraph": {
-        "u-tablecell": [
-          "u-checkbox"
-        ],
-        "u-tablerow": [
-          "u-tablecell"
-        ]
+        "u-tablecell": ["u-checkbox"],
+        "u-tablerow": ["u-tablecell"]
       }
     },
     {
@@ -5978,16 +5786,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "u-tablecell"
-      ],
+      "dependencies": ["u-tablecell"],
       "dependencyGraph": {
-        "u-tablerow": [
-          "u-tablecell"
-        ],
-        "u-tablecell": [
-          "u-checkbox"
-        ]
+        "u-tablerow": ["u-tablecell"],
+        "u-tablecell": ["u-checkbox"]
       }
     },
     {
@@ -6289,14 +6091,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "u-editor"
-      ],
+      "dependents": ["u-editor"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-editor": [
-          "u-textarea"
-        ]
+        "u-editor": ["u-textarea"]
       }
     },
     {
