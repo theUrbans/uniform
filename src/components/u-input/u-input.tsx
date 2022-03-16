@@ -9,7 +9,7 @@ import {
   State,
   Event,
   EventEmitter,
-  Host,
+  Host
 } from '@stencil/core';
 // import close from '../../assets/close.svg';
 // import { inputEvent } from '../../utils/utils';
@@ -23,7 +23,7 @@ import {
 @Component({
   tag: 'u-input',
   styleUrl: 'u-input.css',
-  shadow: true,
+  shadow: true
 })
 export class UInput implements ComponentInterface {
   private inputElement?: HTMLInputElement;
@@ -146,8 +146,7 @@ export class UInput implements ComponentInterface {
   @Prop() readonly?: boolean = false;
 
   /**
-   * possible types:
-   * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+   * possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
    */
   @Prop() autoComplete?: string;
 
@@ -321,13 +320,13 @@ export class UInput implements ComponentInterface {
             [this.design]: true,
             [this.size]: true,
             errorText: !this.validate && !this.errorMsg,
-            [`slot-${this.showSlot}`]: !!this.showSlot,
+            [`slot-${this.showSlot}`]: !!this.showSlot
           }}
         >
           <input
             class={{
               input: true,
-              [`text-${this.size}`]: true,
+              [`text-${this.size}`]: true
               // [`padding-${this.size}`]: this.hovered || this.focus || !!this.value,
             }}
             ref={(input) => (this.inputElement = input)}
@@ -345,7 +344,7 @@ export class UInput implements ComponentInterface {
               class={{
                 label: true,
                 [this.design]: true,
-                [`label-${this.size}`]: true,
+                [`label-${this.size}`]: true
               }}
             >
               {this.required ? `${this.label} *` : this.label}
@@ -356,7 +355,7 @@ export class UInput implements ComponentInterface {
               onClick={this.resetValue}
               onTouchStart={this.resetValue}
               class={{
-                reset: true,
+                reset: true
               }}
             >
               {(this.focus || this.hovered || this.value) && (

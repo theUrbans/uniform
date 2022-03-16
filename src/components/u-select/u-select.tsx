@@ -9,7 +9,7 @@ import {
   State,
   Event,
   EventEmitter,
-  Host,
+  Host
 } from '@stencil/core';
 
 export interface Option {
@@ -28,7 +28,7 @@ export interface Option {
 @Component({
   tag: 'u-select',
   styleUrl: 'u-select.css',
-  shadow: true,
+  shadow: true
 })
 export class USelect implements ComponentInterface {
   private inputElement?: HTMLInputElement;
@@ -46,7 +46,7 @@ export class USelect implements ComponentInterface {
     { value: '4', label: 'Four' },
     { value: '5', label: 'Five' },
     { value: '6', label: 'Six' },
-    { value: '7', label: 'Seven' },
+    { value: '7', label: 'Seven' }
   ];
 
   @Prop() searchable: boolean = false;
@@ -111,8 +111,6 @@ export class USelect implements ComponentInterface {
 
   /**
    * select design
-   * possible values:
-   * - 'secondary', 'primary', 'error', 'success', 'warning'
    */
   @Prop() design?: 'primary' | 'error' | 'success' | 'warning' | 'secondary' =
     'secondary';
@@ -162,8 +160,7 @@ export class USelect implements ComponentInterface {
   @Prop() readonly?: boolean = false;
 
   /**
-   * possible types:
-   * https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
+   * possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
    */
   @Prop() autoComplete?: string = 'off';
 
@@ -248,7 +245,7 @@ export class USelect implements ComponentInterface {
     this.searchValue = input.value;
     if (this.searchValue) {
       this.filteredOptions = this.options.filter((option) =>
-        option.label.toLowerCase().includes(this.searchValue.toLowerCase()),
+        option.label.toLowerCase().includes(this.searchValue.toLowerCase())
       );
     } else {
       this.filteredOptions = this.options;
@@ -308,7 +305,7 @@ export class USelect implements ComponentInterface {
       if (!this.filteredOptions[this.index].disabled) {
         this.selectOption(
           this.filteredOptions[this.index].value,
-          this.filteredOptions[this.index].label,
+          this.filteredOptions[this.index].label
         );
       }
     }
@@ -339,7 +336,7 @@ export class USelect implements ComponentInterface {
       }
       this.getInputWidth();
       this.uChange.emit(
-        this.options.filter((option) => this.selected.includes(option.label)),
+        this.options.filter((option) => this.selected.includes(option.label))
       );
       if (this.options.find((o) => o.label === label).selected) {
         this.options.find((o) => o.label === label).selected = false;
@@ -398,7 +395,7 @@ export class USelect implements ComponentInterface {
             disabled: this.disabled,
             [this.design]: true,
             [this.size]: true,
-            [`top-${this.size}`]: this.focus || this.selected.length > 0,
+            [`top-${this.size}`]: this.focus || this.selected.length > 0
           }}
         >
           {this.shortenSelected
@@ -441,7 +438,7 @@ export class USelect implements ComponentInterface {
           <input
             class={{
               input: true,
-              [`text-${this.size}`]: true,
+              [`text-${this.size}`]: true
             }}
             ref={(input) => (this.inputElement = input)}
             min={this.min}
@@ -469,7 +466,7 @@ export class USelect implements ComponentInterface {
               class={{
                 label: true,
                 [this.design]: true,
-                [`label-${this.size}`]: true,
+                [`label-${this.size}`]: true
               }}
             >
               {this.required ? `${this.label} *` : this.label}
@@ -479,7 +476,7 @@ export class USelect implements ComponentInterface {
             onClick={this.resetValue}
             onTouchStart={this.resetValue}
             class={{
-              reset: true,
+              reset: true
             }}
           >
             {this.value || this.searchValue ? (
@@ -548,7 +545,7 @@ export class USelect implements ComponentInterface {
               class={{
                 options: true,
                 optionsTop: this.position === 'top',
-                optionsBottom: this.position === 'bottom',
+                optionsBottom: this.position === 'bottom'
               }}
               id="options"
             >
@@ -560,7 +557,7 @@ export class USelect implements ComponentInterface {
                       [`option-${this.design}`]: true,
                       selected: this.selected.includes(label),
                       hovered: this.filteredOptions[this.index].label === label,
-                      disabled,
+                      disabled
                     }}
                     role="option"
                     onClick={() => {
@@ -570,7 +567,7 @@ export class USelect implements ComponentInterface {
                     }}
                     onMouseEnter={() =>
                       (this.index = this.filteredOptions.findIndex(
-                        (option) => option.label === label,
+                        (option) => option.label === label
                       ))
                     }
                   >
@@ -588,7 +585,7 @@ export class USelect implements ComponentInterface {
                       label
                     )}
                   </span>
-                ),
+                )
               )}
             </div>
           ) : null}
