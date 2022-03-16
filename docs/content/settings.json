@@ -1,9 +1,9 @@
 {
   "title": "Uniform",
-  "url": "https://theurbans.github.io/uniform",
+  "url": "https://theurbans.github.io/uniform/",
   "logo": {
     "light": "/logo-light.svg",
     "dark": "/logo-dark.svg"
   },
-  "github": "@theurbans/uniform"
+  "github": "theUrbans/uniform"
 }
