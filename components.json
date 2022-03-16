@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-15T14:36:58",
+  "timestamp": "2022-03-16T12:18:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -2950,7 +2950,7 @@
     },
     {
       "filePath": "./src/components/u-list/u-list.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "none",
       "tag": "u-list",
       "readme": "# u-list\n\n\n",
       "docs": "",
@@ -3334,7 +3334,7 @@
       "filePath": "./src/components/u-modal/u-modal.tsx",
       "encapsulation": "shadow",
       "tag": "u-modal",
-      "readme": "# w-modal\n\n\n",
+      "readme": "# w-modal\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [
         {
@@ -3359,7 +3359,7 @@
         }
       ],
       "usage": {
-        "events": "\r\n- open modal\r\n\r\n```JS\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('show-modal', {\r\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\r\n    })\r\n);\r\n```\r\n\r\n- close modal\r\n\r\n```JS\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('close-modal', {\r\n    detail: { name: 'MODAL_NAME' }\r\n    })\r\n);\r\n```\r\n"
+        "events": "\r\n- open modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('show-modal', {\r\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\r\n    })\r\n);\r\n```\r\n\r\n- close modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(new CustomEvent('close-modal', {\r\n    detail: { name: 'MODAL_NAME' }\r\n    })\r\n);\r\n```\r\n"
       },
       "props": [
         {
@@ -5636,7 +5636,7 @@
       "filePath": "./src/components/u-table/u-table.tsx",
       "encapsulation": "shadow",
       "tag": "u-table",
-      "readme": "# u-table\n\n\n",
+      "readme": "# u-table\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [
         {
@@ -5840,7 +5840,7 @@
       "filePath": "./src/components/u-tablecell/u-tablecell.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablecell",
-      "readme": "# u-tablecell\n\n\n",
+      "readme": "# u-tablecell\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [
         {
@@ -5961,7 +5961,7 @@
       "filePath": "./src/components/u-tablerow/u-tablerow.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablerow",
-      "readme": "# u-tablerow\n\n\n",
+      "readme": "# u-tablerow\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [
         {
@@ -6360,7 +6360,7 @@
         },
         {
           "name": "state",
-          "text": "🟡"
+          "text": "🟢"
         },
         {
           "name": "description",
@@ -6375,7 +6375,9 @@
           "text": "content - (optional) content of the tooltip -> alternative to text, content prop must be used"
         }
       ],
-      "usage": {},
+      "usage": {
+        "default": "```html\r\n<u-tooltip text=\"i am a button with an tooltip\">\r\n    <u-button></u-button>\r\n</u-tooltip>\r\n```\r\n\r\n```html\r\n<u-tooltip content>\r\n    <div slot=\"content\">\r\n        <u-headline>Button with Custom Tooltip</u-headline>\r\n        <u-paragraph>Custom components in tootltip</u-paragraph>\r\n    </div>\r\n    <u-button></u-button>\r\n</u-tooltip>\r\n```"
+      },
       "props": [
         {
           "name": "alignment",
