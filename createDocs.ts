@@ -39,21 +39,21 @@ export default class Documentation {
     private formatCode(code: string): string {
         let inCodeBlock = false;
         return code.split('\n').map(line => {
-            if (!!!line) return
+            if (!!!line) return;
             if (line.startsWith('```')) {
                 inCodeBlock = !inCodeBlock;
-                return line
+                return line;
             }
-            if (inCodeBlock) return line
-            return line.trim()
+            if (inCodeBlock) return line;
+            return line.trim();
         })
-            .join('\n')
+            .join('\n');
     }
 
     public createDocs() {
         this.components.map((c, index) => {
-            const name = this.getDocTags(c, 'name', c.tag)
-            const desc = this.getDocTags(c, 'description', '*no description provided*')
+            const name = this.getDocTags(c, 'name', c.tag);
+            const desc = this.getDocTags(c, 'description', '*no description provided*');
             writeFile(`./docs/content/en/${c.tag}.md`,
                 this.formatCode(`---
                 title: ${c.tag}
@@ -101,7 +101,6 @@ export default class Documentation {
             ${c.slots.map(s => {
                     return `|${s.name}|${s.docs || '*not provided*'}|`
                 }).join('\n')}
-
             `));
         })
     }
