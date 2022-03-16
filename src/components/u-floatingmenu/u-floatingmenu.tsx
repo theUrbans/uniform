@@ -1,6 +1,4 @@
-import {
-  Component, Element, h, Host, Prop, State,
-} from '@stencil/core';
+import { Component, Element, h, Host, Prop, State } from '@stencil/core';
 import { MenuItem } from '../u-menuitem/u-menuitem';
 
 /**
@@ -11,7 +9,7 @@ import { MenuItem } from '../u-menuitem/u-menuitem';
 @Component({
   tag: 'u-floatingmenu',
   styleUrl: 'u-floatingmenu.css',
-  shadow: true,
+  shadow: true
 })
 export class UFloatingmenu {
   private node: HTMLElement;
@@ -30,7 +28,7 @@ export class UFloatingmenu {
     this.drag = true;
     this.dragoffset = {
       x: event.pageX - this.node.offsetLeft,
-      y: event.pageY - this.node.offsetTop,
+      y: event.pageY - this.node.offsetTop
     };
   };
 
@@ -45,16 +43,18 @@ export class UFloatingmenu {
 
     if (event.pageX - this.dragoffset.x < 0) newleft = '0px';
     else if (
-      event.pageX - this.dragoffset.x + this.node.clientWidth
-      > window.innerWidth
-    ) newleft = `${window.innerWidth - this.node.clientWidth}px`;
+      event.pageX - this.dragoffset.x + this.node.clientWidth >
+      window.innerWidth
+    )
+      newleft = `${window.innerWidth - this.node.clientWidth}px`;
     else newleft = `${event.pageX - this.dragoffset.x}px`;
 
     if (event.pageY - this.dragoffset.y < 0) newtop = '0px';
     else if (
-      event.pageY - this.dragoffset.y + this.node.clientHeight
-      > window.innerHeight
-    ) newtop = `${window.innerHeight - this.node.clientHeight}px`;
+      event.pageY - this.dragoffset.y + this.node.clientHeight >
+      window.innerHeight
+    )
+      newtop = `${window.innerHeight - this.node.clientHeight}px`;
     else newtop = `${event.pageY - this.dragoffset.y}px`;
 
     this.node.style.left = newleft;
@@ -64,12 +64,15 @@ export class UFloatingmenu {
   @State() isOpen: boolean = false;
 
   @State()
-    selected: string = '';
+  selected: string = '';
 
   @Prop() menu: Array<MenuItem> = [
     { name: '+ New' },
     { divider: true },
-    { name: 'Edit', subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] } },
+    {
+      name: 'Edit',
+      subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] }
+    },
     { name: 'Copy' },
     { divider: true },
     {
@@ -82,14 +85,14 @@ export class UFloatingmenu {
               items: [
                 { name: 'index.html' },
                 { name: 'about.html' },
-                { name: 'impressum.html' },
-              ],
-            },
+                { name: 'impressum.html' }
+              ]
+            }
           },
-          { name: 'Item 2' },
-        ],
-      },
-    },
+          { name: 'Item 2' }
+        ]
+      }
+    }
   ];
 
   render() {

@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property         | Attribute         | Description                                                                               | Type                                                                                  | Default       |
@@ -29,7 +28,6 @@
 | `validate`       | `validate`        | use function returning a boolean to validate the input -> if false, it displays error-msg | `boolean`                                                                             | `true`        |
 | `value`          | `value`           | the value of the input                                                                    | `number \| string`                                                                    | `''`          |
 
-
 ## Events
 
 | Event     | Description       | Type                            |
@@ -38,7 +36,6 @@
 | `uChange` | emitted on change | `CustomEvent<number \| string>` |
 | `uFocus`  | emitted on focus  | `CustomEvent<void>`             |
 | `uInput`  | emitted on input  | `CustomEvent<number \| string>` |
-
 
 ## Methods
 
@@ -50,8 +47,6 @@ set blur on native input
 
 Type: `Promise<void>`
 
-
-
 ### `setFocus() => Promise<void>`
 
 set focus on native input
@@ -60,9 +55,6 @@ set focus on native input
 
 Type: `Promise<void>`
 
+---
 
-
-
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

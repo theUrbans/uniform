@@ -1,6 +1,4 @@
-import {
-  Component, h, Prop, State, Watch,
-} from '@stencil/core';
+import { Component, h, Prop, State, Watch } from '@stencil/core';
 
 /**
  * @name Progress
@@ -9,7 +7,7 @@ import {
 @Component({
   tag: 'u-progress',
   styleUrl: 'u-progress.css',
-  shadow: true,
+  shadow: true
 })
 export class UProgress {
   /**
@@ -59,7 +57,10 @@ export class UProgress {
         <div class={{ frame: true, border: !this.borderless }}>
           <div
             class="progress"
-            style={{ width: `${this.progressResult}%`, height: this.height }}
+            style={{
+              width: `${this.progressResult}%`,
+              height: this.height
+            }}
           >
             {this.showPercentage ? (
               <div> {this.progressResult} %</div>

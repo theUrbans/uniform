@@ -13,7 +13,7 @@ export default class Documentation {
   private getDocTags(
     entry: JsonDocsComponent,
     name: string,
-    defaultValue: any,
+    defaultValue: any
   ): string {
     const path = entry.docsTags.find((d: JsonDocsTag) => d.name === name);
     return path ? path.text : defaultValue;
@@ -50,8 +50,8 @@ export default class Documentation {
       
       ## Component overview
       |Name|Component|Description|State|
-      |---|---|---|---|\n`,
-      ),
+      |---|---|---|---|\n`
+      )
     );
 
     const data = this.components.map((c) => {
@@ -72,7 +72,7 @@ export default class Documentation {
         if (!file) return;
         writeFile(
           `${storyPath}/${c.tag}.stories.tsx`,
-          storyTemplate(name, c.tag, c.props),
+          storyTemplate(name, c.tag, c.props)
         );
       });
       return null;
@@ -85,7 +85,7 @@ export default class Documentation {
       const desc = this.getDocTags(
         c,
         'description',
-        '*no description provided*',
+        '*no description provided*'
       );
       const cat = this.getDocTags(c, 'categorie', 'Components');
       writeFile(
@@ -117,7 +117,7 @@ export default class Documentation {
                     |**Type**|\`${prop.type.replace(/\|/g, '\\|')}\`|
                     |**Default**|${prop.default}|
                     |**Required**|${prop.required}|
-                    `,
+                    `
               )
               .join('\n\n')}
             \n
@@ -138,7 +138,7 @@ export default class Documentation {
                     |**Description**|${m.docs || '*not provided*'}|
                     |---|---|
                     |**Signature**|\`${m.signature}\`|
-                `,
+                `
               )
               .join('\n\n')}
             
@@ -151,7 +151,7 @@ export default class Documentation {
               .map((s) => `|${s.name}|${s.docs || '*not provided*'}|`)
               .join('\n')}
 
-            `),
+            `)
       );
       return null;
     });

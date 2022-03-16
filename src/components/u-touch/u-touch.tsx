@@ -1,6 +1,4 @@
-import {
-  Component, Host, h, Listen, State,
-} from '@stencil/core';
+import { Component, Host, h, Listen, State } from '@stencil/core';
 
 /**
  * @name Touch gesture
@@ -9,7 +7,7 @@ import {
 @Component({
   tag: 'u-touch',
   styleUrl: 'u-touch.css',
-  shadow: true,
+  shadow: true
 })
 export class UTouch {
   private threshold: number = 150; // min distance for swipe
@@ -46,18 +44,18 @@ export class UTouch {
     const touch = e.changedTouches[0];
     this.distance = {
       x: touch.pageX - this.start.x,
-      y: touch.pageY - this.start.y,
+      y: touch.pageY - this.start.y
     };
     const elapsed = new Date().getTime() - this.startTime;
     if (elapsed <= this.allowedTime) {
       if (
-        Math.abs(this.distance.x) >= this.threshold
-        && Math.abs(this.distance.y) <= this.restraint
+        Math.abs(this.distance.x) >= this.threshold &&
+        Math.abs(this.distance.y) <= this.restraint
       ) {
         this.swipeDir = this.distance.x < 0 ? 'left' : 'right';
       } else if (
-        Math.abs(this.distance.y) >= this.threshold
-        && Math.abs(this.distance.x) <= this.restraint
+        Math.abs(this.distance.y) >= this.threshold &&
+        Math.abs(this.distance.x) <= this.restraint
       ) {
         this.swipeDir = this.distance.y < 0 ? 'up' : 'down';
       }
@@ -67,21 +65,24 @@ export class UTouch {
   }
 
   @Listen('mouseup', { target: 'body' }) mouseup(e: MouseEvent) {
-    this.distance = { x: e.pageX - this.start.x, y: e.pageY - this.start.y };
+    this.distance = {
+      x: e.pageX - this.start.x,
+      y: e.pageY - this.start.y
+    };
     const elapsed = new Date().getTime() - this.startTime;
     console.log(
       Date.now() - this.startTime,
       elapsed <= this.allowedTime,
-      this.distance,
+      this.distance
     );
     if (
-      Math.abs(this.distance.x) >= this.threshold
-      && Math.abs(this.distance.y) <= this.restraint
+      Math.abs(this.distance.x) >= this.threshold &&
+      Math.abs(this.distance.y) <= this.restraint
     ) {
       this.swipeDir = this.distance.x < 0 ? 'left' : 'right';
     } else if (
-      Math.abs(this.distance.y) >= this.threshold
-      && Math.abs(this.distance.x) <= this.restraint
+      Math.abs(this.distance.y) >= this.threshold &&
+      Math.abs(this.distance.x) <= this.restraint
     ) {
       this.swipeDir = this.distance.y < 0 ? 'up' : 'down';
     }

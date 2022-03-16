@@ -8,7 +8,7 @@ import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 @Component({
   tag: 'u-checkbox',
   styleUrl: 'u-checkbox.css',
-  shadow: true,
+  shadow: true
 })
 export class UCheckbox {
   private checkbox: HTMLInputElement;
@@ -45,14 +45,14 @@ export class UCheckbox {
         class={{
           container: true,
           [`size-${this.size}`]: true,
-          disabled: this.disabled,
+          disabled: this.disabled
         }}
       >
         <span
           class={{
             label: true,
             visible: !!this.label,
-            hidden: !this.label,
+            hidden: !this.label
           }}
         >
           {this.label}
@@ -69,7 +69,7 @@ export class UCheckbox {
             checkmark: !this.tristate,
             [`check-${this.size}`]: !this.tristate,
             indeterminate: this.tristate,
-            [`indeterminate-${this.size}`]: this.tristate,
+            [`indeterminate-${this.size}`]: this.tristate
           }}
         ></span>
       </label>

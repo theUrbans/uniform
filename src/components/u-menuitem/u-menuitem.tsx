@@ -1,6 +1,4 @@
-import {
-  Component, Event, EventEmitter, h, Prop,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { SubMenu } from '../u-submenu/u-submenu';
 
 export interface MenuItem {
@@ -16,7 +14,7 @@ export interface MenuItem {
 @Component({
   tag: 'u-menuitem',
   styleUrl: 'u-menuitem.css',
-  scoped: true,
+  scoped: true
 })
 export class UMenuitem {
   @Prop() item: MenuItem;
@@ -30,37 +28,37 @@ export class UMenuitem {
   render() {
     if (this.item.divider) return <hr />;
     return (
-        <li>
-          {this.item.subMenu ? (
-            [
-              <div
-                class="more"
-                onClick={() => {
-                  this.uItemSelect.emit(this.item);
-                  if (this.item.subMenu) {
-                    this.active = !this.active;
-                    return;
-                  }
-                  this.active = false;
-                }}
-              >
-                <span>{this.item.name}</span>
-                <span> &raquo;</span>
-              </div>,
-              <u-submenu
-                subMenu={this.item.subMenu.items}
-                active={this.active}
-                depthLevel={this.depthLevel}
-                // onUOpenSubMenu={({ detail }) => {
-                // if (this.item.subMenu.items === detail.menu)
-                // this.active = this.item.subMenu.items === detail.menu;
-                // }}
-              />,
-            ]
-          ) : (
-            <span>{this.item.name}</span>
-          )}
-        </li>
+      <li>
+        {this.item.subMenu ? (
+          [
+            <div
+              class="more"
+              onClick={() => {
+                this.uItemSelect.emit(this.item);
+                if (this.item.subMenu) {
+                  this.active = !this.active;
+                  return;
+                }
+                this.active = false;
+              }}
+            >
+              <span>{this.item.name}</span>
+              <span> &raquo;</span>
+            </div>,
+            <u-submenu
+              subMenu={this.item.subMenu.items}
+              active={this.active}
+              depthLevel={this.depthLevel}
+              // onUOpenSubMenu={({ detail }) => {
+              // if (this.item.subMenu.items === detail.menu)
+              // this.active = this.item.subMenu.items === detail.menu;
+              // }}
+            />
+          ]
+        ) : (
+          <span>{this.item.name}</span>
+        )}
+      </li>
     );
   }
 }

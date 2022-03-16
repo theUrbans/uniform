@@ -12,7 +12,7 @@ const getControlType = (dataType: string) => {
 export default (
   name: string,
   tag: string,
-  props: Array<JsonDocsProp>,
+  props: Array<JsonDocsProp>
 ) => `import readme from './readme.md';
     export default {
         title: 'Uniform/${name.split(' ').join('')}',
@@ -36,7 +36,7 @@ export default (
                 }
                 defaultValue: ${prop.default},
             },
-        }`,
+        }`
               )
               .join(',\n')}
         }

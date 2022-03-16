@@ -9,7 +9,7 @@ import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 @Component({
   tag: 'u-filepicker',
   styleUrl: 'u-filepicker.css',
-  shadow: true,
+  shadow: true
 })
 export class UFilepicker {
   @Prop() size: 'small' | 'large' = 'small';
@@ -61,7 +61,7 @@ export class UFilepicker {
     return (
       <div
         class={{
-          [this.size]: true,
+          [this.size]: true
         }}
       >
         {this.size === 'small' ? (

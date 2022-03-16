@@ -1,6 +1,4 @@
-import {
-  Component, Host, h, Prop, Element,
-} from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 /**
  * @name Grid
@@ -9,7 +7,7 @@ import {
 @Component({
   tag: 'u-grid',
   styleUrl: 'u-grid.css',
-  shadow: true,
+  shadow: true
 })
 export class UGrid {
   @Element() el: HTMLElement;
@@ -74,10 +72,7 @@ export class UGrid {
     this.el.style.setProperty('grid-template-rows', this.formatRows());
     if (this.area.length === 0) return;
     const area = this.area.map((row) => `${row.join(' ')}`);
-    this.el.style.setProperty(
-      'grid-template-areas',
-      `"${area.join('" "')}"`,
-    );
+    this.el.style.setProperty('grid-template-areas', `"${area.join('" "')}"`);
   }
 
   componentDidLoad() {

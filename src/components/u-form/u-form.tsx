@@ -6,7 +6,7 @@ import {
   h,
   Host,
   Prop,
-  State,
+  State
 } from '@stencil/core';
 
 export interface FormButton {
@@ -39,7 +39,7 @@ export type Field = string;
 @Component({
   tag: 'u-form',
   styleUrl: 'u-form.css',
-  shadow: true,
+  shadow: true
 })
 export class UForm {
   @Element() el: HTMLElement;
@@ -64,20 +64,23 @@ export class UForm {
   @State() steps: Array<number | string> = [];
 
   private setAttr(field: FormField): any {
-    this.returnValue = { ...this.returnValue, [field.prop]: field.value || '' };
+    this.returnValue = {
+      ...this.returnValue,
+      [field.prop]: field.value || ''
+    };
     if (field.type === 'input' || field.type === 'textarea') {
       return {
         onUInput: (event: any) => {
           this.returnValue = {
             ...this.returnValue,
-            [field.prop]: event.detail,
+            [field.prop]: event.detail
           };
         },
         label: field.label,
         value: field.value,
         inputType: field.subType || 'text',
         required: field.required,
-        ...field.options,
+        ...field.options
       };
     }
     if (field.type === 'select') {
@@ -85,14 +88,14 @@ export class UForm {
         onUChange: (event: any) => {
           this.returnValue = {
             ...this.returnValue,
-            [field.prop]: event.detail,
+            [field.prop]: event.detail
           };
         },
         label: field.label,
         value: field.value,
         options: field.data,
         required: field.required,
-        ...field.options,
+        ...field.options
       };
     }
 
@@ -101,12 +104,12 @@ export class UForm {
         onUSelect: (event: any) => {
           this.returnValue = {
             ...this.returnValue,
-            [field.prop]: event.detail,
+            [field.prop]: event.detail
           };
         },
         label: field.label,
         required: field.required,
-        ...field.options,
+        ...field.options
       };
     }
     if (field.type === 'checkbox') return {};
@@ -127,10 +130,10 @@ export class UForm {
       row = row.trim();
       if (row === 'stepper') this.stepper = true;
       if (
-        row.includes('col')
-        || row.includes('cols')
-        || row.includes('column')
-        || row.includes('columns')
+        row.includes('col') ||
+        row.includes('cols') ||
+        row.includes('column') ||
+        row.includes('columns')
       ) {
         const cols = row.split(' ');
         this.cols = Number(cols[0]);
@@ -151,7 +154,9 @@ export class UForm {
   componentWillLoad() {
     this.getLayout();
     this.fields.forEach((field: FormField) => {
-      if (field.step) if (!this.steps.includes(field.step)) this.steps = [...this.steps, field.step];
+      if (field.step)
+        if (!this.steps.includes(field.step))
+          this.steps = [...this.steps, field.step];
     });
   }
 
@@ -187,7 +192,7 @@ export class UForm {
                 slot={`step-${index + 1}`}
                 width="calc(100% - 2rem)"
                 style={{
-                  padding: '1rem',
+                  padding: '1rem'
                 }}
               >
                 {this.fields.map((Field: FormField): HTMLElement => {
@@ -197,7 +202,7 @@ export class UForm {
                     <Tag
                       {...this.setAttr(Field)}
                       style={{
-                        'grid-area': Field.place,
+                        'grid-area': Field.place
                       }}
                     ></Tag>
                   );
@@ -214,7 +219,7 @@ export class UForm {
                   <Tag
                     {...this.setAttr(Field)}
                     style={{
-                      'grid-area': Field.place,
+                      'grid-area': Field.place
                     }}
                   ></Tag>
                 );

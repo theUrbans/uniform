@@ -1,6 +1,4 @@
-import {
-  Component, Event, EventEmitter, h, Prop, Watch,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, Watch } from '@stencil/core';
 import { MenuItem } from '../u-menuitem/u-menuitem';
 
 export interface SubMenu {
@@ -13,7 +11,7 @@ export interface SubMenu {
 @Component({
   tag: 'u-submenu',
   styleUrl: 'u-submenu.css',
-  scoped: true,
+  scoped: true
 })
 export class USubmenu {
   @Prop() subMenu: Array<MenuItem>;
@@ -24,7 +22,10 @@ export class USubmenu {
     this.uOpenSubMenu.emit({ menu: this.subMenu, open: this.active });
   }
 
-  @Event() uOpenSubMenu: EventEmitter<{ menu: Array<MenuItem>; open: boolean }>;
+  @Event() uOpenSubMenu: EventEmitter<{
+    menu: Array<MenuItem>;
+    open: boolean;
+  }>;
 
   @Prop() depthLevel: number = 0;
 
@@ -34,7 +35,7 @@ export class USubmenu {
         class={{
           sub: true,
           submenu: true,
-          show: this.active,
+          show: this.active
         }}
       >
         {this.subMenu.map((item) => (

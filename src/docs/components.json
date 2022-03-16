@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-16T16:41:24",
+  "timestamp": "2022-03-16T17:05:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -627,6 +627,14 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "handle bool user input"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -1393,7 +1401,8 @@
           "text": "pick single or multiple files"
         },
         {
-          "name": "categorie"
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -2082,6 +2091,14 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "handle user text input"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -2129,7 +2146,7 @@
           "mutable": false,
           "attr": "auto-complete",
           "reflectToAttr": false,
-          "docs": "possible types:\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete",
+          "docs": "possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete",
           "docsTags": [],
           "values": [
             {
@@ -4517,6 +4534,14 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "handle single or multiple option input"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -4565,7 +4590,7 @@
           "mutable": false,
           "attr": "auto-complete",
           "reflectToAttr": false,
-          "docs": "possible types:\nhttps://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete",
+          "docs": "possible types: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete",
           "docsTags": [],
           "default": "'off'",
           "values": [
@@ -4634,7 +4659,7 @@
           "mutable": false,
           "attr": "design",
           "reflectToAttr": false,
-          "docs": "select design\npossible values:\n- 'secondary', 'primary', 'error', 'success', 'warning'",
+          "docs": "select design",
           "docsTags": [],
           "default": "'secondary'",
           "values": [
@@ -4831,7 +4856,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\n    { value: '1', label: 'One', disabled: true },\n    { value: '2', label: 'Two' },\n    { value: '3', label: 'Three', disabled: true },\n    { value: '4', label: 'Four' },\n    { value: '5', label: 'Five' },\n    { value: '6', label: 'Six' },\n    { value: '7', label: 'Seven' },\n  ]",
+          "default": "[\n    { value: '1', label: 'One', disabled: true },\n    { value: '2', label: 'Two' },\n    { value: '3', label: 'Three', disabled: true },\n    { value: '4', label: 'Four' },\n    { value: '5', label: 'Five' },\n    { value: '6', label: 'Six' },\n    { value: '7', label: 'Seven' }\n  ]",
           "values": [
             {
               "type": "Option[]"

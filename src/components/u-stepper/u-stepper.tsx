@@ -5,7 +5,7 @@ import {
   Prop,
   Event,
   EventEmitter,
-  State,
+  State
 } from '@stencil/core';
 
 /**
@@ -16,7 +16,7 @@ import {
 @Component({
   tag: 'u-stepper',
   styleUrl: 'u-stepper.css',
-  shadow: true,
+  shadow: true
 })
 export class UStepper {
   /**
@@ -96,13 +96,13 @@ export class UStepper {
                 <div
                   class={{
                     step: true,
-                    activeStep: index === this.currentStep,
+                    activeStep: index === this.currentStep
                   }}
                 >
                   <span
                     class={{
                       no: true,
-                      activeStep: index === this.currentStep,
+                      activeStep: index === this.currentStep
                     }}
                   >
                     {index + 1}
@@ -114,9 +114,12 @@ export class UStepper {
               </u-row>,
               index < steps.length - 1 ? (
                 <div
-                  class={{ line: true, doneLine: index < this.currentStep }}
+                  class={{
+                    line: true,
+                    doneLine: index < this.currentStep
+                  }}
                 />
-              ) : null,
+              ) : null
             ])}
           </div>
 
@@ -125,7 +128,7 @@ export class UStepper {
               <div
                 class={{
                   visible: index === this.currentStep,
-                  hidden: index !== this.currentStep,
+                  hidden: index !== this.currentStep
                 }}
               >
                 <slot name={`step-${index + 1}`}>keine Daten in dem Slot</slot>
@@ -147,8 +150,8 @@ export class UStepper {
                 design="success"
                 flat
                 disabled={
-                  this.currentStep === steps.length - 1
-                  || !this.nextStepAvailable
+                  this.currentStep === steps.length - 1 ||
+                  !this.nextStepAvailable
                 }
                 onClick={this.handleNextStep}
               >

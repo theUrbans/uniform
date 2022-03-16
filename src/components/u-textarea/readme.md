@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property   | Attribute  | Description | Type                                                                         | Default       |
@@ -18,27 +17,26 @@
 | `size`     | `size`     |             | `"large" \| "medium" \| "small"`                                             | `'medium'`    |
 | `value`    | `value`    |             | `string`                                                                     | `''`          |
 
-
 ## Events
 
 | Event    | Description | Type               |
 | -------- | ----------- | ------------------ |
 | `uInput` |             | `CustomEvent<any>` |
 
-
 ## Dependencies
 
 ### Used by
 
- - [u-editor](../u-editor)
+- [u-editor](../u-editor)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-editor --> u-textarea
   style u-textarea fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

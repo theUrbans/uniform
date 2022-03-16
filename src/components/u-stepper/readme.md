@@ -2,7 +2,6 @@
 
 <!-- Auto Generated Below -->
 
-
 ## Properties
 
 | Property            | Attribute             | Description                                                                                                                     | Type                             | Default                       |
@@ -14,7 +13,6 @@
 | `steps`             | `steps`               | define steps without label -> steps: 3 with label -> steps: [1,'2',3] both do the same, but with array you can define the label | `(string \| number)[] \| number` | `['Step1', 'Step2', 'Step3']` |
 | `submitLabel`       | `submit-label`        | label of the next step button                                                                                                   | `string`                         | `'submit'`                    |
 
-
 ## Events
 
 | Event     | Description                                        | Type                  |
@@ -22,12 +20,11 @@
 | `uStep`   | emit wNextStep event on next/previous button click | `CustomEvent<number>` |
 | `uSubmit` | emit wSubmit event on submit button click          | `CustomEvent<void>`   |
 
-
 ## Dependencies
 
 ### Used by
 
- - [u-form](../u-form)
+- [u-form](../u-form)
 
 ### Depends on
 
@@ -35,6 +32,7 @@
 - [u-button](../u-button)
 
 ### Graph
+
 ```mermaid
 graph TD;
   u-stepper --> u-row
@@ -43,6 +41,6 @@ graph TD;
   style u-stepper fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
