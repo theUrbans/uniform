@@ -1,6 +1,4 @@
-import {
-  Component, Event, EventEmitter, h, Prop, State,
-} from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop, State } from '@stencil/core';
 
 /**
  * @name File Picker
@@ -30,7 +28,7 @@ export class UFilepicker {
   @State() file: FileList;
 
   private handleFileInput = (event: Event) => {
-    const file = event.target.files;
+    const file = (event.target as HTMLInputElement).files;
     this.file = file;
     this.getFileText();
     this.uSelect.emit(this.file);
