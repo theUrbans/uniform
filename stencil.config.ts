@@ -4,7 +4,7 @@ import { windicssStencil } from '@codeperate/stencil-windicss';
 import { JsonDocs } from '@stencil/core/internal';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget } from '@stencil/vue-output-target';
-import Documentation from './createDocs';
+import Documentation from './src/docs/createDocs';
 // import { svelteOutputTarget } from '@stencil/svelte-output-target';
 
 
@@ -30,7 +30,7 @@ export const config: Config = {
     },
     {
       type: 'docs-json',
-      file: './components.json'
+      file: './src/docs/components.json'
     },
     {
       type: 'www',
