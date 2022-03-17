@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 /**
  * @name Row
@@ -9,7 +9,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-row',
   styleUrl: 'u-row.css',
-  shadow: true
+  scoped: true
 })
 export class URow {
   /**
@@ -41,22 +41,22 @@ export class URow {
   /**
    * padding left and right: string, e.g. '1rem', '1px'
    */
-  @Prop() padding: string = '1rem';
+  @Prop() padding: string = '0';
 
   render() {
     return (
-      <div
+      <Host
         class="row"
         style={{
           alignItems: this.align,
           justifyContent: this.justify,
           flexWrap: this.wrap,
           gap: this.gap,
-          padding: `0 ${this.padding}`
+          padding: `${this.padding}`
         }}
       >
         <slot></slot>
-      </div>
+      </Host>
     );
   }
 }

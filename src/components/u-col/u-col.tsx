@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 /**
  * @name Column
@@ -41,7 +41,7 @@ export class UCol {
   /**
    * padding bottom and top: string, e.g. '1rem', '1px'
    */
-  @Prop() padding: string = '1em';
+  @Prop() padding: string = '0';
 
   /**
    * used with w-grid, set size based on number of columns on w-grid (default is 12)
@@ -55,19 +55,19 @@ export class UCol {
 
   render() {
     return (
-      <div
+      <Host
         class="col"
         style={{
           alignItems: this.align,
           justifyContent: this.justify,
           flexWrap: this.wrap,
           gap: this.gap,
-          padding: `${this.padding} 0`,
+          padding: `${this.padding}`,
           gridArea: this.area
         }}
       >
         <slot></slot>
-      </div>
+      </Host>
     );
   }
 }
