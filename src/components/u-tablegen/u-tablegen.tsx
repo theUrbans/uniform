@@ -23,7 +23,7 @@ export interface HeadOptions {
 
 /**
  * @name Table Generator
- * @description table gets generated from the data passed in
+ * @description a table gets generated from the data passed in
  * @state 🟡
  * @slot header - table head
  * @slot footer - table foot
@@ -36,70 +36,35 @@ export interface HeadOptions {
 export class UTablegen {
   @Element() el: HTMLElement;
 
+  /**
+   * should the rows be resizeable
+   */
   @Prop() resizeable: boolean = false;
 
+  /**
+   * renders a checkbox in front of each row
+   */
   @Prop() selectable: boolean = true;
 
+  /**
+   * the header will be sticked to the top of the table
+   */
   @Prop() fixedHeader: boolean = true;
 
+  /**
+   * emits uLastElement when the last row is visible
+   */
   @Prop() observe: boolean = false;
 
-  @Prop() heading: Array<HeadOptions> = [
-    {
-      field: 'id',
-      label: 'ID',
-      align: 'center',
-      sortable: true,
-      width: '10%'
-    },
-    {
-      field: 'name',
-      label: 'Name',
-      width: '80%',
-      bgcolor: (row) => (row.name.includes('2') ? '#e7c2ff' : '')
-    },
-    {
-      field: 'age',
-      label: 'Age',
-      align: 'right',
-      sortable: true,
-      width: '10%'
-    }
-  ];
+  /**
+   * the column definition and setting
+   */
+  @Prop() heading!: Array<HeadOptions>;
 
-  @Prop({ mutable: true }) data: Array<any> = [
-    { id: 1, name: 'test', age: '20' },
-    { id: 2, age: 20, name: '*test2*\n_test_\n*xd*' },
-    { id: 3, age: 30, name: 'test3' },
-    { id: 4, age: 40, name: 'test4' },
-    { id: 5, age: 50, name: 'test5' },
-    { id: 6, age: 60, name: 'test6' },
-    { id: 7, age: 70, name: 'test7' },
-    { id: 8, age: 80, name: 'test8' },
-    { id: 9, age: 90, name: 'test9' },
-    { id: 10, age: 100, name: 'test10' },
-    { id: 11, age: 110, name: 'test11' },
-    { id: 12, age: 120, name: 'test12' },
-    { id: 13, age: 130, name: 'test13' },
-    { id: 14, age: 140, name: 'test14' },
-    { id: 15, age: 150, name: 'test15' },
-    { id: 16, age: 160, name: 'test16' },
-    { id: 17, age: 170, name: 'test17' },
-    { id: 18, age: 180, name: 'test18' },
-    { id: 19, age: 190, name: 'test19' },
-    { id: 20, age: 200, name: 'test20' },
-    { id: 21, age: 210, name: 'test21' },
-    { id: 22, age: 220, name: 'test22' },
-    { id: 23, age: 230, name: 'test23' },
-    { id: 24, age: 240, name: 'test24' },
-    { id: 25, age: 250, name: 'test25' },
-    { id: 26, age: 260, name: 'test26' },
-    { id: 27, age: 270, name: 'test27' },
-    { id: 28, age: 280, name: 'test28' },
-    { id: 29, age: 290, name: 'test29' },
-    { id: 30, age: 300, name: 'test30' },
-    { id: 31, age: 310, name: 'test31' }
-  ];
+  /**
+   * the data to be rendered as rows
+   */
+  @Prop({ mutable: true }) data!: Array<any>;
 
   @Watch('data') watchData(newValue: any) {
     this.displayedData = JSON.parse(JSON.stringify(newValue));
@@ -161,12 +126,24 @@ export class UTablegen {
     });
   }
 
+  /**
+   * emits uSelect when a row is selected. Returns an array of selected rows when selectable is true.
+   */
   @Event() uSelect: EventEmitter<Array<any> | object>; // if selectable true return array on select, if false return row object
 
-  @Event() uUnselect: EventEmitter<void>; // if selectable true return array on select, if false return row object
+  /**
+   * emits uUnselect when a row is unselected and selectable is false.
+   */
+  @Event() uUnselect: EventEmitter<void>;
 
+  /**
+   * emits uStartHover when a row is hovered.
+   */
   @Event() uStartHover: EventEmitter<any>;
 
+  /**
+   * emits uStoptHover on mouse leave.
+   */
   @Event() uStopHover: EventEmitter<any>;
 
   @State() selected: Array<any> = [];
@@ -182,21 +159,23 @@ export class UTablegen {
       item.select = setVal;
       return item;
     });
+    console.log(this.selected.map((item) => item.id));
   }
 
-  private selectRow(row: any, rowIndex: number) {
+  private selectRow(row: any, rowIndex: number, state?: boolean) {
     const index = this.selected.indexOf(row);
     if (this.selectable) {
       if (index === -1) {
         this.selected = [...this.selected, row];
+        this.displayedData[rowIndex].select = true;
       } else {
         this.selected = [
           ...this.selected.slice(0, index),
           ...this.selected.slice(index + 1)
         ];
+        this.displayedData[rowIndex].select = false;
       }
-      this.displayedData[rowIndex].select =
-        this.displayedData[this.lastIndex].select;
+      if (state !== undefined) this.displayedData[rowIndex].select = state;
     } else {
       this.displayedData[rowIndex].select = true;
       delete this.displayedData[this.lastIndex].select;
@@ -209,6 +188,7 @@ export class UTablegen {
     }
     this.lastIndex = rowIndex;
     this.uSelect.emit(this.selectable ? this.selected : row);
+    console.log(this.selected.map((item) => item.id));
   }
 
   private lastIndex: number = 0;
@@ -221,21 +201,30 @@ export class UTablegen {
     this.displayedData = this.displayedData.map((item, i) => {
       if (i > start && i < end) {
         item.select = setVal;
-        this.selectRow(item, i);
+        this.selectRow(item, i, setVal);
       }
       return item;
     });
     this.lastIndex = index;
   }
 
+  /**
+   * programmatically select a row
+   */
   @Method() async select(index: number) {
     this.selectRow(this.displayedData[index], index);
   }
 
+  /**
+   * programmatically unselect a row
+   */
   @Method() async unselect(index: number) {
     this.selectRow(this.displayedData[index], index);
   }
 
+  /**
+   * emits uLastElement when the last element is reached and observe is true.
+   */
   @Event() uLastElement: EventEmitter<void>;
 
   render() {
