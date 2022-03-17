@@ -23,4 +23,4 @@ graph TD;
 
 ---
 
-_Built with [StencilJS](https://stenciljs.com/)_
+_Built with [StencilJS](https://stenciljs.com/) by Hoer_
