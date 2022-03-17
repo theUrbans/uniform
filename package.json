@@ -44,16 +44,12 @@
     "storybook:build": "build-storybook -c ./.storybook -o ./public"
   },
   "dependencies": {
+    "@codeperate/stencil-windicss": "^2.1.2",
     "@stencil/core": "^2.14.0",
     "@stencil/sass": "^1.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
-    "@codeperate/stencil-windicss": "^2.1.2",
-    "@stencil/react-output-target": "^0.3.1",
-    "@stencil/store": "^1.5.0",
-    "@stencil/svelte-output-target": "0.0.3",
-    "@stencil/vue-output-target": "^0.6.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
