@@ -113,7 +113,7 @@ export default class Documentation {
                 (prop) => `### ${prop.name}
                     |**Description**|${prop.docs || '*not provided*'}|
                     |---|---|
-                    |**Attribute**|${prop.attr}|
+                    |**Attribute**|${prop.attr || prop.name}|
                     |**Type**|\`${prop.type.replace(/\|/g, '\\|')}\`|
                     |**Default**|${prop.default}|
                     |**Required**|${prop.required}|
