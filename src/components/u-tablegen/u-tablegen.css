@@ -4,7 +4,7 @@
 table {
   @apply w-full border-separate;
   height: 100%;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   border-spacing: 0 0.4rem;
 }

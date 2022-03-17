@@ -40,7 +40,7 @@ export class UTablegen {
   /**
    * should the rows be resizeable (not implemented yet)
    */
-  @Prop() resizeable: boolean = true;
+  @Prop() resizeable: boolean = false;
 
   /**
    * renders a checkbox in front of each row
