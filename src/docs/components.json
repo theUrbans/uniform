@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-16T17:05:34",
+  "timestamp": "2022-03-17T12:36:57",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -20,6 +20,10 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "categorie",
+          "text": "Modal"
         }
       ],
       "usage": {},
@@ -95,7 +99,11 @@
         },
         {
           "name": "description",
-          "text": "This component allows you to scan barcodes and QR codes. It is based on the [Capicitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin."
+          "text": "This component allows you to scan barcodes and QR codes. It is based on the [Capacitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin."
+        },
+        {
+          "name": "categorie",
+          "text": "Capacitor Specific"
         }
       ],
       "usage": {},
@@ -231,7 +239,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\n    { name: 'test1', link: '/test' },\n    { name: 'test2' },\n    { name: 'test3' },\n  ]",
+          "default": "[\r\n    { name: 'test1', link: '/test' },\r\n    { name: 'test2' },\r\n    { name: 'test3' },\r\n  ]",
           "values": [
             {
               "type": "BreadCrumbItem[]"
@@ -762,12 +770,12 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-select", "u-table", "u-tablecell"],
+      "dependents": ["u-select", "u-tablecell", "u-tablegen"],
       "dependencies": [],
       "dependencyGraph": {
         "u-select": ["u-checkbox"],
-        "u-table": ["u-checkbox"],
-        "u-tablecell": ["u-checkbox"]
+        "u-tablecell": ["u-checkbox"],
+        "u-tablegen": ["u-checkbox"]
       }
     },
     {
@@ -819,7 +827,7 @@
           "mutable": false,
           "attr": "clickable",
           "reflectToAttr": false,
-          "docs": "enable wClick event on chip",
+          "docs": "enable uClick event on chip",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -959,7 +967,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "emit wClick event on chip click",
+          "docs": "emit uClick event on chip click",
           "docsTags": []
         }
       ],
@@ -994,6 +1002,10 @@
         {
           "name": "description",
           "text": "Flexbox column"
+        },
+        {
+          "name": "categorie",
+          "text": "Layout"
         }
       ],
       "usage": {},
@@ -1207,6 +1219,10 @@
         {
           "name": "name",
           "text": "Date Picker"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -1231,6 +1247,10 @@
         {
           "name": "name",
           "text": "Date Time Picker"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -1263,6 +1283,10 @@
         {
           "name": "description",
           "text": "default Desktop Layout - with a sidebar and a main content area"
+        },
+        {
+          "name": "categorie",
+          "text": "Layout"
         }
       ],
       "usage": {},
@@ -1298,6 +1322,10 @@
         {
           "name": "description",
           "text": "pre configured Modal"
+        },
+        {
+          "name": "categorie",
+          "text": "Modal"
         }
       ],
       "usage": {},
@@ -1659,7 +1687,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\n    { name: '+ New' },\n    { divider: true },\n    { name: 'Edit', subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] } },\n    { name: 'Copy' },\n    { divider: true },\n    {\n      name: 'Open Recent',\n      subMenu: {\n        items: [\n          {\n            name: 'HTML',\n            subMenu: {\n              items: [\n                { name: 'index.html' },\n                { name: 'about.html' },\n                { name: 'impressum.html' },\n              ],\n            },\n          },\n          { name: 'Item 2' },\n        ],\n      },\n    },\n  ]",
+          "default": "[\n    { name: '+ New' },\n    { divider: true },\n    {\n      name: 'Edit',\n      subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] }\n    },\n    { name: 'Copy' },\n    { divider: true },\n    {\n      name: 'Open Recent',\n      subMenu: {\n        items: [\n          {\n            name: 'HTML',\n            subMenu: {\n              items: [\n                { name: 'index.html' },\n                { name: 'about.html' },\n                { name: 'impressum.html' }\n              ]\n            }\n          },\n          { name: 'Item 2' }\n        ]\n      }\n    }\n  ]",
           "values": [
             {
               "type": "MenuItem[]"
@@ -1701,6 +1729,10 @@
         {
           "name": "description",
           "text": "Generate a form with fields and buttons"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -1801,6 +1833,10 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "categorie",
+          "text": "Layout"
         }
       ],
       "usage": {},
@@ -2696,6 +2732,10 @@
           "text": "layout which decides whether to use mobile or desktop layout"
         },
         {
+          "name": "categorie",
+          "text": "Layout"
+        },
+        {
           "name": "slot",
           "text": "menu - menu view"
         },
@@ -2944,7 +2984,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\n    {\n      label: 'test1',\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"h-5 w-5\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          stroke=\"currentColor\"\n        >\n          <path\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\n          />\n        </svg>\n      ),\n    },\n    {\n      label: 'test2',\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"h-5 w-5\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          stroke=\"currentColor\"\n        >\n          <path\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"\n          />\n        </svg>\n      ),\n    },\n  ]",
+          "default": "[\r\n    {\r\n      label: 'test1',\r\n      icon: (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"h-5 w-5\"\r\n          fill=\"none\"\r\n          viewBox=\"0 0 24 24\"\r\n          stroke=\"currentColor\"\r\n        >\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n    {\r\n      label: 'test2',\r\n      icon: (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"h-5 w-5\"\r\n          fill=\"none\"\r\n          viewBox=\"0 0 24 24\"\r\n          stroke=\"currentColor\"\r\n        >\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n  ]",
           "values": [
             {
               "type": "MenuItems[]"
@@ -3109,6 +3149,10 @@
         {
           "name": "description",
           "text": "Discord-App like layout with 3 swipeable columns"
+        },
+        {
+          "name": "categorie",
+          "text": "Layout"
         }
       ],
       "usage": {},
@@ -3236,6 +3280,10 @@
           "text": "A modal window that can be used to display information to the user."
         },
         {
+          "name": "categorie",
+          "text": "Modal"
+        },
+        {
           "name": "slot",
           "text": "header - The header of the modal"
         },
@@ -3245,7 +3293,7 @@
         }
       ],
       "usage": {
-        "events": "- open modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(\r\n  new CustomEvent('show-modal', {\r\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } },\r\n  }),\r\n);\r\n```\r\n\r\n- close modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(\r\n  new CustomEvent('close-modal', {\r\n    detail: { name: 'MODAL_NAME' },\r\n  }),\r\n);\r\n```\r\n"
+        "events": "- open modal\n\n```js\nconst body = document.querySelector('body');\nbody.dispatchEvent(\n  new CustomEvent('show-modal', {\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\n  })\n);\n```\n\n- close modal\n\n```js\nconst body = document.querySelector('body');\nbody.dispatchEvent(\n  new CustomEvent('close-modal', {\n    detail: { name: 'MODAL_NAME' }\n  })\n);\n```\n"
       },
       "props": [
         {
@@ -3556,6 +3604,10 @@
         {
           "name": "description",
           "text": "top or bottom navigation bar"
+        },
+        {
+          "name": "categorie",
+          "text": "Layout"
         }
       ],
       "usage": {},
@@ -4260,6 +4312,10 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -4310,7 +4366,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\n    { value: 1, label: 'Option 1' },\n    { value: 2, label: 'Option 2' },\n    { value: 3, label: 'Option 3' },\n  ]",
+          "default": "[\n    { value: 1, label: 'Option 1' },\n    { value: 2, label: 'Option 2' },\n    { value: 3, label: 'Option 3' }\n  ]",
           "values": [
             {
               "type": "Option[]"
@@ -4374,6 +4430,10 @@
         {
           "name": "description",
           "text": "flexbox row"
+        },
+        {
+          "name": "categorie",
+          "text": "Layout"
         }
       ],
       "usage": {},
@@ -5241,6 +5301,10 @@
         {
           "name": "description",
           "text": "formular with multiple steps"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -5487,195 +5551,59 @@
         {
           "name": "name",
           "text": "Table"
-        },
-        {
-          "name": "state",
-          "text": "🟡"
         }
       ],
       "usage": {},
       "props": [
         {
-          "name": "data",
-          "type": "any[]",
-          "mutable": true,
+          "name": "borderSpacing",
+          "type": "string",
+          "mutable": false,
+          "attr": "border-spacing",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "control border-spacing styöe",
           "docsTags": [],
-          "default": "[\n    { id: 1, name: 'test', age: '20' },\n    { id: 2, age: 20, name: '*test2*\\n_test_\\n*xd*' },\n    { id: 3, name: 'test3', age: '40' },\n    { id: 4, name: 'test4', age: '50' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 5, name: 'test5', age: '-60' },\n    { id: 6, name: 'test6', age: '70' },\n    { id: 7, name: 'test2', age: '30' },\n    { id: 8, name: '.test3.', age: '40' },\n    { id: 9, name: 'test4', age: '50' },\n    { id: 10, name: 'test5', age: '60' },\n    { id: 11, name: 'test6', age: '70' },\n    { id: 12, name: 'test2', age: '30' },\n    { id: 6, name: 'test6', age: '70' },\n    { id: 7, name: 'test2', age: '-30' },\n    { id: 8, name: '.test3.', age: '40' },\n  ]",
+          "default": "'0'",
           "values": [
             {
-              "type": "any[]"
+              "type": "string"
             }
           ],
           "optional": false,
           "required": false
         },
         {
-          "name": "fixedHeader",
-          "type": "boolean",
+          "name": "borderStyle",
+          "type": "\"collapse\" | \"seperate\"",
           "mutable": false,
-          "attr": "fixed-header",
+          "attr": "border-style",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "control border-collapse style",
           "docsTags": [],
-          "default": "true",
+          "default": "'collapse'",
           "values": [
             {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "heading",
-          "type": "HeadOptions[]",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "[\n    {\n      field: 'id',\n      label: 'ID',\n      align: 'center',\n      sortable: true,\n      width: '10%',\n    },\n    {\n      field: 'name',\n      label: 'Name',\n      width: '80%',\n      bgcolor: (row) => (row.name.includes('2') ? '#e7c2ff' : ''),\n    },\n    {\n      field: 'age',\n      label: 'Age',\n      align: 'right',\n      sortable: true,\n      width: '10%',\n      // bgcolor: row => {\n      //   return row.age >= 0 ? '#afe6a8' : '#ffc382';\n      // },\n      // fontcolor: () => {\n      //   return 'black';\n      // },\n    },\n  ]",
-          "values": [
+              "value": "collapse",
+              "type": "string"
+            },
             {
-              "type": "HeadOptions[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "observe",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "observe",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "resizeable",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "resizeable",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "selectable",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "selectable",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
+              "value": "seperate",
+              "type": "string"
             }
           ],
           "optional": false,
           "required": false
         }
       ],
-      "methods": [
-        {
-          "name": "select",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "select(index: number) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "unselect",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "unselect(index: number) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [
-        {
-          "event": "uLastElement",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "uSelect",
-          "detail": "any[] | object",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "uStartHover",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "uStopHover",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "uUnselect",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
+      "methods": [],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["u-checkbox"],
-      "dependencyGraph": {
-        "u-table": ["u-checkbox"]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/u-tablecell/u-tablecell.tsx",
@@ -5767,6 +5695,228 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/u-tablegen/u-tablegen.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-tablegen",
+      "readme": "# u-tablegen\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Table Generator"
+        },
+        {
+          "name": "description",
+          "text": "a table gets generated from the data passed in"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "slot",
+          "text": "header - table head"
+        },
+        {
+          "name": "slot",
+          "text": "footer - table foot"
+        }
+      ],
+      "usage": {
+        "general": "Column definition\n\n```ts\ninterface HeadOptions {\n  field: string;\n  label: string;\n  width?: string;\n  align?: 'left' | 'center' | 'right' | string;\n  sortable?: boolean;\n  bgcolor?(row: any): string;\n  fontcolor?(row: any): string;\n}\n```\n\nthe `data` Property must use the same schema like the HeadOption.\neg is `field: 'id'`, the data must have objects with `id` keys.\n",
+        "vue": "tested with Vue 2.6\n\n```html\n<template>\n    <u-tablegen :data.prop=\"data\" :heading.prop=\"heading\">\n        <h1 slot=\"header\">Example Table</h1>\n    </template>\n</u-tablegen>\n\n<script>\nexport default {\n    data: () {\n        return {\n            data: [\n                { id: 1, text: 'Id no 1' },\n                { id: 2, text: 'Id no 2' },\n                { id: 3, text: 'Id no 3' },\n                { id: 4, text: 'Id no 4' },\n                { id: 5, text: 'Id no 5' },\n            ]\n        },\n        heading: [{\n            field: 'id',\n            label: 'ID',\n            align: 'center',\n        }, {\n            field: 'text',\n            label: 'Description',\n            sortable: true,\n            bgcolor: (row) => row.id > 3 ? 'green' : 'blue',\n        }]\n    }\n}\n</script>\n```\n"
+      },
+      "props": [
+        {
+          "name": "data",
+          "type": "any[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "the data to be rendered as rows",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "fixedHeader",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "fixed-header",
+          "reflectToAttr": false,
+          "docs": "the header will be sticked to the top of the table",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "heading",
+          "type": "HeadOptions[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "the column definition and setting",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "HeadOptions[]"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "observe",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "observe",
+          "reflectToAttr": false,
+          "docs": "emits uLastElement when the last row is visible",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "resizeable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "resizeable",
+          "reflectToAttr": false,
+          "docs": "should the rows be resizeable",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "selectable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "selectable",
+          "reflectToAttr": false,
+          "docs": "renders a checkbox in front of each row",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "select",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "select(index: number) => Promise<void>",
+          "parameters": [],
+          "docs": "programmatically select a row",
+          "docsTags": []
+        },
+        {
+          "name": "unselect",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "unselect(index: number) => Promise<void>",
+          "parameters": [],
+          "docs": "programmatically unselect a row",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uLastElement",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emits uLastElement when the last element is reached and observe is true.",
+          "docsTags": []
+        },
+        {
+          "event": "uSelect",
+          "detail": "any[] | object",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emits uSelect when a row is selected. Returns an array of selected rows when selectable is true.",
+          "docsTags": []
+        },
+        {
+          "event": "uStartHover",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emits uStartHover when a row is hovered.",
+          "docsTags": []
+        },
+        {
+          "event": "uStopHover",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emits uStoptHover on mouse leave.",
+          "docsTags": []
+        },
+        {
+          "event": "uUnselect",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emits uUnselect when a row is unselected and selectable is false.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "footer",
+          "docs": "table foot"
+        },
+        {
+          "name": "header",
+          "docs": "table head"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["u-checkbox"],
+      "dependencyGraph": {
+        "u-tablegen": ["u-checkbox"]
+      }
+    },
+    {
       "filePath": "./src/components/u-tablehead/u-tablehead.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablehead",
@@ -5855,6 +6005,10 @@
         {
           "name": "description",
           "text": "term popup"
+        },
+        {
+          "name": "categorie",
+          "text": "Modal"
         }
       ],
       "usage": {},
@@ -5883,6 +6037,10 @@
         {
           "name": "state",
           "text": "🟡"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -6156,6 +6314,10 @@
         {
           "name": "name",
           "text": "Toggle"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
@@ -6199,7 +6361,7 @@
         }
       ],
       "usage": {
-        "default": "```html\r\n<u-tooltip text=\"i am a button with an tooltip\">\r\n  <u-button></u-button>\r\n</u-tooltip>\r\n```\r\n\r\n```html\r\n<u-tooltip content>\r\n  <div slot=\"content\">\r\n    <u-headline>Button with Custom Tooltip</u-headline>\r\n    <u-paragraph>Custom components in tootltip</u-paragraph>\r\n  </div>\r\n  <u-button></u-button>\r\n</u-tooltip>\r\n```\r\n"
+        "default": "```html\n<u-tooltip text=\"i am a button with an tooltip\">\n  <u-button></u-button>\n</u-tooltip>\n```\n\n```html\n<u-tooltip content>\n  <div slot=\"content\">\n    <u-headline>Button with Custom Tooltip</u-headline>\n    <u-paragraph>Custom components in tootltip</u-paragraph>\n  </div>\n  <u-button></u-button>\n</u-tooltip>\n```\n"
       },
       "props": [
         {
@@ -6387,6 +6549,10 @@
         {
           "name": "name",
           "text": "Week Picker"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
         }
       ],
       "usage": {},
