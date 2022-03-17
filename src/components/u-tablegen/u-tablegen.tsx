@@ -25,6 +25,7 @@ export interface HeadOptions {
  * @name Table Generator
  * @description a table gets generated from the data passed in
  * @state 🟡
+ * @categorie Generator
  * @slot header - table head
  * @slot footer - table foot
  */
@@ -37,9 +38,9 @@ export class UTablegen {
   @Element() el: HTMLElement;
 
   /**
-   * should the rows be resizeable
+   * should the rows be resizeable (not implemented yet)
    */
-  @Prop() resizeable: boolean = false;
+  @Prop() resizeable: boolean = true;
 
   /**
    * renders a checkbox in front of each row
@@ -59,12 +60,37 @@ export class UTablegen {
   /**
    * the column definition and setting
    */
-  @Prop() heading!: Array<HeadOptions>;
+  @Prop() heading: Array<HeadOptions> = [
+    { field: 'id', label: 'ID', width: '33%' },
+    { field: 'text', label: 'Name', width: '33%' },
+    { field: 'date', label: 'Value', width: '33%' }
+  ];
 
   /**
    * the data to be rendered as rows
    */
-  @Prop({ mutable: true }) data!: Array<any>;
+  @Prop({ mutable: true }) data: Array<any> = [
+    {
+      id: 1,
+      text: 'test',
+      date: '2019-01-01'
+    },
+    {
+      id: 2,
+      text: 'test',
+      date: '2019-01-01'
+    },
+    {
+      id: 3,
+      text: 'test',
+      date: '2019-01-01'
+    },
+    {
+      id: 4,
+      text: 'test',
+      date: '2019-01-01'
+    }
+  ];
 
   @Watch('data') watchData(newValue: any) {
     this.displayedData = JSON.parse(JSON.stringify(newValue));
@@ -227,6 +253,77 @@ export class UTablegen {
    */
   @Event() uLastElement: EventEmitter<void>;
 
+  @State() currentColWidth: number = 0;
+
+  @State() nextColWidth: number = 0;
+
+  @State() startOffset: number = 0;
+
+  @State() currentCol: HTMLTableCaptionElement = undefined;
+
+  @State() nextCol: HTMLTableCaptionElement = undefined;
+
+  private createResize(th: HTMLTableCaptionElement, height: string) {
+    th.style.position = 'relative';
+    th.style.width = `${th.offsetWidth}px`;
+    const grip = document.createElement('div');
+    grip.innerHTML = '&nbsp;';
+    grip.style.top = '0';
+    grip.style.right = '0';
+    grip.style.bottom = '0';
+    grip.style.width = '5px';
+    grip.style.height = height;
+    grip.className = 'columnSelector';
+    grip.style.position = 'absolute';
+    grip.style.cursor = 'col-resize';
+    grip.addEventListener('mousedown', (e: MouseEvent) => {
+      e.preventDefault();
+      this.currentCol = th;
+      this.startOffset = e.pageX;
+      this.nextCol = th.nextElementSibling as HTMLTableCaptionElement;
+      this.currentColWidth = this.currentCol.offsetWidth;
+      if (this.nextCol) this.nextColWidth = this.nextCol.offsetWidth;
+    });
+    th.appendChild(grip);
+  }
+
+  componentDidLoad() {
+    if (!this.resizeable) return;
+    const table = this.el.shadowRoot.querySelector('tbody');
+    const thead = this.el.shadowRoot.querySelector(
+      'thead tr'
+    ) as HTMLTableRowElement;
+    const ths = this.el.shadowRoot.querySelectorAll('table th');
+    ths.forEach((th) => {
+      this.createResize(
+        th as HTMLTableCaptionElement,
+        `${table.offsetHeight + thead.clientHeight}px`
+      );
+    });
+    const tds = this.el.shadowRoot.querySelectorAll('table td');
+    tds.forEach((td: HTMLTableCellElement) => {
+      td.style.width = `${td.offsetWidth}px`;
+    });
+    document.addEventListener('mousemove', (e) => {
+      e.preventDefault();
+      if (this.currentCol) {
+        const diff = e.pageX - this.startOffset;
+        if (this.nextCol)
+          this.nextCol.style.width = `${this.nextColWidth - diff}px`;
+        this.currentCol.style.width = `${this.currentColWidth + diff}px`;
+      }
+    });
+    document.addEventListener('mouseup', () => {
+      this.currentCol = undefined;
+      this.nextCol = undefined;
+    });
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('mousemove', () => {});
+    document.removeEventListener('mouseup', () => {});
+  }
+
   render() {
     let order = this.heading.map((h) => h.field);
     if (this.selectable) order = ['select', ...order];
@@ -240,42 +337,58 @@ export class UTablegen {
               top: true
             }}
           >
-            <div class="head">
-              <tr class="headingslot">
+            <tr class="headingslot">
+              <td colSpan={order.length}>
                 <slot name="header" />
-              </tr>
-              <tr class="heading">
-                {this.heading.map((item, index) => [
-                  this.selectable && index === 0 && (
-                    <th class="center">
-                      <u-checkbox
-                        checked={this.selected.length > 0}
-                        tristate={
-                          this.selected.length > 0 &&
-                          this.selected.length !== this.displayedData.length
-                        }
-                        onUChange={() => this.selectAll()}
-                      ></u-checkbox>
-                    </th>
-                  ),
-                  <th
-                    class={{
-                      [item.align ?? 'left']: true
-                    }}
-                    style={{
-                      width: item.width ?? '100%'
-                    }}
-                  >
-                    <span class="label">
-                      {item.label}
-                      {item.sortable && (
-                        <div class="sort">
-                          {(this.sort.prop !== item.field ||
-                            this.sort.dir === 'none') && [
+              </td>
+            </tr>
+            <tr class="heading">
+              {this.heading.map((item, index) => [
+                this.selectable && index === 0 && (
+                  <th class="center selectcell">
+                    <u-checkbox
+                      checked={this.selected.length > 0}
+                      tristate={
+                        this.selected.length > 0 &&
+                        this.selected.length !== this.displayedData.length
+                      }
+                      onUChange={() => this.selectAll()}
+                    ></u-checkbox>
+                  </th>
+                ),
+                <th
+                  class={{
+                    [item.align ?? 'left']: true
+                  }}
+                  style={{
+                    width: item.width ?? '100%'
+                  }}
+                >
+                  <span class="label">
+                    {item.label}
+                    {item.sortable && (
+                      <div class="sort">
+                        {(this.sort.prop !== item.field ||
+                          this.sort.dir === 'none') && [
+                          <span
+                            onClick={() => this.handleSort(item.field, 'asc')}
+                          >
+                            &#9651;
+                          </span>,
+                          <span
+                            onClick={() => this.handleSort(item.field, 'desc')}
+                          >
+                            &#9661;
+                          </span>
+                        ]}
+                        {this.sort.dir === 'asc' &&
+                          this.sort.prop === item.field && [
                             <span
-                              onClick={() => this.handleSort(item.field, 'asc')}
+                              onClick={() =>
+                                this.handleSort(item.field, 'none')
+                              }
                             >
-                              &#9651;
+                              &#9650;
                             </span>,
                             <span
                               onClick={() =>
@@ -285,47 +398,27 @@ export class UTablegen {
                               &#9661;
                             </span>
                           ]}
-                          {this.sort.dir === 'asc' &&
-                            this.sort.prop === item.field && [
-                              <span
-                                onClick={() =>
-                                  this.handleSort(item.field, 'none')
-                                }
-                              >
-                                &#9650;
-                              </span>,
-                              <span
-                                onClick={() =>
-                                  this.handleSort(item.field, 'desc')
-                                }
-                              >
-                                &#9661;
-                              </span>
-                            ]}
-                          {this.sort.dir === 'desc' &&
-                            this.sort.prop === item.field && [
-                              <span
-                                onClick={() =>
-                                  this.handleSort(item.field, 'asc')
-                                }
-                              >
-                                &#9651;
-                              </span>,
-                              <span
-                                onClick={() =>
-                                  this.handleSort(item.field, 'none')
-                                }
-                              >
-                                &#9660;
-                              </span>
-                            ]}
-                        </div>
-                      )}
-                    </span>
-                  </th>
-                ])}
-              </tr>
-            </div>
+                        {this.sort.dir === 'desc' &&
+                          this.sort.prop === item.field && [
+                            <span
+                              onClick={() => this.handleSort(item.field, 'asc')}
+                            >
+                              &#9651;
+                            </span>,
+                            <span
+                              onClick={() =>
+                                this.handleSort(item.field, 'none')
+                              }
+                            >
+                              &#9660;
+                            </span>
+                          ]}
+                      </div>
+                    )}
+                  </span>
+                </th>
+              ])}
+            </tr>
           </thead>
           <tbody>
             {this.displayedData.map((row, rowIndex) => {

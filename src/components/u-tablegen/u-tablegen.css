@@ -2,18 +2,17 @@
   @apply w-full;
 }
 table {
-  @apply w-full border-separate h-full relative flex flex-col;
+  @apply w-full border-separate;
+  height: 100%;
+  display: inline-flex;
+  flex-direction: column;
   border-spacing: 0 0.4rem;
 }
 .heading {
-  @apply w-full table rounded-lg bg-blue-gray-600 text-light-600;
+  @apply w-full rounded-lg bg-blue-gray-600 text-light-600;
 }
 .headingslot {
   @apply w-full;
-}
-.head {
-  @apply block bg-transparent w-full;
-  flex: 0 0 auto;
 }
 th {
   @apply h-full px-1 py-2 bg-blue-gray-600 text-light-600 align-middle;
@@ -22,24 +21,25 @@ th:last-child {
   padding-right: 1rem;
 }
 tbody {
-  @apply w-full block overflow-y-scroll;
+  @apply w-full overflow-y-scroll;
   flex: 1 1 auto;
 }
 thead {
-  @apply w-full block bg-white dark:bg-black;
+  @apply w-full bg-white dark:bg-black;
+  flex: 0 0 auto;
 }
 tfoot {
   @apply w-full sticky bottom-0 dark:bg-black;
   inset-block-end: 0;
 }
 .tablerow {
-  @apply cursor-pointer whitespace-pre-wrap w-full;
+  @apply cursor-pointer whitespace-pre-wrap table-row;
 }
-table thead,
+/* table thead,
 table tbody tr {
   display: table;
   table-layout: fixed;
-}
+} */
 .tablerow:hover > .tablecell {
   @apply border-blue-gray-400;
 }
@@ -47,7 +47,7 @@ table tbody tr {
   @apply px-2 break-words bg-blue-gray-200 border-t-2 border-b-2 border-l-0 border-r-0 border-solid box-border border-transparent;
 }
 .selectcell {
-  @apply w-1/80;
+  @apply w-10;
 }
 .sticky {
   @apply sticky;
@@ -104,4 +104,7 @@ p {
 }
 .sort > span {
   @apply cursor-pointer;
+}
+.columnSelector:hover {
+  @apply bg-gray-400;
 }
