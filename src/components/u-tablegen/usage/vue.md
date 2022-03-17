@@ -11,24 +11,24 @@ tested with Vue 2.6
   export default {
       data: () {
           return {
-              data: [
-                  { id: 1, text: 'Id no 1' },
-                  { id: 2, text: 'Id no 2' },
-                  { id: 3, text: 'Id no 3' },
-                  { id: 4, text: 'Id no 4' },
-                  { id: 5, text: 'Id no 5' },
-              ]
-          },
-          heading: [{
+            data: [
+              { id: 1, text: 'Id no 1' },
+              { id: 2, text: 'Id no 2' },
+              { id: 3, text: 'Id no 3' },
+              { id: 4, text: 'Id no 4' },
+              { id: 5, text: 'Id no 5' },
+            ]
+            heading: [{
               field: 'id',
               label: 'ID',
-              align: 'center',
-          }, {
+              align: 'center'
+              }, {
               field: 'text',
               label: 'Description',
               sortable: true,
               bgcolor: (row) => row.id > 3 ? 'green' : 'blue',
-          }]
+            }]
+         },
       }
   }
 </script>
