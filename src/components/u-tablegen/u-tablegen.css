@@ -35,11 +35,6 @@ tfoot {
 .tablerow {
   @apply cursor-pointer whitespace-pre-wrap table-row;
 }
-/* table thead,
-table tbody tr {
-  display: table;
-  table-layout: fixed;
-} */
 .tablerow:hover > .tablecell {
   @apply border-blue-gray-400;
 }
