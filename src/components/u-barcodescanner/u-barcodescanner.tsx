@@ -12,7 +12,7 @@ import {
 /**
  * @name Barcode Scanner
  * @state 🟡
- * @description This component allows you to scan barcodes and QR codes. It is based on the [Capicitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin.
+ * @description This component allows you to scan barcodes and QR codes. It is based on the [Capacitor Barcode Scanner](https://github.com/capacitor-community/barcode-scanner) plugin.
  * @categorie Capacitor Specific
  */
 @Component({
