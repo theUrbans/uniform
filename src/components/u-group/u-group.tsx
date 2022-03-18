@@ -8,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-group',
   styleUrl: 'u-group.css',
-  shadow: true,
+  shadow: true
 })
 export class UGroup {
   /**
@@ -20,7 +20,7 @@ export class UGroup {
     return (
       <div
         class={{
-          [this.direction]: true,
+          [this.direction]: true
         }}
       >
         <slot></slot>

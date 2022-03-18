@@ -7,7 +7,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-paragraph',
   styleUrl: 'u-paragraph.css',
-  shadow: true,
+  shadow: true
 })
 export class UParagraph {
   @Prop() color: string;
@@ -18,7 +18,8 @@ export class UParagraph {
 
   @Prop() textAlign: 'jusitfy' | 'center' | 'left' | 'right';
 
-  @Prop() textAlignLast: 'jusitfy' | 'center' | 'left' | 'right' | 'none' = 'none';
+  @Prop() textAlignLast: 'jusitfy' | 'center' | 'left' | 'right' | 'none' =
+    'none';
 
   render() {
     return (
@@ -28,7 +29,7 @@ export class UParagraph {
           backgroundColor: this.backgroundColor,
           hyphens: this.hyphens,
           textAlign: this.textAlign,
-          textAlignLast: this.textAlignLast,
+          textAlignLast: this.textAlignLast
         }}
       >
         <slot>

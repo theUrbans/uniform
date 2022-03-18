@@ -5,7 +5,7 @@ describe('w-row', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [URow],
-      html: '<u-row></u-row>',
+      html: '<u-row></u-row>'
     });
     expect(page.root).toEqualHtml(`
       <u-row>

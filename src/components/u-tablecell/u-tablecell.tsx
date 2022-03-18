@@ -8,7 +8,7 @@ export type ComponentName = 'Table Cell';
 @Component({
   tag: 'u-tablecell',
   styleUrl: 'u-tablecell.css',
-  shadow: true,
+  shadow: true
 })
 export class UTablecell {
   /**

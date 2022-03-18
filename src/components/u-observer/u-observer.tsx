@@ -4,7 +4,7 @@ import {
   Event,
   EventEmitter,
   Element,
-  State,
+  State
 } from '@stencil/core';
 
 /**
@@ -15,7 +15,7 @@ import {
 @Component({
   tag: 'u-observer',
   styleUrl: 'u-observer.css',
-  shadow: true,
+  shadow: true
 })
 export class UObserver {
   @Element() el: HTMLElement;
@@ -52,7 +52,7 @@ export class UObserver {
     const div: HTMLDivElement = this.el.shadowRoot.querySelector('div');
     if (div) {
       this.observer = new IntersectionObserver(this.onIntersection, {
-        threshold: [0, 0.8],
+        threshold: [0, 0.8]
       });
       this.observer.observe(div);
     }

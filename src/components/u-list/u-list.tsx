@@ -5,14 +5,14 @@ import { Component, Host, h } from '@stencil/core';
  */
 @Component({
   tag: 'u-list',
-  styleUrl: 'u-list.css',
+  styleUrl: 'u-list.css'
 })
 export class UList {
   render() {
     return (
       <Host
         class={{
-          list: true,
+          list: true
         }}
       ></Host>
     );

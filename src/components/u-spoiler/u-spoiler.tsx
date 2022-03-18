@@ -5,7 +5,7 @@ import {
   State,
   Prop,
   Event,
-  EventEmitter,
+  EventEmitter
 } from '@stencil/core';
 
 /**
@@ -16,7 +16,7 @@ import {
 @Component({
   tag: 'u-spoiler',
   styleUrl: 'u-spoiler.css',
-  shadow: true,
+  shadow: true
 })
 export class USpoiler {
   /**
@@ -54,7 +54,7 @@ export class USpoiler {
             spoiler: true,
             opened: this.isOpen,
             closed: !this.isOpen,
-            [this.size]: true,
+            [this.size]: true
           }}
           onClick={this.handleOnClick}
         >
@@ -86,7 +86,7 @@ export class USpoiler {
           class={{
             content: true,
             visible: this.isOpen,
-            hidden: !this.isOpen,
+            hidden: !this.isOpen
           }}
         >
           <slot></slot>

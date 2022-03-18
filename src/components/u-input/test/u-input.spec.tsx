@@ -5,7 +5,7 @@ describe('w-input', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UInput],
-      html: '<u-input></u-input>',
+      html: '<u-input></u-input>'
     });
     expect(page.root).toEqualHtml(`
       <u-input>

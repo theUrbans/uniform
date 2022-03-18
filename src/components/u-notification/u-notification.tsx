@@ -6,7 +6,7 @@ import {
   State,
   Prop,
   Watch,
-  Listen,
+  Listen
 } from '@stencil/core';
 
 export interface NotficationOption {
@@ -33,7 +33,7 @@ export type NotificationType = 'error' | 'success' | 'warning' | 'default';
 @Component({
   tag: 'u-notification',
   styleUrl: 'u-notification.css',
-  shadow: true,
+  shadow: true
 })
 export class UNotification {
   @Prop() position:
@@ -65,7 +65,7 @@ export class UNotification {
       setTimeout(() => {
         this.notifications = this.notifications.slice(
           1,
-          this.notifications.length,
+          this.notifications.length
         );
         clearInterval(this.intervalls[0]);
         this.intervalls = this.intervalls.slice(1, this.intervalls.length);
@@ -77,7 +77,7 @@ export class UNotification {
       setTimeout(() => {
         this.notifications = this.notifications.slice(
           0,
-          this.notifications.length - 1,
+          this.notifications.length - 1
         );
         clearInterval(this.intervalls[0]);
       }, notification.delay);
@@ -102,7 +102,7 @@ export class UNotification {
       title: options.title,
       message: options.message,
       delay: options.delay || 3000,
-      action: options.buttons || [],
+      action: options.buttons || []
     };
   }
 
@@ -131,14 +131,14 @@ export class UNotification {
         <div
           class={{
             [this.position]: true,
-            list: true,
+            list: true
           }}
         >
           {this.notifications.map((notification) => (
             <div
               class={{
                 notification: true,
-                [this.type]: true,
+                [this.type]: true
               }}
             >
               <div class="close" onClick={() => this.handleClose(notification)}>

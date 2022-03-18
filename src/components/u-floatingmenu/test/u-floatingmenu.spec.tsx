@@ -5,7 +5,7 @@ describe('u-floatingmenu', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UFloatingmenu],
-      html: '<u-floatingmenu></u-floatingmenu>',
+      html: '<u-floatingmenu></u-floatingmenu>'
     });
     expect(page.root).toEqualHtml(`
       <u-floatingmenu>

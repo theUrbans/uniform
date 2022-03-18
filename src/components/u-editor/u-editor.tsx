@@ -1,6 +1,4 @@
-import {
-  Component, Host, h, Prop, State,
-} from '@stencil/core';
+import { Component, Host, h, Prop, State } from '@stencil/core';
 
 export interface EditorTools {
   bold?: boolean;
@@ -24,7 +22,7 @@ export interface EditorTools {
 @Component({
   tag: 'u-editor',
   styleUrl: 'u-editor.css',
-  shadow: true,
+  shadow: true
 })
 export class UEditor {
   @Prop() tools: EditorTools;

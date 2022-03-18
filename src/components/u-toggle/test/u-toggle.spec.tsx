@@ -5,7 +5,7 @@ describe('w-toggle', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UToggle],
-      html: '<u-toggle></u-toggle>',
+      html: '<u-toggle></u-toggle>'
     });
     expect(page.root).toEqualHtml(`
       <u-toggle>

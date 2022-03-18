@@ -5,7 +5,7 @@ describe('w-observer', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UObserver],
-      html: '<u-observer></u-observer>',
+      html: '<u-observer></u-observer>'
     });
     expect(page.root).toEqualHtml(`
       <u-observer>

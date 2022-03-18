@@ -1,6 +1,4 @@
-import {
-  Component, h, Prop, State, Element,
-} from '@stencil/core';
+import { Component, h, Prop, State, Element } from '@stencil/core';
 
 /**
  * @name Popup
@@ -8,7 +6,7 @@ import {
 @Component({
   tag: 'u-popup',
   styleUrl: 'u-popup.css',
-  shadow: true,
+  shadow: true
 })
 export class UPopup {
   @Element() el: HTMLElement;
@@ -52,7 +50,7 @@ export class UPopup {
           wrapper: true,
           popup: true,
           [this.position]: true,
-          [this.alignment]: true,
+          [this.alignment]: true
         }}
         tabindex="0"
         onBlur={() => (this.visible = false)}

@@ -1,6 +1,4 @@
-import {
-  Component, h, Prop, Event, EventEmitter,
-} from '@stencil/core';
+import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
 export interface BreadCrumbItem {
   name: string;
@@ -15,13 +13,13 @@ export interface BreadCrumbItem {
 @Component({
   tag: 'u-breadcrumb',
   styleUrl: 'u-breadcrumb.css',
-  shadow: true,
+  shadow: true
 })
 export class UBreadcrumb {
   @Prop() items: Array<BreadCrumbItem> = [
     { name: 'test1', link: '/test' },
     { name: 'test2' },
-    { name: 'test3' },
+    { name: 'test3' }
   ];
 
   @Prop() seperator?: string;
@@ -50,11 +48,11 @@ export class UBreadcrumb {
             <span
               class="separator"
               style={{
-                display: !lastElement ? 'inline-block' : 'none',
+                display: !lastElement ? 'inline-block' : 'none'
               }}
             >
               {this.seperator ? this.seperator : <i>&#8250;</i>}
-            </span>,
+            </span>
           ];
         })}
       </ul>

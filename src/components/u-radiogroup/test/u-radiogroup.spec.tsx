@@ -5,7 +5,7 @@ describe('w-radiogroup', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [URadiogroup],
-      html: '<u-radiogroup></u-radiogroup>',
+      html: '<u-radiogroup></u-radiogroup>'
     });
     expect(page.root).toEqualHtml(`
       <u-radiogroup>

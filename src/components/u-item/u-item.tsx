@@ -6,7 +6,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'u-item',
   styleUrl: 'u-item.css',
-  shadow: true,
+  shadow: true
 })
 export class UItem {
   render() {

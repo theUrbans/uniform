@@ -5,7 +5,7 @@ describe('w-col', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UCol],
-      html: '<u-col></u-col>',
+      html: '<u-col></u-col>'
     });
     expect(page.root).toEqualHtml(`
       <u-col>

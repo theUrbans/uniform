@@ -6,7 +6,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'u-cardselect',
   styleUrl: 'u-cardselect.css',
-  shadow: true,
+  shadow: true
 })
 export class UCardselect {
   render() {

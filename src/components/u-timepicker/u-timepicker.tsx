@@ -6,7 +6,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'u-timepicker',
   styleUrl: 'u-timepicker.css',
-  shadow: true,
+  shadow: true
 })
 export class UTimepicker {
   render() {

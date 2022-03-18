@@ -5,7 +5,7 @@ describe('w-alert', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UAlert],
-      html: '<u-alert></u-alert>',
+      html: '<u-alert></u-alert>'
     });
     expect(page.root).toEqualHtml(`
       <u-alert>

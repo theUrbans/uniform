@@ -5,7 +5,7 @@ describe('u-headline', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UHeadline],
-      html: '<u-headline></u-headline>',
+      html: '<u-headline></u-headline>'
     });
     expect(page.root).toEqualHtml(`
       <u-headline>

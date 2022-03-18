@@ -8,21 +8,22 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-floatingbutton',
   styleUrl: 'u-floatingbutton.css',
-  shadow: true,
+  shadow: true
 })
 export class UFloatingbutton {
   @Prop() color: string = 'lightpink';
 
-  @Prop() position: 'bottom-left' | 'bottom-right' | 'bottom-center' = 'bottom-right';
+  @Prop() position: 'bottom-left' | 'bottom-right' | 'bottom-center' =
+    'bottom-right';
 
   render() {
     return (
       <button
         class={{
-          [this.position]: true,
+          [this.position]: true
         }}
         style={{
-          backgroundColor: this.color,
+          backgroundColor: this.color
         }}
       >
         <slot>

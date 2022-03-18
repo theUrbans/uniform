@@ -1,6 +1,4 @@
-import {
-  Component, h, Prop, State, Element,
-} from '@stencil/core';
+import { Component, h, Prop, State, Element } from '@stencil/core';
 
 /**
  * @name Tooltip
@@ -12,7 +10,7 @@ import {
 @Component({
   tag: 'u-tooltip',
   styleUrl: 'u-tooltip.css',
-  shadow: true,
+  shadow: true
 })
 export class UTooltip {
   @Element() el: HTMLElement;
@@ -92,7 +90,7 @@ export class UTooltip {
             visible: this.visible,
             invisible: !this.visible,
             [this.position]: true,
-            [this.alignment]: true,
+            [this.alignment]: true
           }}
         >
           {!this.content ? this.text : <slot name="content" />}

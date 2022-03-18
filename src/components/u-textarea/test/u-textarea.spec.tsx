@@ -5,7 +5,7 @@ describe('w-textarea', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UTextarea],
-      html: '<u-textarea></u-textarea>',
+      html: '<u-textarea></u-textarea>'
     });
     expect(page.root).toEqualHtml(`
       <u-textarea>

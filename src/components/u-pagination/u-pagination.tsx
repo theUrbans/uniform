@@ -6,7 +6,7 @@ import {
   State,
   Event,
   EventEmitter,
-  Method,
+  Method
 } from '@stencil/core';
 
 /**
@@ -16,7 +16,7 @@ import {
 @Component({
   tag: 'u-pagination',
   styleUrl: 'u-pagination.css',
-  shadow: true,
+  shadow: true
 })
 export class UPagination {
   @Prop() pages: number;
@@ -66,29 +66,32 @@ export class UPagination {
                       this.showButtons
                         ? 'none'
                         : page === 1
-                          ? 'left'
-                          : page === this.pages
-                            ? 'right'
-                            : 'none'
+                        ? 'left'
+                        : page === this.pages
+                        ? 'right'
+                        : 'none'
                     }
                     onClick={() => this.changePage(page)}
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
                   </u-button>,
-                  this.currentPage > 3 && <span> &bull;</span>,
+                  this.currentPage > 3 && <span> &bull;</span>
                 ];
               }
               const showPage = () => {
                 if (
-                  page >= this.currentPage - this.showPages
-                  && page <= this.currentPage + this.showPages
-                ) return true;
-                if (this.currentPage === 1 && this.showPages * 2 + 1 >= page) return true;
+                  page >= this.currentPage - this.showPages &&
+                  page <= this.currentPage + this.showPages
+                )
+                  return true;
+                if (this.currentPage === 1 && this.showPages * 2 + 1 >= page)
+                  return true;
                 if (
-                  this.currentPage === this.pages
-                  && this.pages - this.showPages * 2 <= page
-                ) return true;
+                  this.currentPage === this.pages &&
+                  this.pages - this.showPages * 2 <= page
+                )
+                  return true;
                 return false;
               };
               if (showPage()) {
@@ -100,15 +103,15 @@ export class UPagination {
                       this.showButtons
                         ? 'none'
                         : this.currentPage - this.showPages - page === 0
-                          ? 'left'
-                          : page === 1
-                            ? 'left'
-                            : this.currentPage - this.showPages - page
-                          === -2 * this.showPages
-                              ? 'right'
-                              : page === this.pages
-                                ? 'right'
-                                : 'none'
+                        ? 'left'
+                        : page === 1
+                        ? 'left'
+                        : this.currentPage - this.showPages - page ===
+                          -2 * this.showPages
+                        ? 'right'
+                        : page === this.pages
+                        ? 'right'
+                        : 'none'
                     }
                   >
                     {page}
@@ -123,16 +126,16 @@ export class UPagination {
                       this.showButtons
                         ? 'none'
                         : page === 1
-                          ? 'left'
-                          : page === this.pages
-                            ? 'right'
-                            : 'none'
+                        ? 'left'
+                        : page === this.pages
+                        ? 'right'
+                        : 'none'
                     }
                     onClick={() => this.changePage(page)}
                     design={page === this.currentPage ? 'primary' : 'secondary'}
                   >
                     {page}
-                  </u-button>,
+                  </u-button>
                 ];
               }
               return null;

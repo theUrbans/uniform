@@ -5,7 +5,7 @@ describe('w-grid', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UGrid],
-      html: '<u-grid></u-grid>',
+      html: '<u-grid></u-grid>'
     });
     expect(page.root).toEqualHtml(`
       <u-grid>

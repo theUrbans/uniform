@@ -5,7 +5,7 @@ describe('u-colorpicker', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UColorpicker],
-      html: '<u-colorpicker></u-colorpicker>',
+      html: '<u-colorpicker></u-colorpicker>'
     });
     expect(page.root).toEqualHtml(`
       <u-colorpicker>

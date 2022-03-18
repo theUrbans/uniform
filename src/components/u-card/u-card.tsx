@@ -6,7 +6,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-card',
   styleUrl: 'u-card.css',
-  shadow: true,
+  shadow: true
 })
 export class UCard {
   @Prop() width: string = '24rem';
@@ -19,14 +19,14 @@ export class UCard {
     return (
       <div
         class={{
-          card: true,
+          card: true
         }}
         style={{ 'background-color': this.color, width: this.width }}
       >
         <div
           class={{
             header: true,
-            noImage: !this.img,
+            noImage: !this.img
           }}
         >
           <slot name="header"></slot>

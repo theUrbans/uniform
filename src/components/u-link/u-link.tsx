@@ -7,7 +7,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-link',
   styleUrl: 'u-link.css',
-  shadow: true,
+  shadow: true
 })
 export class ULink {
   @Prop() link: string;

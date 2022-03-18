@@ -5,7 +5,7 @@ describe('w-filepicker', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UFilepicker],
-      html: '<u-filepicker></u-filepicker>',
+      html: '<u-filepicker></u-filepicker>'
     });
     expect(page.root).toEqualHtml(`
       <u-filepicker>

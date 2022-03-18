@@ -5,7 +5,7 @@ describe('u-link', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [ULink],
-      html: '<u-link></u-link>',
+      html: '<u-link></u-link>'
     });
     expect(page.root).toEqualHtml(`
       <u-link>

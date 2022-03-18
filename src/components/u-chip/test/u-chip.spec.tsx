@@ -5,7 +5,7 @@ describe('w-chip', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UChip],
-      html: '<u-chip></u-chip>',
+      html: '<u-chip></u-chip>'
     });
     expect(page.root).toEqualHtml(`
       <u-chip>

@@ -5,7 +5,7 @@ describe('w-pagination', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UPagination],
-      html: '<u-pagination></u-pagination>',
+      html: '<u-pagination></u-pagination>'
     });
     expect(page.root).toEqualHtml(`
       <u-pagination>

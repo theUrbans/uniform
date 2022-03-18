@@ -5,7 +5,7 @@ describe('w-spoiler', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [USpoiler],
-      html: '<u-spoiler></u-spoiler>',
+      html: '<u-spoiler></u-spoiler>'
     });
     expect(page.root).toEqualHtml(`
       <u-spoiler>

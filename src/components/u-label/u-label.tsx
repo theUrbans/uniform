@@ -6,7 +6,7 @@ import { Component, Host, h } from '@stencil/core';
 @Component({
   tag: 'u-label',
   styleUrl: 'u-label.css',
-  shadow: true,
+  shadow: true
 })
 export class ULabel {
   render() {

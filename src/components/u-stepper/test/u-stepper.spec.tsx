@@ -5,7 +5,7 @@ describe('w-stepper', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UStepper],
-      html: '<u-stepper></u-stepper>',
+      html: '<u-stepper></u-stepper>'
     });
     expect(page.root).toEqualHtml(`
       <u-stepper>
