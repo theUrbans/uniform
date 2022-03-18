@@ -324,13 +324,13 @@ export class UInput implements ComponentInterface {
           }}
         >
           <input
+            type={this.inputType}
             class={{
               input: true,
               [`text-${this.size}`]: true
               // [`padding-${this.size}`]: this.hovered || this.focus || !!this.value,
             }}
             ref={(input) => (this.inputElement = input)}
-            type={this.inputType}
             value={value}
             onInput={this.onInput}
             onBlur={this.onBlur}
