@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-03-18T09:02:29",
+  "timestamp": "2022-03-18T13:31:26",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.0",
+    "version": "2.14.2",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -239,7 +239,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    { name: 'test1', link: '/test' },\r\n    { name: 'test2' },\r\n    { name: 'test3' },\r\n  ]",
+          "default": "[\n    { name: 'test1', link: '/test' },\n    { name: 'test2' },\n    { name: 'test3' }\n  ]",
           "values": [
             {
               "type": "BreadCrumbItem[]"
@@ -1751,7 +1751,7 @@
       "filePath": "./src/components/u-formgen/u-formgen.tsx",
       "encapsulation": "shadow",
       "tag": "u-formgen",
-      "readme": "# u-formgen\n\n\n",
+      "readme": "# u-formgen\n",
       "docs": "",
       "docsTags": [
         {
@@ -3030,7 +3030,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    {\r\n      label: 'test1',\r\n      icon: (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"h-5 w-5\"\r\n          fill=\"none\"\r\n          viewBox=\"0 0 24 24\"\r\n          stroke=\"currentColor\"\r\n        >\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n    {\r\n      label: 'test2',\r\n      icon: (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"h-5 w-5\"\r\n          fill=\"none\"\r\n          viewBox=\"0 0 24 24\"\r\n          stroke=\"currentColor\"\r\n        >\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"\r\n          />\r\n        </svg>\r\n      ),\r\n    },\r\n  ]",
+          "default": "[\n    {\n      label: 'test1',\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"h-5 w-5\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          stroke=\"currentColor\"\n        >\n          <path\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\n          />\n        </svg>\n      )\n    },\n    {\n      label: 'test2',\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"h-5 w-5\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          stroke=\"currentColor\"\n        >\n          <path\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"\n          />\n        </svg>\n      )\n    }\n  ]",
           "values": [
             {
               "type": "MenuItems[]"
