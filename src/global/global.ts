@@ -2,7 +2,8 @@ import { setMode } from '@stencil/core';
 
 declare const Context: any;
 try {
-  const userAgent = navigator.userAgent || navigator.vendor || (<any>window).opera;
+  const userAgent =
+    navigator.userAgent || navigator.vendor || (<any>window).opera;
   if (/windows phone/i.test(userAgent)) {
     Context.mode = 'mobile';
   } else if (/android/i.test(userAgent)) {
