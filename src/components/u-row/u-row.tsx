@@ -43,6 +43,11 @@ export class URow {
    */
   @Prop() padding: string = '0';
 
+  /**
+   * flex width behaviour
+   */
+  @Prop() width: 'full' | 'content' | 'auto' = 'full';
+
   render() {
     return (
       <Host
@@ -52,7 +57,13 @@ export class URow {
           justifyContent: this.justify,
           flexWrap: this.wrap,
           gap: this.gap,
-          padding: `${this.padding}`
+          padding: `${this.padding}`,
+          width:
+            this.width === 'full'
+              ? '100%'
+              : this.width === 'content'
+              ? 'fit-content'
+              : 'auto'
         }}
       >
         <slot></slot>
