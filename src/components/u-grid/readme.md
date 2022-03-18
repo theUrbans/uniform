@@ -18,14 +18,16 @@
 ### Used by
 
 - [u-desktoplayout](../u-desktoplayout)
-- [u-form](../u-form)
+- [u-formgen](../u-formgen)
+- [u-stepper](../u-stepper)
 
 ### Graph
 
 ```mermaid
 graph TD;
   u-desktoplayout --> u-grid
-  u-form --> u-grid
+  u-formgen --> u-grid
+  u-stepper --> u-grid
   style u-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-17T12:36:57",
+  "timestamp": "2022-03-18T09:02:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/u-alert/u-alert.tsx",
       "encapsulation": "shadow",
       "tag": "u-alert",
-      "readme": "# w-alert\r\n\r",
+      "readme": "# w-alert\n",
       "docs": "",
       "docsTags": [
         {
@@ -86,7 +86,7 @@
       "filePath": "./src/components/u-barcodescanner/u-barcodescanner.tsx",
       "encapsulation": "shadow",
       "tag": "u-barcodescanner",
-      "readme": "# u-barcodescanner\r\n\r",
+      "readme": "# u-barcodescanner\n",
       "docs": "",
       "docsTags": [
         {
@@ -214,7 +214,7 @@
       "filePath": "./src/components/u-breadcrumb/u-breadcrumb.tsx",
       "encapsulation": "shadow",
       "tag": "u-breadcrumb",
-      "readme": "# u-breadcrumb\r\n\r",
+      "readme": "# u-breadcrumb\n",
       "docs": "",
       "docsTags": [
         {
@@ -291,7 +291,7 @@
       "filePath": "./src/components/u-button/u-button.tsx",
       "encapsulation": "shadow",
       "tag": "u-button",
-      "readme": "# w-button\r\n\r",
+      "readme": "# w-button\n",
       "docs": "",
       "docsTags": [
         {
@@ -502,7 +502,7 @@
         "u-barcodescanner",
         "u-dialog",
         "u-filepicker",
-        "u-form",
+        "u-formgen",
         "u-pagination",
         "u-stepper"
       ],
@@ -512,7 +512,7 @@
         "u-barcodescanner": ["u-button"],
         "u-dialog": ["u-button"],
         "u-filepicker": ["u-button"],
-        "u-form": ["u-button"],
+        "u-formgen": ["u-button"],
         "u-pagination": ["u-button"],
         "u-stepper": ["u-button"]
       }
@@ -521,7 +521,7 @@
       "filePath": "./src/components/u-card/u-card.tsx",
       "encapsulation": "shadow",
       "tag": "u-card",
-      "readme": "# u-card\r\n\r",
+      "readme": "# u-card\n",
       "docs": "",
       "docsTags": [
         {
@@ -601,7 +601,7 @@
       "filePath": "./src/components/u-cardselect/u-cardselect.tsx",
       "encapsulation": "shadow",
       "tag": "u-cardselect",
-      "readme": "# w-cardselect\r\n\r",
+      "readme": "# w-cardselect\n",
       "docs": "",
       "docsTags": [
         {
@@ -625,7 +625,7 @@
       "filePath": "./src/components/u-checkbox/u-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "u-checkbox",
-      "readme": "# w-checkbox\r\n\r",
+      "readme": "# w-checkbox\n",
       "docs": "",
       "docsTags": [
         {
@@ -782,7 +782,7 @@
       "filePath": "./src/components/u-chip/u-chip.tsx",
       "encapsulation": "shadow",
       "tag": "u-chip",
-      "readme": "# w-chip\r\n\r",
+      "readme": "# w-chip\n",
       "docs": "",
       "docsTags": [
         {
@@ -988,7 +988,7 @@
       "filePath": "./src/components/u-col/u-col.tsx",
       "encapsulation": "shadow",
       "tag": "u-col",
-      "readme": "# w-col\r\n\r",
+      "readme": "# w-col\n",
       "docs": "",
       "docsTags": [
         {
@@ -1120,7 +1120,7 @@
           "reflectToAttr": false,
           "docs": "padding bottom and top: string, e.g. '1rem', '1px'",
           "docsTags": [],
-          "default": "'1em'",
+          "default": "'0'",
           "values": [
             {
               "type": "string"
@@ -1189,7 +1189,7 @@
       "filePath": "./src/components/u-colorpicker/u-colorpicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-colorpicker",
-      "readme": "# u-colorpicker\r\n\r",
+      "readme": "# u-colorpicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1213,7 +1213,7 @@
       "filePath": "./src/components/u-datepicker/u-datepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-datepicker",
-      "readme": "# u-datepicker\r\n\r",
+      "readme": "# u-datepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1241,7 +1241,7 @@
       "filePath": "./src/components/u-datetimepicker/u-datetimepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-datetimepicker",
-      "readme": "# u-datetimepicker\r\n\r",
+      "readme": "# u-datetimepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1269,7 +1269,7 @@
       "filePath": "./src/components/u-desktoplayout/u-desktoplayout.tsx",
       "encapsulation": "shadow",
       "tag": "u-desktoplayout",
-      "readme": "# u-desktoplayout\r\n\r",
+      "readme": "# u-desktoplayout\n",
       "docs": "",
       "docsTags": [
         {
@@ -1308,7 +1308,7 @@
       "filePath": "./src/components/u-dialog/u-dialog.tsx",
       "encapsulation": "shadow",
       "tag": "u-dialog",
-      "readme": "# w-dialog\r\n\r",
+      "readme": "# w-dialog\n",
       "docs": "",
       "docsTags": [
         {
@@ -1371,7 +1371,7 @@
       "filePath": "./src/components/u-editor/u-editor.tsx",
       "encapsulation": "shadow",
       "tag": "u-editor",
-      "readme": "# u-editor\r\n\r",
+      "readme": "# u-editor\n",
       "docs": "",
       "docsTags": [
         {
@@ -1413,7 +1413,7 @@
       "filePath": "./src/components/u-filepicker/u-filepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-filepicker",
-      "readme": "# w-filepicker\r\n\r",
+      "readme": "# w-filepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1569,7 +1569,7 @@
       "filePath": "./src/components/u-floatingbutton/u-floatingbutton.tsx",
       "encapsulation": "shadow",
       "tag": "u-floatingbutton",
-      "readme": "# u-floatingbutton\r\n\r",
+      "readme": "# u-floatingbutton\n",
       "docs": "",
       "docsTags": [
         {
@@ -1645,7 +1645,7 @@
       "filePath": "./src/components/u-floatingmenu/u-floatingmenu.tsx",
       "encapsulation": "shadow",
       "tag": "u-floatingmenu",
-      "readme": "# u-floatingmenu\r\n\r",
+      "readme": "# u-floatingmenu\n",
       "docs": "",
       "docsTags": [
         {
@@ -1713,9 +1713,45 @@
     },
     {
       "filePath": "./src/components/u-form/u-form.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "u-form",
-      "readme": "# w-form\r\n\r",
+      "readme": "# w-form\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Form"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "optical wrapper for input fields"
+        },
+        {
+          "name": "categorie",
+          "text": "Input Control"
+        }
+      ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-formgen/u-formgen.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-formgen",
+      "readme": "# u-formgen\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -1728,11 +1764,15 @@
         },
         {
           "name": "description",
-          "text": "Generate a form with fields and buttons"
+          "text": "generate automatic forms with a JSON schema"
         },
         {
           "name": "categorie",
-          "text": "Input Control"
+          "text": "Generator"
+        },
+        {
+          "name": "slot",
+          "text": "default - custom content in top of the form"
         }
       ],
       "usage": {},
@@ -1810,20 +1850,25 @@
       ],
       "listeners": [],
       "styles": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "custom content in top of the form"
+        }
+      ],
       "parts": [],
       "dependents": [],
       "dependencies": ["u-stepper", "u-grid", "u-row", "u-button"],
       "dependencyGraph": {
-        "u-form": ["u-stepper", "u-grid", "u-row", "u-button"],
-        "u-stepper": ["u-row", "u-button"]
+        "u-formgen": ["u-stepper", "u-grid", "u-row", "u-button"],
+        "u-stepper": ["u-grid", "u-row", "u-button"]
       }
     },
     {
       "filePath": "./src/components/u-grid/u-grid.tsx",
       "encapsulation": "shadow",
       "tag": "u-grid",
-      "readme": "# w-grid\r\n\r",
+      "readme": "# w-grid\n",
       "docs": "",
       "docsTags": [
         {
@@ -1953,18 +1998,19 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-desktoplayout", "u-form"],
+      "dependents": ["u-desktoplayout", "u-formgen", "u-stepper"],
       "dependencies": [],
       "dependencyGraph": {
         "u-desktoplayout": ["u-grid"],
-        "u-form": ["u-grid"]
+        "u-formgen": ["u-grid"],
+        "u-stepper": ["u-grid"]
       }
     },
     {
       "filePath": "./src/components/u-group/u-group.tsx",
       "encapsulation": "shadow",
       "tag": "u-group",
-      "readme": "# w-group\r\n\r",
+      "readme": "# w-group\n",
       "docs": "",
       "docsTags": [
         {
@@ -2020,9 +2066,9 @@
     },
     {
       "filePath": "./src/components/u-headline/u-headline.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "u-headline",
-      "readme": "# u-headline\r\n\r",
+      "readme": "# u-headline\n",
       "docs": "",
       "docsTags": [
         {
@@ -2042,7 +2088,7 @@
           "mutable": false,
           "attr": "level",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "headline level which should be used",
           "docsTags": [],
           "default": "'h1'",
           "values": [
@@ -2071,7 +2117,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
@@ -2089,7 +2135,7 @@
       "filePath": "./src/components/u-icon/u-icon.tsx",
       "encapsulation": "shadow",
       "tag": "u-icon",
-      "readme": "# w-icon\r\n\r",
+      "readme": "# w-icon\n",
       "docs": "",
       "docsTags": [
         {
@@ -2117,7 +2163,7 @@
       "filePath": "./src/components/u-input/u-input.tsx",
       "encapsulation": "shadow",
       "tag": "u-input",
-      "readme": "# w-input\r\n\r",
+      "readme": "# w-input\n",
       "docs": "",
       "docsTags": [
         {
@@ -2668,7 +2714,7 @@
       "filePath": "./src/components/u-item/u-item.tsx",
       "encapsulation": "shadow",
       "tag": "u-item",
-      "readme": "# u-item\r\n\r",
+      "readme": "# u-item\n",
       "docs": "",
       "docsTags": [
         {
@@ -2692,7 +2738,7 @@
       "filePath": "./src/components/u-label/u-label.tsx",
       "encapsulation": "shadow",
       "tag": "u-label",
-      "readme": "# u-label\r\n\r",
+      "readme": "# u-label\n",
       "docs": "",
       "docsTags": [
         {
@@ -2716,7 +2762,7 @@
       "filePath": "./src/components/u-layout/u-layout.tsx",
       "encapsulation": "shadow",
       "tag": "u-layout",
-      "readme": "# u-layout\r\n\r",
+      "readme": "# u-layout\n",
       "docs": "",
       "docsTags": [
         {
@@ -2812,7 +2858,7 @@
       "filePath": "./src/components/u-link/u-link.tsx",
       "encapsulation": "shadow",
       "tag": "u-link",
-      "readme": "# u-link\r\n\r",
+      "readme": "# u-link\n",
       "docs": "",
       "docsTags": [
         {
@@ -2893,7 +2939,7 @@
       "filePath": "./src/components/u-list/u-list.tsx",
       "encapsulation": "none",
       "tag": "u-list",
-      "readme": "# u-list\r\n\r",
+      "readme": "# u-list\n",
       "docs": "",
       "docsTags": [
         {
@@ -2917,7 +2963,7 @@
       "filePath": "./src/components/u-loader/u-loader.tsx",
       "encapsulation": "shadow",
       "tag": "u-loader",
-      "readme": "# u-loader\r\n\r",
+      "readme": "# u-loader\n",
       "docs": "",
       "docsTags": [
         {
@@ -2941,7 +2987,7 @@
       "filePath": "./src/components/u-menu/u-menu.tsx",
       "encapsulation": "shadow",
       "tag": "u-menu",
-      "readme": "# w-menu\r\n\r",
+      "readme": "# w-menu\n",
       "docs": "",
       "docsTags": [
         {
@@ -3047,7 +3093,7 @@
       "filePath": "./src/components/u-menuitem/u-menuitem.tsx",
       "encapsulation": "scoped",
       "tag": "u-menuitem",
-      "readme": "# u-menuitem\r\n\r",
+      "readme": "# u-menuitem\n",
       "docs": "",
       "docsTags": [
         {
@@ -3135,7 +3181,7 @@
       "filePath": "./src/components/u-mobilelayout/u-mobilelayout.tsx",
       "encapsulation": "shadow",
       "tag": "u-mobilelayout",
-      "readme": "# u-mobilelayout\r\n\r",
+      "readme": "# u-mobilelayout\n",
       "docs": "",
       "docsTags": [
         {
@@ -3264,7 +3310,7 @@
       "filePath": "./src/components/u-modal/u-modal.tsx",
       "encapsulation": "shadow",
       "tag": "u-modal",
-      "readme": "# w-modal\r\n\r",
+      "readme": "# w-modal\n",
       "docs": "",
       "docsTags": [
         {
@@ -3566,7 +3612,7 @@
       "filePath": "./src/components/u-monthpicker/u-monthpicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-monthpicker",
-      "readme": "# u-monthpicker\r\n\r",
+      "readme": "# u-monthpicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -3590,7 +3636,7 @@
       "filePath": "./src/components/u-navbar/u-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "u-navbar",
-      "readme": "# u-navbar\r\n\r",
+      "readme": "# u-navbar\n",
       "docs": "",
       "docsTags": [
         {
@@ -3666,7 +3712,7 @@
       "filePath": "./src/components/u-notification/u-notification.tsx",
       "encapsulation": "shadow",
       "tag": "u-notification",
-      "readme": "# w-notification\r\n\r",
+      "readme": "# w-notification\n",
       "docs": "",
       "docsTags": [
         {
@@ -3795,7 +3841,7 @@
       "filePath": "./src/components/u-observer/u-observer.tsx",
       "encapsulation": "shadow",
       "tag": "u-observer",
-      "readme": "# w-observer\r\n\r",
+      "readme": "# w-observer\n",
       "docs": "",
       "docsTags": [
         {
@@ -3846,7 +3892,7 @@
       "filePath": "./src/components/u-pagination/u-pagination.tsx",
       "encapsulation": "shadow",
       "tag": "u-pagination",
-      "readme": "# u-pagination\r\n\r",
+      "readme": "# u-pagination\n",
       "docs": "",
       "docsTags": [
         {
@@ -3966,7 +4012,7 @@
       "filePath": "./src/components/u-paragraph/u-paragraph.tsx",
       "encapsulation": "shadow",
       "tag": "u-paragraph",
-      "readme": "# u-paragraph\r\n\r",
+      "readme": "# u-paragraph\n",
       "docs": "",
       "docsTags": [
         {
@@ -4108,7 +4154,7 @@
       "filePath": "./src/components/u-popup/u-popup.tsx",
       "encapsulation": "shadow",
       "tag": "u-popup",
-      "readme": "# u-popup\r\n\r",
+      "readme": "# u-popup\n",
       "docs": "",
       "docsTags": [
         {
@@ -4188,7 +4234,7 @@
       "filePath": "./src/components/u-progress/u-progress.tsx",
       "encapsulation": "shadow",
       "tag": "u-progress",
-      "readme": "# u-progress\r\n\r",
+      "readme": "# u-progress\n",
       "docs": "",
       "docsTags": [
         {
@@ -4302,7 +4348,7 @@
       "filePath": "./src/components/u-radiogroup/u-radiogroup.tsx",
       "encapsulation": "shadow",
       "tag": "u-radiogroup",
-      "readme": "# w-radiogroup\r\n\r",
+      "readme": "# w-radiogroup\n",
       "docs": "",
       "docsTags": [
         {
@@ -4414,9 +4460,9 @@
     },
     {
       "filePath": "./src/components/u-row/u-row.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "u-row",
-      "readme": "# w-row\r\n\r",
+      "readme": "# w-row\n",
       "docs": "",
       "docsTags": [
         {
@@ -4531,9 +4577,35 @@
           "reflectToAttr": false,
           "docs": "padding left and right: string, e.g. '1rem', '1px'",
           "docsTags": [],
-          "default": "'1rem'",
+          "default": "'0'",
           "values": [
             {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "\"auto\" | \"content\" | \"full\"",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "flex width behaviour",
+          "docsTags": [],
+          "default": "'full'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "content",
+              "type": "string"
+            },
+            {
+              "value": "full",
               "type": "string"
             }
           ],
@@ -4573,10 +4645,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-form", "u-stepper"],
+      "dependents": ["u-formgen", "u-stepper"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-form": ["u-row"],
+        "u-formgen": ["u-row"],
         "u-stepper": ["u-row"]
       }
     },
@@ -4584,7 +4656,7 @@
       "filePath": "./src/components/u-select/u-select.tsx",
       "encapsulation": "shadow",
       "tag": "u-select",
-      "readme": "# w-select\r\n\r",
+      "readme": "# w-select\n",
       "docs": "",
       "docsTags": [
         {
@@ -5165,7 +5237,7 @@
       "filePath": "./src/components/u-slider/u-slider.tsx",
       "encapsulation": "shadow",
       "tag": "u-slider",
-      "readme": "# w-slider\r\n\r",
+      "readme": "# w-slider\n",
       "docs": "",
       "docsTags": [
         {
@@ -5193,7 +5265,7 @@
       "filePath": "./src/components/u-spoiler/u-spoiler.tsx",
       "encapsulation": "shadow",
       "tag": "u-spoiler",
-      "readme": "# w-spoiler\r\n\r",
+      "readme": "# w-spoiler\n",
       "docs": "",
       "docsTags": [
         {
@@ -5287,7 +5359,7 @@
       "filePath": "./src/components/u-stepper/u-stepper.tsx",
       "encapsulation": "shadow",
       "tag": "u-stepper",
-      "readme": "# w-stepper\r\n\r",
+      "readme": "# w-stepper\n",
       "docs": "",
       "docsTags": [
         {
@@ -5305,10 +5377,36 @@
         {
           "name": "categorie",
           "text": "Input Control"
+        },
+        {
+          "name": "slot",
+          "text": "step-N - slot for every step, starting with N=1"
         }
       ],
       "usage": {},
       "props": [
+        {
+          "name": "alignment",
+          "type": "\"horizontal\" | \"vertical\"",
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "decide the alignment of the stepper",
+          "docsTags": [],
+          "default": "'horizontal'",
+          "values": [
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "allData",
           "type": "boolean",
@@ -5383,7 +5481,7 @@
           "mutable": false,
           "attr": "steps",
           "reflectToAttr": false,
-          "docs": "define steps\nwithout label -> steps: 3\nwith label -> steps: [1,'2',3]\nboth do the same, but with array you can define the label",
+          "docs": "define steps -\nwithout label -> steps: 3,\nwith label -> steps: [1,'2',3],\nboth do the same, but with array you can define the label",
           "docsTags": [],
           "default": "['Step1', 'Step2', 'Step3']",
           "values": [
@@ -5441,20 +5539,25 @@
       ],
       "listeners": [],
       "styles": [],
-      "slots": [],
+      "slots": [
+        {
+          "name": "step-N",
+          "docs": "slot for every step, starting with N=1"
+        }
+      ],
       "parts": [],
-      "dependents": ["u-form"],
-      "dependencies": ["u-row", "u-button"],
+      "dependents": ["u-formgen"],
+      "dependencies": ["u-grid", "u-row", "u-button"],
       "dependencyGraph": {
-        "u-stepper": ["u-row", "u-button"],
-        "u-form": ["u-stepper"]
+        "u-stepper": ["u-grid", "u-row", "u-button"],
+        "u-formgen": ["u-stepper"]
       }
     },
     {
       "filePath": "./src/components/u-submenu/u-submenu.tsx",
       "encapsulation": "scoped",
       "tag": "u-submenu",
-      "readme": "# u-submenu\r\n\r",
+      "readme": "# u-submenu\n",
       "docs": "",
       "docsTags": [
         {
@@ -5545,7 +5648,7 @@
       "filePath": "./src/components/u-table/u-table.tsx",
       "encapsulation": "shadow",
       "tag": "u-table",
-      "readme": "# u-table\r\n\r",
+      "readme": "# u-table\n",
       "docs": "",
       "docsTags": [
         {
@@ -5609,7 +5712,7 @@
       "filePath": "./src/components/u-tablecell/u-tablecell.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablecell",
-      "readme": "# u-tablecell\r\n\r",
+      "readme": "# u-tablecell\n",
       "docs": "",
       "docsTags": [
         {
@@ -5674,7 +5777,7 @@
       "filePath": "./src/components/u-tablefoot/u-tablefoot.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablefoot",
-      "readme": "# u-tablefoot\r\n\r",
+      "readme": "# u-tablefoot\n",
       "docs": "",
       "docsTags": [
         {
@@ -5698,7 +5801,7 @@
       "filePath": "./src/components/u-tablegen/u-tablegen.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablegen",
-      "readme": "# u-tablegen\n\n\n",
+      "readme": "# u-tablegen\n",
       "docs": "",
       "docsTags": [
         {
@@ -5714,6 +5817,10 @@
           "text": "🟡"
         },
         {
+          "name": "categorie",
+          "text": "Generator"
+        },
+        {
           "name": "slot",
           "text": "header - table head"
         },
@@ -5724,7 +5831,7 @@
       ],
       "usage": {
         "general": "Column definition\n\n```ts\ninterface HeadOptions {\n  field: string;\n  label: string;\n  width?: string;\n  align?: 'left' | 'center' | 'right' | string;\n  sortable?: boolean;\n  bgcolor?(row: any): string;\n  fontcolor?(row: any): string;\n}\n```\n\nthe `data` Property must use the same schema like the HeadOption.\neg is `field: 'id'`, the data must have objects with `id` keys.\n",
-        "vue": "tested with Vue 2.6\n\n```html\n<template>\n    <u-tablegen :data.prop=\"data\" :heading.prop=\"heading\">\n        <h1 slot=\"header\">Example Table</h1>\n    </template>\n</u-tablegen>\n\n<script>\nexport default {\n    data: () {\n        return {\n            data: [\n                { id: 1, text: 'Id no 1' },\n                { id: 2, text: 'Id no 2' },\n                { id: 3, text: 'Id no 3' },\n                { id: 4, text: 'Id no 4' },\n                { id: 5, text: 'Id no 5' },\n            ]\n        },\n        heading: [{\n            field: 'id',\n            label: 'ID',\n            align: 'center',\n        }, {\n            field: 'text',\n            label: 'Description',\n            sortable: true,\n            bgcolor: (row) => row.id > 3 ? 'green' : 'blue',\n        }]\n    }\n}\n</script>\n```\n"
+        "vue": "tested with Vue 2.6\n\n```html\n<template>\n  <u-tablegen :data.prop=\"data\" :heading.prop=\"heading\">\n    <h1 slot=\"header\">Example Table</h1>\n  </u-tablegen>\n</template>\n\n<script>\n  export default {\n      data: () {\n          return {\n            data: [\n              { id: 1, text: 'Id no 1' },\n              { id: 2, text: 'Id no 2' },\n              { id: 3, text: 'Id no 3' },\n              { id: 4, text: 'Id no 4' },\n              { id: 5, text: 'Id no 5' },\n            ]\n            heading: [{\n              field: 'id',\n              label: 'ID',\n              align: 'center'\n              }, {\n              field: 'text',\n              label: 'Description',\n              sortable: true,\n              bgcolor: (row) => row.id > 3 ? 'green' : 'blue',\n            }]\n         },\n      }\n  }\n</script>\n```\n"
       },
       "props": [
         {
@@ -5734,13 +5841,14 @@
           "reflectToAttr": false,
           "docs": "the data to be rendered as rows",
           "docsTags": [],
+          "default": "[\n    {\n      id: 1,\n      text: 'test',\n      date: '2019-01-01'\n    },\n    {\n      id: 2,\n      text: 'test',\n      date: '2019-01-01'\n    },\n    {\n      id: 3,\n      text: 'test',\n      date: '2019-01-01'\n    },\n    {\n      id: 4,\n      text: 'test',\n      date: '2019-01-01'\n    }\n  ]",
           "values": [
             {
               "type": "any[]"
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         },
         {
           "name": "fixedHeader",
@@ -5766,13 +5874,14 @@
           "reflectToAttr": false,
           "docs": "the column definition and setting",
           "docsTags": [],
+          "default": "[\n    { field: 'id', label: 'ID', width: '33%' },\n    { field: 'text', label: 'Name', width: '33%' },\n    { field: 'date', label: 'Value', width: '33%' }\n  ]",
           "values": [
             {
               "type": "HeadOptions[]"
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         },
         {
           "name": "observe",
@@ -5797,7 +5906,7 @@
           "mutable": false,
           "attr": "resizeable",
           "reflectToAttr": false,
-          "docs": "should the rows be resizeable",
+          "docs": "should the rows be resizeable (not implemented yet)",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -5920,7 +6029,7 @@
       "filePath": "./src/components/u-tablehead/u-tablehead.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablehead",
-      "readme": "# u-tablehead\r\n\r",
+      "readme": "# u-tablehead\n",
       "docs": "",
       "docsTags": [
         {
@@ -5944,7 +6053,7 @@
       "filePath": "./src/components/u-tablerow/u-tablerow.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablerow",
-      "readme": "# u-tablerow\r\n\r",
+      "readme": "# u-tablerow\n",
       "docs": "",
       "docsTags": [
         {
@@ -5971,7 +6080,7 @@
       "filePath": "./src/components/u-tabs/u-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "u-tabs",
-      "readme": "# w-tabs\r\n\r",
+      "readme": "# w-tabs\n",
       "docs": "",
       "docsTags": [
         {
@@ -5995,7 +6104,7 @@
       "filePath": "./src/components/u-terms/u-terms.tsx",
       "encapsulation": "shadow",
       "tag": "u-terms",
-      "readme": "# u-terms\r\n\r",
+      "readme": "# u-terms\n",
       "docs": "",
       "docsTags": [
         {
@@ -6027,7 +6136,7 @@
       "filePath": "./src/components/u-textarea/u-textarea.tsx",
       "encapsulation": "shadow",
       "tag": "u-textarea",
-      "readme": "# w-textarea\r\n\r",
+      "readme": "# w-textarea\n",
       "docs": "",
       "docsTags": [
         {
@@ -6284,7 +6393,7 @@
       "filePath": "./src/components/u-timepicker/u-timepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-timepicker",
-      "readme": "# u-timepicker\r\n\r",
+      "readme": "# u-timepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -6308,7 +6417,7 @@
       "filePath": "./src/components/u-toggle/u-toggle.tsx",
       "encapsulation": "shadow",
       "tag": "u-toggle",
-      "readme": "# w-toggle\r\n\r",
+      "readme": "# w-toggle\n",
       "docs": "",
       "docsTags": [
         {
@@ -6336,7 +6445,7 @@
       "filePath": "./src/components/u-tooltip/u-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "u-tooltip",
-      "readme": "# w-tooltip\r\n\r",
+      "readme": "# w-tooltip\n",
       "docs": "",
       "docsTags": [
         {
@@ -6490,7 +6599,7 @@
       "filePath": "./src/components/u-touch/u-touch.tsx",
       "encapsulation": "shadow",
       "tag": "u-touch",
-      "readme": "# u-touch\r\n\r",
+      "readme": "# u-touch\n",
       "docs": "",
       "docsTags": [
         {
@@ -6543,7 +6652,7 @@
       "filePath": "./src/components/u-weekpicker/u-weekpicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-weekpicker",
-      "readme": "# u-weekpicker\r\n\r",
+      "readme": "# u-weekpicker\n",
       "docs": "",
       "docsTags": [
         {

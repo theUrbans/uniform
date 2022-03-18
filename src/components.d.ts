@@ -9,7 +9,7 @@ import { BreadCrumbItem } from "./components/u-breadcrumb/u-breadcrumb";
 import { ChipDesign } from "./components/u-chip/u-chip";
 import { EditorTools } from "./components/u-editor/u-editor";
 import { MenuItem } from "./components/u-menuitem/u-menuitem";
-import { FormButton, FormField } from "./components/u-form/u-form";
+import { FormButton, FormField } from "./components/u-formgen/u-formgen";
 import { MenuItems } from "./components/u-menu/u-menu";
 import { MenuItem as MenuItem1 } from "./components/u-menuitem/u-menuitem";
 import { NotficationOption, NotificationType } from "./components/u-notification/u-notification";
@@ -180,6 +180,8 @@ export namespace Components {
         "menu": Array<MenuItem>;
     }
     interface UForm {
+    }
+    interface UFormgen {
         "buttons": Array<FormButton>;
         "fields": Array<FormField>;
         "layout": string;
@@ -217,7 +219,10 @@ export namespace Components {
         "direction": 'row' | 'column';
     }
     interface UHeadline {
-        "level": 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+        /**
+          * headline level which should be used
+         */
+        "level"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface UIcon {
     }
@@ -518,6 +523,10 @@ export namespace Components {
          */
         "padding": string;
         /**
+          * flex width behaviour
+         */
+        "width": 'full' | 'content' | 'auto';
+        /**
           * flex wrap
          */
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
@@ -641,6 +650,10 @@ export namespace Components {
     }
     interface UStepper {
         /**
+          * decide the alignment of the stepper
+         */
+        "alignment": 'horizontal' | 'vertical';
+        /**
           * disabled state of the submit button
          */
         "allData": boolean;
@@ -657,7 +670,7 @@ export namespace Components {
          */
         "prevLabel"?: string;
         /**
-          * define steps without label -> steps: 3 with label -> steps: [1,'2',3] both do the same, but with array you can define the label
+          * define steps - without label -> steps: 3, with label -> steps: [1,'2',3], both do the same, but with array you can define the label
          */
         "steps": number | Array<number | string>;
         /**
@@ -707,7 +720,7 @@ export namespace Components {
          */
         "observe": boolean;
         /**
-          * should the rows be resizeable
+          * should the rows be resizeable (not implemented yet)
          */
         "resizeable": boolean;
         /**
@@ -893,6 +906,12 @@ declare global {
     var HTMLUFormElement: {
         prototype: HTMLUFormElement;
         new (): HTMLUFormElement;
+    };
+    interface HTMLUFormgenElement extends Components.UFormgen, HTMLStencilElement {
+    }
+    var HTMLUFormgenElement: {
+        prototype: HTMLUFormgenElement;
+        new (): HTMLUFormgenElement;
     };
     interface HTMLUGridElement extends Components.UGrid, HTMLStencilElement {
     }
@@ -1178,6 +1197,7 @@ declare global {
         "u-floatingbutton": HTMLUFloatingbuttonElement;
         "u-floatingmenu": HTMLUFloatingmenuElement;
         "u-form": HTMLUFormElement;
+        "u-formgen": HTMLUFormgenElement;
         "u-grid": HTMLUGridElement;
         "u-group": HTMLUGroupElement;
         "u-headline": HTMLUHeadlineElement;
@@ -1394,6 +1414,8 @@ declare namespace LocalJSX {
         "menu"?: Array<MenuItem>;
     }
     interface UForm {
+    }
+    interface UFormgen {
         "buttons"?: Array<FormButton>;
         "fields"?: Array<FormField>;
         "layout"?: string;
@@ -1433,6 +1455,9 @@ declare namespace LocalJSX {
         "direction"?: 'row' | 'column';
     }
     interface UHeadline {
+        /**
+          * headline level which should be used
+         */
         "level"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface UIcon {
@@ -1737,6 +1762,10 @@ declare namespace LocalJSX {
          */
         "padding"?: string;
         /**
+          * flex width behaviour
+         */
+        "width"?: 'full' | 'content' | 'auto';
+        /**
           * flex wrap
          */
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
@@ -1876,6 +1905,10 @@ declare namespace LocalJSX {
     }
     interface UStepper {
         /**
+          * decide the alignment of the stepper
+         */
+        "alignment"?: 'horizontal' | 'vertical';
+        /**
           * disabled state of the submit button
          */
         "allData"?: boolean;
@@ -1900,7 +1933,7 @@ declare namespace LocalJSX {
          */
         "prevLabel"?: string;
         /**
-          * define steps without label -> steps: 3 with label -> steps: [1,'2',3] both do the same, but with array you can define the label
+          * define steps - without label -> steps: 3, with label -> steps: [1,'2',3], both do the same, but with array you can define the label
          */
         "steps"?: number | Array<number | string>;
         /**
@@ -1940,7 +1973,7 @@ declare namespace LocalJSX {
         /**
           * the data to be rendered as rows
          */
-        "data": Array<any>;
+        "data"?: Array<any>;
         /**
           * the header will be sticked to the top of the table
          */
@@ -1948,7 +1981,7 @@ declare namespace LocalJSX {
         /**
           * the column definition and setting
          */
-        "heading": Array<HeadOptions>;
+        "heading"?: Array<HeadOptions>;
         /**
           * emits uLastElement when the last row is visible
          */
@@ -1974,7 +2007,7 @@ declare namespace LocalJSX {
          */
         "onUUnselect"?: (event: CustomEvent<void>) => void;
         /**
-          * should the rows be resizeable
+          * should the rows be resizeable (not implemented yet)
          */
         "resizeable"?: boolean;
         /**
@@ -2058,6 +2091,7 @@ declare namespace LocalJSX {
         "u-floatingbutton": UFloatingbutton;
         "u-floatingmenu": UFloatingmenu;
         "u-form": UForm;
+        "u-formgen": UFormgen;
         "u-grid": UGrid;
         "u-group": UGroup;
         "u-headline": UHeadline;
@@ -2127,6 +2161,7 @@ declare module "@stencil/core" {
             "u-floatingbutton": LocalJSX.UFloatingbutton & JSXBase.HTMLAttributes<HTMLUFloatingbuttonElement>;
             "u-floatingmenu": LocalJSX.UFloatingmenu & JSXBase.HTMLAttributes<HTMLUFloatingmenuElement>;
             "u-form": LocalJSX.UForm & JSXBase.HTMLAttributes<HTMLUFormElement>;
+            "u-formgen": LocalJSX.UFormgen & JSXBase.HTMLAttributes<HTMLUFormgenElement>;
             "u-grid": LocalJSX.UGrid & JSXBase.HTMLAttributes<HTMLUGridElement>;
             "u-group": LocalJSX.UGroup & JSXBase.HTMLAttributes<HTMLUGroupElement>;
             "u-headline": LocalJSX.UHeadline & JSXBase.HTMLAttributes<HTMLUHeadlineElement>;

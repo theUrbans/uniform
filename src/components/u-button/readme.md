@@ -28,7 +28,7 @@
 - [u-barcodescanner](../u-barcodescanner)
 - [u-dialog](../u-dialog)
 - [u-filepicker](../u-filepicker)
-- [u-form](../u-form)
+- [u-formgen](../u-formgen)
 - [u-pagination](../u-pagination)
 - [u-stepper](../u-stepper)
 
@@ -40,7 +40,7 @@ graph TD;
   u-barcodescanner --> u-button
   u-dialog --> u-button
   u-filepicker --> u-button
-  u-form --> u-button
+  u-formgen --> u-button
   u-pagination --> u-button
   u-stepper --> u-button
   style u-button fill:#f9f,stroke:#333,stroke-width:4px

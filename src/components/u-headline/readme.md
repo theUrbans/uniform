@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                           | Default |
-| -------- | --------- | ----------- | ---------------------------------------------- | ------- |
-| `level`  | `level`   |             | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | `'h1'`  |
+| Property | Attribute | Description                         | Type                                           | Default |
+| -------- | --------- | ----------------------------------- | ---------------------------------------------- | ------- |
+| `level`  | `level`   | headline level which should be used | `"h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | `'h1'`  |
 
 ---
 

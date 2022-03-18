@@ -29,48 +29,48 @@ tested with Vue 2.6
 
 ```html
 <template>
-    <u-tablegen :data.prop="data" :heading.prop="heading">
-        <h1 slot="header">Example Table</h1>
-    </template>
-</u-tablegen>
+  <u-tablegen :data.prop="data" :heading.prop="heading">
+    <h1 slot="header">Example Table</h1>
+  </u-tablegen>
+</template>
 
 <script>
-export default {
-    data: () {
-        return {
+  export default {
+      data: () {
+          return {
             data: [
-                { id: 1, text: 'Id no 1' },
-                { id: 2, text: 'Id no 2' },
-                { id: 3, text: 'Id no 3' },
-                { id: 4, text: 'Id no 4' },
-                { id: 5, text: 'Id no 5' },
+              { id: 1, text: 'Id no 1' },
+              { id: 2, text: 'Id no 2' },
+              { id: 3, text: 'Id no 3' },
+              { id: 4, text: 'Id no 4' },
+              { id: 5, text: 'Id no 5' },
             ]
-        },
-        heading: [{
-            field: 'id',
-            label: 'ID',
-            align: 'center',
-        }, {
-            field: 'text',
-            label: 'Description',
-            sortable: true,
-            bgcolor: (row) => row.id > 3 ? 'green' : 'blue',
-        }]
-    }
-}
+            heading: [{
+              field: 'id',
+              label: 'ID',
+              align: 'center'
+              }, {
+              field: 'text',
+              label: 'Description',
+              sortable: true,
+              bgcolor: (row) => row.id > 3 ? 'green' : 'blue',
+            }]
+         },
+      }
+  }
 </script>
 ```
 
 ## Properties
 
-| Property               | Attribute      | Description                                        | Type            | Default     |
-| ---------------------- | -------------- | -------------------------------------------------- | --------------- | ----------- |
-| `data` _(required)_    | --             | the data to be rendered as rows                    | `any[]`         | `undefined` |
-| `fixedHeader`          | `fixed-header` | the header will be sticked to the top of the table | `boolean`       | `true`      |
-| `heading` _(required)_ | --             | the column definition and setting                  | `HeadOptions[]` | `undefined` |
-| `observe`              | `observe`      | emits uLastElement when the last row is visible    | `boolean`       | `false`     |
-| `resizeable`           | `resizeable`   | should the rows be resizeable                      | `boolean`       | `false`     |
-| `selectable`           | `selectable`   | renders a checkbox in front of each row            | `boolean`       | `true`      |
+| Property      | Attribute      | Description                                         | Type            | Default                                                                                                                                                                                  |
+| ------------- | -------------- | --------------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `data`        | --             | the data to be rendered as rows                     | `any[]`         | `[ { id: 1, text: 'test', date: '2019-01-01' }, { id: 2, text: 'test', date: '2019-01-01' }, { id: 3, text: 'test', date: '2019-01-01' }, { id: 4, text: 'test', date: '2019-01-01' } ]` |
+| `fixedHeader` | `fixed-header` | the header will be sticked to the top of the table  | `boolean`       | `true`                                                                                                                                                                                   |
+| `heading`     | --             | the column definition and setting                   | `HeadOptions[]` | `[ { field: 'id', label: 'ID', width: '33%' }, { field: 'text', label: 'Name', width: '33%' }, { field: 'date', label: 'Value', width: '33%' } ]`                                        |
+| `observe`     | `observe`      | emits uLastElement when the last row is visible     | `boolean`       | `false`                                                                                                                                                                                  |
+| `resizeable`  | `resizeable`   | should the rows be resizeable (not implemented yet) | `boolean`       | `false`                                                                                                                                                                                  |
+| `selectable`  | `selectable`   | renders a checkbox in front of each row             | `boolean`       | `true`                                                                                                                                                                                   |
 
 ## Events
 
