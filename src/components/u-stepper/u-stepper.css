@@ -3,13 +3,25 @@
   width: 100%;
 }
 .wrapper {
-  @apply relative flex flex-col border-radius h-auto p-0;
+  @apply relative flex justify-between border-radius h-full p-0 w-full;
+}
+.wrapper.vertical {
+  @apply flex-row;
+}
+.wrapper.horizontal {
+  @apply flex-col;
 }
 .head {
-  @apply p-2 bg-gray-200 flex flex-row gap-2 justify-around items-center rounded-t-xl;
+  @apply p-2 bg-gray-200 flex gap-2 justify-around items-center;
+}
+.head.vertical {
+  @apply flex-col rounded-tl-xl;
+}
+.head.horizontal {
+  @apply flex-row rounded-t-xl;
 }
 .step {
-  @apply flex flex-row gap-1 relative justify-center;
+  @apply flex flex-row gap-1 relative justify-center whitespace-nowrap;
 }
 .no {
   @apply text-gray-200 bg-gray-600 rounded-full text-center align-middle leading-8 h-8 w-8;
@@ -21,10 +33,22 @@
   @apply flex flex-row;
 }
 .footer {
-  @apply flex flex-row justify-between px-2 py-1 bg-gray-200 rounded-b-xl;
+  @apply px-2 py-1 bg-gray-200;
+}
+.footer.vertical {
+  @apply flex flex-row justify-between rounded-br-xl;
+}
+.footer.horizontal {
+  @apply flex flex-row justify-between rounded-b-xl;
+}
+.x {
+  @apply bg-gray-200 rounded-bl-xl;
 }
 .content {
-  @apply bg-transparent border-2 border-gray-200 border-solid;
+  @apply bg-transparent border-2 box-border border-gray-200 border-solid h-full w-full;
+}
+.content.vertical {
+  @apply rounded-tr-xl;
 }
 .activeStep > .no {
   @apply bg-blue-300 text-white font-semibold  hover:bg-blue-50 hover:text-blue-600 hover:shadow-blue-100;
