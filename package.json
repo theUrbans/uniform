@@ -26,7 +26,7 @@
     "prepare": "husky install",
     "dev": "run-p dev:stencil storybook",
     "dev:stencil": "stencil build --dev --watch --serve",
-    "build": "stencil build",
+    "build": "run-s build:stencil prettier",
     "build:stencil": "stencil build --docs",
     "build:nuxt": "cd ./docs && npm run generate",
     "docs:install": "cd ./docs && npm install",
