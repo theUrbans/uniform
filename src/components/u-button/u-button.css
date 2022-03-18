@@ -1,5 +1,5 @@
 .button {
-  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md flex flex-row justify-center items-center gap-2 w-full h-full;
+  @apply border-transparent border-solid box-border cursor-pointer hover:shadow-md inline-flex flex-row justify-center items-center gap-2 w-full h-full;
 }
 .rounded-all {
   @apply border-radius;
