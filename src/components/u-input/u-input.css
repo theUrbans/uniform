@@ -1,11 +1,11 @@
 :host {
-  @apply cursor-text w-full max-w-full flex;
+  @apply cursor-text inline-block flex-grow;
 }
 * {
   outline: none;
 }
 .wrapper {
-  @apply relative px-2 rounded-xl hover:shadow-md border-gray-300 flex flex-grow;
+  @apply relative px-2 rounded-xl hover:shadow-md border-gray-300 flex;
 }
 .slot-left {
   @apply !rounded-l-none;
