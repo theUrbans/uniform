@@ -4,10 +4,10 @@
 
 ## Properties
 
-| Property    | Attribute   | Description | Type               | Default                                                                       |
-| ----------- | ----------- | ----------- | ------------------ | ----------------------------------------------------------------------------- |
-| `items`     | --          |             | `BreadCrumbItem[]` | `[ { name: 'test1', link: '/test' }, { name: 'test2' }, { name: 'test3' }, ]` |
-| `seperator` | `seperator` |             | `string`           | `undefined`                                                                   |
+| Property    | Attribute   | Description | Type               | Default                                                                      |
+| ----------- | ----------- | ----------- | ------------------ | ---------------------------------------------------------------------------- |
+| `items`     | --          |             | `BreadCrumbItem[]` | `[ { name: 'test1', link: '/test' }, { name: 'test2' }, { name: 'test3' } ]` |
+| `seperator` | `seperator` |             | `string`           | `undefined`                                                                  |
 
 ## Events
 
