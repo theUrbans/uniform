@@ -453,15 +453,10 @@ export class UTablegen {
                   let bg = '';
                   let ft = '';
                   if (this.heading.length) {
-                    const { width, align } = this.heading.find(
-                      (h) => h.field === key
-                    );
-                    a = align;
-                    w = width;
-                    const { bgcolor, fontcolor } = this.heading.find(
-                      (h) => h.field === key
-                    );
-                    // const fontcolor = this.heading.find(h => h.field === key);
+                    const { width, align, bgcolor, fontcolor } =
+                      this.heading.find((h) => h.field === key);
+                    if (align) a = align;
+                    if (width) w = width;
                     if (bgcolor) bg = bgcolor(row);
                     if (fontcolor) ft = fontcolor(row);
                   }
