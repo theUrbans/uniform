@@ -5,7 +5,8 @@ import {
   State,
   Prop,
   Event,
-  EventEmitter
+  EventEmitter,
+  Element
 } from '@stencil/core';
 
 /**
@@ -19,6 +20,8 @@ import {
   shadow: true
 })
 export class USpoiler {
+  @Element() el: HTMLElement;
+
   /**
    * label of the spoiler
    */
@@ -43,13 +46,26 @@ export class USpoiler {
 
   private handleOnClick = () => {
     this.isOpen = !this.isOpen;
-    this.isOpen ? this.uOpen.emit() : this.uClose.emit();
+    const spoiler: HTMLDivElement =
+      this.el.shadowRoot.querySelector('#collapsible');
+    if (this.isOpen) this.uOpen.emit();
+    if (!this.isOpen) this.uClose.emit();
+
+    const content = spoiler.nextElementSibling as HTMLDivElement;
+    if (content.style.maxHeight) {
+      content.style.opacity = '0';
+      content.style.maxHeight = null;
+    } else {
+      content.style.opacity = '1';
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
   };
 
   render() {
     return (
       <Host>
         <div
+          id="collapsible"
           class={{
             spoiler: true,
             opened: this.isOpen,
@@ -82,13 +98,7 @@ export class USpoiler {
           </svg>
           <span>{this.label}</span>
         </div>
-        <div
-          class={{
-            content: true,
-            visible: this.isOpen,
-            hidden: !this.isOpen
-          }}
-        >
+        <div class="content" style={{ opacity: '0' }}>
           <slot></slot>
         </div>
       </Host>

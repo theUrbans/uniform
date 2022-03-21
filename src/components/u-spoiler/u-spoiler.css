@@ -1,5 +1,5 @@
 :host {
-  @apply w-max;
+  @apply w-max relative;
 }
 .spoiler {
   @apply flex flex-row gap-4 items-center border-solid cursor-pointer border-gray-200 box-border bg-gray-200 text-gray-600 font-semibold tracking-wide p-2;
@@ -9,12 +9,6 @@
 }
 .opened {
   @apply rounded-t-xl;
-}
-.visible {
-  @apply block duration-300 h-max;
-}
-.hidden {
-  @apply hidden duration-300 h-0;
 }
 .chevron {
   @apply duration-300 transform -rotate-90;
@@ -33,4 +27,7 @@
 }
 .content {
   @apply border-2 rounded-b-xl border-solid border-gray-200;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
 }
