@@ -45,7 +45,7 @@ export class UTablegen {
   /**
    * renders a checkbox in front of each row
    */
-  @Prop() selectable: boolean = true;
+  @Prop() selectable: boolean = false;
 
   /**
    * the header will be sticked to the top of the table
@@ -248,7 +248,6 @@ export class UTablegen {
       item.select = setVal;
       return item;
     });
-    console.log(this.selected.map((item) => item.id));
   }
 
   private selectRow(row: any, rowIndex: number, state?: boolean) {
@@ -277,7 +276,6 @@ export class UTablegen {
     }
     this.lastIndex = rowIndex;
     this.uSelect.emit(this.selectable ? this.selected : row);
-    console.log(this.selected.map((item) => item.id));
   }
 
   private lastIndex: number = 0;
