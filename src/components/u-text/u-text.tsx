@@ -8,21 +8,24 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-text',
   styleUrl: 'u-text.css',
-  shadow: true,
+  shadow: true
 })
 export class UText {
   /**
    * font size: string, e.g. '12px', '1rem'. Default is '1rem'.
    */
   @Prop() size: string = '1rem';
+
   /**
    * font weight: string, e.g. 'bold'. Default is 'normal'.
    */
   @Prop() weight: string = 'normal';
+
   /**
    * text-transfrom: string, e.g. 'uppercase', 'lowercase'.
    */
   @Prop() transform: string;
+
   /**
    * font color: string, e.g. '#e1e1e1', 'lightblue'. Default is '#fff' (white).
    */
@@ -35,7 +38,7 @@ export class UText {
           fontSize: this.size,
           fontWeight: this.weight,
           color: this.color,
-          textTransform: this.transform,
+          textTransform: this.transform
         }}
       >
         <slot />

@@ -8,17 +8,19 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-cardimage',
   styleUrl: 'u-cardimage.css',
-  shadow: true,
+  shadow: true
 })
 export class UCardimage {
   /**
    * src: path of image source
    */
   @Prop() src: string;
+
   /**
    * height of picture: string, e.g. '400px'
    */
   @Prop() height: string;
+
   /**
    * width of picture: string, e.g. '400px'
    */
