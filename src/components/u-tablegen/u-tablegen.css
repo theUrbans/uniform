@@ -6,10 +6,10 @@ table {
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-spacing: 0 0.4rem;
+  border-spacing: 0 0.3rem;
 }
 .heading {
-  @apply w-full rounded-lg bg-blue-gray-600 text-light-600 block;
+  @apply w-full rounded-lg bg-blue-gray-600 text-light-600 table;
 }
 .headingslot {
   @apply w-full;
@@ -21,7 +21,7 @@ th:last-child {
   padding-right: 1rem;
 }
 tbody {
-  @apply w-full overflow-y-scroll;
+  @apply w-full overflow-y-scroll block;
   flex: 1 1 auto;
 }
 thead {
@@ -33,7 +33,7 @@ tfoot {
   inset-block-end: 0;
 }
 .tablerow {
-  @apply cursor-pointer whitespace-pre-wrap table-row;
+  @apply cursor-pointer whitespace-pre-wrap w-full table;
 }
 .tablerow:hover > .tablecell {
   @apply border-blue-gray-400;

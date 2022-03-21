@@ -61,7 +61,7 @@ export class UTablegen {
    * the column definition and setting
    */
   @Prop() heading!: Array<HeadOptions>;
-  // [
+  // = [
   //   { field: 'artno', label: 'Artikelnummer', sortable: true, width: '15%' },
   //   { field: 'name', label: 'Beschreibung', sortable: true, width: '65%' },
   //   { field: 'loc', label: 'Lagerort', sortable: true, width: '10%' },
@@ -73,7 +73,7 @@ export class UTablegen {
    */
   @Prop({ mutable: true }) data!: Array<any>;
 
-  // [
+  //  = [
   //   {
   //     id: 1,
   //     artno: '000-000000',
@@ -121,38 +121,6 @@ export class UTablegen {
   //     unit: 'Stk',
   //     loc: 'I1',
   //     qty: '50375'
-  //   },
-  //   {
-  //     id: 7,
-  //     artno: '001-010700',
-  //     name: 'Z-Diode SMD 5,1V 0,5W 0805',
-  //     unit: 'Stk',
-  //     loc: 'I1',
-  //     qty: '398'
-  //   },
-  //   {
-  //     id: 8,
-  //     artno: '001-010800',
-  //     name: 'Z-Diode SMD 5,6V 0,5W SOD123',
-  //     unit: 'Stk',
-  //     loc: 'D1+D2+I1',
-  //     qty: '2717'
-  //   },
-  //   {
-  //     id: 9,
-  //     artno: '001-010810',
-  //     name: 'Z-Diode SMD 5,6V 0,5W 0805',
-  //     unit: 'Stk',
-  //     loc: 'I1',
-  //     qty: '500'
-  //   },
-  //   {
-  //     id: 10,
-  //     artno: '001-020300',
-  //     name: 'Z-Diode 2,7V 0,5W',
-  //     unit: 'Stk',
-  //     loc: 'H8',
-  //     qty: '194'
   //   }
   // ];
   @Watch('data') watchData(newValue: any) {
@@ -192,7 +160,9 @@ export class UTablegen {
     return formattedValue;
   }
 
-  @State() displayedData: Array<any> = JSON.parse(JSON.stringify(this.data));
+  @State() displayedData: Array<any> = JSON.parse(
+    JSON.stringify(this.data || [])
+  );
 
   private handleSort(field: string, dir: 'asc' | 'desc' | 'none') {
     this.sort = { dir, prop: field };
@@ -386,6 +356,7 @@ export class UTablegen {
   }
 
   render() {
+    if (!this.data || !this.heading) return <span>loading ...</span>;
     let order = this.heading.map((h) => h.field);
     if (this.selectable) order = ['select', ...order];
 
