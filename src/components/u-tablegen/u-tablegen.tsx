@@ -60,38 +60,101 @@ export class UTablegen {
   /**
    * the column definition and setting
    */
-  @Prop() heading: Array<HeadOptions> = [
-    { field: 'id', label: 'ID', width: '33%' },
-    { field: 'text', label: 'Name', width: '33%' },
-    { field: 'date', label: 'Value', width: '33%' }
-  ];
+  @Prop() heading!: Array<HeadOptions>;
+  // [
+  //   { field: 'artno', label: 'Artikelnummer', sortable: true, width: '15%' },
+  //   { field: 'name', label: 'Beschreibung', sortable: true, width: '65%' },
+  //   { field: 'loc', label: 'Lagerort', sortable: true, width: '10%' },
+  //   { field: 'qty', label: 'Menge', width: '10%' }
+  // ];
 
   /**
    * the data to be rendered as rows
    */
-  @Prop({ mutable: true }) data: Array<any> = [
-    {
-      id: 1,
-      text: 'test',
-      date: '2019-01-01'
-    },
-    {
-      id: 2,
-      text: 'test',
-      date: '2019-01-01'
-    },
-    {
-      id: 3,
-      text: 'test',
-      date: '2019-01-01'
-    },
-    {
-      id: 4,
-      text: 'test',
-      date: '2019-01-01'
-    }
-  ];
+  @Prop({ mutable: true }) data!: Array<any>;
 
+  // [
+  //   {
+  //     id: 1,
+  //     artno: '000-000000',
+  //     name: 'DUMMY - Barcode X000000 nicht löschen',
+  //     unit: 'Stk',
+  //     loc: 'A1+A2',
+  //     qty: '0'
+  //   },
+  //   {
+  //     id: 2,
+  //     artno: '001-010200',
+  //     name: '1N4007 P',
+  //     unit: 'Stk',
+  //     loc: 'H5+H6+H8',
+  //     qty: '92'
+  //   },
+  //   {
+  //     id: 3,
+  //     artno: '001-010300',
+  //     name: '1N4148',
+  //     unit: 'Stk',
+  //     loc: 'H8',
+  //     qty: '2548'
+  //   },
+  //   {
+  //     id: 4,
+  //     artno: '001-010301',
+  //     name: '4148-SMD 0805',
+  //     unit: 'Stk',
+  //     loc: 'I1',
+  //     qty: '5261'
+  //   },
+  //   {
+  //     id: 5,
+  //     artno: '001-010302',
+  //     name: '4148-SMD 0603',
+  //     unit: 'Stk',
+  //     loc: 'C3',
+  //     qty: '0'
+  //   },
+  //   {
+  //     id: 6,
+  //     artno: '001-010600',
+  //     name: 'Z-Diode SMD 3,3V 0,5W 0805',
+  //     unit: 'Stk',
+  //     loc: 'I1',
+  //     qty: '50375'
+  //   },
+  //   {
+  //     id: 7,
+  //     artno: '001-010700',
+  //     name: 'Z-Diode SMD 5,1V 0,5W 0805',
+  //     unit: 'Stk',
+  //     loc: 'I1',
+  //     qty: '398'
+  //   },
+  //   {
+  //     id: 8,
+  //     artno: '001-010800',
+  //     name: 'Z-Diode SMD 5,6V 0,5W SOD123',
+  //     unit: 'Stk',
+  //     loc: 'D1+D2+I1',
+  //     qty: '2717'
+  //   },
+  //   {
+  //     id: 9,
+  //     artno: '001-010810',
+  //     name: 'Z-Diode SMD 5,6V 0,5W 0805',
+  //     unit: 'Stk',
+  //     loc: 'I1',
+  //     qty: '500'
+  //   },
+  //   {
+  //     id: 10,
+  //     artno: '001-020300',
+  //     name: 'Z-Diode 2,7V 0,5W',
+  //     unit: 'Stk',
+  //     loc: 'H8',
+  //     qty: '194'
+  //   }
+  // ];
   @Watch('data') watchData(newValue: any) {
     this.displayedData = JSON.parse(JSON.stringify(newValue));
   }
@@ -453,8 +516,9 @@ export class UTablegen {
                   let bg = '';
                   let ft = '';
                   if (this.heading.length) {
-                    const { width, align, bgcolor, fontcolor } =
-                      this.heading.find((h) => h.field === key);
+                    const params = this.heading.find((h) => h.field === key);
+                    if (!params) return;
+                    const { width, align, bgcolor, fontcolor } = params;
                     if (align) a = align;
                     if (width) w = width;
                     if (bgcolor) bg = bgcolor(row);

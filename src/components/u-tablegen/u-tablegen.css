@@ -9,7 +9,7 @@ table {
   border-spacing: 0 0.4rem;
 }
 .heading {
-  @apply w-full rounded-lg bg-blue-gray-600 text-light-600;
+  @apply w-full rounded-lg bg-blue-gray-600 text-light-600 block;
 }
 .headingslot {
   @apply w-full;
