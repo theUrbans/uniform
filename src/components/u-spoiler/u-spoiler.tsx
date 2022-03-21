@@ -6,7 +6,8 @@ import {
   Prop,
   Event,
   EventEmitter,
-  Element
+  Element,
+  Method
 } from '@stencil/core';
 
 /**
@@ -42,24 +43,51 @@ export class USpoiler {
    */
   @Event() uClose: EventEmitter<void>;
 
+  /**
+   * method to close collapsible
+   */
+  @Method()
+  async closeCollapsible() {
+    this.close();
+  }
+
+  /**
+   * method to open collapsible
+   */
+  @Method()
+  async openCollapsible() {
+    this.open();
+  }
+
   @State() isOpen: boolean = false;
 
   private handleOnClick = () => {
-    this.isOpen = !this.isOpen;
+    this.isOpen ? this.close() : this.open();
+  };
+
+  private open() {
+    this.isOpen = true;
     const spoiler: HTMLDivElement =
       this.el.shadowRoot.querySelector('#collapsible');
-    if (this.isOpen) this.uOpen.emit();
-    if (!this.isOpen) this.uClose.emit();
+    const content = spoiler.nextElementSibling as HTMLDivElement;
+    if (content.style.maxHeight) {
+      content.style.opacity = '1';
+      content.style.maxHeight = `${content.scrollHeight}px`;
+    }
+    this.uOpen.emit();
+  }
 
+  private close() {
+    this.isOpen = false;
+    const spoiler: HTMLDivElement =
+      this.el.shadowRoot.querySelector('#collapsible');
     const content = spoiler.nextElementSibling as HTMLDivElement;
     if (content.style.maxHeight) {
       content.style.opacity = '0';
       content.style.maxHeight = null;
-    } else {
-      content.style.opacity = '1';
-      content.style.maxHeight = `${content.scrollHeight}px`;
     }
-  };
+    this.uClose.emit();
+  }
 
   render() {
     return (
