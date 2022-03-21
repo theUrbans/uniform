@@ -4,11 +4,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      | Default     |
-| -------- | --------- | ----------- | --------- | ----------- |
-| `color`  | `color`   |             | `string`  | `'#9EBADE'` |
-| `img`    | `img`     |             | `boolean` | `false`     |
-| `width`  | `width`   |             | `string`  | `'24rem'`   |
+| Property | Attribute | Description | Type     | Default     |
+| -------- | --------- | ----------- | -------- | ----------- |
+| `color`  | `color`   |             | `string` | `'#9EBADE'` |
+| `width`  | `width`   |             | `string` | `'24rem'`   |
 
 ---
 
