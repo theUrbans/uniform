@@ -5,7 +5,7 @@ describe('u-cardimage', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UCardimage],
-      html: `<u-cardimage></u-cardimage>`,
+      html: `<u-cardimage></u-cardimage>`
     });
     expect(page.root).toEqualHtml(`
       <u-cardimage>

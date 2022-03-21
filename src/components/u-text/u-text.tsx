@@ -8,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-text',
   styleUrl: 'u-text.css',
-  shadow: true,
+  shadow: true
 })
 export class UText {
   /**
@@ -35,7 +35,7 @@ export class UText {
           fontSize: this.size,
           fontWeight: this.weight,
           color: this.color,
-          textTransform: this.transform,
+          textTransform: this.transform
         }}
       >
         <slot />

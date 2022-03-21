@@ -7,7 +7,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-card',
   styleUrl: 'u-card.css',
-  shadow: true,
+  shadow: true
 })
 export class UCard {
   /**
@@ -24,8 +24,8 @@ export class UCard {
       <div
         class="card"
         style={{
-          'background-color': this.color,
-          'width': this.width,
+          backgroundColor: this.color,
+          width: this.width
         }}
       >
         <slot />

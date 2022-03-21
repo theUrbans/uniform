@@ -1,9 +1,6 @@
 # u-cardheader
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,7 +8,6 @@
 | -------- | --------- | ----------- | --------- | ------- |
 | `img`    | `img`     |             | `boolean` | `false` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

@@ -7,7 +7,7 @@ import { Component, h } from '@stencil/core';
  */
 @Component({
   tag: 'u-cardbody',
-  shadow: true,
+  shadow: true
 })
 export class UCardbody {
   render() {

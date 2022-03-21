@@ -5,7 +5,7 @@ describe('u-cardfooter', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UCardfooter],
-      html: `<u-cardfooter></u-cardfooter>`,
+      html: `<u-cardfooter></u-cardfooter>`
     });
     expect(page.root).toEqualHtml(`
       <u-cardfooter>

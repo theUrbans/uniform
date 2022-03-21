@@ -5,7 +5,7 @@ describe('u-text', () => {
   it('renders', async () => {
     const page = await newSpecPage({
       components: [UText],
-      html: `<u-text></u-text>`,
+      html: `<u-text></u-text>`
     });
     expect(page.root).toEqualHtml(`
       <u-text>
