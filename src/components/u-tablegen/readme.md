@@ -63,14 +63,14 @@ tested with Vue 2.6
 
 ## Properties
 
-| Property      | Attribute      | Description                                         | Type            | Default                                                                                                                                                                                  |
-| ------------- | -------------- | --------------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `data`        | --             | the data to be rendered as rows                     | `any[]`         | `[ { id: 1, text: 'test', date: '2019-01-01' }, { id: 2, text: 'test', date: '2019-01-01' }, { id: 3, text: 'test', date: '2019-01-01' }, { id: 4, text: 'test', date: '2019-01-01' } ]` |
-| `fixedHeader` | `fixed-header` | the header will be sticked to the top of the table  | `boolean`       | `true`                                                                                                                                                                                   |
-| `heading`     | --             | the column definition and setting                   | `HeadOptions[]` | `[ { field: 'id', label: 'ID', width: '33%' }, { field: 'text', label: 'Name', width: '33%' }, { field: 'date', label: 'Value', width: '33%' } ]`                                        |
-| `observe`     | `observe`      | emits uLastElement when the last row is visible     | `boolean`       | `false`                                                                                                                                                                                  |
-| `resizeable`  | `resizeable`   | should the rows be resizeable (not implemented yet) | `boolean`       | `false`                                                                                                                                                                                  |
-| `selectable`  | `selectable`   | renders a checkbox in front of each row             | `boolean`       | `true`                                                                                                                                                                                   |
+| Property               | Attribute      | Description                                         | Type            | Default     |
+| ---------------------- | -------------- | --------------------------------------------------- | --------------- | ----------- |
+| `data` _(required)_    | --             | the data to be rendered as rows                     | `any[]`         | `undefined` |
+| `fixedHeader`          | `fixed-header` | the header will be sticked to the top of the table  | `boolean`       | `true`      |
+| `heading` _(required)_ | --             | the column definition and setting                   | `HeadOptions[]` | `undefined` |
+| `observe`              | `observe`      | emits uLastElement when the last row is visible     | `boolean`       | `false`     |
+| `resizeable`           | `resizeable`   | should the rows be resizeable (not implemented yet) | `boolean`       | `false`     |
+| `selectable`           | `selectable`   | renders a checkbox in front of each row             | `boolean`       | `true`      |
 
 ## Events
 

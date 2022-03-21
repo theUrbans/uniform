@@ -1,4 +1,4 @@
-# u-cardheader
+# u-cardfooter
 
 <!-- Auto Generated Below -->
 
@@ -6,7 +6,7 @@
 
 | Property  | Attribute | Description                                                           | Type      | Default |
 | --------- | --------- | --------------------------------------------------------------------- | --------- | ------- |
-| `overlap` | `overlap` | header overlaps the cardbody and will have see through background box | `boolean` | `false` |
+| `overlap` | `overlap` | footer overlaps the cardbody and will have see through background box | `boolean` | `false` |
 
 ---
 

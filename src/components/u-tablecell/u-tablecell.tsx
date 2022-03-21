@@ -1,6 +1,5 @@
 import { Component, h, Prop } from '@stencil/core';
 
-export type ComponentName = 'Table Cell';
 /**
  * @name Table Cell
  * @state 🔴

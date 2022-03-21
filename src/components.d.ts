@@ -2092,7 +2092,7 @@ declare namespace LocalJSX {
         /**
           * the data to be rendered as rows
          */
-        "data"?: Array<any>;
+        "data": Array<any>;
         /**
           * the header will be sticked to the top of the table
          */
@@ -2100,7 +2100,7 @@ declare namespace LocalJSX {
         /**
           * the column definition and setting
          */
-        "heading"?: Array<HeadOptions>;
+        "heading": Array<HeadOptions>;
         /**
           * emits uLastElement when the last row is visible
          */

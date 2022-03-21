@@ -8,7 +8,7 @@ import { Component, Prop, h } from '@stencil/core';
 @Component({
   tag: 'u-cardheader',
   styleUrl: 'u-cardheader.css',
-  shadow: true,
+  shadow: true
 })
 export class UCardheader {
   /**
@@ -20,7 +20,7 @@ export class UCardheader {
     return (
       <div
         class={{
-          overlap: this.overlap,
+          overlap: this.overlap
         }}
       >
         <slot />

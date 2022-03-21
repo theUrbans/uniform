@@ -8,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'u-cardfooter',
   styleUrl: 'u-cardfooter.css',
-  shadow: true,
+  shadow: true
 })
 export class UCardfooter {
   /**
