@@ -70,7 +70,7 @@ tested with Vue 2.6
 | `heading` _(required)_ | --             | the column definition and setting                   | `HeadOptions[]` | `undefined` |
 | `observe`              | `observe`      | emits uLastElement when the last row is visible     | `boolean`       | `false`     |
 | `resizeable`           | `resizeable`   | should the rows be resizeable (not implemented yet) | `boolean`       | `false`     |
-| `selectable`           | `selectable`   | renders a checkbox in front of each row             | `boolean`       | `true`      |
+| `selectable`           | `selectable`   | renders a checkbox in front of each row             | `boolean`       | `false`     |
 
 ## Events
 

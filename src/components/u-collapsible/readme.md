@@ -1,4 +1,4 @@
-# u-cardbody
+# u-collapsible
 
 <!-- Auto Generated Below -->
 

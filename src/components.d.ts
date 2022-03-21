@@ -182,6 +182,10 @@ export namespace Components {
          */
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
+    interface UCollapsible {
+    }
+    interface UCollapsibleGroup {
+    }
     interface UColorpicker {
     }
     interface UDatepicker {
@@ -922,6 +926,18 @@ declare global {
         prototype: HTMLUColElement;
         new (): HTMLUColElement;
     };
+    interface HTMLUCollapsibleElement extends Components.UCollapsible, HTMLStencilElement {
+    }
+    var HTMLUCollapsibleElement: {
+        prototype: HTMLUCollapsibleElement;
+        new (): HTMLUCollapsibleElement;
+    };
+    interface HTMLUCollapsibleGroupElement extends Components.UCollapsibleGroup, HTMLStencilElement {
+    }
+    var HTMLUCollapsibleGroupElement: {
+        prototype: HTMLUCollapsibleGroupElement;
+        new (): HTMLUCollapsibleGroupElement;
+    };
     interface HTMLUColorpickerElement extends Components.UColorpicker, HTMLStencilElement {
     }
     var HTMLUColorpickerElement: {
@@ -1272,6 +1288,8 @@ declare global {
         "u-checkbox": HTMLUCheckboxElement;
         "u-chip": HTMLUChipElement;
         "u-col": HTMLUColElement;
+        "u-collapsible": HTMLUCollapsibleElement;
+        "u-collapsible-group": HTMLUCollapsibleGroupElement;
         "u-colorpicker": HTMLUColorpickerElement;
         "u-datepicker": HTMLUDatepickerElement;
         "u-datetimepicker": HTMLUDatetimepickerElement;
@@ -1500,6 +1518,10 @@ declare namespace LocalJSX {
           * flex wrap: nowrap | wrap | wrap-reverse
          */
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
+    }
+    interface UCollapsible {
+    }
+    interface UCollapsibleGroup {
     }
     interface UColorpicker {
     }
@@ -2222,6 +2244,8 @@ declare namespace LocalJSX {
         "u-checkbox": UCheckbox;
         "u-chip": UChip;
         "u-col": UCol;
+        "u-collapsible": UCollapsible;
+        "u-collapsible-group": UCollapsibleGroup;
         "u-colorpicker": UColorpicker;
         "u-datepicker": UDatepicker;
         "u-datetimepicker": UDatetimepicker;
@@ -2297,6 +2321,8 @@ declare module "@stencil/core" {
             "u-checkbox": LocalJSX.UCheckbox & JSXBase.HTMLAttributes<HTMLUCheckboxElement>;
             "u-chip": LocalJSX.UChip & JSXBase.HTMLAttributes<HTMLUChipElement>;
             "u-col": LocalJSX.UCol & JSXBase.HTMLAttributes<HTMLUColElement>;
+            "u-collapsible": LocalJSX.UCollapsible & JSXBase.HTMLAttributes<HTMLUCollapsibleElement>;
+            "u-collapsible-group": LocalJSX.UCollapsibleGroup & JSXBase.HTMLAttributes<HTMLUCollapsibleGroupElement>;
             "u-colorpicker": LocalJSX.UColorpicker & JSXBase.HTMLAttributes<HTMLUColorpickerElement>;
             "u-datepicker": LocalJSX.UDatepicker & JSXBase.HTMLAttributes<HTMLUDatepickerElement>;
             "u-datetimepicker": LocalJSX.UDatetimepicker & JSXBase.HTMLAttributes<HTMLUDatetimepickerElement>;
