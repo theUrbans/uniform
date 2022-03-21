@@ -70,10 +70,8 @@ export class USpoiler {
     const spoiler: HTMLDivElement =
       this.el.shadowRoot.querySelector('#collapsible');
     const content = spoiler.nextElementSibling as HTMLDivElement;
-    if (content.style.maxHeight) {
-      content.style.opacity = '1';
-      content.style.maxHeight = `${content.scrollHeight}px`;
-    }
+    content.style.opacity = '1';
+    content.style.maxHeight = `${content.scrollHeight}px`;
     this.uOpen.emit();
   }
 
