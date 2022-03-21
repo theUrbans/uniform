@@ -25,7 +25,7 @@ export class UCard {
       <div
         class="card"
         style={{
-          'background-color': this.color,
+          backgroundColor: this.color,
           width: this.width
         }}
       >
