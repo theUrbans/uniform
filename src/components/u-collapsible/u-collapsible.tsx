@@ -12,8 +12,9 @@ import {
 
 /**
  * @name Collapsible
- * @state 🟡
+ * @state 🟢
  * @description accordion like component
+ * @slot default - content inside of the collapsible
  */
 @Component({
   tag: 'u-collapsible',

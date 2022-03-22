@@ -2,8 +2,9 @@ import { Component, Host, h, Element, Prop } from '@stencil/core';
 
 /**
  * @name Collapsible Group
- * @state 🟡
- * @description accordion like component group
+ * @state 🟢
+ * @description group collapsible elements
+ * @slot default - collapsible elements
  */
 @Component({
   tag: 'u-collapsible-group',
