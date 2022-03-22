@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Element } from '@stencil/core';
 
 /**
  * @name Icon Wrapper
@@ -12,6 +12,8 @@ import { Component, h, Prop } from '@stencil/core';
   scoped: true
 })
 export class UIcon {
+  @Element() el: HTMLElement;
+
   /**
    * border style of the icon wrapper
    */
@@ -32,6 +34,20 @@ export class UIcon {
    */
   @Prop() design: 'error' | 'success' | 'warning' | 'primary' | 'secondary' =
     'error';
+
+  /**
+   * if true, svg color matches color with design
+   */
+  @Prop() udpateSvgColor: boolean = true;
+
+  componentDidRender() {
+    if (!this.udpateSvgColor) return;
+    const icon = this.el.querySelector('svg') as SVGElement;
+    const iconWrapper = this.el.querySelector('i') as HTMLElement;
+    const { color } = getComputedStyle(iconWrapper);
+    if (!icon) return;
+    icon.style.fill = color;
+  }
 
   render() {
     return (
