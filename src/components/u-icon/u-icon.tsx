@@ -8,7 +8,7 @@ import { Component, h, Prop } from '@stencil/core';
  */
 @Component({
   tag: 'u-icon',
-  styleUrl: 'u-icon.css',
+  styleUrl: 'u-icon.scss',
   scoped: true
 })
 export class UIcon {
