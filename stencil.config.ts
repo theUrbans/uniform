@@ -10,11 +10,11 @@ import Documentation from './src/docs/createDocs';
 export const config: Config = {
   autoprefixCss: true,
   namespace: 'Uniform',
-  globalStyle: 'src/global/uniform.scss',
+  // globalStyle: 'src/global/uniform.scss',
   globalScript: 'src/global/global.ts',
   plugins: [
     sass({
-      injectGlobalPaths: ['src/global/uniform.scss']
+      injectGlobalPaths: ['src/global/styles/variables.scss']
     }),
     ...windicssStencil({
       preflight: true
