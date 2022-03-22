@@ -1,20 +1,50 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 /**
  * @name Icon Wrapper
- * @description Wrapper for icons
+ * @state 🟡
+ * @description Wrapper for icons (svg preferred)
  */
 @Component({
   tag: 'u-icon',
   styleUrl: 'u-icon.css',
-  shadow: true
+  scoped: true
 })
 export class UIcon {
+  /**
+   * border style of the icon wrapper
+   */
+  @Prop() borderRadius: 'rounded' | 'square' | 'circle' = 'rounded';
+
+  /**
+   * if true hide the border and background color of the wrapper
+   */
+  @Prop() flat: boolean = false;
+
+  /**
+   * if true hide the background color of the wrapper
+   */
+  @Prop() outline: boolean = false;
+
+  /**
+   * select the design of the icon wrapper
+   */
+  @Prop() design: 'error' | 'success' | 'warning' | 'primary' | 'secondary' =
+    'error';
+
   render() {
     return (
-      <Host>
+      <i
+        class={{
+          [this.design]: true,
+          [`fill-${this.design}`]: !this.outline && !this.flat,
+          outline: this.outline,
+          flat: this.flat,
+          [this.borderRadius]: true
+        }}
+      >
         <slot></slot>
-      </Host>
+      </i>
     );
   }
 }

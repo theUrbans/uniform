@@ -1,3 +1,48 @@
-:host {
-  display: block;
+i {
+  @apply p-3 border-2 border-solid inline-grid place-content-center cursor-pointer;
+}
+.primary {
+  @apply primary;
+}
+.fill-primary {
+  @apply primary-fill;
+}
+.error {
+  @apply error;
+}
+.fill-error {
+  @apply error-fill;
+}
+.success {
+  @apply success;
+}
+.fill-success {
+  @apply success-fill;
+}
+.warning {
+  @apply warning;
+}
+.fill-warning {
+  @apply warning-fill;
+}
+.secondary {
+  @apply secondary;
+}
+.fill-secondary {
+  @apply secondary-fill;
+}
+.outline {
+  @apply bg-transparent;
+}
+.flat {
+  @apply bg-transparent border-transparent hover:border-transparent;
+}
+.square {
+  @apply rounded-none;
+}
+.circle {
+  @apply rounded-full;
+}
+.rounded {
+  @apply border-radius;
 }
