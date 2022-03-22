@@ -17,7 +17,7 @@ import {
  */
 @Component({
   tag: 'u-collapsible',
-  styleUrl: 'u-collapsible.css',
+  styleUrl: 'u-collapsible.scss',
   shadow: true
 })
 export class UCollapsible {
@@ -72,6 +72,7 @@ export class UCollapsible {
     const content = spoiler.nextElementSibling as HTMLDivElement;
     content.style.opacity = '1';
     content.style.maxHeight = `${content.scrollHeight}px`;
+    content.style.borderStyle = 'solid';
     this.uOpen.emit();
   }
 
@@ -82,6 +83,7 @@ export class UCollapsible {
     const content = spoiler.nextElementSibling as HTMLDivElement;
     if (content.style.maxHeight) {
       content.style.opacity = '0';
+      content.style.borderStyle = 'none';
       content.style.maxHeight = null;
     }
     this.uClose.emit();
