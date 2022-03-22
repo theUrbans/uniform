@@ -4,6 +4,7 @@ import { Component, h, Prop } from '@stencil/core';
  * @name Icon Wrapper
  * @state 🟡
  * @description Wrapper for icons (svg preferred)
+ * @slot default - eg. svg or img
  */
 @Component({
   tag: 'u-icon',
