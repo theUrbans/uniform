@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-21T16:23:21",
+  "timestamp": "2022-03-22T10:08:24",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.2",
@@ -1391,12 +1391,111 @@
       "filePath": "./src/components/u-collapsible/u-collapsible.tsx",
       "encapsulation": "shadow",
       "tag": "u-collapsible",
+      "readme": "# u-collapsible\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Collapsible"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "accordion like component"
+        }
+      ],
       "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "label of the spoiler",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "set the size of the spoiler",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "closeCollapsible",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "closeCollapsible() => Promise<void>",
+          "parameters": [],
+          "docs": "method to close collapsible",
+          "docsTags": []
+        },
+        {
+          "name": "openCollapsible",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "openCollapsible() => Promise<void>",
+          "parameters": [],
+          "docs": "method to open collapsible",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uClose",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit when the spoiler is closed",
+          "docsTags": []
+        },
+        {
+          "event": "uOpen",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit when the spoiler is opened",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -1409,10 +1508,42 @@
       "filePath": "./src/components/u-collapsible-group/u-collapsible-group.tsx",
       "encapsulation": "shadow",
       "tag": "u-collapsible-group",
+      "readme": "# u-collapsible-group\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Collapsible Group"
+        },
+        {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
+          "name": "description",
+          "text": "accordion like component group"
+        }
+      ],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "onlyOneOpen",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "only-one-open",
+          "reflectToAttr": false,
+          "docs": "if true, only one collapsible can be open at a time",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -2371,7 +2502,7 @@
     },
     {
       "filePath": "./src/components/u-icon/u-icon.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "scoped",
       "tag": "u-icon",
       "readme": "# w-icon\n",
       "docs": "",
@@ -2381,12 +2512,111 @@
           "text": "Icon Wrapper"
         },
         {
+          "name": "state",
+          "text": "🟡"
+        },
+        {
           "name": "description",
-          "text": "Wrapper for icons"
+          "text": "Wrapper for icons (svg preferred)"
         }
       ],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "borderRadius",
+          "type": "\"circle\" | \"rounded\" | \"square\"",
+          "mutable": false,
+          "attr": "border-radius",
+          "reflectToAttr": false,
+          "docs": "border style of the icon wrapper",
+          "docsTags": [],
+          "default": "'rounded'",
+          "values": [
+            {
+              "value": "circle",
+              "type": "string"
+            },
+            {
+              "value": "rounded",
+              "type": "string"
+            },
+            {
+              "value": "square",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "design",
+          "type": "\"error\" | \"primary\" | \"secondary\" | \"success\" | \"warning\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "select the design of the icon wrapper",
+          "docsTags": [],
+          "default": "'error'",
+          "values": [
+            {
+              "value": "error",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "flat",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "flat",
+          "reflectToAttr": false,
+          "docs": "if true hide the border and background color of the wrapper",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "outline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outline",
+          "reflectToAttr": false,
+          "docs": "if true hide the background color of the wrapper",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -5500,100 +5730,6 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/u-spoiler/u-spoiler.tsx",
-      "encapsulation": "shadow",
-      "tag": "u-spoiler",
-      "readme": "# w-spoiler\n",
-      "docs": "",
-      "docsTags": [
-        {
-          "name": "name",
-          "text": "Spoiler"
-        },
-        {
-          "name": "state",
-          "text": "🟡"
-        },
-        {
-          "name": "description",
-          "text": "accordion like component"
-        }
-      ],
-      "usage": {},
-      "props": [
-        {
-          "name": "label",
-          "type": "string",
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": false,
-          "docs": "label of the spoiler",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "size",
-          "type": "\"large\" | \"medium\" | \"small\"",
-          "mutable": false,
-          "attr": "size",
-          "reflectToAttr": false,
-          "docs": "set the size of the spoiler",
-          "docsTags": [],
-          "default": "'medium'",
-          "values": [
-            {
-              "value": "large",
-              "type": "string"
-            },
-            {
-              "value": "medium",
-              "type": "string"
-            },
-            {
-              "value": "small",
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "uClose",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "emit when the spoiler is closed",
-          "docsTags": []
-        },
-        {
-          "event": "uOpen",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "emit when the spoiler is opened",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
       "filePath": "./src/components/u-stepper/u-stepper.tsx",
       "encapsulation": "shadow",
       "tag": "u-stepper",
@@ -6079,13 +6215,14 @@
           "reflectToAttr": false,
           "docs": "the data to be rendered as rows",
           "docsTags": [],
+          "default": "[\r\n    {\r\n      id: 1,\r\n      artno: '000-000000',\r\n      name: 'DUMMY - Barcode X000000 nicht löschen',\r\n      unit: 'Stk',\r\n      loc: 'A1+A2',\r\n      qty: '0 Stk'\r\n    },\r\n    {\r\n      id: 2,\r\n      artno: '001-010200',\r\n      name: '1N4007 P',\r\n      unit: 'Stk',\r\n      loc: 'H5+H6+H8',\r\n      qty: '92 Stk'\r\n    },\r\n    {\r\n      id: 3,\r\n      artno: '001-010300',\r\n      name: '1N4148',\r\n      unit: 'Stk',\r\n      loc: 'H8',\r\n      qty: '2548'\r\n    },\r\n    {\r\n      id: 4,\r\n      artno: '001-010301',\r\n      name: '4148-SMD 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '5261'\r\n    },\r\n    {\r\n      id: 5,\r\n      artno: '001-010302',\r\n      name: '4148-SMD 0603',\r\n      unit: 'Stk',\r\n      loc: 'C3',\r\n      qty: '0'\r\n    },\r\n    {\r\n      id: 6,\r\n      artno: '001-010600',\r\n      name: 'Z-Diode SMD 3,3V 0,5W 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '50375'\r\n    },\r\n    {\r\n      id: 2,\r\n      artno: '001-010200',\r\n      name: '1N4007 P',\r\n      unit: 'Stk',\r\n      loc: 'H5+H6+H8',\r\n      qty: '92 Stk'\r\n    },\r\n    {\r\n      id: 3,\r\n      artno: '001-010300',\r\n      name: '1N4148',\r\n      unit: 'Stk',\r\n      loc: 'H8',\r\n      qty: '2548'\r\n    },\r\n    {\r\n      id: 4,\r\n      artno: '001-010301',\r\n      name: '4148-SMD 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '5261'\r\n    },\r\n    {\r\n      id: 5,\r\n      artno: '001-010302',\r\n      name: '4148-SMD 0603',\r\n      unit: 'Stk',\r\n      loc: 'C3',\r\n      qty: '0'\r\n    },\r\n    {\r\n      id: 6,\r\n      artno: '001-010600',\r\n      name: 'Z-Diode SMD 3,3V 0,5W 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '50375'\r\n    },\r\n    {\r\n      id: 2,\r\n      artno: '001-010200',\r\n      name: '1N4007 P',\r\n      unit: 'Stk',\r\n      loc: 'H5+H6+H8',\r\n      qty: '92'\r\n    },\r\n    {\r\n      id: 3,\r\n      artno: '001-010300',\r\n      name: '1N4148',\r\n      unit: 'Stk',\r\n      loc: 'H8',\r\n      qty: '2548'\r\n    },\r\n    {\r\n      id: 4,\r\n      artno: '001-010301',\r\n      name: '4148-SMD 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '5261'\r\n    },\r\n    {\r\n      id: 5,\r\n      artno: '001-010302',\r\n      name: '4148-SMD 0603',\r\n      unit: 'Stk',\r\n      loc: 'C3',\r\n      qty: '0'\r\n    },\r\n    {\r\n      id: 6,\r\n      artno: '001-010600',\r\n      name: 'Z-Diode SMD 3,3V 0,5W 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '50375'\r\n    },\r\n    {\r\n      id: 2,\r\n      artno: '001-010200',\r\n      name: '1N4007 P',\r\n      unit: 'Stk',\r\n      loc: 'H5+H6+H8',\r\n      qty: '92'\r\n    },\r\n    {\r\n      id: 3,\r\n      artno: '001-010300',\r\n      name: '1N4148',\r\n      unit: 'Stk',\r\n      loc: 'H8',\r\n      qty: '2548'\r\n    },\r\n    {\r\n      id: 4,\r\n      artno: '001-010301',\r\n      name: '4148-SMD 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '5261'\r\n    },\r\n    {\r\n      id: 5,\r\n      artno: '001-010302',\r\n      name: '4148-SMD 0603',\r\n      unit: 'Stk',\r\n      loc: 'C3',\r\n      qty: '0'\r\n    },\r\n    {\r\n      id: 6,\r\n      artno: '001-010600',\r\n      name: 'Z-Diode SMD 3,3V 0,5W 0805',\r\n      unit: 'Stk',\r\n      loc: 'I1',\r\n      qty: '50375'\r\n    }\r\n  ]",
           "values": [
             {
               "type": "any[]"
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         },
         {
           "name": "fixedHeader",
@@ -6111,13 +6248,14 @@
           "reflectToAttr": false,
           "docs": "the column definition and setting",
           "docsTags": [],
+          "default": "[\r\n    { field: 'artno', label: 'Artikelnummer', sortable: true, width: '15%' },\r\n    { field: 'name', label: 'Beschreibung', sortable: true, width: '55%' },\r\n    { field: 'loc', label: 'Lagerort', sortable: true, width: '15%' },\r\n    { field: 'qty', label: 'Menge', width: '15%' }\r\n  ]",
           "values": [
             {
               "type": "HeadOptions[]"
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         },
         {
           "name": "observe",

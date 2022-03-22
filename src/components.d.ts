@@ -183,8 +183,28 @@ export namespace Components {
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface UCollapsible {
+        /**
+          * method to close collapsible
+         */
+        "closeCollapsible": () => Promise<void>;
+        /**
+          * label of the spoiler
+         */
+        "label": string;
+        /**
+          * method to open collapsible
+         */
+        "openCollapsible": () => Promise<void>;
+        /**
+          * set the size of the spoiler
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface UCollapsibleGroup {
+        /**
+          * if true, only one collapsible can be open at a time
+         */
+        "onlyOneOpen": boolean;
     }
     interface UColorpicker {
     }
@@ -262,6 +282,22 @@ export namespace Components {
         "level"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface UIcon {
+        /**
+          * border style of the icon wrapper
+         */
+        "borderRadius": 'rounded' | 'square' | 'circle';
+        /**
+          * select the design of the icon wrapper
+         */
+        "design": 'error' | 'success' | 'warning' | 'primary' | 'secondary';
+        /**
+          * if true hide the border and background color of the wrapper
+         */
+        "flat": boolean;
+        /**
+          * if true hide the background color of the wrapper
+         */
+        "outline": boolean;
     }
     interface UInput {
         /**
@@ -674,16 +710,6 @@ export namespace Components {
         "value": string | number | null;
     }
     interface USlider {
-    }
-    interface USpoiler {
-        /**
-          * label of the spoiler
-         */
-        "label": string;
-        /**
-          * set the size of the spoiler
-         */
-        "size"?: 'small' | 'medium' | 'large';
     }
     interface UStepper {
         /**
@@ -1166,12 +1192,6 @@ declare global {
         prototype: HTMLUSliderElement;
         new (): HTMLUSliderElement;
     };
-    interface HTMLUSpoilerElement extends Components.USpoiler, HTMLStencilElement {
-    }
-    var HTMLUSpoilerElement: {
-        prototype: HTMLUSpoilerElement;
-        new (): HTMLUSpoilerElement;
-    };
     interface HTMLUStepperElement extends Components.UStepper, HTMLStencilElement {
     }
     var HTMLUStepperElement: {
@@ -1328,7 +1348,6 @@ declare global {
         "u-row": HTMLURowElement;
         "u-select": HTMLUSelectElement;
         "u-slider": HTMLUSliderElement;
-        "u-spoiler": HTMLUSpoilerElement;
         "u-stepper": HTMLUStepperElement;
         "u-submenu": HTMLUSubmenuElement;
         "u-table": HTMLUTableElement;
@@ -1520,8 +1539,28 @@ declare namespace LocalJSX {
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface UCollapsible {
+        /**
+          * label of the spoiler
+         */
+        "label"?: string;
+        /**
+          * emit when the spoiler is closed
+         */
+        "onUClose"?: (event: CustomEvent<void>) => void;
+        /**
+          * emit when the spoiler is opened
+         */
+        "onUOpen"?: (event: CustomEvent<void>) => void;
+        /**
+          * set the size of the spoiler
+         */
+        "size"?: 'small' | 'medium' | 'large';
     }
     interface UCollapsibleGroup {
+        /**
+          * if true, only one collapsible can be open at a time
+         */
+        "onlyOneOpen"?: boolean;
     }
     interface UColorpicker {
     }
@@ -1602,6 +1641,22 @@ declare namespace LocalJSX {
         "level"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface UIcon {
+        /**
+          * border style of the icon wrapper
+         */
+        "borderRadius"?: 'rounded' | 'square' | 'circle';
+        /**
+          * select the design of the icon wrapper
+         */
+        "design"?: 'error' | 'success' | 'warning' | 'primary' | 'secondary';
+        /**
+          * if true hide the border and background color of the wrapper
+         */
+        "flat"?: boolean;
+        /**
+          * if true hide the background color of the wrapper
+         */
+        "outline"?: boolean;
     }
     interface UInput {
         /**
@@ -2026,24 +2081,6 @@ declare namespace LocalJSX {
     }
     interface USlider {
     }
-    interface USpoiler {
-        /**
-          * label of the spoiler
-         */
-        "label"?: string;
-        /**
-          * emit when the spoiler is closed
-         */
-        "onUClose"?: (event: CustomEvent<void>) => void;
-        /**
-          * emit when the spoiler is opened
-         */
-        "onUOpen"?: (event: CustomEvent<void>) => void;
-        /**
-          * set the size of the spoiler
-         */
-        "size"?: 'small' | 'medium' | 'large';
-    }
     interface UStepper {
         /**
           * decide the alignment of the stepper
@@ -2114,7 +2151,7 @@ declare namespace LocalJSX {
         /**
           * the data to be rendered as rows
          */
-        "data": Array<any>;
+        "data"?: Array<any>;
         /**
           * the header will be sticked to the top of the table
          */
@@ -2122,7 +2159,7 @@ declare namespace LocalJSX {
         /**
           * the column definition and setting
          */
-        "heading": Array<HeadOptions>;
+        "heading"?: Array<HeadOptions>;
         /**
           * emits uLastElement when the last row is visible
          */
@@ -2284,7 +2321,6 @@ declare namespace LocalJSX {
         "u-row": URow;
         "u-select": USelect;
         "u-slider": USlider;
-        "u-spoiler": USpoiler;
         "u-stepper": UStepper;
         "u-submenu": USubmenu;
         "u-table": UTable;
@@ -2361,7 +2397,6 @@ declare module "@stencil/core" {
             "u-row": LocalJSX.URow & JSXBase.HTMLAttributes<HTMLURowElement>;
             "u-select": LocalJSX.USelect & JSXBase.HTMLAttributes<HTMLUSelectElement>;
             "u-slider": LocalJSX.USlider & JSXBase.HTMLAttributes<HTMLUSliderElement>;
-            "u-spoiler": LocalJSX.USpoiler & JSXBase.HTMLAttributes<HTMLUSpoilerElement>;
             "u-stepper": LocalJSX.UStepper & JSXBase.HTMLAttributes<HTMLUStepperElement>;
             "u-submenu": LocalJSX.USubmenu & JSXBase.HTMLAttributes<HTMLUSubmenuElement>;
             "u-table": LocalJSX.UTable & JSXBase.HTMLAttributes<HTMLUTableElement>;
