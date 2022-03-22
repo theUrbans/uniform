@@ -11,7 +11,7 @@ import {
 } from '@stencil/core';
 
 /**
- * @name Spoiler
+ * @name Collapsible
  * @state 🟡
  * @description accordion like component
  */
