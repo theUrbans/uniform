@@ -1,3 +1,6 @@
-:host {
-  display: block;
+.x {
+  @apply flex flex-row;
+}
+.y {
+  @apply flex flex-row;
 }

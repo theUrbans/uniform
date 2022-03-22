@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 /**
  * @name List
@@ -8,13 +8,16 @@ import { Component, Host, h } from '@stencil/core';
   styleUrl: 'u-list.css'
 })
 export class UList {
+  /**
+   * list as row(x) or as column(y)
+   */
+  @Prop() alignment: 'x' | 'y' = 'y';
+
   render() {
     return (
-      <Host
-        class={{
-          list: true
-        }}
-      ></Host>
+      <ul class={{ [this.alignment]: true }}>
+        <slot></slot>
+      </ul>
     );
   }
 }
