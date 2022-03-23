@@ -1,5 +1,5 @@
 i {
-  @apply p-3 border-2 border-solid inline-grid place-content-center cursor-pointer;
+  @apply p-3 border-2 border-solid inline-grid place-content-center cursor-pointer hover:shadow-md;
 }
 .primary {
   @apply primary;
