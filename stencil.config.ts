@@ -10,8 +10,16 @@ import Documentation from './src/docs/createDocs';
 export const config: Config = {
   autoprefixCss: true,
   namespace: 'Uniform',
-  globalStyle: 'src/global/uniform.scss',
+  // globalStyle: 'src/global/uniform.scss',
   globalScript: 'src/global/global.ts',
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/global/styles/variables.scss']
+    }),
+    ...windicssStencil({
+      preflight: true
+    })
+  ],
   bundles: [
     {
       components: [
@@ -83,12 +91,6 @@ export const config: Config = {
     //   componentCorePackage: '@theurbans/uniform',
     //   proxiesFile: './packages/svelte/src/proxies.ts',
     // }),
-  ],
-  plugins: [
-    sass(),
-    ...windicssStencil({
-      preflight: true
-    })
   ],
   devServer: {
     reloadStrategy: 'hmr',

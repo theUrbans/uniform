@@ -2,11 +2,7 @@
   @apply w-max relative;
 }
 .spoiler {
-  @apply flex flex-row gap-4 items-center border-solid cursor-pointer border-gray-200 box-border bg-gray-200 text-gray-600 font-semibold tracking-wide p-2;
-  &:hover {
-    background: darken(rgb(229, 231, 235), 10%);
-    border-color: darken(rgb(229, 231, 235), 10%);
-  }
+  @apply secondary secondary-fill flex flex-row gap-4 items-center cursor-pointer box-border font-semibold tracking-wide p-1.5;
 }
 .closed {
   @apply rounded-xl;
@@ -30,7 +26,7 @@
   @apply text-lg;
 }
 .content {
-  @apply border-2 rounded-b-xl border-solid border-gray-200;
+  @apply border-2 rounded-b-xl border-solid secondary;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
@@ -48,9 +44,12 @@
 .noradius {
   @apply rounded-none;
 }
+.topradius + .content,
 .noradius + .content {
   @apply rounded-none;
 }
-.topradius + .content {
-  @apply rounded-none;
+.topradius + .content,
+.noradius + .content,
+.botradius + .content {
+  border-style: none;
 }
