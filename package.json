@@ -1,6 +1,6 @@
 {
   "name": "@theurbans/uniform",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "private": false,
   "description": "UNIFORM component library",
   "main": "dist/index.cjs.js",
