@@ -298,6 +298,10 @@ export namespace Components {
           * if true hide the background color of the wrapper
          */
         "outline": boolean;
+        /**
+          * if true, svg color matches color with design
+         */
+        "udpateSvgColor": boolean;
     }
     interface UInput {
         /**
@@ -1661,6 +1665,10 @@ declare namespace LocalJSX {
           * if true hide the background color of the wrapper
          */
         "outline"?: boolean;
+        /**
+          * if true, svg color matches color with design
+         */
+        "udpateSvgColor"?: boolean;
     }
     interface UInput {
         /**

@@ -34,6 +34,12 @@ method to open collapsible
 
 Type: `Promise<void>`
 
+## Slots
+
+| Slot        | Description                       |
+| ----------- | --------------------------------- |
+| `"default"` | content inside of the collapsible |
+
 ---
 
 _Built with [StencilJS](https://stenciljs.com/) by Hoer_
