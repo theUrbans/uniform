@@ -2,6 +2,21 @@
 
 <!-- Auto Generated Below -->
 
+## Usage
+
+### Example
+
+```html
+<u-breadcrumb
+  :items.prop="[
+{ name: 'test1', link: '/' },	
+{ name: 'test2' },	
+{ name: 'test3' }	
+]"
+>
+</u-breadcrumb>
+```
+
 ## Properties
 
 | Property    | Attribute   | Description | Type               | Default                                                                      |

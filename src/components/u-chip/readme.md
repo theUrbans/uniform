@@ -2,6 +2,15 @@
 
 <!-- Auto Generated Below -->
 
+## Usage
+
+### Example
+
+```html
+<u-chip label="with label" design="emerald"> emerald </u-chip>
+<u-chip design="red"> red </u-chip>
+```
+
 ## Properties
 
 | Property    | Attribute   | Description                  | Type                                                                                                                                                                                    | Default     |

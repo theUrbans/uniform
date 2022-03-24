@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-03-23T08:55:09",
+  "timestamp": "2022-03-24T12:48:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.2",
@@ -230,7 +230,9 @@
           "text": "Breadcrumb navigation component"
         }
       ],
-      "usage": {},
+      "usage": {
+        "example": "```html\n<u-breadcrumb\n  :items.prop=\"[\n{ name: 'test1', link: '/' },\t\n{ name: 'test2' },\t\n{ name: 'test3' }\t\n]\"\n>\n</u-breadcrumb>\n```\n"
+      },
       "props": [
         {
           "name": "items",
@@ -239,7 +241,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    { name: 'test1', link: '/test' },\r\n    { name: 'test2' },\r\n    { name: 'test3' }\r\n  ]",
+          "default": "[\n    { name: 'test1', link: '/test' },\n    { name: 'test2' },\n    { name: 'test3' }\n  ]",
           "values": [
             {
               "type": "BreadCrumbItem[]"
@@ -303,7 +305,9 @@
           "text": "🟢"
         }
       ],
-      "usage": {},
+      "usage": {
+        "example": "```html\r\n<u-button> Test Button </u-button>\r\n<u-button design=\"success\" outline> Outline Success Button </u-button>\r\n<u-button design=\"error\" flat> Flat Error Button </u-button>\r\n```\r\n"
+      },
       "props": [
         {
           "name": "design",
@@ -538,7 +542,7 @@
         }
       ],
       "usage": {
-        "default": "```html\r\n<u-card>\r\n  <u-cardheader>\r\n    <u-col padding=\"0em\" gap=\"0em\">\r\n      <u-text\r\n        size=\"0.75rem\"\r\n        color=\"#9e9e9e\"\r\n        weight=\"bold\"\r\n        transform=\"uppercase\"\r\n      >\r\n        Your day your way\r\n      </u-text>\r\n      <u-text size=\"1.25rem\"> Your checklist for better sleep </u-text>\r\n    </u-col>\r\n  </u-cardheader>\r\n  <u-cardbody>\r\n    <u-cardimage src=\"https://api.lorem.space/image/shoes\" />\r\n  </u-cardbody>\r\n  <u-cardfooter>\r\n    <u-col>\r\n      <u-button>BUY</u-button>\r\n    </u-col>\r\n  </u-cardfooter>\r\n</u-card>\r\n```\r\n"
+        "default": "```html\n<u-card>\n  <u-cardheader>\n    <u-col padding=\"0em\" gap=\"0em\">\n      <u-text\n        size=\"0.75rem\"\n        color=\"#9e9e9e\"\n        weight=\"bold\"\n        transform=\"uppercase\"\n      >\n        Your day your way\n      </u-text>\n      <u-text size=\"1.25rem\"> Your checklist for better sleep </u-text>\n    </u-col>\n  </u-cardheader>\n  <u-cardbody>\n    <u-cardimage src=\"https://api.lorem.space/image/shoes\" />\n  </u-cardbody>\n  <u-cardfooter>\n    <u-col>\n      <u-button>BUY</u-button>\n    </u-col>\n  </u-cardfooter>\n</u-card>\n```\n"
       },
       "props": [
         {
@@ -1004,7 +1008,9 @@
           "text": "default - text content"
         }
       ],
-      "usage": {},
+      "usage": {
+        "example": "```html\n<u-chip label=\"with label\" design=\"emerald\"> emerald </u-chip>\n<u-chip design=\"red\"> red </u-chip>\n```\n"
+      },
       "props": [
         {
           "name": "bold",
@@ -1411,7 +1417,9 @@
           "text": "default - content inside of the collapsible"
         }
       ],
-      "usage": {},
+      "usage": {
+        "example": "```html\n<u-collapsible label=\"Lorem ipsum dolor\">\n  <div style=\"height: 100px\">\n    <h1>Example</h1>\n    <u-chip> example badge </u-chip>\n  </div>\n</u-collapsible>\n```\n"
+      },
       "props": [
         {
           "name": "label",
@@ -2074,7 +2082,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    { name: '+ New' },\r\n    { divider: true },\r\n    {\r\n      name: 'Edit',\r\n      subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] }\r\n    },\r\n    { name: 'Copy' },\r\n    { divider: true },\r\n    {\r\n      name: 'Open Recent',\r\n      subMenu: {\r\n        items: [\r\n          {\r\n            name: 'HTML',\r\n            subMenu: {\r\n              items: [\r\n                { name: 'index.html' },\r\n                { name: 'about.html' },\r\n                { name: 'impressum.html' }\r\n              ]\r\n            }\r\n          },\r\n          { name: 'Item 2' }\r\n        ]\r\n      }\r\n    }\r\n  ]",
+          "default": "[\n    { name: '+ New' },\n    { divider: true },\n    {\n      name: 'Edit',\n      subMenu: { items: [{ name: 'Redo' }, { name: 'Undo' }] }\n    },\n    { name: 'Copy' },\n    { divider: true },\n    {\n      name: 'Open Recent',\n      subMenu: {\n        items: [\n          {\n            name: 'HTML',\n            subMenu: {\n              items: [\n                { name: 'index.html' },\n                { name: 'about.html' },\n                { name: 'impressum.html' }\n              ]\n            }\n          },\n          { name: 'Item 2' }\n        ]\n      }\n    }\n  ]",
           "values": [
             {
               "type": "MenuItem[]"
@@ -2807,7 +2815,7 @@
           "mutable": false,
           "attr": "design",
           "reflectToAttr": false,
-          "docs": "select design\r\npossible values:\r\n- 'default', 'error', 'success', 'warning'",
+          "docs": "select design\npossible values:\n- 'default', 'error', 'success', 'warning'",
           "docsTags": [],
           "default": "'secondary'",
           "values": [
@@ -2938,7 +2946,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "text of label\r\nThe label replace the placeholder",
+          "docs": "text of label\nThe label replace the placeholder",
           "docsTags": [],
           "default": "'Label'",
           "values": [
@@ -3565,7 +3573,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    {\r\n      label: 'test1',\r\n      icon: (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"h-5 w-5\"\r\n          fill=\"none\"\r\n          viewBox=\"0 0 24 24\"\r\n          stroke=\"currentColor\"\r\n        >\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\r\n          />\r\n        </svg>\r\n      )\r\n    },\r\n    {\r\n      label: 'test2',\r\n      icon: (\r\n        <svg\r\n          xmlns=\"http://www.w3.org/2000/svg\"\r\n          class=\"h-5 w-5\"\r\n          fill=\"none\"\r\n          viewBox=\"0 0 24 24\"\r\n          stroke=\"currentColor\"\r\n        >\r\n          <path\r\n            stroke-linecap=\"round\"\r\n            stroke-linejoin=\"round\"\r\n            stroke-width=\"2\"\r\n            d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"\r\n          />\r\n        </svg>\r\n      )\r\n    }\r\n  ]",
+          "default": "[\n    {\n      label: 'test1',\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"h-5 w-5\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          stroke=\"currentColor\"\n        >\n          <path\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6\"\n          />\n        </svg>\n      )\n    },\n    {\n      label: 'test2',\n      icon: (\n        <svg\n          xmlns=\"http://www.w3.org/2000/svg\"\n          class=\"h-5 w-5\"\n          fill=\"none\"\n          viewBox=\"0 0 24 24\"\n          stroke=\"currentColor\"\n        >\n          <path\n            stroke-linecap=\"round\"\n            stroke-linejoin=\"round\"\n            stroke-width=\"2\"\n            d=\"M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z\"\n          />\n        </svg>\n      )\n    }\n  ]",
           "values": [
             {
               "type": "MenuItems[]"
@@ -3874,7 +3882,7 @@
         }
       ],
       "usage": {
-        "events": "- open modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(\r\n  new CustomEvent('show-modal', {\r\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\r\n  })\r\n);\r\n```\r\n\r\n- close modal\r\n\r\n```js\r\nconst body = document.querySelector('body');\r\nbody.dispatchEvent(\r\n  new CustomEvent('close-modal', {\r\n    detail: { name: 'MODAL_NAME' }\r\n  })\r\n);\r\n```\r\n"
+        "events": "- open modal\n\n```js\nconst body = document.querySelector('body');\nbody.dispatchEvent(\n  new CustomEvent('show-modal', {\n    detail: { name: 'MODAL_NAME', params: { customParam: '42' } }\n  })\n);\n```\n\n- close modal\n\n```js\nconst body = document.querySelector('body');\nbody.dispatchEvent(\n  new CustomEvent('close-modal', {\n    detail: { name: 'MODAL_NAME' }\n  })\n);\n```\n"
       },
       "props": [
         {
@@ -4199,7 +4207,7 @@
           "mutable": false,
           "attr": "fixed",
           "reflectToAttr": false,
-          "docs": "should the navbar be fixed to the top or bottom of the screen -\r\nlayout should be position relative",
+          "docs": "should the navbar be fixed to the top or bottom of the screen -\nlayout should be position relative",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -4947,7 +4955,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    { value: 1, label: 'Option 1' },\r\n    { value: 2, label: 'Option 2' },\r\n    { value: 3, label: 'Option 3' }\r\n  ]",
+          "default": "[\n    { value: 1, label: 'Option 1' },\n    { value: 2, label: 'Option 2' },\n    { value: 3, label: 'Option 3' }\n  ]",
           "values": [
             {
               "type": "Option[]"
@@ -5457,7 +5465,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "text of label\r\nThe label replace the placeholder",
+          "docs": "text of label\nThe label replace the placeholder",
           "docsTags": [],
           "values": [
             {
@@ -5523,7 +5531,7 @@
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "[\r\n    { value: '1', label: 'One', disabled: true },\r\n    { value: '2', label: 'Two' },\r\n    { value: '3', label: 'Three', disabled: true },\r\n    { value: '4', label: 'Four' },\r\n    { value: '5', label: 'Five' },\r\n    { value: '6', label: 'Six' },\r\n    { value: '7', label: 'Seven' }\r\n  ]",
+          "default": "[\n    { value: '1', label: 'One', disabled: true },\n    { value: '2', label: 'Two' },\n    { value: '3', label: 'Three', disabled: true },\n    { value: '4', label: 'Four' },\n    { value: '5', label: 'Five' },\n    { value: '6', label: 'Six' },\n    { value: '7', label: 'Seven' }\n  ]",
           "values": [
             {
               "type": "Option[]"
@@ -5922,7 +5930,7 @@
           "mutable": false,
           "attr": "steps",
           "reflectToAttr": false,
-          "docs": "define steps -\r\nwithout label -> steps: 3,\r\nwith label -> steps: [1,'2',3],\r\nboth do the same, but with array you can define the label",
+          "docs": "define steps -\nwithout label -> steps: 3,\nwith label -> steps: [1,'2',3],\nboth do the same, but with array you can define the label",
           "docsTags": [],
           "default": "['Step1', 'Step2', 'Step3']",
           "values": [
@@ -6271,8 +6279,8 @@
         }
       ],
       "usage": {
-        "general": "Column definition\r\n\r\n```ts\r\ninterface HeadOptions {\r\n  field: string;\r\n  label: string;\r\n  width?: string;\r\n  align?: 'left' | 'center' | 'right' | string;\r\n  sortable?: boolean;\r\n  bgcolor?(row: any): string;\r\n  fontcolor?(row: any): string;\r\n}\r\n```\r\n\r\nthe `data` Property must use the same schema like the HeadOption.\r\neg is `field: 'id'`, the data must have objects with `id` keys.\r\n",
-        "vue": "tested with Vue 2.6\r\n\r\n```html\r\n<template>\r\n  <u-tablegen :data.prop=\"data\" :heading.prop=\"heading\">\r\n    <h1 slot=\"header\">Example Table</h1>\r\n  </u-tablegen>\r\n</template>\r\n\r\n<script>\r\n  export default {\r\n      data: () {\r\n          return {\r\n            data: [\r\n              { id: 1, text: 'Id no 1' },\r\n              { id: 2, text: 'Id no 2' },\r\n              { id: 3, text: 'Id no 3' },\r\n              { id: 4, text: 'Id no 4' },\r\n              { id: 5, text: 'Id no 5' },\r\n            ]\r\n            heading: [{\r\n              field: 'id',\r\n              label: 'ID',\r\n              align: 'center'\r\n              }, {\r\n              field: 'text',\r\n              label: 'Description',\r\n              sortable: true,\r\n              bgcolor: (row) => row.id > 3 ? 'green' : 'blue',\r\n            }]\r\n         },\r\n      }\r\n  }\r\n</script>\r\n```\r\n"
+        "general": "Column definition\n\n```ts\ninterface HeadOptions {\n  field: string;\n  label: string;\n  width?: string;\n  align?: 'left' | 'center' | 'right' | string;\n  sortable?: boolean;\n  bgcolor?(row: any): string;\n  fontcolor?(row: any): string;\n}\n```\n\nthe `data` Property must use the same schema like the HeadOption.\neg is `field: 'id'`, the data must have objects with `id` keys.\n",
+        "vue": "tested with Vue 2.6\n\n```html\n<template>\n  <u-tablegen :data.prop=\"data\" :heading.prop=\"heading\">\n    <h1 slot=\"header\">Example Table</h1>\n  </u-tablegen>\n</template>\n\n<script>\n  export default {\n      data: () {\n          return {\n            data: [\n              { id: 1, text: 'Id no 1' },\n              { id: 2, text: 'Id no 2' },\n              { id: 3, text: 'Id no 3' },\n              { id: 4, text: 'Id no 4' },\n              { id: 5, text: 'Id no 5' },\n            ]\n            heading: [{\n              field: 'id',\n              label: 'ID',\n              align: 'center'\n              }, {\n              field: 'text',\n              label: 'Description',\n              sortable: true,\n              bgcolor: (row) => row.id > 3 ? 'green' : 'blue',\n            }]\n         },\n      }\n  }\n</script>\n```\n"
       },
       "props": [
         {
@@ -7009,7 +7017,7 @@
         }
       ],
       "usage": {
-        "default": "```html\r\n<u-tooltip text=\"i am a button with an tooltip\">\r\n  <u-button></u-button>\r\n</u-tooltip>\r\n```\r\n\r\n```html\r\n<u-tooltip content>\r\n  <div slot=\"content\">\r\n    <u-headline>Button with Custom Tooltip</u-headline>\r\n    <u-paragraph>Custom components in tootltip</u-paragraph>\r\n  </div>\r\n  <u-button></u-button>\r\n</u-tooltip>\r\n```\r\n"
+        "default": "```html\n<u-tooltip text=\"i am a button with an tooltip\">\n  <u-button></u-button>\n</u-tooltip>\n```\n\n```html\n<u-tooltip content>\n  <div slot=\"content\">\n    <u-headline>Button with Custom Tooltip</u-headline>\n    <u-paragraph>Custom components in tootltip</u-paragraph>\n  </div>\n  <u-button></u-button>\n</u-tooltip>\n```\n"
       },
       "props": [
         {
