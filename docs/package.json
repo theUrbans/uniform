@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@theurbans/uniformdocs",
   "version": "0.1.23",
   "private": true,
   "scripts": {
