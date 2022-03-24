@@ -1,5 +1,5 @@
 <template>
-  <div class="code" :class="style === 'dark' ? 'dark' : 'light'">
+  <div class="main">
     <button
       class="theme"
       :class="style === 'dark' ? 'buttondark' : 'buttonlight'"
@@ -7,7 +7,9 @@
     >
       {{ style }}
     </button>
-    <slot></slot>
+    <div class="code" :class="style === 'dark' ? 'dark' : 'light'">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -22,11 +24,13 @@ export default {
 </script>
 
 <style scoped>
+.main {
+  position: relative;
+}
 .code {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  position: relative;
   padding: 10px 50px 10px 10px;
   border-radius: 10px;
 }
@@ -37,9 +41,11 @@ export default {
 }
 .light {
   background: #fff;
+  color: #1a202c;
 }
 .dark {
   background: #1a202c;
+  color: #fff;
 }
 .buttonlight {
   color: #1a202c;
