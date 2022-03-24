@@ -1,6 +1,6 @@
 {
   "name": "@theurbans/uniformdocs",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.11.0",
-    "@theurbans/uniform": "^0.1.23",
+    "@theurbans/uniform": "^0.1.24",
     "nuxt": "^2.15.8"
   }
 }
