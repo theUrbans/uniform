@@ -1,4 +1,4 @@
-import { writeFile, appendFile } from 'fs/promises';
+import { writeFile, appendFile, readFile } from 'fs/promises';
 import { stat } from 'fs';
 import { JsonDocsComponent, JsonDocsTag } from '@stencil/core/internal';
 import storyTemplate from './storyTemplate';
@@ -33,6 +33,35 @@ export default class Documentation {
         return line.trim();
       })
       .join('\n');
+  }
+
+  private createExample(code: string): string {
+    let inCodeBlock = false;
+    return code
+      .split('\n')
+      .map((line) => {
+        if (!line) return;
+        if (line.startsWith('```')) {
+          inCodeBlock = !inCodeBlock;
+          return;
+        }
+        if (inCodeBlock) return line;
+        return line.trim();
+      })
+      .join('\n');
+  }
+
+  private async updatePackageJson() {
+    await readFile('./package.json', 'utf8').then((data) => {
+      const json = JSON.parse(data);
+      const { version } = json;
+      readFile('./docs/package.json', 'utf8').then((data) => {
+        const json = JSON.parse(data);
+        json.version = version;
+        json.dependencies['@theurbans/uniform'] = `^${version}`;
+        writeFile('./docs/package.json', JSON.stringify(json));
+      });
+    });
   }
 
   public createReadme() {
@@ -80,6 +109,7 @@ export default class Documentation {
   }
 
   public createDocs() {
+    this.updatePackageJson();
     this.components.map((c, index) => {
       const name = this.getDocTags(c, 'name', c.tag);
       const state = this.getDocTags(c, 'state', '🔵');
@@ -120,7 +150,14 @@ export default class Documentation {
             \n
             ${Object.keys(c.usage).length ? '## Usage\n' : ''}
             ${Object.entries(c.usage)
-              .map(([key, value]) => `### ${key}\n${value}`)
+              .map(([key, value]) => {
+                if (key === 'example')
+                  return `### ${key}
+              <uniform>
+              ${this.createExample(value)}
+              </uniform>`;
+                return `### ${key}\n${value}`;
+              })
               .join('\n')}
             \n
             ${c.props.length > 0 ? '## Properties' : ''}\n
