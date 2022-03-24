@@ -7,7 +7,7 @@ export default theme({
   static: {
     prefix: true
   },
-  plugins: ['~~/plugins/uniform.js'],
+  plugins: ['~~/plugins/uniform.client.js'],
   docs: {
     primaryColor: '#4ca0ff'
   }
