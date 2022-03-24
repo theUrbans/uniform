@@ -4,6 +4,9 @@ export default theme({
   router: {
     base: '/uniform/'
   },
+  static: {
+    prefix: true
+  },
   plugins: ['~~/plugins/uniform.js'],
   docs: {
     primaryColor: '#4ca0ff'
