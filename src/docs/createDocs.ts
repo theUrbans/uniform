@@ -82,6 +82,7 @@ export default class Documentation {
   public createDocs() {
     this.components.map((c, index) => {
       const name = this.getDocTags(c, 'name', c.tag);
+      const state = this.getDocTags(c, 'state', '🔵');
       const desc = this.getDocTags(
         c,
         'description',
@@ -93,9 +94,24 @@ export default class Documentation {
         this.formatCode(`---
                 title: ${c.tag}
                 subtitle: ${desc.replace(/\*/g, '')}
-                category: ${cat}
+                category: ${
+                  cat !== 'Components'
+                    ? cat
+                    : state === '🔵'
+                    ? 'coming soon'
+                    : 'Components'
+                }
                 menuTitle: ${name}
                 position: ${index + 1}
+                badge: ${
+                  state === '🔵'
+                    ? 'planned'
+                    : state === '🔴'
+                    ? 'work in progess'
+                    : state === '🟡'
+                    ? 'beta'
+                    : 'ready'
+                }
                 ---
 
             <badge> ${c.encapsulation} </badge>
