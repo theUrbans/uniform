@@ -29,7 +29,13 @@ export class UCardimage {
   render() {
     return (
       <div>
-        <img src={this.src} width={this.width} height={this.height} />
+        <img
+          src={this.src}
+          style={{
+            width: this.width,
+            height: this.height
+          }}
+        />
       </div>
     );
   }
