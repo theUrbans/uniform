@@ -32,7 +32,7 @@
 
 env:
   githubEmail: wes.urb@gmail.com
-  deployToRepo: theurbans.github.io
+  deployToRepo: uniform
 
 name: Github Pages Astro CI
 
