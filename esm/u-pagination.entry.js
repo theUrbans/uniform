@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, H as Host } from './index-ac0beabc.js';
+import { r as registerInstance, c as createEvent, h, H as Host } from './index-4f6a2e7b.js';
 
 const uPaginationCss = ":host{--tw-bg-opacity:1;background-color:rgba(209, 250, 229, var(--tw-bg-opacity));height:100%}.page{padding:0.25rem}.selected{--tw-bg-opacity:1;background-color:rgba(229, 231, 235, var(--tw-bg-opacity));--tw-text-opacity:1;color:rgba(96, 165, 250, var(--tw-text-opacity))}";
 

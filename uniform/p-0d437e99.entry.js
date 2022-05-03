@@ -1,0 +1,1 @@
+import{r,h as s,H as l}from"./p-831f0635.js";let t=class{constructor(s){r(this,s)}render(){return s(l,null,s("slot",null))}};t.style=":host{display:block}";export{t as u_weekpicker}

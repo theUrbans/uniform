@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uDesktoplayoutCss = ".menu{height:100%}.main{height:100%;overflow-x:auto;overflow-y:hidden}";
 

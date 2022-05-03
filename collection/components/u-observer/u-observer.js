@@ -1,4 +1,4 @@
-import { Component, h, Event, Element, State } from '@stencil/core';
+import { Component, h, Event, Element, State, Prop } from '@stencil/core';
 /**
  * @name Observer
  * @state 🟢
@@ -25,7 +25,8 @@ export class UObserver {
     const div = this.el.shadowRoot.querySelector('div');
     if (div) {
       this.observer = new IntersectionObserver(this.onIntersection, {
-        threshold: [0, 0.8]
+        threshold: this.threshold || [0, 0.8],
+        rootMargin: `${this.margin || 0}px`
       });
       this.observer.observe(div);
     }
@@ -46,6 +47,42 @@ export class UObserver {
   }; }
   static get styleUrls() { return {
     "$": ["u-observer.css"]
+  }; }
+  static get properties() { return {
+    "threshold": {
+      "type": "number",
+      "mutable": false,
+      "complexType": {
+        "original": "number | number[]",
+        "resolved": "number | number[]",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "observer threshold"
+      },
+      "attribute": "threshold",
+      "reflect": false
+    },
+    "margin": {
+      "type": "number",
+      "mutable": false,
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "margin around the element"
+      },
+      "attribute": "margin",
+      "reflect": false
+    }
   }; }
   static get states() { return {
     "isVisible": {}

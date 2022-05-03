@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host, g as getElement } from './index-ac0beabc.js';
+import { r as registerInstance, h, H as Host, g as getElement } from './index-4f6a2e7b.js';
 
 const uGridCss = ":host{display:-ms-grid;display:grid}";
 

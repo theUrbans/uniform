@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, g as getElement } from './index-ac0beabc.js';
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-4f6a2e7b.js';
 
 const uObserverCss = ":host{display:block}";
 
@@ -26,7 +26,8 @@ let UObserver = class {
     const div = this.el.shadowRoot.querySelector('div');
     if (div) {
       this.observer = new IntersectionObserver(this.onIntersection, {
-        threshold: [0, 0.8]
+        threshold: this.threshold || [0, 0.8],
+        rootMargin: `${this.margin || 0}px`
       });
       this.observer.observe(div);
     }

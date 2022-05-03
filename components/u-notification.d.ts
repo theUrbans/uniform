@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UNotification extends Components.UNotification, HTMLElement {}
 export const UNotification: {

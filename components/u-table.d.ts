@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UTable extends Components.UTable, HTMLElement {}
 export const UTable: {

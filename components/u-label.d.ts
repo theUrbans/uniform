@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface ULabel extends Components.ULabel, HTMLElement {}
 export const ULabel: {

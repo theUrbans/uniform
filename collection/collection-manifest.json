@@ -25,6 +25,7 @@
     "./components/u-collapsible/u-collapsible.js",
     "./components/u-collapsible-group/u-collapsible-group.js",
     "./components/u-colorpicker/u-colorpicker.js",
+    "./components/u-container/u-container.js",
     "./components/u-datepicker/u-datepicker.js",
     "./components/u-datetimepicker/u-datetimepicker.js",
     "./components/u-desktoplayout/u-desktoplayout.js",

@@ -1,1 +1,0 @@
-import{r,h as s}from"./p-86e9747e.js";let t=class{constructor(s){r(this,s)}render(){return s("slot",null)}};export{t as u_cardbody}

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uCardfooterCss = "div.overlap{--tw-bg-opacity:1;background-color:rgba(0, 0, 0, var(--tw-bg-opacity));border-top-width:1px;display:block;height:auto;opacity:0.5;position:absolute;bottom:0px;width:25rem;z-index:1;border-top:solid black 1px}div{padding-left:0.5rem;padding-right:0.5rem}";
 

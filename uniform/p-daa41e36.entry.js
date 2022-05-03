@@ -1,1 +1,0 @@
-import{r as s,h as r,H as l}from"./p-86e9747e.js";let t=class{constructor(r){s(this,r)}render(){return r(l,null,r("slot",null))}};t.style=":host{display:block}";export{t as u_cardselect}

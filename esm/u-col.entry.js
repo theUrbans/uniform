@@ -1,7 +1,21 @@
-import { r as registerInstance, h, H as Host } from './index-ac0beabc.js';
+import { r as registerInstance, h, H as Host, g as getElement } from './index-4f6a2e7b.js';
 
-const uColCss = ":host{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;width:100%}";
+const uColCss = "";
 
+var Width;
+(function (Width) {
+  Width["sm"] = "auto";
+  Width["md"] = "750px";
+  Width["lg"] = "970px";
+  Width["xl"] = "1170px";
+})(Width || (Width = {}));
+var Breakpoint;
+(function (Breakpoint) {
+  Breakpoint[Breakpoint["sm"] = 576] = "sm";
+  Breakpoint[Breakpoint["md"] = 768] = "md";
+  Breakpoint[Breakpoint["lg"] = 992] = "lg";
+  Breakpoint[Breakpoint["xl"] = 1200] = "xl";
+})(Breakpoint || (Breakpoint = {}));
 let UCol = class {
   constructor(hostRef) {
     registerInstance(this, hostRef);
@@ -33,17 +47,66 @@ let UCol = class {
      * use with w-grid to set area
      */
     this.area = '';
+    this.bp = Breakpoint.sm;
+  }
+  setStyle() {
+    return {
+      gridColumnStart: this.start ? this.start.toString() : '',
+      gridColumnEnd: this.end ? this.end.toString() : ''
+    };
+  }
+  onWindowResize() {
+    const width = window.innerWidth;
+    this.setBreakpoint(width);
+    this.calculatePosition();
+    console.log(Breakpoint[this.bp]);
+  }
+  setBreakpoint(width) {
+    if (width < Breakpoint.md)
+      this.bp = Breakpoint.sm;
+    else if (width < Breakpoint.lg)
+      this.bp = Breakpoint.md;
+    else if (width < Breakpoint.xl)
+      this.bp = Breakpoint.lg;
+    else if (width >= Breakpoint.xl)
+      this.bp = Breakpoint.xl;
+    // console.log({ width, bp: this.bp });
+  }
+  calculatePosition() {
+    // const gutter = this.el.parentElement.attributes['gutter'];
+    // let cols = 12;ack
+    // if (gutter) cols = parseInt(gutter.value);
+    switch (this.bp) {
+      case Breakpoint.sm:
+        this.colSize = this.sm;
+        break;
+      case Breakpoint.md:
+        this.colSize = this.md || this.sm;
+        break;
+      case Breakpoint.lg:
+        this.colSize = this.lg || this.md || this.sm;
+        break;
+      case Breakpoint.xl:
+        this.colSize = this.xl || this.lg || this.md || this.sm;
+        break;
+      default:
+        this.colSize = this.size;
+        break;
+    }
+  }
+  componentWillRender() {
+    this.setBreakpoint(window.innerWidth);
+    this.calculatePosition();
   }
   render() {
-    return (h(Host, { class: "col", style: {
-        alignItems: this.align,
-        justifyContent: this.justify,
-        flexWrap: this.wrap,
-        gap: this.gap,
-        padding: `${this.padding}`,
-        gridArea: this.area
-      } }, h("slot", null)));
+    return (h(Host
+    // class={this.setClasses().join(' ')}
+    , {
+      // class={this.setClasses().join(' ')}
+      style: Object.assign(Object.assign({ width: this.width }, this.setStyle()), { gridColumn: `span ${this.colSize} / span ${this.colSize}` })
+    }, this.colSize, h("slot", null)));
   }
+  get el() { return getElement(this); }
 };
 UCol.style = uColCss;
 

@@ -1,6 +1,6 @@
 /* Uniform custom elements */
 
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 /**
  * Used to manually set the base path where assets can be found.

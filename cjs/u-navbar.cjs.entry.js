@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uNavbarCss = ":host{--tw-bg-opacity:1;background-color:rgba(75, 85, 99, var(--tw-bg-opacity));width:100%}.top{padding:1rem;position:absolute;top:0px;width:100%}.bottom{padding:1rem;position:absolute;bottom:0px;width:100%}.fixed{position:fixed}";
 

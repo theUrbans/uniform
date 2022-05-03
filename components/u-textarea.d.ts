@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UTextarea extends Components.UTextarea, HTMLElement {}
 export const UTextarea: {

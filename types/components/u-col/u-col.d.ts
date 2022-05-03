@@ -1,3 +1,15 @@
+declare enum Width {
+  sm = "auto",
+  md = "750px",
+  lg = "970px",
+  xl = "1170px"
+}
+declare enum Breakpoint {
+  sm = 576,
+  md = 768,
+  lg = 992,
+  xl = 1200
+}
 /**
  * @name Column
  * @state 🟢
@@ -5,6 +17,7 @@
  * @categorie Layout
  */
 export declare class UCol {
+  el: HTMLElement;
   /**
    * flex align-items: start | center | end | space-between | space-around | space-evenly
    */
@@ -33,5 +46,32 @@ export declare class UCol {
    * use with w-grid to set area
    */
   area?: string;
+  /**
+   * size in small (≥768px)
+   */
+  sm?: number;
+  /**
+   * size in medium (≥992px)
+   */
+  md?: number;
+  /**
+   * size in large (≥1200px)
+   */
+  lg?: number;
+  /**
+   * size in extra large (≥1200px)
+   */
+  xl?: number;
+  start?: number;
+  end?: number;
+  width: Width;
+  bp: Breakpoint;
+  colSize: number | 'auto';
+  private setStyle;
+  onWindowResize(): void;
+  private setBreakpoint;
+  private calculatePosition;
+  componentWillRender(): void;
   render(): any;
 }
+export {};

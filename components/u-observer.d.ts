@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UObserver extends Components.UObserver, HTMLElement {}
 export const UObserver: {

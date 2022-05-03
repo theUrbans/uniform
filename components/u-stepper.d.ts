@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UStepper extends Components.UStepper, HTMLElement {}
 export const UStepper: {

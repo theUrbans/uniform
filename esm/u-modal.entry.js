@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, g as getElement } from './index-ac0beabc.js';
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-4f6a2e7b.js';
 
 const uModalDesktopCss = ".wrapper{--tw-bg-opacity:1;background-color:rgba(34, 34, 34, var(--tw-bg-opacity));--tw-bg-opacity:0.8;display:none;height:100vh;position:absolute;top:0px;left:0px;width:100%;z-index:9997}.visible{display:-ms-grid;display:grid;place-items:center}.modal{position:absolute;width:auto;max-width:80%;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;z-index:9998;-webkit-animation:0.5s fadeIn;animation:0.5s fadeIn}.close{--tw-bg-opacity:1;background-color:rgba(255, 255, 255, var(--tw-bg-opacity));border-radius:9999px;font-weight:700;height:1.5rem;text-align:center;vertical-align:middle;width:1.5rem;border:none;cursor:pointer;z-index:9998}.close:hover{--tw-bg-opacity:1;background-color:rgba(239, 68, 68, var(--tw-bg-opacity));--tw-text-opacity:1;color:rgba(255, 255, 255, var(--tw-text-opacity))}.backdrop__close{position:absolute;top:12px;right:12px}.header{--tw-bg-opacity:1;background-color:rgba(107, 114, 128, var(--tw-bg-opacity));border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;height:2.5rem;padding-left:0.5rem;padding-right:0.5rem;--tw-text-opacity:1;color:rgba(250, 250, 250, var(--tw-text-opacity));font-size:1.5em;font-weight:600}.content{height:100%;position:relative;background:#fff;z-index:9999;overflow-x:auto}.resizeable{overflow:hidden;resize:both}@-webkit-keyframes fadeIn{0%{opacity:0;-webkit-transform:translateY(50px) scale(0.9);transform:translateY(50px) scale(0.9)}100%{opacity:1}}@keyframes fadeIn{0%{opacity:0;-webkit-transform:translateY(50px) scale(0.9);transform:translateY(50px) scale(0.9)}100%{opacity:1}}";
 
@@ -97,6 +97,7 @@ let UModal = class {
   showModalHandler(e) {
     const { name, params } = e.detail;
     this.beforeOpen.emit(params);
+    console.log('show modal', name);
     this.showModal(name);
   }
   closeModalHandler(e) {

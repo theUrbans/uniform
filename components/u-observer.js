@@ -28,7 +28,8 @@ let UObserver$1 = class extends HTMLElement {
     const div = this.el.shadowRoot.querySelector('div');
     if (div) {
       this.observer = new IntersectionObserver(this.onIntersection, {
-        threshold: [0, 0.8]
+        threshold: this.threshold || [0, 0.8],
+        rootMargin: `${this.margin || 0}px`
       });
       this.observer.observe(div);
     }
@@ -45,6 +46,8 @@ let UObserver$1 = class extends HTMLElement {
   static get style() { return uObserverCss; }
 };
 UObserver$1 = /*@__PURE__*/ proxyCustomElement(UObserver$1, [1, "u-observer", {
+    "threshold": [2],
+    "margin": [2],
     "isVisible": [32]
   }]);
 function defineCustomElement$1() {

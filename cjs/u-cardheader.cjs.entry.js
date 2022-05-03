@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uCardheaderCss = ":host{border-top-left-radius:0.75rem;border-top-right-radius:0.75rem;-webkit-box-sizing:border-box;box-sizing:border-box;display:block;width:100%}div.overlap{position:absolute;z-index:1}div{margin:0px;padding:0.5rem}";
 

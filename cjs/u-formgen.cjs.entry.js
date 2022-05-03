@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uFormgenCss = "form{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;-webkit-flex-direction:column;flex-direction:column;max-width:-webkit-max-content;max-width:-moz-max-content;max-width:max-content;grid-gap:1rem;gap:1rem}";
 

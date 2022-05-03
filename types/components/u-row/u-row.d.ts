@@ -29,5 +29,14 @@ export declare class URow {
    * flex width behaviour
    */
   width: 'full' | 'content' | 'auto';
+  /**
+   * should row be responsive?
+   */
+  container?: boolean;
+  /**
+   * how many columns are in the row?
+   */
+  gutter?: number;
+  private setStyle;
   render(): any;
 }

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uBreadcrumbCss = "ul{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;list-style-type:none;margin:0px;max-width:-webkit-max-content;max-width:-moz-max-content;max-width:max-content;padding:0px;grid-gap:0.5rem;gap:0.5rem}.last{font-size:1.25rem;line-height:1.75rem}.separator{font-weight:800;font-size:1.25rem;line-height:1.75rem;--tw-text-opacity:1;color:rgba(156, 163, 175, var(--tw-text-opacity));vertical-align:middle}";
 

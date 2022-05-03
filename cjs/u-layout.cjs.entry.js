@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uLayoutCss = ":host{display:block}";
 
@@ -25,7 +25,7 @@ let ULayout = class {
       this.mobilelayout.showOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('show-modal', {
+      window.dispatchEvent(new CustomEvent('show-modal', {
         detail: { name: 'uniform-layout-option' }
       }));
     }
@@ -36,13 +36,17 @@ let ULayout = class {
       this.mobilelayout.disableOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('close-modal', {
+      console.log('close option');
+      window.dispatchEvent(new CustomEvent('close-modal', {
         detail: { name: 'uniform-layout-option' }
       }));
     }
   }
   render() {
-    return (index.h(index.Host, null, this.mode === 'mobile' ? (index.h("u-mobilelayout", { ref: (mobile) => (this.mobilelayout = mobile) }, index.h("div", { slot: "menu" }, index.h("slot", { name: "menu" })), index.h("div", { slot: "main" }, index.h("slot", { name: "main" })), index.h("div", { slot: "option" }, index.h("slot", { name: "option" })))) : (index.h("u-desktoplayout", null, index.h("div", { slot: "menu" }, index.h("slot", { name: "menu" })), index.h("div", { slot: "main" }, index.h("slot", { name: "main" })), index.h("u-modal", { name: "uniform-layout-option" }, index.h("slot", { name: "option" }))))));
+    return (index.h(index.Host, null, this.mode === 'mobile' ? (index.h("u-mobilelayout", { ref: (mobile) => (this.mobilelayout = mobile) }, index.h("div", { slot: "menu" }, index.h("slot", { name: "menu" })), index.h("div", { slot: "main" }, index.h("slot", { name: "main" })), index.h("div", { slot: "option" }, index.h("slot", { name: "option" })))) : ([
+      index.h("u-desktoplayout", null, index.h("div", { slot: "menu" }, index.h("slot", { name: "menu" })), index.h("div", { slot: "main" }, index.h("slot", { name: "main" }))),
+      index.h("u-modal", { name: "uniform-layout-option" }, index.h("slot", { name: "option-header", slot: "header" }), index.h("slot", { name: "option-body", slot: "body" }))
+    ])));
   }
 };
 ULayout.style = uLayoutCss;

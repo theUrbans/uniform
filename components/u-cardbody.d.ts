@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UCardbody extends Components.UCardbody, HTMLElement {}
 export const UCardbody: {

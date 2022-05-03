@@ -21,7 +21,7 @@ let UIcon$1 = class extends HTMLElement {
     /**
      * select the design of the icon wrapper
      */
-    this.design = 'error';
+    this.design = 'primary';
     /**
      * if true, svg color matches color with design
      */

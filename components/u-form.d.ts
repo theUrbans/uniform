@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UForm extends Components.UForm, HTMLElement {}
 export const UForm: {

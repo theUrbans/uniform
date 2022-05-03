@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UToggle extends Components.UToggle, HTMLElement {}
 export const UToggle: {

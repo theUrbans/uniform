@@ -99,6 +99,7 @@ let UModal = class extends HTMLElement {
   showModalHandler(e) {
     const { name, params } = e.detail;
     this.beforeOpen.emit(params);
+    console.log('show modal', name);
     this.showModal(name);
   }
   closeModalHandler(e) {
@@ -183,7 +184,7 @@ UModal = /*@__PURE__*/ proxyCustomElement(UModal, [33, "u-modal", {
     "dragoffset": [32],
     "showModal": [64],
     "closeModal": [64]
-  }, [[16, "show-modal", "showModalHandler"], [16, "close-modal", "closeModalHandler"], [0, "beforeOpen", "setParams"]]]);
+  }, [[8, "show-modal", "showModalHandler"], [8, "close-modal", "closeModalHandler"], [0, "beforeOpen", "setParams"]]]);
 function defineCustomElement() {
   if (typeof customElements === "undefined") {
     return;

@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UPopup extends Components.UPopup, HTMLElement {}
 export const UPopup: {

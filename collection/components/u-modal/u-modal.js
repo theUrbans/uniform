@@ -98,6 +98,7 @@ export class UModal {
   showModalHandler(e) {
     const { name, params } = e.detail;
     this.beforeOpen.emit(params);
+    console.log('show modal', name);
     this.showModal(name);
   }
   closeModalHandler(e) {
@@ -442,13 +443,13 @@ export class UModal {
   static get listeners() { return [{
       "name": "show-modal",
       "method": "showModalHandler",
-      "target": "body",
+      "target": "window",
       "capture": false,
       "passive": false
     }, {
       "name": "close-modal",
       "method": "closeModalHandler",
-      "target": "body",
+      "target": "window",
       "capture": false,
       "passive": false
     }, {

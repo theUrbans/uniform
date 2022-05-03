@@ -22,7 +22,7 @@ export class UIcon {
     /**
      * select the design of the icon wrapper
      */
-    this.design = 'error';
+    this.design = 'primary';
     /**
      * if true, svg color matches color with design
      */
@@ -127,7 +127,7 @@ export class UIcon {
       },
       "attribute": "design",
       "reflect": false,
-      "defaultValue": "'error'"
+      "defaultValue": "'primary'"
     },
     "udpateSvgColor": {
       "type": "boolean",

@@ -1,4 +1,4 @@
-import type { Components, JSX } from "../types/global";
+import type { Components, JSX } from "../types/components";
 
 interface UCollapsibleGroup extends Components.UCollapsibleGroup, HTMLElement {}
 export const UCollapsibleGroup: {

@@ -2,7 +2,7 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-const index = require('./index-456fcfb4.js');
+const index = require('./index-6d55ac51.js');
 
 const uRowCss = ".sc-u-row-h{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;-webkit-flex-direction:row;flex-direction:row;width:100%}";
 
@@ -34,19 +34,22 @@ let URow = class {
      */
     this.width = 'full';
   }
+  setStyle() {
+    if (this.container) {
+      return {
+        display: 'grid',
+        gridTemplateColumns: `repeat( ${this.gutter}, minmax(0, 1fr))`
+      };
+    }
+    return {};
+  }
   render() {
-    return (index.h(index.Host, { class: "row", style: {
-        alignItems: this.align,
-        justifyContent: this.justify,
-        flexWrap: this.wrap,
-        gap: this.gap,
-        padding: `${this.padding}`,
-        width: this.width === 'full'
-          ? '100%'
-          : this.width === 'content'
-            ? 'fit-content'
-            : 'auto'
-      } }, index.h("slot", null)));
+    return (index.h(index.Host, { style: Object.assign(Object.assign({}, this.setStyle()), {
+        // alignItems: this.align,
+        // justifyContent: this.justify,
+        // flexWrap: this.wrap,
+        gap: this.gap, padding: `${this.padding}`
+      }) }, index.h("slot", null)));
   }
 };
 URow.style = uRowCss;

@@ -27,7 +27,7 @@ let ULayout$1 = class extends HTMLElement {
       this.mobilelayout.showOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('show-modal', {
+      window.dispatchEvent(new CustomEvent('show-modal', {
         detail: { name: 'uniform-layout-option' }
       }));
     }
@@ -38,13 +38,17 @@ let ULayout$1 = class extends HTMLElement {
       this.mobilelayout.disableOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('close-modal', {
+      console.log('close option');
+      window.dispatchEvent(new CustomEvent('close-modal', {
         detail: { name: 'uniform-layout-option' }
       }));
     }
   }
   render() {
-    return (h(Host, null, this.mode === 'mobile' ? (h("u-mobilelayout", { ref: (mobile) => (this.mobilelayout = mobile) }, h("div", { slot: "menu" }, h("slot", { name: "menu" })), h("div", { slot: "main" }, h("slot", { name: "main" })), h("div", { slot: "option" }, h("slot", { name: "option" })))) : (h("u-desktoplayout", null, h("div", { slot: "menu" }, h("slot", { name: "menu" })), h("div", { slot: "main" }, h("slot", { name: "main" })), h("u-modal", { name: "uniform-layout-option" }, h("slot", { name: "option" }))))));
+    return (h(Host, null, this.mode === 'mobile' ? (h("u-mobilelayout", { ref: (mobile) => (this.mobilelayout = mobile) }, h("div", { slot: "menu" }, h("slot", { name: "menu" })), h("div", { slot: "main" }, h("slot", { name: "main" })), h("div", { slot: "option" }, h("slot", { name: "option" })))) : ([
+      h("u-desktoplayout", null, h("div", { slot: "menu" }, h("slot", { name: "menu" })), h("div", { slot: "main" }, h("slot", { name: "main" }))),
+      h("u-modal", { name: "uniform-layout-option" }, h("slot", { name: "option-header", slot: "header" }), h("slot", { name: "option-body", slot: "body" }))
+    ])));
   }
   static get style() { return uLayoutCss; }
 };

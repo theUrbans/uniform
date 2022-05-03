@@ -24,7 +24,7 @@ export class ULayout {
       this.mobilelayout.showOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('show-modal', {
+      window.dispatchEvent(new CustomEvent('show-modal', {
         detail: { name: 'uniform-layout-option' }
       }));
     }
@@ -35,7 +35,8 @@ export class ULayout {
       this.mobilelayout.disableOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(new CustomEvent('close-modal', {
+      console.log('close option');
+      window.dispatchEvent(new CustomEvent('close-modal', {
         detail: { name: 'uniform-layout-option' }
       }));
     }
@@ -47,13 +48,16 @@ export class ULayout {
       h("div", { slot: "main" },
         h("slot", { name: "main" })),
       h("div", { slot: "option" },
-        h("slot", { name: "option" })))) : (h("u-desktoplayout", null,
-      h("div", { slot: "menu" },
-        h("slot", { name: "menu" })),
-      h("div", { slot: "main" },
-        h("slot", { name: "main" })),
+        h("slot", { name: "option" })))) : ([
+      h("u-desktoplayout", null,
+        h("div", { slot: "menu" },
+          h("slot", { name: "menu" })),
+        h("div", { slot: "main" },
+          h("slot", { name: "main" }))),
       h("u-modal", { name: "uniform-layout-option" },
-        h("slot", { name: "option" }))))));
+        h("slot", { name: "option-header", slot: "header" }),
+        h("slot", { name: "option-body", slot: "body" }))
+    ])));
   }
   static get is() { return "u-layout"; }
   static get encapsulation() { return "shadow"; }

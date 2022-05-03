@@ -7,6 +7,14 @@ import { EventEmitter } from '../../stencil-public-runtime';
 export declare class UObserver {
   el: HTMLElement;
   /**
+   * observer threshold
+   */
+  threshold?: number | number[];
+  /**
+   * margin around the element
+   */
+  margin?: number;
+  /**
    * emit `visible` event, when element get visible in viewport
    */
   visible: EventEmitter<void>;

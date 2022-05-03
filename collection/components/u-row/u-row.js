@@ -32,19 +32,21 @@ export class URow {
      */
     this.width = 'full';
   }
+  setStyle() {
+    if (this.container) {
+      return {
+        display: 'grid',
+        gridTemplateColumns: `repeat( ${this.gutter}, minmax(0, 1fr))`
+      };
+    }
+    return {};
+  }
   render() {
-    return (h(Host, { class: "row", style: {
-        alignItems: this.align,
-        justifyContent: this.justify,
-        flexWrap: this.wrap,
-        gap: this.gap,
-        padding: `${this.padding}`,
-        width: this.width === 'full'
-          ? '100%'
-          : this.width === 'content'
-            ? 'fit-content'
-            : 'auto'
-      } },
+    return (h(Host, { style: Object.assign(Object.assign({}, this.setStyle()), { 
+        // alignItems: this.align,
+        // justifyContent: this.justify,
+        // flexWrap: this.wrap,
+        gap: this.gap, padding: `${this.padding}` }) },
       h("slot", null)));
   }
   static get is() { return "u-row"; }
@@ -163,6 +165,40 @@ export class URow {
       "attribute": "width",
       "reflect": false,
       "defaultValue": "'full'"
+    },
+    "container": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "should row be responsive?"
+      },
+      "attribute": "container",
+      "reflect": false
+    },
+    "gutter": {
+      "type": "number",
+      "mutable": false,
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "required": false,
+      "optional": true,
+      "docs": {
+        "tags": [],
+        "text": "how many columns are in the row?"
+      },
+      "attribute": "gutter",
+      "reflect": true
     }
   }; }
 }
