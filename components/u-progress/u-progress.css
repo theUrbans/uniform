@@ -1,0 +1,15 @@
+.progress {
+  @apply bg-red-300 rounded-xl duration-200 transition-all;
+}
+
+.frame {
+  @apply rounded-xl;
+}
+
+.progress div {
+  @apply whitespace-nowrap px-5 w-full h-full grid place-content-center;
+}
+
+.border {
+  @apply border border-gray-400 border-solid bg-white;
+}

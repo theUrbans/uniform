@@ -1,1 +1,0 @@
-import{r as t,h as s}from"./p-831f0635.js";let r=class{constructor(s){t(this,s),this.size="1rem",this.weight="normal",this.color="#fff"}render(){return s("span",{style:{fontSize:this.size,fontWeight:this.weight,color:this.color,textTransform:this.transform}},s("slot",null))}};r.style=":host{display:block}";export{r as u_text}

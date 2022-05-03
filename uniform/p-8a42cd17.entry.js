@@ -1,1 +1,0 @@
-import{r as s,h as t}from"./p-831f0635.js";let i=class{constructor(t){s(this,t)}render(){return t("div",null,t("img",{src:this.src,style:{width:this.width,height:this.height}}))}};i.style="img{display:block}";export{i as u_cardimage}

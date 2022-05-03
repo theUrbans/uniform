@@ -1,0 +1,39 @@
+{
+  "defaultTheme": "light",
+  "themes": [
+    {
+      "name": "light",
+      "colors": []
+    },
+    {
+      "name": "dark",
+      "colors": []
+    }
+  ],
+  "font": ["Roboto"],
+  "spacing": {
+    "none": "0",
+    "s": "6px",
+    "m": "9px",
+    "l": "12px",
+    "xl": "18px"
+  },
+  "breakpoints": {
+    "xs": "0",
+    "sm": "576px",
+    "md": "768px",
+    "lg": "992px",
+    "xl": "1200px"
+  },
+  "grid": {
+    "xs": 12,
+    "sm": 10,
+    "md": 8,
+    "lg": 6,
+    "xl": 4
+  },
+  "border": {
+    "style": "default",
+    "width": "2px"
+  }
+}

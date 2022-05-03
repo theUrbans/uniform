@@ -1,1 +1,0 @@
-import{r,h as o,H as s}from"./p-831f0635.js";let t=class{constructor(o){r(this,o)}render(){return o(s,null,o("input",{type:"color"}))}};t.style=":host{display:block}";export{t as u_colorpicker}

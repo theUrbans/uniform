@@ -1,0 +1,128 @@
+:host {
+  @apply cursor-pointer block w-full;
+}
+* {
+  outline: none;
+}
+.-z-1 {
+  z-index: -1;
+}
+.wrapper {
+  @apply relative px-2 border-2 rounded-xl hover:shadow-lg flex items-center border-gray-300;
+}
+.input {
+  @apply inline-block px-2 py-2 border-0 focus:outline-none bg-transparent flex-grow w-full placeholder-transparent;
+}
+.small {
+  @apply py-0 font-normal text-sm border border-solid pr-4;
+}
+.top-small input ~ label,
+.top-small input:not(:placeholder-shown) ~ label {
+  @apply transform scale-80 -translate-y-3 z-0 ml-0.5 px-1 py-0;
+}
+.medium {
+  @apply py-0 font-semibold text-base border-2 border-solid pr-5;
+}
+.top-medium input ~ label,
+.top-medium input:not(:placeholder-shown) ~ label {
+  @apply transform scale-80 -translate-y-3.5 z-0 ml-0.5 px-1 py-0;
+}
+.large {
+  @apply font-semibold text-lg border-3 border-solid pr-6;
+}
+.top-large input ~ label,
+.top-large input:not(:placeholder-shown) ~ label {
+  @apply transform scale-80 -translate-y-4 z-0 ml-1 px-1 py-0;
+}
+.text-small {
+  @apply text-sm;
+}
+.text-medium {
+  @apply text-base;
+}
+.text-large {
+  @apply text-lg;
+}
+.help-text {
+  @apply absolute top-11 left-2 font-semibold text-red-500;
+}
+.label {
+  @apply absolute top-0 py-2 tracking-wide z-10 duration-300 pointer-events-none select-none rounded-t-lg;
+}
+.label-small {
+  @apply font-normal text-sm;
+}
+.label-medium {
+  @apply font-semibold text-base;
+}
+.label-large {
+  @apply font-semibold text-lg;
+}
+.reset {
+  @apply absolute right-1 transform top-2/4 -translate-y-1/2 cursor-pointer flex flex-row;
+}
+.error {
+  @apply error;
+}
+.success {
+  @apply success;
+}
+.warning {
+  @apply warning;
+}
+.secondary {
+  @apply secondary;
+}
+.primary {
+  @apply primary;
+}
+
+.disabled {
+  @apply !cursor-not-allowed opacity-50;
+}
+.chevron {
+  @apply duration-300;
+}
+.turn180 {
+  @apply transform -rotate-180 duration-300;
+}
+.options {
+  @apply absolute border-radius bg-gray-400 left-0 w-full flex flex-col overflow-y-auto;
+  z-index: 1000;
+}
+.hovered {
+  @apply !bg-gray-500 text-gray-100;
+}
+.optionsTop {
+  @apply mb-2 bottom-full z-50;
+}
+.optionsBottom {
+  @apply mt-1 top-full;
+}
+.option {
+  @apply px-4 py-1 cursor-pointer;
+}
+.option-error {
+  @apply error error-fill;
+}
+.option-success {
+  @apply success success-fill;
+}
+.option-warning {
+  @apply warning warning-fill;
+}
+.option-secondary {
+  @apply secondary secondary-fill;
+}
+.option-primary {
+  @apply primary primary-fill;
+}
+.selected {
+  @apply filter hue-rotate-180 invert-[0.7] bg-light-800 duration-300;
+}
+.selected-option {
+  @apply bg-gray-100 dark:bg-dark-50 text-gray-500 dark:text-gray-200 m-0.5 p-0.5 rounded-md;
+}
+.selected-rm {
+  @apply text-red-500 dark:text-red-200 cursor-pointer;
+}

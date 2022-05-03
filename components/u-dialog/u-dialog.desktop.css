@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+.body {
+  @apply p-2;
+}
+.actions {
+  @apply flex flex-row justify-between p-2;
+}

@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  margin-top: 0.75rem;
+}
+.label {
+  @apply absolute px-1 -top-3.5 left-4 bg-white text-gray-500 dark:bg-dark-50 rounded-t-lg text-base tracking-wide;
+}
+.vertical {
+  @apply flex flex-col gap-3;
+}
+.horizontal {
+  @apply flex flex-row gap-3;
+}
+.wrapper {
+  @apply px-2 py-3 border-2 border-solid border-gray-300 border-radius relative;
+}
+.container {
+  @apply relative pl-8 cursor-pointer select-none text-gray-500;
+}
+.container input {
+  @apply absolute opacity-0 cursor-pointer h-0 w-0;
+}
+.checkmark {
+  @apply absolute top-0 left-0 w-6 h-6 bg-gray-200 rounded-full border-2 border-solid border-transparent;
+}
+.hovered {
+  @apply bg-gray-300  border-2 border-solid border-gray-400;
+}
+input:checked ~ .checkmark {
+  @apply bg-blue-500;
+}
+.checkmark:after {
+  @apply absolute hidden;
+  content: '';
+}
+input:checked ~ .checkmark {
+  @apply after:block;
+}
+.checkmark:after {
+  @apply top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full;
+}

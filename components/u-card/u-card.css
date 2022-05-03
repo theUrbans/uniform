@@ -1,0 +1,3 @@
+.card {
+  @apply border border-radius overflow-hidden relative;
+}

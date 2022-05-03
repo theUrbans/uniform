@@ -1,0 +1,37 @@
+.x {
+  @apply flex gap-2;
+}
+.y {
+  @apply flex flex-col gap-2;
+}
+ul {
+  @apply list-none m-0 p-0 border-radius bg-blue-gray-600 text-light-800;
+}
+.contentwidth {
+  @apply max-w-max;
+}
+.padding {
+  @apply !p-3;
+}
+li {
+  @apply py-2 px-4;
+}
+.item {
+  @apply flex gap-2 text-xl items-center hover:bg-blue-gray-500 cursor-pointer;
+}
+.start {
+  @apply rounded-t-lg;
+}
+.middle {
+  @apply rounded-none;
+}
+.end {
+  @apply rounded-b-lg;
+}
+.rounded {
+  @apply rounded-lg;
+}
+svg,
+i {
+  @apply w-6 h-6;
+}

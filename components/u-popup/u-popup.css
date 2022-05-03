@@ -1,0 +1,36 @@
+.wrapper::before {
+  content: '';
+  @apply relative z-10;
+  height: 200px;
+  width: 200px;
+  background: #000;
+}
+.top {
+  bottom: 110%;
+}
+.bottom {
+  top: 110%;
+}
+/* .left {
+  top: 50%;
+  right: 110%;
+  transform: translateY(-50%);
+}
+.right {
+  top: 50%;
+  left: 110%;
+  transform: translateY(-50%);
+} */
+.top.start {
+  left: 0;
+}
+.center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.end {
+  right: 0;
+}
+.popup {
+  @apply w-50 h-12 bg-gray-600 absolute;
+}
