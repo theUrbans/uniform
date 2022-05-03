@@ -1,4 +1,26 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  State,
+  Element,
+  Listen
+} from '@stencil/core';
+
+enum Width {
+  sm = 'auto',
+  md = '750px',
+  lg = '970px',
+  xl = '1170px'
+}
+
+enum Breakpoint {
+  sm = 576,
+  md = 768,
+  lg = 992,
+  xl = 1200
+}
 
 /**
  * @name Column
@@ -8,10 +30,12 @@ import { Component, Host, h, Prop } from '@stencil/core';
  */
 @Component({
   tag: 'u-col',
-  styleUrl: 'u-col.css',
+  styleUrl: 'u-col.scss',
   shadow: true
 })
 export class UCol {
+  @Element() el: HTMLElement;
+
   /**
    * flex align-items: start | center | end | space-between | space-around | space-evenly
    */
@@ -53,19 +77,103 @@ export class UCol {
    */
   @Prop() area?: string = '';
 
+  /**
+   * size in small (≥768px)
+   */
+  @Prop() sm?: number;
+
+  /**
+   * size in medium (≥992px)
+   */
+  @Prop() md?: number;
+
+  /**
+   * size in large (≥1200px)
+   */
+  @Prop() lg?: number;
+
+  /**
+   * size in extra large (≥1200px)
+   */
+  @Prop() xl?: number;
+
+  @Prop() start?: number;
+
+  @Prop() end?: number;
+
+  @State() width: Width;
+
+  @State() bp: Breakpoint = Breakpoint.sm;
+
+  @State() colSize: number | 'auto';
+
+  private setStyle() {
+    return {
+      gridColumnStart: this.start ? this.start.toString() : '',
+      gridColumnEnd: this.end ? this.end.toString() : ''
+    };
+  }
+
+  @Listen('resize', { target: 'window' }) onWindowResize() {
+    const width = window.innerWidth;
+    this.setBreakpoint(width);
+    this.calculatePosition();
+    console.log(Breakpoint[this.bp]);
+  }
+
+  private setBreakpoint(width: number) {
+    if (width < Breakpoint.md) this.bp = Breakpoint.sm;
+    else if (width < Breakpoint.lg) this.bp = Breakpoint.md;
+    else if (width < Breakpoint.xl) this.bp = Breakpoint.lg;
+    else if (width >= Breakpoint.xl) this.bp = Breakpoint.xl;
+    // console.log({ width, bp: this.bp });
+  }
+
+  private calculatePosition() {
+    // const gutter = this.el.parentElement.attributes['gutter'];
+    // let cols = 12;ack
+    // if (gutter) cols = parseInt(gutter.value);
+    switch (this.bp) {
+      case Breakpoint.sm:
+        this.colSize = this.sm;
+        break;
+      case Breakpoint.md:
+        this.colSize = this.md || this.sm;
+        break;
+      case Breakpoint.lg:
+        this.colSize = this.lg || this.md || this.sm;
+        break;
+      case Breakpoint.xl:
+        this.colSize = this.xl || this.lg || this.md || this.sm;
+        break;
+      default:
+        this.colSize = this.size;
+        break;
+    }
+  }
+
+  componentWillRender() {
+    this.setBreakpoint(window.innerWidth);
+    this.calculatePosition();
+  }
+
   render() {
     return (
       <Host
-        class="col"
+        // class={this.setClasses().join(' ')}
         style={{
-          alignItems: this.align,
-          justifyContent: this.justify,
-          flexWrap: this.wrap,
-          gap: this.gap,
-          padding: `${this.padding}`,
-          gridArea: this.area
+          width: this.width,
+          ...this.setStyle(),
+          gridColumn: `span ${this.colSize} / span ${this.colSize}`
+          // alignItems: this.align,
+          // justifyContent: this.justify,
+          // flexWrap: this.wrap,
+          // gap: this.gap
+          // padding: `${this.padding}`,
+          // gridArea: this.area,
         }}
       >
+        {this.colSize}
         <slot></slot>
       </Host>
     );

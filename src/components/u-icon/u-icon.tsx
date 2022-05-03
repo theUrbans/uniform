@@ -33,7 +33,7 @@ export class UIcon {
    * select the design of the icon wrapper
    */
   @Prop() design: 'error' | 'success' | 'warning' | 'primary' | 'secondary' =
-    'error';
+    'primary';
 
   /**
    * if true, svg color matches color with design

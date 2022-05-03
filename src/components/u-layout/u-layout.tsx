@@ -34,7 +34,7 @@ export class ULayout {
       this.mobilelayout.showOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(
+      window.dispatchEvent(
         new CustomEvent('show-modal', {
           detail: { name: 'uniform-layout-option' }
         })
@@ -48,7 +48,8 @@ export class ULayout {
       this.mobilelayout.disableOption();
     }
     if (this.mode === 'desktop') {
-      document.dispatchEvent(
+      console.log('close option');
+      window.dispatchEvent(
         new CustomEvent('close-modal', {
           detail: { name: 'uniform-layout-option' }
         })
@@ -72,17 +73,20 @@ export class ULayout {
             </div>
           </u-mobilelayout>
         ) : (
-          <u-desktoplayout>
-            <div slot="menu">
-              <slot name="menu" />
-            </div>
-            <div slot="main">
-              <slot name="main" />
-            </div>
+          [
+            <u-desktoplayout>
+              <div slot="menu">
+                <slot name="menu" />
+              </div>
+              <div slot="main">
+                <slot name="main" />
+              </div>
+            </u-desktoplayout>,
             <u-modal name="uniform-layout-option">
-              <slot name="option" />
+              <slot name="option-header" slot="header"></slot>
+              <slot name="option-body" slot="body"></slot>
             </u-modal>
-          </u-desktoplayout>
+          ]
         )}
       </Host>
     );

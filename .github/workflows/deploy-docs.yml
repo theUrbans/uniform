@@ -59,7 +59,7 @@ jobs:
       # Build the project and add .nojekyll file to supress default behaviour
       - name: Build
         run: |
-          npm run build
+          npm run build:docs
           touch ./dist/.nojekyll
 
       # Push to your pages repo
@@ -68,7 +68,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.GH_TOKEN }}
         with:
-          source-directory: 'docs/dist'
+          source-directory: 'dist'
           destination-github-username: ${{ github.actor }}
           destination-repository-name: ${{ env.deployToRepo }}
           user-email: ${{ env.githubEmail }}
