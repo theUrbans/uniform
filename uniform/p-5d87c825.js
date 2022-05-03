@@ -1,0 +1,1 @@
+import{C as o,s as i}from"./p-86e9747e.js";try{const i=navigator.userAgent||navigator.vendor||window.opera;o.mode=/windows phone/i.test(i)||/android/i.test(i)||/iPad|iPhone|iPod/.test(i)?"mobile":"desktop",document.documentElement.setAttribute("mode",o.mode)}catch(i){o.mode="desktop"}i((()=>o.mode));

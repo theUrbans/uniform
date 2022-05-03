@@ -1,0 +1,16 @@
+:host {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+div.overlap {
+  position: absolute;
+  z-index: 1;
+}
+div {
+  margin: 0px;
+  padding: 0.5rem;
+}

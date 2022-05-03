@@ -1,0 +1,1 @@
+import{r as l,h as s,H as r}from"./p-86e9747e.js";let t=class{constructor(s){l(this,s)}render(){return s(r,null,s("slot",null))}};t.style=":host{display:block}";export{t as u_label}

@@ -1,0 +1,1 @@
+import{r,h as s,H as t}from"./p-86e9747e.js";let e=class{constructor(s){r(this,s)}render(){return s(t,null,s("slot",null))}};e.style=":host{display:block}";export{e as u_timepicker}

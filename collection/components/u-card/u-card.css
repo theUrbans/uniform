@@ -1,0 +1,6 @@
+.card {
+  border-radius: 1rem;
+  border-width: 1px;
+  overflow: hidden;
+  position: relative;
+}
