@@ -53,7 +53,7 @@ export default class Documentation {
   }
 
   private createSidebar() {
-    const path = './docs2/src/sidebar.json';
+    const path = './docs/src/sidebar.json';
     const categories = new Map();
     this.components.forEach((c) => {
       const category = this.getDocTags(c, 'categorie', 'Components');
