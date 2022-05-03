@@ -1,6 +1,0 @@
-.row {
-  @apply flex flex-row items-center gap-0 h-full max-w-max;
-}
-.column {
-  @apply flex flex-col gap-0 justify-items-stretch items-stretch max-w-max;
-}

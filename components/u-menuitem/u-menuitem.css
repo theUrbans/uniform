@@ -1,9 +1,0 @@
-hr {
-  @apply m-0;
-}
-li {
-  @apply relative whitespace-nowrap cursor-pointer p-1 rounded hover:bg-gray-200 hover:text-gray-800;
-}
-.more {
-  @apply flex justify-between gap-1;
-}

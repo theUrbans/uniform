@@ -1,9 +1,0 @@
-.sub {
-  @apply absolute list-none m-0 bg-gray-300 p-2 hidden rounded-lg max-w-max;
-}
-.sub.show {
-  @apply block;
-}
-.sub.submenu {
-  @apply absolute ml-3 left-full top-0;
-}

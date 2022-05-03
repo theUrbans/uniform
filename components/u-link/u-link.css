@@ -1,9 +1,0 @@
-a {
-  @apply block max-w-max no-underline hover:underline cursor-pointer text-xl;
-}
-.primary {
-  @apply text-light-blue-600;
-}
-.secondary {
-  @apply text-blue-gray-600;
-}

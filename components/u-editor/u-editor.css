@@ -1,7 +1,0 @@
-:host {
-  @apply relative block;
-}
-
-.toolbar {
-  @apply absolute;
-}
