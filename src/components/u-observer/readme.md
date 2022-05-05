@@ -2,6 +2,13 @@
 
 <!-- Auto Generated Below -->
 
+## Properties
+
+| Property    | Attribute   | Description               | Type                 | Default     |
+| ----------- | ----------- | ------------------------- | -------------------- | ----------- |
+| `margin`    | `margin`    | margin around the element | `number`             | `undefined` |
+| `threshold` | `threshold` | observer threshold        | `number \| number[]` | `undefined` |
+
 ## Events
 
 | Event       | Description                                                        | Type                |
