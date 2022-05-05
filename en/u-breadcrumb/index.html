@@ -68,7 +68,7 @@
 		
 		<title>u-breadcrumb 🚀 Uniform Component Library</title>
 		
-	<link rel="stylesheet" href="/uniform/assets/asset.ee2a1f81.css"></link><style>astro-root, astro-fragment { display: contents; }</style><script type="module" src="/uniform/entry.fe8c211311.js" astro-script="/en/u-breadcrumb/script-0"></script>
+	<link rel="stylesheet" href="/uniform/assets/asset.ee2a1f81.css"></link><style>astro-root, astro-fragment { display: contents; }</style><script type="module" src="/uniform/entry.fe8c211312.js" astro-script="/en/u-breadcrumb/script-0"></script>
 <script type="module" data-astro-component-hydration astro-script="/en/u-breadcrumb/script-1">import setup from '../../entry.3dd0b2fa.js';
 import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
 setup("2atbPm", {name:"SidebarToggle",value: true}, async () => {
@@ -79,9 +79,9 @@ setup("2atbPm", {name:"SidebarToggle",value: true}, async () => {
 </script>
 <script type="module" data-astro-component-hydration astro-script="/en/u-breadcrumb/script-2">import setup from '../../entry.e67581d4.js';
 import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
-setup("CKPUU", {name:"TableOfContents",value: "(min-width: 50em)"}, async () => {
+setup("Z1Y6cnC", {name:"TableOfContents",value: "(min-width: 50em)"}, async () => {
   const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.f7d6506d.js"), import("../../entry.84d05c7c.js")]);
-  return (el, children) => hydrate(el)(Component, {"headers":[{"depth":2,"slug":"usage","text":"Usage"},{"depth":3,"slug":"vue","text":"vue"},{"depth":2,"slug":"properties","text":"Properties"},{"depth":3,"slug":"items","text":"items"},{"depth":3,"slug":"seperator","text":"seperator"},{"depth":2,"slug":"events","text":"Events"}],"class":"astro-2YE6FU27"}, children);
+  return (el, children) => hydrate(el)(Component, {"headers":[{"depth":2,"slug":"properties","text":"Properties"},{"depth":3,"slug":"design","text":"design"},{"depth":3,"slug":"link","text":"link"},{"depth":2,"slug":"events","text":"Events"},{"depth":2,"slug":"slots","text":"Slots"}],"class":"astro-2YE6FU27"}, children);
 
 });
 </script>
@@ -168,7 +168,11 @@ setup("ZMiuuH", {name:"ThemeToggleButton",value: true}, async () => {
 					<ul class="astro-4NMOOKYY">
 						<li class="nav-link astro-4NMOOKYY">
 								<a href="/uniform/en/u-breadcrumb" aria-current="false" class="astro-4NMOOKYY">
-									Breadcrumb
+									Breadcrumb Item
+								</a>
+							</li><li class="nav-link astro-4NMOOKYY">
+								<a href="/uniform/en/u-breadcrumbs" aria-current="false" class="astro-4NMOOKYY">
+									Breadcrumb Wrapper
 								</a>
 							</li><li class="nav-link astro-4NMOOKYY">
 								<a href="/uniform/en/u-button" aria-current="false" class="astro-4NMOOKYY">
@@ -406,24 +410,21 @@ setup("ZMiuuH", {name:"ThemeToggleButton",value: true}, async () => {
 		</nav> -->
 		<div class="badge" data-v-7cfd00a8><!--[-->
  shadow 
-<!--]--></div><p>Breadcrumb navigation component</p><h2 id="usage">Usage</h2><h3 id="vue">vue</h3><pre class="astro-code" style="background-color: #292D3E; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #89DDFF">&lt;</span><span style="color: #F07178">u-breadcrumb</span></span>
-<span class="line"><span style="color: #89DDFF">  </span><span style="color: #C792EA">:items.prop</span><span style="color: #89DDFF">=</span><span style="color: #89DDFF">&quot;</span><span style="color: #C3E88D">[{ name: &#39;test1&#39;, link: &#39;/&#39; }, { name: &#39;test2&#39; }, { name: &#39;test3&#39; }]</span><span style="color: #89DDFF">&quot;</span></span>
-<span class="line"><span style="color: #89DDFF">&gt;</span></span>
-<span class="line"><span style="color: #89DDFF">&lt;/</span><span style="color: #F07178">u-breadcrumb</span><span style="color: #89DDFF">&gt;</span></span></code></pre><h2 id="properties">Properties</h2><h3 id="items">items</h3><table>
-<tr><th>Description</th><td><p><em>not provided</em></p>
+<!--]--></div><p>Breadcrumb navigation component</p><h2 id="properties">Properties</h2><h3 id="design">design</h3><table>
+<tr><th>Description</th><td><p>appereance of the breadcrumb link</p>
 </td></tr>
-<tr><th>Attribute</th><td><p>items</p>
+<tr><th>Attribute</th><td><p>design</p>
 </td></tr>
-<tr><th>Type</th><td><p><code is:raw>BreadCrumbItem[]</code></p>
+<tr><th>Type</th><td><p><code is:raw>"primary" | "secondary"</code></p>
 </td></tr>
-<tr><th>Default</th><td><p><code is:raw>[ { name: 'test1', link: '/test' }, { name: 'test2' }, { name: 'test3' } ]</code></p>
+<tr><th>Default</th><td>
 </td></tr>
 <tr><th>Required</th><td><p>false</p>
 </td></tr>
-</table><h3 id="seperator">seperator</h3><table>
-<tr><th>Description</th><td><p><em>not provided</em></p>
+</table><h3 id="link">link</h3><table>
+<tr><th>Description</th><td><p>link of the breadcrumb item</p>
 </td></tr>
-<tr><th>Attribute</th><td><p>seperator</p>
+<tr><th>Attribute</th><td><p>link</p>
 </td></tr>
 <tr><th>Type</th><td><p><code is:raw>string</code></p>
 </td></tr>
@@ -434,7 +435,11 @@ setup("ZMiuuH", {name:"ThemeToggleButton",value: true}, async () => {
 </table><h2 id="events">Events</h2><table>
 <tr><th>Name</th><th>Description</th></tr>
 <tr><td><p>uBreadcrumbClick</p>
-</td><td><p><em>not provided</em></p>
+</td><td><p>emit event on element click</p>
+</td></tr></table><h2 id="slots">Slots</h2><table>
+<tr><th>Name</th><th>Description</th></tr>
+<tr><td><p>default</p>
+</td><td><p>Breadcrumb content</p>
 </td></tr></table>
 	</section>
 	<!-- <nav class="block sm:hidden">
@@ -448,7 +453,7 @@ setup("ZMiuuH", {name:"ThemeToggleButton",value: true}, async () => {
 			<aside id="grid-right" class="grid-sidebar astro-OO3YZWUQ" title="Table of Contents">
 				<nav class="sidebar-nav astro-2YE6FU27" aria-labelledby="grid-right">
 	<div class="sidebar-nav-inner astro-2YE6FU27">
-		<astro-root uid="CKPUU"><h2 class="heading">On this page</h2><ul><li class="header-link depth-2"><a href="#overview">Overview</a></li><li class="header-link depth-2"><a href="#usage">Usage</a></li><li class="header-link depth-3"><a href="#vue">vue</a></li><li class="header-link depth-2"><a href="#properties">Properties</a></li><li class="header-link depth-3"><a href="#items">items</a></li><li class="header-link depth-3"><a href="#seperator">seperator</a></li><li class="header-link depth-2"><a href="#events">Events</a></li></ul></astro-root>
+		<astro-root uid="Z1Y6cnC"><h2 class="heading">On this page</h2><ul><li class="header-link depth-2"><a href="#overview">Overview</a></li><li class="header-link depth-2"><a href="#properties">Properties</a></li><li class="header-link depth-3"><a href="#design">design</a></li><li class="header-link depth-3"><a href="#link">link</a></li><li class="header-link depth-2"><a href="#events">Events</a></li><li class="header-link depth-2"><a href="#slots">Slots</a></li></ul></astro-root>
 		
 <ul class="astro-ZVQSX46V">
 	
