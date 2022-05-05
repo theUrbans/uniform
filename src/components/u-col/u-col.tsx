@@ -25,7 +25,7 @@ enum Breakpoint {
 /**
  * @name Column
  * @state 🟢
- * @description Flexbox column
+ * @description Responsive flexbox/grid column
  * @categorie Layout
  */
 @Component({
@@ -39,33 +39,33 @@ export class UCol {
   /**
    * flex align-items: start | center | end | space-between | space-around | space-evenly
    */
-  @Prop() align:
+  @Prop() align?:
     | 'start'
     | 'center'
     | 'end'
     | 'space-around'
     | 'space-between'
-    | 'space-evenly' = 'start';
+    | 'space-evenly';
 
   /**
    * flex justify-content: flex-start | flex-end | center | baseline | stretch
    */
-  @Prop() justify: 'start' | 'center' | 'end' | 'stretch' = 'center';
+  @Prop() justify?: 'start' | 'center' | 'end' | 'stretch';
 
   /**
    * flex wrap: nowrap | wrap | wrap-reverse
    */
-  @Prop() wrap: 'nowrap' | 'wrap' | 'wrap-reverse' = 'wrap';
+  @Prop() wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 
   /**
    * flex gap: string, e.g. '1rem', '1px'
    */
-  @Prop() gap: string = '1em';
+  @Prop() gap?: string;
 
   /**
    * padding bottom and top: string, e.g. '1rem', '1px'
    */
-  @Prop() padding: string = '0';
+  @Prop() padding?: string;
 
   /**
    * used with w-grid, set size based on number of columns on w-grid (default is 12)
@@ -97,8 +97,14 @@ export class UCol {
    */
   @Prop() xl?: number;
 
+  /**
+   * grid column start
+   */
   @Prop() start?: number;
 
+  /**
+   * grid column end
+   */
   @Prop() end?: number;
 
   @State() width: Width;
@@ -108,17 +114,23 @@ export class UCol {
   @State() colSize: number | 'auto';
 
   private setStyle() {
-    return {
-      gridColumnStart: this.start ? this.start.toString() : '',
-      gridColumnEnd: this.end ? this.end.toString() : ''
-    };
+    const styles: any = {};
+    if (this.start)
+      styles.gridColumnStart = `span ${this.start} / span ${this.start}`;
+    if (this.end) styles.gridColumnEnd = `span ${this.end} / span ${this.end}`;
+    if (this.align) styles.alignItems = this.align;
+    if (this.justify) styles.justifyContent = this.justify;
+    if (this.wrap) styles.flexWrap = this.wrap;
+    if (this.gap) styles.gap = this.gap;
+    if (this.padding) styles.padding = this.padding;
+    if (this.area) styles.gridArea = this.area;
+    return styles;
   }
 
   @Listen('resize', { target: 'window' }) onWindowResize() {
     const width = window.innerWidth;
     this.setBreakpoint(width);
     this.calculatePosition();
-    console.log(Breakpoint[this.bp]);
   }
 
   private setBreakpoint(width: number) {
@@ -126,13 +138,9 @@ export class UCol {
     else if (width < Breakpoint.lg) this.bp = Breakpoint.md;
     else if (width < Breakpoint.xl) this.bp = Breakpoint.lg;
     else if (width >= Breakpoint.xl) this.bp = Breakpoint.xl;
-    // console.log({ width, bp: this.bp });
   }
 
   private calculatePosition() {
-    // const gutter = this.el.parentElement.attributes['gutter'];
-    // let cols = 12;ack
-    // if (gutter) cols = parseInt(gutter.value);
     switch (this.bp) {
       case Breakpoint.sm:
         this.colSize = this.sm;
@@ -160,20 +168,12 @@ export class UCol {
   render() {
     return (
       <Host
-        // class={this.setClasses().join(' ')}
         style={{
-          width: this.width,
           ...this.setStyle(),
+          width: this.width,
           gridColumn: `span ${this.colSize} / span ${this.colSize}`
-          // alignItems: this.align,
-          // justifyContent: this.justify,
-          // flexWrap: this.wrap,
-          // gap: this.gap
-          // padding: `${this.padding}`,
-          // gridArea: this.area,
         }}
       >
-        {this.colSize}
         <slot></slot>
       </Host>
     );
