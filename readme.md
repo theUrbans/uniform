@@ -1,5 +1,7 @@
 # UI Library by [Hoer GmbH](https://hoer-electronic.de/en/)
 
+![npm](https://img.shields.io/npm/v/@theurbans/uniform?color=%2357a0ff&label=version&style=for-the-badge)
+
 For usage with frameworks please refer to official [StencilJS Documentation](https://stenciljs.com/docs/overview).
 
 - 🟢 ready (feature complete for now)
