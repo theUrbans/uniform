@@ -161,6 +161,7 @@ export namespace Components {
           * use with w-grid to set area
          */
         "area"?: string;
+        "end"?: number;
         /**
           * flex gap: string, e.g. '1rem', '1px'
          */
@@ -170,6 +171,14 @@ export namespace Components {
          */
         "justify": 'start' | 'center' | 'end' | 'stretch';
         /**
+          * size in large (≥1200px)
+         */
+        "lg"?: number;
+        /**
+          * size in medium (≥992px)
+         */
+        "md"?: number;
+        /**
           * padding bottom and top: string, e.g. '1rem', '1px'
          */
         "padding": string;
@@ -178,9 +187,18 @@ export namespace Components {
          */
         "size": number;
         /**
+          * size in small (≥768px)
+         */
+        "sm"?: number;
+        "start"?: number;
+        /**
           * flex wrap: nowrap | wrap | wrap-reverse
          */
         "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
+        /**
+          * size in extra large (≥1200px)
+         */
+        "xl"?: number;
     }
     interface UCollapsible {
         /**
@@ -207,6 +225,8 @@ export namespace Components {
         "onlyOneOpen": boolean;
     }
     interface UColorpicker {
+    }
+    interface UContainer {
     }
     interface UDatepicker {
     }
@@ -529,6 +549,14 @@ export namespace Components {
         "warning": (title: string, message?: string, delay?: number) => Promise<void>;
     }
     interface UObserver {
+        /**
+          * margin around the element
+         */
+        "margin"?: number;
+        /**
+          * observer threshold
+         */
+        "threshold"?: number | number[];
     }
     interface UPagination {
         "goToPage": (page: number, eventless?: boolean) => Promise<void>;
@@ -587,9 +615,17 @@ export namespace Components {
          */
         "align": 'start' | 'center' | 'end' | 'stretch';
         /**
+          * should row be responsive?
+         */
+        "container"?: boolean;
+        /**
           * flex gap: string, e.g. '1rem', '1px'
          */
         "gap": string;
+        /**
+          * how many columns are in the row?
+         */
+        "gutter"?: number;
         /**
           * flex justify-content
          */
@@ -815,6 +851,8 @@ export namespace Components {
     }
     interface UTerms {
     }
+    interface UTest {
+    }
     interface UText {
         /**
           * font color: string, e.g. '#e1e1e1', 'lightblue'. Default is '#fff' (white).
@@ -977,6 +1015,12 @@ declare global {
     var HTMLUColorpickerElement: {
         prototype: HTMLUColorpickerElement;
         new (): HTMLUColorpickerElement;
+    };
+    interface HTMLUContainerElement extends Components.UContainer, HTMLStencilElement {
+    }
+    var HTMLUContainerElement: {
+        prototype: HTMLUContainerElement;
+        new (): HTMLUContainerElement;
     };
     interface HTMLUDatepickerElement extends Components.UDatepicker, HTMLStencilElement {
     }
@@ -1260,6 +1304,12 @@ declare global {
         prototype: HTMLUTermsElement;
         new (): HTMLUTermsElement;
     };
+    interface HTMLUTestElement extends Components.UTest, HTMLStencilElement {
+    }
+    var HTMLUTestElement: {
+        prototype: HTMLUTestElement;
+        new (): HTMLUTestElement;
+    };
     interface HTMLUTextElement extends Components.UText, HTMLStencilElement {
     }
     var HTMLUTextElement: {
@@ -1319,6 +1369,7 @@ declare global {
         "u-collapsible": HTMLUCollapsibleElement;
         "u-collapsible-group": HTMLUCollapsibleGroupElement;
         "u-colorpicker": HTMLUColorpickerElement;
+        "u-container": HTMLUContainerElement;
         "u-datepicker": HTMLUDatepickerElement;
         "u-datetimepicker": HTMLUDatetimepickerElement;
         "u-desktoplayout": HTMLUDesktoplayoutElement;
@@ -1366,6 +1417,7 @@ declare global {
         "u-tablerow": HTMLUTablerowElement;
         "u-tabs": HTMLUTabsElement;
         "u-terms": HTMLUTermsElement;
+        "u-test": HTMLUTestElement;
         "u-text": HTMLUTextElement;
         "u-textarea": HTMLUTextareaElement;
         "u-timepicker": HTMLUTimepickerElement;
@@ -1525,6 +1577,7 @@ declare namespace LocalJSX {
           * use with w-grid to set area
          */
         "area"?: string;
+        "end"?: number;
         /**
           * flex gap: string, e.g. '1rem', '1px'
          */
@@ -1534,6 +1587,14 @@ declare namespace LocalJSX {
          */
         "justify"?: 'start' | 'center' | 'end' | 'stretch';
         /**
+          * size in large (≥1200px)
+         */
+        "lg"?: number;
+        /**
+          * size in medium (≥992px)
+         */
+        "md"?: number;
+        /**
           * padding bottom and top: string, e.g. '1rem', '1px'
          */
         "padding"?: string;
@@ -1542,9 +1603,18 @@ declare namespace LocalJSX {
          */
         "size"?: number;
         /**
+          * size in small (≥768px)
+         */
+        "sm"?: number;
+        "start"?: number;
+        /**
           * flex wrap: nowrap | wrap | wrap-reverse
          */
         "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
+        /**
+          * size in extra large (≥1200px)
+         */
+        "xl"?: number;
     }
     interface UCollapsible {
         /**
@@ -1571,6 +1641,8 @@ declare namespace LocalJSX {
         "onlyOneOpen"?: boolean;
     }
     interface UColorpicker {
+    }
+    interface UContainer {
     }
     interface UDatepicker {
     }
@@ -1891,6 +1963,10 @@ declare namespace LocalJSX {
     }
     interface UObserver {
         /**
+          * margin around the element
+         */
+        "margin"?: number;
+        /**
           * emit `invisible` event, when element looses visibility in viewport
          */
         "onInvisible"?: (event: CustomEvent<void>) => void;
@@ -1898,6 +1974,10 @@ declare namespace LocalJSX {
           * emit `visible` event, when element get visible in viewport
          */
         "onVisible"?: (event: CustomEvent<void>) => void;
+        /**
+          * observer threshold
+         */
+        "threshold"?: number | number[];
     }
     interface UPagination {
         "onPageChange"?: (event: CustomEvent<number>) => void;
@@ -1957,9 +2037,17 @@ declare namespace LocalJSX {
          */
         "align"?: 'start' | 'center' | 'end' | 'stretch';
         /**
+          * should row be responsive?
+         */
+        "container"?: boolean;
+        /**
           * flex gap: string, e.g. '1rem', '1px'
          */
         "gap"?: string;
+        /**
+          * how many columns are in the row?
+         */
+        "gutter"?: number;
         /**
           * flex justify-content
          */
@@ -2217,6 +2305,8 @@ declare namespace LocalJSX {
     }
     interface UTerms {
     }
+    interface UTest {
+    }
     interface UText {
         /**
           * font color: string, e.g. '#e1e1e1', 'lightblue'. Default is '#fff' (white).
@@ -2300,6 +2390,7 @@ declare namespace LocalJSX {
         "u-collapsible": UCollapsible;
         "u-collapsible-group": UCollapsibleGroup;
         "u-colorpicker": UColorpicker;
+        "u-container": UContainer;
         "u-datepicker": UDatepicker;
         "u-datetimepicker": UDatetimepicker;
         "u-desktoplayout": UDesktoplayout;
@@ -2347,6 +2438,7 @@ declare namespace LocalJSX {
         "u-tablerow": UTablerow;
         "u-tabs": UTabs;
         "u-terms": UTerms;
+        "u-test": UTest;
         "u-text": UText;
         "u-textarea": UTextarea;
         "u-timepicker": UTimepicker;
@@ -2376,6 +2468,7 @@ declare module "@stencil/core" {
             "u-collapsible": LocalJSX.UCollapsible & JSXBase.HTMLAttributes<HTMLUCollapsibleElement>;
             "u-collapsible-group": LocalJSX.UCollapsibleGroup & JSXBase.HTMLAttributes<HTMLUCollapsibleGroupElement>;
             "u-colorpicker": LocalJSX.UColorpicker & JSXBase.HTMLAttributes<HTMLUColorpickerElement>;
+            "u-container": LocalJSX.UContainer & JSXBase.HTMLAttributes<HTMLUContainerElement>;
             "u-datepicker": LocalJSX.UDatepicker & JSXBase.HTMLAttributes<HTMLUDatepickerElement>;
             "u-datetimepicker": LocalJSX.UDatetimepicker & JSXBase.HTMLAttributes<HTMLUDatetimepickerElement>;
             "u-desktoplayout": LocalJSX.UDesktoplayout & JSXBase.HTMLAttributes<HTMLUDesktoplayoutElement>;
@@ -2423,6 +2516,7 @@ declare module "@stencil/core" {
             "u-tablerow": LocalJSX.UTablerow & JSXBase.HTMLAttributes<HTMLUTablerowElement>;
             "u-tabs": LocalJSX.UTabs & JSXBase.HTMLAttributes<HTMLUTabsElement>;
             "u-terms": LocalJSX.UTerms & JSXBase.HTMLAttributes<HTMLUTermsElement>;
+            "u-test": LocalJSX.UTest & JSXBase.HTMLAttributes<HTMLUTestElement>;
             "u-text": LocalJSX.UText & JSXBase.HTMLAttributes<HTMLUTextElement>;
             "u-textarea": LocalJSX.UTextarea & JSXBase.HTMLAttributes<HTMLUTextareaElement>;
             "u-timepicker": LocalJSX.UTimepicker & JSXBase.HTMLAttributes<HTMLUTimepickerElement>;

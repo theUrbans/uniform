@@ -10,7 +10,7 @@ import Documentation from './src/docs/createDocs';
 export const config: Config = {
   autoprefixCss: true,
   namespace: 'Uniform',
-  // globalStyle: 'src/global/uniform.scss',
+  globalStyle: 'src/global/styles/uniform.css',
   globalScript: 'src/global/global.ts',
   plugins: [
     sass({
@@ -95,6 +95,9 @@ export const config: Config = {
   devServer: {
     reloadStrategy: 'hmr',
     openBrowser: false
+  },
+  extras: {
+    scriptDataOpts: true
   },
   watchIgnoredRegex: /\.stories\.(js|jsx|ts|tsx|mdx)$/ // ignore storybook files in --watch mode
 };

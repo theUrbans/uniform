@@ -89,13 +89,14 @@ export class UModal {
    */
   @Event() beforeOpen: EventEmitter<any>;
 
-  @Listen('show-modal', { target: 'body' }) showModalHandler(e: any) {
+  @Listen('show-modal', { target: 'window' }) showModalHandler(e: any) {
     const { name, params } = e.detail;
     this.beforeOpen.emit(params);
+    console.log('show modal', name);
     this.showModal(name);
   }
 
-  @Listen('close-modal', { target: 'body' }) closeModalHandler(e: any) {
+  @Listen('close-modal', { target: 'window' }) closeModalHandler(e: any) {
     const { name } = e.detail;
     this.closeModal(name);
   }

@@ -1,0 +1,228 @@
+{
+  "en": [
+    {
+      "text": "Setup",
+      "header": true
+    },
+    {
+      "text": "Index",
+      "link": "en"
+    },
+    {
+      "text": "Installation",
+      "link": "en/installation"
+    },
+    {
+      "text": "Capacitor Specific",
+      "header": true
+    },
+    {
+      "text": "Barcode Scanner",
+      "link": "en/u-barcodescanner"
+    },
+    {
+      "text": "Components",
+      "header": true
+    },
+    {
+      "text": "Breadcrumb",
+      "link": "en/u-breadcrumb"
+    },
+    {
+      "text": "Button",
+      "link": "en/u-button"
+    },
+    {
+      "text": "Card",
+      "link": "en/u-card"
+    },
+    {
+      "text": "Cardbody",
+      "link": "en/u-cardbody"
+    },
+    {
+      "text": "Cardfooter",
+      "link": "en/u-cardfooter"
+    },
+    {
+      "text": "Cardheader",
+      "link": "en/u-cardheader"
+    },
+    {
+      "text": "Cardimage",
+      "link": "en/u-cardimage"
+    },
+    {
+      "text": "Chip",
+      "link": "en/u-chip"
+    },
+    {
+      "text": "Collapsible",
+      "link": "en/u-collapsible"
+    },
+    {
+      "text": "Collapsible Group",
+      "link": "en/u-collapsible-group"
+    },
+    {
+      "text": "Floating Button",
+      "link": "en/u-floatingbutton"
+    },
+    {
+      "text": "Floating Menu",
+      "link": "en/u-floatingmenu"
+    },
+    {
+      "text": "Group",
+      "link": "en/u-group"
+    },
+    {
+      "text": "Headline",
+      "link": "en/u-headline"
+    },
+    {
+      "text": "Icon Wrapper",
+      "link": "en/u-icon"
+    },
+    {
+      "text": "Link",
+      "link": "en/u-link"
+    },
+    {
+      "text": "Menu",
+      "link": "en/u-menu"
+    },
+    {
+      "text": "Notification",
+      "link": "en/u-notification"
+    },
+    {
+      "text": "Observer",
+      "link": "en/u-observer"
+    },
+    {
+      "text": "Pagination",
+      "link": "en/u-pagination"
+    },
+    {
+      "text": "Paragraph",
+      "link": "en/u-paragraph"
+    },
+    {
+      "text": "Progress",
+      "link": "en/u-progress"
+    },
+    {
+      "text": "Sub-Menu",
+      "link": "en/u-submenu"
+    },
+    {
+      "text": "Table Cell",
+      "link": "en/u-tablecell"
+    },
+    {
+      "text": "Text",
+      "link": "en/u-text"
+    },
+    {
+      "text": "Tooltip",
+      "link": "en/u-tooltip"
+    },
+    {
+      "text": "Generator",
+      "header": true
+    },
+    {
+      "text": "Form Generator",
+      "link": "en/u-formgen"
+    },
+    {
+      "text": "Table Generator",
+      "link": "en/u-tablegen"
+    },
+    {
+      "text": "Input Control",
+      "header": true
+    },
+    {
+      "text": "Checkbox",
+      "link": "en/u-checkbox"
+    },
+    {
+      "text": "File Picker",
+      "link": "en/u-filepicker"
+    },
+    {
+      "text": "Form",
+      "link": "en/u-form"
+    },
+    {
+      "text": "Input",
+      "link": "en/u-input"
+    },
+    {
+      "text": "Radio Group",
+      "link": "en/u-radiogroup"
+    },
+    {
+      "text": "Select",
+      "link": "en/u-select"
+    },
+    {
+      "text": "Stepper",
+      "link": "en/u-stepper"
+    },
+    {
+      "text": "Textarea",
+      "link": "en/u-textarea"
+    },
+    {
+      "text": "Layout",
+      "header": true
+    },
+    {
+      "text": "Column",
+      "link": "en/u-col"
+    },
+    {
+      "text": "Desktop Layout",
+      "link": "en/u-desktoplayout"
+    },
+    {
+      "text": "Grid",
+      "link": "en/u-grid"
+    },
+    {
+      "text": "Layout",
+      "link": "en/u-layout"
+    },
+    {
+      "text": "Mobile Layout",
+      "link": "en/u-mobilelayout"
+    },
+    {
+      "text": "Navigation Bar",
+      "link": "en/u-navbar"
+    },
+    {
+      "text": "Row",
+      "link": "en/u-row"
+    },
+    {
+      "text": "Modal",
+      "header": true
+    },
+    {
+      "text": "Alert",
+      "link": "en/u-alert"
+    },
+    {
+      "text": "Dialog",
+      "link": "en/u-dialog"
+    },
+    {
+      "text": "Modal",
+      "link": "en/u-modal"
+    }
+  ]
+}

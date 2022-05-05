@@ -10,7 +10,7 @@
     "sourceType": "module"
   },
   "plugins": ["@typescript-eslint"],
-  "ignorePatterns": ["*.stories.tsx", "*.d.ts"],
+  "ignorePatterns": ["*.stories.tsx", "*.d.ts", "/docs"],
   "rules": {
     "no-undef": "off",
     "import/no-unresolved": "off",

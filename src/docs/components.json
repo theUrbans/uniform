@@ -1,8 +1,8 @@
 {
-  "timestamp": "2022-03-24T12:48:06",
+  "timestamp": "2022-05-03T08:35:54",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.2",
+    "version": "2.14.0",
     "typescriptVersion": "4.5.4"
   },
   "components": [
@@ -231,7 +231,7 @@
         }
       ],
       "usage": {
-        "example": "```html\n<u-breadcrumb\n  :items.prop=\"[\n{ name: 'test1', link: '/' },\t\n{ name: 'test2' },\t\n{ name: 'test3' }\t\n]\"\n>\n</u-breadcrumb>\n```\n"
+        "example": "```html\r\n<u-breadcrumb :items.prop=\"[{ name: 'test1', link: '/' }, { name: 'test2' }, { name: 'test3' }]\">\r\n</u-breadcrumb>\r\n```\r\n"
       },
       "props": [
         {
@@ -306,7 +306,7 @@
         }
       ],
       "usage": {
-        "example": "```html\r\n<u-button> Test Button </u-button>\r\n<u-button design=\"success\" outline> Outline Success Button </u-button>\r\n<u-button design=\"error\" flat> Flat Error Button </u-button>\r\n```\r\n"
+        "example": "```html\n<u-button> Test Button </u-button>\n<u-button design=\"success\" outline> Outline Success Button </u-button>\n<u-button design=\"error\" flat> Flat Error Button </u-button>\n```\n"
       },
       "props": [
         {
@@ -508,7 +508,8 @@
         "u-filepicker",
         "u-formgen",
         "u-pagination",
-        "u-stepper"
+        "u-stepper",
+        "u-test"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -518,7 +519,8 @@
         "u-filepicker": ["u-button"],
         "u-formgen": ["u-button"],
         "u-pagination": ["u-button"],
-        "u-stepper": ["u-button"]
+        "u-stepper": ["u-button"],
+        "u-test": ["u-button"]
       }
     },
     {
@@ -1274,6 +1276,22 @@
           "required": false
         },
         {
+          "name": "end",
+          "type": "number",
+          "mutable": false,
+          "attr": "end",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "gap",
           "type": "string",
           "mutable": false,
@@ -1321,6 +1339,38 @@
           "required": false
         },
         {
+          "name": "lg",
+          "type": "number",
+          "mutable": false,
+          "attr": "lg",
+          "reflectToAttr": false,
+          "docs": "size in large (≥1200px)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "md",
+          "type": "number",
+          "mutable": false,
+          "attr": "md",
+          "reflectToAttr": false,
+          "docs": "size in medium (≥992px)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "padding",
           "type": "string",
           "mutable": false,
@@ -1355,6 +1405,38 @@
           "required": false
         },
         {
+          "name": "sm",
+          "type": "number",
+          "mutable": false,
+          "attr": "sm",
+          "reflectToAttr": false,
+          "docs": "size in small (≥768px)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "start",
+          "type": "number",
+          "mutable": false,
+          "attr": "start",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "wrap",
           "type": "\"nowrap\" | \"wrap\" | \"wrap-reverse\"",
           "mutable": false,
@@ -1379,11 +1461,34 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "xl",
+          "type": "number",
+          "mutable": false,
+          "attr": "xl",
+          "reflectToAttr": false,
+          "docs": "size in extra large (≥1200px)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
+      "listeners": [
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
+        }
+      ],
       "styles": [],
       "slots": [],
       "parts": [],
@@ -1592,6 +1697,25 @@
           "text": "Color Picker"
         }
       ],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-container/u-container.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-container",
+      "readme": "# u-container\n\n\n",
+      "docs": "",
+      "docsTags": [],
       "usage": {},
       "props": [],
       "methods": [],
@@ -2586,7 +2710,7 @@
           "reflectToAttr": false,
           "docs": "select the design of the icon wrapper",
           "docsTags": [],
-          "default": "'error'",
+          "default": "'primary'",
           "values": [
             {
               "value": "error",
@@ -2675,9 +2799,11 @@
         }
       ],
       "parts": [],
-      "dependents": [],
+      "dependents": ["u-test"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "u-test": ["u-icon"]
+      }
     },
     {
       "filePath": "./src/components/u-input/u-input.tsx",
@@ -3367,11 +3493,12 @@
         }
       ],
       "parts": [],
-      "dependents": [],
+      "dependents": ["u-test"],
       "dependencies": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
       "dependencyGraph": {
         "u-layout": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
-        "u-desktoplayout": ["u-grid"]
+        "u-desktoplayout": ["u-grid"],
+        "u-test": ["u-layout"]
       }
     },
     {
@@ -4115,13 +4242,13 @@
       "listeners": [
         {
           "event": "show-modal",
-          "target": "body",
+          "target": "window",
           "capture": false,
           "passive": false
         },
         {
           "event": "close-modal",
-          "target": "body",
+          "target": "window",
           "capture": false,
           "passive": false
         },
@@ -4401,7 +4528,43 @@
         }
       ],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "margin",
+          "type": "number",
+          "mutable": false,
+          "attr": "margin",
+          "reflectToAttr": false,
+          "docs": "margin around the element",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "threshold",
+          "type": "number | number[]",
+          "mutable": false,
+          "attr": "threshold",
+          "reflectToAttr": false,
+          "docs": "observer threshold",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number[]"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [
         {
@@ -5058,6 +5221,22 @@
           "required": false
         },
         {
+          "name": "container",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "container",
+          "reflectToAttr": false,
+          "docs": "should row be responsive?",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "gap",
           "type": "string",
           "mutable": false,
@@ -5072,6 +5251,22 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "gutter",
+          "type": "number",
+          "mutable": false,
+          "attr": "gutter",
+          "reflectToAttr": true,
+          "docs": "how many columns are in the row?",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -6578,6 +6773,29 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/u-test/u-test.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-test",
+      "readme": "# u-test\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["u-layout", "u-button", "u-icon"],
+      "dependencyGraph": {
+        "u-test": ["u-layout", "u-button", "u-icon"],
+        "u-layout": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
+        "u-desktoplayout": ["u-grid"]
+      }
     },
     {
       "filePath": "./src/components/u-text/u-text.tsx",

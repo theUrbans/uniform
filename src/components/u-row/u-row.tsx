@@ -48,22 +48,42 @@ export class URow {
    */
   @Prop() width: 'full' | 'content' | 'auto' = 'full';
 
+  /**
+   * should row be responsive?
+   */
+  @Prop() container?: boolean;
+
+  /**
+   * how many columns are in the row?
+   */
+  @Prop({ reflect: true }) gutter?: number;
+
+  private setStyle() {
+    if (this.container) {
+      return {
+        display: 'grid',
+        gridTemplateColumns: `repeat( ${this.gutter}, minmax(0, 1fr))`
+      };
+    }
+    return {};
+  }
+
   render() {
     return (
       <Host
-        class="row"
         style={{
-          alignItems: this.align,
-          justifyContent: this.justify,
-          flexWrap: this.wrap,
+          ...this.setStyle(),
+          // alignItems: this.align,
+          // justifyContent: this.justify,
+          // flexWrap: this.wrap,
           gap: this.gap,
-          padding: `${this.padding}`,
-          width:
-            this.width === 'full'
-              ? '100%'
-              : this.width === 'content'
-              ? 'fit-content'
-              : 'auto'
+          padding: `${this.padding}`
+          // width:
+          //   this.width === 'full'
+          //     ? '100%'
+          //     : this.width === 'content'
+          //     ? 'fit-content'
+          //     : 'auto',
         }}
       >
         <slot></slot>

@@ -4,7 +4,8 @@ import {
   Event,
   EventEmitter,
   Element,
-  State
+  State,
+  Prop
 } from '@stencil/core';
 
 /**
@@ -21,6 +22,16 @@ export class UObserver {
   @Element() el: HTMLElement;
 
   /**
+   * observer threshold
+   */
+  @Prop() threshold?: number | number[];
+
+  /**
+   * margin around the element
+   */
+  @Prop() margin?: number;
+
+  /**
    * emit `visible` event, when element get visible in viewport
    */
   @Event({ bubbles: false }) visible: EventEmitter<void>;
@@ -34,7 +45,7 @@ export class UObserver {
 
   private observer: IntersectionObserver;
 
-  private onIntersection = (entries) => {
+  private onIntersection = (entries: IntersectionObserverEntry[]) => {
     for (const entry of entries) {
       if (entry.isIntersecting) {
         this.visible.emit();
@@ -52,7 +63,8 @@ export class UObserver {
     const div: HTMLDivElement = this.el.shadowRoot.querySelector('div');
     if (div) {
       this.observer = new IntersectionObserver(this.onIntersection, {
-        threshold: [0, 0.8]
+        threshold: this.threshold || [0, 0.8],
+        rootMargin: `${this.margin || 0}px`
       });
       this.observer.observe(div);
     }

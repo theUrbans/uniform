@@ -30,6 +30,7 @@ export default class Documentation {
           return line;
         }
         if (inCodeBlock) return line;
+        if (line.startsWith('import')) return `  ${line}`;
         return line.trim();
       })
       .join('\n');
@@ -51,6 +52,42 @@ export default class Documentation {
       .join('\n');
   }
 
+  private createSidebar() {
+    const path = './docs/src/sidebar.json';
+    const categories = new Map();
+    this.components.forEach((c) => {
+      const category = this.getDocTags(c, 'categorie', 'Components');
+      categories.set(category, { text: category, header: true, childs: [] });
+    });
+    let data = Array.from(categories)
+      .map((v) => v[1])
+      .sort((a, b) => a.text.localeCompare(b.text));
+    this.components.map((c) => {
+      const state = this.getDocTags(c, 'state', '🔵');
+      if (state === '🔵') return null;
+      const name = this.getDocTags(c, 'name', c.tag);
+      const index = data.findIndex(
+        (v) => v.text === this.getDocTags(c, 'categorie', 'Components')
+      );
+      data[index].childs.push({ text: name, link: `en/${c.tag}` });
+      return null;
+    });
+    data = data.map((v) => [
+      {
+        text: v.text,
+        header: v.header
+      },
+      ...v.childs
+    ]);
+    data.unshift([
+      { text: 'Getting Started', header: true },
+      { text: 'Introduction', link: 'en' },
+      { text: 'Installation', link: 'en/installation' }
+    ]);
+
+    writeFile(path, JSON.stringify({ en: data.flat() }, null, 2));
+  }
+
   private async updatePackageJson() {
     await readFile('./package.json', 'utf8').then((data) => {
       const json = JSON.parse(data);
@@ -59,7 +96,7 @@ export default class Documentation {
         const json = JSON.parse(data);
         json.version = version;
         json.dependencies['@theurbans/uniform'] = `^${version}`;
-        writeFile('./docs/package.json', JSON.stringify(json));
+        writeFile('./docs/package.json', JSON.stringify(json, null, 2));
       });
     });
   }
@@ -110,9 +147,13 @@ export default class Documentation {
 
   public createDocs() {
     this.updatePackageJson();
-    this.components.map((c, index) => {
+    this.createSidebar();
+    this.components.map((c) => {
+      const docPath = `./docs/src/pages/en/${c.tag}.md`;
+      // `./docs/content/en/${c.tag}.md`,
       const name = this.getDocTags(c, 'name', c.tag);
       const state = this.getDocTags(c, 'state', '🔵');
+      if (state === '🔵') return null;
       const desc = this.getDocTags(
         c,
         'description',
@@ -120,10 +161,10 @@ export default class Documentation {
       );
       const cat = this.getDocTags(c, 'categorie', 'Components');
       writeFile(
-        `./docs/content/en/${c.tag}.md`,
+        docPath,
         this.formatCode(`---
                 title: ${c.tag}
-                subtitle: ${desc.replace(/\*/g, '')}
+                description: ${desc.replace(/\*/g, '')}
                 category: ${
                   cat !== 'Components'
                     ? cat
@@ -132,7 +173,6 @@ export default class Documentation {
                     : 'Components'
                 }
                 menuTitle: ${name}
-                position: ${index + 1}
                 badge: ${
                   state === '🔵'
                     ? 'planned'
@@ -142,9 +182,16 @@ export default class Documentation {
                     ? 'beta'
                     : 'ready'
                 }
-                ---
+layout: ../../layouts/MainLayout.astro
+setup: |
+import Uniform from '../../components/Uniform.vue';
+import Badge from '../../components/Badge.vue';
+import { Markdown } from 'astro/components';
+---
 
-            <badge> ${c.encapsulation} </badge>
+            <Badge> ${c.encapsulation} </Badge>
+
+            ${desc.replace(/\*/g, '')}
 
             ${c.docs ? c.docs : ''}
             \n
@@ -153,58 +200,93 @@ export default class Documentation {
               .map(([key, value]) => {
                 if (key === 'example')
                   return `### ${key}
-              <uniform>
+              <Uniform>
               ${this.createExample(value)}
-              </uniform>`;
+              </Uniform>`;
                 return `### ${key}\n${value}`;
               })
               .join('\n')}
-            \n
-            ${c.props.length > 0 ? '## Properties' : ''}\n
+  \n
+            ${c.props.length > 0 ? '## Properties' : ''} \n
             ${c.props
               .map(
-                (prop) => `### ${prop.name}
-                    |**Description**|${prop.docs || '*not provided*'}|
-                    |---|---|
-                    |**Attribute**|${prop.attr || prop.name}|
-                    |**Type**|\`${prop.type.replace(/\|/g, '\\|')}\`|
-                    |**Default**|${prop.default}|
-                    |**Required**|${prop.required}|
-                    `
+                (prop) =>
+                  `### ${prop.name}\n
+              <table>
+              <tr><th>Description</th><td><Markdown>${
+                prop.docs || '*not provided*'
+              }</Markdown></td></tr>
+              <tr><th>Attribute</th><td><Markdown>${
+                prop.attr || prop.name
+              }</Markdown></td></tr>
+              <tr><th>Type</th><td><Markdown>\`\`\`${prop.type.replace(
+                /\|/g,
+                '|'
+              )}\`\`\`</Markdown></td></tr>
+              <tr><th>Default</th><td><Markdown>${
+                prop.default
+                  ? `\`\`\`${prop.default.replace(/\n/g, '')}\`\`\``
+                  : ''
+              }</Markdown></td></tr>
+              <tr><th>Required</th><td><Markdown>${
+                prop.required
+              }</Markdown></td></tr>
+              </table>`
               )
               .join('\n\n')}
-            \n
+\n
             ${
               c.events.length > 0
-                ? '## Events\n|Name|Description|\n|---|---|'
+                ? `## Events
+            <table>
+            <tr><th>Name</th><th>Description</th></tr>
+            `
                 : ''
             }
-            ${c.events
-              .map((e) => `|${e.event}|${e.docs || '*not provided*'}|`)
-              .join('\n')}
-            \n
+            ${`${c.events
+              .map(
+                (e) =>
+                  `<tr><td><Markdown>${e.event}</Markdown></td><td><Markdown>${
+                    e.docs || '*not provided*'
+                  }</Markdown></td></tr>`
+              )
+              .join('\n')}</table>`}
+\n
             ${c.methods.length > 0 ? '## Methods' : ''}
-            \n
+\n
             ${c.methods
               .map(
-                (m) => `### ${m.name}
-                    |**Description**|${m.docs || '*not provided*'}|
-                    |---|---|
-                    |**Signature**|\`${m.signature}\`|
-                `
+                (m) =>
+                  `### ${m.name}
+              <table>
+              <tr><th>Description</th><td><Markdown>${
+                m.docs || '*not provided*'
+              }</Markdown></td></tr>
+              <tr><th>Signature</th><td><Markdown>${
+                m.signature
+              }</Markdown></td></tr>
+              </table>`
               )
               .join('\n\n')}
             
             ${
               c.slots.length > 0
-                ? '## Slots\n|Name|Description|\n|---|---|'
+                ? `## Slots
+            <table>
+            <tr><th>Name</th><th>Description</th></tr>
+            `
                 : ''
             }
-            ${c.slots
-              .map((s) => `|${s.name}|${s.docs || '*not provided*'}|`)
-              .join('\n')}
+            ${`${c.slots
+              .map(
+                (s) =>
+                  `<tr><td><Markdown>${s.name}</Markdown></td><td><Markdown>${
+                    s.docs || '*not provided*'
+                  }</Markdown></td></tr>`
+              )
+              .join('\n')}</table>`}
 
-            `)
+`)
       );
       return null;
     });
