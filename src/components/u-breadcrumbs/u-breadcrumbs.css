@@ -1,0 +1,6 @@
+ul {
+  @apply list-none flex items-center gap-2 m-0 p-0 max-w-max;
+}
+.separator {
+  @apply text-gray-400 text-8xl font-extrabold align-middle;
+}

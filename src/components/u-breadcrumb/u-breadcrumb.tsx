@@ -1,14 +1,10 @@
 import { Component, h, Prop, Event, EventEmitter } from '@stencil/core';
 
-export interface BreadCrumbItem {
-  name: string;
-  link?: string;
-}
-
 /**
- * @name Breadcrumb
- * @state 🟡
+ * @name Breadcrumb Item
+ * @state 🟢
  * @description Breadcrumb navigation component
+ * @slot default - Breadcrumb content
  */
 @Component({
   tag: 'u-breadcrumb',
@@ -16,46 +12,36 @@ export interface BreadCrumbItem {
   shadow: true
 })
 export class UBreadcrumb {
-  @Prop() items: Array<BreadCrumbItem> = [
-    { name: 'test1', link: '/test' },
-    { name: 'test2' },
-    { name: 'test3' }
-  ];
+  /**
+   * link of the breadcrumb item
+   */
+  @Prop() link?: string;
 
-  @Prop() seperator?: string;
+  /**
+   * appereance of the breadcrumb link
+   */
+  @Prop() design?: 'secondary' | 'primary';
 
-  @Event() uBreadcrumbClick: EventEmitter<string>;
+  /**
+   * emit event on element click
+   */
+  @Event() uBreadcrumbClick: EventEmitter<void>;
 
   render() {
+    if (this.link)
+      return (
+        <li>
+          <u-link secondary={this.design === 'primary'} link={this.link}>
+            <slot></slot>
+          </u-link>
+        </li>
+      );
     return (
-      <ul>
-        {this.items.map((item, index) => {
-          const lastElement = index === this.items.length - 1;
-          return [
-            <li>
-              {!lastElement ? (
-                <u-link
-                  secondary={true}
-                  onClick={() => this.uBreadcrumbClick.emit(item.name)}
-                  {...(item.link ? { link: item.link } : null)}
-                >
-                  {item.name}
-                </u-link>
-              ) : (
-                <span class="last">{item.name}</span>
-              )}
-            </li>,
-            <span
-              class="separator"
-              style={{
-                display: !lastElement ? 'inline-block' : 'none'
-              }}
-            >
-              {this.seperator ? this.seperator : <i>&#8250;</i>}
-            </span>
-          ];
-        })}
-      </ul>
+      <li>
+        <span class="bc">
+          <slot></slot>
+        </span>
+      </li>
     );
   }
 }

@@ -25,14 +25,12 @@
 ### Used by
 
 - [u-filepicker](../u-filepicker)
-- [u-test](../u-test)
 
 ### Graph
 
 ```mermaid
 graph TD;
   u-filepicker --> u-col
-  u-test --> u-col
   style u-col fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

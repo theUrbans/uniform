@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-05T08:11:23",
+  "timestamp": "2022-05-05T13:01:46",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -219,45 +219,122 @@
       "docsTags": [
         {
           "name": "name",
-          "text": "Breadcrumb"
+          "text": "Breadcrumb Item"
         },
         {
           "name": "state",
-          "text": "🟡"
+          "text": "🟢"
         },
         {
           "name": "description",
           "text": "Breadcrumb navigation component"
+        },
+        {
+          "name": "slot",
+          "text": "default - Breadcrumb content"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "design",
+          "type": "\"primary\" | \"secondary\"",
+          "mutable": false,
+          "attr": "design",
+          "reflectToAttr": false,
+          "docs": "appereance of the breadcrumb link",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "link",
+          "type": "string",
+          "mutable": false,
+          "attr": "link",
+          "reflectToAttr": false,
+          "docs": "link of the breadcrumb item",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uBreadcrumbClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit event on element click",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "default",
+          "docs": "Breadcrumb content"
+        }
+      ],
+      "parts": [],
+      "dependents": ["u-test"],
+      "dependencies": ["u-link"],
+      "dependencyGraph": {
+        "u-breadcrumb": ["u-link"],
+        "u-test": ["u-breadcrumb"]
+      }
+    },
+    {
+      "filePath": "./src/components/u-breadcrumbs/u-breadcrumbs.tsx",
+      "encapsulation": "shadow",
+      "tag": "u-breadcrumbs",
+      "readme": "# u-breadcrumbs\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "name",
+          "text": "Breadcrumb Wrapper"
+        },
+        {
+          "name": "state",
+          "text": "🟢"
+        },
+        {
+          "name": "description",
+          "text": "Breadcrumb List"
         }
       ],
       "usage": {
-        "vue": "```html\n<u-breadcrumb\n  :items.prop=\"[{ name: 'test1', link: '/' }, { name: 'test2' }, { name: 'test3' }]\"\n>\n</u-breadcrumb>\n```\n"
+        "example": "```html\r\n<u-breadcrumbs seperator=\" | \">\r\n    <u-breadcrumb>Home</u-breadcrumb>\r\n    <u-breadcrumb link=\"/about\" design=\"secondary\">About</u-breadcrumb>\r\n    <u-breadcrumb link=\"/contect\">Contact</u-breadcrumb>\r\n</u-breadcrumbs>\r\n```"
       },
       "props": [
-        {
-          "name": "items",
-          "type": "BreadCrumbItem[]",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "[\n    { name: 'test1', link: '/test' },\n    { name: 'test2' },\n    { name: 'test3' }\n  ]",
-          "values": [
-            {
-              "type": "BreadCrumbItem[]"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
         {
           "name": "seperator",
           "type": "string",
           "mutable": false,
           "attr": "seperator",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "element between breadcrumbs",
           "docsTags": [],
+          "default": "'›'",
           "values": [
             {
               "type": "string"
@@ -275,7 +352,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "emit event on element click",
           "docsTags": []
         }
       ],
@@ -283,10 +360,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
-      "dependencies": ["u-link"],
+      "dependents": ["u-test"],
+      "dependencies": [],
       "dependencyGraph": {
-        "u-breadcrumb": ["u-link"]
+        "u-test": ["u-breadcrumbs"]
       }
     },
     {
@@ -542,7 +619,8 @@
         }
       ],
       "usage": {
-        "default": "```html\n<u-card>\n  <u-cardheader>\n    <u-col padding=\"0em\" gap=\"0em\">\n      <u-text\n        size=\"0.75rem\"\n        color=\"#9e9e9e\"\n        weight=\"bold\"\n        transform=\"uppercase\"\n      >\n        Your day your way\n      </u-text>\n      <u-text size=\"1.25rem\"> Your checklist for better sleep </u-text>\n    </u-col>\n  </u-cardheader>\n  <u-cardbody>\n    <u-cardimage src=\"https://api.lorem.space/image/shoes\" />\n  </u-cardbody>\n  <u-cardfooter>\n    <u-col>\n      <u-button>BUY</u-button>\n    </u-col>\n  </u-cardfooter>\n</u-card>\n```\n"
+        "default": "```html\n<u-card>\n  <u-cardheader>\n    <u-col padding=\"0em\" gap=\"0em\">\n      <u-text\n        size=\"0.75rem\"\n        color=\"#9e9e9e\"\n        weight=\"bold\"\n        transform=\"uppercase\"\n      >\n        Your day your way\n      </u-text>\n      <u-text size=\"1.25rem\"> Your checklist for better sleep </u-text>\n    </u-col>\n  </u-cardheader>\n  <u-cardbody>\n    <u-cardimage src=\"https://api.lorem.space/image/shoes\" />\n  </u-cardbody>\n  <u-cardfooter>\n    <u-col>\n      <u-button>BUY</u-button>\n    </u-col>\n  </u-cardfooter>\n</u-card>\n```\n",
+        "example": "```html\r\n<u-card>\r\n  <u-cardheader>\r\n    <u-col padding=\"0em\" gap=\"0em\">\r\n      <u-text\r\n        size=\"0.75rem\"\r\n        color=\"#9e9e9e\"\r\n        weight=\"bold\"\r\n        transform=\"uppercase\"\r\n      >\r\n        Your day your way\r\n      </u-text>\r\n      <u-text size=\"1.25rem\"> Your checklist for better sleep </u-text>\r\n    </u-col>\r\n  </u-cardheader>\r\n  <u-cardbody>\r\n    <u-cardimage src=\"https://api.lorem.space/image/shoes\" />\r\n  </u-cardbody>\r\n  <u-cardfooter>\r\n    <u-col>\r\n      <u-button>BUY</u-button>\r\n    </u-col>\r\n  </u-cardfooter>\r\n</u-card>\r\n```\r\n"
       },
       "props": [
         {
@@ -1485,11 +1563,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-filepicker", "u-test"],
+      "dependents": ["u-filepicker"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-filepicker": ["u-col"],
-        "u-test": ["u-col"]
+        "u-filepicker": ["u-col"]
       }
     },
     {
@@ -5369,12 +5446,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-formgen", "u-stepper", "u-test"],
+      "dependents": ["u-formgen", "u-stepper"],
       "dependencies": [],
       "dependencyGraph": {
         "u-formgen": ["u-row"],
-        "u-stepper": ["u-row"],
-        "u-test": ["u-row"]
+        "u-stepper": ["u-row"]
       }
     },
     {
@@ -6777,9 +6853,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["u-row", "u-col"],
+      "dependencies": ["u-breadcrumbs", "u-breadcrumb"],
       "dependencyGraph": {
-        "u-test": ["u-row", "u-col"]
+        "u-test": ["u-breadcrumbs", "u-breadcrumb"],
+        "u-breadcrumb": ["u-link"]
       }
     },
     {
