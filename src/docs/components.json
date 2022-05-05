@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-05-03T08:35:54",
+  "timestamp": "2022-05-05T08:11:23",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.14.0",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/u-alert/u-alert.tsx",
       "encapsulation": "shadow",
       "tag": "u-alert",
-      "readme": "# w-alert\r\n\r",
+      "readme": "# w-alert\n",
       "docs": "",
       "docsTags": [
         {
@@ -86,7 +86,7 @@
       "filePath": "./src/components/u-barcodescanner/u-barcodescanner.tsx",
       "encapsulation": "shadow",
       "tag": "u-barcodescanner",
-      "readme": "# u-barcodescanner\r\n\r",
+      "readme": "# u-barcodescanner\n",
       "docs": "",
       "docsTags": [
         {
@@ -214,7 +214,7 @@
       "filePath": "./src/components/u-breadcrumb/u-breadcrumb.tsx",
       "encapsulation": "shadow",
       "tag": "u-breadcrumb",
-      "readme": "# u-breadcrumb\r\n\r",
+      "readme": "# u-breadcrumb\n",
       "docs": "",
       "docsTags": [
         {
@@ -231,7 +231,7 @@
         }
       ],
       "usage": {
-        "example": "```html\r\n<u-breadcrumb :items.prop=\"[{ name: 'test1', link: '/' }, { name: 'test2' }, { name: 'test3' }]\">\r\n</u-breadcrumb>\r\n```\r\n"
+        "vue": "```html\n<u-breadcrumb\n  :items.prop=\"[{ name: 'test1', link: '/' }, { name: 'test2' }, { name: 'test3' }]\"\n>\n</u-breadcrumb>\n```\n"
       },
       "props": [
         {
@@ -293,7 +293,7 @@
       "filePath": "./src/components/u-button/u-button.tsx",
       "encapsulation": "shadow",
       "tag": "u-button",
-      "readme": "# w-button\r\n\r",
+      "readme": "# w-button\n",
       "docs": "",
       "docsTags": [
         {
@@ -508,8 +508,7 @@
         "u-filepicker",
         "u-formgen",
         "u-pagination",
-        "u-stepper",
-        "u-test"
+        "u-stepper"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -519,15 +518,14 @@
         "u-filepicker": ["u-button"],
         "u-formgen": ["u-button"],
         "u-pagination": ["u-button"],
-        "u-stepper": ["u-button"],
-        "u-test": ["u-button"]
+        "u-stepper": ["u-button"]
       }
     },
     {
       "filePath": "./src/components/u-card/u-card.tsx",
       "encapsulation": "shadow",
       "tag": "u-card",
-      "readme": "# u-card\r\n\r",
+      "readme": "# u-card\n",
       "docs": "",
       "docsTags": [
         {
@@ -596,7 +594,7 @@
       "filePath": "./src/components/u-cardbody/u-cardbody.tsx",
       "encapsulation": "shadow",
       "tag": "u-cardbody",
-      "readme": "# u-cardbody\r\n\r",
+      "readme": "# u-cardbody\n",
       "docs": "",
       "docsTags": [
         {
@@ -628,7 +626,7 @@
       "filePath": "./src/components/u-cardfooter/u-cardfooter.tsx",
       "encapsulation": "shadow",
       "tag": "u-cardfooter",
-      "readme": "# u-cardfooter\r\n\r",
+      "readme": "# u-cardfooter\n",
       "docs": "",
       "docsTags": [
         {
@@ -678,7 +676,7 @@
       "filePath": "./src/components/u-cardheader/u-cardheader.tsx",
       "encapsulation": "shadow",
       "tag": "u-cardheader",
-      "readme": "# u-cardheader\r\n\r",
+      "readme": "# u-cardheader\n",
       "docs": "",
       "docsTags": [
         {
@@ -728,7 +726,7 @@
       "filePath": "./src/components/u-cardimage/u-cardimage.tsx",
       "encapsulation": "shadow",
       "tag": "u-cardimage",
-      "readme": "# u-cardimage\r\n\r",
+      "readme": "# u-cardimage\n",
       "docs": "",
       "docsTags": [
         {
@@ -809,7 +807,7 @@
       "filePath": "./src/components/u-cardselect/u-cardselect.tsx",
       "encapsulation": "shadow",
       "tag": "u-cardselect",
-      "readme": "# w-cardselect\r\n\r",
+      "readme": "# w-cardselect\n",
       "docs": "",
       "docsTags": [
         {
@@ -833,7 +831,7 @@
       "filePath": "./src/components/u-checkbox/u-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "u-checkbox",
-      "readme": "# w-checkbox\r\n\r",
+      "readme": "# w-checkbox\n",
       "docs": "",
       "docsTags": [
         {
@@ -990,7 +988,7 @@
       "filePath": "./src/components/u-chip/u-chip.tsx",
       "encapsulation": "shadow",
       "tag": "u-chip",
-      "readme": "# w-chip\r\n\r",
+      "readme": "# w-chip\n",
       "docs": "",
       "docsTags": [
         {
@@ -1198,7 +1196,7 @@
       "filePath": "./src/components/u-col/u-col.tsx",
       "encapsulation": "shadow",
       "tag": "u-col",
-      "readme": "# w-col\r\n\r",
+      "readme": "# w-col\n",
       "docs": "",
       "docsTags": [
         {
@@ -1211,7 +1209,7 @@
         },
         {
           "name": "description",
-          "text": "Flexbox column"
+          "text": "Responsive flexbox/grid column"
         },
         {
           "name": "categorie",
@@ -1228,7 +1226,6 @@
           "reflectToAttr": false,
           "docs": "flex align-items: start | center | end | space-between | space-around | space-evenly",
           "docsTags": [],
-          "default": "'start'",
           "values": [
             {
               "value": "center",
@@ -1255,7 +1252,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -1281,7 +1278,7 @@
           "mutable": false,
           "attr": "end",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "grid column end",
           "docsTags": [],
           "values": [
             {
@@ -1299,13 +1296,12 @@
           "reflectToAttr": false,
           "docs": "flex gap: string, e.g. '1rem', '1px'",
           "docsTags": [],
-          "default": "'1em'",
           "values": [
             {
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -1316,7 +1312,6 @@
           "reflectToAttr": false,
           "docs": "flex justify-content: flex-start | flex-end | center | baseline | stretch",
           "docsTags": [],
-          "default": "'center'",
           "values": [
             {
               "value": "center",
@@ -1335,7 +1330,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -1378,13 +1373,12 @@
           "reflectToAttr": false,
           "docs": "padding bottom and top: string, e.g. '1rem', '1px'",
           "docsTags": [],
-          "default": "'0'",
           "values": [
             {
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -1426,7 +1420,7 @@
           "mutable": false,
           "attr": "start",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "grid column start",
           "docsTags": [],
           "values": [
             {
@@ -1444,7 +1438,6 @@
           "reflectToAttr": false,
           "docs": "flex wrap: nowrap | wrap | wrap-reverse",
           "docsTags": [],
-          "default": "'wrap'",
           "values": [
             {
               "value": "nowrap",
@@ -1459,7 +1452,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -1492,17 +1485,18 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-filepicker"],
+      "dependents": ["u-filepicker", "u-test"],
       "dependencies": [],
       "dependencyGraph": {
-        "u-filepicker": ["u-col"]
+        "u-filepicker": ["u-col"],
+        "u-test": ["u-col"]
       }
     },
     {
       "filePath": "./src/components/u-collapsible/u-collapsible.tsx",
       "encapsulation": "shadow",
       "tag": "u-collapsible",
-      "readme": "# u-collapsible\r\n\r",
+      "readme": "# u-collapsible\n",
       "docs": "",
       "docsTags": [
         {
@@ -1630,7 +1624,7 @@
       "filePath": "./src/components/u-collapsible-group/u-collapsible-group.tsx",
       "encapsulation": "shadow",
       "tag": "u-collapsible-group",
-      "readme": "# u-collapsible-group\r\n\r",
+      "readme": "# u-collapsible-group\n",
       "docs": "",
       "docsTags": [
         {
@@ -1689,7 +1683,7 @@
       "filePath": "./src/components/u-colorpicker/u-colorpicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-colorpicker",
-      "readme": "# u-colorpicker\r\n\r",
+      "readme": "# u-colorpicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1713,7 +1707,7 @@
       "filePath": "./src/components/u-container/u-container.tsx",
       "encapsulation": "shadow",
       "tag": "u-container",
-      "readme": "# u-container\n\n\n",
+      "readme": "# u-container\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1732,7 +1726,7 @@
       "filePath": "./src/components/u-datepicker/u-datepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-datepicker",
-      "readme": "# u-datepicker\r\n\r",
+      "readme": "# u-datepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1760,7 +1754,7 @@
       "filePath": "./src/components/u-datetimepicker/u-datetimepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-datetimepicker",
-      "readme": "# u-datetimepicker\r\n\r",
+      "readme": "# u-datetimepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -1788,7 +1782,7 @@
       "filePath": "./src/components/u-desktoplayout/u-desktoplayout.tsx",
       "encapsulation": "shadow",
       "tag": "u-desktoplayout",
-      "readme": "# u-desktoplayout\r\n\r",
+      "readme": "# u-desktoplayout\n",
       "docs": "",
       "docsTags": [
         {
@@ -1827,7 +1821,7 @@
       "filePath": "./src/components/u-dialog/u-dialog.tsx",
       "encapsulation": "shadow",
       "tag": "u-dialog",
-      "readme": "# w-dialog\r\n\r",
+      "readme": "# w-dialog\n",
       "docs": "",
       "docsTags": [
         {
@@ -1890,7 +1884,7 @@
       "filePath": "./src/components/u-editor/u-editor.tsx",
       "encapsulation": "shadow",
       "tag": "u-editor",
-      "readme": "# u-editor\r\n\r",
+      "readme": "# u-editor\n",
       "docs": "",
       "docsTags": [
         {
@@ -1932,7 +1926,7 @@
       "filePath": "./src/components/u-filepicker/u-filepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-filepicker",
-      "readme": "# w-filepicker\r\n\r",
+      "readme": "# w-filepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -2088,7 +2082,7 @@
       "filePath": "./src/components/u-floatingbutton/u-floatingbutton.tsx",
       "encapsulation": "shadow",
       "tag": "u-floatingbutton",
-      "readme": "# u-floatingbutton\r\n\r",
+      "readme": "# u-floatingbutton\n",
       "docs": "",
       "docsTags": [
         {
@@ -2164,7 +2158,7 @@
       "filePath": "./src/components/u-floatingmenu/u-floatingmenu.tsx",
       "encapsulation": "shadow",
       "tag": "u-floatingmenu",
-      "readme": "# u-floatingmenu\r\n\r",
+      "readme": "# u-floatingmenu\n",
       "docs": "",
       "docsTags": [
         {
@@ -2234,7 +2228,7 @@
       "filePath": "./src/components/u-form/u-form.tsx",
       "encapsulation": "scoped",
       "tag": "u-form",
-      "readme": "# w-form\r\n\r",
+      "readme": "# w-form\n",
       "docs": "",
       "docsTags": [
         {
@@ -2270,7 +2264,7 @@
       "filePath": "./src/components/u-formgen/u-formgen.tsx",
       "encapsulation": "shadow",
       "tag": "u-formgen",
-      "readme": "# u-formgen\r\n\r",
+      "readme": "# u-formgen\n",
       "docs": "",
       "docsTags": [
         {
@@ -2387,7 +2381,7 @@
       "filePath": "./src/components/u-grid/u-grid.tsx",
       "encapsulation": "shadow",
       "tag": "u-grid",
-      "readme": "# w-grid\r\n\r",
+      "readme": "# w-grid\n",
       "docs": "",
       "docsTags": [
         {
@@ -2529,7 +2523,7 @@
       "filePath": "./src/components/u-group/u-group.tsx",
       "encapsulation": "shadow",
       "tag": "u-group",
-      "readme": "# w-group\r\n\r",
+      "readme": "# w-group\n",
       "docs": "",
       "docsTags": [
         {
@@ -2587,7 +2581,7 @@
       "filePath": "./src/components/u-headline/u-headline.tsx",
       "encapsulation": "scoped",
       "tag": "u-headline",
-      "readme": "# u-headline\r\n\r",
+      "readme": "# u-headline\n",
       "docs": "",
       "docsTags": [
         {
@@ -2654,7 +2648,7 @@
       "filePath": "./src/components/u-icon/u-icon.tsx",
       "encapsulation": "scoped",
       "tag": "u-icon",
-      "readme": "# w-icon\r\n\r",
+      "readme": "# w-icon\n",
       "docs": "",
       "docsTags": [
         {
@@ -2799,17 +2793,15 @@
         }
       ],
       "parts": [],
-      "dependents": ["u-test"],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "u-test": ["u-icon"]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/u-input/u-input.tsx",
       "encapsulation": "shadow",
       "tag": "u-input",
-      "readme": "# w-input\r\n\r",
+      "readme": "# w-input\n",
       "docs": "",
       "docsTags": [
         {
@@ -3360,7 +3352,7 @@
       "filePath": "./src/components/u-item/u-item.tsx",
       "encapsulation": "shadow",
       "tag": "u-item",
-      "readme": "# u-item\r\n\r",
+      "readme": "# u-item\n",
       "docs": "",
       "docsTags": [
         {
@@ -3384,7 +3376,7 @@
       "filePath": "./src/components/u-label/u-label.tsx",
       "encapsulation": "shadow",
       "tag": "u-label",
-      "readme": "# u-label\r\n\r",
+      "readme": "# u-label\n",
       "docs": "",
       "docsTags": [
         {
@@ -3408,7 +3400,7 @@
       "filePath": "./src/components/u-layout/u-layout.tsx",
       "encapsulation": "shadow",
       "tag": "u-layout",
-      "readme": "# u-layout\r\n\r",
+      "readme": "# u-layout\n",
       "docs": "",
       "docsTags": [
         {
@@ -3493,19 +3485,18 @@
         }
       ],
       "parts": [],
-      "dependents": ["u-test"],
+      "dependents": [],
       "dependencies": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
       "dependencyGraph": {
         "u-layout": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
-        "u-desktoplayout": ["u-grid"],
-        "u-test": ["u-layout"]
+        "u-desktoplayout": ["u-grid"]
       }
     },
     {
       "filePath": "./src/components/u-link/u-link.tsx",
       "encapsulation": "shadow",
       "tag": "u-link",
-      "readme": "# u-link\r\n\r",
+      "readme": "# u-link\n",
       "docs": "",
       "docsTags": [
         {
@@ -3586,7 +3577,7 @@
       "filePath": "./src/components/u-list/u-list.tsx",
       "encapsulation": "none",
       "tag": "u-list",
-      "readme": "# u-list\r\n\r",
+      "readme": "# u-list\n",
       "docs": "",
       "docsTags": [
         {
@@ -3633,7 +3624,7 @@
       "filePath": "./src/components/u-loader/u-loader.tsx",
       "encapsulation": "shadow",
       "tag": "u-loader",
-      "readme": "# u-loader\r\n\r",
+      "readme": "# u-loader\n",
       "docs": "",
       "docsTags": [
         {
@@ -3657,7 +3648,7 @@
       "filePath": "./src/components/u-menu/u-menu.tsx",
       "encapsulation": "shadow",
       "tag": "u-menu",
-      "readme": "# w-menu\r\n\r",
+      "readme": "# w-menu\n",
       "docs": "",
       "docsTags": [
         {
@@ -3763,7 +3754,7 @@
       "filePath": "./src/components/u-menuitem/u-menuitem.tsx",
       "encapsulation": "scoped",
       "tag": "u-menuitem",
-      "readme": "# u-menuitem\r\n\r",
+      "readme": "# u-menuitem\n",
       "docs": "",
       "docsTags": [
         {
@@ -3851,7 +3842,7 @@
       "filePath": "./src/components/u-mobilelayout/u-mobilelayout.tsx",
       "encapsulation": "shadow",
       "tag": "u-mobilelayout",
-      "readme": "# u-mobilelayout\r\n\r",
+      "readme": "# u-mobilelayout\n",
       "docs": "",
       "docsTags": [
         {
@@ -3980,7 +3971,7 @@
       "filePath": "./src/components/u-modal/u-modal.tsx",
       "encapsulation": "shadow",
       "tag": "u-modal",
-      "readme": "# w-modal\r\n\r",
+      "readme": "# w-modal\n",
       "docs": "",
       "docsTags": [
         {
@@ -4282,7 +4273,7 @@
       "filePath": "./src/components/u-monthpicker/u-monthpicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-monthpicker",
-      "readme": "# u-monthpicker\r\n\r",
+      "readme": "# u-monthpicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -4306,7 +4297,7 @@
       "filePath": "./src/components/u-navbar/u-navbar.tsx",
       "encapsulation": "shadow",
       "tag": "u-navbar",
-      "readme": "# u-navbar\r\n\r",
+      "readme": "# u-navbar\n",
       "docs": "",
       "docsTags": [
         {
@@ -4382,7 +4373,7 @@
       "filePath": "./src/components/u-notification/u-notification.tsx",
       "encapsulation": "shadow",
       "tag": "u-notification",
-      "readme": "# w-notification\r\n\r",
+      "readme": "# w-notification\n",
       "docs": "",
       "docsTags": [
         {
@@ -4511,7 +4502,7 @@
       "filePath": "./src/components/u-observer/u-observer.tsx",
       "encapsulation": "shadow",
       "tag": "u-observer",
-      "readme": "# w-observer\r\n\r",
+      "readme": "# w-observer\n",
       "docs": "",
       "docsTags": [
         {
@@ -4598,7 +4589,7 @@
       "filePath": "./src/components/u-pagination/u-pagination.tsx",
       "encapsulation": "shadow",
       "tag": "u-pagination",
-      "readme": "# u-pagination\r\n\r",
+      "readme": "# u-pagination\n",
       "docs": "",
       "docsTags": [
         {
@@ -4718,7 +4709,7 @@
       "filePath": "./src/components/u-paragraph/u-paragraph.tsx",
       "encapsulation": "shadow",
       "tag": "u-paragraph",
-      "readme": "# u-paragraph\r\n\r",
+      "readme": "# u-paragraph\n",
       "docs": "",
       "docsTags": [
         {
@@ -4860,7 +4851,7 @@
       "filePath": "./src/components/u-popup/u-popup.tsx",
       "encapsulation": "shadow",
       "tag": "u-popup",
-      "readme": "# u-popup\r\n\r",
+      "readme": "# u-popup\n",
       "docs": "",
       "docsTags": [
         {
@@ -4940,7 +4931,7 @@
       "filePath": "./src/components/u-progress/u-progress.tsx",
       "encapsulation": "shadow",
       "tag": "u-progress",
-      "readme": "# u-progress\r\n\r",
+      "readme": "# u-progress\n",
       "docs": "",
       "docsTags": [
         {
@@ -5054,7 +5045,7 @@
       "filePath": "./src/components/u-radiogroup/u-radiogroup.tsx",
       "encapsulation": "shadow",
       "tag": "u-radiogroup",
-      "readme": "# w-radiogroup\r\n\r",
+      "readme": "# w-radiogroup\n",
       "docs": "",
       "docsTags": [
         {
@@ -5168,7 +5159,7 @@
       "filePath": "./src/components/u-row/u-row.tsx",
       "encapsulation": "scoped",
       "tag": "u-row",
-      "readme": "# w-row\r\n\r",
+      "readme": "# w-row\n",
       "docs": "",
       "docsTags": [
         {
@@ -5181,7 +5172,7 @@
         },
         {
           "name": "description",
-          "text": "flexbox row"
+          "text": "Responsive flexbox/grid row"
         },
         {
           "name": "categorie",
@@ -5198,7 +5189,6 @@
           "reflectToAttr": false,
           "docs": "flex align-items",
           "docsTags": [],
-          "default": "'center'",
           "values": [
             {
               "value": "center",
@@ -5217,7 +5207,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -5244,13 +5234,12 @@
           "reflectToAttr": false,
           "docs": "flex gap: string, e.g. '1rem', '1px'",
           "docsTags": [],
-          "default": "'1rem'",
           "values": [
             {
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -5315,13 +5304,12 @@
           "reflectToAttr": false,
           "docs": "padding left and right: string, e.g. '1rem', '1px'",
           "docsTags": [],
-          "default": "'0'",
           "values": [
             {
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -5332,7 +5320,6 @@
           "reflectToAttr": false,
           "docs": "flex width behaviour",
           "docsTags": [],
-          "default": "'full'",
           "values": [
             {
               "value": "auto",
@@ -5347,7 +5334,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -5358,7 +5345,6 @@
           "reflectToAttr": false,
           "docs": "flex wrap",
           "docsTags": [],
-          "default": "'wrap'",
           "values": [
             {
               "value": "nowrap",
@@ -5373,7 +5359,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
@@ -5383,18 +5369,19 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["u-formgen", "u-stepper"],
+      "dependents": ["u-formgen", "u-stepper", "u-test"],
       "dependencies": [],
       "dependencyGraph": {
         "u-formgen": ["u-row"],
-        "u-stepper": ["u-row"]
+        "u-stepper": ["u-row"],
+        "u-test": ["u-row"]
       }
     },
     {
       "filePath": "./src/components/u-select/u-select.tsx",
       "encapsulation": "shadow",
       "tag": "u-select",
-      "readme": "# w-select\r\n\r",
+      "readme": "# w-select\n",
       "docs": "",
       "docsTags": [
         {
@@ -5975,7 +5962,7 @@
       "filePath": "./src/components/u-slider/u-slider.tsx",
       "encapsulation": "shadow",
       "tag": "u-slider",
-      "readme": "# w-slider\r\n\r",
+      "readme": "# w-slider\n",
       "docs": "",
       "docsTags": [
         {
@@ -6003,7 +5990,7 @@
       "filePath": "./src/components/u-stepper/u-stepper.tsx",
       "encapsulation": "shadow",
       "tag": "u-stepper",
-      "readme": "# w-stepper\r\n\r",
+      "readme": "# w-stepper\n",
       "docs": "",
       "docsTags": [
         {
@@ -6201,7 +6188,7 @@
       "filePath": "./src/components/u-submenu/u-submenu.tsx",
       "encapsulation": "scoped",
       "tag": "u-submenu",
-      "readme": "# u-submenu\r\n\r",
+      "readme": "# u-submenu\n",
       "docs": "",
       "docsTags": [
         {
@@ -6292,7 +6279,7 @@
       "filePath": "./src/components/u-table/u-table.tsx",
       "encapsulation": "shadow",
       "tag": "u-table",
-      "readme": "# u-table\r\n\r",
+      "readme": "# u-table\n",
       "docs": "",
       "docsTags": [
         {
@@ -6356,7 +6343,7 @@
       "filePath": "./src/components/u-tablecell/u-tablecell.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablecell",
-      "readme": "# u-tablecell\r\n\r",
+      "readme": "# u-tablecell\n",
       "docs": "",
       "docsTags": [
         {
@@ -6421,7 +6408,7 @@
       "filePath": "./src/components/u-tablefoot/u-tablefoot.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablefoot",
-      "readme": "# u-tablefoot\r\n\r",
+      "readme": "# u-tablefoot\n",
       "docs": "",
       "docsTags": [
         {
@@ -6445,7 +6432,7 @@
       "filePath": "./src/components/u-tablegen/u-tablegen.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablegen",
-      "readme": "# u-tablegen\r\n\r",
+      "readme": "# u-tablegen\n",
       "docs": "",
       "docsTags": [
         {
@@ -6671,7 +6658,7 @@
       "filePath": "./src/components/u-tablehead/u-tablehead.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablehead",
-      "readme": "# u-tablehead\r\n\r",
+      "readme": "# u-tablehead\n",
       "docs": "",
       "docsTags": [
         {
@@ -6695,7 +6682,7 @@
       "filePath": "./src/components/u-tablerow/u-tablerow.tsx",
       "encapsulation": "shadow",
       "tag": "u-tablerow",
-      "readme": "# u-tablerow\r\n\r",
+      "readme": "# u-tablerow\n",
       "docs": "",
       "docsTags": [
         {
@@ -6722,7 +6709,7 @@
       "filePath": "./src/components/u-tabs/u-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "u-tabs",
-      "readme": "# w-tabs\r\n\r",
+      "readme": "# w-tabs\n",
       "docs": "",
       "docsTags": [
         {
@@ -6746,7 +6733,7 @@
       "filePath": "./src/components/u-terms/u-terms.tsx",
       "encapsulation": "shadow",
       "tag": "u-terms",
-      "readme": "# u-terms\r\n\r",
+      "readme": "# u-terms\n",
       "docs": "",
       "docsTags": [
         {
@@ -6790,18 +6777,16 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["u-layout", "u-button", "u-icon"],
+      "dependencies": ["u-row", "u-col"],
       "dependencyGraph": {
-        "u-test": ["u-layout", "u-button", "u-icon"],
-        "u-layout": ["u-mobilelayout", "u-desktoplayout", "u-modal"],
-        "u-desktoplayout": ["u-grid"]
+        "u-test": ["u-row", "u-col"]
       }
     },
     {
       "filePath": "./src/components/u-text/u-text.tsx",
       "encapsulation": "shadow",
       "tag": "u-text",
-      "readme": "# u-text\r\n\r",
+      "readme": "# u-text\n",
       "docs": "",
       "docsTags": [
         {
@@ -6901,7 +6886,7 @@
       "filePath": "./src/components/u-textarea/u-textarea.tsx",
       "encapsulation": "shadow",
       "tag": "u-textarea",
-      "readme": "# w-textarea\r\n\r",
+      "readme": "# w-textarea\n",
       "docs": "",
       "docsTags": [
         {
@@ -7158,7 +7143,7 @@
       "filePath": "./src/components/u-timepicker/u-timepicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-timepicker",
-      "readme": "# u-timepicker\r\n\r",
+      "readme": "# u-timepicker\n",
       "docs": "",
       "docsTags": [
         {
@@ -7182,7 +7167,7 @@
       "filePath": "./src/components/u-toggle/u-toggle.tsx",
       "encapsulation": "shadow",
       "tag": "u-toggle",
-      "readme": "# w-toggle\r\n\r",
+      "readme": "# w-toggle\n",
       "docs": "",
       "docsTags": [
         {
@@ -7210,7 +7195,7 @@
       "filePath": "./src/components/u-tooltip/u-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "u-tooltip",
-      "readme": "# w-tooltip\r\n\r",
+      "readme": "# w-tooltip\n",
       "docs": "",
       "docsTags": [
         {
@@ -7364,7 +7349,7 @@
       "filePath": "./src/components/u-touch/u-touch.tsx",
       "encapsulation": "shadow",
       "tag": "u-touch",
-      "readme": "# u-touch\r\n\r",
+      "readme": "# u-touch\n",
       "docs": "",
       "docsTags": [
         {
@@ -7417,7 +7402,7 @@
       "filePath": "./src/components/u-weekpicker/u-weekpicker.tsx",
       "encapsulation": "shadow",
       "tag": "u-weekpicker",
-      "readme": "# u-weekpicker\r\n\r",
+      "readme": "# u-weekpicker\n",
       "docs": "",
       "docsTags": [
         {

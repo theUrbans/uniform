@@ -151,7 +151,7 @@ export namespace Components {
         /**
           * flex align-items: start | center | end | space-between | space-around | space-evenly
          */
-        "align": | 'start'
+        "align"?: | 'start'
     | 'center'
     | 'end'
     | 'space-around'
@@ -161,15 +161,18 @@ export namespace Components {
           * use with w-grid to set area
          */
         "area"?: string;
+        /**
+          * grid column end
+         */
         "end"?: number;
         /**
           * flex gap: string, e.g. '1rem', '1px'
          */
-        "gap": string;
+        "gap"?: string;
         /**
           * flex justify-content: flex-start | flex-end | center | baseline | stretch
          */
-        "justify": 'start' | 'center' | 'end' | 'stretch';
+        "justify"?: 'start' | 'center' | 'end' | 'stretch';
         /**
           * size in large (≥1200px)
          */
@@ -181,7 +184,7 @@ export namespace Components {
         /**
           * padding bottom and top: string, e.g. '1rem', '1px'
          */
-        "padding": string;
+        "padding"?: string;
         /**
           * used with w-grid, set size based on number of columns on w-grid (default is 12)
          */
@@ -190,11 +193,14 @@ export namespace Components {
           * size in small (≥768px)
          */
         "sm"?: number;
+        /**
+          * grid column start
+         */
         "start"?: number;
         /**
           * flex wrap: nowrap | wrap | wrap-reverse
          */
-        "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
+        "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
         /**
           * size in extra large (≥1200px)
          */
@@ -613,7 +619,7 @@ export namespace Components {
         /**
           * flex align-items
          */
-        "align": 'start' | 'center' | 'end' | 'stretch';
+        "align"?: 'start' | 'center' | 'end' | 'stretch';
         /**
           * should row be responsive?
          */
@@ -621,7 +627,7 @@ export namespace Components {
         /**
           * flex gap: string, e.g. '1rem', '1px'
          */
-        "gap": string;
+        "gap"?: string;
         /**
           * how many columns are in the row?
          */
@@ -638,15 +644,15 @@ export namespace Components {
         /**
           * padding left and right: string, e.g. '1rem', '1px'
          */
-        "padding": string;
+        "padding"?: string;
         /**
           * flex width behaviour
          */
-        "width": 'full' | 'content' | 'auto';
+        "width"?: 'full' | 'content' | 'auto';
         /**
           * flex wrap
          */
-        "wrap": 'nowrap' | 'wrap' | 'wrap-reverse';
+        "wrap"?: 'nowrap' | 'wrap' | 'wrap-reverse';
     }
     interface USelect {
         /**
@@ -1577,6 +1583,9 @@ declare namespace LocalJSX {
           * use with w-grid to set area
          */
         "area"?: string;
+        /**
+          * grid column end
+         */
         "end"?: number;
         /**
           * flex gap: string, e.g. '1rem', '1px'
@@ -1606,6 +1615,9 @@ declare namespace LocalJSX {
           * size in small (≥768px)
          */
         "sm"?: number;
+        /**
+          * grid column start
+         */
         "start"?: number;
         /**
           * flex wrap: nowrap | wrap | wrap-reverse

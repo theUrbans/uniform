@@ -225,7 +225,9 @@ import { Markdown } from 'astro/components';
               )}\`\`\`</Markdown></td></tr>
               <tr><th>Default</th><td><Markdown>${
                 prop.default
-                  ? `\`\`\`${prop.default.replace(/\n/g, '')}\`\`\``
+                  ? `\`\`\`${prop.default
+                      .replace(/\n/g, '')
+                      .replace(/  +/g, ' ')}\`\`\``
                   : ''
               }</Markdown></td></tr>
               <tr><th>Required</th><td><Markdown>${
