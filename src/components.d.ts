@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { BreadCrumbItem } from "./components/u-breadcrumb/u-breadcrumb";
 import { ChipDesign } from "./components/u-chip/u-chip";
 import { EditorTools } from "./components/u-editor/u-editor";
 import { MenuItem } from "./components/u-menuitem/u-menuitem";
@@ -44,7 +43,19 @@ export namespace Components {
         "stopScanner": () => Promise<void>;
     }
     interface UBreadcrumb {
-        "items": Array<BreadCrumbItem>;
+        /**
+          * appereance of the breadcrumb link
+         */
+        "design"?: 'secondary' | 'primary';
+        /**
+          * link of the breadcrumb item
+         */
+        "link"?: string;
+    }
+    interface UBreadcrumbs {
+        /**
+          * element between breadcrumbs
+         */
         "seperator"?: string;
     }
     interface UButton {
@@ -944,6 +955,12 @@ declare global {
         prototype: HTMLUBreadcrumbElement;
         new (): HTMLUBreadcrumbElement;
     };
+    interface HTMLUBreadcrumbsElement extends Components.UBreadcrumbs, HTMLStencilElement {
+    }
+    var HTMLUBreadcrumbsElement: {
+        prototype: HTMLUBreadcrumbsElement;
+        new (): HTMLUBreadcrumbsElement;
+    };
     interface HTMLUButtonElement extends Components.UButton, HTMLStencilElement {
     }
     var HTMLUButtonElement: {
@@ -1362,6 +1379,7 @@ declare global {
         "u-alert": HTMLUAlertElement;
         "u-barcodescanner": HTMLUBarcodescannerElement;
         "u-breadcrumb": HTMLUBreadcrumbElement;
+        "u-breadcrumbs": HTMLUBreadcrumbsElement;
         "u-button": HTMLUButtonElement;
         "u-card": HTMLUCardElement;
         "u-cardbody": HTMLUCardbodyElement;
@@ -1457,8 +1475,27 @@ declare namespace LocalJSX {
         "onUStopScan"?: (event: CustomEvent<void>) => void;
     }
     interface UBreadcrumb {
-        "items"?: Array<BreadCrumbItem>;
+        /**
+          * appereance of the breadcrumb link
+         */
+        "design"?: 'secondary' | 'primary';
+        /**
+          * link of the breadcrumb item
+         */
+        "link"?: string;
+        /**
+          * emit event on element click
+         */
+        "onUBreadcrumbClick"?: (event: CustomEvent<void>) => void;
+    }
+    interface UBreadcrumbs {
+        /**
+          * emit event on element click
+         */
         "onUBreadcrumbClick"?: (event: CustomEvent<string>) => void;
+        /**
+          * element between breadcrumbs
+         */
         "seperator"?: string;
     }
     interface UButton {
@@ -2389,6 +2426,7 @@ declare namespace LocalJSX {
         "u-alert": UAlert;
         "u-barcodescanner": UBarcodescanner;
         "u-breadcrumb": UBreadcrumb;
+        "u-breadcrumbs": UBreadcrumbs;
         "u-button": UButton;
         "u-card": UCard;
         "u-cardbody": UCardbody;
@@ -2467,6 +2505,7 @@ declare module "@stencil/core" {
             "u-alert": LocalJSX.UAlert & JSXBase.HTMLAttributes<HTMLUAlertElement>;
             "u-barcodescanner": LocalJSX.UBarcodescanner & JSXBase.HTMLAttributes<HTMLUBarcodescannerElement>;
             "u-breadcrumb": LocalJSX.UBreadcrumb & JSXBase.HTMLAttributes<HTMLUBreadcrumbElement>;
+            "u-breadcrumbs": LocalJSX.UBreadcrumbs & JSXBase.HTMLAttributes<HTMLUBreadcrumbsElement>;
             "u-button": LocalJSX.UButton & JSXBase.HTMLAttributes<HTMLUButtonElement>;
             "u-card": LocalJSX.UCard & JSXBase.HTMLAttributes<HTMLUCardElement>;
             "u-cardbody": LocalJSX.UCardbody & JSXBase.HTMLAttributes<HTMLUCardbodyElement>;

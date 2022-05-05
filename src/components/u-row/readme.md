@@ -21,7 +21,6 @@
 
 - [u-formgen](../u-formgen)
 - [u-stepper](../u-stepper)
-- [u-test](../u-test)
 
 ### Graph
 
@@ -29,7 +28,6 @@
 graph TD;
   u-formgen --> u-row
   u-stepper --> u-row
-  u-test --> u-row
   style u-row fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
