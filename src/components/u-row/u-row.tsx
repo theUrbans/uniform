@@ -3,7 +3,7 @@ import { Component, h, Host, Prop } from '@stencil/core';
 /**
  * @name Row
  * @state 🟢
- * @description flexbox row
+ * @description Responsive flexbox/grid row
  * @categorie Layout
  */
 @Component({
@@ -26,27 +26,27 @@ export class URow {
   /**
    * flex align-items
    */
-  @Prop() align: 'start' | 'center' | 'end' | 'stretch' = 'center';
+  @Prop() align?: 'start' | 'center' | 'end' | 'stretch';
 
   /**
    * flex wrap
    */
-  @Prop() wrap: 'nowrap' | 'wrap' | 'wrap-reverse' = 'wrap';
+  @Prop() wrap?: 'nowrap' | 'wrap' | 'wrap-reverse';
 
   /**
    * flex gap: string, e.g. '1rem', '1px'
    */
-  @Prop() gap: string = '1rem';
+  @Prop() gap?: string;
 
   /**
    * padding left and right: string, e.g. '1rem', '1px'
    */
-  @Prop() padding: string = '0';
+  @Prop() padding?: string;
 
   /**
    * flex width behaviour
    */
-  @Prop() width: 'full' | 'content' | 'auto' = 'full';
+  @Prop() width?: 'full' | 'content' | 'auto';
 
   /**
    * should row be responsive?
@@ -59,31 +59,30 @@ export class URow {
   @Prop({ reflect: true }) gutter?: number;
 
   private setStyle() {
+    const style: any = {};
     if (this.container) {
-      return {
-        display: 'grid',
-        gridTemplateColumns: `repeat( ${this.gutter}, minmax(0, 1fr))`
-      };
+      style.display = 'grid';
+      style.gridTemplateColumns = `repeat(${this.gutter}, minmax(0, 1fr))`;
     }
-    return {};
+    if (!this.container) style.display = 'flex';
+    if (this.justify) style.justifyContent = this.justify;
+    if (this.align) style.alignItems = this.align;
+    if (this.wrap) style.flexWrap = this.wrap;
+    if (this.gap) style.gridGap = this.gap;
+    style.width =
+      this.width === 'full'
+        ? '100%'
+        : this.width === 'content'
+        ? 'fit-content'
+        : 'auto';
+    return style;
   }
 
   render() {
     return (
       <Host
         style={{
-          ...this.setStyle(),
-          // alignItems: this.align,
-          // justifyContent: this.justify,
-          // flexWrap: this.wrap,
-          gap: this.gap,
-          padding: `${this.padding}`
-          // width:
-          //   this.width === 'full'
-          //     ? '100%'
-          //     : this.width === 'content'
-          //     ? 'fit-content'
-          //     : 'auto',
+          ...this.setStyle()
         }}
       >
         <slot></slot>
