@@ -7,7 +7,9 @@ import { Component, Host, h, Listen, State, Method } from '@stencil/core';
  * @categorie Layout
  * @slot menu - menu view
  * @slot main - main view
- * @slot option - option view
+ * @slot option - mobile option view
+ * @slot option-header - desktop option title
+ * @slot option-body - desktop option content
  */
 @Component({
   tag: 'u-layout',
