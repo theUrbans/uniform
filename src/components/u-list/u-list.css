@@ -1,5 +1,5 @@
 .x {
-  @apply flex flex-row;
+  @apply flex flex-col;
 }
 .y {
   @apply flex flex-row;
