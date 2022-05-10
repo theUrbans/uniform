@@ -1,0 +1,15 @@
+:root {
+  --background-color: #fafafa; /* zinc-50 */
+  --surface-color: #d4d4d8; /* zinc-300 */
+  --border-color: #52525b; /* zinc-600 */
+  --primary-color: #18181b; /* zinc-900 */
+  --secondary-color: #71717a; /* zinc-500 */
+}
+
+.dark {
+  --background-color: #18181b; /* zinc-900 */
+  --surface-color: #21212a; /* zinc-800 */
+  --border-color: #52525b; /* zinc-600 */
+  --primary-color: #fafafa; /* zinc-50 */
+  --secondary-color: #71717a; /* zinc-500 */
+}
