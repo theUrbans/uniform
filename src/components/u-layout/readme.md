@@ -31,11 +31,13 @@ Type: `Promise<void>`
 
 ## Slots
 
-| Slot       | Description |
-| ---------- | ----------- |
-| `"main"`   | main view   |
-| `"menu"`   | menu view   |
-| `"option"` | option view |
+| Slot              | Description            |
+| ----------------- | ---------------------- |
+| `"main"`          | main view              |
+| `"menu"`          | menu view              |
+| `"option"`        | mobile option view     |
+| `"option-body"`   | desktop option content |
+| `"option-header"` | desktop option title   |
 
 ## Dependencies
 
@@ -43,7 +45,7 @@ Type: `Promise<void>`
 
 - [u-mobilelayout](../u-mobilelayout)
 - [u-desktoplayout](../u-desktoplayout)
-- [u-modal](../u-modal)
+- [u-tabletlayout](../u-tabletlayout)
 
 ### Graph
 
@@ -51,8 +53,9 @@ Type: `Promise<void>`
 graph TD;
   u-layout --> u-mobilelayout
   u-layout --> u-desktoplayout
-  u-layout --> u-modal
+  u-layout --> u-tabletlayout
   u-desktoplayout --> u-grid
+  u-tabletlayout --> u-grid
   style u-layout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

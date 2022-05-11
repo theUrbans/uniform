@@ -23,10 +23,6 @@
 
 ## Dependencies
 
-### Used by
-
-- [u-test](../u-test)
-
 ### Depends on
 
 - [u-link](../u-link)
@@ -36,7 +32,6 @@
 ```mermaid
 graph TD;
   u-breadcrumb --> u-link
-  u-test --> u-breadcrumb
   style u-breadcrumb fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

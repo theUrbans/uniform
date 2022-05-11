@@ -2,6 +2,14 @@
 
 <!-- Auto Generated Below -->
 
+## Slots
+
+| Slot       | Description |
+| ---------- | ----------- |
+| `"main"`   | main view   |
+| `"menu"`   | menu view   |
+| `"option"` | option view |
+
 ## Dependencies
 
 ### Used by

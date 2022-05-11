@@ -33,8 +33,8 @@ body.dispatchEvent(
 | Property        | Attribute         | Description                                                         | Type                    | Default     |
 | --------------- | ----------------- | ------------------------------------------------------------------- | ----------------------- | ----------- |
 | `closeOnClick`  | `close-on-click`  | should the modal be closed on backdrop click                        | `boolean`               | `true`      |
-| `maxHeight`     | `max-height`      | (DESKTOP only) resizable max width                                  | `string`                | `'auto'`    |
-| `maxWidth`      | `max-width`       | (DESKTOP only) resizable max height                                 | `string`                | `'auto'`    |
+| `maxHeight`     | `max-height`      | (DESKTOP only) resizable max height                                 | `string`                | `'auto'`    |
+| `maxWidth`      | `max-width`       | (DESKTOP only) resizable max width                                  | `string`                | `'auto'`    |
 | `minHeight`     | `min-height`      | (DESKTOP only) resizable min height                                 | `string`                | `'auto'`    |
 | `minWidth`      | `min-width`       | (DESKTOP only) resizable min width                                  | `string`                | `'auto'`    |
 | `mode`          | `mode`            | autoset mode for mobile or desktop                                  | `"desktop" \| "mobile"` | `'desktop'` |
@@ -81,7 +81,6 @@ Type: `Promise<void>`
 
 - [u-alert](../u-alert)
 - [u-dialog](../u-dialog)
-- [u-layout](../u-layout)
 
 ### Graph
 
@@ -89,7 +88,6 @@ Type: `Promise<void>`
 graph TD;
   u-alert --> u-modal
   u-dialog --> u-modal
-  u-layout --> u-modal
   style u-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

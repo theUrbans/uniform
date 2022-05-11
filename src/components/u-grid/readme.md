@@ -20,6 +20,7 @@
 - [u-desktoplayout](../u-desktoplayout)
 - [u-formgen](../u-formgen)
 - [u-stepper](../u-stepper)
+- [u-tabletlayout](../u-tabletlayout)
 
 ### Graph
 
@@ -28,6 +29,7 @@ graph TD;
   u-desktoplayout --> u-grid
   u-formgen --> u-grid
   u-stepper --> u-grid
+  u-tabletlayout --> u-grid
   style u-grid fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

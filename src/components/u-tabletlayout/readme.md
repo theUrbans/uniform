@@ -1,4 +1,4 @@
-# u-mobilelayout
+# u-tabletlayout
 
 <!-- Auto Generated Below -->
 
@@ -7,29 +7,11 @@
 | Property      | Attribute      | Description | Type      | Default |
 | ------------- | -------------- | ----------- | --------- | ------- |
 | `showOptions` | `show-options` |             | `boolean` | `false` |
-| `sideWidth`   | `side-width`   |             | `string`  | `'94%'` |
+| `sideWidth`   | `side-width`   |             | `string`  | `'90%'` |
 
 ## Methods
 
-### `activateOption() => Promise<void>`
-
-#### Returns
-
-Type: `Promise<void>`
-
-### `disableOption() => Promise<void>`
-
-#### Returns
-
-Type: `Promise<void>`
-
-### `showMain() => Promise<void>`
-
-#### Returns
-
-Type: `Promise<void>`
-
-### `showMenu() => Promise<void>`
+### `hideOption() => Promise<void>`
 
 #### Returns
 
@@ -55,12 +37,17 @@ Type: `Promise<void>`
 
 - [u-layout](../u-layout)
 
+### Depends on
+
+- [u-grid](../u-grid)
+
 ### Graph
 
 ```mermaid
 graph TD;
-  u-layout --> u-mobilelayout
-  style u-mobilelayout fill:#f9f,stroke:#333,stroke-width:4px
+  u-tabletlayout --> u-grid
+  u-layout --> u-tabletlayout
+  style u-tabletlayout fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ---

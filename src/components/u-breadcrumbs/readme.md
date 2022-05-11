@@ -26,20 +26,6 @@
 | ------------------ | --------------------------- | --------------------- |
 | `uBreadcrumbClick` | emit event on element click | `CustomEvent<string>` |
 
-## Dependencies
-
-### Used by
-
-- [u-test](../u-test)
-
-### Graph
-
-```mermaid
-graph TD;
-  u-test --> u-breadcrumbs
-  style u-breadcrumbs fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ---
 
 _Built with [StencilJS](https://stenciljs.com/) by Hoer_
