@@ -19,10 +19,14 @@ import { Component, Host, h, Listen, State, Method } from '@stencil/core';
 export class ULayout {
   private mobilelayout: HTMLUMobilelayoutElement;
 
-  @State() mode: 'mobile' | 'desktop';
+  private tablelayout: HTMLUTabletlayoutElement;
+
+  // TODO add tablet option
+  @State() mode: 'mobile' | 'tablet' | 'desktop';
 
   @Listen('resize', { target: 'window' }) onWindowResize() {
-    if (window.innerWidth <= 768) this.mode = 'mobile';
+    if (window.innerWidth <= 640) this.mode = 'mobile';
+    else if (window.innerWidth <= 920) this.mode = 'tablet';
     else this.mode = 'desktop';
   }
 
@@ -31,38 +35,38 @@ export class ULayout {
   }
 
   @Method() async showOption() {
-    if (this.mode === 'mobile') {
-      this.mobilelayout.activateOption();
-      this.mobilelayout.showOption();
-    }
-    if (this.mode === 'desktop') {
-      window.dispatchEvent(
-        new CustomEvent('show-modal', {
-          detail: { name: 'uniform-layout-option' }
-        })
-      );
+    switch (this.mode) {
+      case 'mobile':
+        this.mobilelayout.activateOption();
+        this.mobilelayout.showOption();
+        break;
+      case 'tablet':
+        this.tablelayout.activateOption();
+        this.tablelayout.showOption();
+        break;
+      default:
+        break;
     }
   }
 
   @Method() async closeOption() {
-    if (this.mode === 'mobile') {
-      this.mobilelayout.showMain();
-      this.mobilelayout.disableOption();
-    }
-    if (this.mode === 'desktop') {
-      console.log('close option');
-      window.dispatchEvent(
-        new CustomEvent('close-modal', {
-          detail: { name: 'uniform-layout-option' }
-        })
-      );
+    switch (this.mode) {
+      case 'mobile':
+        this.mobilelayout.showMain();
+        this.mobilelayout.disableOption();
+        break;
+      case 'tablet':
+        this.tablelayout.disableOption();
+        break;
+      default:
+        break;
     }
   }
 
   render() {
     return (
       <Host>
-        {this.mode === 'mobile' ? (
+        {this.mode === 'mobile' && (
           <u-mobilelayout ref={(mobile) => (this.mobilelayout = mobile)}>
             <div slot="menu">
               <slot name="menu" />
@@ -74,21 +78,32 @@ export class ULayout {
               <slot name="option" />
             </div>
           </u-mobilelayout>
-        ) : (
-          [
-            <u-desktoplayout>
-              <div slot="menu">
-                <slot name="menu" />
-              </div>
-              <div slot="main">
-                <slot name="main" />
-              </div>
-            </u-desktoplayout>,
-            <u-modal name="uniform-layout-option">
-              <slot name="option-header" slot="header"></slot>
-              <slot name="option-body" slot="body"></slot>
-            </u-modal>
-          ]
+        )}
+        {this.mode === 'desktop' && (
+          <u-desktoplayout>
+            <div slot="menu">
+              <slot name="menu" />
+            </div>
+            <div slot="main">
+              <slot name="main" />
+            </div>
+            <div slot="option">
+              <slot name="option" />
+            </div>
+          </u-desktoplayout>
+        )}
+        {this.mode === 'tablet' && (
+          <u-tablelayout ref={(tablet) => (this.tablelayout = tablet)}>
+            <div slot="menu">
+              <slot name="menu" />
+            </div>
+            <div slot="main">
+              <slot name="main" />
+            </div>
+            <div slot="option">
+              <slot name="option" />
+            </div>
+          </u-tablelayout>
         )}
       </Host>
     );
