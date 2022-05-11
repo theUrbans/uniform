@@ -19,7 +19,7 @@ import { Component, Host, h, Listen, State, Method } from '@stencil/core';
 export class ULayout {
   private mobilelayout: HTMLUMobilelayoutElement;
 
-  private tablelayout: HTMLUTabletlayoutElement;
+  private tabletlayout: HTMLUTabletlayoutElement;
 
   // TODO add tablet option
   @State() mode: 'mobile' | 'tablet' | 'desktop';
@@ -41,8 +41,7 @@ export class ULayout {
         this.mobilelayout.showOption();
         break;
       case 'tablet':
-        this.tablelayout.activateOption();
-        this.tablelayout.showOption();
+        this.tabletlayout.showOption();
         break;
       default:
         break;
@@ -56,7 +55,7 @@ export class ULayout {
         this.mobilelayout.disableOption();
         break;
       case 'tablet':
-        this.tablelayout.disableOption();
+        this.tabletlayout.hideOption();
         break;
       default:
         break;
@@ -93,7 +92,7 @@ export class ULayout {
           </u-desktoplayout>
         )}
         {this.mode === 'tablet' && (
-          <u-tablelayout ref={(tablet) => (this.tablelayout = tablet)}>
+          <u-tabletlayout ref={(tablet) => (this.tabletlayout = tablet)}>
             <div slot="menu">
               <slot name="menu" />
             </div>
@@ -103,7 +102,7 @@ export class ULayout {
             <div slot="option">
               <slot name="option" />
             </div>
-          </u-tablelayout>
+          </u-tabletlayout>
         )}
       </Host>
     );
