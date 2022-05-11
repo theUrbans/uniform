@@ -25,8 +25,8 @@ export class ULayout {
   @State() mode: 'mobile' | 'tablet' | 'desktop';
 
   @Listen('resize', { target: 'window' }) onWindowResize() {
-    if (window.innerWidth <= 640) this.mode = 'mobile';
-    else if (window.innerWidth <= 920) this.mode = 'tablet';
+    if (window.innerWidth <= 768) this.mode = 'mobile';
+    else if (window.innerWidth <= 992) this.mode = 'tablet';
     else this.mode = 'desktop';
   }
 
