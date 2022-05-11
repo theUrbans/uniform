@@ -464,6 +464,28 @@ export namespace Components {
           * list as row(x) or as column(y)
          */
         "alignment": 'x' | 'y';
+        /**
+          * list style of unordered list, [possible values](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
+         */
+        "listStyle": string;
+        /**
+          * per default list is unordered, set true for ordered list
+         */
+        "ordered": boolean;
+        /**
+          * reverse the list
+         */
+        "reversed"?: boolean;
+        /**
+          * start of the ordered list
+         */
+        "start"?: number;
+        /**
+          * ordered list type, a = lowercase letters, A = uppercase letters, i = lowercase romanian  letters, I = uppercase romanian letters, 1 = arabic numbers
+         */
+        "type"?: 'a' | 'A' | 'i' | 'I' | '1';
+    }
+    interface UListitem {
     }
     interface ULoader {
     }
@@ -1165,6 +1187,12 @@ declare global {
         prototype: HTMLUListElement;
         new (): HTMLUListElement;
     };
+    interface HTMLUListitemElement extends Components.UListitem, HTMLStencilElement {
+    }
+    var HTMLUListitemElement: {
+        prototype: HTMLUListitemElement;
+        new (): HTMLUListitemElement;
+    };
     interface HTMLULoaderElement extends Components.ULoader, HTMLStencilElement {
     }
     var HTMLULoaderElement: {
@@ -1414,6 +1442,7 @@ declare global {
         "u-layout": HTMLULayoutElement;
         "u-link": HTMLULinkElement;
         "u-list": HTMLUListElement;
+        "u-listitem": HTMLUListitemElement;
         "u-loader": HTMLULoaderElement;
         "u-menu": HTMLUMenuElement;
         "u-menuitem": HTMLUMenuitemElement;
@@ -1921,6 +1950,28 @@ declare namespace LocalJSX {
           * list as row(x) or as column(y)
          */
         "alignment"?: 'x' | 'y';
+        /**
+          * list style of unordered list, [possible values](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type)
+         */
+        "listStyle"?: string;
+        /**
+          * per default list is unordered, set true for ordered list
+         */
+        "ordered"?: boolean;
+        /**
+          * reverse the list
+         */
+        "reversed"?: boolean;
+        /**
+          * start of the ordered list
+         */
+        "start"?: number;
+        /**
+          * ordered list type, a = lowercase letters, A = uppercase letters, i = lowercase romanian  letters, I = uppercase romanian letters, 1 = arabic numbers
+         */
+        "type"?: 'a' | 'A' | 'i' | 'I' | '1';
+    }
+    interface UListitem {
     }
     interface ULoader {
     }
@@ -2461,6 +2512,7 @@ declare namespace LocalJSX {
         "u-layout": ULayout;
         "u-link": ULink;
         "u-list": UList;
+        "u-listitem": UListitem;
         "u-loader": ULoader;
         "u-menu": UMenu;
         "u-menuitem": UMenuitem;
@@ -2540,6 +2592,7 @@ declare module "@stencil/core" {
             "u-layout": LocalJSX.ULayout & JSXBase.HTMLAttributes<HTMLULayoutElement>;
             "u-link": LocalJSX.ULink & JSXBase.HTMLAttributes<HTMLULinkElement>;
             "u-list": LocalJSX.UList & JSXBase.HTMLAttributes<HTMLUListElement>;
+            "u-listitem": LocalJSX.UListitem & JSXBase.HTMLAttributes<HTMLUListitemElement>;
             "u-loader": LocalJSX.ULoader & JSXBase.HTMLAttributes<HTMLULoaderElement>;
             "u-menu": LocalJSX.UMenu & JSXBase.HTMLAttributes<HTMLUMenuElement>;
             "u-menuitem": LocalJSX.UMenuitem & JSXBase.HTMLAttributes<HTMLUMenuitemElement>;
