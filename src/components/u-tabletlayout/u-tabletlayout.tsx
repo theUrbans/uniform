@@ -1,12 +1,4 @@
-import {
-  Component,
-  h,
-  Method,
-  Prop,
-  State,
-  Element,
-  Host
-} from '@stencil/core';
+import { Component, h, Method, Prop, State, Element } from '@stencil/core';
 
 /**
  * @name Tablet Layout
@@ -27,19 +19,13 @@ export class UTabletlayout {
 
   @Prop({ mutable: true }) showOptions: boolean = false;
 
-  @Prop() sideWidth: string = '94%';
+  @Prop() sideWidth: string = '90%';
 
   @Method() async showOption() {
-    const option = this.el.shadowRoot.querySelector('.option') as HTMLElement;
-    if (!option) return;
-    option.scrollIntoView();
-  }
-
-  @Method() async activateOption() {
     this.showOptions = true;
   }
 
-  @Method() async disableOption() {
+  @Method() async hideOption() {
     this.showOptions = false;
   }
 
@@ -50,45 +36,42 @@ export class UTabletlayout {
   }
 
   render() {
-    return (
-      <Host>
-        <u-grid
-          columns={['6rem', '1fr']}
-          rows={1}
-          area={[['menu', 'main']]}
-          width="100%"
-          height={this.height}
-        >
-          <section
-            class="menu"
-            style={{
-              gridArea: 'menu'
-            }}
-          >
-            <slot name="menu"></slot>
-          </section>
-          <section
-            class="main"
-            style={{
-              gridArea: 'main'
-            }}
-          >
-            <slot name="main"></slot>
-          </section>
-        </u-grid>
+    return [
+      <u-grid
+        columns={['6rem', '1fr']}
+        rows={1}
+        area={[['menu', 'main']]}
+        width="100%"
+        height={this.height}
+      >
         <section
-          class={{
-            option: true,
-            active: this.showOptions
-          }}
+          class="menu"
           style={{
-            gridArea: 'option',
-            width: this.sideWidth
+            gridArea: 'menu'
           }}
         >
-          <slot name="option"></slot>
+          <slot name="menu"></slot>
         </section>
-      </Host>
-    );
+        <section
+          class="main"
+          style={{
+            gridArea: 'main'
+          }}
+        >
+          <slot name="main"></slot>
+        </section>
+      </u-grid>,
+      <section
+        class={{
+          option: true,
+          active: this.showOptions
+        }}
+        style={{
+          width: this.sideWidth
+        }}
+      >
+        <slot name="option"></slot>
+      </section>
+    ];
   }
 }
