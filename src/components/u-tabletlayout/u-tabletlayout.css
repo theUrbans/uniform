@@ -1,11 +1,8 @@
 .option {
-  top: 0;
-  right: 0;
-  position: fixed;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
+  @apply h-full right-0 top-0 fixed bg-gray-200 transform translate-x-full;
+  transition: transform 0.5s ease-in;
 }
 
 .active {
-  transform: translateX(0);
+  @apply transform translate-x-0;
 }
