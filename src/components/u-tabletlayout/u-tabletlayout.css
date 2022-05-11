@@ -1,0 +1,8 @@
+.option {
+  @apply h-full right-0 top-0 fixed bg-gray-200 transform translate-x-full;
+  transition: transform 0.5s ease-in;
+}
+
+.active {
+  @apply transform translate-x-0;
+}

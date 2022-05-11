@@ -1,10 +1,13 @@
-import { Component, Element, h, Method, Prop } from '@stencil/core';
+import { Component, Element, h, Method, Prop, State } from '@stencil/core';
 
 /**
  * @name Mobile Layout
  * @state 🟡
  * @description Discord-App like layout with 3 swipeable columns
  * @categorie Layout
+ * @slot menu - menu view
+ * @slot main - main view
+ * @slot option - option view
  */
 @Component({
   tag: 'u-mobilelayout',
@@ -44,13 +47,24 @@ export class UMobilelayout {
     this.showOptions = false;
   }
 
+  @State() height: string;
+
+  componentWillLoad() {
+    this.height = `${window.innerHeight}px`;
+  }
+
   componentDidLoad() {
     this.showMain();
   }
 
   render() {
     return (
-      <div class="layout">
+      <div
+        class="layout"
+        style={{
+          height: this.height
+        }}
+      >
         <section class="section menu">
           <slot name="menu"></slot>
         </section>

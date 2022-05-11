@@ -2,7 +2,6 @@ import { Component, h, Prop } from '@stencil/core';
 
 /**
  * @name Table Cell
- * @state 🔴
  */
 @Component({
   tag: 'u-tablecell',

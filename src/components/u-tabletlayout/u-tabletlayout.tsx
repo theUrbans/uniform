@@ -1,7 +1,7 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, Method, Prop, State, Element } from '@stencil/core';
 
 /**
- * @name Desktop Layout
+ * @name Tablet Layout
  * @state 🟡
  * @description default Desktop Layout - with a sidebar and a main content area
  * @categorie Layout
@@ -10,11 +10,25 @@ import { Component, h, State } from '@stencil/core';
  * @slot option - option view
  */
 @Component({
-  tag: 'u-desktoplayout',
-  styleUrl: 'u-desktoplayout.css',
+  tag: 'u-tabletlayout',
+  styleUrl: 'u-tabletlayout.css',
   shadow: true
 })
-export class UDesktoplayout {
+export class UTabletlayout {
+  @Element() el: HTMLElement;
+
+  @Prop({ mutable: true }) showOptions: boolean = false;
+
+  @Prop() sideWidth: string = '90%';
+
+  @Method() async showOption() {
+    this.showOptions = true;
+  }
+
+  @Method() async hideOption() {
+    this.showOptions = false;
+  }
+
   @State() height: string;
 
   componentWillLoad() {
@@ -22,11 +36,11 @@ export class UDesktoplayout {
   }
 
   render() {
-    return (
+    return [
       <u-grid
-        columns={['6rem', '1fr', '1fr']}
+        columns={['6rem', '1fr']}
         rows={1}
-        area={[['menu', 'main', 'option']]}
+        area={[['menu', 'main']]}
         width="100%"
         height={this.height}
       >
@@ -46,15 +60,18 @@ export class UDesktoplayout {
         >
           <slot name="main"></slot>
         </section>
-        <section
-          class="option"
-          style={{
-            gridArea: 'option'
-          }}
-        >
-          <slot name="option"></slot>
-        </section>
-      </u-grid>
-    );
+      </u-grid>,
+      <section
+        class={{
+          option: true,
+          active: this.showOptions
+        }}
+        style={{
+          width: this.sideWidth
+        }}
+      >
+        <slot name="option"></slot>
+      </section>
+    ];
   }
 }

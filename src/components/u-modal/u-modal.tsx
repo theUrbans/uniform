@@ -70,19 +70,19 @@ export class UModal {
   @Prop() minWidth: string = 'auto';
 
   /**
+   * (DESKTOP only) resizable max width
+   */
+  @Prop() maxWidth: string = 'auto';
+
+  /**
    * (DESKTOP only) resizable min height
    */
   @Prop() minHeight: string = 'auto';
 
   /**
-   * (DESKTOP only) resizable max width
-   */
-  @Prop() maxHeight: string = 'auto';
-
-  /**
    * (DESKTOP only) resizable max height
    */
-  @Prop() maxWidth: string = 'auto';
+  @Prop() maxHeight: string = 'auto';
 
   /**
    * event with given params
