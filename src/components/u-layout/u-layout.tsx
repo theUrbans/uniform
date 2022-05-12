@@ -21,7 +21,6 @@ export class ULayout {
 
   private tabletlayout: HTMLUTabletlayoutElement;
 
-  // TODO add tablet option
   @State() mode: 'mobile' | 'tablet' | 'desktop';
 
   @Listen('resize', { target: 'window' }) onWindowResize() {
