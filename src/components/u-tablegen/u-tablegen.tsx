@@ -506,7 +506,7 @@ export class UTablegen {
                         color: ft
                       }}
                     >
-                      {this.format(value.toString())}
+                      {this.format(value ? value.toString() : '')}
                     </td>
                   );
                 }
