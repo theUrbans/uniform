@@ -59,7 +59,6 @@ export class UTooltip {
   private handleMouseEnter = () => {
     if (this.trigger === 'click') return;
     this.calcPos();
-    console.log('test');
     this.visible = true;
   };
 
